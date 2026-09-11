@@ -1,0 +1,194 @@
+{
+  "arms_per_hop": 4,
+  "evidence_documents_per_hop": 2,
+  "generator": "scripts/prepare_focused_e2.py",
+  "generator_sha256": "6f2f1527ec7fdb882e891547dff19946b173a55254e4c1ac65f0806ad2f65c6a",
+  "limits": [
+    "Group-specific curves have small n=3 or4; they are mechanics diagnostics, not precise population estimates.",
+    "Pooled nominal-hop results have changing structural composition. Never draw a pooled hop-effect curve without that qualification.",
+    "At7 documents the nominal5-hop cap executes4 evidence hops; empty remaining hops are skipped by the frozen harness.",
+    "Original JSON records are preserved verbatim, including question and scoring annotations; only grouping changes."
+  ],
+  "omitted_repeated_schedule_conditions": 108,
+  "original_hop_caps": [
+    1,
+    3,
+    5,
+    10,
+    20
+  ],
+  "outputs": [
+    {
+      "bytes": 6536,
+      "document_count": 6,
+      "examples": 4,
+      "executed_evidence_hops": [
+        1,
+        3
+      ],
+      "nominal_hop_caps": [
+        1,
+        3
+      ],
+      "path": "data/focused_e2_docs6.jsonl",
+      "planned_conditions": 32,
+      "question_ids": [
+        "multihop-20260911-00000",
+        "multihop-20260911-00005",
+        "multihop-20260911-00010",
+        "multihop-20260911-00015"
+      ],
+      "sha256": "29268849ccdcc5e7874c995d352b0cb3b3506da252ffcd7bf88f8d005671ee3e",
+      "source_indices_zero_based": [
+        0,
+        5,
+        10,
+        15
+      ]
+    },
+    {
+      "bytes": 5475,
+      "document_count": 7,
+      "examples": 3,
+      "executed_evidence_hops": [
+        1,
+        3,
+        4
+      ],
+      "nominal_hop_caps": [
+        1,
+        3,
+        5
+      ],
+      "path": "data/focused_e2_docs7.jsonl",
+      "planned_conditions": 36,
+      "question_ids": [
+        "multihop-20260911-00001",
+        "multihop-20260911-00006",
+        "multihop-20260911-00011"
+      ],
+      "sha256": "2bc923661d93bf962dcd1d6c118bd2f3cad09a417397d237a308027ba3c88b03",
+      "source_indices_zero_based": [
+        1,
+        6,
+        11
+      ]
+    },
+    {
+      "bytes": 7068,
+      "document_count": 10,
+      "examples": 3,
+      "executed_evidence_hops": [
+        1,
+        3,
+        5
+      ],
+      "nominal_hop_caps": [
+        1,
+        3,
+        5
+      ],
+      "path": "data/focused_e2_docs10.jsonl",
+      "planned_conditions": 36,
+      "question_ids": [
+        "multihop-20260911-00002",
+        "multihop-20260911-00007",
+        "multihop-20260911-00012"
+      ],
+      "sha256": "890c54a68747af3f52d7c494a3ed88568fb3838a56284361adb122cd611596a6",
+      "source_indices_zero_based": [
+        2,
+        7,
+        12
+      ]
+    },
+    {
+      "bytes": 12174,
+      "document_count": 20,
+      "examples": 3,
+      "executed_evidence_hops": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "nominal_hop_caps": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "path": "data/focused_e2_docs20.jsonl",
+      "planned_conditions": 48,
+      "question_ids": [
+        "multihop-20260911-00003",
+        "multihop-20260911-00008",
+        "multihop-20260911-00013"
+      ],
+      "sha256": "a4df390cada64c7e72d63cb95225332ba6d8b90e3a4cd2bcaabc4834aeb934cd",
+      "source_indices_zero_based": [
+        3,
+        8,
+        13
+      ]
+    },
+    {
+      "bytes": 22374,
+      "document_count": 40,
+      "examples": 3,
+      "executed_evidence_hops": [
+        1,
+        3,
+        5,
+        10,
+        20
+      ],
+      "nominal_hop_caps": [
+        1,
+        3,
+        5,
+        10,
+        20
+      ],
+      "path": "data/focused_e2_docs40.jsonl",
+      "planned_conditions": 60,
+      "question_ids": [
+        "multihop-20260911-00004",
+        "multihop-20260911-00009",
+        "multihop-20260911-00014"
+      ],
+      "sha256": "7e4ea3b1d9905b13563f16d7a7bfd6ce26118d66617cfcc66d351f8d7e74935d",
+      "source_indices_zero_based": [
+        4,
+        9,
+        14
+      ]
+    }
+  ],
+  "planned_conditions": 212,
+  "selected_question_ids_in_source_order": [
+    "multihop-20260911-00000",
+    "multihop-20260911-00001",
+    "multihop-20260911-00002",
+    "multihop-20260911-00003",
+    "multihop-20260911-00004",
+    "multihop-20260911-00005",
+    "multihop-20260911-00006",
+    "multihop-20260911-00007",
+    "multihop-20260911-00008",
+    "multihop-20260911-00009",
+    "multihop-20260911-00010",
+    "multihop-20260911-00011",
+    "multihop-20260911-00012",
+    "multihop-20260911-00013",
+    "multihop-20260911-00014",
+    "multihop-20260911-00015"
+  ],
+  "selection": "First 16 source rows, then stable partition by evidence document count; no outcome-based selection.",
+  "source": {
+    "path": "data/synthetic_multihop.jsonl",
+    "rows": 128,
+    "sha256": "778f6456bc8767baa98dcd8a16f21f6d0c5a8c6179d8e34b88df403e6bb7d861"
+  },
+  "version": 1
+}

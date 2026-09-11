@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-09-11T06:28:26.170179+00:00",
+  "seed": 20260911,
+  "schema_version": 1,
+  "count_requested": 128,
+  "sources": [
+    {
+      "url": "https://drive.usercontent.google.com/download?id=1tGdADlNjWFaHLeZZGShh2IRcpO6Lv24h&export=download&confirm=t",
+      "resolved_url": "https://drive.usercontent.google.com/download?id=1tGdADlNjWFaHLeZZGShh2IRcpO6Lv24h&export=download&confirm=t",
+      "path": "data/raw/musique.zip",
+      "bytes": 272049578,
+      "sha256": "98f839bf2fd5319f5c688aed77901a6d5c30b3b9f9f691ab9a8ecafb045ee0cd",
+      "cached": false
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/musique_dev_sample.jsonl",
+      "examples": 128,
+      "bytes": 1594916,
+      "sha256": "f4edc244a51c7c566dbffc26d22149b177c27f345e34e195745d567a4d201432"
+    }
+  ],
+  "errors": {}
+}

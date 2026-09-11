@@ -1,0 +1,54 @@
+{
+  "elapsed_seconds": 1550.572792291001,
+  "jobs": [
+    {
+      "completed_runs": 32,
+      "job": "multihop_docs6",
+      "planned_runs": 32,
+      "stop_reason": "complete"
+    },
+    {
+      "completed_runs": 36,
+      "job": "multihop_docs7",
+      "planned_runs": 36,
+      "stop_reason": "complete"
+    },
+    {
+      "completed_runs": 36,
+      "job": "multihop_docs10",
+      "planned_runs": 36,
+      "stop_reason": "complete"
+    },
+    {
+      "completed_runs": 48,
+      "job": "multihop_docs20",
+      "planned_runs": 48,
+      "stop_reason": "complete"
+    },
+    {
+      "completed_runs": 60,
+      "job": "multihop_docs40",
+      "planned_runs": 60,
+      "stop_reason": "complete"
+    },
+    {
+      "completed_runs": 224,
+      "job": "hotpot_ablations",
+      "planned_runs": 224,
+      "stop_reason": "complete"
+    },
+    {
+      "completed_runs": 224,
+      "job": "musique_ablations",
+      "planned_runs": 224,
+      "stop_reason": "complete"
+    }
+  ],
+  "matrix": "configs/focused-ablation.json",
+  "memory": {
+    "active_bytes": 16381470728,
+    "cache_bytes": 0,
+    "memory_limit_bytes": 34359738368,
+    "peak_bytes": 19738503256
+  }
+}

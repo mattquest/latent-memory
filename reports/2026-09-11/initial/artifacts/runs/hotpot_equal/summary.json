@@ -1,0 +1,272 @@
+{
+  "completed_unique_runs": 512,
+  "elapsed_seconds_this_invocation": 1297.5244357080082,
+  "groups": [
+    {
+      "case": {
+        "arm": "direct_text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E1",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 0.0,
+      "dataset": "hotpotqa",
+      "exact_match": 0.390625,
+      "exact_match_ci95": [
+        0.31047019100495765,
+        0.4771535181798723
+      ],
+      "f1": 0.4787803189457601,
+      "f1_bootstrap_ci95": [
+        0.39597051462630506,
+        0.5578321605630887
+      ],
+      "fraction_examples_truncated": 0.3125,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 801.671875,
+        "host_output_tokens": 3.3828125,
+        "ingest_prefill_tokens": 0,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 922.4296875,
+        "query_prefill_tokens": 922.4296875
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "qa_accuracy",
+      "n_examples": 128,
+      "n_runs": 128,
+      "warm_latency_mean_ms": 475.90158916500513,
+      "warm_latency_p50_ms": 474.0508754912298,
+      "warm_latency_p95_ms": 613.1102850980824
+    },
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E1",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 504.06010349979624,
+      "dataset": "hotpotqa",
+      "exact_match": 0.3125,
+      "exact_match_ci95": [
+        0.23865530278536204,
+        0.39727105581720357
+      ],
+      "f1": 0.39200576537433157,
+      "f1_bootstrap_ci95": [
+        0.3135301752092882,
+        0.468610921286128
+      ],
+      "fraction_examples_truncated": 0.3125,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 381.421875,
+        "evidence_tokens": 801.671875,
+        "host_output_tokens": 2.90625,
+        "ingest_prefill_tokens": 876.671875,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 1017.703125,
+        "query_prefill_tokens": 141.03125
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "qa_accuracy",
+      "n_examples": 128,
+      "n_runs": 128,
+      "warm_latency_mean_ms": 1260.7932861792506,
+      "warm_latency_p50_ms": 1265.1522504747845,
+      "warm_latency_p95_ms": 1432.9739546315977
+    },
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E1",
+        "hops": 3,
+        "precision": "int8",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 504.06010349979624,
+      "dataset": "hotpotqa",
+      "exact_match": 0.3125,
+      "exact_match_ci95": [
+        0.23865530278536204,
+        0.39727105581720357
+      ],
+      "f1": 0.3987021939457601,
+      "f1_bootstrap_ci95": [
+        0.31962510146103895,
+        0.4752580716235357
+      ],
+      "fraction_examples_truncated": 0.3125,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 381.421875,
+        "evidence_tokens": 801.671875,
+        "host_output_tokens": 2.953125,
+        "ingest_prefill_tokens": 876.671875,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 1017.703125,
+        "query_prefill_tokens": 141.03125
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "qa_accuracy",
+      "n_examples": 128,
+      "n_runs": 128,
+      "warm_latency_mean_ms": 1284.6539260676764,
+      "warm_latency_p50_ms": 1283.486875006929,
+      "warm_latency_p95_ms": 1465.771310342825
+    },
+    {
+      "case": {
+        "arm": "text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E1",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 0.0,
+      "dataset": "hotpotqa",
+      "exact_match": 0.375,
+      "exact_match_ci95": [
+        0.29592429097646555,
+        0.4613599480919116
+      ],
+      "f1": 0.47097876082251083,
+      "f1_bootstrap_ci95": [
+        0.3907979910714286,
+        0.5476339285714285
+      ],
+      "fraction_examples_truncated": 0.3125,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 801.671875,
+        "host_output_tokens": 2.953125,
+        "ingest_prefill_tokens": 0,
+        "internal_decoded_tokens": 169.71875,
+        "max_prefix_tokens": 528.59375,
+        "query_prefill_tokens": 1542.5234375
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "qa_accuracy",
+      "n_examples": 128,
+      "n_runs": 128,
+      "warm_latency_mean_ms": 6583.060681009556,
+      "warm_latency_p50_ms": 6159.060646023136,
+      "warm_latency_p95_ms": 11581.488539132988
+    }
+  ],
+  "limitations": [
+    "One unadapted Qwen3 model; no trained role adapters, verifier, or latent retriever.",
+    "Fixed evidence schedule; nominal hops with no new evidence are skipped and disclosed.",
+    "E1/E2 compare a decoded evidence-note chain to causal KV appends, not trained role-equivalent agents.",
+    "Warm latency excludes cold document prefill and model loading; cold prefill is reported separately.",
+    "E3 is answer-level private-evidence sensitivity, not a reproduction of an external causal audit.",
+    "Small diagnostic subsets do not establish BEAM 1M/10M performance or the original thesis.",
+    "Percentile estimates from small samples and bootstrap intervals at empirical ceilings are unstable."
+  ],
+  "n_failed_runs": 0,
+  "n_successful_runs": 512,
+  "paired_comparisons": [
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_bf16_minus_direct_text_correct_bf16",
+      "dataset": "hotpotqa",
+      "exact_match_difference": -0.078125,
+      "experiment": "E1",
+      "hops": 3,
+      "n_paired_examples": 128,
+      "paired_bootstrap_ci95": [
+        -0.15625,
+        -0.0078125
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_bf16_minus_latent_correct_int8",
+      "dataset": "hotpotqa",
+      "exact_match_difference": 0.0,
+      "experiment": "E1",
+      "hops": 3,
+      "n_paired_examples": 128,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_bf16_minus_text_correct_bf16",
+      "dataset": "hotpotqa",
+      "exact_match_difference": -0.0625,
+      "experiment": "E1",
+      "hops": 3,
+      "n_paired_examples": 128,
+      "paired_bootstrap_ci95": [
+        -0.140625,
+        0.015625
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_int8_minus_direct_text_correct_bf16",
+      "dataset": "hotpotqa",
+      "exact_match_difference": -0.078125,
+      "experiment": "E1",
+      "hops": 3,
+      "n_paired_examples": 128,
+      "paired_bootstrap_ci95": [
+        -0.15625,
+        -0.0078125
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_int8_minus_latent_correct_bf16",
+      "dataset": "hotpotqa",
+      "exact_match_difference": 0.0,
+      "experiment": "E1",
+      "hops": 3,
+      "n_paired_examples": 128,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_int8_minus_text_correct_bf16",
+      "dataset": "hotpotqa",
+      "exact_match_difference": -0.0625,
+      "experiment": "E1",
+      "hops": 3,
+      "n_paired_examples": 128,
+      "paired_bootstrap_ci95": [
+        -0.140625,
+        0.015625
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    }
+  ],
+  "planned_runs": 512,
+  "protocol_version": "fixed-evidence-qwen3-v3-bm25-json",
+  "stop_reason": "complete"
+}

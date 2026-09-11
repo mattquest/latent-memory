@@ -1,0 +1,7 @@
+arm,reference,subset,n,em_difference,paired_bootstrap_ci95
+retained_kv_bf16,retained_text,all,96,-0.020833333333333332,"[-0.052083333333333336, 0.0]"
+retained_kv_bf16,retained_text,trace_overflow,9,0.0,
+retained_kv_int8,retained_text,all,96,-0.010416666666666666,"[-0.03125, 0.0]"
+retained_kv_int8,retained_text,trace_overflow,9,0.0,
+rolling_summary,retained_text,all,96,0.010416666666666666,"[0.0, 0.03125]"
+rolling_summary,retained_text,trace_overflow,9,0.0,

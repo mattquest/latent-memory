@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-09-11T06:27:47.928438+00:00",
+  "seed": 20260911,
+  "schema_version": 1,
+  "count_requested": 128,
+  "sources": [],
+  "outputs": [
+    {
+      "path": "data/synthetic_private_fact.jsonl",
+      "examples": 128,
+      "bytes": 99072,
+      "sha256": "25166a8943fd7cdb20ad00d9b79bc033c54e3631af00224376b1426c4916a466"
+    },
+    {
+      "path": "data/synthetic_private_fact_dev.jsonl",
+      "examples": 32,
+      "bytes": 24736,
+      "sha256": "1a176d88b7bc6d00c6b90f3ae2736f38eedb1c407b6e37791e6b223c81ec8b54"
+    },
+    {
+      "path": "data/synthetic_multihop.jsonl",
+      "examples": 128,
+      "bytes": 439090,
+      "sha256": "778f6456bc8767baa98dcd8a16f21f6d0c5a8c6179d8e34b88df403e6bb7d861"
+    },
+    {
+      "path": "data/synthetic_multihop_dev.jsonl",
+      "examples": 32,
+      "bytes": 107413,
+      "sha256": "1a4b8be3436421df0c6aafd42eda9ee3cd199853782c6b328dd22d063e426258"
+    },
+    {
+      "path": "data/synthetic_updates.jsonl",
+      "examples": 128,
+      "bytes": 160448,
+      "sha256": "bfa723095a92ac68084bf0caa41454f98106f25bd622560de42606ad5b6ac28a"
+    },
+    {
+      "path": "data/synthetic_updates_dev.jsonl",
+      "examples": 32,
+      "bytes": 40080,
+      "sha256": "e7b7c78ca6458989fe0681016bcfb0e7c79d4aac10430f98de856c962079ffb5"
+    }
+  ],
+  "errors": {}
+}

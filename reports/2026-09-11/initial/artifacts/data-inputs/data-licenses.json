@@ -1,0 +1,163 @@
+{
+  "artifacts": [
+    {
+      "artifact": "artifacts/data-inputs/a54778c5c530_beam_1m_retrieved.jsonl.gz",
+      "data_license": "CC-BY-SA-4.0",
+      "data_license_key": "beam",
+      "original_basename": "beam_1m_retrieved.jsonl",
+      "source_sha256": "a54778c5c530d04f154a74c2cca0a0666d6a4bf3e8b5bbe05dbef11eeac7838e",
+      "used_by_jobs": [
+        "beam_equal_updates"
+      ]
+    },
+    {
+      "artifact": "artifacts/data-inputs/c3cac853ad9a_hotpotqa_dev_sample.jsonl.gz",
+      "data_license": "CC-BY-SA-4.0",
+      "data_license_key": "hotpotqa",
+      "original_basename": "hotpotqa_dev_sample.jsonl",
+      "source_sha256": "c3cac853ad9a048ca52613244dc3d97c30324ddcc068c9b2465193873a59c0e2",
+      "used_by_jobs": [
+        "hotpot_equal"
+      ]
+    },
+    {
+      "artifact": "artifacts/data-inputs/f4edc244a51c_musique_dev_sample.jsonl.gz",
+      "data_license": "CC-BY-4.0",
+      "data_license_key": "musique",
+      "original_basename": "musique_dev_sample.jsonl",
+      "source_sha256": "f4edc244a51c7c566dbffc26d22149b177c27f345e34e195745d567a4d201432",
+      "used_by_jobs": [
+        "musique_equal"
+      ]
+    },
+    {
+      "artifact": "artifacts/data-inputs/25166a8943fd_synthetic_private_fact.jsonl.gz",
+      "data_license": "project-generated; see repository license or obtain author permission",
+      "data_license_key": "synthetic",
+      "original_basename": "synthetic_private_fact.jsonl",
+      "source_sha256": "25166a8943fd7cdb20ad00d9b79bc033c54e3631af00224376b1426c4916a466",
+      "used_by_jobs": [
+        "private_audit_precision"
+      ]
+    },
+    {
+      "artifact": "artifacts/data-inputs/bfa723095a92_synthetic_updates.jsonl.gz",
+      "data_license": "project-generated; see repository license or obtain author permission",
+      "data_license_key": "synthetic",
+      "original_basename": "synthetic_updates.jsonl",
+      "source_sha256": "bfa723095a92ac68084bf0caa41454f98106f25bd622560de42606ad5b6ac28a",
+      "used_by_jobs": [
+        "updates"
+      ]
+    },
+    {
+      "artifact": "artifacts/data-inputs/f28fb5928a2a_beam_1m_1_corpus.jsonl.gz",
+      "data_license": "CC-BY-SA-4.0",
+      "data_license_key": "beam",
+      "original_basename": "beam_1m_1_corpus.jsonl",
+      "source_sha256": "f28fb5928a2a4e18b123f1ce7ab5b5b81c66ff220f4018c39308083255ac0253"
+    },
+    {
+      "artifact": "artifacts/data-inputs/51a9f9b6b1c2_beam_1m_2_corpus.jsonl.gz",
+      "data_license": "CC-BY-SA-4.0",
+      "data_license_key": "beam",
+      "original_basename": "beam_1m_2_corpus.jsonl",
+      "source_sha256": "51a9f9b6b1c2ce96b8aa7617fa423083ae372704aa8cdb34f2e5e545e4b6880e"
+    },
+    {
+      "artifact": "artifacts/data-inputs/edadffd4eaf4_beam_1m_3_corpus.jsonl.gz",
+      "data_license": "CC-BY-SA-4.0",
+      "data_license_key": "beam",
+      "original_basename": "beam_1m_3_corpus.jsonl",
+      "source_sha256": "edadffd4eaf41e9d35b1be872382b571bc1b4b165fd0701b2788c468f2bdc087"
+    }
+  ],
+  "datasets": {
+    "beam": {
+      "attribution": "Tavakoli et al., BEAM: Beyond a Million Tokens",
+      "download_receipts": [
+        {
+          "bytes": 4602629,
+          "sha256": "cbfd265429bb4d39cb390ed2e6525d40631c128fc0406fef8420af9bd5f97eae",
+          "url": "https://raw.githubusercontent.com/mohammadtavakoli78/BEAM/b2da22eac88bb0874c64665f13457eb99835774a/chats/1M/1/chat.json"
+        },
+        {
+          "bytes": 44283,
+          "sha256": "f3e212069cb3d78b6e032efa2dbdd85530f39cc23809ef0496c3c020cac10c3c",
+          "url": "https://raw.githubusercontent.com/mohammadtavakoli78/BEAM/b2da22eac88bb0874c64665f13457eb99835774a/chats/1M/1/probing_questions/probing_questions.json"
+        },
+        {
+          "bytes": 4584827,
+          "sha256": "c4845c44e4546732ce626bfa91cf7ef4c7e09bf3dd64fb62407e5903ad72d19b",
+          "url": "https://raw.githubusercontent.com/mohammadtavakoli78/BEAM/b2da22eac88bb0874c64665f13457eb99835774a/chats/1M/2/chat.json"
+        },
+        {
+          "bytes": 43349,
+          "sha256": "0cefc355c4e941c9fcb6911f11ce1b4f3af5174d7cb567523306b10fd74f4517",
+          "url": "https://raw.githubusercontent.com/mohammadtavakoli78/BEAM/b2da22eac88bb0874c64665f13457eb99835774a/chats/1M/2/probing_questions/probing_questions.json"
+        },
+        {
+          "bytes": 3929913,
+          "sha256": "3e2f10e6d76a514ced7ea7d73be589f20f6a77e0cc973fee5139e3705ae5d572",
+          "url": "https://raw.githubusercontent.com/mohammadtavakoli78/BEAM/b2da22eac88bb0874c64665f13457eb99835774a/chats/1M/3/chat.json"
+        },
+        {
+          "bytes": 37313,
+          "sha256": "52b2eedd5c099e92b8125d71b480396ebfca61cb84768622196e2f7c4d930c33",
+          "url": "https://raw.githubusercontent.com/mohammadtavakoli78/BEAM/b2da22eac88bb0874c64665f13457eb99835774a/chats/1M/3/probing_questions/probing_questions.json"
+        }
+      ],
+      "homepage": "https://huggingface.co/datasets/Mohammadta/BEAM",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "modifications": "Three 1M conversation histories flattened chronologically; 60 probes normalized; retrieved evidence token-chunked and BM25-ranked; hop subset retains 30 probes.",
+      "seed": 20260911,
+      "source_manifest": "manifest-beam.json",
+      "source_revision": "b2da22eac88bb0874c64665f13457eb99835774a"
+    },
+    "hotpotqa": {
+      "attribution": "Yang et al. (2018), HotpotQA",
+      "download_receipts": [
+        {
+          "bytes": 27452575,
+          "sha256": "c20b638ca82b21d04fe12e14ff417ad05153d4d215a65de54497fca4e972f7c6",
+          "url": "https://huggingface.co/datasets/hotpotqa/hotpot_qa/resolve/1908d6afbbead072334abe2965f91bd2709910ab/distractor/validation-00000-of-00001.parquet"
+        }
+      ],
+      "homepage": "https://hotpotqa.github.io/",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "modifications": "Deterministic development distractor sample and JSONL schema normalization; source IDs, supplied context and support annotations retained.",
+      "seed": 20260911,
+      "source_manifest": "manifest-hotpotqa.json",
+      "source_revision": "1908d6afbbead072334abe2965f91bd2709910ab"
+    },
+    "musique": {
+      "attribution": "Trivedi et al. (2022), MuSiQue",
+      "download_receipts": [
+        {
+          "bytes": 272049578,
+          "sha256": "98f839bf2fd5319f5c688aed77901a6d5c30b3b9f9f691ab9a8ecafb045ee0cd",
+          "url": "https://drive.usercontent.google.com/download?id=1tGdADlNjWFaHLeZZGShh2IRcpO6Lv24h&export=download&confirm=t"
+        }
+      ],
+      "homepage": "https://github.com/StonyBrookNLP/musique",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "modifications": "Deterministic answerable development sample and JSONL normalization; aliases, supplied paragraphs and support annotations retained.",
+      "seed": 20260911,
+      "source_manifest": "manifest-musique.json",
+      "source_revision": "download script 922ac98f19a201998dbdae6d7f2887a5258dbdeb; v1.0 archive pinned by SHA-256"
+    },
+    "synthetic": {
+      "attribution": "This project's eval/datasets.py, generator version 1",
+      "download_receipts": [],
+      "license": "project-generated; see repository license or obtain author permission",
+      "modifications": "Fictional nonce facts, links and revisions generated from recorded seeds; no personal user data.",
+      "seed": 20260911,
+      "source_manifest": "manifest-synthetic.json"
+    }
+  },
+  "restore": "Decompress each artifact and restore original_basename under data/. The uncompressed SHA-256 identifies exact executed inputs independent of generator revisions.",
+  "scope": "Normalized benchmark data and corpus archives only; these licenses do not change the project code license."
+}

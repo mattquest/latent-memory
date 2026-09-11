@@ -1,0 +1,522 @@
+{
+  "completed_unique_runs": 32,
+  "elapsed_seconds_this_invocation": 73.53765924996696,
+  "groups": [
+    {
+      "case": {
+        "arm": "direct_text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E2",
+        "hops": 1,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 0.0,
+      "dataset": "synthetic_multihop",
+      "exact_match": 0.25,
+      "exact_match_ci95": [
+        0.04558726080970055,
+        0.6993581574175981
+      ],
+      "f1": 0.25,
+      "f1_bootstrap_ci95": [
+        0.0,
+        0.75
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 80,
+        "host_output_tokens": 6,
+        "ingest_prefill_tokens": 0,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 213,
+        "query_prefill_tokens": 213
+      },
+      "mean_evidence_hops_executed": 1,
+      "metric_role": "qa_accuracy",
+      "n_examples": 4,
+      "n_runs": 4,
+      "warm_latency_mean_ms": 301.0663022578228,
+      "warm_latency_p50_ms": 301.3649170170538,
+      "warm_latency_p95_ms": 306.1292499973206
+    },
+    {
+      "case": {
+        "arm": "direct_text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E2",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 0.0,
+      "dataset": "synthetic_multihop",
+      "exact_match": 1.0,
+      "exact_match_ci95": [
+        0.5101091635454027,
+        1.0
+      ],
+      "f1": 1.0,
+      "f1_bootstrap_ci95": [
+        1.0,
+        1.0
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 252,
+        "host_output_tokens": 6,
+        "ingest_prefill_tokens": 0,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 385,
+        "query_prefill_tokens": 385
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "qa_accuracy",
+      "n_examples": 4,
+      "n_runs": 4,
+      "warm_latency_mean_ms": 373.64112499926705,
+      "warm_latency_p50_ms": 372.1958960231859,
+      "warm_latency_p95_ms": 377.79450179368723
+    },
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E2",
+        "hops": 1,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 419.3137914990075,
+      "dataset": "synthetic_multihop",
+      "exact_match": 0.25,
+      "exact_match_ci95": [
+        0.04558726080970055,
+        0.6993581574175981
+      ],
+      "f1": 0.25,
+      "f1_bootstrap_ci95": [
+        0.0,
+        0.75
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 31,
+        "evidence_tokens": 80,
+        "host_output_tokens": 6,
+        "ingest_prefill_tokens": 327,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 257,
+        "query_prefill_tokens": 102
+      },
+      "mean_evidence_hops_executed": 1,
+      "metric_role": "qa_accuracy",
+      "n_examples": 4,
+      "n_runs": 4,
+      "warm_latency_mean_ms": 431.9148124923231,
+      "warm_latency_p50_ms": 432.27679148549214,
+      "warm_latency_p95_ms": 435.21365167107433
+    },
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E2",
+        "hops": 1,
+        "precision": "int8",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 419.3137914990075,
+      "dataset": "synthetic_multihop",
+      "exact_match": 0.25,
+      "exact_match_ci95": [
+        0.04558726080970055,
+        0.6993581574175981
+      ],
+      "f1": 0.25,
+      "f1_bootstrap_ci95": [
+        0.0,
+        0.75
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 31,
+        "evidence_tokens": 80,
+        "host_output_tokens": 6,
+        "ingest_prefill_tokens": 327,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 257,
+        "query_prefill_tokens": 102
+      },
+      "mean_evidence_hops_executed": 1,
+      "metric_role": "qa_accuracy",
+      "n_examples": 4,
+      "n_runs": 4,
+      "warm_latency_mean_ms": 432.32229199202266,
+      "warm_latency_p50_ms": 431.9717714970466,
+      "warm_latency_p95_ms": 437.61284830397926
+    },
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E2",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 419.3137914990075,
+      "dataset": "synthetic_multihop",
+      "exact_match": 0.0,
+      "exact_match_ci95": [
+        0.0,
+        0.4898908364545973
+      ],
+      "f1": 0.0,
+      "f1_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 171,
+        "evidence_tokens": 252,
+        "host_output_tokens": 6,
+        "ingest_prefill_tokens": 327,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 517,
+        "query_prefill_tokens": 190
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "qa_accuracy",
+      "n_examples": 4,
+      "n_runs": 4,
+      "warm_latency_mean_ms": 1053.3113127603428,
+      "warm_latency_p50_ms": 1040.9699169977102,
+      "warm_latency_p95_ms": 1092.046176851727
+    },
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E2",
+        "hops": 3,
+        "precision": "int8",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 419.3137914990075,
+      "dataset": "synthetic_multihop",
+      "exact_match": 0.0,
+      "exact_match_ci95": [
+        0.0,
+        0.4898908364545973
+      ],
+      "f1": 0.0,
+      "f1_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 171,
+        "evidence_tokens": 252,
+        "host_output_tokens": 6,
+        "ingest_prefill_tokens": 327,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 517,
+        "query_prefill_tokens": 190
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "qa_accuracy",
+      "n_examples": 4,
+      "n_runs": 4,
+      "warm_latency_mean_ms": 1068.1768542708596,
+      "warm_latency_p50_ms": 1072.287604038138,
+      "warm_latency_p95_ms": 1080.299071376794
+    },
+    {
+      "case": {
+        "arm": "text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E2",
+        "hops": 1,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 0.0,
+      "dataset": "synthetic_multihop",
+      "exact_match": 0.25,
+      "exact_match_ci95": [
+        0.04558726080970055,
+        0.6993581574175981
+      ],
+      "f1": 0.25,
+      "f1_bootstrap_ci95": [
+        0.0,
+        0.75
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 80,
+        "host_output_tokens": 6,
+        "ingest_prefill_tokens": 0,
+        "internal_decoded_tokens": 62.5,
+        "max_prefix_tokens": 243,
+        "query_prefill_tokens": 438.5
+      },
+      "mean_evidence_hops_executed": 1,
+      "metric_role": "qa_accuracy",
+      "n_examples": 4,
+      "n_runs": 4,
+      "warm_latency_mean_ms": 2531.1799790215446,
+      "warm_latency_p50_ms": 2515.212791506201,
+      "warm_latency_p95_ms": 2575.5743955727667
+    },
+    {
+      "case": {
+        "arm": "text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E2",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 0.0,
+      "dataset": "synthetic_multihop",
+      "exact_match": 0.25,
+      "exact_match_ci95": [
+        0.04558726080970055,
+        0.6993581574175981
+      ],
+      "f1": 0.25,
+      "f1_bootstrap_ci95": [
+        0.0,
+        0.75
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 252,
+        "host_output_tokens": 5.75,
+        "ingest_prefill_tokens": 0,
+        "internal_decoded_tokens": 321,
+        "max_prefix_tokens": 355,
+        "query_prefill_tokens": 1193
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "qa_accuracy",
+      "n_examples": 4,
+      "n_runs": 4,
+      "warm_latency_mean_ms": 11745.986249734415,
+      "warm_latency_p50_ms": 11537.71985397907,
+      "warm_latency_p95_ms": 13412.805195554392
+    }
+  ],
+  "limitations": [
+    "One unadapted Qwen3 model; no trained role adapters, verifier, or latent retriever.",
+    "Fixed evidence schedule; nominal hops with no new evidence are skipped and disclosed.",
+    "E1/E2 compare a decoded evidence-note chain to causal KV appends, not trained role-equivalent agents.",
+    "Warm latency excludes cold document prefill and model loading; cold prefill is reported separately.",
+    "E3 is answer-level private-evidence sensitivity, not a reproduction of an external causal audit.",
+    "Small diagnostic subsets do not establish BEAM 1M/10M performance or the original thesis.",
+    "Percentile estimates from small samples and bootstrap intervals at empirical ceilings are unstable."
+  ],
+  "n_failed_runs": 0,
+  "n_successful_runs": 32,
+  "paired_comparisons": [
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_bf16_minus_direct_text_correct_bf16",
+      "dataset": "synthetic_multihop",
+      "exact_match_difference": 0.0,
+      "experiment": "E2",
+      "hops": 1,
+      "n_paired_examples": 4,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_bf16_minus_latent_correct_int8",
+      "dataset": "synthetic_multihop",
+      "exact_match_difference": 0.0,
+      "experiment": "E2",
+      "hops": 1,
+      "n_paired_examples": 4,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_bf16_minus_text_correct_bf16",
+      "dataset": "synthetic_multihop",
+      "exact_match_difference": 0.0,
+      "experiment": "E2",
+      "hops": 1,
+      "n_paired_examples": 4,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_int8_minus_direct_text_correct_bf16",
+      "dataset": "synthetic_multihop",
+      "exact_match_difference": 0.0,
+      "experiment": "E2",
+      "hops": 1,
+      "n_paired_examples": 4,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_int8_minus_latent_correct_bf16",
+      "dataset": "synthetic_multihop",
+      "exact_match_difference": 0.0,
+      "experiment": "E2",
+      "hops": 1,
+      "n_paired_examples": 4,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_int8_minus_text_correct_bf16",
+      "dataset": "synthetic_multihop",
+      "exact_match_difference": 0.0,
+      "experiment": "E2",
+      "hops": 1,
+      "n_paired_examples": 4,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_bf16_minus_direct_text_correct_bf16",
+      "dataset": "synthetic_multihop",
+      "exact_match_difference": -1.0,
+      "experiment": "E2",
+      "hops": 3,
+      "n_paired_examples": 4,
+      "paired_bootstrap_ci95": [
+        -1.0,
+        -1.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_bf16_minus_latent_correct_int8",
+      "dataset": "synthetic_multihop",
+      "exact_match_difference": 0.0,
+      "experiment": "E2",
+      "hops": 3,
+      "n_paired_examples": 4,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_bf16_minus_text_correct_bf16",
+      "dataset": "synthetic_multihop",
+      "exact_match_difference": -0.25,
+      "experiment": "E2",
+      "hops": 3,
+      "n_paired_examples": 4,
+      "paired_bootstrap_ci95": [
+        -0.75,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_int8_minus_direct_text_correct_bf16",
+      "dataset": "synthetic_multihop",
+      "exact_match_difference": -1.0,
+      "experiment": "E2",
+      "hops": 3,
+      "n_paired_examples": 4,
+      "paired_bootstrap_ci95": [
+        -1.0,
+        -1.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_int8_minus_latent_correct_bf16",
+      "dataset": "synthetic_multihop",
+      "exact_match_difference": 0.0,
+      "experiment": "E2",
+      "hops": 3,
+      "n_paired_examples": 4,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_int8_minus_text_correct_bf16",
+      "dataset": "synthetic_multihop",
+      "exact_match_difference": -0.25,
+      "experiment": "E2",
+      "hops": 3,
+      "n_paired_examples": 4,
+      "paired_bootstrap_ci95": [
+        -0.75,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    }
+  ],
+  "planned_runs": 32,
+  "protocol_version": "fixed-evidence-qwen3-v3-bm25-json",
+  "stop_reason": "complete"
+}

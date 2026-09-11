@@ -1,0 +1,402 @@
+{
+  "completed_unique_runs": 1024,
+  "elapsed_seconds_this_invocation": 277.4542597500258,
+  "groups": [
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0,
+        "control": "correct",
+        "experiment": "E3",
+        "hops": 1,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 120.52310450235382,
+      "dataset": "synthetic_private_fact",
+      "exact_match": 1.0,
+      "exact_match_ci95": [
+        0.9708630437264916,
+        1.0
+      ],
+      "f1": 1.0,
+      "f1_bootstrap_ci95": [
+        1.0,
+        1.0
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 35,
+        "host_output_tokens": 6,
+        "ingest_prefill_tokens": 110,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 157,
+        "query_prefill_tokens": 47
+      },
+      "mean_evidence_hops_executed": 1,
+      "metric_role": "qa_accuracy",
+      "n_examples": 128,
+      "n_runs": 128,
+      "warm_latency_mean_ms": 270.9316656791998,
+      "warm_latency_p50_ms": 270.5734994960949,
+      "warm_latency_p95_ms": 275.51358124183025
+    },
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0,
+        "control": "correct",
+        "experiment": "E5",
+        "hops": 1,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 120.52310450235382,
+      "dataset": "synthetic_private_fact",
+      "exact_match": 1.0,
+      "exact_match_ci95": [
+        0.9708630437264916,
+        1.0
+      ],
+      "f1": 1.0,
+      "f1_bootstrap_ci95": [
+        1.0,
+        1.0
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 35,
+        "host_output_tokens": 6,
+        "ingest_prefill_tokens": 110,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 157,
+        "query_prefill_tokens": 47
+      },
+      "mean_evidence_hops_executed": 1,
+      "metric_role": "qa_accuracy",
+      "n_examples": 128,
+      "n_runs": 128,
+      "warm_latency_mean_ms": 271.01234140991437,
+      "warm_latency_p50_ms": 270.5252079758793,
+      "warm_latency_p95_ms": 275.9328103886219
+    },
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0,
+        "control": "correct",
+        "experiment": "E5",
+        "hops": 1,
+        "precision": "int4",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 120.52310450235382,
+      "dataset": "synthetic_private_fact",
+      "exact_match": 1.0,
+      "exact_match_ci95": [
+        0.9708630437264916,
+        1.0
+      ],
+      "f1": 1.0,
+      "f1_bootstrap_ci95": [
+        1.0,
+        1.0
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 35,
+        "host_output_tokens": 6,
+        "ingest_prefill_tokens": 110,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 157,
+        "query_prefill_tokens": 47
+      },
+      "mean_evidence_hops_executed": 1,
+      "metric_role": "qa_accuracy",
+      "n_examples": 128,
+      "n_runs": 128,
+      "warm_latency_mean_ms": 272.13706347083644,
+      "warm_latency_p50_ms": 272.08847901783884,
+      "warm_latency_p95_ms": 276.776889822213
+    },
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0,
+        "control": "correct",
+        "experiment": "E5",
+        "hops": 1,
+        "precision": "int8",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 120.52310450235382,
+      "dataset": "synthetic_private_fact",
+      "exact_match": 1.0,
+      "exact_match_ci95": [
+        0.9708630437264916,
+        1.0
+      ],
+      "f1": 1.0,
+      "f1_bootstrap_ci95": [
+        1.0,
+        1.0
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 35,
+        "host_output_tokens": 6,
+        "ingest_prefill_tokens": 110,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 157,
+        "query_prefill_tokens": 47
+      },
+      "mean_evidence_hops_executed": 1,
+      "metric_role": "qa_accuracy",
+      "n_examples": 128,
+      "n_runs": 128,
+      "warm_latency_mean_ms": 272.75723892716996,
+      "warm_latency_p50_ms": 272.45193751878105,
+      "warm_latency_p95_ms": 277.4063081044005
+    },
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0,
+        "control": "mismatched",
+        "experiment": "E3",
+        "hops": 1,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 120.52310450235382,
+      "dataset": "synthetic_private_fact",
+      "exact_match": 0.0,
+      "exact_match_ci95": [
+        0.0,
+        0.029136956273508416
+      ],
+      "f1": 0.0,
+      "f1_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 35,
+        "host_output_tokens": 1,
+        "ingest_prefill_tokens": 110,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 157,
+        "query_prefill_tokens": 47
+      },
+      "mean_evidence_hops_executed": 1,
+      "metric_role": "qa_accuracy",
+      "n_examples": 128,
+      "n_runs": 128,
+      "warm_latency_mean_ms": 99.34241500241114,
+      "warm_latency_p50_ms": 99.13518751272932,
+      "warm_latency_p95_ms": 101.21682093013078
+    },
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0,
+        "control": "no_context",
+        "experiment": "E3",
+        "hops": 1,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 120.52310450235382,
+      "dataset": "synthetic_private_fact",
+      "exact_match": 0.0,
+      "exact_match_ci95": [
+        0.0,
+        0.029136956273508416
+      ],
+      "f1": 0.0,
+      "f1_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 0,
+        "host_output_tokens": 1,
+        "ingest_prefill_tokens": 110,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 122,
+        "query_prefill_tokens": 47
+      },
+      "mean_evidence_hops_executed": 0,
+      "metric_role": "qa_accuracy",
+      "n_examples": 128,
+      "n_runs": 128,
+      "warm_latency_mean_ms": 97.93567804126724,
+      "warm_latency_p50_ms": 97.8859374881722,
+      "warm_latency_p95_ms": 99.7624356590677
+    },
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0,
+        "control": "random",
+        "experiment": "E3",
+        "hops": 1,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 120.52310450235382,
+      "dataset": "synthetic_private_fact",
+      "exact_match": 0.0,
+      "exact_match_ci95": [
+        0.0,
+        0.029136956273508416
+      ],
+      "f1": 0.0,
+      "f1_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 35,
+        "host_output_tokens": 15.8203125,
+        "ingest_prefill_tokens": 110,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 157,
+        "query_prefill_tokens": 47
+      },
+      "mean_evidence_hops_executed": 1,
+      "metric_role": "qa_accuracy",
+      "n_examples": 128,
+      "n_runs": 128,
+      "warm_latency_mean_ms": 587.6264276666916,
+      "warm_latency_p50_ms": 591.6101040202193,
+      "warm_latency_p95_ms": 600.6713392533129
+    },
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0,
+        "control": "zero",
+        "experiment": "E3",
+        "hops": 1,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 120.52310450235382,
+      "dataset": "synthetic_private_fact",
+      "exact_match": 0.0,
+      "exact_match_ci95": [
+        0.0,
+        0.029136956273508416
+      ],
+      "f1": 0.0,
+      "f1_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 35,
+        "host_output_tokens": 1,
+        "ingest_prefill_tokens": 110,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 157,
+        "query_prefill_tokens": 47
+      },
+      "mean_evidence_hops_executed": 1,
+      "metric_role": "qa_accuracy",
+      "n_examples": 128,
+      "n_runs": 128,
+      "warm_latency_mean_ms": 99.63719986490105,
+      "warm_latency_p50_ms": 99.63912449893542,
+      "warm_latency_p95_ms": 102.02810403134208
+    }
+  ],
+  "limitations": [
+    "One unadapted Qwen3 model; no trained role adapters, verifier, or latent retriever.",
+    "Fixed evidence schedule; nominal hops with no new evidence are skipped and disclosed.",
+    "E1/E2 compare a decoded evidence-note chain to causal KV appends, not trained role-equivalent agents.",
+    "Warm latency excludes cold document prefill and model loading; cold prefill is reported separately.",
+    "E3 is answer-level private-evidence sensitivity, not a reproduction of an external causal audit.",
+    "Small diagnostic subsets do not establish BEAM 1M/10M performance or the original thesis.",
+    "Percentile estimates from small samples and bootstrap intervals at empirical ceilings are unstable."
+  ],
+  "n_failed_runs": 0,
+  "n_successful_runs": 1024,
+  "paired_comparisons": [
+    {
+      "bridge_ratio": 0,
+      "comparison": "latent_correct_bf16_minus_latent_mismatched_bf16",
+      "dataset": "synthetic_private_fact",
+      "exact_match_difference": 1.0,
+      "experiment": "E3",
+      "hops": 1,
+      "n_paired_examples": 128,
+      "paired_bootstrap_ci95": [
+        1.0,
+        1.0
+      ],
+      "precision": "bf16",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0,
+      "comparison": "latent_correct_bf16_minus_latent_no_context_bf16",
+      "dataset": "synthetic_private_fact",
+      "exact_match_difference": 1.0,
+      "experiment": "E3",
+      "hops": 1,
+      "n_paired_examples": 128,
+      "paired_bootstrap_ci95": [
+        1.0,
+        1.0
+      ],
+      "precision": "bf16",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0,
+      "comparison": "latent_correct_bf16_minus_latent_random_bf16",
+      "dataset": "synthetic_private_fact",
+      "exact_match_difference": 1.0,
+      "experiment": "E3",
+      "hops": 1,
+      "n_paired_examples": 128,
+      "paired_bootstrap_ci95": [
+        1.0,
+        1.0
+      ],
+      "precision": "bf16",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0,
+      "comparison": "latent_correct_bf16_minus_latent_zero_bf16",
+      "dataset": "synthetic_private_fact",
+      "exact_match_difference": 1.0,
+      "experiment": "E3",
+      "hops": 1,
+      "n_paired_examples": 128,
+      "paired_bootstrap_ci95": [
+        1.0,
+        1.0
+      ],
+      "precision": "bf16",
+      "update_policy": "all"
+    }
+  ],
+  "planned_runs": 1024,
+  "protocol_version": "fixed-evidence-qwen3-v3-bm25-json",
+  "stop_reason": "complete"
+}

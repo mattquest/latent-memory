@@ -1,0 +1,234 @@
+{
+  "stages": [
+    {
+      "stage": "initial_diagnostics",
+      "conditions": 3360,
+      "condition_role": "answer_generation",
+      "guard": {
+        "status": "stopped",
+        "reason": "interrupted",
+        "returncode": -2,
+        "elapsed_seconds": 5056.363237375044,
+        "peak_rss_gib": 15.5833740234375,
+        "command": [
+          ".venv/bin/python",
+          "-u",
+          "scripts/run_matrix.py",
+          "--matrix",
+          "configs/overnight.json",
+          "--output-dir",
+          "runs/overnight",
+          "--max-seconds",
+          "17400"
+        ],
+        "limits": {
+          "max_seconds": 18000.0,
+          "max_rss_gib": 32,
+          "min_available_gib": 12,
+          "min_disk_gib": 40,
+          "poll_seconds": 10.0,
+          "allow_battery": false
+        }
+      },
+      "guard_sha256": "470b59091997dc9c9c91d6be9c283236db6846511ca00cf6b31106a6064e901f",
+      "sampled_min_available_gib": 61.561187744140625,
+      "sampled_min_free_disk_gib": 698.9070434570312,
+      "sampled_all_on_ac": true,
+      "resource_samples": 505,
+      "max_recorded_mlx_peak_bytes": 17663338704
+    },
+    {
+      "stage": "adaptive",
+      "conditions": 672,
+      "condition_role": "answer_generation",
+      "guard": {
+        "status": "complete",
+        "reason": null,
+        "returncode": 0,
+        "elapsed_seconds": 1345.552903917036,
+        "peak_rss_gib": 16.875778198242188,
+        "command": [
+          ".venv/bin/python",
+          "-u",
+          "scripts/run_adaptive.py",
+          "--model",
+          "models/Qwen3-8B",
+          "--revision",
+          "b968826d9c46dd6066d109eabc6255188de91218",
+          "--reranker",
+          "models/Qwen3-Reranker-0.6B",
+          "--dataset",
+          "data/adaptive_musique_test.jsonl",
+          "--output-dir",
+          "runs/adaptive-test",
+          "--limit",
+          "96",
+          "--rounds",
+          "5",
+          "--max-runtime-seconds",
+          "5300"
+        ],
+        "limits": {
+          "max_seconds": 5400.0,
+          "max_rss_gib": 32,
+          "min_available_gib": 12,
+          "min_disk_gib": 40,
+          "poll_seconds": 5.0,
+          "allow_battery": false
+        }
+      },
+      "guard_sha256": "2626d51d5518954ea856bf6f0228060337bc32f4fcb7b49172625beadf41f7ba",
+      "sampled_min_available_gib": 60.73223876953125,
+      "sampled_min_free_disk_gib": 698.1849784851074,
+      "sampled_all_on_ac": true,
+      "resource_samples": 267,
+      "max_recorded_mlx_peak_bytes": 19216640188
+    },
+    {
+      "stage": "context_pressure",
+      "conditions": 384,
+      "condition_role": "answer_generation",
+      "guard": {
+        "status": "complete",
+        "reason": null,
+        "returncode": 0,
+        "elapsed_seconds": 675.0847268750076,
+        "peak_rss_gib": 15.6043701171875,
+        "command": [
+          "/Users/matt/Documents/ChatGPT/LatentBase/.venv/bin/python",
+          "-u",
+          "scripts/run_context_pressure.py",
+          "--source-dir",
+          "runs/adaptive-test",
+          "--output-dir",
+          "runs/context-pressure",
+          "--max-runtime-seconds",
+          "3500"
+        ],
+        "limits": {
+          "max_seconds": 3600.0,
+          "max_rss_gib": 32,
+          "min_available_gib": 12,
+          "min_disk_gib": 40,
+          "poll_seconds": 5.0,
+          "allow_battery": false
+        }
+      },
+      "guard_sha256": "d68c96d99ae1e20468560ac4b1593b85d0f5e0d64a8f7def9290379557e52e3c",
+      "sampled_min_available_gib": 62.80126953125,
+      "sampled_min_free_disk_gib": 698.7066421508789,
+      "sampled_all_on_ac": true,
+      "resource_samples": 134,
+      "max_recorded_mlx_peak_bytes": 17771161784
+    },
+    {
+      "stage": "focused_ablation",
+      "conditions": 660,
+      "condition_role": "answer_generation",
+      "guard": {
+        "status": "complete",
+        "reason": null,
+        "returncode": 0,
+        "elapsed_seconds": 1556.9149924999801,
+        "peak_rss_gib": 15.57098388671875,
+        "command": [
+          "/Users/matt/Documents/ChatGPT/LatentBase/.venv/bin/python",
+          "-u",
+          "scripts/run_matrix.py",
+          "--matrix",
+          "configs/focused-ablation.json",
+          "--output-dir",
+          "runs/focused-ablation",
+          "--max-seconds",
+          "3500"
+        ],
+        "limits": {
+          "max_seconds": 3600.0,
+          "max_rss_gib": 32,
+          "min_available_gib": 12,
+          "min_disk_gib": 40,
+          "poll_seconds": 5.0,
+          "allow_battery": false
+        }
+      },
+      "guard_sha256": "7fc7a8715dee953ad7d7cec57108d9e80bda8d3543f1132fd1906dab51c4b5c3",
+      "sampled_min_available_gib": 61.2879638671875,
+      "sampled_min_free_disk_gib": 698.7128715515137,
+      "sampled_all_on_ac": true,
+      "resource_samples": 309,
+      "max_recorded_mlx_peak_bytes": 19738503256
+    },
+    {
+      "stage": "beam_judge",
+      "conditions": 288,
+      "condition_role": "local_rubric_judgments",
+      "guard": {
+        "status": "complete",
+        "reason": null,
+        "returncode": 0,
+        "elapsed_seconds": 529.1360285829869,
+        "peak_rss_gib": 15.575042724609375,
+        "command": [
+          "/Users/matt/Documents/ChatGPT/LatentBase/.venv/bin/python",
+          "-u",
+          "scripts/judge_beam.py",
+          "--model",
+          "models/Qwen3-8B",
+          "--revision",
+          "b968826d9c46dd6066d109eabc6255188de91218",
+          "--dataset",
+          "data/beam_1m_retrieved.jsonl",
+          "--results",
+          "runs/overnight/beam_equal_updates/results.jsonl",
+          "--output-dir",
+          "runs/beam-judge",
+          "--max-tokens",
+          "192",
+          "--max-runtime-seconds",
+          "3500"
+        ],
+        "limits": {
+          "max_seconds": 3600.0,
+          "max_rss_gib": 32,
+          "min_available_gib": 12,
+          "min_disk_gib": 40,
+          "poll_seconds": 5.0,
+          "allow_battery": false
+        }
+      },
+      "guard_sha256": "857c2b81e136e93397f8c7277f260e083df8b08520434c35072503d90d94198e",
+      "sampled_min_available_gib": 63.63362121582031,
+      "sampled_min_free_disk_gib": 698.68359375,
+      "sampled_all_on_ac": true,
+      "resource_samples": 105,
+      "max_recorded_mlx_peak_bytes": null
+    }
+  ],
+  "generation_conditions": 5076,
+  "separate_rubric_judgments": 288,
+  "original_declared_conditions": 8120,
+  "original_retained_conditions": 3360,
+  "original_canceled_remainder": 4760,
+  "tests": {
+    "command": ".venv/bin/python -m pytest -q",
+    "passed": 220,
+    "exit_code": 0,
+    "elapsed_seconds": 2.09,
+    "git_head": "9604e8494de8380d3202bf7411a146f535cb3acd",
+    "receipt_origin": "Observed completed terminal result in this session; reporting-only artifacts added afterward."
+  },
+  "notes": [
+    "Stage wall times include guarded startup and shutdown; they do not measure only model kernels.",
+    "Initial guard was deliberately interrupted after five completed jobs; the newly started sixth job recorded zero completed conditions.",
+    "GPU allocation and sampled process RSS are distinct measures; brief peaks between polling samples may be missed.",
+    "Preparation, downloads, development checks and report work are outside the five retained-stage wall times.",
+    "After generation ended, commit 9604e8494de8380d3202bf7411a146f535cb3acd added strict amendment-aware failure diagnostics and latest-attempt failure handling; generation sources and scored outputs were not changed."
+  ],
+  "code_pull_request": {
+    "url": "https://github.com/mattquest/latent-memory/pull/1",
+    "state": "MERGED",
+    "merged_at": "2026-09-11T09:32:15Z",
+    "merge_commit": "22da441b82a8b90abaa9c5df0a5710811a068571",
+    "tested_head": "9604e8494de8380d3202bf7411a146f535cb3acd"
+  }
+}

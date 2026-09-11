@@ -1,0 +1,3302 @@
+{
+  "archive_scope": "validation_development_and_excluded_test_history",
+  "archive_status": "complete_for_discovered_sources",
+  "archiver_source_sha256": "3acff8ee16b87a0c62c1fda0f9fbe6b3bed5474e459e7e2ec90584931c5c42fe",
+  "artifact_count": 88,
+  "artifacts": [
+    {
+      "artifact": "artifacts/native-validation/guard-status.json.gz",
+      "artifact_sha256": "2a92c1fd5cab02046338a4ff7af0d8aa7776e4efc2fda943ee88bb7d70edd223",
+      "artifact_size_bytes": 259,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "failed",
+      "role": "numerical_original_failed_threshold",
+      "source": "native-validation/guard-status.json",
+      "source_sha256": "e4123269eb9ce6228951243d292ffbd56e532c6febefa824c0126f1af57baa42",
+      "source_size_bytes": 405
+    },
+    {
+      "artifact": "artifacts/native-validation/process.log.gz",
+      "artifact_sha256": "56aadbdc0ef3f16b5a2040b3dca80c6e5a672d94dc7d4df4772dba21a0de4964",
+      "artifact_size_bytes": 883,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "failed",
+      "role": "numerical_original_failed_threshold",
+      "source": "native-validation/process.log",
+      "source_sha256": "1965443cbe63cd2bf2361a14fc34b6862fd3ebf6d8566524cbd9d558d2843443",
+      "source_size_bytes": 2037
+    },
+    {
+      "artifact": "artifacts/native-validation/resources.jsonl.gz",
+      "artifact_sha256": "df86837364b91234adc091feccb0bbf0f3702bd347f84a8b85deabd7b1e9db7f",
+      "artifact_size_bytes": 304,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "failed",
+      "role": "numerical_original_failed_threshold",
+      "source": "native-validation/resources.jsonl",
+      "source_sha256": "214c87db88ac0796789da6d67bae9f8a5ac3861e9fae43a4b3ac6c022d7c5bbe",
+      "source_size_bytes": 760
+    },
+    {
+      "artifact": "artifacts/native-validation-relative/guard-status.json.gz",
+      "artifact_sha256": "c9236f8d6ad86271d3e664fabf1a0623c2c3627b1d1e0ae2c1a99324072c3a41",
+      "artifact_size_bytes": 259,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "numerical_revised_relative_threshold",
+      "source": "native-validation-relative/guard-status.json",
+      "source_sha256": "ca56dcb2e44964ab6a89c1e89d87e4b06d4f666a6afb0992b38f5487705da711",
+      "source_size_bytes": 408
+    },
+    {
+      "artifact": "artifacts/native-validation-relative/process.log.gz",
+      "artifact_sha256": "2875c3156a85442c906d6d8e01ce018aafb41b065a529a66a85aaf1234e5e7a8",
+      "artifact_size_bytes": 840,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "numerical_revised_relative_threshold",
+      "source": "native-validation-relative/process.log",
+      "source_sha256": "1605dbfdd500d681988b35e2552e32788b39c71d8be9492bddc08eedad12caa3",
+      "source_size_bytes": 1916
+    },
+    {
+      "artifact": "artifacts/native-validation-relative/resources.jsonl.gz",
+      "artifact_sha256": "7e051dd57fbcc401fe2d3139ac9ef1f3b4e2f445a0ff1792a22abb8a6eb6f472",
+      "artifact_size_bytes": 323,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "numerical_revised_relative_threshold",
+      "source": "native-validation-relative/resources.jsonl",
+      "source_sha256": "94ed7356c119516c79cf0d19cf947b4ae9eb0fd503273d1066608a3f124aec9a",
+      "source_size_bytes": 778
+    },
+    {
+      "artifact": "artifacts/official-preflight/guard-status.json.gz",
+      "artifact_sha256": "87e432c784eeebe6175c5484e712350c50a1a4b0d39487a7422e5d3d25798169",
+      "artifact_size_bytes": 257,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "official_checkpoint_smoke_check",
+      "source": "official-preflight/guard-status.json",
+      "source_sha256": "2334aae24d0db52cd6e1bb94096baea5eebaae018bfc11c45ebeae7c487cdd3f",
+      "source_size_bytes": 407
+    },
+    {
+      "artifact": "artifacts/official-preflight/process.log.gz",
+      "artifact_sha256": "d35d9690a4504ab01137587bd1a350fb23686245eae4c83a5e896ae87ab15cbf",
+      "artifact_size_bytes": 358,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "official_checkpoint_smoke_check",
+      "source": "official-preflight/process.log",
+      "source_sha256": "1a68315eb1796558e9aef4e992e6a29e68fa45e46542ffa0d3e546f793a85231",
+      "source_size_bytes": 679
+    },
+    {
+      "artifact": "artifacts/official-preflight/resources.jsonl.gz",
+      "artifact_sha256": "303103de936db25840a9a324720bfd6e5cede255db9d6b2729957681de2b5a84",
+      "artifact_size_bytes": 319,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "official_checkpoint_smoke_check",
+      "source": "official-preflight/resources.jsonl",
+      "source_sha256": "e0a627c10b94c1606bad92f92e63d458c0fe509539b0822247c2edf6719d7875",
+      "source_size_bytes": 774
+    },
+    {
+      "artifact": "artifacts/pilot-private/checkpoint.json.gz",
+      "artifact_sha256": "b688a5db6b8f9ff72d9b4e22c024c56beb11e90ad3b74338a11d32fcf5216d70",
+      "artifact_size_bytes": 118,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "private_evidence_development_pilot",
+      "source": "pilot-private/checkpoint.json",
+      "source_sha256": "efda0db2287af1a660d66aabbe6f99c4337557e655bc9d499ae394b49914fa92",
+      "source_size_bytes": 120
+    },
+    {
+      "artifact": "artifacts/pilot-private/guard-status.json.gz",
+      "artifact_sha256": "83b5e4e0ab2e4753e7cf0e2ac3b92cc3ff47cb7f86f458149781b53544ac7c3e",
+      "artifact_size_bytes": 455,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "private_evidence_development_pilot",
+      "source": "pilot-private/guard-status.json",
+      "source_sha256": "95cea4d51c24d565fca3936d7446c31e4599fe8000ac976cb1b8c7bf3ed9ae4f",
+      "source_size_bytes": 887
+    },
+    {
+      "artifact": "artifacts/pilot-private/manifest.json.gz",
+      "artifact_sha256": "818525e76b50ff8e015d48ab603db8c5f4e93fa4785e28bb091575c7a02ce641",
+      "artifact_size_bytes": 1632,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "private_evidence_development_pilot",
+      "source": "pilot-private/manifest.json",
+      "source_sha256": "a846342589e7c612bc4e31c8de1df45e69fa7a617382bd9659fff684b04a0efc",
+      "source_size_bytes": 5316
+    },
+    {
+      "artifact": "artifacts/pilot-private/process.log.gz",
+      "artifact_sha256": "04402833183b6ce50ecf5e42d3cfa920b91330d8c23a67eb404766e4c412bce2",
+      "artifact_size_bytes": 1315,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "private_evidence_development_pilot",
+      "source": "pilot-private/process.log",
+      "source_sha256": "635211577218e82e899b0ca46f630cad744a42e54a45938ee96aecee49eb678f",
+      "source_size_bytes": 28376
+    },
+    {
+      "artifact": "artifacts/pilot-private/resources.jsonl.gz",
+      "artifact_sha256": "a8743bba4833bb32ddb692dc91ad4ba430780057d48d90af8a7230e505f656d6",
+      "artifact_size_bytes": 915,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "private_evidence_development_pilot",
+      "source": "pilot-private/resources.jsonl",
+      "source_sha256": "e56d5736cdae53ac8d43b7135b746ca2dfaeaf2aa4768ce7b246f421a9ace7d6",
+      "source_size_bytes": 5790
+    },
+    {
+      "artifact": "artifacts/pilot-private/results.jsonl.gz",
+      "artifact_sha256": "143d287f90fd9aac26698186e96fd0d6158606272a6e2c11d10617160f654e99",
+      "artifact_size_bytes": 7645,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "private_evidence_development_pilot",
+      "source": "pilot-private/results.jsonl",
+      "source_sha256": "422f262bfc0d6721510742c5af8ac0fc2d609e934d0920fda4749147e74e441e",
+      "source_size_bytes": 177752
+    },
+    {
+      "artifact": "artifacts/pilot-private/summary.json.gz",
+      "artifact_sha256": "b1ad3df70813f51c792277f356c628520a8d004cb7210c2199b271894d649dc9",
+      "artifact_size_bytes": 1764,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "private_evidence_development_pilot",
+      "source": "pilot-private/summary.json",
+      "source_sha256": "80a53062bdf9535bb49f9f93931151d5c89be1b268ae0ace11ce9dfaa4e2e7df",
+      "source_size_bytes": 15563
+    },
+    {
+      "artifact": "artifacts/development/guard-status.json.gz",
+      "artifact_sha256": "149c0ae0a34cbabe1460e569386fd0c5dce7eeb6c3ef83adf5c49610d9a25e0e",
+      "artifact_size_bytes": 303,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "stopped",
+      "role": "operator_stopped_earlier_development",
+      "source": "development/guard-status.json",
+      "source_sha256": "a49458da17069017d4ace17e09c64c788696d5e955f424f4ab78092950896a1f",
+      "source_size_bytes": 530
+    },
+    {
+      "artifact": "artifacts/development/multihop/checkpoint.json.gz",
+      "artifact_sha256": "ed7208bac13a69da37a753806533d1b9e7229513504241849c4fef9436e5430a",
+      "artifact_size_bytes": 122,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "stopped",
+      "role": "operator_stopped_earlier_development",
+      "source": "development/multihop/checkpoint.json",
+      "source_sha256": "b7874fb1739dc49ec0cca00ac33ea147144d03a98721b22715736b365c277e11",
+      "source_size_bytes": 122
+    },
+    {
+      "artifact": "artifacts/development/multihop/manifest.json.gz",
+      "artifact_sha256": "fb55e6d2010ee752182360efa5954dd8a261efd8e069fda04b0ce6d14211f507",
+      "artifact_size_bytes": 1699,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "stopped",
+      "role": "operator_stopped_earlier_development",
+      "source": "development/multihop/manifest.json",
+      "source_sha256": "a2094568c7f88c0c5bf8a32a1eee7bfa22f47c2bf97fa9bea5bdf288bf1999e6",
+      "source_size_bytes": 5586
+    },
+    {
+      "artifact": "artifacts/development/multihop/results.jsonl.gz",
+      "artifact_sha256": "d7ef191fbadb9492ee818921c48fbaabb5ad87e559f43af71b74a4c0e46bfb29",
+      "artifact_size_bytes": 11334,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "stopped",
+      "role": "operator_stopped_earlier_development",
+      "source": "development/multihop/results.jsonl",
+      "source_sha256": "94635d90cfda96a46bbea1425bac714d5b29a7f0b74f0d595eef1c9385df2ced",
+      "source_size_bytes": 263977
+    },
+    {
+      "artifact": "artifacts/development/multihop/summary.json.gz",
+      "artifact_sha256": "45ef83d4ea93d36c87321e0a4e35013a0a9d068484ac71cb7fea0cd9d9f69080",
+      "artifact_size_bytes": 3269,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "stopped",
+      "role": "operator_stopped_earlier_development",
+      "source": "development/multihop/summary.json",
+      "source_sha256": "25092b4e570344385859f63b16359ff3aa4dddcbb9e643b45d26696d17e02215",
+      "source_size_bytes": 50699
+    },
+    {
+      "artifact": "artifacts/development/process.log.gz",
+      "artifact_sha256": "087633f5cf38f680af105686f78b17bda99537317556964d9489c4c86ce4de3a",
+      "artifact_size_bytes": 1741,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "stopped",
+      "role": "operator_stopped_earlier_development",
+      "source": "development/process.log",
+      "source_sha256": "081bf11beaee4a0f507c9de963b2cc34912f90f0236056e8063f08c095393f28",
+      "source_size_bytes": 26342
+    },
+    {
+      "artifact": "artifacts/development/resources.jsonl.gz",
+      "artifact_sha256": "b3ee71e1b4f582e21de81d1bbe6a2c82c99c2e7d25ee1ca2713cee463658d706",
+      "artifact_size_bytes": 1933,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "stopped",
+      "role": "operator_stopped_earlier_development",
+      "source": "development/resources.jsonl",
+      "source_sha256": "a0b2679a2222b85530305f298976c5081600adc1e1e202b4b9df306cb2e8d2b3",
+      "source_size_bytes": 15072
+    },
+    {
+      "artifact": "artifacts/development-v2/beam/checkpoint.json.gz",
+      "artifact_sha256": "0e65afe490edfae8e0f09512c4263115b1f3f7aa2a5e6835fd3640ce249c013d",
+      "artifact_size_bytes": 116,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/beam/checkpoint.json",
+      "source_sha256": "d9e8d91dc537462e6e0dfdb994914504a34343083c700fbe5030e68740783818",
+      "source_size_bytes": 119
+    },
+    {
+      "artifact": "artifacts/development-v2/beam/manifest.json.gz",
+      "artifact_sha256": "87ce140cd9b1a2ae2659b3f68670d4f60d745ea287a20a26f78f51bd04bea8a2",
+      "artifact_size_bytes": 1383,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/beam/manifest.json",
+      "source_sha256": "627ed2bd6ace651bdf4966aedb113f8722f067c741fe277b91d7efd3f25c68b6",
+      "source_size_bytes": 4050
+    },
+    {
+      "artifact": "artifacts/development-v2/beam/results.jsonl.gz",
+      "artifact_sha256": "38671275c2ee53221fec9b67876313fa44f2d8e4ef93ffd657c5bc91beec7c19",
+      "artifact_size_bytes": 3912,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/beam/results.jsonl",
+      "source_sha256": "e479a65cc5b801157e0609a5e8195becb8024eb93ab302412521d3bb34ba6596",
+      "source_size_bytes": 38526
+    },
+    {
+      "artifact": "artifacts/development-v2/beam/summary.json.gz",
+      "artifact_sha256": "39a1279b1ae6d3481bdb49f03483da9cb529dde729a0e85506bf5d550f788d84",
+      "artifact_size_bytes": 1432,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/beam/summary.json",
+      "source_sha256": "685d59db99cd6dc96942c7acbb682d92c1ef41a04eda75343e98e912dfc350df",
+      "source_size_bytes": 7908
+    },
+    {
+      "artifact": "artifacts/development-v2/guard-status.json.gz",
+      "artifact_sha256": "2bb2292802eb330e7e09a6a2e8ee67b899554cf1e22cad791c0c696c404c7d53",
+      "artifact_size_bytes": 303,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/guard-status.json",
+      "source_sha256": "33927edc4d80777767154b0a38813c643cf47381b1337bf9ed42f264493b03c2",
+      "source_size_bytes": 526
+    },
+    {
+      "artifact": "artifacts/development-v2/hotpot/checkpoint.json.gz",
+      "artifact_sha256": "e059ec1f43bbbcb5999dc923e706482e69c43c98c20c8a20852491fd8321aa0c",
+      "artifact_size_bytes": 117,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/hotpot/checkpoint.json",
+      "source_sha256": "30dfec00b7b3715bf78c01a0cb9c670f22b6479c87dcb8072df9fbfdce384e25",
+      "source_size_bytes": 121
+    },
+    {
+      "artifact": "artifacts/development-v2/hotpot/manifest.json.gz",
+      "artifact_sha256": "8a550640747b7c78a7d7274d80d5c95f90b9aabc169303f11102589def6a7115",
+      "artifact_size_bytes": 1396,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/hotpot/manifest.json",
+      "source_sha256": "8b8a5765396857b614652884883897eb65207476eeadeacc04ecfb6cdc7b37a0",
+      "source_size_bytes": 4078
+    },
+    {
+      "artifact": "artifacts/development-v2/hotpot/results.jsonl.gz",
+      "artifact_sha256": "eb8d38951ae15daeafb0a90a0900f66f8fec839ad06dadbd453c9268e955bfa3",
+      "artifact_size_bytes": 4414,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/hotpot/results.jsonl",
+      "source_sha256": "129273c4019aced7782f90dd48722ca4c867f557c38d93c97e8e13d4c76f4a08",
+      "source_size_bytes": 70945
+    },
+    {
+      "artifact": "artifacts/development-v2/hotpot/summary.json.gz",
+      "artifact_sha256": "518f3bbb66fa06f4807203285d35a5c235bb63f7a08d0fcc7a181834bc10660e",
+      "artifact_size_bytes": 1698,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/hotpot/summary.json",
+      "source_sha256": "067d221cd2efb7c76648f098a55f6a919780fee8f4f9920c6e381cd6a9355225",
+      "source_size_bytes": 15370
+    },
+    {
+      "artifact": "artifacts/development-v2/matrix-status.json.gz",
+      "artifact_sha256": "fa2856c6fd307d7c943184b0ed6b354052fb7a9fe71dea83f5c21635c7b94fa3",
+      "artifact_size_bytes": 287,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/matrix-status.json",
+      "source_sha256": "528c5786d831e1ca457a5b16a905865d892af1b94b1146d368fecb613846bbf0",
+      "source_size_bytes": 852
+    },
+    {
+      "artifact": "artifacts/development-v2/multihop/checkpoint.json.gz",
+      "artifact_sha256": "e27ad2411e42dc44b3bb0d660475d6aae2b3ba44050aec50f3fae1435a2764c2",
+      "artifact_size_bytes": 118,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/multihop/checkpoint.json",
+      "source_sha256": "0da97573b27a1c991015b10e6d259cef59e839e38a91dba46216c6f451253a61",
+      "source_size_bytes": 120
+    },
+    {
+      "artifact": "artifacts/development-v2/multihop/manifest.json.gz",
+      "artifact_sha256": "bc1dacdc392315e0055666478a2d2a4f208fc1f0c43657f15cc0a37ea3f35edd",
+      "artifact_size_bytes": 1761,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/multihop/manifest.json",
+      "source_sha256": "a15dab60492ca6990d4c0fa2b64ad7f0208010f8f81745b3a039dcd18a209f07",
+      "source_size_bytes": 5843
+    },
+    {
+      "artifact": "artifacts/development-v2/multihop/results.jsonl.gz",
+      "artifact_sha256": "ed7fdc8f4d72f0e8d7d10b4e133460b7ba192bbce8e535baa874bb2fcd2ebffb",
+      "artifact_size_bytes": 5562,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/multihop/results.jsonl",
+      "source_sha256": "afc38545ce3f0f7a806267f2b7218ab1ae45d9f8f79dc52e983f160085d92422",
+      "source_size_bytes": 108437
+    },
+    {
+      "artifact": "artifacts/development-v2/multihop/summary.json.gz",
+      "artifact_sha256": "d8c2dee60014de07ee983ba5d0bcb38d9e57e603fe2061cb9c926580127eb71b",
+      "artifact_size_bytes": 2176,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/multihop/summary.json",
+      "source_sha256": "77bcdcbd2aa9840e2544aee830d965e25d0d1af976e9890d891a741536d484ed",
+      "source_size_bytes": 28878
+    },
+    {
+      "artifact": "artifacts/development-v2/musique/checkpoint.json.gz",
+      "artifact_sha256": "1ced90c7d59ce249b75aa41b9b435f1031f709e7454eeb96b31658881aedcc43",
+      "artifact_size_bytes": 120,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/musique/checkpoint.json",
+      "source_sha256": "8cab122c7baba1fed0d4bdaf6e228690d89acf875a1e0531d727b1596239f987",
+      "source_size_bytes": 121
+    },
+    {
+      "artifact": "artifacts/development-v2/musique/manifest.json.gz",
+      "artifact_sha256": "ddbe91fb72e7a0ff1b8e73a2c5d2561071a23ddd66a593f8cce5b5c158f837ce",
+      "artifact_size_bytes": 1396,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/musique/manifest.json",
+      "source_sha256": "124cebeb3626622bf9c294973b99be87ea9b0b43a49aa5bef8d671649fee51b9",
+      "source_size_bytes": 4077
+    },
+    {
+      "artifact": "artifacts/development-v2/musique/results.jsonl.gz",
+      "artifact_sha256": "ac7e49292ef36b75d82904e0a2f301443c43e96e65154c1303f4d4539e2687fe",
+      "artifact_size_bytes": 4108,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/musique/results.jsonl",
+      "source_sha256": "b290503f887622e610c77f49f9ce2c9463016bdfbc04c525eeb3c63e35cc13e7",
+      "source_size_bytes": 63481
+    },
+    {
+      "artifact": "artifacts/development-v2/musique/summary.json.gz",
+      "artifact_sha256": "d052248cf37e8673e044cfcb69a50f92d06acd1d7fd0b6e5a1b696e7b5eaf010",
+      "artifact_size_bytes": 1642,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/musique/summary.json",
+      "source_sha256": "1625314ffabd6dc4232910160a0aa373f8af5f73707feca67dfcdf03513b1619",
+      "source_size_bytes": 15212
+    },
+    {
+      "artifact": "artifacts/development-v2/process.log.gz",
+      "artifact_sha256": "88e9ececb9d17e05a8d0cc4ac9994412fa1e18c8755f53bb88d6f3117961936c",
+      "artifact_size_bytes": 2391,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/process.log",
+      "source_sha256": "b46d6d2362c0b283b90573f3f98a2d3cefff3d5b7c17d83edfd9f012b8e35d5a",
+      "source_size_bytes": 37392
+    },
+    {
+      "artifact": "artifacts/development-v2/resources.jsonl.gz",
+      "artifact_sha256": "794f1b59fa05dc01b6a6cd7f6b4ebd99baa9f95bec4bd8a093cacaacf37654a8",
+      "artifact_size_bytes": 1684,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/resources.jsonl",
+      "source_sha256": "dc10aced3ad6c041eed3750673170d5abbc40d3410733f3a548d3d0b2c22f50b",
+      "source_size_bytes": 12741
+    },
+    {
+      "artifact": "artifacts/development-v2/updates/checkpoint.json.gz",
+      "artifact_sha256": "aad86e6d6e3dbb70caf3514a41b22c0556fc8941564369d98c9435a1d6d813cd",
+      "artifact_size_bytes": 119,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/updates/checkpoint.json",
+      "source_sha256": "4b037453ac3560a91637d57f244863aa1d353f006cd0fa7b374dcdcb29d314b1",
+      "source_size_bytes": 121
+    },
+    {
+      "artifact": "artifacts/development-v2/updates/manifest.json.gz",
+      "artifact_sha256": "b70ab4347a7d6b46d4a4681431cc53328babac4bc1de4fa61611bf54e2819200",
+      "artifact_size_bytes": 1386,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/updates/manifest.json",
+      "source_sha256": "685ad5d6ad714dcb2f6056d4440c3a982c403a313721e821e6a23edc3a61d3e8",
+      "source_size_bytes": 4051
+    },
+    {
+      "artifact": "artifacts/development-v2/updates/results.jsonl.gz",
+      "artifact_sha256": "022e1b7068367b8ca69ee5d5ea0ac4ea2a9bf1a17a49a14d0517d4e374916ccb",
+      "artifact_size_bytes": 4613,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/updates/results.jsonl",
+      "source_sha256": "22db062661c038884ce626c6a1dbe594a45f6fa8ff9ec5d132a739e3a913c974",
+      "source_size_bytes": 77548
+    },
+    {
+      "artifact": "artifacts/development-v2/updates/summary.json.gz",
+      "artifact_sha256": "e1de040d6f39748e3d0560824bf57a003c9ba154d2334584b479b675b96ebdaa",
+      "artifact_size_bytes": 1733,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2/updates/summary.json",
+      "source_sha256": "f53da55249b538163aeb4d4735d42f15a50608cd67b349694dd58c290440ea7f",
+      "source_size_bytes": 14511
+    },
+    {
+      "artifact": "artifacts/judge-pilot/guard-status.json.gz",
+      "artifact_sha256": "fa8ed0032ae42c0d4e1007bd6f393a6c61eaeea7b0be0da058eec966494c2cb8",
+      "artifact_size_bytes": 390,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "same_model_rubric_judge_pilot",
+      "source": "judge-pilot/guard-status.json",
+      "source_sha256": "091e60d5b16e95a0484d0cc192689662341acdb11d9d3c9935f6ee43f9add172",
+      "source_size_bytes": 693
+    },
+    {
+      "artifact": "artifacts/judge-pilot/judgments.jsonl.gz",
+      "artifact_sha256": "4bf7a0d36ff3e05c8170c1aededb2bd0daa052a9ab3d27803f686aee92b3d453",
+      "artifact_size_bytes": 2381,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "same_model_rubric_judge_pilot",
+      "source": "judge-pilot/judgments.jsonl",
+      "source_sha256": "c443057937374445a0dc8199331c5e0156fde24be43e302378b43c7e0e1987f4",
+      "source_size_bytes": 20083
+    },
+    {
+      "artifact": "artifacts/judge-pilot/manifest.json.gz",
+      "artifact_sha256": "8c74eb9cef2e89c58e4524155d7989ae360be2f5054502c99fffbc52dc04f9e2",
+      "artifact_size_bytes": 1000,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "same_model_rubric_judge_pilot",
+      "source": "judge-pilot/manifest.json",
+      "source_sha256": "d7773256825ba2ed6830efe3cd56964d9429f65ad9a0e8fe6ff1dd7aee9e92c0",
+      "source_size_bytes": 1887
+    },
+    {
+      "artifact": "artifacts/judge-pilot/process.log.gz",
+      "artifact_sha256": "36a5a5779781fda501830d652502173e2f2074a2e76160b1a0cc17ebafb86fad",
+      "artifact_size_bytes": 816,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "same_model_rubric_judge_pilot",
+      "source": "judge-pilot/process.log",
+      "source_sha256": "5a8bea1e98b8a48e6d0f4087c22e7800f2197f947b328cf20be57bf09d9c5a11",
+      "source_size_bytes": 4059
+    },
+    {
+      "artifact": "artifacts/judge-pilot/resources.jsonl.gz",
+      "artifact_sha256": "53e25415120f1fa38c974785ee04a75517892e680f4eb3ddc6c03540b9c13e97",
+      "artifact_size_bytes": 591,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "same_model_rubric_judge_pilot",
+      "source": "judge-pilot/resources.jsonl",
+      "source_sha256": "2086b6d183a4ab7ed802ee5dbe1d00eab50b360ac547699764e13f323d4ff3a6",
+      "source_size_bytes": 3071
+    },
+    {
+      "artifact": "artifacts/judge-pilot/summary.json.gz",
+      "artifact_sha256": "e6cccf1c513b17ed8eaf2c04df1d93c622f06f7e2348d8ee319861ae6d55a50d",
+      "artifact_size_bytes": 743,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "same_model_rubric_judge_pilot",
+      "source": "judge-pilot/summary.json",
+      "source_sha256": "4b2412047230dfb2b15eec0bf57751004c852aafb99bb527c7b9022aecc7e208",
+      "source_size_bytes": 3291
+    },
+    {
+      "artifact": "artifacts/adaptive-preflight/guard-status.json.gz",
+      "artifact_sha256": "d9204d0663f1bc4effe4e45d0b0e1771c94cb54d509a2c689d3a3d8754c6526a",
+      "artifact_size_bytes": 313,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "adaptive_real_weight_mechanics_preflight",
+      "source": "adaptive-preflight/guard-status.json",
+      "source_sha256": "a76b1ece6449dbe15ad96fa0b4ddce2a78ebb465b43378bb378a08d2b1f0015e",
+      "source_size_bytes": 497
+    },
+    {
+      "artifact": "artifacts/adaptive-preflight/logits.npz.gz",
+      "artifact_sha256": "622ce400ed41887d1ef9a42f29caec6ed283913e771fe6850635bcb2f99e29ab",
+      "artifact_size_bytes": 1670494,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "adaptive_real_weight_mechanics_preflight",
+      "source": "adaptive-preflight/logits.npz",
+      "source_sha256": "e70cd863c2da64c46cfa0fae0c0b65ced018a2b0f3f087aa13d5d0240b7e3bf3",
+      "source_size_bytes": 1678276
+    },
+    {
+      "artifact": "artifacts/adaptive-preflight/preflight.json.gz",
+      "artifact_sha256": "5f4c4f03f3aa6c94e12c6c91ba7303d4a54f7d7ab07f4b9f4eb96b91501755cc",
+      "artifact_size_bytes": 5631,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "adaptive_real_weight_mechanics_preflight",
+      "source": "adaptive-preflight/preflight.json",
+      "source_sha256": "055acbe4282ea0c6014150bf441d271ec9f6e8601d5ab24cc6e8dd98c9b3074b",
+      "source_size_bytes": 33699
+    },
+    {
+      "artifact": "artifacts/adaptive-preflight/process.log.gz",
+      "artifact_sha256": "2adb2f7111fbad3f2f4f176f5765e456b8bdd6e6d0f0db57ef38d6a2bebb6ae9",
+      "artifact_size_bytes": 80,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "adaptive_real_weight_mechanics_preflight",
+      "source": "adaptive-preflight/process.log",
+      "source_sha256": "6e0a55dc3749594823ab700d2d57a925002da1a14619e72b866e50b1b8c1c0f2",
+      "source_size_bytes": 62
+    },
+    {
+      "artifact": "artifacts/adaptive-preflight/resources.jsonl.gz",
+      "artifact_sha256": "1d7b26c7eb0661daeeec1abc583860f7353130689a64bee71c528aa42049b777",
+      "artifact_size_bytes": 257,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "adaptive_real_weight_mechanics_preflight",
+      "source": "adaptive-preflight/resources.jsonl",
+      "source_sha256": "73cd2e40173b2563888f708c8bbf781b7490565f90b7f55a302d1292f0bc935c",
+      "source_size_bytes": 388
+    },
+    {
+      "artifact": "artifacts/adaptive-dev/checkpoint.json.gz",
+      "artifact_sha256": "7a2372be7d643685bd482b64b4b98c99a8227f84d0853ac2f20741f2f28b7cb1",
+      "artifact_size_bytes": 118,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "adaptive_retrieval_development_run",
+      "source": "adaptive-dev/checkpoint.json",
+      "source_sha256": "b83409416319ce29615b52bc589cf8efa853c58c65d96cfcd1a5f1af27a89783",
+      "source_size_bytes": 120
+    },
+    {
+      "artifact": "artifacts/adaptive-dev/guard-status.json.gz",
+      "artifact_sha256": "2e559cbbc60daf0981b88b0f1d2289d0b4a5caca5f26ecbb0f4619e9bfdc4ba2",
+      "artifact_size_bytes": 434,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "adaptive_retrieval_development_run",
+      "source": "adaptive-dev/guard-status.json",
+      "source_sha256": "d02b2c3cdb7d4f3c41970f82381d51fb7c36a8861ceda9b309b7ae9c86378b44",
+      "source_size_bytes": 785
+    },
+    {
+      "artifact": "artifacts/adaptive-dev/manifest.json.gz",
+      "artifact_sha256": "997a205820f7a6cf171f3bf22d9f55334d0acfc66f4a87740370d4436aa77b62",
+      "artifact_size_bytes": 2925,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "adaptive_retrieval_development_run",
+      "source": "adaptive-dev/manifest.json",
+      "source_sha256": "c3dea21b315dd9e896188d5451f5177e3e38c6a3670111ce73274cfd832a1234",
+      "source_size_bytes": 8013
+    },
+    {
+      "artifact": "artifacts/adaptive-dev/process.log.gz",
+      "artifact_sha256": "00f55a5084bbac794af4d57b685057d382d20d9a4a6018d17666663f76063077",
+      "artifact_size_bytes": 1001,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "adaptive_retrieval_development_run",
+      "source": "adaptive-dev/process.log",
+      "source_sha256": "8ffc6f5d3c79fda04ae8a7b8e14396cb16eae3185c9387d1aed2b4c47004bbb3",
+      "source_size_bytes": 10073
+    },
+    {
+      "artifact": "artifacts/adaptive-dev/resources.jsonl.gz",
+      "artifact_sha256": "5a9bfc2845d07119a4877f5f5b90852b3c06b7578d54fee6eaa2ced443ae505e",
+      "artifact_size_bytes": 618,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "adaptive_retrieval_development_run",
+      "source": "adaptive-dev/resources.jsonl",
+      "source_sha256": "672316a9d166d2c5e45210f0b6ff9baf1170734504bc0a250b1e1a4fba0e1f3e",
+      "source_size_bytes": 3092
+    },
+    {
+      "artifact": "artifacts/adaptive-dev/results.jsonl.gz",
+      "artifact_sha256": "d46af457bc6bf43cb5701940af2bc8d10cf53ccab76050665c1fc7d2e7b7450c",
+      "artifact_size_bytes": 34351,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "adaptive_retrieval_development_run",
+      "source": "adaptive-dev/results.jsonl",
+      "source_sha256": "66e38d088e6d246d3b67f7155df87c6926d77e5996dd9fcdb2d16f1486621f21",
+      "source_size_bytes": 405726
+    },
+    {
+      "artifact": "artifacts/adaptive-dev/summary.json.gz",
+      "artifact_sha256": "262d128be3951b3516af8a721a2e421f272d89344e113e0770e1502dfbe72749",
+      "artifact_size_bytes": 7653,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "adaptive_retrieval_development_run",
+      "source": "adaptive-dev/summary.json",
+      "source_sha256": "2a37cae5dd671b75c29113fb448615ec8f9a21facc95702c3b2976f06c120100",
+      "source_size_bytes": 77816
+    },
+    {
+      "artifact": "artifacts/adaptive-dev/tables.md.gz",
+      "artifact_sha256": "a6db55f10a4bb78d2814e452864f3dcb61cc20cee8dff52d7e2133aef43dd52d",
+      "artifact_size_bytes": 1335,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "adaptive_retrieval_development_run",
+      "source": "adaptive-dev/tables.md",
+      "source_sha256": "e2387a3aec16614e6e12742721bc90cb5cc24d78c7b723f39c9e24ca775fb9c8",
+      "source_size_bytes": 3591
+    },
+    {
+      "artifact": "artifacts/context-pressure-dev/checkpoint.json.gz",
+      "artifact_sha256": "f18410b7170e3f2a410e379134ab3eb1c7893c30b331ee0234a630d7e4aee27f",
+      "artifact_size_bytes": 87,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "context_pressure_development_run",
+      "source": "context-pressure-dev/checkpoint.json",
+      "source_sha256": "2055f9992626f49711960f03ca9eb9fc5a9a955bda1ba6086d73087a2292f610",
+      "source_size_bytes": 80
+    },
+    {
+      "artifact": "artifacts/context-pressure-dev/corpus.jsonl.gz.gz",
+      "artifact_sha256": "9f41a0398ee1d0a68022bbc2e62c6ad8e752e01962c2ac480771059c90d41394",
+      "artifact_size_bytes": 5489079,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "context_pressure_development_run",
+      "source": "context-pressure-dev/corpus.jsonl.gz",
+      "source_sha256": "a3617b7fa1ca5d5a50733792547a9b5d19ca318d3e032c2b44e61f74e2a4e505",
+      "source_size_bytes": 5487386
+    },
+    {
+      "artifact": "artifacts/context-pressure-dev/guard-status.json.gz",
+      "artifact_sha256": "d4bbea4a138c7b2b64314d8d3c44c6ea3851847708483c835c93bf7b2357484f",
+      "artifact_size_bytes": 346,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "context_pressure_development_run",
+      "source": "context-pressure-dev/guard-status.json",
+      "source_sha256": "4c28094164d8c7c3ac678a13000bdc41477942ca04b11bb571ddf4171f49f878",
+      "source_size_bytes": 637
+    },
+    {
+      "artifact": "artifacts/context-pressure-dev/manifest.json.gz",
+      "artifact_sha256": "210120bb2190bbf0043d40afc8c3fb0e6ae9709aa2f7a2185fecf3e8a308f628",
+      "artifact_size_bytes": 3674,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "context_pressure_development_run",
+      "source": "context-pressure-dev/manifest.json",
+      "source_sha256": "72d6fbe0bd214549c32556327a6746d4f95d42023babf16edd7ee47b96fd3bde",
+      "source_size_bytes": 11782
+    },
+    {
+      "artifact": "artifacts/context-pressure-dev/process.log.gz",
+      "artifact_sha256": "08b83638b634590993dca3ede31a0421d3b5787d51e90a66ba34283341daf732",
+      "artifact_size_bytes": 475,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "context_pressure_development_run",
+      "source": "context-pressure-dev/process.log",
+      "source_sha256": "df7798c4406dcbe8687baa99f13d80f5376558941abf0235edf885503ce6ab9f",
+      "source_size_bytes": 3641
+    },
+    {
+      "artifact": "artifacts/context-pressure-dev/questions.jsonl.gz.gz",
+      "artifact_sha256": "afbd363d260ca1e54561f33cefc27a7ce43a590a5a9ae7fe960ce37f5ea0d59a",
+      "artifact_size_bytes": 1784,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "context_pressure_development_run",
+      "source": "context-pressure-dev/questions.jsonl.gz",
+      "source_sha256": "1d3ea45641daef924144d447f5a848a0cf59c50fb774fa85ef2887fc90261faf",
+      "source_size_bytes": 1761
+    },
+    {
+      "artifact": "artifacts/context-pressure-dev/resources.jsonl.gz",
+      "artifact_sha256": "b39fcba45dbf90d0e5b74ca72fe46d9e9030d3d5457885bad1de4b7a05abe692",
+      "artifact_size_bytes": 561,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "context_pressure_development_run",
+      "source": "context-pressure-dev/resources.jsonl",
+      "source_sha256": "2634713b253e1faa4104d34ca80c2f4ce69b8668bae1a9cd8ac16fb6a625abb5",
+      "source_size_bytes": 2711
+    },
+    {
+      "artifact": "artifacts/context-pressure-dev/results.jsonl.gz",
+      "artifact_sha256": "52339e1e0ffbdbe23f535c1729e16e2a3aef5548a9a5a8e84fc574a35f234ddb",
+      "artifact_size_bytes": 12454,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "context_pressure_development_run",
+      "source": "context-pressure-dev/results.jsonl",
+      "source_sha256": "3858d96451cd6411558447ec7581dc39543543a9cab158cf517e4b65296afcb5",
+      "source_size_bytes": 150105
+    },
+    {
+      "artifact": "artifacts/context-pressure-dev/source-results.jsonl.gz.gz",
+      "artifact_sha256": "8ebf6f0e8e5000ea0ea2ce6bff07c7f5e5a6b8b1dec071e8fea14508ce325559",
+      "artifact_size_bytes": 33857,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "context_pressure_development_run",
+      "source": "context-pressure-dev/source-results.jsonl.gz",
+      "source_sha256": "4162a8db54451537a5a2ae8e548bc8d50ea599fad85201f9d19f4a2af3686650",
+      "source_size_bytes": 34351
+    },
+    {
+      "artifact": "artifacts/context-pressure-dev/summary.json.gz",
+      "artifact_sha256": "80e6c4baa6234d3ebc0e7e670e132fdf5b9ea425946fb6eae862ad2363c6b411",
+      "artifact_size_bytes": 4315,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "context_pressure_development_run",
+      "source": "context-pressure-dev/summary.json",
+      "source_sha256": "0fc00c9727f3b1411f828edb566b6dfeda9317490ae34bf0f91324044859c7fd",
+      "source_size_bytes": 20049
+    },
+    {
+      "artifact": "artifacts/context-pressure-dev/tables.md.gz",
+      "artifact_sha256": "da30581926975cb4b3bae54f7eb98d178fc40096bb63127cac1a1aa9336699fd",
+      "artifact_size_bytes": 935,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "complete",
+      "role": "context_pressure_development_run",
+      "source": "context-pressure-dev/tables.md",
+      "source_sha256": "95c1fd3cc3d744cc27ecac260faa8cb8ebca527a67bc1877082dd9541afa5f3e",
+      "source_size_bytes": 2267
+    },
+    {
+      "artifact": "artifacts/original-interrupted-multihop/manifest.json.gz",
+      "artifact_sha256": "86b6c214dee1c15f478f46825bd13b2f1e06a1f23ff1795c2364ec5e25fa3169",
+      "artifact_size_bytes": 1451,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "failed_or_interrupted",
+      "role": "unused_partial_test_run_after_budget_amendment",
+      "source": "original-interrupted-multihop/manifest.json",
+      "source_sha256": "a5f3888ebca97a133c81cc456b3bc1dd0a817e47e6583616c4d355add407b56d",
+      "source_size_bytes": 4247
+    },
+    {
+      "artifact": "artifacts/original-interrupted-multihop/summary.json.gz",
+      "artifact_sha256": "19878c99e590da4f13b4e69863bd7f8492558a34c11c008452148add055642e4",
+      "artifact_size_bytes": 609,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "failed_or_interrupted",
+      "role": "unused_partial_test_run_after_budget_amendment",
+      "source": "original-interrupted-multihop/summary.json",
+      "source_sha256": "b7c289c6f873e27746a24bb0aa7543466d49df93cb5d8f82085b2b66f545c19b",
+      "source_size_bytes": 1038
+    },
+    {
+      "artifact": "artifacts/adaptive-data-validation.json.gz",
+      "artifact_sha256": "61285657acd8ea21b66785dad97649e2b153d7bb1652f58e211f4e9b5178843f",
+      "artifact_size_bytes": 336,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "document_only",
+      "role": "data_reproduction_audit",
+      "source": "adaptive-data-validation.json",
+      "source_sha256": "19227b73dd69dc340951536d0f158ebc068208b1b534dce256d9e620e4f39b63",
+      "source_size_bytes": 542
+    },
+    {
+      "artifact": "artifacts/adaptive-initial-retrieval-audit-final.json.gz",
+      "artifact_sha256": "f77e9384bf4be675b9c3baef9f8fcfefc8f2508d6706d1ea14fafbde3a0824ed",
+      "artifact_size_bytes": 339,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "document_only",
+      "role": "pre_inference_retrieval_annotation_diagnostic",
+      "source": "adaptive-initial-retrieval-audit-final.json",
+      "source_sha256": "cd776391bebac3cb3b664d5959229feb8e48cf666e0b2068e42eddef2aab9b86",
+      "source_size_bytes": 591
+    },
+    {
+      "artifact": "artifacts/adaptive-initial-retrieval-audit.json.gz",
+      "artifact_sha256": "26ae9ede36be56b579b31cd22aaf798bb46c358de2931b6cbfc3b14b49d6c702",
+      "artifact_size_bytes": 75564,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "document_only",
+      "role": "pre_inference_retrieval_annotation_diagnostic",
+      "source": "adaptive-initial-retrieval-audit.json",
+      "source_sha256": "c76e7235ae1a29262f51094ee2f0a5e98c947bf7876c66970fff4665b1b90885",
+      "source_size_bytes": 231408
+    },
+    {
+      "artifact": "artifacts/backend-report-notes.md.gz",
+      "artifact_sha256": "c6999d376363f2caab240f6a1212086bc94d7680d607e277ab34d7ad62633b96",
+      "artifact_size_bytes": 6494,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "document_only",
+      "role": "historical_methods_and_numerical_notes",
+      "source": "backend-report-notes.md",
+      "source_sha256": "a803505d9e587d791574a73073f9114fa6ce8c33716b5475c44a34597ceea07e",
+      "source_size_bytes": 14893
+    },
+    {
+      "artifact": "artifacts/bm25_hashseed_audit.json.gz",
+      "artifact_sha256": "fa910593982bd10a22dff4c25bcf4cc4886a0cb4c6e5f36257f5bd80ea179f9e",
+      "artifact_size_bytes": 682,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "document_only",
+      "role": "hashseed_reproducibility_audit",
+      "source": "bm25_hashseed_audit.json",
+      "source_sha256": "08c9bec6732a4c7ecad80dfd2e1c7a1df6214ededfec6316c559af453c586bbc",
+      "source_size_bytes": 6218
+    },
+    {
+      "artifact": "artifacts/bm25_hashseed_ledgers.json.gz.gz",
+      "artifact_sha256": "b8b5a90fa9674a4e821372f57893f5d6f61658a345c973cc286303ce5ad478df",
+      "artifact_size_bytes": 561788,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "document_only",
+      "role": "hashseed_reproducibility_raw_ledger",
+      "source": "bm25_hashseed_ledgers.json.gz",
+      "source_sha256": "797c5675e4dd01091c8c57e3cfee4057cb62da2a9088ed666fead18106cdaec5",
+      "source_size_bytes": 574341
+    },
+    {
+      "artifact": "artifacts/overnight/amendment.json.gz",
+      "artifact_sha256": "858d6ecc32b4863156ffa45cfb58eac85ebfe1206d080190c22bba075db28a7d",
+      "artifact_size_bytes": 573,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "document_only",
+      "role": "operator_budget_amendment_receipt",
+      "source": "overnight/amendment.json",
+      "source_sha256": "3865c03bfa620d60e55bd5110d6bfe9f96647c9cbf70a169672bc03da9eed948",
+      "source_size_bytes": 1126
+    },
+    {
+      "artifact": "artifacts/reranker_prompt_audit.json.gz",
+      "artifact_sha256": "bb3179eeb7cfe3ae43652024a6560cbd81ec5feb1adad9a0cbb00ec7e6d41055",
+      "artifact_size_bytes": 446,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "document_only",
+      "role": "reranker_tokenizer_prompt_audit",
+      "source": "reranker_prompt_audit.json",
+      "source_sha256": "78d3932e97318780efdeb73eb6ffcda79fbcfed434c6a525abef54ef2ec4e6ea",
+      "source_size_bytes": 1671
+    },
+    {
+      "artifact": "artifacts/reranker_prompt_audit_final.json.gz",
+      "artifact_sha256": "c6078fa801e3235256d0c8bd85826ea7e01e7f5a65f2efc8ddd05a9de9aac539",
+      "artifact_size_bytes": 448,
+      "eligible_for_main_metrics": false,
+      "encoding": "gzip_of_exact_source_bytes",
+      "observed_group_status": "document_only",
+      "role": "reranker_tokenizer_prompt_audit",
+      "source": "reranker_prompt_audit_final.json",
+      "source_sha256": "e297aa12c73e14b93920b2db1fffcc068820406b8817332d85ee9184f5bb5f92",
+      "source_size_bytes": 1671
+    }
+  ],
+  "eligible_for_main_metrics": false,
+  "excluded_nonreceipt_files": [],
+  "groups": [
+    {
+      "artifacts": [
+        "artifacts/native-validation/guard-status.json.gz",
+        "artifacts/native-validation/process.log.gz",
+        "artifacts/native-validation/resources.jsonl.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "Original absolute-error criterion; failure retained, not counted as a passing validation.",
+      "observed_status": "failed",
+      "role": "numerical_original_failed_threshold",
+      "source": "native-validation",
+      "source_identity_receipts": [
+        {
+          "receipt": "native-validation/process.log",
+          "reported_identity": {
+            "model": {
+              "backend": "mlx-qwen3-shared-base",
+              "backend_identity": "f6211d9cd6337dc74daf05ac",
+              "bridge_method": "causal_boundary_spans",
+              "decoding": "greedy",
+              "kv_baseline_dtype": "bfloat16",
+              "max_context": 8192,
+              "memory_limit_bytes": 34359738368,
+              "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+              "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+              "model_type": "qwen3",
+              "prefill_batch_size": 256,
+              "quantization": "packed_affine_storage_dequantized_for_attention",
+              "role_adapters": null,
+              "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+              "thinking": false,
+              "versions": {
+                "mlx": "0.32.2",
+                "mlx-lm": "0.31.3",
+                "numpy": "2.5.3",
+                "transformers": "5.17.0"
+              },
+              "weight_dtype": "bfloat16"
+            }
+          }
+        }
+      ],
+      "status_receipts": [
+        {
+          "receipt": "native-validation/guard-status.json",
+          "reported_status": {
+            "reason": null,
+            "returncode": 1,
+            "status": "failed"
+          }
+        }
+      ],
+      "status_source": "native-validation/guard-status.json"
+    },
+    {
+      "artifacts": [
+        "artifacts/native-validation-relative/guard-status.json.gz",
+        "artifacts/native-validation-relative/process.log.gz",
+        "artifacts/native-validation-relative/resources.jsonl.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "Revised development criterion after inspecting scale and the unshifted control; small mechanics check only.",
+      "observed_status": "complete",
+      "role": "numerical_revised_relative_threshold",
+      "source": "native-validation-relative",
+      "source_identity_receipts": [
+        {
+          "receipt": "native-validation-relative/process.log",
+          "reported_identity": {
+            "model": {
+              "backend": "mlx-qwen3-shared-base",
+              "backend_identity": "f6211d9cd6337dc74daf05ac",
+              "bridge_method": "causal_boundary_spans",
+              "decoding": "greedy",
+              "kv_baseline_dtype": "bfloat16",
+              "max_context": 8192,
+              "memory_limit_bytes": 34359738368,
+              "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+              "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+              "model_type": "qwen3",
+              "prefill_batch_size": 256,
+              "quantization": "packed_affine_storage_dequantized_for_attention",
+              "role_adapters": null,
+              "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+              "thinking": false,
+              "versions": {
+                "mlx": "0.32.2",
+                "mlx-lm": "0.31.3",
+                "numpy": "2.5.3",
+                "transformers": "5.17.0"
+              },
+              "weight_dtype": "bfloat16"
+            }
+          }
+        }
+      ],
+      "status_receipts": [
+        {
+          "receipt": "native-validation-relative/guard-status.json",
+          "reported_status": {
+            "reason": null,
+            "returncode": 0,
+            "status": "complete"
+          }
+        }
+      ],
+      "status_source": "native-validation-relative/guard-status.json"
+    },
+    {
+      "artifacts": [
+        "artifacts/official-preflight/guard-status.json.gz",
+        "artifacts/official-preflight/process.log.gz",
+        "artifacts/official-preflight/resources.jsonl.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "Two toy inference checks; not benchmark accuracy.",
+      "observed_status": "complete",
+      "role": "official_checkpoint_smoke_check",
+      "source": "official-preflight",
+      "source_identity_receipts": [],
+      "status_receipts": [
+        {
+          "receipt": "official-preflight/guard-status.json",
+          "reported_status": {
+            "reason": null,
+            "returncode": 0,
+            "status": "complete"
+          }
+        }
+      ],
+      "status_source": "official-preflight/guard-status.json"
+    },
+    {
+      "artifacts": [
+        "artifacts/pilot-private/checkpoint.json.gz",
+        "artifacts/pilot-private/guard-status.json.gz",
+        "artifacts/pilot-private/manifest.json.gz",
+        "artifacts/pilot-private/process.log.gz",
+        "artifacts/pilot-private/resources.jsonl.gz",
+        "artifacts/pilot-private/results.jsonl.gz",
+        "artifacts/pilot-private/summary.json.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "Private-fact development conditions; excluded from final test metrics.",
+      "observed_status": "complete",
+      "role": "private_evidence_development_pilot",
+      "source": "pilot-private",
+      "source_identity_receipts": [
+        {
+          "receipt": "pilot-private/manifest.json",
+          "reported_identity": {
+            "backend": {
+              "backend": "mlx-qwen3-shared-base",
+              "backend_identity": "f6211d9cd6337dc74daf05ac",
+              "bridge_method": "causal_boundary_spans",
+              "decoding": "greedy",
+              "kv_baseline_dtype": "bfloat16",
+              "max_context": 8192,
+              "memory_limit_bytes": 34359738368,
+              "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+              "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+              "model_type": "qwen3",
+              "prefill_batch_size": 256,
+              "quantization": "packed_affine_storage_dequantized_for_attention",
+              "role_adapters": null,
+              "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+              "thinking": false,
+              "versions": {
+                "mlx": "0.32.2",
+                "mlx-lm": "0.31.3",
+                "numpy": "2.5.3",
+                "transformers": "5.17.0"
+              },
+              "weight_dtype": "bfloat16"
+            },
+            "identity": {
+              "backend": {
+                "backend": "mlx-qwen3-shared-base",
+                "backend_identity": "f6211d9cd6337dc74daf05ac",
+                "bridge_method": "causal_boundary_spans",
+                "decoding": "greedy",
+                "kv_baseline_dtype": "bfloat16",
+                "max_context": 8192,
+                "memory_limit_bytes": 34359738368,
+                "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+                "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+                "model_type": "qwen3",
+                "prefill_batch_size": 256,
+                "quantization": "packed_affine_storage_dequantized_for_attention",
+                "role_adapters": null,
+                "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+                "thinking": false,
+                "versions": {
+                  "mlx": "0.32.2",
+                  "mlx-lm": "0.31.3",
+                  "numpy": "2.5.3",
+                  "transformers": "5.17.0"
+                },
+                "weight_dtype": "bfloat16"
+              },
+              "config": {
+                "bridge_ratio": 0.0,
+                "bridge_ratios": [
+                  0.0,
+                  0.1,
+                  0.2,
+                  1.0
+                ],
+                "dataset": "data/synthetic_private_fact_dev.jsonl",
+                "equal_hops": 1,
+                "evidence_per_hop": 2,
+                "experiments": [
+                  "E3",
+                  "E4",
+                  "E5"
+                ],
+                "hops": [
+                  1,
+                  3,
+                  5,
+                  10,
+                  20
+                ],
+                "limit": 8,
+                "max_answer_tokens": 16,
+                "max_context_tokens": 512,
+                "max_document_tokens": 128,
+                "max_relay_tokens": 32,
+                "precisions": [
+                  "bf16",
+                  "int8",
+                  "int4"
+                ],
+                "relay_precision": "int8",
+                "repeats": 1,
+                "schedule": "lexical",
+                "seed": 42
+              },
+              "dataset_sha256": "1a176d88b7bc6d00c6b90f3ae2736f38eedb1c407b6e37791e6b223c81ec8b54",
+              "protocol_version": "fixed-evidence-qwen3-v2",
+              "source_code_sha256": {
+                "engine/backends_mlx.py": "0eaaa1d94fad2cb72d84fdb1e96cbf97f184b696878a25273801853c9f641a70",
+                "eval/real_experiments.py": "83dafcb6eaf4863e3f588b42631b2e259900daa78e3faffaeee6227fe788517a",
+                "scripts/run_experiments.py": "86adb0c312087cb7e639bc6e8db27f5c546959c6a924a54d4d860190d575d33a"
+              }
+            },
+            "machine_recorded_source": {
+              "code_sha256": {
+                "engine/backends_mlx.py": "0eaaa1d94fad2cb72d84fdb1e96cbf97f184b696878a25273801853c9f641a70",
+                "eval/real_experiments.py": "83dafcb6eaf4863e3f588b42631b2e259900daa78e3faffaeee6227fe788517a",
+                "scripts/run_experiments.py": "86adb0c312087cb7e639bc6e8db27f5c546959c6a924a54d4d860190d575d33a"
+              },
+              "git_dirty": [
+                "D  agents/__pycache__/__init__.cpython-312.pyc",
+                "D  agents/__pycache__/interface.cpython-312.pyc",
+                "D  agents/__pycache__/latent_agents.cpython-312.pyc",
+                "D  agents/__pycache__/text_agents.cpython-312.pyc",
+                " M agents/latent_agents.py",
+                " M agents/text_agents.py",
+                "D  engine/__pycache__/__init__.cpython-312.pyc",
+                "D  engine/__pycache__/backends.cpython-312.pyc",
+                " M engine/backends_mlx.py",
+                "D  eval/__pycache__/__init__.cpython-312.pyc",
+                "D  eval/__pycache__/audit.cpython-312.pyc",
+                "D  eval/__pycache__/runners.cpython-312.pyc",
+                "D  relay/__pycache__/__init__.cpython-312.pyc",
+                "D  relay/__pycache__/block.cpython-312.pyc",
+                "D  relay/__pycache__/bridge.cpython-312.pyc",
+                "D  relay/__pycache__/concat.cpython-312.pyc",
+                "D  relay/__pycache__/quant.cpython-312.pyc",
+                " M relay/concat.py",
+                " M relay/quant.py",
+                " M scripts/smoke.py",
+                "?? .gitignore",
+                "?? docs/",
+                "?? eval/datasets.py",
+                "?? eval/real_experiments.py",
+                "?? eval/retrieval.py",
+                "?? requirements-lock.txt",
+                "?? requirements-mlx.txt",
+                "?? scripts/download_model.py",
+                "?? scripts/prepare_beam_retrieval.py",
+                "?? scripts/prepare_data.py",
+                "?? scripts/probe_official_model.py",
+                "?? scripts/run_experiments.py",
+                "?? scripts/run_guarded.py",
+                "?? scripts/validate_real_backend.py",
+                "?? tests/"
+              ],
+              "git_head": "ea43c23fbe52ce91366f37a626aee45d3339fdd9"
+            }
+          }
+        },
+        {
+          "receipt": "pilot-private/summary.json",
+          "reported_identity": {
+            "protocol_version": "fixed-evidence-qwen3-v2"
+          }
+        }
+      ],
+      "status_receipts": [
+        {
+          "receipt": "pilot-private/guard-status.json",
+          "reported_status": {
+            "reason": null,
+            "returncode": 0,
+            "status": "complete"
+          }
+        },
+        {
+          "receipt": "pilot-private/summary.json",
+          "reported_status": {
+            "completed_unique_runs": 96,
+            "n_failed_runs": 0,
+            "n_successful_runs": 96,
+            "planned_runs": 96,
+            "stop_reason": "complete"
+          }
+        }
+      ],
+      "status_source": "pilot-private/guard-status.json"
+    },
+    {
+      "artifacts": [
+        "artifacts/development/guard-status.json.gz",
+        "artifacts/development/multihop/checkpoint.json.gz",
+        "artifacts/development/multihop/manifest.json.gz",
+        "artifacts/development/multihop/results.jsonl.gz",
+        "artifacts/development/multihop/summary.json.gz",
+        "artifacts/development/process.log.gz",
+        "artifacts/development/resources.jsonl.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "Earlier development run intentionally stopped, as documented in runs/SESSION.md; original guard status is authoritative.",
+      "observed_status": "stopped",
+      "role": "operator_stopped_earlier_development",
+      "source": "development",
+      "source_identity_receipts": [
+        {
+          "receipt": "development/multihop/manifest.json",
+          "reported_identity": {
+            "backend": {
+              "backend": "mlx-qwen3-shared-base",
+              "backend_identity": "f6211d9cd6337dc74daf05ac",
+              "bridge_method": "causal_boundary_spans",
+              "decoding": "greedy",
+              "kv_baseline_dtype": "bfloat16",
+              "max_context": 8192,
+              "memory_limit_bytes": 34359738368,
+              "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+              "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+              "model_type": "qwen3",
+              "prefill_batch_size": 256,
+              "quantization": "packed_affine_storage_dequantized_for_attention",
+              "role_adapters": null,
+              "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+              "thinking": false,
+              "versions": {
+                "mlx": "0.32.2",
+                "mlx-lm": "0.31.3",
+                "numpy": "2.5.3",
+                "transformers": "5.17.0"
+              },
+              "weight_dtype": "bfloat16"
+            },
+            "identity": {
+              "backend": {
+                "backend": "mlx-qwen3-shared-base",
+                "backend_identity": "f6211d9cd6337dc74daf05ac",
+                "bridge_method": "causal_boundary_spans",
+                "decoding": "greedy",
+                "kv_baseline_dtype": "bfloat16",
+                "max_context": 8192,
+                "memory_limit_bytes": 34359738368,
+                "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+                "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+                "model_type": "qwen3",
+                "prefill_batch_size": 256,
+                "quantization": "packed_affine_storage_dequantized_for_attention",
+                "role_adapters": null,
+                "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+                "thinking": false,
+                "versions": {
+                  "mlx": "0.32.2",
+                  "mlx-lm": "0.31.3",
+                  "numpy": "2.5.3",
+                  "transformers": "5.17.0"
+                },
+                "weight_dtype": "bfloat16"
+              },
+              "config": {
+                "bridge_ratio": 0.2,
+                "bridge_ratios": [
+                  0.0,
+                  0.1,
+                  0.2,
+                  1.0
+                ],
+                "dataset": "data/synthetic_multihop_dev.jsonl",
+                "equal_hops": 3,
+                "evidence_per_hop": 2,
+                "experiments": [
+                  "E1",
+                  "E2",
+                  "E4",
+                  "E5"
+                ],
+                "hops": [
+                  1,
+                  3,
+                  5,
+                  10,
+                  20
+                ],
+                "latent_precisions": [
+                  "bf16",
+                  "int8"
+                ],
+                "limit": 5,
+                "max_answer_tokens": 16,
+                "max_context_tokens": 6144,
+                "max_document_tokens": 300,
+                "max_relay_tokens": 96,
+                "precisions": [
+                  "bf16",
+                  "int8",
+                  "int4"
+                ],
+                "relay_precision": "int8",
+                "repeats": 1,
+                "schedule": "lexical",
+                "seed": 42
+              },
+              "dataset_sha256": "1a4b8be3436421df0c6aafd42eda9ee3cd199853782c6b328dd22d063e426258",
+              "protocol_version": "fixed-evidence-qwen3-v2",
+              "source_code_sha256": {
+                "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+                "eval/real_experiments.py": "e7fb3c527cd5dab407c6a1a0adf0cc16cd109fe0f6cb1bcd3c07d7930261c0a9",
+                "scripts/run_experiments.py": "808dd2c2d8ee84dd94e6c752f4cfd914384f4eabc0570b5496e2654b64343943"
+              }
+            },
+            "machine_recorded_source": {
+              "code_sha256": {
+                "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+                "eval/real_experiments.py": "e7fb3c527cd5dab407c6a1a0adf0cc16cd109fe0f6cb1bcd3c07d7930261c0a9",
+                "scripts/run_experiments.py": "808dd2c2d8ee84dd94e6c752f4cfd914384f4eabc0570b5496e2654b64343943"
+              },
+              "git_dirty": [
+                "D  agents/__pycache__/__init__.cpython-312.pyc",
+                "D  agents/__pycache__/interface.cpython-312.pyc",
+                "D  agents/__pycache__/latent_agents.cpython-312.pyc",
+                "D  agents/__pycache__/text_agents.cpython-312.pyc",
+                " M agents/latent_agents.py",
+                " M agents/text_agents.py",
+                "D  engine/__pycache__/__init__.cpython-312.pyc",
+                "D  engine/__pycache__/backends.cpython-312.pyc",
+                " M engine/backends_mlx.py",
+                "D  eval/__pycache__/__init__.cpython-312.pyc",
+                "D  eval/__pycache__/audit.cpython-312.pyc",
+                "D  eval/__pycache__/runners.cpython-312.pyc",
+                " M eval/runners.py",
+                "D  relay/__pycache__/__init__.cpython-312.pyc",
+                "D  relay/__pycache__/block.cpython-312.pyc",
+                "D  relay/__pycache__/bridge.cpython-312.pyc",
+                "D  relay/__pycache__/concat.cpython-312.pyc",
+                "D  relay/__pycache__/quant.cpython-312.pyc",
+                " M relay/concat.py",
+                " M relay/quant.py",
+                " M scripts/smoke.py",
+                "?? .gitignore",
+                "?? configs/",
+                "?? docs/",
+                "?? eval/datasets.py",
+                "?? eval/local_rubric_judge.py",
+                "?? eval/real_experiments.py",
+                "?? eval/retrieval.py",
+                "?? requirements-data.txt",
+                "?? requirements-lock.txt",
+                "?? requirements-mlx.txt",
+                "?? scripts/download_model.py",
+                "?? scripts/judge_beam.py",
+                "?? scripts/prepare_beam_retrieval.py",
+                "?? scripts/prepare_data.py",
+                "?? scripts/probe_official_model.py",
+                "?? scripts/run_experiments.py",
+                "?? scripts/run_guarded.py",
+                "?? scripts/run_matrix.py",
+                "?? scripts/validate_real_backend.py",
+                "?? tests/"
+              ],
+              "git_head": "ea43c23fbe52ce91366f37a626aee45d3339fdd9"
+            }
+          }
+        },
+        {
+          "receipt": "development/multihop/summary.json",
+          "reported_identity": {
+            "protocol_version": "fixed-evidence-qwen3-v2"
+          }
+        }
+      ],
+      "status_receipts": [
+        {
+          "receipt": "development/guard-status.json",
+          "reported_status": {
+            "reason": "interrupted",
+            "returncode": -2,
+            "status": "stopped"
+          }
+        },
+        {
+          "receipt": "development/multihop/summary.json",
+          "reported_status": {
+            "completed_unique_runs": 86,
+            "n_failed_runs": 0,
+            "n_successful_runs": 86,
+            "planned_runs": 155,
+            "stop_reason": "failed_or_interrupted"
+          }
+        }
+      ],
+      "status_source": "development/guard-status.json"
+    },
+    {
+      "artifacts": [
+        "artifacts/development-v2/beam/checkpoint.json.gz",
+        "artifacts/development-v2/beam/manifest.json.gz",
+        "artifacts/development-v2/beam/results.jsonl.gz",
+        "artifacts/development-v2/beam/summary.json.gz",
+        "artifacts/development-v2/guard-status.json.gz",
+        "artifacts/development-v2/hotpot/checkpoint.json.gz",
+        "artifacts/development-v2/hotpot/manifest.json.gz",
+        "artifacts/development-v2/hotpot/results.jsonl.gz",
+        "artifacts/development-v2/hotpot/summary.json.gz",
+        "artifacts/development-v2/matrix-status.json.gz",
+        "artifacts/development-v2/multihop/checkpoint.json.gz",
+        "artifacts/development-v2/multihop/manifest.json.gz",
+        "artifacts/development-v2/multihop/results.jsonl.gz",
+        "artifacts/development-v2/multihop/summary.json.gz",
+        "artifacts/development-v2/musique/checkpoint.json.gz",
+        "artifacts/development-v2/musique/manifest.json.gz",
+        "artifacts/development-v2/musique/results.jsonl.gz",
+        "artifacts/development-v2/musique/summary.json.gz",
+        "artifacts/development-v2/process.log.gz",
+        "artifacts/development-v2/resources.jsonl.gz",
+        "artifacts/development-v2/updates/checkpoint.json.gz",
+        "artifacts/development-v2/updates/manifest.json.gz",
+        "artifacts/development-v2/updates/results.jsonl.gz",
+        "artifacts/development-v2/updates/summary.json.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "Revised development conditions before the main test; excluded from final metrics.",
+      "observed_status": "complete",
+      "role": "revised_development_matrix",
+      "source": "development-v2",
+      "source_identity_receipts": [
+        {
+          "receipt": "development-v2/beam/manifest.json",
+          "reported_identity": {
+            "backend": {
+              "backend": "mlx-qwen3-shared-base",
+              "backend_identity": "f6211d9cd6337dc74daf05ac",
+              "bridge_method": "causal_boundary_spans",
+              "decoding": "greedy",
+              "kv_baseline_dtype": "bfloat16",
+              "max_context": 8192,
+              "memory_limit_bytes": 34359738368,
+              "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+              "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+              "model_type": "qwen3",
+              "prefill_batch_size": 256,
+              "quantization": "packed_affine_storage_dequantized_for_attention",
+              "role_adapters": null,
+              "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+              "thinking": false,
+              "versions": {
+                "mlx": "0.32.2",
+                "mlx-lm": "0.31.3",
+                "numpy": "2.5.3",
+                "transformers": "5.17.0"
+              },
+              "weight_dtype": "bfloat16"
+            },
+            "identity": {
+              "backend": {
+                "backend": "mlx-qwen3-shared-base",
+                "backend_identity": "f6211d9cd6337dc74daf05ac",
+                "bridge_method": "causal_boundary_spans",
+                "decoding": "greedy",
+                "kv_baseline_dtype": "bfloat16",
+                "max_context": 8192,
+                "memory_limit_bytes": 34359738368,
+                "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+                "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+                "model_type": "qwen3",
+                "prefill_batch_size": 256,
+                "quantization": "packed_affine_storage_dequantized_for_attention",
+                "role_adapters": null,
+                "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+                "thinking": false,
+                "versions": {
+                  "mlx": "0.32.2",
+                  "mlx-lm": "0.31.3",
+                  "numpy": "2.5.3",
+                  "transformers": "5.17.0"
+                },
+                "weight_dtype": "bfloat16"
+              },
+              "config": {
+                "bridge_ratio": 0.2,
+                "bridge_ratios": [
+                  0.0,
+                  0.1,
+                  0.2,
+                  1.0
+                ],
+                "dataset": "data/beam_1m_1_retrieved.jsonl",
+                "equal_hops": 3,
+                "evidence_per_hop": 1,
+                "experiments": [
+                  "E1"
+                ],
+                "hops": [
+                  1,
+                  3
+                ],
+                "latent_precisions": [
+                  "bf16",
+                  "int8"
+                ],
+                "limit": 2,
+                "max_answer_tokens": 128,
+                "max_context_tokens": 6144,
+                "max_document_tokens": 300,
+                "max_relay_tokens": 192,
+                "precisions": [
+                  "bf16",
+                  "int8",
+                  "int4"
+                ],
+                "relay_precision": "int8",
+                "repeats": 1,
+                "schedule": "source",
+                "seed": 42
+              },
+              "dataset_sha256": "e3bf2bcf0b1dab01d0a042f12e6468dc666012c6b1d5a6082260aec3d65f17a1",
+              "protocol_version": "fixed-evidence-qwen3-v3-bm25-json",
+              "source_code_sha256": {
+                "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+                "eval/real_experiments.py": "bdc7537cf94f05c25b55a32ec049f33343b7d83fe6474048380284dc6c5f453c",
+                "eval/retrieval.py": "7d716e40bdf845c4797f7f4b9ceeaa64681bc2adb1648d28ea33b0203037228a",
+                "scripts/run_experiments.py": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7"
+              }
+            },
+            "machine_recorded_source": {
+              "code_sha256": {
+                "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+                "eval/real_experiments.py": "bdc7537cf94f05c25b55a32ec049f33343b7d83fe6474048380284dc6c5f453c",
+                "eval/retrieval.py": "7d716e40bdf845c4797f7f4b9ceeaa64681bc2adb1648d28ea33b0203037228a",
+                "scripts/run_experiments.py": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7"
+              },
+              "git_dirty": [],
+              "git_head": "6ba2ffe796fbdd112989708a86841fe21a299342"
+            }
+          }
+        },
+        {
+          "receipt": "development-v2/beam/summary.json",
+          "reported_identity": {
+            "protocol_version": "fixed-evidence-qwen3-v3-bm25-json"
+          }
+        },
+        {
+          "receipt": "development-v2/hotpot/manifest.json",
+          "reported_identity": {
+            "backend": {
+              "backend": "mlx-qwen3-shared-base",
+              "backend_identity": "f6211d9cd6337dc74daf05ac",
+              "bridge_method": "causal_boundary_spans",
+              "decoding": "greedy",
+              "kv_baseline_dtype": "bfloat16",
+              "max_context": 8192,
+              "memory_limit_bytes": 34359738368,
+              "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+              "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+              "model_type": "qwen3",
+              "prefill_batch_size": 256,
+              "quantization": "packed_affine_storage_dequantized_for_attention",
+              "role_adapters": null,
+              "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+              "thinking": false,
+              "versions": {
+                "mlx": "0.32.2",
+                "mlx-lm": "0.31.3",
+                "numpy": "2.5.3",
+                "transformers": "5.17.0"
+              },
+              "weight_dtype": "bfloat16"
+            },
+            "identity": {
+              "backend": {
+                "backend": "mlx-qwen3-shared-base",
+                "backend_identity": "f6211d9cd6337dc74daf05ac",
+                "bridge_method": "causal_boundary_spans",
+                "decoding": "greedy",
+                "kv_baseline_dtype": "bfloat16",
+                "max_context": 8192,
+                "memory_limit_bytes": 34359738368,
+                "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+                "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+                "model_type": "qwen3",
+                "prefill_batch_size": 256,
+                "quantization": "packed_affine_storage_dequantized_for_attention",
+                "role_adapters": null,
+                "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+                "thinking": false,
+                "versions": {
+                  "mlx": "0.32.2",
+                  "mlx-lm": "0.31.3",
+                  "numpy": "2.5.3",
+                  "transformers": "5.17.0"
+                },
+                "weight_dtype": "bfloat16"
+              },
+              "config": {
+                "bridge_ratio": 0.2,
+                "bridge_ratios": [
+                  0.0,
+                  0.1,
+                  0.2,
+                  1.0
+                ],
+                "dataset": "data/hotpotqa_dev_sample.jsonl",
+                "equal_hops": 3,
+                "evidence_per_hop": 2,
+                "experiments": [
+                  "E1",
+                  "E4",
+                  "E5"
+                ],
+                "hops": [
+                  1,
+                  3
+                ],
+                "latent_precisions": [
+                  "bf16",
+                  "int8"
+                ],
+                "limit": 2,
+                "max_answer_tokens": 48,
+                "max_context_tokens": 6144,
+                "max_document_tokens": 300,
+                "max_relay_tokens": 192,
+                "precisions": [
+                  "bf16",
+                  "int8",
+                  "int4"
+                ],
+                "relay_precision": "int8",
+                "repeats": 1,
+                "schedule": "lexical",
+                "seed": 42
+              },
+              "dataset_sha256": "c3cac853ad9a048ca52613244dc3d97c30324ddcc068c9b2465193873a59c0e2",
+              "protocol_version": "fixed-evidence-qwen3-v3-bm25-json",
+              "source_code_sha256": {
+                "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+                "eval/real_experiments.py": "bdc7537cf94f05c25b55a32ec049f33343b7d83fe6474048380284dc6c5f453c",
+                "eval/retrieval.py": "7d716e40bdf845c4797f7f4b9ceeaa64681bc2adb1648d28ea33b0203037228a",
+                "scripts/run_experiments.py": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7"
+              }
+            },
+            "machine_recorded_source": {
+              "code_sha256": {
+                "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+                "eval/real_experiments.py": "bdc7537cf94f05c25b55a32ec049f33343b7d83fe6474048380284dc6c5f453c",
+                "eval/retrieval.py": "7d716e40bdf845c4797f7f4b9ceeaa64681bc2adb1648d28ea33b0203037228a",
+                "scripts/run_experiments.py": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7"
+              },
+              "git_dirty": [],
+              "git_head": "6ba2ffe796fbdd112989708a86841fe21a299342"
+            }
+          }
+        },
+        {
+          "receipt": "development-v2/hotpot/summary.json",
+          "reported_identity": {
+            "protocol_version": "fixed-evidence-qwen3-v3-bm25-json"
+          }
+        },
+        {
+          "receipt": "development-v2/multihop/manifest.json",
+          "reported_identity": {
+            "backend": {
+              "backend": "mlx-qwen3-shared-base",
+              "backend_identity": "f6211d9cd6337dc74daf05ac",
+              "bridge_method": "causal_boundary_spans",
+              "decoding": "greedy",
+              "kv_baseline_dtype": "bfloat16",
+              "max_context": 8192,
+              "memory_limit_bytes": 34359738368,
+              "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+              "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+              "model_type": "qwen3",
+              "prefill_batch_size": 256,
+              "quantization": "packed_affine_storage_dequantized_for_attention",
+              "role_adapters": null,
+              "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+              "thinking": false,
+              "versions": {
+                "mlx": "0.32.2",
+                "mlx-lm": "0.31.3",
+                "numpy": "2.5.3",
+                "transformers": "5.17.0"
+              },
+              "weight_dtype": "bfloat16"
+            },
+            "identity": {
+              "backend": {
+                "backend": "mlx-qwen3-shared-base",
+                "backend_identity": "f6211d9cd6337dc74daf05ac",
+                "bridge_method": "causal_boundary_spans",
+                "decoding": "greedy",
+                "kv_baseline_dtype": "bfloat16",
+                "max_context": 8192,
+                "memory_limit_bytes": 34359738368,
+                "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+                "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+                "model_type": "qwen3",
+                "prefill_batch_size": 256,
+                "quantization": "packed_affine_storage_dequantized_for_attention",
+                "role_adapters": null,
+                "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+                "thinking": false,
+                "versions": {
+                  "mlx": "0.32.2",
+                  "mlx-lm": "0.31.3",
+                  "numpy": "2.5.3",
+                  "transformers": "5.17.0"
+                },
+                "weight_dtype": "bfloat16"
+              },
+              "config": {
+                "bridge_ratio": 0.2,
+                "bridge_ratios": [
+                  0.0,
+                  0.1,
+                  0.2,
+                  1.0
+                ],
+                "dataset": "data/synthetic_multihop_dev.jsonl",
+                "equal_hops": 3,
+                "evidence_per_hop": 2,
+                "experiments": [
+                  "E1",
+                  "E2",
+                  "E4",
+                  "E5"
+                ],
+                "hops": [
+                  1,
+                  3
+                ],
+                "latent_precisions": [
+                  "bf16",
+                  "int8"
+                ],
+                "limit": 2,
+                "max_answer_tokens": 16,
+                "max_context_tokens": 6144,
+                "max_document_tokens": 300,
+                "max_relay_tokens": 192,
+                "precisions": [
+                  "bf16",
+                  "int8",
+                  "int4"
+                ],
+                "relay_precision": "int8",
+                "repeats": 1,
+                "schedule": "lexical",
+                "seed": 42
+              },
+              "dataset_sha256": "1a4b8be3436421df0c6aafd42eda9ee3cd199853782c6b328dd22d063e426258",
+              "protocol_version": "fixed-evidence-qwen3-v3-bm25-json",
+              "source_code_sha256": {
+                "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+                "eval/real_experiments.py": "bdc7537cf94f05c25b55a32ec049f33343b7d83fe6474048380284dc6c5f453c",
+                "eval/retrieval.py": "7d716e40bdf845c4797f7f4b9ceeaa64681bc2adb1648d28ea33b0203037228a",
+                "scripts/run_experiments.py": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7"
+              }
+            },
+            "machine_recorded_source": {
+              "code_sha256": {
+                "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+                "eval/real_experiments.py": "bdc7537cf94f05c25b55a32ec049f33343b7d83fe6474048380284dc6c5f453c",
+                "eval/retrieval.py": "7d716e40bdf845c4797f7f4b9ceeaa64681bc2adb1648d28ea33b0203037228a",
+                "scripts/run_experiments.py": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7"
+              },
+              "git_dirty": [
+                "D  agents/__pycache__/__init__.cpython-312.pyc",
+                "D  agents/__pycache__/interface.cpython-312.pyc",
+                "D  agents/__pycache__/latent_agents.cpython-312.pyc",
+                "D  agents/__pycache__/text_agents.cpython-312.pyc",
+                " M agents/latent_agents.py",
+                " M agents/text_agents.py",
+                " M engine/__init__.py",
+                "D  engine/__pycache__/__init__.cpython-312.pyc",
+                "D  engine/__pycache__/backends.cpython-312.pyc",
+                " M engine/backends.py",
+                " M engine/backends_mlx.py",
+                " M eval/__init__.py",
+                "D  eval/__pycache__/__init__.cpython-312.pyc",
+                "D  eval/__pycache__/audit.cpython-312.pyc",
+                "D  eval/__pycache__/runners.cpython-312.pyc",
+                " M eval/runners.py",
+                "D  relay/__pycache__/__init__.cpython-312.pyc",
+                "D  relay/__pycache__/block.cpython-312.pyc",
+                "D  relay/__pycache__/bridge.cpython-312.pyc",
+                "D  relay/__pycache__/concat.cpython-312.pyc",
+                "D  relay/__pycache__/quant.cpython-312.pyc",
+                " M relay/concat.py",
+                " M relay/quant.py",
+                " M scripts/smoke.py",
+                "?? .gitignore",
+                "?? configs/",
+                "?? docs/",
+                "?? eval/datasets.py",
+                "?? eval/local_rubric_judge.py",
+                "?? eval/real_experiments.py",
+                "?? eval/retrieval.py",
+                "?? requirements-data.txt",
+                "?? requirements-lock.txt",
+                "?? requirements-mlx.txt",
+                "?? scripts/download_model.py",
+                "?? scripts/judge_beam.py",
+                "?? scripts/prepare_beam_retrieval.py",
+                "?? scripts/prepare_data.py",
+                "?? scripts/probe_official_model.py",
+                "?? scripts/run_experiments.py",
+                "?? scripts/run_guarded.py",
+                "?? scripts/run_matrix.py",
+                "?? scripts/validate_real_backend.py",
+                "?? tests/"
+              ],
+              "git_head": "ea43c23fbe52ce91366f37a626aee45d3339fdd9"
+            }
+          }
+        },
+        {
+          "receipt": "development-v2/multihop/summary.json",
+          "reported_identity": {
+            "protocol_version": "fixed-evidence-qwen3-v3-bm25-json"
+          }
+        },
+        {
+          "receipt": "development-v2/musique/manifest.json",
+          "reported_identity": {
+            "backend": {
+              "backend": "mlx-qwen3-shared-base",
+              "backend_identity": "f6211d9cd6337dc74daf05ac",
+              "bridge_method": "causal_boundary_spans",
+              "decoding": "greedy",
+              "kv_baseline_dtype": "bfloat16",
+              "max_context": 8192,
+              "memory_limit_bytes": 34359738368,
+              "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+              "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+              "model_type": "qwen3",
+              "prefill_batch_size": 256,
+              "quantization": "packed_affine_storage_dequantized_for_attention",
+              "role_adapters": null,
+              "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+              "thinking": false,
+              "versions": {
+                "mlx": "0.32.2",
+                "mlx-lm": "0.31.3",
+                "numpy": "2.5.3",
+                "transformers": "5.17.0"
+              },
+              "weight_dtype": "bfloat16"
+            },
+            "identity": {
+              "backend": {
+                "backend": "mlx-qwen3-shared-base",
+                "backend_identity": "f6211d9cd6337dc74daf05ac",
+                "bridge_method": "causal_boundary_spans",
+                "decoding": "greedy",
+                "kv_baseline_dtype": "bfloat16",
+                "max_context": 8192,
+                "memory_limit_bytes": 34359738368,
+                "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+                "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+                "model_type": "qwen3",
+                "prefill_batch_size": 256,
+                "quantization": "packed_affine_storage_dequantized_for_attention",
+                "role_adapters": null,
+                "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+                "thinking": false,
+                "versions": {
+                  "mlx": "0.32.2",
+                  "mlx-lm": "0.31.3",
+                  "numpy": "2.5.3",
+                  "transformers": "5.17.0"
+                },
+                "weight_dtype": "bfloat16"
+              },
+              "config": {
+                "bridge_ratio": 0.2,
+                "bridge_ratios": [
+                  0.0,
+                  0.1,
+                  0.2,
+                  1.0
+                ],
+                "dataset": "data/musique_dev_sample.jsonl",
+                "equal_hops": 3,
+                "evidence_per_hop": 2,
+                "experiments": [
+                  "E1",
+                  "E4",
+                  "E5"
+                ],
+                "hops": [
+                  1,
+                  3
+                ],
+                "latent_precisions": [
+                  "bf16",
+                  "int8"
+                ],
+                "limit": 2,
+                "max_answer_tokens": 48,
+                "max_context_tokens": 6144,
+                "max_document_tokens": 300,
+                "max_relay_tokens": 192,
+                "precisions": [
+                  "bf16",
+                  "int8",
+                  "int4"
+                ],
+                "relay_precision": "int8",
+                "repeats": 1,
+                "schedule": "lexical",
+                "seed": 42
+              },
+              "dataset_sha256": "f4edc244a51c7c566dbffc26d22149b177c27f345e34e195745d567a4d201432",
+              "protocol_version": "fixed-evidence-qwen3-v3-bm25-json",
+              "source_code_sha256": {
+                "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+                "eval/real_experiments.py": "bdc7537cf94f05c25b55a32ec049f33343b7d83fe6474048380284dc6c5f453c",
+                "eval/retrieval.py": "7d716e40bdf845c4797f7f4b9ceeaa64681bc2adb1648d28ea33b0203037228a",
+                "scripts/run_experiments.py": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7"
+              }
+            },
+            "machine_recorded_source": {
+              "code_sha256": {
+                "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+                "eval/real_experiments.py": "bdc7537cf94f05c25b55a32ec049f33343b7d83fe6474048380284dc6c5f453c",
+                "eval/retrieval.py": "7d716e40bdf845c4797f7f4b9ceeaa64681bc2adb1648d28ea33b0203037228a",
+                "scripts/run_experiments.py": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7"
+              },
+              "git_dirty": [],
+              "git_head": "6ba2ffe796fbdd112989708a86841fe21a299342"
+            }
+          }
+        },
+        {
+          "receipt": "development-v2/musique/summary.json",
+          "reported_identity": {
+            "protocol_version": "fixed-evidence-qwen3-v3-bm25-json"
+          }
+        },
+        {
+          "receipt": "development-v2/updates/manifest.json",
+          "reported_identity": {
+            "backend": {
+              "backend": "mlx-qwen3-shared-base",
+              "backend_identity": "f6211d9cd6337dc74daf05ac",
+              "bridge_method": "causal_boundary_spans",
+              "decoding": "greedy",
+              "kv_baseline_dtype": "bfloat16",
+              "max_context": 8192,
+              "memory_limit_bytes": 34359738368,
+              "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+              "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+              "model_type": "qwen3",
+              "prefill_batch_size": 256,
+              "quantization": "packed_affine_storage_dequantized_for_attention",
+              "role_adapters": null,
+              "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+              "thinking": false,
+              "versions": {
+                "mlx": "0.32.2",
+                "mlx-lm": "0.31.3",
+                "numpy": "2.5.3",
+                "transformers": "5.17.0"
+              },
+              "weight_dtype": "bfloat16"
+            },
+            "identity": {
+              "backend": {
+                "backend": "mlx-qwen3-shared-base",
+                "backend_identity": "f6211d9cd6337dc74daf05ac",
+                "bridge_method": "causal_boundary_spans",
+                "decoding": "greedy",
+                "kv_baseline_dtype": "bfloat16",
+                "max_context": 8192,
+                "memory_limit_bytes": 34359738368,
+                "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+                "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+                "model_type": "qwen3",
+                "prefill_batch_size": 256,
+                "quantization": "packed_affine_storage_dequantized_for_attention",
+                "role_adapters": null,
+                "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+                "thinking": false,
+                "versions": {
+                  "mlx": "0.32.2",
+                  "mlx-lm": "0.31.3",
+                  "numpy": "2.5.3",
+                  "transformers": "5.17.0"
+                },
+                "weight_dtype": "bfloat16"
+              },
+              "config": {
+                "bridge_ratio": 0.2,
+                "bridge_ratios": [
+                  0.0,
+                  0.1,
+                  0.2,
+                  1.0
+                ],
+                "dataset": "data/synthetic_updates_dev.jsonl",
+                "equal_hops": 2,
+                "evidence_per_hop": 1,
+                "experiments": [
+                  "E6"
+                ],
+                "hops": [
+                  1,
+                  3
+                ],
+                "latent_precisions": [
+                  "bf16",
+                  "int8"
+                ],
+                "limit": 4,
+                "max_answer_tokens": 16,
+                "max_context_tokens": 6144,
+                "max_document_tokens": 300,
+                "max_relay_tokens": 192,
+                "precisions": [
+                  "bf16",
+                  "int8",
+                  "int4"
+                ],
+                "relay_precision": "int8",
+                "repeats": 1,
+                "schedule": "source",
+                "seed": 42
+              },
+              "dataset_sha256": "e7b7c78ca6458989fe0681016bcfb0e7c79d4aac10430f98de856c962079ffb5",
+              "protocol_version": "fixed-evidence-qwen3-v3-bm25-json",
+              "source_code_sha256": {
+                "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+                "eval/real_experiments.py": "bdc7537cf94f05c25b55a32ec049f33343b7d83fe6474048380284dc6c5f453c",
+                "eval/retrieval.py": "7d716e40bdf845c4797f7f4b9ceeaa64681bc2adb1648d28ea33b0203037228a",
+                "scripts/run_experiments.py": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7"
+              }
+            },
+            "machine_recorded_source": {
+              "code_sha256": {
+                "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+                "eval/real_experiments.py": "bdc7537cf94f05c25b55a32ec049f33343b7d83fe6474048380284dc6c5f453c",
+                "eval/retrieval.py": "7d716e40bdf845c4797f7f4b9ceeaa64681bc2adb1648d28ea33b0203037228a",
+                "scripts/run_experiments.py": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7"
+              },
+              "git_dirty": [],
+              "git_head": "6ba2ffe796fbdd112989708a86841fe21a299342"
+            }
+          }
+        },
+        {
+          "receipt": "development-v2/updates/summary.json",
+          "reported_identity": {
+            "protocol_version": "fixed-evidence-qwen3-v3-bm25-json"
+          }
+        }
+      ],
+      "status_receipts": [
+        {
+          "receipt": "development-v2/beam/summary.json",
+          "reported_status": {
+            "completed_unique_runs": 8,
+            "n_failed_runs": 0,
+            "n_successful_runs": 8,
+            "planned_runs": 8,
+            "stop_reason": "complete"
+          }
+        },
+        {
+          "receipt": "development-v2/guard-status.json",
+          "reported_status": {
+            "reason": null,
+            "returncode": 0,
+            "status": "complete"
+          }
+        },
+        {
+          "receipt": "development-v2/hotpot/summary.json",
+          "reported_status": {
+            "completed_unique_runs": 22,
+            "n_failed_runs": 0,
+            "n_successful_runs": 22,
+            "planned_runs": 22,
+            "stop_reason": "complete"
+          }
+        },
+        {
+          "receipt": "development-v2/matrix-status.json",
+          "reported_status": {
+            "jobs": [
+              {
+                "completed_runs": 38,
+                "job": "multihop",
+                "planned_runs": 38,
+                "stop_reason": "complete"
+              },
+              {
+                "completed_runs": 32,
+                "job": "updates",
+                "planned_runs": 32,
+                "stop_reason": "complete"
+              },
+              {
+                "completed_runs": 22,
+                "job": "hotpot",
+                "planned_runs": 22,
+                "stop_reason": "complete"
+              },
+              {
+                "completed_runs": 22,
+                "job": "musique",
+                "planned_runs": 22,
+                "stop_reason": "complete"
+              },
+              {
+                "completed_runs": 8,
+                "job": "beam",
+                "planned_runs": 8,
+                "stop_reason": "complete"
+              }
+            ]
+          }
+        },
+        {
+          "receipt": "development-v2/multihop/summary.json",
+          "reported_status": {
+            "completed_unique_runs": 38,
+            "n_failed_runs": 0,
+            "n_successful_runs": 38,
+            "planned_runs": 38,
+            "stop_reason": "complete"
+          }
+        },
+        {
+          "receipt": "development-v2/musique/summary.json",
+          "reported_status": {
+            "completed_unique_runs": 22,
+            "n_failed_runs": 0,
+            "n_successful_runs": 22,
+            "planned_runs": 22,
+            "stop_reason": "complete"
+          }
+        },
+        {
+          "receipt": "development-v2/updates/summary.json",
+          "reported_status": {
+            "completed_unique_runs": 32,
+            "n_failed_runs": 0,
+            "n_successful_runs": 32,
+            "planned_runs": 32,
+            "stop_reason": "complete"
+          }
+        }
+      ],
+      "status_source": "development-v2/guard-status.json"
+    },
+    {
+      "artifacts": [
+        "artifacts/judge-pilot/guard-status.json.gz",
+        "artifacts/judge-pilot/judgments.jsonl.gz",
+        "artifacts/judge-pilot/manifest.json.gz",
+        "artifacts/judge-pilot/process.log.gz",
+        "artifacts/judge-pilot/resources.jsonl.gz",
+        "artifacts/judge-pilot/summary.json.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "Development-only local same-model judging; not official BEAM scores.",
+      "observed_status": "complete",
+      "role": "same_model_rubric_judge_pilot",
+      "source": "judge-pilot",
+      "source_identity_receipts": [
+        {
+          "receipt": "judge-pilot/manifest.json",
+          "reported_identity": {
+            "identity": {
+              "backend": {
+                "backend": "mlx-qwen3-shared-base",
+                "backend_identity": "f6211d9cd6337dc74daf05ac",
+                "bridge_method": "causal_boundary_spans",
+                "decoding": "greedy",
+                "kv_baseline_dtype": "bfloat16",
+                "max_context": 8192,
+                "memory_limit_bytes": 34359738368,
+                "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+                "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+                "model_type": "qwen3",
+                "prefill_batch_size": 256,
+                "quantization": "packed_affine_storage_dequantized_for_attention",
+                "role_adapters": null,
+                "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+                "thinking": false,
+                "versions": {
+                  "mlx": "0.32.2",
+                  "mlx-lm": "0.31.3",
+                  "numpy": "2.5.3",
+                  "transformers": "5.17.0"
+                },
+                "weight_dtype": "bfloat16"
+              },
+              "dataset_sha256": "e3bf2bcf0b1dab01d0a042f12e6468dc666012c6b1d5a6082260aec3d65f17a1",
+              "judge_source_sha256": "2cdc7e78f7e5491ae818293bd4971de8ab60929f483088a8c8f01b4272b7e36c",
+              "judge_version": "local-beam-rubric-v1",
+              "max_tokens": 192,
+              "seed": 42
+            }
+          }
+        },
+        {
+          "receipt": "judge-pilot/process.log",
+          "reported_identity": {
+            "judge_version": "local-beam-rubric-v1"
+          }
+        },
+        {
+          "receipt": "judge-pilot/summary.json",
+          "reported_identity": {
+            "judge_version": "local-beam-rubric-v1"
+          }
+        }
+      ],
+      "status_receipts": [
+        {
+          "receipt": "judge-pilot/guard-status.json",
+          "reported_status": {
+            "reason": null,
+            "returncode": 0,
+            "status": "complete"
+          }
+        },
+        {
+          "receipt": "judge-pilot/summary.json",
+          "reported_status": {
+            "n_invalid": 0,
+            "n_valid": 8,
+            "planned": 8,
+            "stop_reason": "complete"
+          }
+        }
+      ],
+      "status_source": "judge-pilot/guard-status.json"
+    },
+    {
+      "artifacts": [
+        "artifacts/adaptive-preflight/guard-status.json.gz",
+        "artifacts/adaptive-preflight/logits.npz.gz",
+        "artifacts/adaptive-preflight/preflight.json.gz",
+        "artifacts/adaptive-preflight/process.log.gz",
+        "artifacts/adaptive-preflight/resources.jsonl.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "Fixed synthetic mechanics trace and toy reranker check; raw logits are diagnostic, not benchmark results.",
+      "observed_status": "complete",
+      "role": "adaptive_real_weight_mechanics_preflight",
+      "source": "adaptive-preflight",
+      "source_identity_receipts": [
+        {
+          "receipt": "adaptive-preflight/preflight.json",
+          "reported_identity": {
+            "backend_identity": {
+              "backend": "mlx-qwen3-shared-base",
+              "backend_identity": "f6211d9cd6337dc74daf05ac",
+              "bridge_method": "causal_boundary_spans",
+              "decoding": "greedy",
+              "kv_baseline_dtype": "bfloat16",
+              "max_context": 8192,
+              "memory_limit_bytes": 34359738368,
+              "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+              "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+              "model_type": "qwen3",
+              "prefill_batch_size": 256,
+              "quantization": "packed_affine_storage_dequantized_for_attention",
+              "role_adapters": null,
+              "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+              "thinking": false,
+              "versions": {
+                "mlx": "0.32.2",
+                "mlx-lm": "0.31.3",
+                "numpy": "2.5.3",
+                "transformers": "5.17.0"
+              },
+              "weight_dtype": "bfloat16"
+            },
+            "machine_recorded_source": {
+              "code_sha256": {
+                "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+                "eval/real_experiments.py": "d6dc79f4c4a908227d1e787001a4fe77476b628d4c2548e0b89a2f126da48a8f",
+                "eval/retrieval.py": "46eb57ac29e309acdbae8c5fcc84a4677a6651b29792466b7cfcb55f897c6cec",
+                "scripts/run_experiments.py": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7"
+              },
+              "git_dirty": [
+                "?? reports/"
+              ],
+              "git_head": "6eca7737657c5f00180e6c647aa89d48b4bc7a53"
+            },
+            "reranker_identity": {
+              "backend": {
+                "backend": "mlx-qwen3-shared-base",
+                "backend_identity": "816b78c951f56187c6a525fe",
+                "bridge_method": "causal_boundary_spans",
+                "decoding": "greedy",
+                "kv_baseline_dtype": "bfloat16",
+                "max_context": 2048,
+                "memory_limit_bytes": 34359738368,
+                "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-Reranker-0.6B",
+                "model_revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+                "model_type": "qwen3",
+                "prefill_batch_size": 256,
+                "quantization": "packed_affine_storage_dequantized_for_attention",
+                "role_adapters": null,
+                "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+                "thinking": false,
+                "versions": {
+                  "mlx": "0.32.2",
+                  "mlx-lm": "0.31.3",
+                  "numpy": "2.5.3",
+                  "transformers": "5.17.0"
+                },
+                "weight_dtype": "bfloat16"
+              },
+              "batch_size": 1,
+              "checkpoint_manifest": {
+                "files": [
+                  {
+                    "path": "README.md",
+                    "sha256": "5bba8c734f6dd3ae48317b4139317e45a7fce48fc55e15670b23a0dd15492ab6",
+                    "size_bytes": 14742
+                  },
+                  {
+                    "path": "chat_template.jinja",
+                    "sha256": "6f682162495ec5b39fd9005c01b6aa2a74669379fe967039f1e2cbbe8752369d",
+                    "size_bytes": 741
+                  },
+                  {
+                    "path": "config.json",
+                    "sha256": "d479c427a9ca5295218063d4f9aca4f297ab4ac27487cca7af42c84643d51ef0",
+                    "size_bytes": 727
+                  },
+                  {
+                    "path": "generation_config.json",
+                    "sha256": "81051cd3f6e77013827148d0b8a6ead93f8ac390d5ab805f849199f0af6a08db",
+                    "size_bytes": 214
+                  },
+                  {
+                    "path": "merges.txt",
+                    "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+                    "size_bytes": 1671853
+                  },
+                  {
+                    "path": "model.safetensors",
+                    "sha256": "27cd75a405b9c1b46b59abfd88aaa209e6fed2a1972cde9b70e7659537c5e65b",
+                    "size_bytes": 1191588280
+                  },
+                  {
+                    "path": "tokenizer.json",
+                    "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+                    "size_bytes": 11422654
+                  },
+                  {
+                    "path": "tokenizer_config.json",
+                    "sha256": "253153d0738ceb4c668d2eff957714dd2bea0b56de772a9fdccd96cbf517e6a0",
+                    "size_bytes": 9706
+                  },
+                  {
+                    "path": "vocab.json",
+                    "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+                    "size_bytes": 2776833
+                  }
+                ],
+                "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+                "revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+                "total_bytes": 1207485750
+              },
+              "generated_tokens": 0,
+              "implementation_sha256": "4651cdfc04c703a98b1092fbf7f095c84bbe827b6e98c0949492bf3e19476e30",
+              "input_document": "title + newline + text",
+              "instruction": "Given a web search query, retrieve relevant passages that answer the query",
+              "max_context": 2048,
+              "max_documents": 20,
+              "model_id": "Qwen/Qwen3-Reranker-0.6B",
+              "no_token_id": 2152,
+              "query_prefix_cache": false,
+              "revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+              "scoring": "sigmoid(float(yes_logit)-float(no_logit))",
+              "truncation": "right-truncate body; preserve framing and complete question",
+              "yes_token_id": 9693
+            },
+            "source_sha256": {
+              "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+              "engine/reranker_mlx.py": "4651cdfc04c703a98b1092fbf7f095c84bbe827b6e98c0949492bf3e19476e30",
+              "eval/adaptive_experiments.py": "1450e75d3e34a82416ebf64353f4921cc750deedbee37a6cc22f7cfe778c3559",
+              "scripts/preflight_adaptive.py": "e97983fb567992c61f6e6468e01a70f624f4f8456cb97c688284948fd84beca6"
+            }
+          }
+        }
+      ],
+      "status_receipts": [
+        {
+          "receipt": "adaptive-preflight/guard-status.json",
+          "reported_status": {
+            "reason": null,
+            "returncode": 0,
+            "status": "complete"
+          }
+        },
+        {
+          "receipt": "adaptive-preflight/preflight.json",
+          "reported_status": {
+            "status": "passed"
+          }
+        }
+      ],
+      "status_source": "adaptive-preflight/guard-status.json"
+    },
+    {
+      "artifacts": [
+        "artifacts/adaptive-dev/checkpoint.json.gz",
+        "artifacts/adaptive-dev/guard-status.json.gz",
+        "artifacts/adaptive-dev/manifest.json.gz",
+        "artifacts/adaptive-dev/process.log.gz",
+        "artifacts/adaptive-dev/resources.jsonl.gz",
+        "artifacts/adaptive-dev/results.jsonl.gz",
+        "artifacts/adaptive-dev/summary.json.gz",
+        "artifacts/adaptive-dev/tables.md.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "Adaptive development subset before the final test; all results excluded from final metrics.",
+      "observed_status": "complete",
+      "role": "adaptive_retrieval_development_run",
+      "source": "adaptive-dev",
+      "source_identity_receipts": [
+        {
+          "receipt": "adaptive-dev/manifest.json",
+          "reported_identity": {
+            "identity": {
+              "backend": {
+                "backend": "mlx-qwen3-shared-base",
+                "backend_identity": "f6211d9cd6337dc74daf05ac",
+                "bridge_method": "causal_boundary_spans",
+                "decoding": "greedy",
+                "kv_baseline_dtype": "bfloat16",
+                "max_context": 8192,
+                "memory_limit_bytes": 34359738368,
+                "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+                "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+                "model_type": "qwen3",
+                "prefill_batch_size": 256,
+                "quantization": "packed_affine_storage_dequantized_for_attention",
+                "role_adapters": null,
+                "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+                "thinking": false,
+                "versions": {
+                  "mlx": "0.32.2",
+                  "mlx-lm": "0.31.3",
+                  "numpy": "2.5.3",
+                  "transformers": "5.17.0"
+                },
+                "weight_dtype": "bfloat16"
+              },
+              "config": {
+                "arms": [
+                  "basic_rag",
+                  "expanded_rag",
+                  "iterative_text",
+                  "incremental_kv_bf16",
+                  "relay_kv_bf16",
+                  "relay_kv_int8",
+                  "reranked_rag"
+                ],
+                "bridge_ratio": 0.2,
+                "corpus": "data/adaptive_musique_corpus.jsonl",
+                "dataset": "data/adaptive_musique_dev.jsonl",
+                "documents_per_round": 3,
+                "initial_top_k": 6,
+                "limit": 6,
+                "max_action_tokens": 32,
+                "max_answer_tokens": 48,
+                "max_case_seconds": 180,
+                "max_document_tokens": 300,
+                "max_documents": 18,
+                "max_evidence_tokens": 6144,
+                "max_model_context_tokens": 8192,
+                "max_question_tokens": 256,
+                "rerank_candidates": 20,
+                "rounds": [
+                  5
+                ],
+                "rrf_k": 60,
+                "seed": 42
+              },
+              "corpus_sha256": "4e8ad63e12ab37e7fabec0158241d890a96171e006d226a7f22b6d00d594ce4a",
+              "protocol": "adaptive-global-bm25-cold-v1",
+              "questions_sha256": "a7627e89d17ee6933b6b810406784dbc9e115264432dcf4df34b3fbce09f87a3",
+              "reranker": {
+                "backend": {
+                  "backend": "mlx-qwen3-shared-base",
+                  "backend_identity": "816b78c951f56187c6a525fe",
+                  "bridge_method": "causal_boundary_spans",
+                  "decoding": "greedy",
+                  "kv_baseline_dtype": "bfloat16",
+                  "max_context": 2048,
+                  "memory_limit_bytes": 34359738368,
+                  "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-Reranker-0.6B",
+                  "model_revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+                  "model_type": "qwen3",
+                  "prefill_batch_size": 256,
+                  "quantization": "packed_affine_storage_dequantized_for_attention",
+                  "role_adapters": null,
+                  "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+                  "thinking": false,
+                  "versions": {
+                    "mlx": "0.32.2",
+                    "mlx-lm": "0.31.3",
+                    "numpy": "2.5.3",
+                    "transformers": "5.17.0"
+                  },
+                  "weight_dtype": "bfloat16"
+                },
+                "batch_size": 1,
+                "checkpoint_manifest": {
+                  "files": [
+                    {
+                      "path": "README.md",
+                      "sha256": "5bba8c734f6dd3ae48317b4139317e45a7fce48fc55e15670b23a0dd15492ab6",
+                      "size_bytes": 14742
+                    },
+                    {
+                      "path": "chat_template.jinja",
+                      "sha256": "6f682162495ec5b39fd9005c01b6aa2a74669379fe967039f1e2cbbe8752369d",
+                      "size_bytes": 741
+                    },
+                    {
+                      "path": "config.json",
+                      "sha256": "d479c427a9ca5295218063d4f9aca4f297ab4ac27487cca7af42c84643d51ef0",
+                      "size_bytes": 727
+                    },
+                    {
+                      "path": "generation_config.json",
+                      "sha256": "81051cd3f6e77013827148d0b8a6ead93f8ac390d5ab805f849199f0af6a08db",
+                      "size_bytes": 214
+                    },
+                    {
+                      "path": "merges.txt",
+                      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+                      "size_bytes": 1671853
+                    },
+                    {
+                      "path": "model.safetensors",
+                      "sha256": "27cd75a405b9c1b46b59abfd88aaa209e6fed2a1972cde9b70e7659537c5e65b",
+                      "size_bytes": 1191588280
+                    },
+                    {
+                      "path": "tokenizer.json",
+                      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+                      "size_bytes": 11422654
+                    },
+                    {
+                      "path": "tokenizer_config.json",
+                      "sha256": "253153d0738ceb4c668d2eff957714dd2bea0b56de772a9fdccd96cbf517e6a0",
+                      "size_bytes": 9706
+                    },
+                    {
+                      "path": "vocab.json",
+                      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+                      "size_bytes": 2776833
+                    }
+                  ],
+                  "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+                  "revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+                  "total_bytes": 1207485750
+                },
+                "generated_tokens": 0,
+                "implementation_sha256": "4651cdfc04c703a98b1092fbf7f095c84bbe827b6e98c0949492bf3e19476e30",
+                "input_document": "title + newline + text",
+                "instruction": "Given a web search query, retrieve relevant passages that answer the query",
+                "max_context": 2048,
+                "max_documents": 20,
+                "model_id": "Qwen/Qwen3-Reranker-0.6B",
+                "no_token_id": 2152,
+                "query_prefix_cache": false,
+                "revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+                "scoring": "sigmoid(float(yes_logit)-float(no_logit))",
+                "truncation": "right-truncate body; preserve framing and complete question",
+                "yes_token_id": 9693
+              },
+              "source_sha256": {
+                "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+                "engine/reranker_mlx.py": "4651cdfc04c703a98b1092fbf7f095c84bbe827b6e98c0949492bf3e19476e30",
+                "eval/adaptive_experiments.py": "1450e75d3e34a82416ebf64353f4921cc750deedbee37a6cc22f7cfe778c3559",
+                "eval/real_experiments.py": "d6dc79f4c4a908227d1e787001a4fe77476b628d4c2548e0b89a2f126da48a8f",
+                "eval/retrieval.py": "46eb57ac29e309acdbae8c5fcc84a4677a6651b29792466b7cfcb55f897c6cec",
+                "scripts/run_adaptive.py": "701674a1576fcbbc018ad0a405b236fb781b5b0953ad6ec5609e308fd762b9a7"
+              }
+            },
+            "machine_recorded_source": {
+              "code_sha256": {
+                "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+                "eval/real_experiments.py": "d6dc79f4c4a908227d1e787001a4fe77476b628d4c2548e0b89a2f126da48a8f",
+                "eval/retrieval.py": "46eb57ac29e309acdbae8c5fcc84a4677a6651b29792466b7cfcb55f897c6cec",
+                "scripts/run_experiments.py": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7"
+              },
+              "git_dirty": [
+                "?? reports/"
+              ],
+              "git_head": "6eca7737657c5f00180e6c647aa89d48b4bc7a53"
+            }
+          }
+        },
+        {
+          "receipt": "adaptive-dev/summary.json",
+          "reported_identity": {
+            "protocol_version": "adaptive-global-bm25-cold-v1"
+          }
+        }
+      ],
+      "status_receipts": [
+        {
+          "receipt": "adaptive-dev/guard-status.json",
+          "reported_status": {
+            "reason": null,
+            "returncode": 0,
+            "status": "complete"
+          }
+        },
+        {
+          "receipt": "adaptive-dev/summary.json",
+          "reported_status": {
+            "planned_runs": 42,
+            "stop_reason": "complete",
+            "successful_unique_runs": 42
+          }
+        }
+      ],
+      "status_source": "adaptive-dev/guard-status.json"
+    },
+    {
+      "artifacts": [
+        "artifacts/context-pressure-dev/checkpoint.json.gz",
+        "artifacts/context-pressure-dev/corpus.jsonl.gz.gz",
+        "artifacts/context-pressure-dev/guard-status.json.gz",
+        "artifacts/context-pressure-dev/manifest.json.gz",
+        "artifacts/context-pressure-dev/process.log.gz",
+        "artifacts/context-pressure-dev/questions.jsonl.gz.gz",
+        "artifacts/context-pressure-dev/resources.jsonl.gz",
+        "artifacts/context-pressure-dev/results.jsonl.gz",
+        "artifacts/context-pressure-dev/source-results.jsonl.gz.gz",
+        "artifacts/context-pressure-dev/summary.json.gz",
+        "artifacts/context-pressure-dev/tables.md.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "Matched-trace retention development check; excluded from final pressure metrics.",
+      "observed_status": "complete",
+      "role": "context_pressure_development_run",
+      "source": "context-pressure-dev",
+      "source_identity_receipts": [
+        {
+          "receipt": "context-pressure-dev/manifest.json",
+          "reported_identity": {
+            "identity": {
+              "backend": {
+                "backend": "mlx-qwen3-shared-base",
+                "backend_identity": "f6211d9cd6337dc74daf05ac",
+                "bridge_method": "causal_boundary_spans",
+                "decoding": "greedy",
+                "kv_baseline_dtype": "bfloat16",
+                "max_context": 8192,
+                "memory_limit_bytes": 34359738368,
+                "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+                "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+                "model_type": "qwen3",
+                "prefill_batch_size": 256,
+                "quantization": "packed_affine_storage_dequantized_for_attention",
+                "role_adapters": null,
+                "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+                "thinking": false,
+                "versions": {
+                  "mlx": "0.32.2",
+                  "mlx-lm": "0.31.3",
+                  "numpy": "2.5.3",
+                  "transformers": "5.17.0"
+                },
+                "weight_dtype": "bfloat16"
+              },
+              "config": {
+                "corpus": "data/adaptive_musique_corpus.jsonl",
+                "dataset": "data/adaptive_musique_dev.jsonl",
+                "evidence_budget": 1536,
+                "expected_questions": 6,
+                "max_answer_tokens": 48,
+                "max_case_seconds": 240,
+                "max_model_context": 8192,
+                "seed": 20260914,
+                "source_dir": "runs/adaptive-dev",
+                "source_rounds": 5,
+                "summary_budget": 384
+              },
+              "corpus_sha256": "4e8ad63e12ab37e7fabec0158241d890a96171e006d226a7f22b6d00d594ce4a",
+              "dataset_sha256": "a7627e89d17ee6933b6b810406784dbc9e115264432dcf4df34b3fbce09f87a3",
+              "protocol": "matched-trace-pressure-v1",
+              "source_manifest_sha256": "c3dea21b315dd9e896188d5451f5177e3e38c6a3670111ce73274cfd832a1234",
+              "source_results_sha256": "66e38d088e6d246d3b67f7155df87c6926d77e5996dd9fcdb2d16f1486621f21",
+              "source_sha256": {
+                "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+                "eval/adaptive_experiments.py": "1450e75d3e34a82416ebf64353f4921cc750deedbee37a6cc22f7cfe778c3559",
+                "eval/context_pressure.py": "84a30df13f717e3eeb9312459db8b4ad3289205915799019a6190f823a83008b",
+                "eval/real_experiments.py": "d6dc79f4c4a908227d1e787001a4fe77476b628d4c2548e0b89a2f126da48a8f",
+                "eval/retrieval.py": "46eb57ac29e309acdbae8c5fcc84a4677a6651b29792466b7cfcb55f897c6cec",
+                "scripts/run_context_pressure.py": "a309992cf3dc6405fae69f8b30ffd36b6f7e8dac07b266c8b54aaaa8c0276ea6"
+              }
+            }
+          }
+        },
+        {
+          "receipt": "context-pressure-dev/summary.json",
+          "reported_identity": {
+            "protocol_version": "matched-trace-pressure-v1"
+          }
+        }
+      ],
+      "status_receipts": [
+        {
+          "receipt": "context-pressure-dev/guard-status.json",
+          "reported_status": {
+            "reason": null,
+            "returncode": 0,
+            "status": "complete"
+          }
+        },
+        {
+          "receipt": "context-pressure-dev/summary.json",
+          "reported_status": {
+            "planned_runs": 24,
+            "status": "complete",
+            "stop_reason": "complete"
+          }
+        }
+      ],
+      "status_source": "context-pressure-dev/guard-status.json"
+    },
+    {
+      "artifacts": [
+        "artifacts/original-interrupted-multihop/manifest.json.gz",
+        "artifacts/original-interrupted-multihop/summary.json.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "Original test condition interrupted after the operator budget amendment. It is not development/tuning data and is excluded from final metrics.",
+      "observed_status": "failed_or_interrupted",
+      "role": "unused_partial_test_run_after_budget_amendment",
+      "source": "original-interrupted-multihop",
+      "source_identity_receipts": [
+        {
+          "receipt": "original-interrupted-multihop/manifest.json",
+          "reported_identity": {
+            "backend": {
+              "backend": "mlx-qwen3-shared-base",
+              "backend_identity": "f6211d9cd6337dc74daf05ac",
+              "bridge_method": "causal_boundary_spans",
+              "decoding": "greedy",
+              "kv_baseline_dtype": "bfloat16",
+              "max_context": 8192,
+              "memory_limit_bytes": 34359738368,
+              "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+              "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+              "model_type": "qwen3",
+              "prefill_batch_size": 256,
+              "quantization": "packed_affine_storage_dequantized_for_attention",
+              "role_adapters": null,
+              "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+              "thinking": false,
+              "versions": {
+                "mlx": "0.32.2",
+                "mlx-lm": "0.31.3",
+                "numpy": "2.5.3",
+                "transformers": "5.17.0"
+              },
+              "weight_dtype": "bfloat16"
+            },
+            "identity": {
+              "backend": {
+                "backend": "mlx-qwen3-shared-base",
+                "backend_identity": "f6211d9cd6337dc74daf05ac",
+                "bridge_method": "causal_boundary_spans",
+                "decoding": "greedy",
+                "kv_baseline_dtype": "bfloat16",
+                "max_context": 8192,
+                "memory_limit_bytes": 34359738368,
+                "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+                "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+                "model_type": "qwen3",
+                "prefill_batch_size": 256,
+                "quantization": "packed_affine_storage_dequantized_for_attention",
+                "role_adapters": null,
+                "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+                "thinking": false,
+                "versions": {
+                  "mlx": "0.32.2",
+                  "mlx-lm": "0.31.3",
+                  "numpy": "2.5.3",
+                  "transformers": "5.17.0"
+                },
+                "weight_dtype": "bfloat16"
+              },
+              "config": {
+                "bridge_ratio": 0.2,
+                "bridge_ratios": [
+                  0.0,
+                  0.1,
+                  0.2,
+                  1.0
+                ],
+                "dataset": "data/synthetic_multihop.jsonl",
+                "equal_hops": 3,
+                "evidence_per_hop": 2,
+                "experiments": [
+                  "E1",
+                  "E2",
+                  "E4",
+                  "E5"
+                ],
+                "hops": [
+                  1,
+                  3,
+                  5,
+                  10,
+                  20
+                ],
+                "latent_precisions": [
+                  "bf16",
+                  "int8"
+                ],
+                "limit": 64,
+                "max_answer_tokens": 16,
+                "max_context_tokens": 6144,
+                "max_document_tokens": 300,
+                "max_relay_tokens": 192,
+                "precisions": [
+                  "bf16",
+                  "int8",
+                  "int4"
+                ],
+                "relay_precision": "int8",
+                "repeats": 1,
+                "schedule": "lexical",
+                "seed": 42
+              },
+              "dataset_sha256": "778f6456bc8767baa98dcd8a16f21f6d0c5a8c6179d8e34b88df403e6bb7d861",
+              "protocol_version": "fixed-evidence-qwen3-v3-bm25-json",
+              "source_code_sha256": {
+                "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+                "eval/real_experiments.py": "bdc7537cf94f05c25b55a32ec049f33343b7d83fe6474048380284dc6c5f453c",
+                "eval/retrieval.py": "7d716e40bdf845c4797f7f4b9ceeaa64681bc2adb1648d28ea33b0203037228a",
+                "scripts/run_experiments.py": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7"
+              }
+            },
+            "machine_recorded_source": {
+              "code_sha256": {
+                "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+                "eval/real_experiments.py": "bdc7537cf94f05c25b55a32ec049f33343b7d83fe6474048380284dc6c5f453c",
+                "eval/retrieval.py": "7d716e40bdf845c4797f7f4b9ceeaa64681bc2adb1648d28ea33b0203037228a",
+                "scripts/run_experiments.py": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7"
+              },
+              "git_dirty": [
+                " M scripts/prepare_beam_retrieval.py",
+                "?? reports/",
+                "?? tests/test_prepare_beam_retrieval.py"
+              ],
+              "git_head": "2efd46c89ceef836e67215b11517ccb0f372933e"
+            }
+          }
+        },
+        {
+          "receipt": "original-interrupted-multihop/summary.json",
+          "reported_identity": {
+            "protocol_version": "fixed-evidence-qwen3-v3-bm25-json"
+          }
+        }
+      ],
+      "status_receipts": [
+        {
+          "receipt": "original-interrupted-multihop/summary.json",
+          "reported_status": {
+            "completed_unique_runs": 0,
+            "n_failed_runs": 0,
+            "n_successful_runs": 0,
+            "planned_runs": 1984,
+            "stop_reason": "failed_or_interrupted"
+          }
+        }
+      ],
+      "status_source": "original-interrupted-multihop/summary.json"
+    },
+    {
+      "artifacts": [
+        "artifacts/adaptive-data-validation.json.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "Input reproduction/provenance check; not model performance.",
+      "observed_status": "document_only",
+      "role": "data_reproduction_audit",
+      "source": "adaptive-data-validation.json",
+      "source_identity_receipts": [
+        {
+          "receipt": "adaptive-data-validation.json",
+          "reported_identity": {
+            "output_sha256": {
+              "adaptive_musique_corpus.jsonl": "4e8ad63e12ab37e7fabec0158241d890a96171e006d226a7f22b6d00d594ce4a",
+              "adaptive_musique_corpus_provenance.jsonl": "ec8ce692b2f8294d641441c993c72d22a05e3d0a9eade1f6a9562b30b5869a3b",
+              "adaptive_musique_dev.jsonl": "a7627e89d17ee6933b6b810406784dbc9e115264432dcf4df34b3fbce09f87a3",
+              "adaptive_musique_test.jsonl": "e09e7d8e3aa87cd81bb05d055013c9e9ab6e97ed7688a249ba6dd4563b53124f"
+            }
+          }
+        }
+      ],
+      "status_receipts": [],
+      "status_source": null
+    },
+    {
+      "artifacts": [
+        "artifacts/adaptive-initial-retrieval-audit-final.json.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "Pre-inference supporting-ID coverage only; not measured model accuracy or proof retained text contains the answer.",
+      "observed_status": "document_only",
+      "role": "pre_inference_retrieval_annotation_diagnostic",
+      "source": "adaptive-initial-retrieval-audit-final.json",
+      "source_identity_receipts": [
+        {
+          "receipt": "adaptive-initial-retrieval-audit-final.json",
+          "reported_identity": {
+            "corpus_sha256": "4e8ad63e12ab37e7fabec0158241d890a96171e006d226a7f22b6d00d594ce4a",
+            "retrieval_source_sha256": "46eb57ac29e309acdbae8c5fcc84a4677a6651b29792466b7cfcb55f897c6cec"
+          }
+        }
+      ],
+      "status_receipts": [],
+      "status_source": null
+    },
+    {
+      "artifacts": [
+        "artifacts/adaptive-initial-retrieval-audit.json.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "Pre-inference supporting-ID coverage only; not measured model accuracy or proof retained text contains the answer.",
+      "observed_status": "document_only",
+      "role": "pre_inference_retrieval_annotation_diagnostic",
+      "source": "adaptive-initial-retrieval-audit.json",
+      "source_identity_receipts": [
+        {
+          "receipt": "adaptive-initial-retrieval-audit.json",
+          "reported_identity": {
+            "corpus_sha256": "4e8ad63e12ab37e7fabec0158241d890a96171e006d226a7f22b6d00d594ce4a",
+            "retrieval_source_sha256": "7d716e40bdf845c4797f7f4b9ceeaa64681bc2adb1648d28ea33b0203037228a"
+          }
+        }
+      ],
+      "status_receipts": [],
+      "status_source": null
+    },
+    {
+      "artifacts": [
+        "artifacts/backend-report-notes.md.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "Historical methods notes may predate later adaptive/reranker additions; not final results.",
+      "observed_status": "document_only",
+      "role": "historical_methods_and_numerical_notes",
+      "source": "backend-report-notes.md",
+      "source_identity_receipts": [
+        {
+          "receipt": "backend-report-notes.md",
+          "reported_identity": {
+            "note_declared_source_hashes": {
+              "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+              "eval/real_experiments.py": "bdc7537cf94f05c25b55a32ec049f33343b7d83fe6474048380284dc6c5f453c",
+              "runs/native-validation-relative/process.log": "1605dbfdd500d681988b35e2552e32788b39c71d8be9492bddc08eedad12caa3",
+              "scripts/validate_real_backend.py": "6c16a3ce6d36c4cf54971fc8d9a4c41ea07a0cc35023b6d3825ca978a7f22fea"
+            }
+          }
+        }
+      ],
+      "status_receipts": [],
+      "status_source": null
+    },
+    {
+      "artifacts": [
+        "artifacts/bm25_hashseed_audit.json.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "Diagnostic rankings and floating-point variation; not scored model inference.",
+      "observed_status": "document_only",
+      "role": "hashseed_reproducibility_audit",
+      "source": "bm25_hashseed_audit.json",
+      "source_identity_receipts": [
+        {
+          "receipt": "bm25_hashseed_audit.json",
+          "reported_identity": {
+            "retrieval_source_sha256": "7d716e40bdf845c4797f7f4b9ceeaa64681bc2adb1648d28ea33b0203037228a"
+          }
+        }
+      ],
+      "status_receipts": [],
+      "status_source": null
+    },
+    {
+      "artifacts": [
+        "artifacts/bm25_hashseed_ledgers.json.gz.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "Exact original compressed ledger is preserved inside an outer gzip.",
+      "observed_status": "document_only",
+      "role": "hashseed_reproducibility_raw_ledger",
+      "source": "bm25_hashseed_ledgers.json.gz",
+      "source_identity_receipts": [],
+      "status_receipts": [],
+      "status_source": null
+    },
+    {
+      "artifacts": [
+        "artifacts/overnight/amendment.json.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "Operator-approved scheduling/budget amendment; not a model result and not a development condition.",
+      "observed_status": "document_only",
+      "role": "operator_budget_amendment_receipt",
+      "source": "overnight/amendment.json",
+      "source_identity_receipts": [],
+      "status_receipts": [],
+      "status_source": null
+    },
+    {
+      "artifacts": [
+        "artifacts/reranker_prompt_audit.json.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "CPU prompt equivalence only, bound to the helper hash recorded in this receipt; no model-quality claim.",
+      "observed_status": "document_only",
+      "role": "reranker_tokenizer_prompt_audit",
+      "source": "reranker_prompt_audit.json",
+      "source_identity_receipts": [
+        {
+          "receipt": "reranker_prompt_audit.json",
+          "reported_identity": {
+            "helper_sha256": "0bdba1ffa4ad4a18ed890a9dfa4a8c86f2b95dfeb90710ae1127cc899c41b8b8",
+            "model_revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+            "readme_sha256": "5bba8c734f6dd3ae48317b4139317e45a7fce48fc55e15670b23a0dd15492ab6"
+          }
+        }
+      ],
+      "status_receipts": [],
+      "status_source": null
+    },
+    {
+      "artifacts": [
+        "artifacts/reranker_prompt_audit_final.json.gz"
+      ],
+      "eligible_for_main_metrics": false,
+      "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
+      "note": "CPU prompt equivalence only, bound to the helper hash recorded in this receipt; no model-quality claim.",
+      "observed_status": "document_only",
+      "role": "reranker_tokenizer_prompt_audit",
+      "source": "reranker_prompt_audit_final.json",
+      "source_identity_receipts": [
+        {
+          "receipt": "reranker_prompt_audit_final.json",
+          "reported_identity": {
+            "helper_sha256": "4651cdfc04c703a98b1092fbf7f095c84bbe827b6e98c0949492bf3e19476e30",
+            "model_revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+            "readme_sha256": "5bba8c734f6dd3ae48317b4139317e45a7fce48fc55e15670b23a0dd15492ab6"
+          }
+        }
+      ],
+      "status_receipts": [],
+      "status_source": null
+    }
+  ],
+  "limitations": [
+    "Archive completeness does not mean every validation passed; original guard statuses are retained.",
+    "Failed/stopped runs, prior protocols, and budget-excluded partial test runs are never pooled into main benchmark metrics.",
+    "Historical source hashes may be absent; current code identity is not substituted.",
+    "Raw receipts are exact snapshots, including malformed or partial trailing records.",
+    "No model weights, full input corpora, private laptop files, or unrelated run directories are selected."
+  ],
+  "missing_expected_sources": [],
+  "schema_version": "validation-history-v1",
+  "source_bytes": 9927062
+}

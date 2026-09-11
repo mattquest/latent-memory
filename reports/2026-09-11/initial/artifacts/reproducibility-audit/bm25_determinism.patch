@@ -1,0 +1,11 @@
+--- a/eval/retrieval.py
++++ b/eval/retrieval.py
+@@ -30,7 +30,7 @@
+         if k < 1 or max_per_source < 1:
+             raise ValueError("retrieval caps must be positive")
+         scores = defaultdict(float)
+-        for term in set(terms(question)):
++        for term in sorted(set(terms(question))):
+             posting = self.postings.get(term, ())
+             idf = math.log(1 + (len(self.documents) - len(posting) + 0.5) / (len(posting) + 0.5))
+             for index, frequency in posting:

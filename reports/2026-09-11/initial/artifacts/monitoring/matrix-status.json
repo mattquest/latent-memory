@@ -1,0 +1,42 @@
+{
+  "elapsed_seconds": 5054.6458369159955,
+  "jobs": [
+    {
+      "completed_runs": 1024,
+      "job": "private_audit_precision",
+      "planned_runs": 1024,
+      "stop_reason": "complete"
+    },
+    {
+      "completed_runs": 512,
+      "job": "hotpot_equal",
+      "planned_runs": 512,
+      "stop_reason": "complete"
+    },
+    {
+      "completed_runs": 512,
+      "job": "musique_equal",
+      "planned_runs": 512,
+      "stop_reason": "complete"
+    },
+    {
+      "completed_runs": 288,
+      "job": "beam_equal_updates",
+      "planned_runs": 288,
+      "stop_reason": "complete"
+    },
+    {
+      "completed_runs": 1024,
+      "job": "updates",
+      "planned_runs": 1024,
+      "stop_reason": "complete"
+    }
+  ],
+  "matrix": "configs/overnight.json",
+  "memory": {
+    "active_bytes": 16381470728,
+    "cache_bytes": 0,
+    "memory_limit_bytes": 34359738368,
+    "peak_bytes": 17663338704
+  }
+}

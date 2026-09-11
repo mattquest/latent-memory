@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-09-11T06:34:02.043920+00:00",
+  "seed": 20260911,
+  "schema_version": 1,
+  "count_requested": 128,
+  "sources": [
+    {
+      "url": "https://huggingface.co/datasets/hotpotqa/hotpot_qa/resolve/1908d6afbbead072334abe2965f91bd2709910ab/distractor/validation-00000-of-00001.parquet",
+      "resolved_url": "https://us.aws.cdn.hf.co/xet-bridge-us/621ffdd236468d709f181e65/6f4264cffe19511caba92594db23f1a32eb76fdeebbb04f7a98a589a3726423e?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27validation-00000-of-00001.parquet%3B+filename%3D%22validation-00000-of-00001.parquet%22%3B&X-Xet-Cas-Uid=public&user_id=public&Expires=1789112043&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly91cy5hd3MuY2RuLmhmLmNvL3hldC1icmlkZ2UtdXMvNjIxZmZkZDIzNjQ2OGQ3MDlmMTgxZTY1LzZmNDI2NGNmZmUxOTUxMWNhYmE5MjU5NGRiMjNmMWEzMmViNzZmZGVlYmJiMDRmN2E5OGE1ODlhMzcyNjQyM2VcXD9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPWlubGluZSUzQitmaWxlbmFtZSUyQSUzRFVURi04JTI3JTI3dmFsaWRhdGlvbi0wMDAwMC1vZi0wMDAwMS5wYXJxdWV0JTNCK2ZpbGVuYW1lJTNEJTIydmFsaWRhdGlvbi0wMDAwMC1vZi0wMDAwMS5wYXJxdWV0JTIyJTNCJlgtWGV0LUNhcy1VaWQ9cHVibGljJnVzZXJfaWQ9cHVibGljIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJFcG9jaFRpbWUiOjE3ODkxMTIwNDN9fX1dfQ__&Signature=MEYCIQDq4NWBCJ9xfiYeZVuzOPNQqkxNl5cSfqghAjKXwN9c1wIhAKCizG3Ww-5K0bvn2Yqb9yt1GwmJvSveaRgdbBaoD1kC&Key-Pair-Id=01KXEF4KZ1B6FV465MAWR4M21F",
+      "path": "data/raw/hotpot_dev_distractor.parquet",
+      "bytes": 27452575,
+      "sha256": "c20b638ca82b21d04fe12e14ff417ad05153d4d215a65de54497fca4e972f7c6",
+      "cached": false
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/hotpotqa_dev_sample.jsonl",
+      "examples": 128,
+      "bytes": 1708623,
+      "sha256": "c3cac853ad9a048ca52613244dc3d97c30324ddcc068c9b2465193873a59c0e2"
+    }
+  ],
+  "errors": {}
+}

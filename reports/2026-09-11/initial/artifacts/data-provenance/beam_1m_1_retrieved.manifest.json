@@ -1,0 +1,9 @@
+{
+  "path": "data/beam_1m_1_retrieved.jsonl",
+  "examples": 20,
+  "bytes": 569647,
+  "sha256": "e3bf2bcf0b1dab01d0a042f12e6468dc666012c6b1d5a6082260aec3d65f17a1",
+  "corpus_qwen_tokens": 985192,
+  "corpus_chunks": 5146,
+  "index_preparation_seconds": 1.1903945420053788
+}
