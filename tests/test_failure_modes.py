@@ -124,3 +124,120 @@ def test_analysis_rejects_datasets_other_than_the_recorded_bytes(artifacts):
     dataset.write_text(dataset.read_text() + "\n")
     with pytest.raises(ValueError, match="checksum mismatch"):
         analyze(root)
+
+
+def amend_completed_fixture(root):
+    """A controlled interruption after all explicitly retained jobs finished."""
+    guard = {"status": "stopped", "reason": "interrupted", "returncode": -2,
+             "elapsed_seconds": 12.5, "command": ["python", "run_matrix.py"]}
+    names = sorted(path.parent.name for path in root.glob("*/manifest.json"))
+    total = sum(json.loads(path.read_text())["planned_runs"] for path in root.glob("*/summary.json"))
+    amendment = {"original_planned_conditions": total + 6, "completed_initial_conditions": total,
+                 "canceled_original_remainder": 6, "completed_jobs": names,
+                 "guard_exit": dict(guard), "reason": "Declared budget amendment"}
+    (root / "guard-status.json").write_text(json.dumps(guard))
+    (root / "amendment.json").write_text(json.dumps(amendment))
+    return amendment, guard
+
+
+def test_strict_amendment_reports_only_completed_scope_and_preserves_interrupted_guard(artifacts):
+    root, _, _ = artifacts
+    amendment, guard = amend_completed_fixture(root)
+    before = {p: p.read_bytes() for p in root.rglob("*") if p.is_file()}
+    report = analyze(root, require_complete=True)
+    assert report["completeness"] == "complete"
+    assert report["completion_scope"]["kind"] == "amended_initial_jobs"
+    assert report["completion_scope"]["reported_jobs"] == ["chains", "public"]
+    assert report["completion_scope"]["reported_successful_conditions"] == 14
+    assert report["completion_scope"]["original_planned_conditions"] == 20
+    assert report["completion_scope"]["canceled_original_remainder"] == 6
+    assert report["resource_guard"] == guard
+    assert report["resource_guard"]["status"] == "stopped"
+    assert report["amendment_receipt"]["content"] == amendment
+    assert report["amendment_receipt"]["sha256"] == hashlib.sha256(before[root / "amendment.json"]).hexdigest()
+    assert "Canceled conditions are not completed results" in markdown(report)
+    assert report["completion_errors"] == []
+    assert all(p.read_bytes() == raw for p, raw in before.items())
+
+
+@pytest.mark.parametrize("damage", [
+    "missing_amendment", "missing_guard", "missing_job", "extra_job", "duplicate_job_name",
+    "missing_manifest", "extra_unmanifested_results", "wrong_completed_count", "unbalanced_counts",
+    "boolean_count", "string_count", "zero_canceled", "altered_preserved_guard", "matching_failed_guard",
+    "matching_resource_stop", "matching_wrong_exit_code", "missing_summary", "partial_results",
+    "new_failed_condition", "later_failure_overrides_success", "wrong_summary_count",
+])
+def test_amendment_cannot_mask_missing_mismatched_or_failed_runs(artifacts, damage):
+    root, job, _ = artifacts
+    amendment, guard = amend_completed_fixture(root)
+    if damage == "missing_job":
+        amendment["completed_jobs"].append("absent")
+    elif damage == "extra_job":
+        amendment["completed_jobs"].remove("chains")
+    elif damage == "duplicate_job_name":
+        amendment["completed_jobs"].append("chains")
+    elif damage == "wrong_completed_count":
+        amendment["completed_initial_conditions"] += 1
+        amendment["original_planned_conditions"] += 1  # arithmetic alone still balances
+    elif damage == "unbalanced_counts":
+        amendment["original_planned_conditions"] += 1
+    elif damage == "boolean_count":
+        amendment["canceled_original_remainder"] = True
+    elif damage == "string_count":
+        amendment["completed_initial_conditions"] = "14"
+    elif damage == "zero_canceled":
+        amendment["canceled_original_remainder"] = 0
+        amendment["original_planned_conditions"] = 14
+    elif damage == "altered_preserved_guard":
+        amendment["guard_exit"]["elapsed_seconds"] += 1
+    elif damage.startswith("matching_"):
+        if damage == "matching_failed_guard":
+            guard.update(status="failed", reason="child_failed", returncode=1)
+        elif damage == "matching_resource_stop":
+            guard.update(reason="rss_limit")
+        else:
+            guard.update(returncode=1)
+        amendment["guard_exit"] = dict(guard)
+    (root / "guard-status.json").write_text(json.dumps(guard))
+    (root / "amendment.json").write_text(json.dumps(amendment))
+    if damage == "missing_amendment":
+        (root / "amendment.json").unlink()
+    elif damage == "missing_guard":
+        (root / "guard-status.json").unlink()
+    elif damage == "missing_manifest":
+        (job / "manifest.json").unlink()
+    elif damage == "extra_unmanifested_results":
+        extra = root / "unused_partial"
+        extra.mkdir()
+        (extra / "results.jsonl").write_text('{}\n')
+    elif damage == "missing_summary":
+        (job / "summary.json").unlink()
+    elif damage == "partial_results":
+        with (job / "results.jsonl").open("ab") as handle:
+            handle.write(b'{"id":"partial')
+    elif damage in {"new_failed_condition", "later_failure_overrides_success"}:
+        failed = {"id": "l1" if damage == "later_failure_overrides_success" else "failed", "status": "error"}
+        with (job / "results.jsonl").open("a") as handle:
+            handle.write(json.dumps(failed) + "\n")
+    elif damage == "wrong_summary_count":
+        path = job / "summary.json"
+        summary = json.loads(path.read_text())
+        summary["n_successful_runs"] = 999
+        path.write_text(json.dumps(summary))
+    report = analyze(root)
+    assert report["completeness"] == "incomplete"
+    assert report["completion_errors"]
+    with pytest.raises(ValueError, match="Run is incomplete"):
+        analyze(root, require_complete=True)
+
+
+def test_successful_guard_does_not_hide_latest_failed_attempt(artifacts):
+    root, job, _ = artifacts
+    with (job / "results.jsonl").open("a") as handle:
+        handle.write(json.dumps({"id": "l1", "status": "error"}) + "\n")
+    report = analyze(root)
+    public = next(x for x in report["jobs"] if x["job"] == "public")
+    assert public["unresolved_error_records"] == 1
+    assert public["successful_unique_runs"] == 10
+    with pytest.raises(ValueError, match="Run is incomplete"):
+        analyze(root, require_complete=True)

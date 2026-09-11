@@ -15,7 +15,7 @@ from pathlib import Path
 import statistics
 
 
-VERSION = "posthoc-failure-modes-v1"
+VERSION = "posthoc-failure-modes-v2-amended-scope"
 RATIOS = (0.0, 0.1, 0.2, 1.0)
 LIMITATIONS = [
     "Posthoc descriptive diagnostics only; these strata do not establish causal explanations.",
@@ -200,6 +200,60 @@ def recompute_e4(items):
     return result
 
 
+def completion_scope(root, jobs, guard):
+    """Accept only a completed run or an exactly receipted SIGINT amendment.
+
+    An amendment changes the reported job scope, not the original guard's
+    status. Missing/unmanifested jobs and unresolved failures cannot disappear
+    merely because the remaining summaries say complete.
+    """
+    observed = {p.name for p in root.iterdir() if p.is_dir() and any(
+        (p / name).exists() for name in ("manifest.json", "results.jsonl", "summary.json", "checkpoint.json"))}
+    names = {job["job"] for job in jobs}
+    errors = []
+    if observed != names or not jobs or not all(job["complete"] for job in jobs):
+        errors.append("All observed jobs must have manifests and complete successful summaries")
+    scope = {"kind": "original_run", "reported_jobs": sorted(names),
+             "reported_successful_conditions": sum(job["successful_unique_runs"] for job in jobs)}
+    path = root / "amendment.json"
+    if not path.exists():
+        if guard.get("status") != "complete" or guard.get("returncode") != 0:
+            errors.append("A successful root guard is required without a validated amendment")
+        return scope, None, errors
+
+    raw = path.read_bytes()
+    amendment = json.loads(raw)
+    receipt = {"source": str(path), "sha256": hashlib.sha256(raw).hexdigest(), "content": amendment}
+    scope["kind"] = "amended_initial_jobs"
+    if not isinstance(amendment, dict):
+        return scope, receipt, errors + ["Amendment must be a JSON object"]
+    completed_jobs = amendment.get("completed_jobs")
+    if (not isinstance(completed_jobs, list) or not completed_jobs
+            or any(not isinstance(name, str) or not name or Path(name).name != name
+                   or name in {".", ".."} for name in completed_jobs)
+            or len(set(completed_jobs)) != len(completed_jobs)
+            or set(completed_jobs) != names or set(completed_jobs) != observed):
+        errors.append("Amendment completed_jobs must exactly match the unique observed job set")
+    count_keys = ("original_planned_conditions", "completed_initial_conditions", "canceled_original_remainder")
+    counts = [amendment.get(key) for key in count_keys]
+    scope.update({key: amendment.get(key) for key in count_keys})
+    if any(type(value) is not int or value <= 0 for value in counts):
+        errors.append("Amendment condition counts must be positive integers")
+    else:
+        original, completed, canceled = counts
+        if original != completed + canceled:
+            errors.append("Amendment original/completed/canceled arithmetic does not balance")
+        if (completed != scope["reported_successful_conditions"]
+                or any(type(job["planned_runs"]) is not int or job["planned_runs"] <= 0 for job in jobs)
+                or sum(job["planned_runs"] or 0 for job in jobs) != completed):
+            errors.append("Amendment completed count must match every job's planned and successful counts")
+    if (amendment.get("guard_exit") != guard or guard.get("status") != "stopped"
+            or guard.get("reason") != "interrupted"
+            or type(guard.get("returncode")) is not int or guard["returncode"] not in {-2, 130}):
+        errors.append("Amendment guard_exit must exactly preserve the interrupted SIGINT guard")
+    return scope, receipt, errors
+
+
 def analyze(run_dir, *, repository=None, require_complete=False):
     root = Path(run_dir).resolve()
     repository = Path(repository or Path(__file__).resolve().parents[1])
@@ -223,7 +277,9 @@ def analyze(run_dir, *, repository=None, require_complete=False):
             raise ValueError(f"Duplicate dataset IDs: {dataset}")
         results_path = job_dir / "results.jsonl"
         rows, snapshot = read_jsonl(results_path) if results_path.exists() else ([], {})
-        latest = {row["id"]: row for row in rows if row.get("status") == "ok"}
+        latest_all = {row["id"]: row for row in rows}
+        latest = {key: row for key, row in latest_all.items() if row.get("status") == "ok"}
+        unresolved_errors = len(latest_all) - len(latest)
         selected = [row for row in latest.values() if row["case"].get("repeat", 0) == 0]
         for row in selected:
             example = examples[row["example_id"]]
@@ -234,22 +290,28 @@ def analyze(run_dir, *, repository=None, require_complete=False):
         summary = json.loads(summary_path.read_text()) if summary_path.exists() else {}
         complete = bool(summary and summary.get("stop_reason") == "complete"
                         and summary.get("planned_runs") == len(latest)
+                        and not unresolved_errors
+                        and all(summary.get(key, len(latest)) == len(latest)
+                                for key in ("completed_unique_runs", "n_successful_runs"))
                         and not snapshot.get("ignored_partial_trailing_records"))
         jobs.append({"job": job_dir.name, "dataset": str(dataset.resolve()),
                      "dataset_sha256": data_snapshot["sha256"], "results_snapshot": snapshot,
                      "successful_unique_runs": len(latest), "repeat_zero_records": len(selected),
                      "error_records": sum(row.get("status") != "ok" for row in rows),
+                     "unresolved_error_records": unresolved_errors,
                      "planned_runs": summary.get("planned_runs"), "complete": complete})
     guard_path = root / "guard-status.json"
     guard = json.loads(guard_path.read_text()) if guard_path.exists() else {}
-    complete = bool(guard.get("status") == "complete" and guard.get("returncode") == 0
-                    and all(job["complete"] for job in jobs))
+    scope, amendment, completion_errors = completion_scope(root, jobs, guard)
+    complete = not completion_errors
     if require_complete and not complete:
-        raise ValueError("Run is incomplete: require a successful root guard and complete per-job summaries")
+        raise ValueError("Run is incomplete: " + "; ".join(completion_errors))
     e1, disagreements = public_e1(items)
     return {"analysis_version": VERSION,
             "created_utc": datetime.now(timezone.utc).isoformat(), "run_dir": str(root),
             "completeness": "complete" if complete else "incomplete",
+            "completion_scope": scope, "completion_errors": completion_errors,
+            "amendment_receipt": amendment, "resource_guard": guard,
             "diagnostic_role": "posthoc_descriptive_not_causal", "jobs": jobs,
             "public_e1": e1, "public_e1_bf16_latent_vs_direct": disagreements,
             "synthetic_e2": synthetic_e2(items), "e4_recompute": recompute_e4(items),
@@ -260,7 +322,17 @@ def markdown(report):
     pct = lambda x: "—" if x is None else f"{100*x:.1f}%"
     arm = lambda x: f"{x['condition']['arm']} / {x['condition'].get('precision', 'unspecified')}"
     lines = ["# Posthoc failure-mode diagnostics", "", f"**Snapshot: {report['completeness'].upper()}.** "
-             "Descriptive diagnostics only; no causal attribution.", "", "## Public E1 by support-document coverage", "",
+             "Descriptive diagnostics only; no causal attribution."]
+    scope = report.get("completion_scope", {})
+    if scope.get("kind") == "amended_initial_jobs":
+        lines += ["", f"Amended initial-job scope: {scope.get('reported_successful_conditions')} successful conditions; "
+                  f"the original plan had {scope.get('original_planned_conditions')} and "
+                  f"{scope.get('canceled_original_remainder')} were canceled. "
+                  "Canceled conditions are not completed results. The preserved root guard remains interrupted; "
+                  "the amendment and exact job/count checks determine this snapshot's completion status."]
+    if report.get("completion_errors"):
+        lines += ["", "Completion checks: " + "; ".join(report["completion_errors"])]
+    lines += ["", "## Public E1 by support-document coverage", "",
              "| Job | Arm | Nominal hops | Support coverage | N | EM | F1 | Selected truncation | UNKNOWN | Output cap |",
              "| --- | --- | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: |"]
     for group in report["public_e1"]:
