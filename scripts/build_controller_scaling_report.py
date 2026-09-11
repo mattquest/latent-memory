@@ -433,6 +433,9 @@ def plots(metrics, trajectories, output, cohort):
     fig.legend(handles, labels, loc="lower center", ncol=2, frameon=False)
     fig.suptitle("Evidence discovery · all questions retained after early stops")
     fig.tight_layout(rect=(0, .07, 1, .95))
+    # Materialize shared-axis tick labels before the raster export; otherwise
+    # the first Agg draw can omit labels while retaining their grid lines.
+    fig.canvas.draw()
     fig.savefig(directory / "support_trajectories.png", dpi=160)
     plt.close(fig)
     fig, axes = plt.subplots(1, 2, figsize=(12, 5))

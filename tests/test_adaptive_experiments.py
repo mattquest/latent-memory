@@ -395,6 +395,15 @@ def test_new_controller_accepts_finish_command_with_ignored_answer_payload(raw):
                       'format_variant': 'answer_with_ignored_payload'}
 
 
+@pytest.mark.parametrize('raw', ['ANSWER \nNorth Sea', 'ANSWER\t\nNorth Sea',
+                                 'ANSWER. \r\nNorth Sea', 'ANSWER: North Sea \nExplanation'])
+def test_tolerant_finish_parser_trims_first_line_trailing_whitespace_only(raw):
+    assert parse_action(raw, allow_answer_payload=True) == {
+        'kind': 'answer', 'query': None, 'valid': True,
+        'format_variant': 'answer_with_ignored_payload'}
+    assert not parse_action(raw, allow_answer_payload=False)['valid']
+
+
 @pytest.mark.parametrize('raw', ['The ANSWER is missing', 'ANSWER is not possible',
                                   'SEARCH: River Alder\nSEARCH: another river'])
 def test_tolerant_finish_parser_does_not_invent_commands_or_drop_multiple_searches(raw):

@@ -251,7 +251,7 @@ def parse_action(raw, allow_answer_payload=False):
     if re.fullmatch(r"ANSWER[.!]?", text, re.IGNORECASE):
         return {"kind": "answer", "query": None, "valid": True}
     if allow_answer_payload:
-        first_line = text.splitlines()[0] if text else ""
+        first_line = text.splitlines()[0].rstrip() if text else ""
         if (re.fullmatch(r"ANSWER[.!]?", first_line, re.IGNORECASE)
                 or re.fullmatch(r"ANSWER\s*:.*", first_line, re.IGNORECASE)):
             return {"kind": "answer", "query": None, "valid": True,
