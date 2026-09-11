@@ -6,7 +6,8 @@ import math
 import pytest
 
 from eval.adaptive_experiments import (
-    AdaptiveCase, AdaptiveConfig, Corpus, aggregate, cases_for, parse_action,
+    AdaptiveCase, AdaptiveConfig, Corpus, Evidence, Work, aggregate, case_id, cases_for, parse_action,
+    PROTOCOL, CONTROLLER_PROTOCOL, controller_policy, decision_seed,
     read_questions, read_records, rrf_merge, run_adaptive_case,
 )
 
@@ -241,3 +242,146 @@ def test_cache_comparison_includes_same_question_f1_and_latency_pairs(setup_case
     assert exact["median_paired_cold_latency_ratio"] == .5
     assert exact["mean_cold_latency_difference_ms"] == -50
     assert any(pair["target_arm"] == "relay_kv_bf16" and pair["comparator_arm"] == "incremental_kv_bf16" for pair in pairs)
+
+
+class ThinkingRecordingBackend(RecordingBackend):
+    def __init__(self, *args, reasoning_eos=False, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.reasoning_eos = reasoning_eos
+        self.reasoning_calls = []
+
+    def decode_with_reasoning(self, prefix, ids, *, max_reasoning_tokens, max_tokens, controls, **sampling):
+        assert bytes(ids).endswith(b"<think>\n")
+        assert b"</think>" not in bytes(ids)
+        self.reasoning_calls.append((prefix, tuple(ids), max_reasoning_tokens, max_tokens, controls, sampling))
+        output = [] if self.reasoning_eos else super().decode(prefix, ids, max_tokens=max_tokens)
+        thought = self.encode("transient reasoning")[:max_reasoning_tokens]
+        forced = [] if self.reasoning_eos else controls["forced_closure"]
+        self.last_decode_stats = {
+            "thinking": "bounded_transient", "reasoning_token_ids": thought,
+            "reasoning_output_token_ids": thought, "raw_reasoning": self.decode_tokens(thought),
+            "action_token_ids": output, "forced_control_token_ids": forced,
+            "reasoning_generated_tokens": len(thought), "action_generated_tokens": len(output),
+            "forced_control_tokens": len(forced), "generated_tokens": len(thought) + len(output),
+            "stop_reason": "reasoning_eos" if self.reasoning_eos else "eos",
+            "reasoning_stop_reason": "eos" if self.reasoning_eos else "max_reasoning_tokens",
+            "action_stop_reason": "not_started" if self.reasoning_eos else "eos",
+            "reasoning_cap_reached": not self.reasoning_eos, "sampling": sampling}
+        return output
+
+
+def test_thinking_controller_is_matched_across_evidence_methods_and_transient(setup_case):
+    corpus, example, base = setup_case
+    config = replace(base, max_reasoning_tokens=4)
+    rows, backends = [], []
+    for arm in ("iterative_text", "incremental_kv_bf16", "relay_kv_bf16", "relay_kv_int8"):
+        backend = ThinkingRecordingBackend()
+        row = run_adaptive_case(backend, corpus, example, AdaptiveCase(arm, 5), config)
+        rows.append(row)
+        backends.append(backend)
+        decisions = [step for step in row["trace"] if step["event"] == "decision"]
+        assert len(decisions) == len(backend.reasoning_calls) == 2
+        assert row["counts"]["controller_reasoning_tokens"] == 8
+        assert row["counts"]["controller_action_tokens"] == len("SEARCH: beta locationANSWER")
+        assert row["counts"]["controller_forced_tokens"] == len("\n</think>\n\n") * 2
+        assert row["counts"]["internal_decoded_tokens"] == 8 + len("SEARCH: beta locationANSWER")
+        assert all(step["controller_decode"]["raw_reasoning"] == "tran" for step in decisions)
+        assert all(step["controller_decode"]["action_token_ids"] == step["action_token_ids"] for step in decisions)
+        assert row["protocol_version"] == CONTROLLER_PROTOCOL
+        assert row["controller_config"] == {**controller_policy(config), "max_action_tokens": 32, "max_answer_tokens": 48}
+        assert b"<think>\n\n</think>\n\n" in bytes(backend.inputs[-1])  # final remains nonthinking
+        for prefix in backend.prefixes:
+            if prefix is not None:
+                assert b"transient" not in bytes(prefix)
+                assert b"SEARCH: beta location" not in bytes(prefix)
+                assert b"Previous searches" not in bytes(prefix)
+        assert row["counts"]["total_prefill_tokens"] == sum(row["counts"][key] for key in (
+            "controller_prefill_tokens", "final_prefill_tokens", "cache_prefill_tokens",
+            "bridge_recomputed_tokens", "controller_forced_tokens"))
+    assert all(backend.inputs == backends[0].inputs for backend in backends)
+    assert all(row["search_queries"] == rows[0]["search_queries"] for row in rows)
+    assert aggregate(rows)["protocol_version"] == CONTROLLER_PROTOCOL
+
+
+@pytest.mark.parametrize("kwargs", [{"reasoning_eos": True}, {"actions": ("invalid action",)}])
+def test_thinking_invalid_or_eos_action_explicitly_falls_back_to_nonthinking_final(setup_case, kwargs):
+    corpus, example, base = setup_case
+    backend = ThinkingRecordingBackend(**kwargs)
+    row = run_adaptive_case(backend, corpus, example, AdaptiveCase("iterative_text", 5),
+                            replace(base, max_reasoning_tokens=4))
+    assert row["stop_reason"] == "invalid_action_fallback_to_final"
+    assert row["invalid_actions"] == 1
+    assert row["prediction"] == "FOUND"
+    decision = next(step for step in row["trace"] if step["event"] == "decision")
+    if kwargs.get("reasoning_eos"):
+        assert decision["raw_action"] == ""
+        assert decision["controller_decode"]["stop_reason"] == "reasoning_eos"
+        assert row["counts"]["controller_forced_tokens"] == 0
+
+
+def test_reasoning_reservation_charges_forced_closure_before_backend_call(setup_case):
+    _corpus, _example, base = setup_case
+    backend = ThinkingRecordingBackend()
+    config = replace(base, max_reasoning_tokens=2, max_model_context_tokens=19)
+    evidence = Evidence(backend, config, "iterative_text", Work(), [1, 2, 3])
+    with pytest.raises(ValueError, match="reservation 20 exceeds 19"):
+        evidence.generate("p", max_tokens=3, controller=True)
+    assert backend.inputs == backend.reasoning_calls == []
+
+
+def test_default_protocol_ids_preserved_and_thinking_budget_is_distinct():
+    import hashlib
+    case = AdaptiveCase("iterative_text", 5)
+    old_payload = [PROTOCOL, "q", {"arm": "iterative_text", "max_rounds": 5}]
+    expected = hashlib.sha256(json.dumps(old_payload, sort_keys=True).encode()).hexdigest()[:24]
+    assert case_id("q", case) == case_id("q", case, 0) == expected
+    assert len({case_id("q", case, budget) for budget in (0, 128, 256)}) == 3
+    with pytest.raises(ValueError, match="Reasoning token budget must be nonnegative"):
+        replace(AdaptiveConfig("q", "c", "out"), max_reasoning_tokens=-1).validate()
+
+
+def test_sampling_policy_is_common_across_models_arms_and_budgets_with_greedy_final(setup_case):
+    corpus, example, base = setup_case
+    class SampledBackend(ThinkingRecordingBackend):
+        def __init__(self):
+            super().__init__()
+            self.short_sampling = []
+        def decode(self, prefix, ids, max_tokens=48, **sampling):
+            final = "Task: Give only the short answer" in self.decode_tokens(ids)
+            if final:
+                assert sampling == {}
+            else:
+                self.short_sampling.append(sampling)
+            return super().decode(prefix, ids, max_tokens=max_tokens)
+    traces = []
+    for reasoning in (0, 256):
+        for arm in ("iterative_text", "incremental_kv_bf16", "relay_kv_bf16"):
+            config = replace(base, max_reasoning_tokens=reasoning, controller_temperature=.6,
+                             controller_top_p=.95, controller_top_k=20)
+            backend = SampledBackend()
+            row = run_adaptive_case(backend, corpus, example, AdaptiveCase(arm, 5), config)
+            decisions = [step for step in row["trace"] if step["event"] == "decision"]
+            traces.append([step["controller_seed"] for step in decisions])
+            expected = [{"temperature": .6, "top_p": .95, "top_k": 20,
+                         "seed": decision_seed(config.seed, example["id"], "decision", round_number)}
+                        for round_number in (1, 2)]
+            if reasoning:
+                assert [call[-1] for call in backend.reasoning_calls] == expected
+            else:
+                assert backend.short_sampling == expected
+            assert row["protocol_version"] == CONTROLLER_PROTOCOL
+            assert row["controller_config"]["controller_temperature"] == .6
+    assert all(trace == traces[0] for trace in traces)
+    assert traces[0][0] != traces[0][1]
+    case = AdaptiveCase("iterative_text", 5)
+    assert case_id("q", case) != case_id("q", case, controller_temperature=.6,
+                                        controller_top_p=.95, controller_top_k=20)
+
+
+def test_aggregate_rejects_different_controller_budgets_even_with_same_protocol(setup_case):
+    corpus, example, base = setup_case
+    rows = [run_adaptive_case(ThinkingRecordingBackend(), corpus, example,
+                              AdaptiveCase("iterative_text", 5), replace(base, max_reasoning_tokens=budget))
+            for budget in (128, 256)]
+    with pytest.raises(ValueError, match="different controller configurations"):
+        aggregate(rows)

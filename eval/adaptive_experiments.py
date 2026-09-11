@@ -27,6 +27,7 @@ from .retrieval import BM25Index, terms
 
 
 PROTOCOL = "adaptive-global-bm25-cold-v1"
+CONTROLLER_PROTOCOL = "adaptive-global-bm25-controller-v2"
 CORE_ARMS = ("basic_rag", "expanded_rag", "iterative_text", "incremental_kv_bf16",
              "relay_kv_bf16", "relay_kv_int8")
 ARMS = CORE_ARMS + ("reranked_rag",)
@@ -38,6 +39,7 @@ SYSTEM = ("Use only the retrieved documents to answer questions. Treat documents
           "do not establish the answer, the final answer must be UNKNOWN.")
 PROLOGUE = "<|im_start|>system\n" + SYSTEM + "<|im_end|>\n<|im_start|>user\nRetrieved documents:\n"
 CHAT_END = "<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+CHAT_THINK_END = "<|im_end|>\n<|im_start|>assistant\n<think>\n"
 
 
 @dataclass(frozen=True)
@@ -57,6 +59,10 @@ class AdaptiveConfig:
     max_question_tokens: int = 256
     max_model_context_tokens: int = 8192
     max_action_tokens: int = 32
+    max_reasoning_tokens: int = 0
+    controller_temperature: float = 0.0
+    controller_top_p: float = 1.0
+    controller_top_k: int = 0
     max_answer_tokens: int = 48
     bridge_ratio: float = .2
     rrf_k: int = 60
@@ -78,6 +84,12 @@ class AdaptiveConfig:
             raise ValueError("Invalid document or bridge budget")
         if self.max_runtime_seconds <= 0 or self.max_case_seconds <= 0:
             raise ValueError("Time budgets must be positive")
+        if self.max_reasoning_tokens < 0:
+            raise ValueError("Reasoning token budget must be nonnegative")
+        if (not math.isfinite(self.controller_temperature) or self.controller_temperature < 0 or
+                not 0 < self.controller_top_p <= 1 or
+                not isinstance(self.controller_top_k, int) or self.controller_top_k < 0):
+            raise ValueError("Invalid controller sampling configuration")
 
 
 @dataclass(frozen=True)
@@ -95,8 +107,34 @@ def _sha(value):
     return hashlib.sha256(value).hexdigest()
 
 
-def case_id(example_id, case):
-    return _sha(json.dumps([PROTOCOL, example_id, asdict(case)], sort_keys=True).encode())[:24]
+def controller_policy(config):
+    return {"max_reasoning_tokens": config.max_reasoning_tokens,
+            "controller_temperature": float(config.controller_temperature),
+            "controller_top_p": float(config.controller_top_p),
+            "controller_top_k": config.controller_top_k}
+
+
+def protocol_for(max_reasoning_tokens=0, controller_temperature=0.0,
+                 controller_top_p=1.0, controller_top_k=0):
+    return (CONTROLLER_PROTOCOL if (max_reasoning_tokens, controller_temperature, controller_top_p,
+                                   controller_top_k) != (0, 0.0, 1.0, 0) else PROTOCOL)
+
+
+def case_id(example_id, case, max_reasoning_tokens=0, controller_temperature=0.0,
+            controller_top_p=1.0, controller_top_k=0):
+    policy = {"max_reasoning_tokens": max_reasoning_tokens,
+              "controller_temperature": float(controller_temperature),
+              "controller_top_p": float(controller_top_p), "controller_top_k": controller_top_k}
+    protocol = protocol_for(**policy)
+    payload = [protocol, example_id, asdict(case)]
+    if protocol != PROTOCOL:
+        payload.append(policy)
+    return _sha(json.dumps(payload, sort_keys=True).encode())[:24]
+
+
+def decision_seed(seed, example_id, event, round_number):
+    """One fixed seed per question/event/round, shared across arms and models."""
+    return int(_sha(json.dumps([seed, example_id, event, round_number], sort_keys=True).encode())[:8], 16)
 
 
 def write_json(path, value):
@@ -192,14 +230,15 @@ def document_text(document):
     return f"\n<document>\n{document.get('title', '')}\n{document['text']}\n</document>\n"
 
 
-def decision_text(question, queries, remaining):
+def decision_text(question, queries, remaining, thinking=False):
     return ("\nQuestion: " + question + "\nPrevious searches:\n" +
             "\n".join(f"- {query}" for query in queries) +
             "\nTask: Decide whether the retrieved documents establish the answer. "
             "If sufficient, output only ANSWER. Otherwise output SEARCH: followed by one "
             "short focused query for missing evidence. Use names from the question or documents; "
             "do not guess missing facts. Do not repeat a previous query. "
-            f"You have {remaining} retrieval rounds remaining. No explanation.\n" + CHAT_END)
+            f"You have {remaining} retrieval rounds remaining. No explanation.\n" +
+            (CHAT_THINK_END if thinking else CHAT_END))
 
 
 def final_text(question):
@@ -242,6 +281,8 @@ class Work:
         "final_prefill_tokens": 0, "cache_prefill_tokens": 0, "bridge_recomputed_tokens": 0,
         "retrieved_evidence_tokens": 0, "retrieved_documents": 0, "retrieval_calls": 0,
         "controller_calls": 0, "max_model_context_tokens": 0,
+        "controller_reasoning_tokens": 0, "controller_action_tokens": 0,
+        "controller_forced_tokens": 0, "controller_sampled_tokens_including_eos": 0,
         "reranker_input_tokens": 0, "reranker_scored_documents": 0})
     timing: dict = field(default_factory=lambda: {
         "tokenization_ms": 0.0, "retrieval_ms": 0.0, "cache_construction_ms": 0.0,
@@ -276,6 +317,7 @@ class Evidence:
     truncated_ids: list[str] = field(default_factory=list)
     skipped_budget_ids: list[str] = field(default_factory=list)
     evidence_tokens: int = 0
+    last_controller_decode: dict = field(default_factory=dict)
 
     @property
     def native(self):
@@ -332,24 +374,63 @@ class Evidence:
             raise AssertionError("Evidence cache contains tokens absent from the full-text evidence prefix")
         return new_ids
 
-    def generate(self, suffix, max_tokens, controller):
+    def generate(self, suffix, max_tokens, controller, controller_seed=None):
         ids = encode(self.backend, suffix, self.work)
         prompt = ids if self.native else self.token_ids + ids
         full_length = len(self.token_ids) + len(ids)
         cap = min(self.config.max_model_context_tokens, getattr(self.backend, "max_context", 8192))
-        if full_length + max_tokens > cap:
-            raise ValueError(f"Complete model input/output reservation {full_length + max_tokens} exceeds {cap}")
-        self.work.counts["max_model_context_tokens"] = max(self.work.counts["max_model_context_tokens"], full_length + max_tokens)
+        reasoning = self.config.max_reasoning_tokens if controller else 0
+        controls = ({"end": encode(self.backend, "</think>", self.work),
+                     "separator": encode(self.backend, "\n\n", self.work),
+                     "forced_closure": encode(self.backend, "\n</think>\n\n", self.work)}
+                    if reasoning else None)
+        forced_reservation = max(len(controls["separator"]), len(controls["forced_closure"])) if controls else 0
+        reservation = full_length + reasoning + forced_reservation + max_tokens
+        if reservation > cap:
+            raise ValueError(f"Complete model input/output reservation {reservation} exceeds {cap}")
+        self.work.counts["max_model_context_tokens"] = max(self.work.counts["max_model_context_tokens"], reservation)
         prefix_before = tuple(self.prefix.token_ids) if self.native else None
+        sampling = ({"temperature": self.config.controller_temperature,
+                     "top_p": self.config.controller_top_p, "top_k": self.config.controller_top_k,
+                     "seed": controller_seed} if controller and
+                    (self.config.controller_temperature, self.config.controller_top_p,
+                     self.config.controller_top_k) != (0.0, 1.0, 0) else {})
+        def generate():
+            prefix = self.prefix if self.native else None
+            if reasoning:
+                return self.backend.decode_with_reasoning(prefix, prompt, max_tokens=max_tokens,
+                    max_reasoning_tokens=reasoning, controls=controls, **sampling)
+            return self.backend.decode(prefix, prompt, max_tokens=max_tokens, **sampling)
         output = _timed_model(self.backend, self.work,
                               "controller_ms" if controller else "final_generation_ms",
-                              lambda: self.backend.decode(self.prefix if self.native else None, prompt, max_tokens=max_tokens))
+                              generate)
         if self.native and tuple(self.prefix.token_ids) != prefix_before:
             raise AssertionError("Transient decision/final tokens mutated the reusable evidence snapshot")
         self.work.counts["controller_prefill_tokens" if controller else "final_prefill_tokens"] += len(prompt)
-        self.work.counts["internal_decoded_tokens" if controller else "host_output_tokens"] += len(output)
         if controller:
             self.work.counts["controller_calls"] += 1
+            stats = dict(getattr(self.backend, "last_decode_stats", {}))
+            reasoning_tokens = int(stats.get("reasoning_generated_tokens", 0)) if reasoning else 0
+            forced_tokens = int(stats.get("forced_control_tokens", 0)) if reasoning else 0
+            self.work.counts["controller_reasoning_tokens"] += reasoning_tokens
+            self.work.counts["controller_action_tokens"] += len(output)
+            self.work.counts["controller_forced_tokens"] += forced_tokens
+            self.work.counts["controller_sampled_tokens_including_eos"] += int(
+                stats.get("sampled_tokens", reasoning_tokens + len(output)))
+            self.work.counts["internal_decoded_tokens"] += reasoning_tokens + len(output)
+            self.last_controller_decode = stats if reasoning else {
+                **stats, "thinking": "disabled", "reasoning_token_ids": [], "raw_reasoning": "",
+                "reasoning_output_token_ids": [], "forced_control_token_ids": [],
+                "action_token_ids": output, "reasoning_generated_tokens": 0,
+                "reasoning_sampled_token_ids": [],
+                "action_sampled_token_ids": stats.get("sampled_token_ids", output),
+                "action_generated_tokens": len(output), "forced_control_tokens": 0,
+                "reasoning_stop_reason": "disabled", "action_stop_reason": stats.get("stop_reason"),
+                "reasoning_cap_reached": False, "max_reasoning_tokens": 0,
+                "max_action_tokens": max_tokens, "context_reservation_tokens": reservation}
+            self.last_controller_decode["controller_seed"] = controller_seed
+        else:
+            self.work.counts["host_output_tokens"] += len(output)
         return self.backend.decode_tokens(output), output
 
 
@@ -384,8 +465,10 @@ def run_adaptive_case(backend, corpus, example, case, config, reranker=None):
     if case.arm == "expanded_rag":
         suffix = ("\nQuestion: " + question + "\nTask: Rewrite this question as one short search query. "
                   "Preserve its specific names and the relation being asked. Do not add facts or "
-                  "invent names. Output only SEARCH: followed by the query.\n" + CHAT_END)
-        raw, ids = evidence.generate(suffix, config.max_action_tokens, controller=True)
+                  "invent names. Output only SEARCH: followed by the query.\n" +
+                  (CHAT_THINK_END if config.max_reasoning_tokens else CHAT_END))
+        seed = decision_seed(config.seed, example["id"], "query_expansion", 0)
+        raw, ids = evidence.generate(suffix, config.max_action_tokens, controller=True, controller_seed=seed)
         action = parse_action(raw)
         queries = [question]
         if action["kind"] == "search" and canonical_query(action["query"]) != canonical_query(question):
@@ -394,6 +477,8 @@ def run_adaptive_case(backend, corpus, example, case, config, reranker=None):
             invalid_actions += 1
         trace.append({"event": "query_expansion", "raw_action": raw, "action": action,
                       "action_token_ids": ids, "queries": list(queries),
+                      "controller_seed": seed,
+                      "controller_decode": evidence.last_controller_decode,
                       "generation_stop": getattr(backend, "last_decode_stats", {}).get("stop_reason")})
         expansion_rankings = [search(query, config.initial_top_k * 2) for query in queries]
 
@@ -440,11 +525,15 @@ def run_adaptive_case(backend, corpus, example, case, config, reranker=None):
             break
         if round_number == case.max_rounds:
             break
-        raw, ids = evidence.generate(decision_text(question, queries, case.max_rounds - round_number),
-                                     config.max_action_tokens, controller=True)
+        seed = decision_seed(config.seed, example["id"], "decision", round_number)
+        raw, ids = evidence.generate(decision_text(question, queries, case.max_rounds - round_number,
+                                                   thinking=bool(config.max_reasoning_tokens)),
+                                     config.max_action_tokens, controller=True, controller_seed=seed)
         action = parse_action(raw)
         trace.append({"event": "decision", "round": round_number, "raw_action": raw,
                       "action": action, "action_token_ids": ids,
+                      "controller_seed": seed,
+                      "controller_decode": evidence.last_controller_decode,
                       "generation_stop": getattr(backend, "last_decode_stats", {}).get("stop_reason")})
         if not action["valid"]:
             invalid_actions += 1
@@ -464,13 +553,18 @@ def run_adaptive_case(backend, corpus, example, case, config, reranker=None):
     prediction = clean_prediction(raw)
     work.timing["other_query_ms"] = max(0.0, elapsed - sum(work.timing.values()))
     work.counts["total_prefill_tokens"] = sum(work.counts[k] for k in
-        ("controller_prefill_tokens", "final_prefill_tokens", "cache_prefill_tokens", "bridge_recomputed_tokens"))
+        ("controller_prefill_tokens", "final_prefill_tokens", "cache_prefill_tokens",
+         "bridge_recomputed_tokens", "controller_forced_tokens"))
     work.counts["primary_model_prefill_tokens"] = work.counts["total_prefill_tokens"]
     work.counts["all_models_prefill_tokens"] = work.counts["total_prefill_tokens"] + work.counts["reranker_input_tokens"]
     support = set(example.get("supporting_context_ids", []))
     cache = {"nbytes": int(evidence.prefix.nbytes), "seq_len": int(evidence.prefix.seq_len),
              "quant": evidence.prefix.quant} if evidence.native else {}
-    return {"status": "ok", "id": case_id(example["id"], case), "protocol_version": PROTOCOL,
+    return {"status": "ok", "id": case_id(example["id"], case, **controller_policy(config)),
+            "protocol_version": protocol_for(**controller_policy(config)),
+            "controller_config": {**controller_policy(config),
+                                  "max_action_tokens": config.max_action_tokens,
+                                  "max_answer_tokens": config.max_answer_tokens},
             "example_id": example["id"], "dataset": example.get("dataset", "musique_global"),
             "split": example.get("split"), "category": example.get("category"),
             "example_metadata": example.get("metadata", {}), "case": asdict(case),
@@ -522,6 +616,9 @@ def _paired_statistics(pairs, seed):
 def aggregate(records, seed=42):
     latest = {row["id"]: row for row in records}
     rows = [row for row in latest.values() if row["status"] == "ok"]
+    policies = {json.dumps(row.get("controller_config"), sort_keys=True) for row in rows}
+    if len(policies) > 1:
+        raise ValueError("Cannot aggregate different controller configurations into one summary")
     groups, by_example = defaultdict(list), defaultdict(dict)
     for row in rows:
         c = row["case"]
@@ -584,7 +681,10 @@ def aggregate(records, seed=42):
                 core_comparisons.append({"target_arm": target[0], "target_max_rounds": target[1],
                                          "comparator_arm": comparator[0], "comparator_max_rounds": comparator[1],
                                          **_paired_statistics(selected, seed)})
-    return {"protocol_version": PROTOCOL, "successful_unique_runs": len(rows),
+    protocols = sorted({row.get("protocol_version", PROTOCOL) for row in rows})
+    if len(protocols) > 1:
+        raise ValueError("Cannot aggregate different adaptive protocols into one summary")
+    return {"protocol_version": protocols[0] if protocols else PROTOCOL, "successful_unique_runs": len(rows),
             "unresolved_failed_runs": sum(row["status"] != "ok" for row in latest.values()),
             "historical_error_records": sum(row["status"] != "ok" for row in records),
             "metrics": metrics, "paired_vs_basic": comparisons, "paired_core_comparisons": core_comparisons,
@@ -594,10 +694,12 @@ def aggregate(records, seed=42):
                 "Global BM25 index and model loading are common offline setup; all per-question inference, retrieval and KV construction are charged.",
                 "Iterative arms can retrieve more documents than the single-round baselines; improvements may come from additional evidence and model calls.",
                 "All iterative controllers decode SEARCH/ANSWER actions. This is not a trained zero-text latent planner.",
+                "Optional bounded thinking is transient per controller call. Internal decoded tokens include reasoning and actions; injected phase-control tokens are charged as prefill and reported separately.",
+                "Generated-token counts exclude terminal EOS, matching the original study; controller_sampled_tokens_including_eos additionally counts every terminal EOS sampling step.",
                 "Incremental KV is ordinary causal prefix reuse. Independent-document relay is separately labeled and may alter controller decisions.",
                 "Primary-model prefill and all-model prefill totals are separate; all-model totals include every reranker input token when that optional arm is present.",
                 "Basic-failure recovery is a posthoc conditional analysis; full-test results and paired denominators are reported alongside it.",
-                "Single-model, greedy, bounded evaluation on a fixed public subset; no claim of official benchmark or general population performance."]}
+                "Single-model, bounded evaluation on a fixed public subset. The controller policy is recorded per run; final answers are greedy. No claim of official benchmark or general population performance."]}
 
 
 def report_tables(summary):
@@ -661,7 +763,7 @@ def run_adaptive_suite(backend, config, reranker=None, setup_timings_ms=None):
         "eval/real_experiments.py", "engine/backends_mlx.py")}
     if reranker is not None:
         source_hashes["engine/reranker_mlx.py"] = _sha((root / "engine/reranker_mlx.py").read_bytes())
-    identity = json.loads(json.dumps({"protocol": PROTOCOL, "config": identity_config,
+    identity = json.loads(json.dumps({"protocol": protocol_for(**controller_policy(config)), "config": identity_config,
                                      "corpus_sha256": corpus.sha256, "questions_sha256": _sha(Path(config.dataset).read_bytes()),
                                      "backend": backend.metadata(),
                                      "reranker": reranker.metadata() if reranker is not None else None,
@@ -672,6 +774,19 @@ def run_adaptive_suite(backend, config, reranker=None, setup_timings_ms=None):
     else:
         write_json(manifest_path, {"identity": identity, "machine": machine_metadata(),
                                    "corpus": corpus.metadata(), "system_prompt": SYSTEM,
+                                   "controller_policy": {
+                                       "thinking": "bounded_transient" if config.max_reasoning_tokens else "disabled",
+                                       **controller_policy(config),
+                                       "max_action_tokens": config.max_action_tokens,
+                                       "final_answer_thinking": False,
+                                       "final_answer_sampling": "greedy",
+                                       "controller_sampler": "mlx_lm.sample_utils.make_sampler; top_p then top_k then temperature categorical",
+                                       "controller_seed_recipe": "uint32(first 8 hex SHA256(json.dumps([config.seed, example_id, event, round], sort_keys=True)))",
+                                       "thought_state_retained_across_steps": False,
+                                       "reasoning_budget_includes_generated_end_delimiter": True,
+                                       "eos_during_reasoning": "invalid empty action; fallback to final",
+                                       "budget_closure": "inject newline + </think> + two newlines on same transient cache",
+                                       "natural_closure": "inject two newlines after generated </think>"},
                                    "setup_timings_ms": dict(setup_timings_ms or {}),
                                    "started_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())})
     records = read_records(path, repair_trailing=True)
@@ -683,7 +798,7 @@ def run_adaptive_suite(backend, config, reranker=None, setup_timings_ms=None):
             cases = cases_for(config)
             random.Random(config.seed + index).shuffle(cases)
             for case in cases:
-                identifier = case_id(example["id"], case)
+                identifier = case_id(example["id"], case, **controller_policy(config))
                 if identifier in completed:
                     continue
                 if time.monotonic() - started > config.max_runtime_seconds:
@@ -714,6 +829,7 @@ def run_adaptive_suite(backend, config, reranker=None, setup_timings_ms=None):
         raise
     finally:
         summary = save_summary(directory, records, config.seed, stop_reason=stop_reason,
+                               protocol_version=protocol_for(**controller_policy(config)),
                                planned_runs=planned, elapsed_seconds=time.monotonic() - started,
                                corpus_index_setup_ms=corpus.preparation_ms)
     return summary

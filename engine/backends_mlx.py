@@ -17,6 +17,7 @@ import importlib.metadata
 import json
 import math
 from pathlib import Path
+import time
 from typing import Any
 
 import numpy as np
@@ -81,7 +82,7 @@ class MLXKVBlock:
 
 
 class MLXBackend(Backend):
-    """Local bf16 dense Qwen3, greedy bounded decoding; no implicit downloads.
+    """Local bf16 dense Qwen3, bounded decoding (greedy by default); no implicit downloads.
 
     Model/tokenizer injection supports small CPU correctness tests. Production
     use requires an already downloaded directory. No generate() call or wired
@@ -98,8 +99,8 @@ class MLXBackend(Backend):
 
         if not 0 < max_context <= 8192 or prefill_batch_size <= 0:
             raise ValueError("Context must be in (0, 8192]; prefill batch size must be positive")
-        if not 0 < memory_limit_gb <= 32:
-            raise ValueError("Memory limit must be in (0, 32] GiB")
+        if not 0 < memory_limit_gb <= 48:
+            raise ValueError("Memory limit must be in (0, 48] GiB; the default remains 32 GiB")
         self.mx = mx
         self._cache_type = KVCache
         self.prefill_batch_size = prefill_batch_size
@@ -254,7 +255,8 @@ class MLXBackend(Backend):
         self._check_length((prefix.seq_len if prefix else 0) + len(tokens))
         return self._forward(tokens, self._cache(prefix), logits=True)
 
-    def decode(self, prefix, prompt_tokens, adapter="base", max_tokens=64):
+    def decode(self, prefix, prompt_tokens, adapter="base", max_tokens=64, *,
+               temperature=0.0, top_p=1.0, top_k=0, seed=None):
         self._role(adapter)
         if max_tokens < 0:
             raise ValueError("max_tokens must be nonnegative")
@@ -263,28 +265,153 @@ class MLXBackend(Backend):
         tokens = self._tokens(prompt_tokens)
         prompt_length = (prefix.seq_len if prefix else 0) + len(tokens)
         self._check_length(prompt_length + max_tokens)
+        sample = self._sampler(temperature, top_p, top_k, seed)
         if max_tokens == 0:
             self.last_decode_stats = {"generated_tokens": 0, "stop_reason": "max_tokens"}
             return []
         caches = self._cache(prefix)
         logits = self._forward(tokens, caches, logits=True)
-        eos = getattr(self.tokenizer, "eos_token_ids", None)
-        if eos is None:
-            eos = self.config.get("eos_token_id", getattr(self.tokenizer, "eos_token_id", None))
-        eos = set(eos if isinstance(eos, (list, tuple, set)) else [eos])
-        out, stop = [], "max_tokens"
+        eos = self._eos_tokens()
+        out, stop, eos_sample = [], "max_tokens", None
         for index in range(max_tokens):
-            nxt = int(self.mx.argmax(logits).item())
+            nxt = sample(logits)
             if nxt in eos:
                 stop = "eos"
+                eos_sample = nxt
                 break
             out.append(nxt)
             if index + 1 < max_tokens:
                 logits = self._forward((nxt,), caches, logits=True)
         self.synchronize()
         self.last_decode_stats = {"generated_tokens": len(out), "stop_reason": stop,
-            "prefill_tokens": len(tokens), "prefix_tokens": prompt_length - len(tokens)}
+            "prefill_tokens": len(tokens), "prefix_tokens": prompt_length - len(tokens),
+            "sampled_token_ids": out + ([eos_sample] if eos_sample is not None else []),
+            "sampled_tokens": len(out) + int(eos_sample is not None),
+            "sampling": {"temperature": temperature, "top_p": top_p, "top_k": top_k, "seed": seed}}
         return out
+
+    def _eos_tokens(self):
+        eos = getattr(self.tokenizer, "eos_token_ids", None)
+        if eos is None:
+            eos = self.config.get("eos_token_id", getattr(self.tokenizer, "eos_token_id", None))
+        return set(eos if isinstance(eos, (list, tuple, set)) else [eos])
+
+    def _sampler(self, temperature, top_p, top_k, seed):
+        if not math.isfinite(temperature) or temperature < 0 or not 0 < top_p <= 1:
+            raise ValueError("Sampling requires finite temperature >= 0 and top_p in (0, 1]")
+        if not isinstance(top_k, int) or not 0 <= top_k <= self.vocab_size:
+            raise ValueError("top_k must be an integer from zero through the vocabulary size")
+        if seed is not None and (not isinstance(seed, int) or not 0 <= seed < 2**32):
+            raise ValueError("Sampling seed must be an unsigned 32-bit integer")
+        if temperature == 0:
+            return lambda logits: int(self.mx.argmax(logits).item())
+        if seed is None:
+            raise ValueError("Non-greedy decoding requires an explicit reproducible seed")
+        from mlx_lm.sample_utils import make_sampler
+        self.mx.random.seed(seed)
+        sampler = make_sampler(temp=temperature, top_p=top_p, top_k=top_k)
+        def sample(logits):
+            logprobs = logits - self.mx.logsumexp(logits, keepdims=True)
+            return int(sampler(logprobs).item())
+        return sample
+
+    def decode_with_reasoning(self, prefix, prompt_tokens, adapter="base", *,
+                              max_reasoning_tokens=256, max_tokens=32, controls=None,
+                              temperature=0.0, top_p=1.0, top_k=0, seed=None):
+        """Decode bounded Qwen thinking, then an action on the same causal cache.
+
+        The prompt must end with the open Qwen ``<think>`` generation prefix.
+        Reasoning is transient: neither it nor the action is appended to the
+        caller's evidence snapshot. The reasoning budget includes a naturally
+        generated closing delimiter. Forced closure/separator tokens are input
+        tokens, reported separately from generated tokens. EOS during reasoning
+        aborts the action rather than silently restarting a terminated message.
+        """
+        self._role(adapter)
+        if max_reasoning_tokens <= 0 or max_tokens < 0:
+            raise ValueError("Reasoning budget must be positive; action budget must be nonnegative")
+        if prefix is not None:
+            self._check_block(prefix)
+        tokens = self._tokens(prompt_tokens)
+        controls = controls or {"end": self.encode("</think>"),
+                                "separator": self.encode("\n\n"),
+                                "forced_closure": self.encode("\n</think>\n\n")}
+        controls = {key: self._tokens(controls[key])
+                    for key in ("end", "separator", "forced_closure")}
+        end = controls["end"]
+        prompt_length = (prefix.seq_len if prefix else 0) + len(tokens)
+        reservation = prompt_length + max_reasoning_tokens + max(
+            len(controls["separator"]), len(controls["forced_closure"])) + max_tokens
+        self._check_length(reservation)
+        sample = self._sampler(temperature, top_p, top_k, seed)
+        started = time.perf_counter()
+        caches = self._cache(prefix)
+        logits = self._forward(tokens, caches, logits=True)
+        self.synchronize()
+        prefill_ms = (time.perf_counter() - started) * 1000
+        reasoning, action, forced = [], [], []
+        reasoning_eos, action_eos = None, None
+        reasoning_stop, action_stop = "max_reasoning_tokens", "not_started"
+        eos = self._eos_tokens()
+        started = time.perf_counter()
+        for _ in range(max_reasoning_tokens):
+            nxt = sample(logits)
+            if nxt in eos:
+                reasoning_stop = "eos"
+                reasoning_eos = nxt
+                break
+            reasoning.append(nxt)
+            # Every sampled reasoning token enters this same transient cache,
+            # including the last token before a forced or natural phase change.
+            logits = self._forward((nxt,), caches, logits=True)
+            if tuple(reasoning[-len(end):]) == end:
+                reasoning_stop = "end_think"
+                break
+        self.synchronize()
+        reasoning_ms = (time.perf_counter() - started) * 1000
+        control_ms, action_ms = 0.0, 0.0
+        if reasoning_stop != "eos" and max_tokens:
+            forced = list(controls["separator"] if reasoning_stop == "end_think"
+                          else controls["forced_closure"])
+            started = time.perf_counter()
+            logits = self._forward(forced, caches, logits=True)
+            self.synchronize()
+            control_ms = (time.perf_counter() - started) * 1000
+            started = time.perf_counter()
+            action_stop = "max_tokens"
+            for index in range(max_tokens):
+                nxt = sample(logits)
+                if nxt in eos:
+                    action_stop = "eos"
+                    action_eos = nxt
+                    break
+                action.append(nxt)
+                if index + 1 < max_tokens:
+                    logits = self._forward((nxt,), caches, logits=True)
+            self.synchronize()
+            action_ms = (time.perf_counter() - started) * 1000
+        content = reasoning[:-len(end)] if reasoning_stop == "end_think" else reasoning
+        self.last_decode_stats = {
+            "thinking": "bounded_transient", "reasoning_token_ids": list(content),
+            "raw_reasoning": self.decode_tokens(content),
+            "reasoning_output_token_ids": reasoning, "action_token_ids": action,
+            "forced_control_token_ids": forced,
+            "reasoning_generated_tokens": len(reasoning), "action_generated_tokens": len(action),
+            "reasoning_sampled_token_ids": reasoning + ([reasoning_eos] if reasoning_eos is not None else []),
+            "action_sampled_token_ids": action + ([action_eos] if action_eos is not None else []),
+            "sampled_tokens": len(reasoning) + len(action) + int(reasoning_eos is not None) + int(action_eos is not None),
+            "forced_control_tokens": len(forced), "generated_tokens": len(reasoning) + len(action),
+            "reasoning_stop_reason": reasoning_stop, "action_stop_reason": action_stop,
+            "stop_reason": "reasoning_eos" if reasoning_stop == "eos" else action_stop,
+            "reasoning_cap_reached": reasoning_stop == "max_reasoning_tokens",
+            "max_reasoning_tokens": max_reasoning_tokens, "max_action_tokens": max_tokens,
+            "prefill_tokens": len(tokens), "prefix_tokens": prompt_length - len(tokens),
+            "context_reservation_tokens": reservation,
+            "actual_context_tokens": prompt_length + len(reasoning) + len(forced) + len(action),
+            "sampling": {"temperature": temperature, "top_p": top_p, "top_k": top_k, "seed": seed},
+            "phase_ms": {"initial_prefill": prefill_ms, "reasoning": reasoning_ms,
+                         "forced_control_prefill": control_ms, "action": action_ms}}
+        return action
 
     def hidden_state(self, tokens, adapter="base"):
         self._role(adapter)
@@ -462,7 +589,10 @@ class MLXBackend(Backend):
                 "model_revision": self.revision, "model_type": self.config["model_type"],
                 "backend_identity": self._identity, "weight_dtype": "bfloat16",
                 "kv_baseline_dtype": "bfloat16", "role_adapters": None,
-                "decoding": "greedy", "thinking": False,
+                "decoding": "call_controlled; greedy_default", "thinking": "prompt_controlled",
+                "optional_sampler": "mlx_lm.sample_utils.make_sampler; top_p then top_k then temperature categorical; per-call seed",
+                "chat_template_default_thinking": False,
+                "bounded_reasoning": "transient_causal_cache_then_action; forced closure at token budget",
                 "max_context": self.max_context, "prefill_batch_size": self.prefill_batch_size,
                 "memory_limit_bytes": self.memory_limit_bytes,
                 "rope_reindexing": "constant_phase_shift_of_post_rope_keys",

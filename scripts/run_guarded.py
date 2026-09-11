@@ -67,6 +67,7 @@ def snapshot(pid: int, directory: Path, *, check_power: bool = True,
     if check_power and sys.platform == "darwin":
         battery = psutil.sensors_battery()
         result["on_ac_power"] = battery.power_plugged if battery else None
+        result["battery_percent"] = battery.percent if battery else None
         try:
             thermal = subprocess.run(
                 ["pmset", "-g", "therm"], capture_output=True, text=True, timeout=5,
@@ -88,6 +89,9 @@ def stop_reason(state: dict, args: argparse.Namespace, elapsed: float) -> str | 
         return "low_disk_space"
     if not args.allow_battery and state.get("on_ac_power") is False:
         return "battery_power"
+    if (state.get("on_ac_power") is False and state.get("battery_percent") is not None
+            and state["battery_percent"] <= getattr(args, "min_battery_percent", 20)):
+        return "low_battery"
     # macOS normally protects thermals itself; stop if it reports severe limits.
     for line in state.get("thermal", "").splitlines():
         if "CPU_Speed_Limit" in line and "=" in line:
@@ -141,6 +145,9 @@ def main() -> int:
     parser.add_argument("--min-disk-gib", type=float, default=40)
     parser.add_argument("--poll-seconds", type=float, default=10)
     parser.add_argument("--allow-battery", action="store_true")
+    parser.add_argument("--min-battery-percent", type=float, default=20)
+    parser.add_argument("--nice-level", type=int, default=10,
+                        help="Child process niceness, 0 for normal priority; never requests elevated priority")
     parser.add_argument("command", nargs=argparse.REMAINDER)
     args = parser.parse_args()
     command = args.command[1:] if args.command[:1] == ["--"] else args.command
@@ -150,6 +157,8 @@ def main() -> int:
         parser.error("time, RSS, and polling limits must be positive")
     if min(args.min_available_gib, args.min_disk_gib) < 0:
         parser.error("minimum resource thresholds cannot be negative")
+    if not 0 <= args.min_battery_percent <= 100 or not 0 <= args.nice_level <= 19:
+        parser.error("battery floor must be in [0,100] and niceness in [0,19]")
     args.output.mkdir(parents=True, exist_ok=True)
     root = Path(__file__).resolve().parents[1]
     lock_dir = root / "runs"
@@ -183,7 +192,7 @@ def run(command: list[str], args: argparse.Namespace) -> int:
             env.update({"PYTHONUNBUFFERED": "1", "TOKENIZERS_PARALLELISM": "false",
                         "OMP_NUM_THREADS": "4", "OPENBLAS_NUM_THREADS": "4"})
             process = subprocess.Popen(
-                ["nice", "-n", "10", *command], stdout=output,
+                ["nice", "-n", str(getattr(args, "nice_level", 10)), *command], stdout=output,
                 stderr=subprocess.STDOUT, env=env, start_new_session=True,
             )
             print(f"Experiment PID {process.pid}; log: {args.output / 'process.log'}", flush=True)
