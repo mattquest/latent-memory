@@ -96,7 +96,12 @@ documents. Each document is capped at 300 tokens, concatenated evidence at
 6,144, the question at 256, and the complete native prompt plus reserved output
 at 8,192. Each call builds a fresh native cache; controller calls and final
 synthesis do not reuse a previous call's cache. This makes the text path a
-baseline whose repeated prefill cost is explicitly measured.
+baseline whose repeated prefill cost is explicitly measured. Each model process
+loads its weights once and receives no benchmark warmup call. Here, cold query
+latency means a fresh prompt and native cache, not a fresh model process.
+Compilation or weight paging on an early call can affect its measured latency;
+that cost stays inside the online result. Synthetic preflights run in separate
+processes, and their timings are reported separately.
 
 Run the 14B job before the 122B job, serially. Preserve source question order.
 For each question, shuffle the two arms with Python's `random.Random`, seeded
@@ -105,7 +110,8 @@ from the first eight hexadecimal SHA-256 digits of
 on each question. The manifest preserves the exact resulting condition order.
 The per-condition runtime allowance is 300 seconds and each model job has a
 2,400-second allowance; checks occur between calls/conditions and an outer
-process guard supplies a wall-clock termination bound. Preserve synthetic
+process guard supplies a 2,700-second wall-clock termination bound. Synthetic
+preflights have a separate 600-second process bound. Preserve synthetic
 preflight outputs and every executed source snapshot before the development
 run. Never silently replace a completed condition following a prompt or parser
 adjustment.
