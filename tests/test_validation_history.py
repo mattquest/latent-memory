@@ -128,3 +128,22 @@ def test_future_development_directories_extend_archive_with_only_explicit_logits
     sources = {item["source"] for item in result["artifacts"]}
     assert "adaptive-dev/logits.npz" not in sources and "adaptive-final/logits.npz" not in sources
     assert gzip.decompress((output / "artifacts/adaptive-preflight/logits.npz.gz").read_bytes()) == logits
+
+
+def test_budget_interruption_stays_excluded_test_and_does_not_duplicate_main_runs(tmp_path):
+    runs, output = tmp_path / "runs", tmp_path / "report"
+    put(runs, "original-interrupted-multihop/summary.json", {
+        "stop_reason": "failed_or_interrupted", "planned_runs": 100, "n_successful_runs": 2})
+    put(runs, "original-interrupted-multihop/results.jsonl", b'{"status":"ok"}\n')
+    put(runs, "original-interrupted-multihop-retry/results.jsonl", b'{"status":"ok"}\n{"partial"')
+    put(runs, "overnight/amendment.json", {"completed_original_conditions": 3360, "canceled_original_conditions": 4760})
+    put(runs, "overnight/main-job/results.jsonl", b"main results must stay elsewhere")
+    result = history.archive_history(runs, output)
+    groups = {group["source"]: group for group in result["groups"]}
+    for name in ("original-interrupted-multihop", "original-interrupted-multihop-retry"):
+        assert groups[name]["role"] == "unused_partial_test_run_after_budget_amendment"
+        assert not groups[name]["eligible_for_main_metrics"]
+    assert groups["original-interrupted-multihop"]["observed_status"] == "failed_or_interrupted"
+    assert groups["original-interrupted-multihop-retry"]["observed_status"] == "incomplete_operator_identified"
+    assert groups["overnight/amendment.json"]["role"] == "operator_budget_amendment_receipt"
+    assert {entry["source"] for entry in result["artifacts"] if entry["source"].startswith("overnight/")} == {"overnight/amendment.json"}

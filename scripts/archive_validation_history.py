@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Archive development/validation receipts separately from benchmark metrics.
+"""Archive validation, development, and excluded test receipts apart from metrics.
 
 Standard library only: never imports a model, experiment harness, or dataset.
 Exact source bytes are wrapped in deterministic gzip, including already-gzipped
@@ -44,6 +44,8 @@ OPTIONAL_FILES = {
     "bm25_hashseed_audit.json": ("hashseed_reproducibility_audit", "Diagnostic rankings and floating-point variation; not scored model inference."),
     "bm25_hashseed_ledgers.json.gz": ("hashseed_reproducibility_raw_ledger", "Exact original compressed ledger is preserved inside an outer gzip."),
     "adaptive-data-validation.json": ("data_reproduction_audit", "Input reproduction/provenance check; not model performance."),
+    "overnight/amendment.json": ("operator_budget_amendment_receipt",
+        "Operator-approved scheduling/budget amendment; not a model result and not a development condition."),
 }
 ALLOWED_SUFFIXES = {".json", ".jsonl", ".log", ".md", ".txt", ".gz"}
 MAX_FILE_BYTES = 16 * 1024**2
@@ -98,6 +100,7 @@ def extract_identity(value):
 def describe_group(name, role, note, files):
     statuses, identities = [], []
     authoritative_status = None
+    status_source = None
     for relative, raw in files:
         values = []
         if relative.suffix == ".json":
@@ -119,14 +122,23 @@ def describe_group(name, role, note, files):
                 statuses.append({"receipt": str(relative), "reported_status": observed})
                 if relative.name == "guard-status.json" and relative.parent == Path(name):
                     authoritative_status = value.get("status", "not_recorded")
+                    status_source = str(relative)
                 elif relative.name == "preflight.json" and relative.parent == Path(name) and authoritative_status is None:
                     authoritative_status = value.get("status", "not_recorded")
+                    status_source = str(relative)
+                elif relative.name == "summary.json" and relative.parent == Path(name) and authoritative_status is None:
+                    authoritative_status = value.get("status") or value.get("stop_reason")
+                    status_source = str(relative) if authoritative_status else None
         if relative.name == "backend-report-notes.md":
             declared = dict(re.findall(r"^- `([^`]+)`: `([0-9a-f]{64})`", raw.decode(errors="replace"), re.MULTILINE))
             if declared:
                 identities.append({"receipt": str(relative), "reported_identity": {"note_declared_source_hashes": declared}})
+    if authoritative_status is None and role == "unused_partial_test_run_after_budget_amendment":
+        authoritative_status = "incomplete_operator_identified"
+        status_source = "Explicit interrupted-test directory classification; no root status receipt present"
     return {"source": name, "role": role, "note": note,
             "observed_status": authoritative_status or ("document_only" if len(files) == 1 else "not_recorded"),
+            "status_source": status_source,
             "eligible_for_main_metrics": False, "status_receipts": statuses, "source_identity_receipts": identities,
             "identity_caveat": "Only identities present in historical receipts are reported; a command path is not an executed-source hash.",
             "artifacts": []}
@@ -139,7 +151,11 @@ def archive_history(runs_dir, output_dir, *, extend=False):
     if output_dir == runs_dir or output_dir.is_relative_to(runs_dir):
         raise ValueError("Validation archive must be outside its source runs directory")
     selections, missing, excluded = [], [], []
-    for name, (role, note) in {**DIRECTORIES, **OPTIONAL_DIRECTORIES}.items():
+    directories = {**DIRECTORIES, **OPTIONAL_DIRECTORIES}
+    for path in sorted(runs_dir.glob("original-interrupted-multihop*")):
+        directories[path.name] = ("unused_partial_test_run_after_budget_amendment",
+            "Original test condition interrupted after the operator budget amendment. It is not development/tuning data and is excluded from final metrics.")
+    for name, (role, note) in directories.items():
         directory = runs_dir / name
         if not directory.exists():
             if name in DIRECTORIES:
@@ -200,19 +216,20 @@ def archive_history(runs_dir, output_dir, *, extend=False):
         groups.append(group)
     if not artifacts:
         raise ValueError("No validation-history receipts found")
-    manifest = {"schema_version": "validation-history-v1", "archive_scope": "development_and_validation_only",
+    manifest = {"schema_version": "validation-history-v1", "archive_scope": "validation_development_and_excluded_test_history",
                 "eligible_for_main_metrics": False, "archive_status": "complete_for_discovered_sources",
                 "missing_expected_sources": missing, "excluded_nonreceipt_files": excluded,
                 "source_bytes": total, "artifact_count": len(artifacts), "groups": groups, "artifacts": artifacts,
                 "archiver_source_sha256": sha(Path(__file__).read_bytes()),
                 "limitations": ["Archive completeness does not mean every validation passed; original guard statuses are retained.",
-                    "Failed/stopped runs and prior protocol versions are never pooled into main benchmark metrics.",
+                    "Failed/stopped runs, prior protocols, and budget-excluded partial test runs are never pooled into main benchmark metrics.",
                     "Historical source hashes may be absent; current code identity is not substituted.",
                     "Raw receipts are exact snapshots, including malformed or partial trailing records.",
                     "No model weights, full input corpora, private laptop files, or unrelated run directories are selected."]}
     payloads["manifest.json"] = json_bytes(manifest)
-    lines = ["# Validation and development history", "",
+    lines = ["# Validation and excluded run history", "",
              "These receipts are excluded from the main benchmark metrics. Archive completeness does not imply all checks passed.", "",
+             "Interrupted original test conditions retain their test-run role; they are not relabeled as development data.", "",
              "| Source | Role | Recorded status | Files |", "| --- | --- | --- | --- |"]
     lines += [f"| {group['source']} | {group['role']} | {group['observed_status']} | {len(group['artifacts'])} |" for group in groups]
     lines += ["", "See [manifest.json](manifest.json) for source identities, original statuses, and both source/artifact SHA-256 hashes.", "",

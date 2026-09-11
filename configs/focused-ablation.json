@@ -1,0 +1,25 @@
+{
+  "model": "models/Qwen3-8B",
+  "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "defaults": {
+    "seed": 42,
+    "equal_hops": 3,
+    "bridge_ratio": 0.2,
+    "latent_precisions": ["bf16", "int8"],
+    "max_answer_tokens": 16,
+    "max_relay_tokens": 192,
+    "max_document_tokens": 300,
+    "max_context_tokens": 6144,
+    "evidence_per_hop": 2,
+    "schedule": "lexical"
+  },
+  "jobs": [
+    {"name": "multihop_docs6", "config": {"dataset": "data/focused_e2_docs6.jsonl", "experiments": ["E2"], "limit": 4, "hops": [1, 3]}},
+    {"name": "multihop_docs7", "config": {"dataset": "data/focused_e2_docs7.jsonl", "experiments": ["E2"], "limit": 3, "hops": [1, 3, 5]}},
+    {"name": "multihop_docs10", "config": {"dataset": "data/focused_e2_docs10.jsonl", "experiments": ["E2"], "limit": 3, "hops": [1, 3, 5]}},
+    {"name": "multihop_docs20", "config": {"dataset": "data/focused_e2_docs20.jsonl", "experiments": ["E2"], "limit": 3, "hops": [1, 3, 5, 10]}},
+    {"name": "multihop_docs40", "config": {"dataset": "data/focused_e2_docs40.jsonl", "experiments": ["E2"], "limit": 3, "hops": [1, 3, 5, 10, 20]}},
+    {"name": "hotpot_ablations", "config": {"dataset": "data/hotpotqa_dev_sample.jsonl", "experiments": ["E4", "E5"], "limit": 32, "max_answer_tokens": 48}},
+    {"name": "musique_ablations", "config": {"dataset": "data/musique_dev_sample.jsonl", "experiments": ["E4", "E5"], "limit": 32, "max_answer_tokens": 48}}
+  ]
+}
