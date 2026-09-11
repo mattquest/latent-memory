@@ -1,0 +1,1604 @@
+{
+  "jobs": [
+    {
+      "action_cap_decisions": 2,
+      "answer_payload_variants": 2,
+      "complete_support_questions": 1,
+      "controller_decisions": 22,
+      "correct": 0,
+      "final_cap_questions": 0,
+      "final_search_commands": 0,
+      "final_unknown": 10,
+      "guard": {
+        "command": [
+          "/Users/matt/Documents/ChatGPT/LatentBase/.venv/bin/python",
+          "-u",
+          "scripts/run_adaptive.py",
+          "--model",
+          "models/Qwen3-8B",
+          "--revision",
+          "b968826d9c46dd6066d109eabc6255188de91218",
+          "--output-dir",
+          "runs/controller-scaling/pilot-v1/8b_short",
+          "--memory-limit-gib",
+          "32",
+          "--max-reasoning-tokens",
+          "0",
+          "--arms",
+          "iterative_text",
+          "--rounds",
+          "5",
+          "--max-runtime-seconds",
+          "1740",
+          "--max-case-seconds",
+          "300",
+          "--dataset",
+          "data/controller-scaling/dev.jsonl",
+          "--corpus",
+          "data/controller-scaling/corpus.jsonl",
+          "--limit",
+          "12",
+          "--seed",
+          "20260922",
+          "--initial-top-k",
+          "6",
+          "--documents-per-round",
+          "3",
+          "--max-documents",
+          "18",
+          "--max-document-tokens",
+          "300",
+          "--max-evidence-tokens",
+          "6144",
+          "--max-model-context-tokens",
+          "8192",
+          "--max-action-tokens",
+          "32",
+          "--max-answer-tokens",
+          "48",
+          "--bridge-ratio",
+          "0.2",
+          "--controller-temperature",
+          "0.6",
+          "--controller-top-p",
+          "0.95",
+          "--controller-top-k",
+          "20"
+        ],
+        "elapsed_seconds": 35.3326796250185,
+        "limits": {
+          "allow_battery": true,
+          "max_rss_gib": 32.0,
+          "max_seconds": 1800.0,
+          "min_available_gib": 12,
+          "min_battery_percent": 20.0,
+          "min_disk_gib": 40,
+          "nice_level": 0,
+          "poll_seconds": 5.0
+        },
+        "peak_rss_gib": 15.635238647460938,
+        "reason": null,
+        "returncode": 0,
+        "status": "complete"
+      },
+      "invalid_actions": 0,
+      "job_id": "8b_short",
+      "mean_f1": 0.0,
+      "mean_final_support_coverage": 0.5,
+      "mean_initial_support_coverage": 0.3680555555555555,
+      "mean_rounds": 1.8333333333333333,
+      "n": 12,
+      "questions_gaining_support": 4,
+      "reasoning_cap_decisions": 0,
+      "resource_sample_count": 7,
+      "round_counts": {
+        "1": 4,
+        "2": 7,
+        "4": 1
+      },
+      "stop_reasons": {
+        "controller_answer": 2,
+        "repeated_query_fallback_to_final": 10
+      },
+      "total_new_support_after_initial": 5
+    },
+    {
+      "action_cap_decisions": 3,
+      "answer_payload_variants": 3,
+      "complete_support_questions": 3,
+      "controller_decisions": 28,
+      "correct": 0,
+      "final_cap_questions": 0,
+      "final_search_commands": 1,
+      "final_unknown": 10,
+      "guard": {
+        "command": [
+          "/Users/matt/Documents/ChatGPT/LatentBase/.venv/bin/python",
+          "-u",
+          "scripts/run_adaptive.py",
+          "--model",
+          "models/Qwen3-8B",
+          "--revision",
+          "b968826d9c46dd6066d109eabc6255188de91218",
+          "--output-dir",
+          "runs/controller-scaling/pilot-v1/8b_thinking",
+          "--memory-limit-gib",
+          "32",
+          "--max-reasoning-tokens",
+          "256",
+          "--arms",
+          "iterative_text",
+          "--rounds",
+          "5",
+          "--max-runtime-seconds",
+          "1740",
+          "--max-case-seconds",
+          "300",
+          "--dataset",
+          "data/controller-scaling/dev.jsonl",
+          "--corpus",
+          "data/controller-scaling/corpus.jsonl",
+          "--limit",
+          "12",
+          "--seed",
+          "20260922",
+          "--initial-top-k",
+          "6",
+          "--documents-per-round",
+          "3",
+          "--max-documents",
+          "18",
+          "--max-document-tokens",
+          "300",
+          "--max-evidence-tokens",
+          "6144",
+          "--max-model-context-tokens",
+          "8192",
+          "--max-action-tokens",
+          "32",
+          "--max-answer-tokens",
+          "48",
+          "--bridge-ratio",
+          "0.2",
+          "--controller-temperature",
+          "0.6",
+          "--controller-top-p",
+          "0.95",
+          "--controller-top-k",
+          "20"
+        ],
+        "elapsed_seconds": 297.34920487494674,
+        "limits": {
+          "allow_battery": true,
+          "max_rss_gib": 32.0,
+          "max_seconds": 1800.0,
+          "min_available_gib": 12,
+          "min_battery_percent": 20.0,
+          "min_disk_gib": 40,
+          "nice_level": 0,
+          "poll_seconds": 5.0
+        },
+        "peak_rss_gib": 15.64501953125,
+        "reason": null,
+        "returncode": 0,
+        "status": "complete"
+      },
+      "invalid_actions": 2,
+      "job_id": "8b_thinking",
+      "mean_f1": 0.0,
+      "mean_final_support_coverage": 0.5555555555555556,
+      "mean_initial_support_coverage": 0.3680555555555555,
+      "mean_rounds": 2.3333333333333335,
+      "n": 12,
+      "questions_gaining_support": 4,
+      "reasoning_cap_decisions": 27,
+      "resource_sample_count": 59,
+      "round_counts": {
+        "1": 2,
+        "2": 6,
+        "3": 2,
+        "4": 2
+      },
+      "stop_reasons": {
+        "controller_answer": 3,
+        "invalid_action_fallback_to_final": 2,
+        "repeated_query_fallback_to_final": 7
+      },
+      "total_new_support_after_initial": 7
+    },
+    {
+      "action_cap_decisions": 0,
+      "answer_payload_variants": 0,
+      "complete_support_questions": 1,
+      "controller_decisions": 27,
+      "correct": 1,
+      "final_cap_questions": 0,
+      "final_search_commands": 3,
+      "final_unknown": 6,
+      "guard": {
+        "command": [
+          "/Users/matt/Documents/ChatGPT/LatentBase/.venv/bin/python",
+          "-u",
+          "scripts/run_adaptive.py",
+          "--model",
+          "models/Qwen3-14B",
+          "--revision",
+          "40c069824f4251a91eefaf281ebe4c544efd3e18",
+          "--output-dir",
+          "runs/controller-scaling/pilot-v1/14b_short",
+          "--memory-limit-gib",
+          "40",
+          "--max-reasoning-tokens",
+          "0",
+          "--arms",
+          "iterative_text",
+          "--rounds",
+          "5",
+          "--max-runtime-seconds",
+          "1740",
+          "--max-case-seconds",
+          "300",
+          "--dataset",
+          "data/controller-scaling/dev.jsonl",
+          "--corpus",
+          "data/controller-scaling/corpus.jsonl",
+          "--limit",
+          "12",
+          "--seed",
+          "20260922",
+          "--initial-top-k",
+          "6",
+          "--documents-per-round",
+          "3",
+          "--max-documents",
+          "18",
+          "--max-document-tokens",
+          "300",
+          "--max-evidence-tokens",
+          "6144",
+          "--max-model-context-tokens",
+          "8192",
+          "--max-action-tokens",
+          "32",
+          "--max-answer-tokens",
+          "48",
+          "--bridge-ratio",
+          "0.2",
+          "--controller-temperature",
+          "0.6",
+          "--controller-top-p",
+          "0.95",
+          "--controller-top-k",
+          "20"
+        ],
+        "elapsed_seconds": 65.54889612499392,
+        "limits": {
+          "allow_battery": true,
+          "max_rss_gib": 40.0,
+          "max_seconds": 1800.0,
+          "min_available_gib": 12,
+          "min_battery_percent": 20.0,
+          "min_disk_gib": 40,
+          "nice_level": 0,
+          "poll_seconds": 5.0
+        },
+        "peak_rss_gib": 27.893692016601562,
+        "reason": null,
+        "returncode": 0,
+        "status": "complete"
+      },
+      "invalid_actions": 0,
+      "job_id": "14b_short",
+      "mean_f1": 0.09444444444444444,
+      "mean_final_support_coverage": 0.5277777777777778,
+      "mean_initial_support_coverage": 0.3680555555555555,
+      "mean_rounds": 2.25,
+      "n": 12,
+      "questions_gaining_support": 6,
+      "reasoning_cap_decisions": 0,
+      "resource_sample_count": 13,
+      "round_counts": {
+        "1": 1,
+        "2": 7,
+        "3": 4
+      },
+      "stop_reasons": {
+        "controller_answer": 3,
+        "repeated_query_fallback_to_final": 9
+      },
+      "total_new_support_after_initial": 6
+    },
+    {
+      "action_cap_decisions": 0,
+      "answer_payload_variants": 2,
+      "complete_support_questions": 4,
+      "controller_decisions": 27,
+      "correct": 1,
+      "final_cap_questions": 0,
+      "final_search_commands": 1,
+      "final_unknown": 9,
+      "guard": {
+        "command": [
+          "/Users/matt/Documents/ChatGPT/LatentBase/.venv/bin/python",
+          "-u",
+          "scripts/run_adaptive.py",
+          "--model",
+          "models/Qwen3-14B",
+          "--revision",
+          "40c069824f4251a91eefaf281ebe4c544efd3e18",
+          "--output-dir",
+          "runs/controller-scaling/pilot-v1/14b_thinking",
+          "--memory-limit-gib",
+          "40",
+          "--max-reasoning-tokens",
+          "256",
+          "--arms",
+          "iterative_text",
+          "--rounds",
+          "5",
+          "--max-runtime-seconds",
+          "1740",
+          "--max-case-seconds",
+          "300",
+          "--dataset",
+          "data/controller-scaling/dev.jsonl",
+          "--corpus",
+          "data/controller-scaling/corpus.jsonl",
+          "--limit",
+          "12",
+          "--seed",
+          "20260922",
+          "--initial-top-k",
+          "6",
+          "--documents-per-round",
+          "3",
+          "--max-documents",
+          "18",
+          "--max-document-tokens",
+          "300",
+          "--max-evidence-tokens",
+          "6144",
+          "--max-model-context-tokens",
+          "8192",
+          "--max-action-tokens",
+          "32",
+          "--max-answer-tokens",
+          "48",
+          "--bridge-ratio",
+          "0.2",
+          "--controller-temperature",
+          "0.6",
+          "--controller-top-p",
+          "0.95",
+          "--controller-top-k",
+          "20"
+        ],
+        "elapsed_seconds": 524.0902737909928,
+        "limits": {
+          "allow_battery": true,
+          "max_rss_gib": 40.0,
+          "max_seconds": 1800.0,
+          "min_available_gib": 12,
+          "min_battery_percent": 20.0,
+          "min_disk_gib": 40,
+          "nice_level": 0,
+          "poll_seconds": 5.0
+        },
+        "peak_rss_gib": 27.901290893554688,
+        "reason": null,
+        "returncode": 0,
+        "status": "complete"
+      },
+      "invalid_actions": 4,
+      "job_id": "14b_thinking",
+      "mean_f1": 0.08333333333333333,
+      "mean_final_support_coverage": 0.6666666666666666,
+      "mean_initial_support_coverage": 0.3680555555555555,
+      "mean_rounds": 2.25,
+      "n": 12,
+      "questions_gaining_support": 7,
+      "reasoning_cap_decisions": 26,
+      "resource_sample_count": 104,
+      "round_counts": {
+        "1": 3,
+        "2": 5,
+        "3": 2,
+        "4": 2
+      },
+      "stop_reasons": {
+        "controller_answer": 2,
+        "invalid_action_fallback_to_final": 4,
+        "repeated_query_fallback_to_final": 6
+      },
+      "total_new_support_after_initial": 11
+    }
+  ],
+  "questions": [
+    {
+      "answers": [
+        "Coleoptera",
+        "beetles",
+        "beetle",
+        "Beetle"
+      ],
+      "example_id": "2hop__460091_405771",
+      "jobs": {
+        "14b_short": {
+          "final_support": 1,
+          "initial_support": 1,
+          "new_support_ids": [],
+          "prediction": "family",
+          "raw_actions": [
+            "ANSWER"
+          ],
+          "rounds": 1,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "What taxa is Ommatidae part of?"
+          ],
+          "stop": "controller_answer",
+          "total_support": 2
+        },
+        "14b_thinking": {
+          "final_support": 1,
+          "initial_support": 1,
+          "new_support_ids": [],
+          "prediction": "family",
+          "raw_actions": [
+            "ANSWER  \nOmmatidae is a family of beetles in the suborder Archostemata."
+          ],
+          "rounds": 1,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "What taxa is Ommatidae part of?"
+          ],
+          "stop": "invalid_action_fallback_to_final",
+          "total_support": 2
+        },
+        "8b_short": {
+          "final_support": 1,
+          "initial_support": 1,
+          "new_support_ids": [],
+          "prediction": "order",
+          "raw_actions": [
+            "ANSWER: Suborder Archostemata"
+          ],
+          "rounds": 1,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "What taxa is Ommatidae part of?"
+          ],
+          "stop": "controller_answer",
+          "total_support": 2
+        },
+        "8b_thinking": {
+          "final_support": 1,
+          "initial_support": 1,
+          "new_support_ids": [],
+          "prediction": "order",
+          "raw_actions": [
+            "ANSWER\nsuborder Archostemata"
+          ],
+          "rounds": 1,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "What taxa is Ommatidae part of?"
+          ],
+          "stop": "controller_answer",
+          "total_support": 2
+        }
+      },
+      "question": "What taxa is Ommatidae part of?"
+    },
+    {
+      "answers": [
+        "1848"
+      ],
+      "example_id": "2hop__57543_158262",
+      "jobs": {
+        "14b_short": {
+          "final_support": 1,
+          "initial_support": 0,
+          "new_support_ids": [
+            "musique-paragraph-e5d31a98b0731cf79fe958da6285e47072993ad2ede646f21bfc664b3fc2bdd5"
+          ],
+          "prediction": "1848",
+          "raw_actions": [
+            "SEARCH: When did Jefferson Davis end his fight in the Mexican-American War?",
+            "ANSWER"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "search_queries": [
+            "When did the famous leader of the Confederate Military end his fight in the Mexican-American war?",
+            "When did Jefferson Davis end his fight in the Mexican-American War?"
+          ],
+          "stop": "controller_answer",
+          "total_support": 2
+        },
+        "14b_thinking": {
+          "final_support": 1,
+          "initial_support": 0,
+          "new_support_ids": [
+            "musique-paragraph-e5d31a98b0731cf79fe958da6285e47072993ad2ede646f21bfc664b3fc2bdd5"
+          ],
+          "prediction": "1848",
+          "raw_actions": [
+            "SEARCH: When did Jefferson Davis leave the Mexican-American War?",
+            "SEARCH: When did Jefferson Davis leave the Mexican-American War?"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "search_queries": [
+            "When did the famous leader of the Confederate Military end his fight in the Mexican-American war?",
+            "When did Jefferson Davis leave the Mexican-American War?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 2
+        },
+        "8b_short": {
+          "final_support": 1,
+          "initial_support": 0,
+          "new_support_ids": [
+            "musique-paragraph-e5d31a98b0731cf79fe958da6285e47072993ad2ede646f21bfc664b3fc2bdd5"
+          ],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: When did Jefferson Davis end his fight in the Mexican-American War?",
+            "SEARCH: When did Jefferson Davis end his fight in the Mexican-American War?"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "When did the famous leader of the Confederate Military end his fight in the Mexican-American war?",
+            "When did Jefferson Davis end his fight in the Mexican-American War?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 2
+        },
+        "8b_thinking": {
+          "final_support": 1,
+          "initial_support": 0,
+          "new_support_ids": [
+            "musique-paragraph-e5d31a98b0731cf79fe958da6285e47072993ad2ede646f21bfc664b3fc2bdd5"
+          ],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: When did Jefferson Davis end his participation in the Mexican-American War?",
+            "SEARCH: When did Jefferson Davis end his participation in the Mexican-American War?"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "When did the famous leader of the Confederate Military end his fight in the Mexican-American war?",
+            "When did Jefferson Davis end his participation in the Mexican-American War?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 2
+        }
+      },
+      "question": "When did the famous leader of the Confederate Military end his fight in the Mexican-American war?"
+    },
+    {
+      "answers": [
+        "551-600"
+      ],
+      "example_id": "2hop__403580_37168",
+      "jobs": {
+        "14b_short": {
+          "final_support": 2,
+          "initial_support": 2,
+          "new_support_ids": [],
+          "prediction": "Cairo University",
+          "raw_actions": [
+            "SEARCH: What universities employed Said Ashour?",
+            "SEARCH: What is the QS World University Ranking of Cairo University?",
+            "ANSWER"
+          ],
+          "rounds": 3,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "According to QS World University Rankings, what is the ranking of the place that employed Said Ashour?",
+            "What universities employed Said Ashour?",
+            "What is the QS World University Ranking of Cairo University?"
+          ],
+          "stop": "controller_answer",
+          "total_support": 2
+        },
+        "14b_thinking": {
+          "final_support": 2,
+          "initial_support": 2,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "ANSWER\n551-600"
+          ],
+          "rounds": 1,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "According to QS World University Rankings, what is the ranking of the place that employed Said Ashour?"
+          ],
+          "stop": "controller_answer",
+          "total_support": 2
+        },
+        "8b_short": {
+          "final_support": 2,
+          "initial_support": 2,
+          "new_support_ids": [],
+          "prediction": "Cairo University",
+          "raw_actions": [
+            "SEARCH: Ranking of Cairo University according to QS World University Rankings",
+            "ANSWER: 551-600"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "According to QS World University Rankings, what is the ranking of the place that employed Said Ashour?",
+            "Ranking of Cairo University according to QS World University Rankings"
+          ],
+          "stop": "controller_answer",
+          "total_support": 2
+        },
+        "8b_thinking": {
+          "final_support": 2,
+          "initial_support": 2,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Which university employed Said Ashour according to the documents?",
+            "SEARCH: Which university employed Said Ashour according to the documents?"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "According to QS World University Rankings, what is the ranking of the place that employed Said Ashour?",
+            "Which university employed Said Ashour according to the documents?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 2
+        }
+      },
+      "question": "According to QS World University Rankings, what is the ranking of the place that employed Said Ashour?"
+    },
+    {
+      "answers": [
+        "Katharine Ross"
+      ],
+      "example_id": "2hop__84172_198548",
+      "jobs": {
+        "14b_short": {
+          "final_support": 1,
+          "initial_support": 1,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Who is the spouse of Jackson Weaver?",
+            "SEARCH: Who is the spouse of Jackson Weaver?"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "Who is the spouse of the person who does the voice for Smokey the Bear?",
+            "Who is the spouse of Jackson Weaver?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 2
+        },
+        "14b_thinking": {
+          "final_support": 2,
+          "initial_support": 1,
+          "new_support_ids": [
+            "musique-paragraph-33b9effbd7f204b966ab57bc2593c95e75712f5f8bd23f58e70a3d384bca9db9"
+          ],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Spouse of Sam Elliott",
+            "SEARCH: Spouse of Sam Elliott"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "Who is the spouse of the person who does the voice for Smokey the Bear?",
+            "Spouse of Sam Elliott"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 2
+        },
+        "8b_short": {
+          "final_support": 1,
+          "initial_support": 1,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Who is the spouse of the person who does the voice for Smokey the Bear?"
+          ],
+          "rounds": 1,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "Who is the spouse of the person who does the voice for Smokey the Bear?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 2
+        },
+        "8b_thinking": {
+          "final_support": 1,
+          "initial_support": 1,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Who is the spouse of the voice actor for Smokey Bear?",
+            "SEARCH: Who is the spouse of the voice actor for Smokey Bear?"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "Who is the spouse of the person who does the voice for Smokey the Bear?",
+            "Who is the spouse of the voice actor for Smokey Bear?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 2
+        }
+      },
+      "question": "Who is the spouse of the person who does the voice for Smokey the Bear?"
+    },
+    {
+      "answers": [
+        "11 February 1929"
+      ],
+      "example_id": "3hop1__64957_87694_64412",
+      "jobs": {
+        "14b_short": {
+          "final_support": 1,
+          "initial_support": 1,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Who is the saint holding a knife in the Last Supper?",
+            "SEARCH: Who is the saint holding a knife in the Last Supper?"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "When did the city that contains the basilica named after the saint who is holding a knife in the last supper become a country?",
+            "Who is the saint holding a knife in the Last Supper?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 3
+        },
+        "14b_thinking": {
+          "final_support": 3,
+          "initial_support": 1,
+          "new_support_ids": [
+            "musique-paragraph-7f84b41792d166d84051cd10f610930c7966d0a23effcaf68a9c3e82b9a7afb7",
+            "musique-paragraph-dbe3a9f7245186633613d25a4bd04a683e25b3884e144552910d8c0bbf8e8dd6"
+          ],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Which city contains a basilica named after Saint Peter?",
+            "SEARCH: When did Vatican City become an independent country?",
+            "ANSWER  \n1929"
+          ],
+          "rounds": 3,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "When did the city that contains the basilica named after the saint who is holding a knife in the last supper become a country?",
+            "Which city contains a basilica named after Saint Peter?",
+            "When did Vatican City become an independent country?"
+          ],
+          "stop": "invalid_action_fallback_to_final",
+          "total_support": 3
+        },
+        "8b_short": {
+          "final_support": 1,
+          "initial_support": 1,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: When did Florence become a country?",
+            "SEARCH: When did Florence become a country?"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "When did the city that contains the basilica named after the saint who is holding a knife in the last supper become a country?",
+            "When did Florence become a country?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 3
+        },
+        "8b_thinking": {
+          "final_support": 3,
+          "initial_support": 1,
+          "new_support_ids": [
+            "musique-paragraph-7f84b41792d166d84051cd10f610930c7966d0a23effcaf68a9c3e82b9a7afb7",
+            "musique-paragraph-dbe3a9f7245186633613d25a4bd04a683e25b3884e144552910d8c0bbf8e8dd6"
+          ],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Which city contains the basilica named after the saint holding a knife in the Last Supper?",
+            "SEARCH: When did Vatican City become a country?",
+            "SEARCH: When did the city containing the basilica named after Saint Peter become a country?",
+            "ANSWER\n1929"
+          ],
+          "rounds": 4,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "When did the city that contains the basilica named after the saint who is holding a knife in the last supper become a country?",
+            "Which city contains the basilica named after the saint holding a knife in the Last Supper?",
+            "When did Vatican City become a country?",
+            "When did the city containing the basilica named after Saint Peter become a country?"
+          ],
+          "stop": "controller_answer",
+          "total_support": 3
+        }
+      },
+      "question": "When did the city that contains the basilica named after the saint who is holding a knife in the last supper become a country?"
+    },
+    {
+      "answers": [
+        "Sales began worldwide in April 2012"
+      ],
+      "example_id": "3hop1__132968_40769_64047",
+      "jobs": {
+        "14b_short": {
+          "final_support": 2,
+          "initial_support": 2,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: When did Lexus change the body style of the RX 350?",
+            "SEARCH: When did Lexus change the body style of the RX 350?"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "When did the luxury division of the company that made Daihatsu Charmant change the body style of the rx 350?",
+            "When did Lexus change the body style of the RX 350?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 3
+        },
+        "14b_thinking": {
+          "final_support": 2,
+          "initial_support": 2,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: When did Lexus (Toyota's luxury division) change the body style of the RX 350?",
+            "SEARCH: When did Lexus change the body style of the RX 350?",
+            "SEARCH: When did Lexus change the body style of the RX 350?"
+          ],
+          "rounds": 3,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "When did the luxury division of the company that made Daihatsu Charmant change the body style of the rx 350?",
+            "When did Lexus (Toyota's luxury division) change the body style of the RX 350?",
+            "When did Lexus change the body style of the RX 350?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 3
+        },
+        "8b_short": {
+          "final_support": 2,
+          "initial_support": 2,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: When did the luxury division of the company that made Daihatsu Charmant change the body style of the RX 350?"
+          ],
+          "rounds": 1,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "When did the luxury division of the company that made Daihatsu Charmant change the body style of the rx 350?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 3
+        },
+        "8b_thinking": {
+          "final_support": 2,
+          "initial_support": 2,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: When did Lexus change the body style of the RX 350?",
+            "SEARCH: When did Lexus change the body style of the RX 350?"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "When did the luxury division of the company that made Daihatsu Charmant change the body style of the rx 350?",
+            "When did Lexus change the body style of the RX 350?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 3
+        }
+      },
+      "question": "When did the luxury division of the company that made Daihatsu Charmant change the body style of the rx 350?"
+    },
+    {
+      "answers": [
+        "Toronto Coach Terminal"
+      ],
+      "example_id": "3hop1__210639_147339_47686",
+      "jobs": {
+        "14b_short": {
+          "final_support": 2,
+          "initial_support": 1,
+          "new_support_ids": [
+            "musique-paragraph-a4f6302d5db85f1a6d3bbf391ae7fd398ba0c8826f57a806f74fd5a88a0626ed"
+          ],
+          "prediction": "SEARCH: Where did Paul Kane live when he died?",
+          "raw_actions": [
+            "SEARCH: Where did Paul Kane live when he died?",
+            "SEARCH: Where did Paul Kane live when he died?"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "Where do Greyhound buses leave from in the city where the creator of Scene in the Northwest: Portrait of John Henry Lefroy lived when he died?",
+            "Where did Paul Kane live when he died?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 3
+        },
+        "14b_thinking": {
+          "final_support": 2,
+          "initial_support": 1,
+          "new_support_ids": [
+            "musique-paragraph-a4f6302d5db85f1a6d3bbf391ae7fd398ba0c8826f57a806f74fd5a88a0626ed"
+          ],
+          "prediction": "SEARCH: Where did Paul Kane live when he died?",
+          "raw_actions": [
+            "SEARCH: Where did Paul Kane live when he died?",
+            "SEARCH: Where did Paul Kane live when he died?"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "Where do Greyhound buses leave from in the city where the creator of Scene in the Northwest: Portrait of John Henry Lefroy lived when he died?",
+            "Where did Paul Kane live when he died?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 3
+        },
+        "8b_short": {
+          "final_support": 2,
+          "initial_support": 1,
+          "new_support_ids": [
+            "musique-paragraph-a4f6302d5db85f1a6d3bbf391ae7fd398ba0c8826f57a806f74fd5a88a0626ed"
+          ],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Where did Paul Kane live when he died?",
+            "SEARCH: Where did Paul Kane live when he died?"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "Where do Greyhound buses leave from in the city where the creator of Scene in the Northwest: Portrait of John Henry Lefroy lived when he died?",
+            "Where did Paul Kane live when he died?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 3
+        },
+        "8b_thinking": {
+          "final_support": 2,
+          "initial_support": 1,
+          "new_support_ids": [
+            "musique-paragraph-a4f6302d5db85f1a6d3bbf391ae7fd398ba0c8826f57a806f74fd5a88a0626ed"
+          ],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Where did Paul Kane live when he died?",
+            "The creator of \"Scene in the Northwest: Portrait of John Henry Lefroy\" is Paul Kane. The documents do not specify where Paul Kane lived when he"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "Where do Greyhound buses leave from in the city where the creator of Scene in the Northwest: Portrait of John Henry Lefroy lived when he died?",
+            "Where did Paul Kane live when he died?"
+          ],
+          "stop": "invalid_action_fallback_to_final",
+          "total_support": 3
+        }
+      },
+      "question": "Where do Greyhound buses leave from in the city where the creator of Scene in the Northwest: Portrait of John Henry Lefroy lived when he died?"
+    },
+    {
+      "answers": [
+        "13 December 1642"
+      ],
+      "example_id": "3hop2__30956_65244_84681",
+      "jobs": {
+        "14b_short": {
+          "final_support": 2,
+          "initial_support": 1,
+          "new_support_ids": [
+            "musique-paragraph-1b51d951df4d1aee6a62b544a0347f0e21cd138733b096687456c6e601d757d6"
+          ],
+          "prediction": "SEARCH: When did the Dutch come to New Zealand?",
+          "raw_actions": [
+            "SEARCH: When did the Dutch arrive in New York?",
+            "SEARCH: When did the Dutch arrive in New Zealand?",
+            "SEARCH: When did the Dutch arrive in New Zealand?"
+          ],
+          "rounds": 3,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "When did the people who controlled New York before it became an English colony, come to the country where John Kerry's yacht was built?",
+            "When did the Dutch arrive in New York?",
+            "When did the Dutch arrive in New Zealand?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 3
+        },
+        "14b_thinking": {
+          "final_support": 2,
+          "initial_support": 1,
+          "new_support_ids": [
+            "musique-paragraph-1b51d951df4d1aee6a62b544a0347f0e21cd138733b096687456c6e601d757d6"
+          ],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: When did the Dutch arrive in New Zealand?",
+            "ANSWER\n\n1642."
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "When did the people who controlled New York before it became an English colony, come to the country where John Kerry's yacht was built?",
+            "When did the Dutch arrive in New Zealand?"
+          ],
+          "stop": "controller_answer",
+          "total_support": 3
+        },
+        "8b_short": {
+          "final_support": 1,
+          "initial_support": 1,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: When did the people who controlled New York before it became an English colony, come to the country where John Kerry's yacht was built?"
+          ],
+          "rounds": 1,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "When did the people who controlled New York before it became an English colony, come to the country where John Kerry's yacht was built?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 3
+        },
+        "8b_thinking": {
+          "final_support": 1,
+          "initial_support": 1,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "The people who controlled New York before it became an English colony were the Dutch, specifically the Dutch colony of New Netherland. The country where John Kerry's"
+          ],
+          "rounds": 1,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "When did the people who controlled New York before it became an English colony, come to the country where John Kerry's yacht was built?"
+          ],
+          "stop": "invalid_action_fallback_to_final",
+          "total_support": 3
+        }
+      },
+      "question": "When did the people who controlled New York before it became an English colony, come to the country where John Kerry's yacht was built?"
+    },
+    {
+      "answers": [
+        "Medical University of Warsaw"
+      ],
+      "example_id": "4hop1__370129_621192_10659_42311",
+      "jobs": {
+        "14b_short": {
+          "final_support": 1,
+          "initial_support": 0,
+          "new_support_ids": [
+            "musique-paragraph-e123b3988b4d9984e23b6b2316504f625ae65157045a04905737d52ddb1ce4f3"
+          ],
+          "prediction": "SEARCH: Largest medical school in the nation where expelled French Jews relocated.",
+          "raw_actions": [
+            "SEARCH: What country did many expelled French Jews relocate to?",
+            "SEARCH: What country did many expelled French Jews relocate to?"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.13333333333333333
+          },
+          "search_queries": [
+            "What is the largest medical school in the nation where, along with the country of citizenship of the mother of Marie Antoinette, many expelled French Jews relocated?",
+            "What country did many expelled French Jews relocate to?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 4
+        },
+        "14b_thinking": {
+          "final_support": 0,
+          "initial_support": 0,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Country of citizenship of Marie Antoinette's mother",
+            "SEARCH: Country of citizenship of Marie Antoinette's mother"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "What is the largest medical school in the nation where, along with the country of citizenship of the mother of Marie Antoinette, many expelled French Jews relocated?",
+            "Country of citizenship of Marie Antoinette's mother"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 4
+        },
+        "8b_short": {
+          "final_support": 0,
+          "initial_support": 0,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Country of citizenship of the mother of Marie Antoinette",
+            "SEARCH: Country of citizenship of the mother of Marie Antoinette"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "What is the largest medical school in the nation where, along with the country of citizenship of the mother of Marie Antoinette, many expelled French Jews relocated?",
+            "Country of citizenship of the mother of Marie Antoinette"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 4
+        },
+        "8b_thinking": {
+          "final_support": 0,
+          "initial_support": 0,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: What is the largest medical school in the United States?",
+            "SEARCH: Which country did the mother of Marie Antoinette belong to?",
+            "SEARCH: Which country did the mother of Marie Antoinette belong to?"
+          ],
+          "rounds": 3,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "What is the largest medical school in the nation where, along with the country of citizenship of the mother of Marie Antoinette, many expelled French Jews relocated?",
+            "What is the largest medical school in the United States?",
+            "Which country did the mother of Marie Antoinette belong to?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 4
+        }
+      },
+      "question": "What is the largest medical school in the nation where, along with the country of citizenship of the mother of Marie Antoinette, many expelled French Jews relocated?"
+    },
+    {
+      "answers": [
+        "1989"
+      ],
+      "example_id": "4hop1__58323_375563_161848_53331",
+      "jobs": {
+        "14b_short": {
+          "final_support": 1,
+          "initial_support": 0,
+          "new_support_ids": [
+            "musique-paragraph-c777e14e7ba680d509744bc6d97581b743cbcc3ca015ccb229eb1901df6cef3a"
+          ],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Who is the writer of The Book Thief and which country are they a citizen of?",
+            "SEARCH: Which country is near the country where the writer of The Book Thief is a citizen of?",
+            "SEARCH: Which country is near the country where the writer of The Book Thief is a citizen of?"
+          ],
+          "rounds": 3,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "When was the death penalty abolished in the country near the country where the writer of The Book Thief is a citizen of?",
+            "Who is the writer of The Book Thief and which country are they a citizen of?",
+            "Which country is near the country where the writer of The Book Thief is a citizen of?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 4
+        },
+        "14b_thinking": {
+          "final_support": 2,
+          "initial_support": 0,
+          "new_support_ids": [
+            "musique-paragraph-c777e14e7ba680d509744bc6d97581b743cbcc3ca015ccb229eb1901df6cef3a",
+            "musique-paragraph-d3534acad149e64279f7c78c25b4eaafb79e949ec6e771dfe3dbb341ab97dc7c"
+          ],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Country of citizenship of the writer of Demon Thief",
+            "SEARCH: Country of citizenship of the writer of The Book Thief",
+            "SEARCH: Country of citizenship of Markus Zusak",
+            "SEARCH: Country of citizenship of Markus Zusak"
+          ],
+          "rounds": 4,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "When was the death penalty abolished in the country near the country where the writer of The Book Thief is a citizen of?",
+            "Country of citizenship of the writer of Demon Thief",
+            "Country of citizenship of the writer of The Book Thief",
+            "Country of citizenship of Markus Zusak"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 4
+        },
+        "8b_short": {
+          "final_support": 1,
+          "initial_support": 0,
+          "new_support_ids": [
+            "musique-paragraph-c777e14e7ba680d509744bc6d97581b743cbcc3ca015ccb229eb1901df6cef3a"
+          ],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: writer of The Book Thief",
+            "SEARCH: writer of The Book Thief"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "When was the death penalty abolished in the country near the country where the writer of The Book Thief is a citizen of?",
+            "writer of The Book Thief"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 4
+        },
+        "8b_thinking": {
+          "final_support": 0,
+          "initial_support": 0,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Which country near Australia abolished the death penalty?",
+            "SEARCH: When was the death penalty abolished in Australia's neighboring country?",
+            "SEARCH: When was the death penalty abolished in Papua New Guinea?",
+            "SEARCH: When was the death penalty abolished in Australia's neighboring country?"
+          ],
+          "rounds": 4,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "When was the death penalty abolished in the country near the country where the writer of The Book Thief is a citizen of?",
+            "Which country near Australia abolished the death penalty?",
+            "When was the death penalty abolished in Australia's neighboring country?",
+            "When was the death penalty abolished in Papua New Guinea?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 4
+        }
+      },
+      "question": "When was the death penalty abolished in the country near the country where the writer of The Book Thief is a citizen of?"
+    },
+    {
+      "answers": [
+        "third-largest"
+      ],
+      "example_id": "4hop3__312119_132409_371500_35031",
+      "jobs": {
+        "14b_short": {
+          "final_support": 2,
+          "initial_support": 1,
+          "new_support_ids": [
+            "musique-paragraph-2bf015804b80b2a587a372caf630c880fc65d395bb42138106315c1f51e50f7f"
+          ],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Where is Veoh's headquarters city located?",
+            "SEARCH: What is the state where Getting Away with Murder's performer was formed?",
+            "SEARCH: What is the state where Getting Away with Murder's performer was formed?"
+          ],
+          "rounds": 3,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "Among the top five largest urban areas in the state where Getting Away with Murder's performer was formed, where does Veoh's headquarters city rank?",
+            "Where is Veoh's headquarters city located?",
+            "What is the state where Getting Away with Murder's performer was formed?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 4
+        },
+        "14b_thinking": {
+          "final_support": 4,
+          "initial_support": 1,
+          "new_support_ids": [
+            "musique-paragraph-2bf015804b80b2a587a372caf630c880fc65d395bb42138106315c1f51e50f7f",
+            "musique-paragraph-7bec89a271a602679c3f70bb79458f16dbd36c053ff9954887c68276902ba4a9",
+            "musique-paragraph-846d359865d5969e63b147d241cfdbddd2e5cbf31fa8db9f2de9021d3bf54a79"
+          ],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Where was Papa Roach formed?",
+            "SEARCH: Where is Veoh's headquarters located?",
+            "SEARCH: What are the top five largest urban areas in California by population?",
+            "ANSWER  \nSan Diego is the third-largest urban area in California."
+          ],
+          "rounds": 4,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "Among the top five largest urban areas in the state where Getting Away with Murder's performer was formed, where does Veoh's headquarters city rank?",
+            "Where was Papa Roach formed?",
+            "Where is Veoh's headquarters located?",
+            "What are the top five largest urban areas in California by population?"
+          ],
+          "stop": "invalid_action_fallback_to_final",
+          "total_support": 4
+        },
+        "8b_short": {
+          "final_support": 3,
+          "initial_support": 1,
+          "new_support_ids": [
+            "musique-paragraph-2bf015804b80b2a587a372caf630c880fc65d395bb42138106315c1f51e50f7f",
+            "musique-paragraph-846d359865d5969e63b147d241cfdbddd2e5cbf31fa8db9f2de9021d3bf54a79"
+          ],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Where is Veoh's headquarters city located?",
+            "SEARCH: What is the state where Papa Roach was formed?",
+            "SEARCH: What is the rank of Veoh's headquarters city among the top five largest urban areas in Oklahoma?",
+            "SEARCH: What is the rank of Veoh's headquarters city among the top five largest urban areas in Oklahoma?"
+          ],
+          "rounds": 4,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "Among the top five largest urban areas in the state where Getting Away with Murder's performer was formed, where does Veoh's headquarters city rank?",
+            "Where is Veoh's headquarters city located?",
+            "What is the state where Papa Roach was formed?",
+            "What is the rank of Veoh's headquarters city among the top five largest urban areas in Oklahoma?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 4
+        },
+        "8b_thinking": {
+          "final_support": 4,
+          "initial_support": 1,
+          "new_support_ids": [
+            "musique-paragraph-2bf015804b80b2a587a372caf630c880fc65d395bb42138106315c1f51e50f7f",
+            "musique-paragraph-7bec89a271a602679c3f70bb79458f16dbd36c053ff9954887c68276902ba4a9",
+            "musique-paragraph-846d359865d5969e63b147d241cfdbddd2e5cbf31fa8db9f2de9021d3bf54a79"
+          ],
+          "prediction": "SEARCH: What is the state where Papa Roach was formed?",
+          "raw_actions": [
+            "SEARCH: Where was Papa Roach formed and where is Veoh's headquarters located?",
+            "SEARCH: What are the top five largest urban areas in California?",
+            "ANSWER: San Diego is the third-largest urban area in California, so Veoh's headquarters city ranks third among the top five largest urban areas in California."
+          ],
+          "rounds": 3,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "Among the top five largest urban areas in the state where Getting Away with Murder's performer was formed, where does Veoh's headquarters city rank?",
+            "Where was Papa Roach formed and where is Veoh's headquarters located?",
+            "What are the top five largest urban areas in California?"
+          ],
+          "stop": "controller_answer",
+          "total_support": 4
+        }
+      },
+      "question": "Among the top five largest urban areas in the state where Getting Away with Murder's performer was formed, where does Veoh's headquarters city rank?"
+    },
+    {
+      "answers": [
+        "Saxony-Anhalt"
+      ],
+      "example_id": "4hop1__391525_49925_13759_736921",
+      "jobs": {
+        "14b_short": {
+          "final_support": 2,
+          "initial_support": 2,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Where did Pope Paul VI preach a sermon on Marian devotion before his death?",
+            "SEARCH: Where did Pope Paul VI preach a sermon on Marian devotion before his death?"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "Where is the district that the person who wanted to reform and address John Kodwo Amissah's religion preached a sermon on Marian devotion before his death located?",
+            "Where did Pope Paul VI preach a sermon on Marian devotion before his death?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 4
+        },
+        "14b_thinking": {
+          "final_support": 2,
+          "initial_support": 2,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "UNKNOWN"
+          ],
+          "rounds": 1,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "Where is the district that the person who wanted to reform and address John Kodwo Amissah's religion preached a sermon on Marian devotion before his death located?"
+          ],
+          "stop": "invalid_action_fallback_to_final",
+          "total_support": 4
+        },
+        "8b_short": {
+          "final_support": 2,
+          "initial_support": 2,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Where is the district that the person who wanted to reform and address John Kodwo Amissah's religion preached a sermon on Marian devotion before his death",
+            "SEARCH: Where is the district that the person who wanted to reform and address John Kodwo Amissah's religion preached a sermon on Marian devotion before his death"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "Where is the district that the person who wanted to reform and address John Kodwo Amissah's religion preached a sermon on Marian devotion before his death located?",
+            "Where is the district that the person who wanted to reform and address John Kodwo Amissah's religion preached a sermon on Marian devotion before his death"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 4
+        },
+        "8b_thinking": {
+          "final_support": 2,
+          "initial_support": 2,
+          "new_support_ids": [],
+          "prediction": "UNKNOWN",
+          "raw_actions": [
+            "SEARCH: Which religious reformer preached a Marian sermon before John Kodwo Amissah's death?",
+            "SEARCH: Which religious reformer preached a Marian sermon before John Kodwo Amissah's death?"
+          ],
+          "rounds": 2,
+          "scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "search_queries": [
+            "Where is the district that the person who wanted to reform and address John Kodwo Amissah's religion preached a sermon on Marian devotion before his death located?",
+            "Which religious reformer preached a Marian sermon before John Kodwo Amissah's death?"
+          ],
+          "stop": "repeated_query_fallback_to_final",
+          "total_support": 4
+        }
+      },
+      "question": "Where is the district that the person who wanted to reform and address John Kodwo Amissah's religion preached a sermon on Marian devotion before his death located?"
+    }
+  ],
+  "scope": "Descriptive development diagnostics; no causal inference from support annotations or selected examples."
+}

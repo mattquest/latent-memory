@@ -1,0 +1,598 @@
+{
+  "final_generations": 96,
+  "metrics": [
+    {
+      "condition": "original",
+      "correct": 0,
+      "correct_question_ids": [],
+      "f1": 0.0,
+      "job_id": "8b_short",
+      "mean_generated_tokens": 1.1666666666666667,
+      "mean_prefill_tokens": 1328.9166666666667,
+      "median_final_synthesis_ms": 486.5503539913334,
+      "n": 12,
+      "search_commands": 0
+    },
+    {
+      "condition": "final_only_system",
+      "correct": 1,
+      "correct_question_ids": [
+        "2hop__57543_158262"
+      ],
+      "f1": 0.125,
+      "job_id": "8b_short",
+      "mean_generated_tokens": 1.75,
+      "mean_prefill_tokens": 1311.9166666666667,
+      "median_final_synthesis_ms": 537.464479013579,
+      "n": 12,
+      "search_commands": 0
+    },
+    {
+      "condition": "original",
+      "correct": 0,
+      "correct_question_ids": [],
+      "f1": 0.0,
+      "job_id": "8b_thinking",
+      "mean_generated_tokens": 2,
+      "mean_prefill_tokens": 1460.8333333333333,
+      "median_final_synthesis_ms": 595.6863119790796,
+      "n": 12,
+      "search_commands": 1
+    },
+    {
+      "condition": "final_only_system",
+      "correct": 1,
+      "correct_question_ids": [
+        "2hop__57543_158262"
+      ],
+      "f1": 0.08333333333333333,
+      "job_id": "8b_thinking",
+      "mean_generated_tokens": 1.5,
+      "mean_prefill_tokens": 1443.8333333333333,
+      "median_final_synthesis_ms": 645.3460629854817,
+      "n": 12,
+      "search_commands": 0
+    },
+    {
+      "condition": "original",
+      "correct": 1,
+      "correct_question_ids": [
+        "2hop__57543_158262"
+      ],
+      "f1": 0.09444444444444444,
+      "job_id": "14b_short",
+      "mean_generated_tokens": 4.166666666666667,
+      "mean_prefill_tokens": 1452.1666666666667,
+      "median_final_synthesis_ms": 1275.0519374676514,
+      "n": 12,
+      "search_commands": 3
+    },
+    {
+      "condition": "final_only_system",
+      "correct": 1,
+      "correct_question_ids": [
+        "2hop__57543_158262"
+      ],
+      "f1": 0.08333333333333333,
+      "job_id": "14b_short",
+      "mean_generated_tokens": 1.9166666666666667,
+      "mean_prefill_tokens": 1435.1666666666667,
+      "median_final_synthesis_ms": 1257.7520414779428,
+      "n": 12,
+      "search_commands": 0
+    },
+    {
+      "condition": "original",
+      "correct": 1,
+      "correct_question_ids": [
+        "2hop__57543_158262"
+      ],
+      "f1": 0.08333333333333333,
+      "job_id": "14b_thinking",
+      "mean_generated_tokens": 2.0833333333333335,
+      "mean_prefill_tokens": 1440.1666666666667,
+      "median_final_synthesis_ms": 1238.9688749972265,
+      "n": 12,
+      "search_commands": 1
+    },
+    {
+      "condition": "final_only_system",
+      "correct": 1,
+      "correct_question_ids": [
+        "2hop__57543_158262"
+      ],
+      "f1": 0.08333333333333333,
+      "job_id": "14b_thinking",
+      "mean_generated_tokens": 1.5,
+      "mean_prefill_tokens": 1423.1666666666667,
+      "median_final_synthesis_ms": 1192.1413330128416,
+      "n": 12,
+      "search_commands": 0
+    }
+  ],
+  "original_exact_token_and_text_replays": 48,
+  "paired_predictions": [
+    {
+      "example_id": "2hop__460091_405771",
+      "final_only_system": "Order",
+      "job_id": "8b_short",
+      "original": "order",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "2hop__57543_158262",
+      "final_only_system": "1848",
+      "job_id": "8b_short",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "example_id": "2hop__403580_37168",
+      "final_only_system": "UNKNOWN",
+      "job_id": "8b_short",
+      "original": "Cairo University",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "2hop__84172_198548",
+      "final_only_system": "UNKNOWN",
+      "job_id": "8b_short",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "3hop1__64957_87694_64412",
+      "final_only_system": "UNKNOWN",
+      "job_id": "8b_short",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "3hop1__132968_40769_64047",
+      "final_only_system": "UNKNOWN",
+      "job_id": "8b_short",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "3hop1__210639_147339_47686",
+      "final_only_system": "UNKNOWN",
+      "job_id": "8b_short",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "3hop2__30956_65244_84681",
+      "final_only_system": "1664",
+      "job_id": "8b_short",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "4hop1__370129_621192_10659_42311",
+      "final_only_system": "Medical College of Georgia",
+      "job_id": "8b_short",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.5
+      }
+    },
+    {
+      "example_id": "4hop1__58323_375563_161848_53331",
+      "final_only_system": "UNKNOWN",
+      "job_id": "8b_short",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "4hop3__312119_132409_371500_35031",
+      "final_only_system": "UNKNOWN",
+      "job_id": "8b_short",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "4hop1__391525_49925_13759_736921",
+      "final_only_system": "UNKNOWN",
+      "job_id": "8b_short",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "2hop__460091_405771",
+      "final_only_system": "Order",
+      "job_id": "8b_thinking",
+      "original": "order",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "2hop__57543_158262",
+      "final_only_system": "1848",
+      "job_id": "8b_thinking",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "example_id": "2hop__403580_37168",
+      "final_only_system": "UNKNOWN",
+      "job_id": "8b_thinking",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "2hop__84172_198548",
+      "final_only_system": "UNKNOWN",
+      "job_id": "8b_thinking",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "3hop1__64957_87694_64412",
+      "final_only_system": "UNKNOWN",
+      "job_id": "8b_thinking",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "3hop1__132968_40769_64047",
+      "final_only_system": "UNKNOWN",
+      "job_id": "8b_thinking",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "3hop1__210639_147339_47686",
+      "final_only_system": "UNKNOWN",
+      "job_id": "8b_thinking",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "3hop2__30956_65244_84681",
+      "final_only_system": "1664",
+      "job_id": "8b_thinking",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "4hop1__370129_621192_10659_42311",
+      "final_only_system": "UNKNOWN",
+      "job_id": "8b_thinking",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "4hop1__58323_375563_161848_53331",
+      "final_only_system": "UNKNOWN",
+      "job_id": "8b_thinking",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "4hop3__312119_132409_371500_35031",
+      "final_only_system": "UNKNOWN",
+      "job_id": "8b_thinking",
+      "original": "SEARCH: What is the state where Papa Roach was formed?",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "4hop1__391525_49925_13759_736921",
+      "final_only_system": "UNKNOWN",
+      "job_id": "8b_thinking",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "2hop__460091_405771",
+      "final_only_system": "Archostemata",
+      "job_id": "14b_short",
+      "original": "family",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "2hop__57543_158262",
+      "final_only_system": "1848",
+      "job_id": "14b_short",
+      "original": "1848",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "2hop__403580_37168",
+      "final_only_system": "Cairo University",
+      "job_id": "14b_short",
+      "original": "Cairo University",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "2hop__84172_198548",
+      "final_only_system": "UNKNOWN",
+      "job_id": "14b_short",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "3hop1__64957_87694_64412",
+      "final_only_system": "UNKNOWN",
+      "job_id": "14b_short",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "3hop1__132968_40769_64047",
+      "final_only_system": "UNKNOWN",
+      "job_id": "14b_short",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "3hop1__210639_147339_47686",
+      "final_only_system": "UNKNOWN",
+      "job_id": "14b_short",
+      "original": "SEARCH: Where did Paul Kane live when he died?",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "3hop2__30956_65244_84681",
+      "final_only_system": "UNKNOWN",
+      "job_id": "14b_short",
+      "original": "SEARCH: When did the Dutch come to New Zealand?",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "4hop1__370129_621192_10659_42311",
+      "final_only_system": "UNKNOWN",
+      "job_id": "14b_short",
+      "original": "SEARCH: Largest medical school in the nation where expelled French Jews relocated.",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": -0.13333333333333333
+      }
+    },
+    {
+      "example_id": "4hop1__58323_375563_161848_53331",
+      "final_only_system": "1968",
+      "job_id": "14b_short",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "4hop3__312119_132409_371500_35031",
+      "final_only_system": "UNKNOWN",
+      "job_id": "14b_short",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "4hop1__391525_49925_13759_736921",
+      "final_only_system": "UNKNOWN",
+      "job_id": "14b_short",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "2hop__460091_405771",
+      "final_only_system": "Archostemata",
+      "job_id": "14b_thinking",
+      "original": "family",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "2hop__57543_158262",
+      "final_only_system": "1848",
+      "job_id": "14b_thinking",
+      "original": "1848",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "2hop__403580_37168",
+      "final_only_system": "UNKNOWN",
+      "job_id": "14b_thinking",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "2hop__84172_198548",
+      "final_only_system": "UNKNOWN",
+      "job_id": "14b_thinking",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "3hop1__64957_87694_64412",
+      "final_only_system": "UNKNOWN",
+      "job_id": "14b_thinking",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "3hop1__132968_40769_64047",
+      "final_only_system": "UNKNOWN",
+      "job_id": "14b_thinking",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "3hop1__210639_147339_47686",
+      "final_only_system": "UNKNOWN",
+      "job_id": "14b_thinking",
+      "original": "SEARCH: Where did Paul Kane live when he died?",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "3hop2__30956_65244_84681",
+      "final_only_system": "UNKNOWN",
+      "job_id": "14b_thinking",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "4hop1__370129_621192_10659_42311",
+      "final_only_system": "UNKNOWN",
+      "job_id": "14b_thinking",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "4hop1__58323_375563_161848_53331",
+      "final_only_system": "UNKNOWN",
+      "job_id": "14b_thinking",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "4hop3__312119_132409_371500_35031",
+      "final_only_system": "UNKNOWN",
+      "job_id": "14b_thinking",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "example_id": "4hop1__391525_49925_13759_736921",
+      "final_only_system": "UNKNOWN",
+      "job_id": "14b_thinking",
+      "original": "UNKNOWN",
+      "score_difference": {
+        "exact_match": 0.0,
+        "f1": 0.0
+      }
+    }
+  ],
+  "scope": "Posthoc saved-evidence final-system ablation; final-stage timings only; twelve unique questions reused across four configurations.",
+  "source_conditions": 48
+}
