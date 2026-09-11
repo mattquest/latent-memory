@@ -1,0 +1,184 @@
+﻿Latent Retrieval Memory
+Plan and technical design for a local, latent-space multi-agent memory server exposed over MCP
+Prepared for Matt — September 10, 2026 — Target hardware: M5 Max MacBook Pro, 128 GB unified memory
+1. Goal and thesis
+Build a memory server that exposes only text-in / text-out endpoints (remember, retrieve) over MCP, and that internally runs a multi-agent retrieval pipeline whose agents communicate by relaying transformer KV caches instead of decoded text. Everything visible to a user is ordinary; everything inside is latent.
+Core hypothesis. Latent hops are cheap (no decoding, no re-prefill), so the pipeline can afford many more retrieve → verify → re-query iterations per question than a text-based pipeline. If iteration budget converts into accuracy on an unsaturated long-horizon benchmark (BEAM at 1M–10M tokens), that is a publishable and shareable result, and the latent machinery is the honest reason for it.
+What makes this defensible. A causal audit published in August 2026 (Cheng et al., arXiv 2608.04893) shows KV-cache relay only transmits example-specific information when the receiver needs the sender's private content. Retrieval is exactly that regime: reader agents have seen documents the synthesizer has not. Most earlier latent-communication demos ran on math and multiple-choice tasks where the receiver did not need private content, which is why the field looked weaker than it is.
+What is not the pitch. The latent architecture by itself is invisible at a text boundary and will not go viral. The headline is a benchmark result plus latency plus local privacy. The architecture is the second post.
+2. External interface (MCP)
+Three tools. Keep the surface tiny; every extra tool costs host-model context on every session.
+Tool
+	Input
+	Output
+	Notes
+	remember
+	text, optional source/tags/timestamp
+	memory_id, chunk count
+	Idempotent on content hash. Runs the write pipeline (section 4.3).
+	retrieve
+	question, optional k, budget (max hops), scope filter
+	answer text, supporting snippets, retrieval_id
+	Returns ≤ 500 tokens by default. Runs the read pipeline (section 4.4).
+	why
+	retrieval_id
+	Per-hop decoded trace: which memories each agent attended to and what it concluded
+	The decode probe. Turns the black box into a feature and is the answer to trust and safety questions.
+	
+
+Transport: stdio MCP for Claude Code / Claude Desktop, plus optional HTTP for Cowork and remote use. Host model never sees latent state; the boundary is text on both sides.
+3. Model selection (research as of September 2026)
+The one hard constraint: every agent in the relay chain must share the same architecture and weights, and the architecture must have a per-token KV cache. That rules out the newest Qwen releases for the relay path, which matters enough to state clearly.
+3.1 Backbone for all agents
+Model
+	Verdict
+	Reasoning
+	Qwen3-8B (dense, GQA, 36 layers, 8 KV heads)
+	Primary
+	Standard full attention, so per-token KV relay, position re-indexing (TurboRAG-style) and LatentMAS-style prefill relay all apply directly. It is the backbone family used in the audit and LCGuard papers, so results are comparable. LoRA fine-tuning works in mlx-lm today. Apache 2.0.
+	Qwen3-14B (dense, 40 layers, 8 KV heads)
+	Upgrade path
+	Same architecture family; ~1.7× KV bytes per token. Use if 8B accuracy plateaus. bf16 weights (~30 GB) plus KV working set fit in 128 GB comfortably.
+	Qwen3.5-9B / Qwen3.6-27B
+	Not for relay (yet)
+	Both use hybrid Gated DeltaNet linear attention (3 GDN : 1 full-attention). GDN layers keep a fixed-size state matrix, not a per-token cache, so concatenating several readers' states is an open research problem and TurboRAG-style position tricks do not apply. Strong candidates for the text-relay baseline and possibly for the synthesizer only, but not the latent path in v1.
+	Gemma 4 12B, Phi-4 14B
+	Alternates
+	Viable dense backbones if Qwen3 disappoints; verify attention layout (sliding-window layers complicate relay) before committing.
+	
+
+3.2 Retrieval and supporting models
+* Embeddings: Qwen3-Embedding-0.6B (fast) with Qwen3-Embedding-4B as an accuracy fallback. Both run in MLX. Text embeddings drive the first-stage candidate search; latent-query retrieval (section 4.4, step 2b) is layered on top, not a replacement.
+* Reranker: Qwen3-Reranker-0.6B for the text baseline. In the latent pipeline, the verifier agent replaces the reranker.
+* Compressor (Phase 3 only): LoRA on the same Qwen3-8B, trained ICAE / Latent-Memory style to emit k memory tokens per chunk. Start from the open Latent-Memory code (arXiv 2606.10572).
+* Runtime: mlx-lm (current release) for inference and LoRA training; direct MLX arrays for KV cache manipulation. No vLLM/SGLang on this hardware. Metal supports everything needed; the custom pieces are the attention mask and position-id handling for relayed caches.
+3.3 Memory budget on the M5 Max (128 GB)
+Item
+	Estimate
+	Note
+	Qwen3-8B weights, bf16
+	~16 GB
+	Single copy shared by all agent roles via per-role LoRA adapters (tens of MB each).
+	Qwen3-8B KV cache per token, bf16
+	36 layers × 8 heads × 128 dim × 2 × 2 B ≈ 147 KB
+	Int8 KV halves this; 4-bit KV quarters it (QKVShare-style on-device handoff, arXiv 2605.03884).
+	Hot KV working set (8 readers × 4k tokens)
+	~4.7 GB bf16
+	Fits easily; leaves >100 GB headroom for weights, embeddings, and the eval harness.
+	Cold KV store, 1M tokens of corpus
+	~147 GB bf16 / ~37 GB 4-bit
+	SSD-resident, paged in on demand. 10M tokens at 4-bit ≈ 370 GB: use raw text + recompute for cold chunks, KV cache only for hot/recent ones.
+	Embeddings, 1M tokens in 400-token chunks
+	2,500 vectors × 1024 dims × 2 B ≈ 5 MB
+	Negligible.
+	4. Technical design
+4.1 Components
+* Store: SQLite (metadata, chunk text, versions) + a local vector index (LanceDB or sqlite-vec) + a KV block store on disk (one safetensors file per chunk, 4-bit or int8, with position-independent layout). One directory, one process, no daemons.
+* Engine: A single loaded Qwen3-8B with hot-swappable LoRA adapters per role: planner, reader, verifier, synthesizer. Role switch = adapter switch; the base weights never move.
+* Relay bus: In-process. A relay is a Python object holding references to MLX arrays (per-layer K and V tensors plus a position map). Passing a relay costs nothing; this is the single-box advantage the GPU-cluster papers do not have.
+* Trace log: Every hop records which chunk KV blocks were attended, attention mass per block, and the verifier's latent verdict. The why tool decodes this into text on demand using the base model with a short "describe what you concluded" prompt over the stored relay.
+* MCP layer: Thin, stateless, text-only. Python MCP SDK, stdio + optional streamable HTTP.
+4.2 Latent relay mechanism
+Follow the design the audit found to actually transfer information (LatentMAS-style full relay), not a learned projector.
+1. Each reader prefills its assigned chunks with independent attention (chunks do not attend to each other), producing per-chunk KV blocks with local position ids 0..L. This is what allows blocks to be precomputed at remember time and reused across queries.
+2. When a receiver (verifier or synthesizer) consumes relays, blocks are concatenated and position ids are re-indexed into a consecutive range (TurboRAG). A small set of "bridge" tokens at the block boundaries is recomputed with full attention (CacheBlend / CacheClip, ~15–20% of tokens) to restore cross-chunk attention where it matters. This recompute is the main quality lever and the first thing to ablate.
+3. The receiver then runs its own short prefill (its role prompt plus the question) attending over all relayed blocks, and either emits another relay (verifier → next hop) or decodes text (synthesizer only).
+4. The planner's output is also latent: its final hidden state is projected by a small trained linear head into the embedding space of the retriever, giving a latent query for the next hop (Coconut-style). This is the only trained projection in the system, it is optional in v1, and it must be validated with the mismatched-cache audit before it is trusted.
+Quantize relayed KV to int8 by default; fall back to bf16 for the final synthesizer hop if accuracy drops.
+4.3 Write path — remember(text)
+5. Chunk to ~400 tokens with sentence boundaries; content-hash for idempotency.
+6. Embed each chunk (Qwen3-Embedding) and upsert into the vector index with metadata (source, timestamp, version).
+7. Contradiction / update check: retrieve top-5 nearest existing chunks; a short reader hop decides "new / supersedes X / duplicate". Superseded chunks are kept but marked, with the successor linked. This is what BEAM's knowledge-update and contradiction categories test, and where text-only systems get most of their lost points.
+8. Precompute the chunk KV block with the reader adapter and independent attention; write to disk quantized. Recent and frequently retrieved blocks stay in an in-RAM LRU.
+Latency target: under 1 s per 1k tokens ingested, which a single 8B prefill on the M5 Max should beat.
+4.4 Read path — retrieve(question, budget)
+9. Plan (latent): planner prefills the question and emits a relay plus a latent query vector.
+10. Candidate search: (a) text embedding of the question against the vector index; (b) latent query vector against the same index once the projection head is trained. Union, take top-N (N ≈ 16–32).
+11. Read (parallel): N chunks are grouped into R reader batches (R ≈ 4–8). Each reader loads or computes KV blocks and emits a relay. No decoding.
+12. Verify (latent): the verifier consumes all reader relays plus the planner relay, scores support per block (attention-mass features plus a learned head), prunes, and decides continue vs stop. On continue, it emits a refined latent query and the loop returns to step 2. Budget defaults to 3 hops for the baseline and up to 20 for the latent experiment.
+13. Synthesize (text): the synthesizer consumes the surviving relays and decodes the answer once. Target ≤ 500 output tokens.
+14. Trace: store the per-hop record for why.
+Latency target: p50 under 2 s for a 3-hop query, under 6 s for 20 hops. Each latent hop should cost roughly one prefill of a few hundred tokens over precomputed blocks, i.e. ~100–200 ms.
+4.5 Baseline you must build first
+The identical pipeline with text relays: each agent decodes a short JSON message and the next agent re-prefills it. Same adapters, same retrieval, same hop budget. This is the control arm for every claim, and it is also the fallback product if the latent path fails.
+5. Plan and milestones
+Phase
+	Weeks
+	Deliverable
+	Exit criterion
+	0 — Eval harness and baselines
+	1
+	BEAM-1M runner, HotpotQA + MuSiQue runners, cost/latency logging, reproduced published baselines (Mem0 ~94 LongMemEval at ~6.9k tokens/query; Hindsight 64.1 BEAM-10M) as reference points.
+	You can score any pipeline on all three in one command and the numbers are stable across seeds.
+	1 — Text-relay multi-agent MCP server
+	2–3
+	remember / retrieve / why working end to end in Claude Code. Planner-reader-verifier-synthesizer with text relays. Update/contradiction handling in the write path.
+	Beats a plain embed-and-rerank RAG on BEAM-1M by a clear margin at ≤ 500 output tokens. Ship this internally.
+	2 — Latent relay
+	4–6
+	KV block precompute, position re-indexing, bridge-token recompute, in-process relay bus, int8 KV. Hop-budget sweep 3 → 20.
+	Latent arm matches the text arm at 3 hops and beats it at ≥ 10 hops on BEAM-1M. If it does not, stop here and ship Phase 1.
+	3 — Compression and latent query (optional)
+	7–8
+	Memory-token compressor LoRA (Latent-Memory recipe) for cold storage; planner → retriever projection head; BEAM-10M run.
+	BEAM-10M score competitive with the published leader while running on the laptop.
+	4 — Audit and launch
+	9
+	Run the released mismatched-cache audit on your own relay; LCGuard-style leakage check; write-up; demo video (ingest a real corpus, answer in under 2 s, show why).
+	Audit shows example-specific transfer at ceiling. Numbers, methodology, and repo published together.
+	
+
+Total: roughly nine focused weeks, with a shippable product at the end of week 3 regardless of how the latent experiment turns out.
+6. Experiments and kill criteria
+* E1 — Text vs latent at equal hops. Expect parity (the audit predicts it). Parity at lower latency is a win; a loss of more than 2 points means the relay mechanics are broken (check position re-indexing and bridge recompute first).
+* E2 — Hop-budget curve. Accuracy vs hops for both arms. The thesis lives or dies here: latent must keep climbing past where text becomes too slow or too expensive to run. Kill if the latent curve is flat beyond 5 hops.
+* E3 — Mismatched-cache audit. Swap relays for a different example's cache, a zeroed cache, and a moment-matched random cache. Accuracy must collapse for mismatched and hold for correct. This is the evidence standard the field adopted in August; publish the number.
+* E4 — Bridge recompute ratio. 0%, 10%, 20%, 100% of boundary tokens recomputed. Find the knee.
+* E5 — KV precision. bf16 vs int8 vs 4-bit relays. Determines cold-store footprint at 10M tokens.
+* E6 — Update handling. BEAM knowledge-update and contradiction categories in isolation. This is where a latent store is most likely to blur facts; if it does, keep the update logic in text.
+Report every accuracy number paired with tokens returned to the host and p50/p95 latency. A score without its cost is the thing the memory-benchmark writers now explicitly warn against.
+7. Risks
+Risk
+	Likelihood
+	Mitigation
+	Latent relay adds no accuracy over text (thesis false)
+	Medium
+	Phase 1 is a complete, shippable product on its own. The experiment is bounded to three weeks.
+	Precomputed KV loses cross-chunk attention
+	High but known
+	Bridge-token recompute (E4). Literature says 15–20% recompute recovers most of the loss.
+	mlx-lm lacks primitives for arbitrary KV concatenation and custom masks
+	Medium
+	Write the attention forward for Qwen3 directly in MLX (a few hundred lines); do not depend on mlx-lm generation internals.
+	Latent channel leaks or can be poisoned
+	Real, now studied
+	Single-tenant local deployment removes most of it. Still run the LCGuard leakage probe and ship why so every hop is inspectable.
+	Qwen3 is a 2025 model; reviewers ask why not Qwen3.5/3.6
+	Certain
+	State the GDN constraint plainly in the write-up; it is a legitimate architectural reason and a good follow-up research question.
+	Benchmark protocol disputes (LoCoMo-style)
+	Medium
+	Pre-register the protocol, pin model and judge versions, release the harness with the numbers.
+	8. Stack and repository layout
+latent-memory/
+  server/        MCP tools (remember, retrieve, why); stdio + HTTP
+  engine/        MLX model load, LoRA adapter switching, custom attention with relay support
+  relay/         KV block format, quantization, position re-indexing, bridge recompute
+  store/         SQLite metadata, vector index, KV block store, LRU
+  agents/        planner / reader / verifier / synthesizer (text and latent variants share one interface)
+  train/         LoRA recipes: role adapters, compressor, planner→retriever head
+  eval/          BEAM, HotpotQA, MuSiQue runners; audit (mismatched-cache); cost/latency logging
+  scripts/       ingest corpus, run sweeps, produce report tables
+
+
+Python 3.12, mlx / mlx-lm, safetensors, sqlite + sqlite-vec (or LanceDB), the official Python MCP SDK, and a small Typer CLI. Keep it one process and one dependency file so the install is a single command; that is part of the launch story.
+9. References
+* Cheng et al., "When Does Latent Communication Pay? A Causal Audit of Relayed KV Caches in Multi-Agent LLMs", arXiv 2608.04893 (Aug 2026). The evidence standard and the audit to reuse.
+* "Beyond Tokens: A Unified Framework for Latent Communication in LLM-based Multi-Agent Systems", arXiv 2606.05711 (Jun 2026). Survey of 18 methods; design-pattern vocabulary.
+* Zou et al., LatentMAS — "Latent Collaboration in Multi-Agent Systems" (2025). The native relay that passed the audit.
+* Zheng et al., "One Token per Multimodal Evidence: Latent Memory for Resource-Constrained QA", arXiv 2606.10572 (Jun 2026). Compressor recipe and open code for Phase 3.
+* Lu et al., TurboRAG (EMNLP 2025) and Yao et al., CacheBlend (EuroSys 2025; TOCS 2026). Position re-indexing and selective recompute for precomputed KV.
+* Yang et al., CacheClip, arXiv 2510.10129. Practical recompute ratios on Qwen2.5-14B.
+* "LCGuard: Latent Communication Guard for Safe KV Sharing", arXiv 2605.22786; Brito & Baquero, "When Latent Agents Lie", arXiv 2606.28958. Leakage and integrity checks.
+* "QKVShare: Quantized KV-Cache Handoff for Multi-Agent On-Device LLMs", arXiv 2605.03884. Precision choices for on-device relay.
+* BEAM (1M/10M-token memory benchmark), LongMemEval (ICLR 2025), LoCoMo; Mem0 "State of AI Agent Memory 2026" for current published baselines and their token costs.

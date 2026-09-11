@@ -1,4 +1,4 @@
-"""Text agents: the BASELINE pipeline (control arm).
+"""Legacy text-agent scaffold, used only for mock plumbing checks.
 
 Each hop decodes a short message; the next agent re-prefills it.
 Same retrieval, same hop budget as the latent pipeline -- the only
@@ -7,7 +7,9 @@ difference is what crosses the hop boundary (text vs KV cache).
 This is also the fallback product: if the latent experiment fails
 its kill criteria, this pipeline ships.
 
-With the NumpyMockBackend the text is garbage (random weights), but
+Real-model experiment controls live in eval.real_experiments. These legacy
+agents are not a shippable product: retrieval, updates, and trained roles
+are not implemented. With NumpyMockBackend the text is garbage, but
 the hop mechanics -- plan -> retrieve -> read -> verify -> (loop) ->
 synthesize -- execute faithfully. Swap in MLXBackend for real text.
 """
@@ -100,7 +102,14 @@ def run_text_pipeline(
     retrieve_fn,
     max_hops: int = 3,
 ) -> PipelineResult:
-    """Run the text baseline. retrieve_fn(query, k) -> list[str]."""
+    """Exercise mock plumbing. retrieve_fn(query, k) -> list[str]."""
+    if backend.name != "numpy-mock":
+        raise NotImplementedError(
+            "The legacy text pipeline is mock-only. Use scripts/run_experiments.py "
+            "for real-model controls with matched evidence."
+        )
+    if max_hops < 1:
+        raise ValueError("max_hops must be at least 1")
     planner, reader = TextPlanner(backend), TextReader(backend)
     verifier, synth = TextVerifier(backend), TextSynthesizer(backend)
 

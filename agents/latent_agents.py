@@ -1,4 +1,4 @@
-"""Latent agents: the EXPERIMENT pipeline.
+"""Legacy mock pipeline; real-model experiments live in eval.real_experiments.
 
 Hops pass KVBlock relays; nothing is decoded until the synthesizer.
 Structure mirrors the text pipeline exactly (same hop budget, same
@@ -100,7 +100,18 @@ def run_latent_pipeline(
     max_hops: int = 3,
     bridge_ratio: float = 0.15,
 ) -> LatentResult:
-    """Run the latent pipeline. retrieve_fn(query, k) -> list[KVBlock]."""
+    """Exercise mock plumbing. retrieve_fn(query, k) -> list[KVBlock].
+
+    This historical scaffold has no learned verifier and no RoPE-aware
+    concat. It must not be used to score real models.
+    """
+    if backend.name != "numpy-mock":
+        raise NotImplementedError(
+            "The legacy latent pipeline is mock-only. Use scripts/run_experiments.py "
+            "for the real MLX relay implementation and explicit diagnostic protocol."
+        )
+    if max_hops < 1:
+        raise ValueError("max_hops must be at least 1")
     planner = LatentPlanner(backend)
     reader = LatentReader(backend)
     verifier = LatentVerifier(backend)
@@ -116,7 +127,8 @@ def run_latent_pipeline(
         r = reader(blocks, hop=hop)
         # merge reader relay with planner context
         merged = Relay(blocks=concat_blocks([plan.blocks, r.blocks]),
-                       latent_query=r.latent_query or plan.latent_query,
+                       latent_query=(r.latent_query if r.latent_query is not None
+                                     else plan.latent_query),
                        hop=hop)
         decision, relay = verifier(merged, plan)
         trace.append({"hop": hop, "n_blocks": len(blocks), "decision": decision,
@@ -126,4 +138,4 @@ def run_latent_pipeline(
 
     answer = synth(relay, question, bridge_ratio)
     return LatentResult(answer=answer, hops=hops, trace=trace,
-                        tokens_to_host=len(answer))
+                        tokens_to_host=len(backend.encode(answer)))

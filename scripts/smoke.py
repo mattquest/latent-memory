@@ -39,7 +39,7 @@ def main() -> int:
     assert c.seq_len == 96 and (c.positions == np.arange(96)).all()
     sel = select_bridge_tokens([64, 32], ratio=0.15)
     assert sel and all(abs(t - 64) <= 10 for t in sel)
-    print("[ok] relay core: quant 4x, concat reindexed, bridge at boundaries")
+    print("[ok] mock relay: float32-to-int8 ~4x; metadata reindex; bridge selection")
 
     # 2. E3 audit
     backend = NumpyMockBackend(MockConfig(seed=7))
@@ -61,7 +61,7 @@ def main() -> int:
     print(f"[ok] pipelines: text {tr.hops} hops, latent {lr.hops} hops, "
           f"{lr.trace[-1].get('relay_tokens')} relay tokens, zero decoded mid-pipe")
 
-    print("\nAll smoke tests pass. Machinery is sound; plug in MLXBackend next.")
+    print("\nMock smoke tests pass. No model quality, RoPE, or bridge recompute claim.")
     return 0
 
 

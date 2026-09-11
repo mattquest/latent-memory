@@ -1,4 +1,7 @@
-"""KV quantization for relayed blocks.
+"""NumPy mock KV quantization (real native MLX precision lives in its backend).
+
+The historical quant='bf16' label means unquantized here, usually float32.
+The smoke test's 4x reduction is relative to float32, not actual bf16.
 
 Default is int8 with per-tensor scales (QKVShare-style). bf16 is kept
 for the final synthesizer hop when accuracy demands it. int4 is a stub:
