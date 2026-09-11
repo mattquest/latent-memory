@@ -1,0 +1,72 @@
+{
+  "protocol": "native-short-controller-screen-v1",
+  "config": {
+    "seed": 20260923,
+    "initial_top_k": 6,
+    "documents_per_round": 3,
+    "max_rounds": 5,
+    "max_documents": 18,
+    "max_document_tokens": 300,
+    "max_evidence_tokens": 6144,
+    "max_question_tokens": 256,
+    "max_context_tokens": 8192,
+    "max_action_tokens": 32,
+    "max_answer_tokens": 48,
+    "controller_temperature": 0.7,
+    "controller_top_p": 0.8,
+    "controller_top_k": 20,
+    "controller_presence_penalty": 1.5,
+    "max_case_seconds": 300
+  },
+  "arms": [
+    "basic_rag",
+    "iterative_text"
+  ],
+  "limit": 12,
+  "dataset": "data/controller-scaling/dev.jsonl",
+  "corpus": "data/controller-scaling/corpus.jsonl",
+  "questions_sha256": "17338e99e8d958d8e7950678f834a2b815c90dc6d7a30ddeee788a29f7cc92cc",
+  "corpus_sha256": "4e8ad63e12ab37e7fabec0158241d890a96171e006d226a7f22b6d00d594ce4a",
+  "data_manifest": "data/controller-scaling/manifest.json",
+  "max_job_seconds": 2400,
+  "jobs": [
+    {
+      "id": "14b",
+      "model_label": "Qwen3-14B BF16",
+      "model_path": "models/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "memory_limit_gib": 40,
+      "preflight_dir": "runs/large-controller/preflight-v1/14b",
+      "run_dir": "runs/large-controller/pilot-v1/14b"
+    },
+    {
+      "id": "122b",
+      "model_label": "Qwen3.5-122B-A10B 5-bit",
+      "model_path": "models/Qwen3.5-122B-A10B-5bit",
+      "model_revision": "958b33bf6418f8c462a5cbec59366ef763cc3069",
+      "memory_limit_gib": 88,
+      "preflight_dir": "runs/large-controller/preflight-v1/122b",
+      "run_dir": "runs/large-controller/pilot-v1/122b"
+    }
+  ],
+  "source_files": [
+    "configs/large-controller-screen.json",
+    "engine/text_backend_mlx.py",
+    "eval/controller_screen.py",
+    "eval/adaptive_experiments.py",
+    "eval/real_experiments.py",
+    "eval/retrieval.py",
+    "scripts/run_large_controller.py",
+    "scripts/run_guarded.py"
+  ],
+  "provenance_files": [
+    "docs/large-controller-protocol.md",
+    "docs/controller-scaling-data.md",
+    "docs/controller-scaling-qualitative-audit.md",
+    "scripts/download_large_controller.py",
+    "models/Qwen3-14B/download-manifest.json",
+    "models/Qwen3.5-122B-A10B-5bit/download-manifest.json",
+    "runs/large-controller/candidates.json",
+    "data/controller-scaling/manifest.json"
+  ]
+}
