@@ -1,0 +1,215 @@
+{
+  "artifacts": [
+    {
+      "artifact": "artifacts/run/results.jsonl.gz",
+      "artifact_bytes": 196902,
+      "artifact_sha256": "585ce246a20b77ed157ba154844f4ddd6812a3899e76e83792249b18fe5a10a4",
+      "compression": "gzip",
+      "source": "runs/context-pressure/results.jsonl",
+      "source_bytes": 2397695,
+      "source_sha256": "d67724bbee46deacb3154cd835311a9f2ae9ae7f2077c3cf0c3a517fc2077cb6"
+    },
+    {
+      "artifact": "artifacts/run/manifest.json.gz",
+      "artifact_bytes": 3679,
+      "artifact_sha256": "ec3c9e4b076b6a2092ed7126dbcd5b8a7d8e1c0869a9b169b264cc02c62a040a",
+      "compression": "gzip",
+      "source": "runs/context-pressure/manifest.json",
+      "source_bytes": 11788,
+      "source_sha256": "bd019579701af03ca598beae1a67eeb691d579fb05844a0ab5097bf4d5c42166"
+    },
+    {
+      "artifact": "artifacts/run/summary.json.gz",
+      "artifact_bytes": 41837,
+      "artifact_sha256": "3e8d7b139472988d9a5dc4110c1b8ff83d084c20bb037b0d5e0ca41877b82e27",
+      "compression": "gzip",
+      "source": "runs/context-pressure/summary.json",
+      "source_bytes": 213359,
+      "source_sha256": "ae0d7d26ab2965538f9c6faf1cd26cf9d27038ac0c3d9ddf30fb6c1f63f6c462"
+    },
+    {
+      "artifact": "artifacts/run/checkpoint.json.gz",
+      "artifact_bytes": 88,
+      "artifact_sha256": "91262fd6ad5f096ac253c59b5ffa21b2d41c5658641e725cddacef3da1bbaa95",
+      "compression": "gzip",
+      "source": "runs/context-pressure/checkpoint.json",
+      "source_bytes": 82,
+      "source_sha256": "1f98be7ec83f4c9eae19cab3288c87099a4b89f0d9d57929be1c8e4988e14063"
+    },
+    {
+      "artifact": "artifacts/run/resources.jsonl.gz",
+      "artifact_bytes": 5860,
+      "artifact_sha256": "5848e58e8cea80b59e62123ccec6a7d228a1a77bf5b4d2d0958141222b7c4ce6",
+      "compression": "gzip",
+      "source": "runs/context-pressure/resources.jsonl",
+      "source_bytes": 51685,
+      "source_sha256": "13497276516b4194ba688ef05d29b330b4013309727d535f95996364d8052027"
+    },
+    {
+      "artifact": "artifacts/run/guard-status.json.gz",
+      "artifact_bytes": 344,
+      "artifact_sha256": "15439dc1cbc58610bc3258404974b5a0e6df63c9faf648d2743ea7eee2948a26",
+      "compression": "gzip",
+      "source": "runs/context-pressure/guard-status.json",
+      "source_bytes": 582,
+      "source_sha256": "d68c96d99ae1e20468560ac4b1593b85d0f5e0d64a8f7def9290379557e52e3c"
+    },
+    {
+      "artifact": "artifacts/run/process.log.gz",
+      "artifact_bytes": 4371,
+      "artifact_sha256": "e0ad2b4addc4aa2ff72e80a811ee566635315f82ce708f2065363e6cc9ccebea",
+      "compression": "gzip",
+      "source": "runs/context-pressure/process.log",
+      "source_bytes": 58516,
+      "source_sha256": "4e851961d2113626c280b60191745a3ef9127840a2536ac90343e233207d6796"
+    },
+    {
+      "artifact": "artifacts/inputs/dataset.jsonl.gz",
+      "artifact_bytes": 18519,
+      "artifact_sha256": "1ba5e68fc6c1e705b530f109f673c257c4ae1ad2d0fbaf9c1970a430d87a1714",
+      "compression": "gzip",
+      "original_basename": "adaptive_musique_test.jsonl",
+      "source": "runs/context-pressure/questions.jsonl.gz",
+      "source_bytes": 99887,
+      "source_sha256": "e09e7d8e3aa87cd81bb05d055013c9e9ab6e97ed7688a249ba6dd4563b53124f",
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/inputs/corpus.jsonl.gz",
+      "artifact_bytes": 5487386,
+      "artifact_sha256": "a3617b7fa1ca5d5a50733792547a9b5d19ca318d3e032c2b44e61f74e2a4e505",
+      "compression": "gzip",
+      "original_basename": "adaptive_musique_corpus.jsonl",
+      "source": "runs/context-pressure/corpus.jsonl.gz",
+      "source_bytes": 12935527,
+      "source_sha256": "4e8ad63e12ab37e7fabec0158241d890a96171e006d226a7f22b6d00d594ce4a",
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/inputs/source_results.jsonl.gz",
+      "artifact_bytes": 548838,
+      "artifact_sha256": "5e37df8f675e1068172fdbc7b464cdf40faae87e4f1ce36e7269d9a4149c29df",
+      "compression": "gzip",
+      "source": "runs/context-pressure/source-results.jsonl.gz",
+      "source_bytes": 6843865,
+      "source_sha256": "60b59b7ced71f2b52c02e4a7415a5fa8079ad618c9ac229ca7e707fc43f736ca",
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/source/engine/backends_mlx.py",
+      "artifact_bytes": 21814,
+      "artifact_sha256": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+      "compression": null,
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/engine/backends_mlx.py",
+      "source_bytes": 21814,
+      "source_sha256": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/source/eval/adaptive_experiments.py",
+      "artifact_bytes": 41153,
+      "artifact_sha256": "1450e75d3e34a82416ebf64353f4921cc750deedbee37a6cc22f7cfe778c3559",
+      "compression": null,
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/eval/adaptive_experiments.py",
+      "source_bytes": 41153,
+      "source_sha256": "1450e75d3e34a82416ebf64353f4921cc750deedbee37a6cc22f7cfe778c3559",
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/source/eval/context_pressure.py",
+      "artifact_bytes": 30005,
+      "artifact_sha256": "84a30df13f717e3eeb9312459db8b4ad3289205915799019a6190f823a83008b",
+      "compression": null,
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/eval/context_pressure.py",
+      "source_bytes": 30005,
+      "source_sha256": "84a30df13f717e3eeb9312459db8b4ad3289205915799019a6190f823a83008b",
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/source/eval/real_experiments.py",
+      "artifact_bytes": 43406,
+      "artifact_sha256": "d6dc79f4c4a908227d1e787001a4fe77476b628d4c2548e0b89a2f126da48a8f",
+      "compression": null,
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/eval/real_experiments.py",
+      "source_bytes": 43406,
+      "source_sha256": "d6dc79f4c4a908227d1e787001a4fe77476b628d4c2548e0b89a2f126da48a8f",
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/source/eval/retrieval.py",
+      "artifact_bytes": 2741,
+      "artifact_sha256": "46eb57ac29e309acdbae8c5fcc84a4677a6651b29792466b7cfcb55f897c6cec",
+      "compression": null,
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/eval/retrieval.py",
+      "source_bytes": 2741,
+      "source_sha256": "46eb57ac29e309acdbae8c5fcc84a4677a6651b29792466b7cfcb55f897c6cec",
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/source/scripts/run_context_pressure.py",
+      "artifact_bytes": 2338,
+      "artifact_sha256": "a309992cf3dc6405fae69f8b30ffd36b6f7e8dac07b266c8b54aaaa8c0276ea6",
+      "compression": null,
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/scripts/run_context_pressure.py",
+      "source_bytes": 2338,
+      "source_sha256": "a309992cf3dc6405fae69f8b30ffd36b6f7e8dac07b266c8b54aaaa8c0276ea6",
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/provenance/adaptive_musique.manifest.json",
+      "artifact_bytes": 12383,
+      "artifact_sha256": "bd97eca01c21aa09476db7e8e6b115879220c99f8bbf40a5965cf4c05c192e25",
+      "compression": null,
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/adaptive_musique.manifest.json",
+      "source_bytes": 12383,
+      "source_sha256": "bd97eca01c21aa09476db7e8e6b115879220c99f8bbf40a5965cf4c05c192e25"
+    },
+    {
+      "artifact": "artifacts/provenance/adaptive-data.md",
+      "artifact_bytes": 3979,
+      "artifact_sha256": "a3a7ef6ecbdd975aa96b7cff649c704a95ace37b328b21f63d2fff096480c994",
+      "compression": null,
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/docs/adaptive-data.md",
+      "source_bytes": 3979,
+      "source_sha256": "a3a7ef6ecbdd975aa96b7cff649c704a95ace37b328b21f63d2fff096480c994"
+    },
+    {
+      "artifact": "artifacts/provenance/adaptive-protocol.md",
+      "artifact_bytes": 9385,
+      "artifact_sha256": "2e10a028e5474276deb3ac2509d1195a06fd62f796e1eeceee23873a661e9a66",
+      "compression": null,
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/docs/adaptive-protocol.md",
+      "source_bytes": 9385,
+      "source_sha256": "2e10a028e5474276deb3ac2509d1195a06fd62f796e1eeceee23873a661e9a66"
+    },
+    {
+      "artifact": "artifacts/exporter-source/scripts/build_pressure_report.py",
+      "artifact_bytes": 16854,
+      "artifact_sha256": "d0681c2159cd3ac715daae7920a3ea92b2adc7311927a025fdf6591e95a1a8ca",
+      "compression": null,
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/scripts/build_pressure_report.py",
+      "source_bytes": 16854,
+      "source_sha256": "d0681c2159cd3ac715daae7920a3ea92b2adc7311927a025fdf6591e95a1a8ca"
+    },
+    {
+      "artifact": "artifacts/exporter-source/scripts/build_adaptive_report.py",
+      "artifact_bytes": 20806,
+      "artifact_sha256": "1a51af0c8abd3b83257b7f8bd3ab8174973a896cc592894927bc658d4750b541",
+      "compression": null,
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/scripts/build_adaptive_report.py",
+      "source_bytes": 20806,
+      "source_sha256": "1a51af0c8abd3b83257b7f8bd3ab8174973a896cc592894927bc658d4750b541"
+    },
+    {
+      "artifact": "artifacts/exporter-source/scripts/report_paths.py",
+      "artifact_bytes": 818,
+      "artifact_sha256": "a89f7e4f1b2ca3f35d4db0c588eb8d49943ba8a0a7e64e7ff4c8a114f3ddbcf6",
+      "compression": null,
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/scripts/report_paths.py",
+      "source_bytes": 818,
+      "source_sha256": "a89f7e4f1b2ca3f35d4db0c588eb8d49943ba8a0a7e64e7ff4c8a114f3ddbcf6"
+    }
+  ],
+  "report_source_sha256": "d0681c2159cd3ac715daae7920a3ea92b2adc7311927a025fdf6591e95a1a8ca",
+  "report_version": "pressure-artifact-report-v1"
+}

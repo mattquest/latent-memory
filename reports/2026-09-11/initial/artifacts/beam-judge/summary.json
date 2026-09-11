@@ -1,0 +1,287 @@
+{
+  "groups": [
+    {
+      "all_criteria_pass_ci95": [
+        0.21305867552366523,
+        0.44233767026176773
+      ],
+      "all_criteria_pass_rate": 0.31666666666666665,
+      "case": {
+        "arm": "direct_text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E1",
+        "hops": 3,
+        "precision": "bf16",
+        "repeat": 0,
+        "update_policy": "all"
+      },
+      "categories": {
+        "abstention": 6,
+        "contradiction_resolution": 6,
+        "event_ordering": 6,
+        "information_extraction": 6,
+        "instruction_following": 6,
+        "knowledge_update": 6,
+        "multi_session_reasoning": 6,
+        "preference_following": 6,
+        "summarization": 6,
+        "temporal_reasoning": 6
+      },
+      "criterion_fraction_bootstrap_ci95": [
+        0.24024305555555553,
+        0.4666666666666667
+      ],
+      "dataset": "beam",
+      "judge_mean_generated_tokens": 50.71666666666667,
+      "judge_mean_latency_ms": 1899.7551159884704,
+      "mean_criterion_fraction": 0.3486111111111111,
+      "n_valid": 60
+    },
+    {
+      "all_criteria_pass_ci95": [
+        0.08894166839405471,
+        0.5323053349335657
+      ],
+      "all_criteria_pass_rate": 0.25,
+      "case": {
+        "arm": "direct_text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E6",
+        "hops": 3,
+        "precision": "bf16",
+        "repeat": 0,
+        "update_policy": "all"
+      },
+      "categories": {
+        "contradiction_resolution": 6,
+        "knowledge_update": 6
+      },
+      "criterion_fraction_bootstrap_ci95": [
+        0.0,
+        0.5
+      ],
+      "dataset": "beam",
+      "judge_mean_generated_tokens": 44.916666666666664,
+      "judge_mean_latency_ms": 1661.5070313418983,
+      "mean_criterion_fraction": 0.25,
+      "n_valid": 12
+    },
+    {
+      "all_criteria_pass_ci95": [
+        0.19898166138769108,
+        0.42508707946914487
+      ],
+      "all_criteria_pass_rate": 0.3,
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E1",
+        "hops": 3,
+        "precision": "bf16",
+        "repeat": 0,
+        "update_policy": "all"
+      },
+      "categories": {
+        "abstention": 6,
+        "contradiction_resolution": 6,
+        "event_ordering": 6,
+        "information_extraction": 6,
+        "instruction_following": 6,
+        "knowledge_update": 6,
+        "multi_session_reasoning": 6,
+        "preference_following": 6,
+        "summarization": 6,
+        "temporal_reasoning": 6
+      },
+      "criterion_fraction_bootstrap_ci95": [
+        0.2388888888888889,
+        0.46388888888888885
+      ],
+      "dataset": "beam",
+      "judge_mean_generated_tokens": 49.333333333333336,
+      "judge_mean_latency_ms": 1857.0983195657998,
+      "mean_criterion_fraction": 0.3527777777777778,
+      "n_valid": 60
+    },
+    {
+      "all_criteria_pass_ci95": [
+        0.18506828428432714,
+        0.4076728516439118
+      ],
+      "all_criteria_pass_rate": 0.2833333333333333,
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E1",
+        "hops": 3,
+        "precision": "int8",
+        "repeat": 0,
+        "update_policy": "all"
+      },
+      "categories": {
+        "abstention": 6,
+        "contradiction_resolution": 6,
+        "event_ordering": 6,
+        "information_extraction": 6,
+        "instruction_following": 6,
+        "knowledge_update": 6,
+        "multi_session_reasoning": 6,
+        "preference_following": 6,
+        "summarization": 6,
+        "temporal_reasoning": 6
+      },
+      "criterion_fraction_bootstrap_ci95": [
+        0.23055555555555557,
+        0.46388888888888885
+      ],
+      "dataset": "beam",
+      "judge_mean_generated_tokens": 49.016666666666666,
+      "judge_mean_latency_ms": 1841.883338165159,
+      "mean_criterion_fraction": 0.3416666666666667,
+      "n_valid": 60
+    },
+    {
+      "all_criteria_pass_ci95": [
+        0.08894166839405471,
+        0.5323053349335657
+      ],
+      "all_criteria_pass_rate": 0.25,
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E6",
+        "hops": 3,
+        "precision": "bf16",
+        "repeat": 0,
+        "update_policy": "all"
+      },
+      "categories": {
+        "contradiction_resolution": 6,
+        "knowledge_update": 6
+      },
+      "criterion_fraction_bootstrap_ci95": [
+        0.0,
+        0.5
+      ],
+      "dataset": "beam",
+      "judge_mean_generated_tokens": 45,
+      "judge_mean_latency_ms": 1673.6108888338397,
+      "mean_criterion_fraction": 0.25,
+      "n_valid": 12
+    },
+    {
+      "all_criteria_pass_ci95": [
+        0.04696514218385378,
+        0.4480308622529734
+      ],
+      "all_criteria_pass_rate": 0.16666666666666666,
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E6",
+        "hops": 3,
+        "precision": "int8",
+        "repeat": 0,
+        "update_policy": "all"
+      },
+      "categories": {
+        "contradiction_resolution": 6,
+        "knowledge_update": 6
+      },
+      "criterion_fraction_bootstrap_ci95": [
+        0.0,
+        0.4166666666666667
+      ],
+      "dataset": "beam",
+      "judge_mean_generated_tokens": 44.083333333333336,
+      "judge_mean_latency_ms": 1639.09983682485,
+      "mean_criterion_fraction": 0.16666666666666666,
+      "n_valid": 12
+    },
+    {
+      "all_criteria_pass_ci95": [
+        0.18506828428432714,
+        0.4076728516439118
+      ],
+      "all_criteria_pass_rate": 0.2833333333333333,
+      "case": {
+        "arm": "text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E1",
+        "hops": 3,
+        "precision": "bf16",
+        "repeat": 0,
+        "update_policy": "all"
+      },
+      "categories": {
+        "abstention": 6,
+        "contradiction_resolution": 6,
+        "event_ordering": 6,
+        "information_extraction": 6,
+        "instruction_following": 6,
+        "knowledge_update": 6,
+        "multi_session_reasoning": 6,
+        "preference_following": 6,
+        "summarization": 6,
+        "temporal_reasoning": 6
+      },
+      "criterion_fraction_bootstrap_ci95": [
+        0.2125,
+        0.4375
+      ],
+      "dataset": "beam",
+      "judge_mean_generated_tokens": 48.9,
+      "judge_mean_latency_ms": 1834.037523602213,
+      "mean_criterion_fraction": 0.32083333333333336,
+      "n_valid": 60
+    },
+    {
+      "all_criteria_pass_ci95": [
+        0.08894166839405471,
+        0.5323053349335657
+      ],
+      "all_criteria_pass_rate": 0.25,
+      "case": {
+        "arm": "text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E6",
+        "hops": 3,
+        "precision": "bf16",
+        "repeat": 0,
+        "update_policy": "all"
+      },
+      "categories": {
+        "contradiction_resolution": 6,
+        "knowledge_update": 6
+      },
+      "criterion_fraction_bootstrap_ci95": [
+        0.08333333333333333,
+        0.5416666666666666
+      ],
+      "dataset": "beam",
+      "judge_mean_generated_tokens": 43.416666666666664,
+      "judge_mean_latency_ms": 1611.2541839975165,
+      "mean_criterion_fraction": 0.2916666666666667,
+      "n_valid": 12
+    }
+  ],
+  "judge_version": "local-beam-rubric-v1",
+  "limitations": [
+    "Exploratory local same-model judge, not official BEAM scores or a calibrated independent judge.",
+    "Judge sees question, official reference/rubric and candidate only; arm and latency are blinded.",
+    "Invalid or truncated JSON judgments are explicit failures, excluded from valid scoring denominators.",
+    "Judge inference costs are separate from retrieval-answer generation costs."
+  ],
+  "n_invalid": 0,
+  "n_valid": 288,
+  "planned": 288,
+  "stop_reason": "complete"
+}

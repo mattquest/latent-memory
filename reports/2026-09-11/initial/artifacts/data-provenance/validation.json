@@ -1,0 +1,106 @@
+{
+  "datasets": [
+    {
+      "path": "data/hotpotqa_dev_sample.jsonl",
+      "examples": 128,
+      "sha256": "c3cac853ad9a048ca52613244dc3d97c30324ddcc068c9b2465193873a59c0e2",
+      "categories": {
+        "bridge": 104,
+        "comparison": 24
+      }
+    },
+    {
+      "path": "data/musique_dev_sample.jsonl",
+      "examples": 128,
+      "sha256": "f4edc244a51c7c566dbffc26d22149b177c27f345e34e195745d567a4d201432",
+      "categories": {
+        "3hop1": 32,
+        "2hop": 66,
+        "4hop1": 17,
+        "3hop2": 9,
+        "4hop2": 2,
+        "4hop3": 2
+      }
+    },
+    {
+      "path": "data/synthetic_multihop.jsonl",
+      "examples": 128,
+      "sha256": "778f6456bc8767baa98dcd8a16f21f6d0c5a8c6179d8e34b88df403e6bb7d861",
+      "categories": {
+        "multihop": 128
+      }
+    },
+    {
+      "path": "data/synthetic_multihop_dev.jsonl",
+      "examples": 32,
+      "sha256": "1a4b8be3436421df0c6aafd42eda9ee3cd199853782c6b328dd22d063e426258",
+      "categories": {
+        "multihop": 32
+      }
+    },
+    {
+      "path": "data/synthetic_private_fact.jsonl",
+      "examples": 128,
+      "sha256": "25166a8943fd7cdb20ad00d9b79bc033c54e3631af00224376b1426c4916a466",
+      "categories": {
+        "private_fact": 128
+      }
+    },
+    {
+      "path": "data/synthetic_private_fact_dev.jsonl",
+      "examples": 32,
+      "sha256": "1a176d88b7bc6d00c6b90f3ae2736f38eedb1c407b6e37791e6b223c81ec8b54",
+      "categories": {
+        "private_fact": 32
+      }
+    },
+    {
+      "path": "data/synthetic_updates.jsonl",
+      "examples": 128,
+      "sha256": "bfa723095a92ac68084bf0caa41454f98106f25bd622560de42606ad5b6ac28a",
+      "categories": {
+        "knowledge_update": 96,
+        "contradiction_resolution": 32
+      }
+    },
+    {
+      "path": "data/synthetic_updates_dev.jsonl",
+      "examples": 32,
+      "sha256": "e7b7c78ca6458989fe0681016bcfb0e7c79d4aac10430f98de856c962079ffb5",
+      "categories": {
+        "knowledge_update": 24,
+        "contradiction_resolution": 8
+      }
+    },
+    {
+      "path": "data/beam_1m_1_corpus.jsonl",
+      "messages": 1710,
+      "probes": 20,
+      "sha256": "f28fb5928a2a4e18b123f1ce7ab5b5b81c66ff220f4018c39308083255ac0253"
+    },
+    {
+      "path": "data/beam_1m_2_corpus.jsonl",
+      "messages": 1780,
+      "probes": 20,
+      "sha256": "51a9f9b6b1c2ce96b8aa7617fa423083ae372704aa8cdb34f2e5e545e4b6880e"
+    },
+    {
+      "path": "data/beam_1m_3_corpus.jsonl",
+      "messages": 1556,
+      "probes": 20,
+      "sha256": "edadffd4eaf41e9d35b1be872382b571bc1b4b165fd0701b2788c468f2bdc087"
+    }
+  ],
+  "checks": [
+    "schema and nonempty answers",
+    "unique IDs",
+    "valid supporting and oracle IDs",
+    "synthetic deterministic regeneration",
+    "synthetic dev/test IDs disjoint",
+    "private answers absent from receiver questions",
+    "BEAM chronology and all60 official probes",
+    "BEAM gold stored separately from corpus"
+  ],
+  "total_data_bytes": 332361435,
+  "status": "PASS"
+}

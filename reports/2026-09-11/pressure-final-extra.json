@@ -1,0 +1,15 @@
+{
+  "exported_metrics_and_pairs_match": true,
+  "retained_text_exact_output_tokens_match_source": 96,
+  "retained_text_scores_match_source": 96,
+  "summary_nonoverflow_examples": 30,
+  "all_support_ids_source": 17,
+  "all_support_ids_retained": 17,
+  "support_coverage_reduced_examples": 0,
+  "source_mean_support_coverage": 0.53125,
+  "overflow_source_mean_support_coverage": 0.6851851851851851,
+  "overflow_all_support_ids_source": 2,
+  "overflow_all_support_ids_retained": 2,
+  "retained_text_total_replay_seconds": 61.56541345414007,
+  "all_total_replay_seconds": 667.9465566528961
+}

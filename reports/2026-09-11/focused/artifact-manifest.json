@@ -1,0 +1,727 @@
+{
+  "artifacts": [
+    {
+      "artifact": "artifacts/runs/hotpot_ablations/results.jsonl.gz",
+      "artifact_bytes": 31873,
+      "artifact_sha256": "fa02c510acf74b32f6ef283e6b14c3b9728ee6aeea128be1a6c65d2dfd460672",
+      "compression": "gzip",
+      "source": "runs/focused-ablation/hotpot_ablations/results.jsonl",
+      "source_bytes": 684385,
+      "source_sha256": "dd0c566e3a26560d7122fcdeddbdcd278b3304f27e2f0a9b807c49e03c7e96ee"
+    },
+    {
+      "artifact": "artifacts/runs/hotpot_ablations/manifest.json",
+      "artifact_bytes": 4125,
+      "artifact_sha256": "aa071dec0bcf8474f4652b22a5af8ac61f00843cdccc02bd60115c12eecc0fec",
+      "compression": null,
+      "source": "runs/focused-ablation/hotpot_ablations/manifest.json",
+      "source_bytes": 4125,
+      "source_sha256": "aa071dec0bcf8474f4652b22a5af8ac61f00843cdccc02bd60115c12eecc0fec"
+    },
+    {
+      "artifact": "artifacts/runs/hotpot_ablations/summary.json",
+      "artifact_bytes": 9163,
+      "artifact_sha256": "c1b94e80170442168d426330e0818d96a347f291e23a2016971cddff634f5600",
+      "compression": null,
+      "source": "runs/focused-ablation/hotpot_ablations/summary.json",
+      "source_bytes": 9163,
+      "source_sha256": "c1b94e80170442168d426330e0818d96a347f291e23a2016971cddff634f5600"
+    },
+    {
+      "artifact": "artifacts/runs/hotpot_ablations/checkpoint.json",
+      "artifact_bytes": 123,
+      "artifact_sha256": "3034348a895514f588a15832b36fc830ea4181633717356b2ab7d83df7324dac",
+      "compression": null,
+      "source": "runs/focused-ablation/hotpot_ablations/checkpoint.json",
+      "source_bytes": 123,
+      "source_sha256": "3034348a895514f588a15832b36fc830ea4181633717356b2ab7d83df7324dac"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs10/results.jsonl.gz",
+      "artifact_bytes": 6296,
+      "artifact_sha256": "bf7f97d8f3aaf2a3836fff019a5688a07b62179a7d7bb46d6c3300c6ae1d4fc3",
+      "compression": "gzip",
+      "source": "runs/focused-ablation/multihop_docs10/results.jsonl",
+      "source_bytes": 112214,
+      "source_sha256": "4a26d8de7e92765621bd4c824650607447558061ea192b6b39a6c92180bcafc9"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs10/manifest.json",
+      "artifact_bytes": 4084,
+      "artifact_sha256": "7b9277b5d43b59b2c8b097220196b2f48feed0a6e8f94723237577be56b27541",
+      "compression": null,
+      "source": "runs/focused-ablation/multihop_docs10/manifest.json",
+      "source_bytes": 4084,
+      "source_sha256": "7b9277b5d43b59b2c8b097220196b2f48feed0a6e8f94723237577be56b27541"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs10/summary.json",
+      "artifact_bytes": 21781,
+      "artifact_sha256": "ea0301ebce1eb5c382ec18d2ff3196cfb2b73de87bb73fc12aaa8266d55a3414",
+      "compression": null,
+      "source": "runs/focused-ablation/multihop_docs10/summary.json",
+      "source_bytes": 21781,
+      "source_sha256": "ea0301ebce1eb5c382ec18d2ff3196cfb2b73de87bb73fc12aaa8266d55a3414"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs10/checkpoint.json",
+      "artifact_bytes": 121,
+      "artifact_sha256": "67c4f175eb17a9c6d9c33cd133094f0a3e2b005cf611a01d5fa949bfe8e3164f",
+      "compression": null,
+      "source": "runs/focused-ablation/multihop_docs10/checkpoint.json",
+      "source_bytes": 121,
+      "source_sha256": "67c4f175eb17a9c6d9c33cd133094f0a3e2b005cf611a01d5fa949bfe8e3164f"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs20/results.jsonl.gz",
+      "artifact_bytes": 9292,
+      "artifact_sha256": "8df49d4a5604b04bd27e787c85be7d7af2cc1c0a571ca2d68529fdbe887ea706",
+      "compression": "gzip",
+      "source": "runs/focused-ablation/multihop_docs20/results.jsonl",
+      "source_bytes": 178781,
+      "source_sha256": "84b53a1d7714bf4a87d236513279c96f1371b2989c467bb0e320c3ec4c0889c1"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs20/manifest.json",
+      "artifact_bytes": 4096,
+      "artifact_sha256": "747a147eda0ccc39cc26dd1e427b7bd0149ce274acb3c071d12e46deb2650e0e",
+      "compression": null,
+      "source": "runs/focused-ablation/multihop_docs20/manifest.json",
+      "source_bytes": 4096,
+      "source_sha256": "747a147eda0ccc39cc26dd1e427b7bd0149ce274acb3c071d12e46deb2650e0e"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs20/summary.json",
+      "artifact_bytes": 28403,
+      "artifact_sha256": "e390f761766f9112e5f4fa7fc51643fa5eab2a2a1d3fa8ae8090ec81da7a8d6b",
+      "compression": null,
+      "source": "runs/focused-ablation/multihop_docs20/summary.json",
+      "source_bytes": 28403,
+      "source_sha256": "e390f761766f9112e5f4fa7fc51643fa5eab2a2a1d3fa8ae8090ec81da7a8d6b"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs20/checkpoint.json",
+      "artifact_bytes": 120,
+      "artifact_sha256": "a553e1132a14dafab8e07bcf8676a35ca865163034fce096ef2a6becfb0e6738",
+      "compression": null,
+      "source": "runs/focused-ablation/multihop_docs20/checkpoint.json",
+      "source_bytes": 120,
+      "source_sha256": "a553e1132a14dafab8e07bcf8676a35ca865163034fce096ef2a6becfb0e6738"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs40/results.jsonl.gz",
+      "artifact_bytes": 13310,
+      "artifact_sha256": "2e3c295cc2383bec82e6625d01e3945c4dec22063cfebbfb7374aa11c5c9d0ea",
+      "compression": "gzip",
+      "source": "runs/focused-ablation/multihop_docs40/results.jsonl",
+      "source_bytes": 282855,
+      "source_sha256": "e3c18cb39af659d042a0d2c6ac178baddef25aeb8cbbe531e37e7e3d9a013661"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs40/manifest.json",
+      "artifact_bytes": 4108,
+      "artifact_sha256": "756d008dca45c3bda16eb7d37a5d5b81bfc60ab322f841cb45d38356ae4cf749",
+      "compression": null,
+      "source": "runs/focused-ablation/multihop_docs40/manifest.json",
+      "source_bytes": 4108,
+      "source_sha256": "756d008dca45c3bda16eb7d37a5d5b81bfc60ab322f841cb45d38356ae4cf749"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs40/summary.json",
+      "artifact_bytes": 35403,
+      "artifact_sha256": "b511ec971043bbe88433ec7599d477629d9e7af3b53d0ba7f217e8acd213e5d8",
+      "compression": null,
+      "source": "runs/focused-ablation/multihop_docs40/summary.json",
+      "source_bytes": 35403,
+      "source_sha256": "b511ec971043bbe88433ec7599d477629d9e7af3b53d0ba7f217e8acd213e5d8"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs40/checkpoint.json",
+      "artifact_bytes": 120,
+      "artifact_sha256": "7f3972f4f8c3e2af3052a4ef4c8170af000fa6b801052d04330a5c44b120a4d0",
+      "compression": null,
+      "source": "runs/focused-ablation/multihop_docs40/checkpoint.json",
+      "source_bytes": 120,
+      "source_sha256": "7f3972f4f8c3e2af3052a4ef4c8170af000fa6b801052d04330a5c44b120a4d0"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs6/results.jsonl.gz",
+      "artifact_bytes": 5437,
+      "artifact_sha256": "ead373463e4e01f644d2a35f6565c5d59f25bd35d4b59447894eb13f30ba8f9e",
+      "compression": "gzip",
+      "source": "runs/focused-ablation/multihop_docs6/results.jsonl",
+      "source_bytes": 89329,
+      "source_sha256": "49bd2e4743299f2850d7ce87a9b8e4b0d253b2feae97e59a030cbccf3a3aa2e8"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs6/manifest.json",
+      "artifact_bytes": 4072,
+      "artifact_sha256": "499fe4ba05f49c45136a54f71d1d58cf23216dd160ce1b785a9392cd4147b0fb",
+      "compression": null,
+      "source": "runs/focused-ablation/multihop_docs6/manifest.json",
+      "source_bytes": 4072,
+      "source_sha256": "499fe4ba05f49c45136a54f71d1d58cf23216dd160ce1b785a9392cd4147b0fb"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs6/summary.json",
+      "artifact_bytes": 14525,
+      "artifact_sha256": "2fcafbb2c1844b56843857643e412510821efa7b56382064ef8edb5f22b53354",
+      "compression": null,
+      "source": "runs/focused-ablation/multihop_docs6/summary.json",
+      "source_bytes": 14525,
+      "source_sha256": "2fcafbb2c1844b56843857643e412510821efa7b56382064ef8edb5f22b53354"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs6/checkpoint.json",
+      "artifact_bytes": 120,
+      "artifact_sha256": "89c99badb3c3554e6e3c0363389a3ff96e84408fb9160b033b08bccc450afaf7",
+      "compression": null,
+      "source": "runs/focused-ablation/multihop_docs6/checkpoint.json",
+      "source_bytes": 120,
+      "source_sha256": "89c99badb3c3554e6e3c0363389a3ff96e84408fb9160b033b08bccc450afaf7"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs7/results.jsonl.gz",
+      "artifact_bytes": 6105,
+      "artifact_sha256": "f2f740e873cc947d11a91cf5188b511d061da4f584384f6df347c2d70612dafc",
+      "compression": "gzip",
+      "source": "runs/focused-ablation/multihop_docs7/results.jsonl",
+      "source_bytes": 108569,
+      "source_sha256": "793f6f0d562507bd0b6a3f65c0e16a010b57aaf959583a36d8913ff47b4b4e06"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs7/manifest.json",
+      "artifact_bytes": 4083,
+      "artifact_sha256": "09b39d008ca0ab993d525772184ea838a9724172b97c39881edd5f9f93d81d87",
+      "compression": null,
+      "source": "runs/focused-ablation/multihop_docs7/manifest.json",
+      "source_bytes": 4083,
+      "source_sha256": "09b39d008ca0ab993d525772184ea838a9724172b97c39881edd5f9f93d81d87"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs7/summary.json",
+      "artifact_bytes": 21697,
+      "artifact_sha256": "b7df40df701964edeed294f6df592384a465ad0e25c18b241347a56f39653bc4",
+      "compression": null,
+      "source": "runs/focused-ablation/multihop_docs7/summary.json",
+      "source_bytes": 21697,
+      "source_sha256": "b7df40df701964edeed294f6df592384a465ad0e25c18b241347a56f39653bc4"
+    },
+    {
+      "artifact": "artifacts/runs/multihop_docs7/checkpoint.json",
+      "artifact_bytes": 121,
+      "artifact_sha256": "2d67f211135d5f52f58936669b5ff5a4d4dac81072ae9cb503939472681accb9",
+      "compression": null,
+      "source": "runs/focused-ablation/multihop_docs7/checkpoint.json",
+      "source_bytes": 121,
+      "source_sha256": "2d67f211135d5f52f58936669b5ff5a4d4dac81072ae9cb503939472681accb9"
+    },
+    {
+      "artifact": "artifacts/runs/musique_ablations/results.jsonl.gz",
+      "artifact_bytes": 32695,
+      "artifact_sha256": "2622e5e68dce609105b1b527526e975d69c32d39492c2a22561c9a3468e1568d",
+      "compression": "gzip",
+      "source": "runs/focused-ablation/musique_ablations/results.jsonl",
+      "source_bytes": 649416,
+      "source_sha256": "90e0651a442bc183623029707a0347dd533b057b00b08ec1c415ef31ac829033"
+    },
+    {
+      "artifact": "artifacts/runs/musique_ablations/manifest.json",
+      "artifact_bytes": 4124,
+      "artifact_sha256": "26550495e466f7f0d4fc074990bbc232abe93cea968f64b255f7b4398d8c80d2",
+      "compression": null,
+      "source": "runs/focused-ablation/musique_ablations/manifest.json",
+      "source_bytes": 4124,
+      "source_sha256": "26550495e466f7f0d4fc074990bbc232abe93cea968f64b255f7b4398d8c80d2"
+    },
+    {
+      "artifact": "artifacts/runs/musique_ablations/summary.json",
+      "artifact_bytes": 9058,
+      "artifact_sha256": "406459b4159d2e10bb2f30342daf9da7f04b7322fe6f24dbb66db8ef61d5e2c4",
+      "compression": null,
+      "source": "runs/focused-ablation/musique_ablations/summary.json",
+      "source_bytes": 9058,
+      "source_sha256": "406459b4159d2e10bb2f30342daf9da7f04b7322fe6f24dbb66db8ef61d5e2c4"
+    },
+    {
+      "artifact": "artifacts/runs/musique_ablations/checkpoint.json",
+      "artifact_bytes": 123,
+      "artifact_sha256": "144036d96838e908b4ff99912627aca96e8cdfc670d687735aaa0c08fdaeb78b",
+      "compression": null,
+      "source": "runs/focused-ablation/musique_ablations/checkpoint.json",
+      "source_bytes": 123,
+      "source_sha256": "144036d96838e908b4ff99912627aca96e8cdfc670d687735aaa0c08fdaeb78b"
+    },
+    {
+      "artifact": "artifacts/data-inputs/c3cac853ad9a_hotpotqa_dev_sample.jsonl.gz",
+      "artifact_bytes": 340269,
+      "artifact_sha256": "036b4794229787590e791680ee9f5fe75a9e4bb3c56ccdce29aa6bc16cde6343",
+      "compression": "gzip",
+      "data_license": "CC-BY-SA-4.0",
+      "data_license_key": "hotpotqa",
+      "original_basename": "hotpotqa_dev_sample.jsonl",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/hotpotqa_dev_sample.jsonl",
+      "source_bytes": 1708623,
+      "source_sha256": "c3cac853ad9a048ca52613244dc3d97c30324ddcc068c9b2465193873a59c0e2",
+      "used_by_jobs": [
+        "hotpot_ablations"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/data-inputs/890c54a68747_focused_e2_docs10.jsonl.gz",
+      "artifact_bytes": 1154,
+      "artifact_sha256": "a36fdca60d9c06d37fb939ba97a1592fad9c2855034b3a9d518e5b91b4e489ad",
+      "compression": "gzip",
+      "data_license": "unspecified fixture or local input",
+      "data_license_key": null,
+      "original_basename": "focused_e2_docs10.jsonl",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/focused_e2_docs10.jsonl",
+      "source_bytes": 7068,
+      "source_sha256": "890c54a68747af3f52d7c494a3ed88568fb3838a56284361adb122cd611596a6",
+      "used_by_jobs": [
+        "multihop_docs10"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/data-inputs/a4df390cada6_focused_e2_docs20.jsonl.gz",
+      "artifact_bytes": 1775,
+      "artifact_sha256": "2782f38ecf6a1e357e91fdb1d262df5cf9e9121d7699ac261a8795d51890c585",
+      "compression": "gzip",
+      "data_license": "unspecified fixture or local input",
+      "data_license_key": null,
+      "original_basename": "focused_e2_docs20.jsonl",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/focused_e2_docs20.jsonl",
+      "source_bytes": 12174,
+      "source_sha256": "a4df390cada64c7e72d63cb95225332ba6d8b90e3a4cd2bcaabc4834aeb934cd",
+      "used_by_jobs": [
+        "multihop_docs20"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/data-inputs/7e4ea3b1d990_focused_e2_docs40.jsonl.gz",
+      "artifact_bytes": 2989,
+      "artifact_sha256": "b2fe866776cbd9e983915d9ba15158a39bc3fc39aab93c45a16e55e853c3e1ef",
+      "compression": "gzip",
+      "data_license": "unspecified fixture or local input",
+      "data_license_key": null,
+      "original_basename": "focused_e2_docs40.jsonl",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/focused_e2_docs40.jsonl",
+      "source_bytes": 22374,
+      "source_sha256": "7e4ea3b1d9905b13563f16d7a7bfd6ce26118d66617cfcc66d351f8d7e74935d",
+      "used_by_jobs": [
+        "multihop_docs40"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/data-inputs/29268849ccdc_focused_e2_docs6.jsonl.gz",
+      "artifact_bytes": 1031,
+      "artifact_sha256": "7dfe40219e001359bf57f87513e61dae13ad3ae0c04c9018e144e271758220d0",
+      "compression": "gzip",
+      "data_license": "unspecified fixture or local input",
+      "data_license_key": null,
+      "original_basename": "focused_e2_docs6.jsonl",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/focused_e2_docs6.jsonl",
+      "source_bytes": 6536,
+      "source_sha256": "29268849ccdcc5e7874c995d352b0cb3b3506da252ffcd7bf88f8d005671ee3e",
+      "used_by_jobs": [
+        "multihop_docs6"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/data-inputs/2bc923661d93_focused_e2_docs7.jsonl.gz",
+      "artifact_bytes": 953,
+      "artifact_sha256": "318ff456d09317d8a36b855837806cb3c033121fe2ed4d52df11d244c78e13d9",
+      "compression": "gzip",
+      "data_license": "unspecified fixture or local input",
+      "data_license_key": null,
+      "original_basename": "focused_e2_docs7.jsonl",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/focused_e2_docs7.jsonl",
+      "source_bytes": 5475,
+      "source_sha256": "2bc923661d93bf962dcd1d6c118bd2f3cad09a417397d237a308027ba3c88b03",
+      "used_by_jobs": [
+        "multihop_docs7"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/data-inputs/f4edc244a51c_musique_dev_sample.jsonl.gz",
+      "artifact_bytes": 543205,
+      "artifact_sha256": "163884bd7e41e54395ff56bdf82c89e98a9d1dc402961e6a5615ebf16558fabc",
+      "compression": "gzip",
+      "data_license": "CC-BY-4.0",
+      "data_license_key": "musique",
+      "original_basename": "musique_dev_sample.jsonl",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/musique_dev_sample.jsonl",
+      "source_bytes": 1594916,
+      "source_sha256": "f4edc244a51c7c566dbffc26d22149b177c27f345e34e195745d567a4d201432",
+      "used_by_jobs": [
+        "musique_ablations"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/data-inputs/f28fb5928a2a_beam_1m_1_corpus.jsonl.gz",
+      "artifact_bytes": 900259,
+      "artifact_sha256": "084dbed3e44da44d4875f517b96dee1c913552878573ef361e2f3a852ce678fb",
+      "compression": "gzip",
+      "data_license": "CC-BY-SA-4.0",
+      "data_license_key": "beam",
+      "original_basename": "beam_1m_1_corpus.jsonl",
+      "source": "data/beam_1m_1_corpus.jsonl",
+      "source_bytes": 4655161,
+      "source_sha256": "f28fb5928a2a4e18b123f1ce7ab5b5b81c66ff220f4018c39308083255ac0253",
+      "verified_against_normalized_input": false
+    },
+    {
+      "artifact": "artifacts/data-inputs/51a9f9b6b1c2_beam_1m_2_corpus.jsonl.gz",
+      "artifact_bytes": 972170,
+      "artifact_sha256": "2c5e3c55d94177f919531cf1274d609de481b75185d00a1cf73b0afe7950d98e",
+      "compression": "gzip",
+      "data_license": "CC-BY-SA-4.0",
+      "data_license_key": "beam",
+      "original_basename": "beam_1m_2_corpus.jsonl",
+      "source": "data/beam_1m_2_corpus.jsonl",
+      "source_bytes": 4638753,
+      "source_sha256": "51a9f9b6b1c2ce96b8aa7617fa423083ae372704aa8cdb34f2e5e545e4b6880e",
+      "verified_against_normalized_input": false
+    },
+    {
+      "artifact": "artifacts/data-inputs/edadffd4eaf4_beam_1m_3_corpus.jsonl.gz",
+      "artifact_bytes": 817865,
+      "artifact_sha256": "cc906ee61de65818ad41207ddbd2f59f3284088a406ecb6e98106b843d35c94b",
+      "compression": "gzip",
+      "data_license": "CC-BY-SA-4.0",
+      "data_license_key": "beam",
+      "original_basename": "beam_1m_3_corpus.jsonl",
+      "source": "data/beam_1m_3_corpus.jsonl",
+      "source_bytes": 3975148,
+      "source_sha256": "edadffd4eaf41e9d35b1be872382b571bc1b4b165fd0701b2788c468f2bdc087",
+      "verified_against_normalized_input": false
+    },
+    {
+      "artifact": "artifacts/data-inputs/data-licenses.json",
+      "artifact_bytes": 8542,
+      "artifact_sha256": "dc5df638f3e47a8dd540dcf956ceaa61340e638cd5def36aabcbdb5fa859632f",
+      "source": "generated per-input license manifest"
+    },
+    {
+      "artifact": "artifacts/data-inputs/DATA_LICENSES.md",
+      "artifact_bytes": 1373,
+      "artifact_sha256": "64f0941ffa6e3046526cd90801383b5f07efb1bb92d49ad36cd4cc117ed3e096",
+      "source": "generated provenance note"
+    },
+    {
+      "artifact": "artifacts/data-provenance/data-and-protocol.md",
+      "artifact_bytes": 15738,
+      "artifact_sha256": "f3661c51b722cab1ed2a83cca85b6ba5c2c988dbe36b268f6d8b964636097eb9",
+      "compression": null,
+      "source": "docs/data-and-protocol.md",
+      "source_bytes": 15738,
+      "source_sha256": "f3661c51b722cab1ed2a83cca85b6ba5c2c988dbe36b268f6d8b964636097eb9"
+    },
+    {
+      "artifact": "artifacts/source/4450540cd99c0b4d70f19e7cd6563c7e3eb186c872df8231a8a07993886e80d2/engine/backends_mlx.py",
+      "artifact_bytes": 21814,
+      "artifact_sha256": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+      "compression": null,
+      "original_source_path": "engine/backends_mlx.py",
+      "recorded_git_heads": [
+        "95fcc1363fba276c4a4b7c017b6e1c085b533c6d"
+      ],
+      "resolution": "matching_working_file",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/engine/backends_mlx.py",
+      "source_bytes": 21814,
+      "source_sha256": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+      "source_version_sha256": "4450540cd99c0b4d70f19e7cd6563c7e3eb186c872df8231a8a07993886e80d2",
+      "used_by_jobs": [
+        "hotpot_ablations",
+        "multihop_docs10",
+        "multihop_docs20",
+        "multihop_docs40",
+        "multihop_docs6",
+        "multihop_docs7",
+        "musique_ablations"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/source/4450540cd99c0b4d70f19e7cd6563c7e3eb186c872df8231a8a07993886e80d2/eval/real_experiments.py",
+      "artifact_bytes": 43406,
+      "artifact_sha256": "d6dc79f4c4a908227d1e787001a4fe77476b628d4c2548e0b89a2f126da48a8f",
+      "compression": null,
+      "original_source_path": "eval/real_experiments.py",
+      "recorded_git_heads": [
+        "95fcc1363fba276c4a4b7c017b6e1c085b533c6d"
+      ],
+      "resolution": "matching_working_file",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/eval/real_experiments.py",
+      "source_bytes": 43406,
+      "source_sha256": "d6dc79f4c4a908227d1e787001a4fe77476b628d4c2548e0b89a2f126da48a8f",
+      "source_version_sha256": "4450540cd99c0b4d70f19e7cd6563c7e3eb186c872df8231a8a07993886e80d2",
+      "used_by_jobs": [
+        "hotpot_ablations",
+        "multihop_docs10",
+        "multihop_docs20",
+        "multihop_docs40",
+        "multihop_docs6",
+        "multihop_docs7",
+        "musique_ablations"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/source/4450540cd99c0b4d70f19e7cd6563c7e3eb186c872df8231a8a07993886e80d2/eval/retrieval.py",
+      "artifact_bytes": 2741,
+      "artifact_sha256": "46eb57ac29e309acdbae8c5fcc84a4677a6651b29792466b7cfcb55f897c6cec",
+      "compression": null,
+      "original_source_path": "eval/retrieval.py",
+      "recorded_git_heads": [
+        "95fcc1363fba276c4a4b7c017b6e1c085b533c6d"
+      ],
+      "resolution": "matching_working_file",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/eval/retrieval.py",
+      "source_bytes": 2741,
+      "source_sha256": "46eb57ac29e309acdbae8c5fcc84a4677a6651b29792466b7cfcb55f897c6cec",
+      "source_version_sha256": "4450540cd99c0b4d70f19e7cd6563c7e3eb186c872df8231a8a07993886e80d2",
+      "used_by_jobs": [
+        "hotpot_ablations",
+        "multihop_docs10",
+        "multihop_docs20",
+        "multihop_docs40",
+        "multihop_docs6",
+        "multihop_docs7",
+        "musique_ablations"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/source/4450540cd99c0b4d70f19e7cd6563c7e3eb186c872df8231a8a07993886e80d2/scripts/run_experiments.py",
+      "artifact_bytes": 4094,
+      "artifact_sha256": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7",
+      "compression": null,
+      "original_source_path": "scripts/run_experiments.py",
+      "recorded_git_heads": [
+        "95fcc1363fba276c4a4b7c017b6e1c085b533c6d"
+      ],
+      "resolution": "matching_working_file",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/scripts/run_experiments.py",
+      "source_bytes": 4094,
+      "source_sha256": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7",
+      "source_version_sha256": "4450540cd99c0b4d70f19e7cd6563c7e3eb186c872df8231a8a07993886e80d2",
+      "used_by_jobs": [
+        "hotpot_ablations",
+        "multihop_docs10",
+        "multihop_docs20",
+        "multihop_docs40",
+        "multihop_docs6",
+        "multihop_docs7",
+        "musique_ablations"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/monitoring/guard-status.json",
+      "artifact_bytes": 573,
+      "artifact_sha256": "7fc7a8715dee953ad7d7cec57108d9e80bda8d3543f1132fd1906dab51c4b5c3",
+      "compression": null,
+      "source": "runs/focused-ablation/guard-status.json",
+      "source_bytes": 573,
+      "source_sha256": "7fc7a8715dee953ad7d7cec57108d9e80bda8d3543f1132fd1906dab51c4b5c3"
+    },
+    {
+      "artifact": "artifacts/monitoring/matrix-status.json",
+      "artifact_bytes": 1169,
+      "artifact_sha256": "e64cfd96c71cd247fa407291c92eb88e3fe8ea626c84148e0063b844fa0264b8",
+      "compression": null,
+      "source": "runs/focused-ablation/matrix-status.json",
+      "source_bytes": 1169,
+      "source_sha256": "e64cfd96c71cd247fa407291c92eb88e3fe8ea626c84148e0063b844fa0264b8"
+    },
+    {
+      "artifact": "artifacts/monitoring/resources.jsonl.gz",
+      "artifact_bytes": 12822,
+      "artifact_sha256": "3a44aa1b6a2799f5f03d9df24188d652feee81f9a06f64c59e5dda14b801332d",
+      "compression": "gzip",
+      "source": "runs/focused-ablation/resources.jsonl",
+      "source_bytes": 119239,
+      "source_sha256": "8a57af7eb67772d0ff258312b172d490cc6427073fa345b949f545d942096a8d"
+    },
+    {
+      "artifact": "artifacts/data-provenance/adaptive_musique.manifest.json",
+      "artifact_bytes": 12383,
+      "artifact_sha256": "bd97eca01c21aa09476db7e8e6b115879220c99f8bbf40a5965cf4c05c192e25",
+      "compression": null,
+      "source": "data/adaptive_musique.manifest.json",
+      "source_bytes": 12383,
+      "source_sha256": "bd97eca01c21aa09476db7e8e6b115879220c99f8bbf40a5965cf4c05c192e25"
+    },
+    {
+      "artifact": "artifacts/data-provenance/beam_1m_1_retrieved.manifest.json",
+      "artifact_bytes": 272,
+      "artifact_sha256": "957894cb6570c6d502fb822425451a5be30dfc34e4ca4e197b8f6033505d55b0",
+      "compression": null,
+      "source": "data/beam_1m_1_retrieved.manifest.json",
+      "source_bytes": 272,
+      "source_sha256": "957894cb6570c6d502fb822425451a5be30dfc34e4ca4e197b8f6033505d55b0"
+    },
+    {
+      "artifact": "artifacts/data-provenance/beam_1m_2_retrieved.manifest.json",
+      "artifact_bytes": 272,
+      "artifact_sha256": "fa5c12de74c543bcf96a479fd7aded9502928f8b3eae7a03068beca4d8b8af19",
+      "compression": null,
+      "source": "data/beam_1m_2_retrieved.manifest.json",
+      "source_bytes": 272,
+      "source_sha256": "fa5c12de74c543bcf96a479fd7aded9502928f8b3eae7a03068beca4d8b8af19"
+    },
+    {
+      "artifact": "artifacts/data-provenance/beam_1m_3_retrieved.manifest.json",
+      "artifact_bytes": 272,
+      "artifact_sha256": "e57738be8c73ec9ae53de1a51b569c16a36df04b8e82c8573b8477e92171e2f8",
+      "compression": null,
+      "source": "data/beam_1m_3_retrieved.manifest.json",
+      "source_bytes": 272,
+      "source_sha256": "e57738be8c73ec9ae53de1a51b569c16a36df04b8e82c8573b8477e92171e2f8"
+    },
+    {
+      "artifact": "artifacts/data-provenance/focused_e2_groups.manifest.json",
+      "artifact_bytes": 4827,
+      "artifact_sha256": "34b6a90e85f1afaf6bd2e8a8d2b4f4ce5017c751d0cb85623d4bd85e6a84410c",
+      "compression": null,
+      "source": "data/focused_e2_groups.manifest.json",
+      "source_bytes": 4827,
+      "source_sha256": "34b6a90e85f1afaf6bd2e8a8d2b4f4ce5017c751d0cb85623d4bd85e6a84410c"
+    },
+    {
+      "artifact": "artifacts/data-provenance/manifest-beam.json",
+      "artifact_bytes": 3984,
+      "artifact_sha256": "dcf9f3348bc70c8f07b957fcdf29409199a9bcaff1dc1e621719b50e4ba398ca",
+      "compression": null,
+      "source": "data/manifest-beam.json",
+      "source_bytes": 3984,
+      "source_sha256": "dcf9f3348bc70c8f07b957fcdf29409199a9bcaff1dc1e621719b50e4ba398ca"
+    },
+    {
+      "artifact": "artifacts/data-provenance/manifest-hotpotqa.json",
+      "artifact_bytes": 1791,
+      "artifact_sha256": "7a28b30ab049b3467f17f713d247f065924fc7dbcb6372e2bba1930eef6f8e52",
+      "compression": null,
+      "source": "data/manifest-hotpotqa.json",
+      "source_bytes": 1791,
+      "source_sha256": "7a28b30ab049b3467f17f713d247f065924fc7dbcb6372e2bba1930eef6f8e52"
+    },
+    {
+      "artifact": "artifacts/data-provenance/manifest-musique.json",
+      "artifact_bytes": 811,
+      "artifact_sha256": "6d02235f709a1998a4f26d181605f73dec76c2f920d854312f488bd35fed3bd4",
+      "compression": null,
+      "source": "data/manifest-musique.json",
+      "source_bytes": 811,
+      "source_sha256": "6d02235f709a1998a4f26d181605f73dec76c2f920d854312f488bd35fed3bd4"
+    },
+    {
+      "artifact": "artifacts/data-provenance/manifest-synthetic.json",
+      "artifact_bytes": 1323,
+      "artifact_sha256": "948110256f478adb71fb96231ba847c52a43ec9a9bdef6a024d8364ebd78f0af",
+      "compression": null,
+      "source": "data/manifest-synthetic.json",
+      "source_bytes": 1323,
+      "source_sha256": "948110256f478adb71fb96231ba847c52a43ec9a9bdef6a024d8364ebd78f0af"
+    },
+    {
+      "artifact": "artifacts/data-provenance/validation.json",
+      "artifact_bytes": 2978,
+      "artifact_sha256": "526d2ac1ac47ad3b76174cb4f1465609bb33f6a9b9e415ec1787723a993e1d5b",
+      "compression": null,
+      "source": "data/validation.json",
+      "source_bytes": 2978,
+      "source_sha256": "526d2ac1ac47ad3b76174cb4f1465609bb33f6a9b9e415ec1787723a993e1d5b"
+    },
+    {
+      "artifact": "artifacts/protocol-provenance/scripts/prepare_focused_e2.py",
+      "artifact_bytes": 5210,
+      "artifact_sha256": "6f2f1527ec7fdb882e891547dff19946b173a55254e4c1ac65f0806ad2f65c6a",
+      "compression": null,
+      "source": "scripts/prepare_focused_e2.py",
+      "source_bytes": 5210,
+      "source_sha256": "6f2f1527ec7fdb882e891547dff19946b173a55254e4c1ac65f0806ad2f65c6a"
+    },
+    {
+      "artifact": "artifacts/protocol-provenance/docs/budget-amendment.md",
+      "artifact_bytes": 6262,
+      "artifact_sha256": "02773ddd5f288a118128427c50b97bf68c4ef0bfe7cdbbe374ef7331665ef2d1",
+      "compression": null,
+      "source": "docs/budget-amendment.md",
+      "source_bytes": 6262,
+      "source_sha256": "02773ddd5f288a118128427c50b97bf68c4ef0bfe7cdbbe374ef7331665ef2d1"
+    },
+    {
+      "artifact": "artifacts/reproducibility-audit/bm25_hashseed_audit.json",
+      "artifact_bytes": 6218,
+      "artifact_sha256": "08c9bec6732a4c7ecad80dfd2e1c7a1df6214ededfec6316c559af453c586bbc",
+      "compression": null,
+      "source": "runs/bm25_hashseed_audit.json",
+      "source_bytes": 6218,
+      "source_sha256": "08c9bec6732a4c7ecad80dfd2e1c7a1df6214ededfec6316c559af453c586bbc"
+    },
+    {
+      "artifact": "artifacts/reproducibility-audit/bm25_hashseed_ledgers.json.gz",
+      "artifact_bytes": 574341,
+      "artifact_sha256": "797c5675e4dd01091c8c57e3cfee4057cb62da2a9088ed666fead18106cdaec5",
+      "compression": null,
+      "source": "runs/bm25_hashseed_ledgers.json.gz",
+      "source_bytes": 574341,
+      "source_sha256": "797c5675e4dd01091c8c57e3cfee4057cb62da2a9088ed666fead18106cdaec5"
+    },
+    {
+      "artifact": "artifacts/reproducibility-audit/bm25_determinism.patch",
+      "artifact_bytes": 499,
+      "artifact_sha256": "7e36fd08f3a73d7e2768b9f1ab37174bfd772994e9197c25d7127af0c0970ec1",
+      "compression": null,
+      "source": "runs/bm25_determinism.patch",
+      "source_bytes": 499,
+      "source_sha256": "7e36fd08f3a73d7e2768b9f1ab37174bfd772994e9197c25d7127af0c0970ec1"
+    },
+    {
+      "artifact": "artifacts/reproducibility-audit/read_timing_sidecar.patch",
+      "artifact_bytes": 4472,
+      "artifact_sha256": "66c24fb6f773a89512c080ef750dbf95b921145962beae542150b9d89f5a3492",
+      "compression": null,
+      "source": "runs/read_timing_sidecar.patch",
+      "source_bytes": 4472,
+      "source_sha256": "66c24fb6f773a89512c080ef750dbf95b921145962beae542150b9d89f5a3492"
+    },
+    {
+      "artifact": "artifacts/model-provenance/model-manifest.json",
+      "artifact_bytes": 1762,
+      "artifact_sha256": "6c39ea78fa81a55dd8f2bee6b07a7564f0346afce9a5607bb45fc77d2734376a",
+      "compression": null,
+      "source": "models/model-manifest.json",
+      "source_bytes": 1762,
+      "source_sha256": "6c39ea78fa81a55dd8f2bee6b07a7564f0346afce9a5607bb45fc77d2734376a"
+    },
+    {
+      "artifact": "artifacts/config/focused-ablation.json",
+      "artifact_bytes": 1439,
+      "artifact_sha256": "b5d31711220f18bbd3f8a40adb7e370f5066948a8cfa6036266ae9ed67884b65",
+      "compression": null,
+      "source": "configs/focused-ablation.json",
+      "source_bytes": 1439,
+      "source_sha256": "b5d31711220f18bbd3f8a40adb7e370f5066948a8cfa6036266ae9ed67884b65"
+    },
+    {
+      "artifact": "artifacts/report-source/report_paths.py",
+      "artifact_bytes": 818,
+      "artifact_sha256": "a89f7e4f1b2ca3f35d4db0c588eb8d49943ba8a0a7e64e7ff4c8a114f3ddbcf6",
+      "compression": null,
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/scripts/report_paths.py",
+      "source_bytes": 818,
+      "source_sha256": "a89f7e4f1b2ca3f35d4db0c588eb8d49943ba8a0a7e64e7ff4c8a114f3ddbcf6"
+    }
+  ],
+  "report_version": "artifact-report-v1"
+}

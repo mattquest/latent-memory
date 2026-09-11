@@ -1,0 +1,272 @@
+{
+  "completed_unique_runs": 512,
+  "elapsed_seconds_this_invocation": 1265.3494723330368,
+  "groups": [
+    {
+      "case": {
+        "arm": "direct_text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E1",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 0.0,
+      "dataset": "musique",
+      "exact_match": 0.09375,
+      "exact_match_ci95": [
+        0.054443804399147026,
+        0.15672997257307855
+      ],
+      "f1": 0.11869791666666667,
+      "f1_bootstrap_ci95": [
+        0.06811718750000001,
+        0.17703515625
+      ],
+      "fraction_examples_truncated": 0.46875,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 764.671875,
+        "host_output_tokens": 1.734375,
+        "ingest_prefill_tokens": 0,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 884.2265625,
+        "query_prefill_tokens": 884.2265625
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "qa_accuracy",
+      "n_examples": 128,
+      "n_runs": 128,
+      "warm_latency_mean_ms": 393.48813903779956,
+      "warm_latency_p50_ms": 379.6470829984173,
+      "warm_latency_p95_ms": 553.4582454041811
+    },
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E1",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 493.41645851382054,
+      "dataset": "musique",
+      "exact_match": 0.0625,
+      "exact_match_ci95": [
+        0.03200692569506119,
+        0.11848791104425865
+      ],
+      "f1": 0.10539434523809524,
+      "f1_bootstrap_ci95": [
+        0.05851469494047619,
+        0.15461495535714284
+      ],
+      "fraction_examples_truncated": 0.46875,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 368.2109375,
+        "evidence_tokens": 764.671875,
+        "host_output_tokens": 2.1015625,
+        "ingest_prefill_tokens": 839.671875,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 975.890625,
+        "query_prefill_tokens": 136.21875
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "qa_accuracy",
+      "n_examples": 128,
+      "n_runs": 128,
+      "warm_latency_mean_ms": 1233.1926090273555,
+      "warm_latency_p50_ms": 1224.9024789780378,
+      "warm_latency_p95_ms": 1381.9508078624492
+    },
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E1",
+        "hops": 3,
+        "precision": "int8",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 493.41645851382054,
+      "dataset": "musique",
+      "exact_match": 0.0625,
+      "exact_match_ci95": [
+        0.03200692569506119,
+        0.11848791104425865
+      ],
+      "f1": 0.10064684139784946,
+      "f1_bootstrap_ci95": [
+        0.054283014112903226,
+        0.15221249159946235
+      ],
+      "fraction_examples_truncated": 0.46875,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 368.2109375,
+        "evidence_tokens": 764.671875,
+        "host_output_tokens": 2.0546875,
+        "ingest_prefill_tokens": 839.671875,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 975.890625,
+        "query_prefill_tokens": 136.21875
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "qa_accuracy",
+      "n_examples": 128,
+      "n_runs": 128,
+      "warm_latency_mean_ms": 1252.1122975299477,
+      "warm_latency_p50_ms": 1246.9564584898762,
+      "warm_latency_p95_ms": 1403.1882339942965
+    },
+    {
+      "case": {
+        "arm": "text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E1",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 0.0,
+      "dataset": "musique",
+      "exact_match": 0.140625,
+      "exact_match_ci95": [
+        0.09083969494262253,
+        0.21135249237896167
+      ],
+      "f1": 0.1853298611111111,
+      "f1_bootstrap_ci95": [
+        0.1223828125,
+        0.2527821180555555
+      ],
+      "fraction_examples_truncated": 0.46875,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 764.671875,
+        "host_output_tokens": 2.1484375,
+        "ingest_prefill_tokens": 0,
+        "internal_decoded_tokens": 167.7734375,
+        "max_prefix_tokens": 522.0625,
+        "query_prefill_tokens": 1498.859375
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "qa_accuracy",
+      "n_examples": 128,
+      "n_runs": 128,
+      "warm_latency_mean_ms": 6478.598008197878,
+      "warm_latency_p50_ms": 5949.740000505699,
+      "warm_latency_p95_ms": 12053.01259147236
+    }
+  ],
+  "limitations": [
+    "One unadapted Qwen3 model; no trained role adapters, verifier, or latent retriever.",
+    "Fixed evidence schedule; nominal hops with no new evidence are skipped and disclosed.",
+    "E1/E2 compare a decoded evidence-note chain to causal KV appends, not trained role-equivalent agents.",
+    "Warm latency excludes cold document prefill and model loading; cold prefill is reported separately.",
+    "E3 is answer-level private-evidence sensitivity, not a reproduction of an external causal audit.",
+    "Small diagnostic subsets do not establish BEAM 1M/10M performance or the original thesis.",
+    "Percentile estimates from small samples and bootstrap intervals at empirical ceilings are unstable."
+  ],
+  "n_failed_runs": 0,
+  "n_successful_runs": 512,
+  "paired_comparisons": [
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_bf16_minus_direct_text_correct_bf16",
+      "dataset": "musique",
+      "exact_match_difference": -0.03125,
+      "experiment": "E1",
+      "hops": 3,
+      "n_paired_examples": 128,
+      "paired_bootstrap_ci95": [
+        -0.07050781249999999,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_bf16_minus_latent_correct_int8",
+      "dataset": "musique",
+      "exact_match_difference": 0.0,
+      "experiment": "E1",
+      "hops": 3,
+      "n_paired_examples": 128,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_bf16_minus_text_correct_bf16",
+      "dataset": "musique",
+      "exact_match_difference": -0.078125,
+      "experiment": "E1",
+      "hops": 3,
+      "n_paired_examples": 128,
+      "paired_bootstrap_ci95": [
+        -0.1328125,
+        -0.0234375
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_int8_minus_direct_text_correct_bf16",
+      "dataset": "musique",
+      "exact_match_difference": -0.03125,
+      "experiment": "E1",
+      "hops": 3,
+      "n_paired_examples": 128,
+      "paired_bootstrap_ci95": [
+        -0.07050781249999999,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_int8_minus_latent_correct_bf16",
+      "dataset": "musique",
+      "exact_match_difference": 0.0,
+      "experiment": "E1",
+      "hops": 3,
+      "n_paired_examples": 128,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_int8_minus_text_correct_bf16",
+      "dataset": "musique",
+      "exact_match_difference": -0.078125,
+      "experiment": "E1",
+      "hops": 3,
+      "n_paired_examples": 128,
+      "paired_bootstrap_ci95": [
+        -0.1328125,
+        -0.0234375
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    }
+  ],
+  "planned_runs": 512,
+  "protocol_version": "fixed-evidence-qwen3-v3-bm25-json",
+  "stop_reason": "complete"
+}

@@ -1,0 +1,43 @@
+{
+  "reason": "Deadline and relevance amendment: prioritize adaptive global retrieval and context pressure; remove redundant exhausted-context sweeps.",
+  "original_planned_conditions": 8120,
+  "completed_initial_conditions": 3360,
+  "canceled_original_remainder": 4760,
+  "completed_jobs": [
+    "private_audit_precision",
+    "hotpot_equal",
+    "musique_equal",
+    "beam_equal_updates",
+    "updates"
+  ],
+  "preserved_unused_partial_directories": [
+    "runs/original-interrupted-multihop"
+  ],
+  "guard_exit": {
+    "status": "stopped",
+    "reason": "interrupted",
+    "returncode": -2,
+    "elapsed_seconds": 5056.363237375044,
+    "peak_rss_gib": 15.5833740234375,
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/run_matrix.py",
+      "--matrix",
+      "configs/overnight.json",
+      "--output-dir",
+      "runs/overnight",
+      "--max-seconds",
+      "17400"
+    ],
+    "limits": {
+      "max_seconds": 18000.0,
+      "max_rss_gib": 32,
+      "min_available_gib": 12,
+      "min_disk_gib": 40,
+      "poll_seconds": 10.0,
+      "allow_battery": false
+    }
+  },
+  "time": 1789114379.682142
+}

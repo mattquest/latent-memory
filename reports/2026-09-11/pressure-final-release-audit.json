@@ -1,0 +1,29 @@
+{
+  "all_artifact_checksums_verified": true,
+  "artifact_count": 22,
+  "artifact_manifest_sha256": "81899abc8f1156f31d4a2b8873b87ab880f37d01d5b956f5c5efe21805bcf2d9",
+  "restored_inputs": [
+    {
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/pressure-final-restored-data/adaptive_musique_test.jsonl",
+      "status": "restored",
+      "original_basename": "adaptive_musique_test.jsonl",
+      "source_artifacts": [
+        "artifacts/inputs/dataset.jsonl.gz"
+      ],
+      "report_version": "pressure-artifact-report-v1",
+      "bytes": 99887,
+      "sha256": "e09e7d8e3aa87cd81bb05d055013c9e9ab6e97ed7688a249ba6dd4563b53124f"
+    },
+    {
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/pressure-final-restored-data/adaptive_musique_corpus.jsonl",
+      "status": "restored",
+      "original_basename": "adaptive_musique_corpus.jsonl",
+      "source_artifacts": [
+        "artifacts/inputs/corpus.jsonl.gz"
+      ],
+      "report_version": "pressure-artifact-report-v1",
+      "bytes": 12935527,
+      "sha256": "4e8ad63e12ab37e7fabec0158241d890a96171e006d226a7f22b6d00d594ce4a"
+    }
+  ]
+}

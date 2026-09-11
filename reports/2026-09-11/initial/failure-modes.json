@@ -1,0 +1,4481 @@
+{
+  "amendment_receipt": {
+    "content": {
+      "canceled_original_remainder": 4760,
+      "completed_initial_conditions": 3360,
+      "completed_jobs": [
+        "private_audit_precision",
+        "hotpot_equal",
+        "musique_equal",
+        "beam_equal_updates",
+        "updates"
+      ],
+      "guard_exit": {
+        "command": [
+          ".venv/bin/python",
+          "-u",
+          "scripts/run_matrix.py",
+          "--matrix",
+          "configs/overnight.json",
+          "--output-dir",
+          "runs/overnight",
+          "--max-seconds",
+          "17400"
+        ],
+        "elapsed_seconds": 5056.363237375044,
+        "limits": {
+          "allow_battery": false,
+          "max_rss_gib": 32,
+          "max_seconds": 18000.0,
+          "min_available_gib": 12,
+          "min_disk_gib": 40,
+          "poll_seconds": 10.0
+        },
+        "peak_rss_gib": 15.5833740234375,
+        "reason": "interrupted",
+        "returncode": -2,
+        "status": "stopped"
+      },
+      "original_planned_conditions": 8120,
+      "preserved_unused_partial_directories": [
+        "runs/original-interrupted-multihop"
+      ],
+      "reason": "Deadline and relevance amendment: prioritize adaptive global retrieval and context pressure; remove redundant exhausted-context sweeps.",
+      "time": 1789114379.682142
+    },
+    "sha256": "3865c03bfa620d60e55bd5110d6bfe9f96647c9cbf70a169672bc03da9eed948",
+    "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/overnight/amendment.json"
+  },
+  "analysis_version": "posthoc-failure-modes-v2-amended-scope",
+  "completeness": "complete",
+  "completion_errors": [],
+  "completion_scope": {
+    "canceled_original_remainder": 4760,
+    "completed_initial_conditions": 3360,
+    "kind": "amended_initial_jobs",
+    "original_planned_conditions": 8120,
+    "reported_jobs": [
+      "beam_equal_updates",
+      "hotpot_equal",
+      "musique_equal",
+      "private_audit_precision",
+      "updates"
+    ],
+    "reported_successful_conditions": 3360
+  },
+  "created_utc": "2026-09-11T09:31:07.158609+00:00",
+  "diagnostic_role": "posthoc_descriptive_not_causal",
+  "e4_recompute": [],
+  "jobs": [
+    {
+      "complete": true,
+      "dataset": "/Users/matt/Documents/ChatGPT/LatentBase/data/beam_1m_retrieved.jsonl",
+      "dataset_sha256": "a54778c5c530d04f154a74c2cca0a0666d6a4bf3e8b5bbe05dbef11eeac7838e",
+      "error_records": 0,
+      "job": "beam_equal_updates",
+      "planned_runs": 288,
+      "repeat_zero_records": 288,
+      "results_snapshot": {
+        "bytes_read": 1938497,
+        "ignored_partial_trailing_records": 0,
+        "sha256": "31422640d2d7698b4dbbea0fef76caef4705026dcc91f40b59997bb90510207e"
+      },
+      "successful_unique_runs": 288,
+      "unresolved_error_records": 0
+    },
+    {
+      "complete": true,
+      "dataset": "/Users/matt/Documents/ChatGPT/LatentBase/data/hotpotqa_dev_sample.jsonl",
+      "dataset_sha256": "c3cac853ad9a048ca52613244dc3d97c30324ddcc068c9b2465193873a59c0e2",
+      "error_records": 0,
+      "job": "hotpot_equal",
+      "planned_runs": 512,
+      "repeat_zero_records": 512,
+      "results_snapshot": {
+        "bytes_read": 1735095,
+        "ignored_partial_trailing_records": 0,
+        "sha256": "f10b4afb922293eb88c863b30342cc07732a60516c250128e2c2529a593b4618"
+      },
+      "successful_unique_runs": 512,
+      "unresolved_error_records": 0
+    },
+    {
+      "complete": true,
+      "dataset": "/Users/matt/Documents/ChatGPT/LatentBase/data/musique_dev_sample.jsonl",
+      "dataset_sha256": "f4edc244a51c7c566dbffc26d22149b177c27f345e34e195745d567a4d201432",
+      "error_records": 0,
+      "job": "musique_equal",
+      "planned_runs": 512,
+      "repeat_zero_records": 512,
+      "results_snapshot": {
+        "bytes_read": 1658754,
+        "ignored_partial_trailing_records": 0,
+        "sha256": "1bc0976ab93231ae338976d83bf04a4c33a6808f9787bfca14fe3039ee122f23"
+      },
+      "successful_unique_runs": 512,
+      "unresolved_error_records": 0
+    },
+    {
+      "complete": true,
+      "dataset": "/Users/matt/Documents/ChatGPT/LatentBase/data/synthetic_private_fact.jsonl",
+      "dataset_sha256": "25166a8943fd7cdb20ad00d9b79bc033c54e3631af00224376b1426c4916a466",
+      "error_records": 0,
+      "job": "private_audit_precision",
+      "planned_runs": 1024,
+      "repeat_zero_records": 1024,
+      "results_snapshot": {
+        "bytes_read": 2310390,
+        "ignored_partial_trailing_records": 0,
+        "sha256": "6dbbfae77be0b4e1cfaff40111514d84085d66484bca61b64d3950d255cd50cd"
+      },
+      "successful_unique_runs": 1024,
+      "unresolved_error_records": 0
+    },
+    {
+      "complete": true,
+      "dataset": "/Users/matt/Documents/ChatGPT/LatentBase/data/synthetic_updates.jsonl",
+      "dataset_sha256": "bfa723095a92ac68084bf0caa41454f98106f25bd622560de42606ad5b6ac28a",
+      "error_records": 0,
+      "job": "updates",
+      "planned_runs": 1024,
+      "repeat_zero_records": 1024,
+      "results_snapshot": {
+        "bytes_read": 2483291,
+        "ignored_partial_trailing_records": 0,
+        "sha256": "fb43a22b564721270f2fbe20f4f1812c7d8aeef1fad28f20b8768a460ba56eb6"
+      },
+      "successful_unique_runs": 1024,
+      "unresolved_error_records": 0
+    }
+  ],
+  "limitations": [
+    "Posthoc descriptive diagnostics only; these strata do not establish causal explanations.",
+    "Supporting-document ID coverage does not prove that answer-bearing text survived truncation or was used.",
+    "Selected truncation means evidence_ids intersect truncated_document_ids; unselected truncated documents do not count.",
+    "UNKNOWN is the exact case-insensitive stripped sentinel; prose abstentions are not counted. Output-cap rate concerns final answers only.",
+    "Only successful repeat-zero records enter accuracy denominators; missing conditions and errors are disclosed, not imputed.",
+    "BEAM EM/F1, if present, describe lexical overlap, not its behavioral rubric score.",
+    "Synthetic E2 keeps chain length, nominal budget, and actual executed evidence hops separate; evidence exhaustion is not adaptive-search failure.",
+    "Executed evidence hops is the source record's nonempty evidence-batch count; direct_text still processes its selected evidence in one final prompt, not multiple agent steps.",
+    "E4 paired comparisons require all four ratios and identical ordered evidence IDs for the same question and condition."
+  ],
+  "public_e1": [
+    {
+      "by_selected_document_truncation": [
+        {
+          "exact_match": 0.0,
+          "f1": 0.25183850076279163,
+          "mean_selected_documents": 3,
+          "n_examples": 60,
+          "output_cap_rate": 0.38333333333333336,
+          "selected_documents_truncated": false,
+          "unknown_rate": 0
+        },
+        {
+          "exact_match": null,
+          "f1": null,
+          "mean_selected_documents": null,
+          "n_examples": 0,
+          "output_cap_rate": null,
+          "selected_documents_truncated": true,
+          "unknown_rate": null
+        }
+      ],
+      "by_support_coverage": [
+        {
+          "exact_match": 0.0,
+          "f1": 0.25183850076279163,
+          "mean_selected_documents": 3,
+          "n_examples": 60,
+          "output_cap_rate": 0.38333333333333336,
+          "selected_document_truncation_rate": 0,
+          "selected_support_truncation_rate": 0,
+          "support_coverage": "unannotated",
+          "unknown_rate": 0
+        }
+      ],
+      "condition": {
+        "arm": "direct_text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "dataset": "beam",
+      "exact_match": 0.0,
+      "f1": 0.25183850076279163,
+      "job": "beam_equal_updates",
+      "mean_selected_documents": 3,
+      "n_examples": 60,
+      "output_cap_rate": 0.38333333333333336,
+      "truncated_examples": [],
+      "unknown_rate": 0
+    },
+    {
+      "by_selected_document_truncation": [
+        {
+          "exact_match": 0.39473684210526316,
+          "f1": 0.4803515026425243,
+          "mean_selected_documents": 6,
+          "n_examples": 114,
+          "output_cap_rate": 0.008771929824561403,
+          "selected_documents_truncated": false,
+          "unknown_rate": 0.2894736842105263
+        },
+        {
+          "exact_match": 0.35714285714285715,
+          "f1": 0.46598639455782315,
+          "mean_selected_documents": 6,
+          "n_examples": 14,
+          "output_cap_rate": 0,
+          "selected_documents_truncated": true,
+          "unknown_rate": 0.35714285714285715
+        }
+      ],
+      "by_support_coverage": [
+        {
+          "exact_match": 0.4673913043478261,
+          "f1": 0.5649386632123204,
+          "mean_selected_documents": 6,
+          "n_examples": 92,
+          "output_cap_rate": 0.010869565217391304,
+          "selected_document_truncation_rate": 0.07608695652173914,
+          "selected_support_truncation_rate": 0,
+          "support_coverage": "all_support_documents",
+          "unknown_rate": 0.20652173913043478
+        },
+        {
+          "exact_match": 0.19444444444444445,
+          "f1": 0.2585978835978836,
+          "mean_selected_documents": 6,
+          "n_examples": 36,
+          "output_cap_rate": 0,
+          "selected_document_truncation_rate": 0.19444444444444445,
+          "selected_support_truncation_rate": 0,
+          "support_coverage": "missing_support_documents",
+          "unknown_rate": 0.5277777777777778
+        }
+      ],
+      "condition": {
+        "arm": "direct_text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "dataset": "hotpotqa",
+      "exact_match": 0.390625,
+      "f1": 0.4787803189457601,
+      "job": "hotpot_equal",
+      "mean_selected_documents": 6,
+      "n_examples": 128,
+      "output_cap_rate": 0.0078125,
+      "truncated_examples": [
+        {
+          "example_id": "5ae721c15542996d980e7cbc",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ae721c15542996d980e7cbc:7"
+          ]
+        },
+        {
+          "example_id": "5a7ccc1e55429909bec7680e",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a7ccc1e55429909bec7680e:7"
+          ]
+        },
+        {
+          "example_id": "5ac45b23554299204fd21f31",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ac45b23554299204fd21f31:0",
+            "5ac45b23554299204fd21f31:1"
+          ]
+        },
+        {
+          "example_id": "5adfa1f9554299025d62a308",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5adfa1f9554299025d62a308:7"
+          ]
+        },
+        {
+          "example_id": "5ae1f70c5542997f29b3c1c5",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ae1f70c5542997f29b3c1c5:4"
+          ]
+        },
+        {
+          "example_id": "5abf1e825542997ec76fd3cb",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5abf1e825542997ec76fd3cb:2"
+          ]
+        },
+        {
+          "example_id": "5ab4314955429942dd415ecd",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ab4314955429942dd415ecd:8"
+          ]
+        },
+        {
+          "example_id": "5a77452155429972597f14e1",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a77452155429972597f14e1:6"
+          ]
+        },
+        {
+          "example_id": "5aba14195542994dbf0198a9",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5aba14195542994dbf0198a9:2"
+          ]
+        },
+        {
+          "example_id": "5a7b3b4f5542992d025e67ac",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a7b3b4f5542992d025e67ac:0"
+          ]
+        },
+        {
+          "example_id": "5ae3263455429928c4239634",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ae3263455429928c4239634:7"
+          ]
+        },
+        {
+          "example_id": "5a824e0b554299676cceb254",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a824e0b554299676cceb254:0"
+          ]
+        },
+        {
+          "example_id": "5a8b8f5b55429949d91db5e1",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a8b8f5b55429949d91db5e1:9"
+          ]
+        },
+        {
+          "example_id": "5aba72d75542994dbf019912",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5aba72d75542994dbf019912:1"
+          ]
+        }
+      ],
+      "unknown_rate": 0.296875
+    },
+    {
+      "by_selected_document_truncation": [
+        {
+          "exact_match": 0.10476190476190476,
+          "f1": 0.13365079365079366,
+          "mean_selected_documents": 6,
+          "n_examples": 105,
+          "output_cap_rate": 0,
+          "selected_documents_truncated": false,
+          "unknown_rate": 0.7428571428571429
+        },
+        {
+          "exact_match": 0.043478260869565216,
+          "f1": 0.050434782608695654,
+          "mean_selected_documents": 6,
+          "n_examples": 23,
+          "output_cap_rate": 0,
+          "selected_documents_truncated": true,
+          "unknown_rate": 0.8260869565217391
+        }
+      ],
+      "by_support_coverage": [
+        {
+          "exact_match": 0.23529411764705882,
+          "f1": 0.2782352941176471,
+          "mean_selected_documents": 6,
+          "n_examples": 34,
+          "output_cap_rate": 0,
+          "selected_document_truncation_rate": 0.11764705882352941,
+          "selected_support_truncation_rate": 0.029411764705882353,
+          "support_coverage": "all_support_documents",
+          "unknown_rate": 0.5
+        },
+        {
+          "exact_match": 0.0425531914893617,
+          "f1": 0.06099290780141844,
+          "mean_selected_documents": 6,
+          "n_examples": 94,
+          "output_cap_rate": 0,
+          "selected_document_truncation_rate": 0.20212765957446807,
+          "selected_support_truncation_rate": 0.05319148936170213,
+          "support_coverage": "missing_support_documents",
+          "unknown_rate": 0.851063829787234
+        }
+      ],
+      "condition": {
+        "arm": "direct_text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "dataset": "musique",
+      "exact_match": 0.09375,
+      "f1": 0.11869791666666667,
+      "job": "musique_equal",
+      "mean_selected_documents": 6,
+      "n_examples": 128,
+      "output_cap_rate": 0,
+      "truncated_examples": [
+        {
+          "example_id": "2hop__132472_120537",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__132472_120537:1"
+          ]
+        },
+        {
+          "example_id": "2hop__563476_61845",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__563476_61845:3"
+          ]
+        },
+        {
+          "example_id": "3hop2__569322_223623_162182",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop2__569322_223623_162182:5"
+          ]
+        },
+        {
+          "example_id": "4hop1__788226_32392_823060_610794",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "4hop1__788226_32392_823060_610794:14"
+          ]
+        },
+        {
+          "example_id": "2hop__62951_64006",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__62951_64006:4"
+          ]
+        },
+        {
+          "example_id": "3hop2__326964_7719_7713",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop2__326964_7719_7713:17",
+            "3hop2__326964_7719_7713:3"
+          ]
+        },
+        {
+          "example_id": "3hop1__765565_326948_78782",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__765565_326948_78782:0"
+          ]
+        },
+        {
+          "example_id": "3hop1__602329_792411_51423",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__602329_792411_51423:14"
+          ]
+        },
+        {
+          "example_id": "2hop__1667_40502",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__1667_40502:12"
+          ]
+        },
+        {
+          "example_id": "2hop__56806_7298",
+          "selected_support_truncated_ids": [
+            "2hop__56806_7298:12"
+          ],
+          "selected_truncated_ids": [
+            "2hop__56806_7298:12"
+          ]
+        },
+        {
+          "example_id": "2hop__423045_570226",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__423045_570226:18"
+          ]
+        },
+        {
+          "example_id": "3hop1__104996_160713_77246",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__104996_160713_77246:15"
+          ]
+        },
+        {
+          "example_id": "2hop__58111_7298",
+          "selected_support_truncated_ids": [
+            "2hop__58111_7298:4"
+          ],
+          "selected_truncated_ids": [
+            "2hop__58111_7298:4"
+          ]
+        },
+        {
+          "example_id": "3hop1__764280_834494_34053",
+          "selected_support_truncated_ids": [
+            "3hop1__764280_834494_34053:4"
+          ],
+          "selected_truncated_ids": [
+            "3hop1__764280_834494_34053:4"
+          ]
+        },
+        {
+          "example_id": "2hop__23459_22946",
+          "selected_support_truncated_ids": [
+            "2hop__23459_22946:3"
+          ],
+          "selected_truncated_ids": [
+            "2hop__23459_22946:3"
+          ]
+        },
+        {
+          "example_id": "3hop1__462960_160545_34751",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__462960_160545_34751:1"
+          ]
+        },
+        {
+          "example_id": "3hop1__617062_127905_67954",
+          "selected_support_truncated_ids": [
+            "3hop1__617062_127905_67954:13"
+          ],
+          "selected_truncated_ids": [
+            "3hop1__617062_127905_67954:10",
+            "3hop1__617062_127905_67954:13",
+            "3hop1__617062_127905_67954:6"
+          ]
+        },
+        {
+          "example_id": "2hop__57638_90991",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__57638_90991:2",
+            "2hop__57638_90991:6"
+          ]
+        },
+        {
+          "example_id": "3hop1__765565_326948_86925",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__765565_326948_86925:5"
+          ]
+        },
+        {
+          "example_id": "4hop1__562740_49925_13759_736921",
+          "selected_support_truncated_ids": [
+            "4hop1__562740_49925_13759_736921:12"
+          ],
+          "selected_truncated_ids": [
+            "4hop1__562740_49925_13759_736921:12",
+            "4hop1__562740_49925_13759_736921:6"
+          ]
+        },
+        {
+          "example_id": "2hop__1667_40501",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__1667_40501:5"
+          ]
+        },
+        {
+          "example_id": "2hop__695432_18803",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__695432_18803:10"
+          ]
+        },
+        {
+          "example_id": "2hop__62311_62279",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__62311_62279:6"
+          ]
+        }
+      ],
+      "unknown_rate": 0.7578125
+    },
+    {
+      "by_selected_document_truncation": [
+        {
+          "exact_match": 0.0,
+          "f1": 0.22626109688632307,
+          "mean_selected_documents": 3,
+          "n_examples": 60,
+          "output_cap_rate": 0.45,
+          "selected_documents_truncated": false,
+          "unknown_rate": 0
+        },
+        {
+          "exact_match": null,
+          "f1": null,
+          "mean_selected_documents": null,
+          "n_examples": 0,
+          "output_cap_rate": null,
+          "selected_documents_truncated": true,
+          "unknown_rate": null
+        }
+      ],
+      "by_support_coverage": [
+        {
+          "exact_match": 0.0,
+          "f1": 0.22626109688632307,
+          "mean_selected_documents": 3,
+          "n_examples": 60,
+          "output_cap_rate": 0.45,
+          "selected_document_truncation_rate": 0,
+          "selected_support_truncation_rate": 0,
+          "support_coverage": "unannotated",
+          "unknown_rate": 0
+        }
+      ],
+      "condition": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "dataset": "beam",
+      "exact_match": 0.0,
+      "f1": 0.22626109688632307,
+      "job": "beam_equal_updates",
+      "mean_selected_documents": 3,
+      "n_examples": 60,
+      "output_cap_rate": 0.45,
+      "truncated_examples": [],
+      "unknown_rate": 0
+    },
+    {
+      "by_selected_document_truncation": [
+        {
+          "exact_match": 0.32456140350877194,
+          "f1": 0.4116380523501266,
+          "mean_selected_documents": 6,
+          "n_examples": 114,
+          "output_cap_rate": 0,
+          "selected_documents_truncated": false,
+          "unknown_rate": 0.3333333333333333
+        },
+        {
+          "exact_match": 0.21428571428571427,
+          "f1": 0.23214285714285715,
+          "mean_selected_documents": 6,
+          "n_examples": 14,
+          "output_cap_rate": 0,
+          "selected_documents_truncated": true,
+          "unknown_rate": 0.35714285714285715
+        }
+      ],
+      "by_support_coverage": [
+        {
+          "exact_match": 0.3695652173913043,
+          "f1": 0.4691053298789872,
+          "mean_selected_documents": 6,
+          "n_examples": 92,
+          "output_cap_rate": 0,
+          "selected_document_truncation_rate": 0.07608695652173914,
+          "selected_support_truncation_rate": 0,
+          "support_coverage": "all_support_documents",
+          "unknown_rate": 0.2717391304347826
+        },
+        {
+          "exact_match": 0.16666666666666666,
+          "f1": 0.19497354497354497,
+          "mean_selected_documents": 6,
+          "n_examples": 36,
+          "output_cap_rate": 0,
+          "selected_document_truncation_rate": 0.19444444444444445,
+          "selected_support_truncation_rate": 0,
+          "support_coverage": "missing_support_documents",
+          "unknown_rate": 0.5
+        }
+      ],
+      "condition": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "dataset": "hotpotqa",
+      "exact_match": 0.3125,
+      "f1": 0.39200576537433157,
+      "job": "hotpot_equal",
+      "mean_selected_documents": 6,
+      "n_examples": 128,
+      "output_cap_rate": 0,
+      "truncated_examples": [
+        {
+          "example_id": "5ae721c15542996d980e7cbc",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ae721c15542996d980e7cbc:7"
+          ]
+        },
+        {
+          "example_id": "5a7ccc1e55429909bec7680e",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a7ccc1e55429909bec7680e:7"
+          ]
+        },
+        {
+          "example_id": "5ac45b23554299204fd21f31",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ac45b23554299204fd21f31:0",
+            "5ac45b23554299204fd21f31:1"
+          ]
+        },
+        {
+          "example_id": "5adfa1f9554299025d62a308",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5adfa1f9554299025d62a308:7"
+          ]
+        },
+        {
+          "example_id": "5ae1f70c5542997f29b3c1c5",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ae1f70c5542997f29b3c1c5:4"
+          ]
+        },
+        {
+          "example_id": "5abf1e825542997ec76fd3cb",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5abf1e825542997ec76fd3cb:2"
+          ]
+        },
+        {
+          "example_id": "5ab4314955429942dd415ecd",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ab4314955429942dd415ecd:8"
+          ]
+        },
+        {
+          "example_id": "5a77452155429972597f14e1",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a77452155429972597f14e1:6"
+          ]
+        },
+        {
+          "example_id": "5aba14195542994dbf0198a9",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5aba14195542994dbf0198a9:2"
+          ]
+        },
+        {
+          "example_id": "5a7b3b4f5542992d025e67ac",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a7b3b4f5542992d025e67ac:0"
+          ]
+        },
+        {
+          "example_id": "5ae3263455429928c4239634",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ae3263455429928c4239634:7"
+          ]
+        },
+        {
+          "example_id": "5a824e0b554299676cceb254",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a824e0b554299676cceb254:0"
+          ]
+        },
+        {
+          "example_id": "5a8b8f5b55429949d91db5e1",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a8b8f5b55429949d91db5e1:9"
+          ]
+        },
+        {
+          "example_id": "5aba72d75542994dbf019912",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5aba72d75542994dbf019912:1"
+          ]
+        }
+      ],
+      "unknown_rate": 0.3359375
+    },
+    {
+      "by_selected_document_truncation": [
+        {
+          "exact_match": 0.06666666666666667,
+          "f1": 0.11578231292517006,
+          "mean_selected_documents": 6,
+          "n_examples": 105,
+          "output_cap_rate": 0.009523809523809525,
+          "selected_documents_truncated": false,
+          "unknown_rate": 0.780952380952381
+        },
+        {
+          "exact_match": 0.043478260869565216,
+          "f1": 0.057971014492753624,
+          "mean_selected_documents": 6,
+          "n_examples": 23,
+          "output_cap_rate": 0,
+          "selected_documents_truncated": true,
+          "unknown_rate": 0.9130434782608695
+        }
+      ],
+      "by_support_coverage": [
+        {
+          "exact_match": 0.17647058823529413,
+          "f1": 0.257563025210084,
+          "mean_selected_documents": 6,
+          "n_examples": 34,
+          "output_cap_rate": 0.029411764705882353,
+          "selected_document_truncation_rate": 0.11764705882352941,
+          "selected_support_truncation_rate": 0.029411764705882353,
+          "support_coverage": "all_support_documents",
+          "unknown_rate": 0.5882352941176471
+        },
+        {
+          "exact_match": 0.02127659574468085,
+          "f1": 0.05035460992907801,
+          "mean_selected_documents": 6,
+          "n_examples": 94,
+          "output_cap_rate": 0,
+          "selected_document_truncation_rate": 0.20212765957446807,
+          "selected_support_truncation_rate": 0.05319148936170213,
+          "support_coverage": "missing_support_documents",
+          "unknown_rate": 0.8829787234042553
+        }
+      ],
+      "condition": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "dataset": "musique",
+      "exact_match": 0.0625,
+      "f1": 0.10539434523809524,
+      "job": "musique_equal",
+      "mean_selected_documents": 6,
+      "n_examples": 128,
+      "output_cap_rate": 0.0078125,
+      "truncated_examples": [
+        {
+          "example_id": "2hop__132472_120537",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__132472_120537:1"
+          ]
+        },
+        {
+          "example_id": "2hop__563476_61845",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__563476_61845:3"
+          ]
+        },
+        {
+          "example_id": "3hop2__569322_223623_162182",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop2__569322_223623_162182:5"
+          ]
+        },
+        {
+          "example_id": "4hop1__788226_32392_823060_610794",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "4hop1__788226_32392_823060_610794:14"
+          ]
+        },
+        {
+          "example_id": "2hop__62951_64006",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__62951_64006:4"
+          ]
+        },
+        {
+          "example_id": "3hop2__326964_7719_7713",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop2__326964_7719_7713:17",
+            "3hop2__326964_7719_7713:3"
+          ]
+        },
+        {
+          "example_id": "3hop1__765565_326948_78782",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__765565_326948_78782:0"
+          ]
+        },
+        {
+          "example_id": "3hop1__602329_792411_51423",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__602329_792411_51423:14"
+          ]
+        },
+        {
+          "example_id": "2hop__1667_40502",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__1667_40502:12"
+          ]
+        },
+        {
+          "example_id": "2hop__56806_7298",
+          "selected_support_truncated_ids": [
+            "2hop__56806_7298:12"
+          ],
+          "selected_truncated_ids": [
+            "2hop__56806_7298:12"
+          ]
+        },
+        {
+          "example_id": "2hop__423045_570226",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__423045_570226:18"
+          ]
+        },
+        {
+          "example_id": "3hop1__104996_160713_77246",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__104996_160713_77246:15"
+          ]
+        },
+        {
+          "example_id": "2hop__58111_7298",
+          "selected_support_truncated_ids": [
+            "2hop__58111_7298:4"
+          ],
+          "selected_truncated_ids": [
+            "2hop__58111_7298:4"
+          ]
+        },
+        {
+          "example_id": "3hop1__764280_834494_34053",
+          "selected_support_truncated_ids": [
+            "3hop1__764280_834494_34053:4"
+          ],
+          "selected_truncated_ids": [
+            "3hop1__764280_834494_34053:4"
+          ]
+        },
+        {
+          "example_id": "2hop__23459_22946",
+          "selected_support_truncated_ids": [
+            "2hop__23459_22946:3"
+          ],
+          "selected_truncated_ids": [
+            "2hop__23459_22946:3"
+          ]
+        },
+        {
+          "example_id": "3hop1__462960_160545_34751",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__462960_160545_34751:1"
+          ]
+        },
+        {
+          "example_id": "3hop1__617062_127905_67954",
+          "selected_support_truncated_ids": [
+            "3hop1__617062_127905_67954:13"
+          ],
+          "selected_truncated_ids": [
+            "3hop1__617062_127905_67954:10",
+            "3hop1__617062_127905_67954:13",
+            "3hop1__617062_127905_67954:6"
+          ]
+        },
+        {
+          "example_id": "2hop__57638_90991",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__57638_90991:2",
+            "2hop__57638_90991:6"
+          ]
+        },
+        {
+          "example_id": "3hop1__765565_326948_86925",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__765565_326948_86925:5"
+          ]
+        },
+        {
+          "example_id": "4hop1__562740_49925_13759_736921",
+          "selected_support_truncated_ids": [
+            "4hop1__562740_49925_13759_736921:12"
+          ],
+          "selected_truncated_ids": [
+            "4hop1__562740_49925_13759_736921:12",
+            "4hop1__562740_49925_13759_736921:6"
+          ]
+        },
+        {
+          "example_id": "2hop__1667_40501",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__1667_40501:5"
+          ]
+        },
+        {
+          "example_id": "2hop__695432_18803",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__695432_18803:10"
+          ]
+        },
+        {
+          "example_id": "2hop__62311_62279",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__62311_62279:6"
+          ]
+        }
+      ],
+      "unknown_rate": 0.8046875
+    },
+    {
+      "by_selected_document_truncation": [
+        {
+          "exact_match": 0.0,
+          "f1": 0.23087156528021907,
+          "mean_selected_documents": 3,
+          "n_examples": 60,
+          "output_cap_rate": 0.4166666666666667,
+          "selected_documents_truncated": false,
+          "unknown_rate": 0
+        },
+        {
+          "exact_match": null,
+          "f1": null,
+          "mean_selected_documents": null,
+          "n_examples": 0,
+          "output_cap_rate": null,
+          "selected_documents_truncated": true,
+          "unknown_rate": null
+        }
+      ],
+      "by_support_coverage": [
+        {
+          "exact_match": 0.0,
+          "f1": 0.23087156528021907,
+          "mean_selected_documents": 3,
+          "n_examples": 60,
+          "output_cap_rate": 0.4166666666666667,
+          "selected_document_truncation_rate": 0,
+          "selected_support_truncation_rate": 0,
+          "support_coverage": "unannotated",
+          "unknown_rate": 0
+        }
+      ],
+      "condition": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "hops": 3,
+        "precision": "int8",
+        "update_policy": "all"
+      },
+      "dataset": "beam",
+      "exact_match": 0.0,
+      "f1": 0.23087156528021907,
+      "job": "beam_equal_updates",
+      "mean_selected_documents": 3,
+      "n_examples": 60,
+      "output_cap_rate": 0.4166666666666667,
+      "truncated_examples": [],
+      "unknown_rate": 0
+    },
+    {
+      "by_selected_document_truncation": [
+        {
+          "exact_match": 0.32456140350877194,
+          "f1": 0.4116380523501266,
+          "mean_selected_documents": 6,
+          "n_examples": 114,
+          "output_cap_rate": 0,
+          "selected_documents_truncated": false,
+          "unknown_rate": 0.3333333333333333
+        },
+        {
+          "exact_match": 0.21428571428571427,
+          "f1": 0.29336734693877553,
+          "mean_selected_documents": 6,
+          "n_examples": 14,
+          "output_cap_rate": 0,
+          "selected_documents_truncated": true,
+          "unknown_rate": 0.2857142857142857
+        }
+      ],
+      "by_support_coverage": [
+        {
+          "exact_match": 0.3695652173913043,
+          "f1": 0.4691053298789872,
+          "mean_selected_documents": 6,
+          "n_examples": 92,
+          "output_cap_rate": 0,
+          "selected_document_truncation_rate": 0.07608695652173914,
+          "selected_support_truncation_rate": 0,
+          "support_coverage": "all_support_documents",
+          "unknown_rate": 0.2717391304347826
+        },
+        {
+          "exact_match": 0.16666666666666666,
+          "f1": 0.21878306878306877,
+          "mean_selected_documents": 6,
+          "n_examples": 36,
+          "output_cap_rate": 0,
+          "selected_document_truncation_rate": 0.19444444444444445,
+          "selected_support_truncation_rate": 0,
+          "support_coverage": "missing_support_documents",
+          "unknown_rate": 0.4722222222222222
+        }
+      ],
+      "condition": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "hops": 3,
+        "precision": "int8",
+        "update_policy": "all"
+      },
+      "dataset": "hotpotqa",
+      "exact_match": 0.3125,
+      "f1": 0.3987021939457601,
+      "job": "hotpot_equal",
+      "mean_selected_documents": 6,
+      "n_examples": 128,
+      "output_cap_rate": 0,
+      "truncated_examples": [
+        {
+          "example_id": "5ae721c15542996d980e7cbc",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ae721c15542996d980e7cbc:7"
+          ]
+        },
+        {
+          "example_id": "5a7ccc1e55429909bec7680e",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a7ccc1e55429909bec7680e:7"
+          ]
+        },
+        {
+          "example_id": "5ac45b23554299204fd21f31",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ac45b23554299204fd21f31:0",
+            "5ac45b23554299204fd21f31:1"
+          ]
+        },
+        {
+          "example_id": "5adfa1f9554299025d62a308",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5adfa1f9554299025d62a308:7"
+          ]
+        },
+        {
+          "example_id": "5ae1f70c5542997f29b3c1c5",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ae1f70c5542997f29b3c1c5:4"
+          ]
+        },
+        {
+          "example_id": "5abf1e825542997ec76fd3cb",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5abf1e825542997ec76fd3cb:2"
+          ]
+        },
+        {
+          "example_id": "5ab4314955429942dd415ecd",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ab4314955429942dd415ecd:8"
+          ]
+        },
+        {
+          "example_id": "5a77452155429972597f14e1",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a77452155429972597f14e1:6"
+          ]
+        },
+        {
+          "example_id": "5aba14195542994dbf0198a9",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5aba14195542994dbf0198a9:2"
+          ]
+        },
+        {
+          "example_id": "5a7b3b4f5542992d025e67ac",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a7b3b4f5542992d025e67ac:0"
+          ]
+        },
+        {
+          "example_id": "5ae3263455429928c4239634",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ae3263455429928c4239634:7"
+          ]
+        },
+        {
+          "example_id": "5a824e0b554299676cceb254",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a824e0b554299676cceb254:0"
+          ]
+        },
+        {
+          "example_id": "5a8b8f5b55429949d91db5e1",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a8b8f5b55429949d91db5e1:9"
+          ]
+        },
+        {
+          "example_id": "5aba72d75542994dbf019912",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5aba72d75542994dbf019912:1"
+          ]
+        }
+      ],
+      "unknown_rate": 0.328125
+    },
+    {
+      "by_selected_document_truncation": [
+        {
+          "exact_match": 0.06666666666666667,
+          "f1": 0.10999487967229903,
+          "mean_selected_documents": 6,
+          "n_examples": 105,
+          "output_cap_rate": 0,
+          "selected_documents_truncated": false,
+          "unknown_rate": 0.7904761904761904
+        },
+        {
+          "exact_match": 0.043478260869565216,
+          "f1": 0.057971014492753624,
+          "mean_selected_documents": 6,
+          "n_examples": 23,
+          "output_cap_rate": 0,
+          "selected_documents_truncated": true,
+          "unknown_rate": 0.9130434782608695
+        }
+      ],
+      "by_support_coverage": [
+        {
+          "exact_match": 0.17647058823529413,
+          "f1": 0.25929791271347247,
+          "mean_selected_documents": 6,
+          "n_examples": 34,
+          "output_cap_rate": 0,
+          "selected_document_truncation_rate": 0.11764705882352941,
+          "selected_support_truncation_rate": 0.029411764705882353,
+          "support_coverage": "all_support_documents",
+          "unknown_rate": 0.5882352941176471
+        },
+        {
+          "exact_match": 0.02127659574468085,
+          "f1": 0.04326241134751773,
+          "mean_selected_documents": 6,
+          "n_examples": 94,
+          "output_cap_rate": 0,
+          "selected_document_truncation_rate": 0.20212765957446807,
+          "selected_support_truncation_rate": 0.05319148936170213,
+          "support_coverage": "missing_support_documents",
+          "unknown_rate": 0.8936170212765957
+        }
+      ],
+      "condition": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "hops": 3,
+        "precision": "int8",
+        "update_policy": "all"
+      },
+      "dataset": "musique",
+      "exact_match": 0.0625,
+      "f1": 0.10064684139784946,
+      "job": "musique_equal",
+      "mean_selected_documents": 6,
+      "n_examples": 128,
+      "output_cap_rate": 0,
+      "truncated_examples": [
+        {
+          "example_id": "2hop__132472_120537",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__132472_120537:1"
+          ]
+        },
+        {
+          "example_id": "2hop__563476_61845",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__563476_61845:3"
+          ]
+        },
+        {
+          "example_id": "3hop2__569322_223623_162182",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop2__569322_223623_162182:5"
+          ]
+        },
+        {
+          "example_id": "4hop1__788226_32392_823060_610794",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "4hop1__788226_32392_823060_610794:14"
+          ]
+        },
+        {
+          "example_id": "2hop__62951_64006",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__62951_64006:4"
+          ]
+        },
+        {
+          "example_id": "3hop2__326964_7719_7713",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop2__326964_7719_7713:17",
+            "3hop2__326964_7719_7713:3"
+          ]
+        },
+        {
+          "example_id": "3hop1__765565_326948_78782",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__765565_326948_78782:0"
+          ]
+        },
+        {
+          "example_id": "3hop1__602329_792411_51423",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__602329_792411_51423:14"
+          ]
+        },
+        {
+          "example_id": "2hop__1667_40502",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__1667_40502:12"
+          ]
+        },
+        {
+          "example_id": "2hop__56806_7298",
+          "selected_support_truncated_ids": [
+            "2hop__56806_7298:12"
+          ],
+          "selected_truncated_ids": [
+            "2hop__56806_7298:12"
+          ]
+        },
+        {
+          "example_id": "2hop__423045_570226",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__423045_570226:18"
+          ]
+        },
+        {
+          "example_id": "3hop1__104996_160713_77246",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__104996_160713_77246:15"
+          ]
+        },
+        {
+          "example_id": "2hop__58111_7298",
+          "selected_support_truncated_ids": [
+            "2hop__58111_7298:4"
+          ],
+          "selected_truncated_ids": [
+            "2hop__58111_7298:4"
+          ]
+        },
+        {
+          "example_id": "3hop1__764280_834494_34053",
+          "selected_support_truncated_ids": [
+            "3hop1__764280_834494_34053:4"
+          ],
+          "selected_truncated_ids": [
+            "3hop1__764280_834494_34053:4"
+          ]
+        },
+        {
+          "example_id": "2hop__23459_22946",
+          "selected_support_truncated_ids": [
+            "2hop__23459_22946:3"
+          ],
+          "selected_truncated_ids": [
+            "2hop__23459_22946:3"
+          ]
+        },
+        {
+          "example_id": "3hop1__462960_160545_34751",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__462960_160545_34751:1"
+          ]
+        },
+        {
+          "example_id": "3hop1__617062_127905_67954",
+          "selected_support_truncated_ids": [
+            "3hop1__617062_127905_67954:13"
+          ],
+          "selected_truncated_ids": [
+            "3hop1__617062_127905_67954:10",
+            "3hop1__617062_127905_67954:13",
+            "3hop1__617062_127905_67954:6"
+          ]
+        },
+        {
+          "example_id": "2hop__57638_90991",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__57638_90991:2",
+            "2hop__57638_90991:6"
+          ]
+        },
+        {
+          "example_id": "3hop1__765565_326948_86925",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__765565_326948_86925:5"
+          ]
+        },
+        {
+          "example_id": "4hop1__562740_49925_13759_736921",
+          "selected_support_truncated_ids": [
+            "4hop1__562740_49925_13759_736921:12"
+          ],
+          "selected_truncated_ids": [
+            "4hop1__562740_49925_13759_736921:12",
+            "4hop1__562740_49925_13759_736921:6"
+          ]
+        },
+        {
+          "example_id": "2hop__1667_40501",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__1667_40501:5"
+          ]
+        },
+        {
+          "example_id": "2hop__695432_18803",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__695432_18803:10"
+          ]
+        },
+        {
+          "example_id": "2hop__62311_62279",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__62311_62279:6"
+          ]
+        }
+      ],
+      "unknown_rate": 0.8125
+    },
+    {
+      "by_selected_document_truncation": [
+        {
+          "exact_match": 0.0,
+          "f1": 0.27247067760955745,
+          "mean_selected_documents": 3,
+          "n_examples": 60,
+          "output_cap_rate": 0.26666666666666666,
+          "selected_documents_truncated": false,
+          "unknown_rate": 0
+        },
+        {
+          "exact_match": null,
+          "f1": null,
+          "mean_selected_documents": null,
+          "n_examples": 0,
+          "output_cap_rate": null,
+          "selected_documents_truncated": true,
+          "unknown_rate": null
+        }
+      ],
+      "by_support_coverage": [
+        {
+          "exact_match": 0.0,
+          "f1": 0.27247067760955745,
+          "mean_selected_documents": 3,
+          "n_examples": 60,
+          "output_cap_rate": 0.26666666666666666,
+          "selected_document_truncation_rate": 0,
+          "selected_support_truncation_rate": 0,
+          "support_coverage": "unannotated",
+          "unknown_rate": 0
+        }
+      ],
+      "condition": {
+        "arm": "text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "dataset": "beam",
+      "exact_match": 0.0,
+      "f1": 0.27247067760955745,
+      "job": "beam_equal_updates",
+      "mean_selected_documents": 3,
+      "n_examples": 60,
+      "output_cap_rate": 0.26666666666666666,
+      "truncated_examples": [],
+      "unknown_rate": 0
+    },
+    {
+      "by_selected_document_truncation": [
+        {
+          "exact_match": 0.38596491228070173,
+          "f1": 0.4862117414748994,
+          "mean_selected_documents": 6,
+          "n_examples": 114,
+          "output_cap_rate": 0,
+          "selected_documents_truncated": false,
+          "unknown_rate": 0.32456140350877194
+        },
+        {
+          "exact_match": 0.2857142857142857,
+          "f1": 0.3469387755102041,
+          "mean_selected_documents": 6,
+          "n_examples": 14,
+          "output_cap_rate": 0,
+          "selected_documents_truncated": true,
+          "unknown_rate": 0.42857142857142855
+        }
+      ],
+      "by_support_coverage": [
+        {
+          "exact_match": 0.42391304347826086,
+          "f1": 0.5274797666102014,
+          "mean_selected_documents": 6,
+          "n_examples": 92,
+          "output_cap_rate": 0,
+          "selected_document_truncation_rate": 0.07608695652173914,
+          "selected_support_truncation_rate": 0,
+          "support_coverage": "all_support_documents",
+          "unknown_rate": 0.30434782608695654
+        },
+        {
+          "exact_match": 0.25,
+          "f1": 0.3265873015873016,
+          "mean_selected_documents": 6,
+          "n_examples": 36,
+          "output_cap_rate": 0,
+          "selected_document_truncation_rate": 0.19444444444444445,
+          "selected_support_truncation_rate": 0,
+          "support_coverage": "missing_support_documents",
+          "unknown_rate": 0.4166666666666667
+        }
+      ],
+      "condition": {
+        "arm": "text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "dataset": "hotpotqa",
+      "exact_match": 0.375,
+      "f1": 0.47097876082251083,
+      "job": "hotpot_equal",
+      "mean_selected_documents": 6,
+      "n_examples": 128,
+      "output_cap_rate": 0,
+      "truncated_examples": [
+        {
+          "example_id": "5ae721c15542996d980e7cbc",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ae721c15542996d980e7cbc:7"
+          ]
+        },
+        {
+          "example_id": "5a7ccc1e55429909bec7680e",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a7ccc1e55429909bec7680e:7"
+          ]
+        },
+        {
+          "example_id": "5ac45b23554299204fd21f31",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ac45b23554299204fd21f31:0",
+            "5ac45b23554299204fd21f31:1"
+          ]
+        },
+        {
+          "example_id": "5adfa1f9554299025d62a308",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5adfa1f9554299025d62a308:7"
+          ]
+        },
+        {
+          "example_id": "5ae1f70c5542997f29b3c1c5",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ae1f70c5542997f29b3c1c5:4"
+          ]
+        },
+        {
+          "example_id": "5abf1e825542997ec76fd3cb",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5abf1e825542997ec76fd3cb:2"
+          ]
+        },
+        {
+          "example_id": "5ab4314955429942dd415ecd",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ab4314955429942dd415ecd:8"
+          ]
+        },
+        {
+          "example_id": "5a77452155429972597f14e1",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a77452155429972597f14e1:6"
+          ]
+        },
+        {
+          "example_id": "5aba14195542994dbf0198a9",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5aba14195542994dbf0198a9:2"
+          ]
+        },
+        {
+          "example_id": "5a7b3b4f5542992d025e67ac",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a7b3b4f5542992d025e67ac:0"
+          ]
+        },
+        {
+          "example_id": "5ae3263455429928c4239634",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5ae3263455429928c4239634:7"
+          ]
+        },
+        {
+          "example_id": "5a824e0b554299676cceb254",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a824e0b554299676cceb254:0"
+          ]
+        },
+        {
+          "example_id": "5a8b8f5b55429949d91db5e1",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5a8b8f5b55429949d91db5e1:9"
+          ]
+        },
+        {
+          "example_id": "5aba72d75542994dbf019912",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "5aba72d75542994dbf019912:1"
+          ]
+        }
+      ],
+      "unknown_rate": 0.3359375
+    },
+    {
+      "by_selected_document_truncation": [
+        {
+          "exact_match": 0.1523809523809524,
+          "f1": 0.1967195767195767,
+          "mean_selected_documents": 6,
+          "n_examples": 105,
+          "output_cap_rate": 0,
+          "selected_documents_truncated": false,
+          "unknown_rate": 0.5904761904761905
+        },
+        {
+          "exact_match": 0.08695652173913043,
+          "f1": 0.13333333333333333,
+          "mean_selected_documents": 6,
+          "n_examples": 23,
+          "output_cap_rate": 0,
+          "selected_documents_truncated": true,
+          "unknown_rate": 0.7391304347826086
+        }
+      ],
+      "by_support_coverage": [
+        {
+          "exact_match": 0.2647058823529412,
+          "f1": 0.33725490196078434,
+          "mean_selected_documents": 6,
+          "n_examples": 34,
+          "output_cap_rate": 0,
+          "selected_document_truncation_rate": 0.11764705882352941,
+          "selected_support_truncation_rate": 0.029411764705882353,
+          "support_coverage": "all_support_documents",
+          "unknown_rate": 0.4411764705882353
+        },
+        {
+          "exact_match": 0.09574468085106383,
+          "f1": 0.13037825059101654,
+          "mean_selected_documents": 6,
+          "n_examples": 94,
+          "output_cap_rate": 0,
+          "selected_document_truncation_rate": 0.20212765957446807,
+          "selected_support_truncation_rate": 0.05319148936170213,
+          "support_coverage": "missing_support_documents",
+          "unknown_rate": 0.6808510638297872
+        }
+      ],
+      "condition": {
+        "arm": "text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "dataset": "musique",
+      "exact_match": 0.140625,
+      "f1": 0.1853298611111111,
+      "job": "musique_equal",
+      "mean_selected_documents": 6,
+      "n_examples": 128,
+      "output_cap_rate": 0,
+      "truncated_examples": [
+        {
+          "example_id": "2hop__132472_120537",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__132472_120537:1"
+          ]
+        },
+        {
+          "example_id": "2hop__563476_61845",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__563476_61845:3"
+          ]
+        },
+        {
+          "example_id": "3hop2__569322_223623_162182",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop2__569322_223623_162182:5"
+          ]
+        },
+        {
+          "example_id": "4hop1__788226_32392_823060_610794",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "4hop1__788226_32392_823060_610794:14"
+          ]
+        },
+        {
+          "example_id": "2hop__62951_64006",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__62951_64006:4"
+          ]
+        },
+        {
+          "example_id": "3hop2__326964_7719_7713",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop2__326964_7719_7713:17",
+            "3hop2__326964_7719_7713:3"
+          ]
+        },
+        {
+          "example_id": "3hop1__765565_326948_78782",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__765565_326948_78782:0"
+          ]
+        },
+        {
+          "example_id": "3hop1__602329_792411_51423",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__602329_792411_51423:14"
+          ]
+        },
+        {
+          "example_id": "2hop__1667_40502",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__1667_40502:12"
+          ]
+        },
+        {
+          "example_id": "2hop__56806_7298",
+          "selected_support_truncated_ids": [
+            "2hop__56806_7298:12"
+          ],
+          "selected_truncated_ids": [
+            "2hop__56806_7298:12"
+          ]
+        },
+        {
+          "example_id": "2hop__423045_570226",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__423045_570226:18"
+          ]
+        },
+        {
+          "example_id": "3hop1__104996_160713_77246",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__104996_160713_77246:15"
+          ]
+        },
+        {
+          "example_id": "2hop__58111_7298",
+          "selected_support_truncated_ids": [
+            "2hop__58111_7298:4"
+          ],
+          "selected_truncated_ids": [
+            "2hop__58111_7298:4"
+          ]
+        },
+        {
+          "example_id": "3hop1__764280_834494_34053",
+          "selected_support_truncated_ids": [
+            "3hop1__764280_834494_34053:4"
+          ],
+          "selected_truncated_ids": [
+            "3hop1__764280_834494_34053:4"
+          ]
+        },
+        {
+          "example_id": "2hop__23459_22946",
+          "selected_support_truncated_ids": [
+            "2hop__23459_22946:3"
+          ],
+          "selected_truncated_ids": [
+            "2hop__23459_22946:3"
+          ]
+        },
+        {
+          "example_id": "3hop1__462960_160545_34751",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__462960_160545_34751:1"
+          ]
+        },
+        {
+          "example_id": "3hop1__617062_127905_67954",
+          "selected_support_truncated_ids": [
+            "3hop1__617062_127905_67954:13"
+          ],
+          "selected_truncated_ids": [
+            "3hop1__617062_127905_67954:10",
+            "3hop1__617062_127905_67954:13",
+            "3hop1__617062_127905_67954:6"
+          ]
+        },
+        {
+          "example_id": "2hop__57638_90991",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__57638_90991:2",
+            "2hop__57638_90991:6"
+          ]
+        },
+        {
+          "example_id": "3hop1__765565_326948_86925",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "3hop1__765565_326948_86925:5"
+          ]
+        },
+        {
+          "example_id": "4hop1__562740_49925_13759_736921",
+          "selected_support_truncated_ids": [
+            "4hop1__562740_49925_13759_736921:12"
+          ],
+          "selected_truncated_ids": [
+            "4hop1__562740_49925_13759_736921:12",
+            "4hop1__562740_49925_13759_736921:6"
+          ]
+        },
+        {
+          "example_id": "2hop__1667_40501",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__1667_40501:5"
+          ]
+        },
+        {
+          "example_id": "2hop__695432_18803",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__695432_18803:10"
+          ]
+        },
+        {
+          "example_id": "2hop__62311_62279",
+          "selected_support_truncated_ids": [],
+          "selected_truncated_ids": [
+            "2hop__62311_62279:6"
+          ]
+        }
+      ],
+      "unknown_rate": 0.6171875
+    }
+  ],
+  "public_e1_bf16_latent_vs_direct": [
+    {
+      "condition": {
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "hops": 3,
+        "update_policy": "all"
+      },
+      "dataset": "beam",
+      "disagreements": [
+        {
+          "direct_prediction": "The conversation excerpts do not provide any specific information about your background in psychology, such as where you studied or your specialization. Therefore, this information is unknown based on the provided data.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.46808510638297873
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:abstention:0",
+          "latent_prediction": "The provided conversation excerpts do not contain any information about your background in psychology, such as where you studied or your specialization. Therefore, this information is unknown based on the given evidence.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.46808510638297873
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The conversation excerpts do not provide specific feedback or user reactions to the multi-language assistant's dynamic language switching feature in the chat UI. The discussion focuses on strategies for improving the feature and reviewing code, but no explicit user reactions or feedback are mentioned.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.41379310344827586
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:abstention:1",
+          "latent_prediction": "The provided conversation excerpts do not include any specific feedback or user reaction to the multi-language assistant's dynamic language switching feature in the chat UI. The discussion focuses on implementing the feature and best practices for handling language preferences and state management in React, but no user reactions or feedback are mentioned.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.3939393939393939
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "No, you have not implemented the language detection microservice using franc v6.1.0 before. The conversation excerpts indicate that you are currently considering or attempting to implement it, but there is no evidence of a completed implementation using franc v6.1.0.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.3783783783783784
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:contradiction_resolution:0",
+          "latent_prediction": "No, you have not implemented the language detection microservice using franc v6.1.0 before. The provided code uses langdetect v1.0.1, as indicated by the import statement `require('langdetect')`. There is no evidence in the conversation excerpts that franc v6.1.0 has been used in any previous implementation.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.28205128205128205
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The conversation excerpts do not provide explicit confirmation that you have completed the translation microservice supporting 12 languages with 98% accuracy using the DeepL API v2. While the user mentions working on a translation microservice and considering the DeepL API v2, there is no direct evidence or confirmation of completion. Therefore, it is unknown whether the service has been completed with the specified accuracy.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.3191489361702128
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:contradiction_resolution:1",
+          "latent_prediction": "Based on the provided information, you have not completed the translation microservice that supports 12 languages with 98% accuracy using the DeepL API v2. The evidence shows that you have implemented a basic circuit breaker pattern using the DeepL API v2, but there is no mention of the microservice being fully developed, supporting 12 languages, or achieving 98% accuracy. The accuracy and language support details are not confirmed in the provided excerpts.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.3564356435643564
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "- The integration of translation API was a key goal, with a target completion date of April 15, 2024.  \n- The services `language-detection`, `translation`, and `chatbot` were defined with build contexts and exposed ports.  \n- The `depends_on` keyword ensured the correct start order of services: `language-detection` depends on `translation`, and `translation` depends on `chatbot`.  \n- Environment variables like `TRANSLATION_SERVICE_URL` and `CHATBOT_SERVICE_URL` were used to pass dependent service URLs.  \n- Docker Compose created a default network named `",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.1871345029239766
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:event_ordering:0",
+          "latent_prediction": "1. Defined the integration of translation API with clear service roles.  \n2. Established the order of service dependencies: language-detection depends on translation, which depends on chatbot.  \n3. Set a deadline for API integration by April 15, 2024.  \n4. Introduced error handling and logging for production readiness.  \n5. Discussed expanding supported languages and improving translation accuracy as long-term goals.  \n6. Planned to enhance the user interface for dynamic language switching.  \n7. Addressed the need for context management in the user interface.  \n8. Emphasized the importance of retaining environment variables for",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.30687830687830686
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "1. Database optimization tasks were assigned to the Database Specialist.  \n2. API optimization and caching strategies were handled by the Backend Developer.  \n3. Front-end performance improvements were the responsibility of the Front-End Developer.  \n4. Performance testing and validation of optimizations were conducted by the QA Engineer.  \n5. Static assets were minified and compressed with a deadline of June 25, 2024.  \n6. Profiling tools like New Relic, Datadog, or AWS CloudWatch were recommended for performance monitoring.  \n7. PostgreSQL-specific tools like `pgAdmin` were suggested for schema optimization.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.24719101123595505
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:event_ordering:1",
+          "latent_prediction": "1. Review of milestones achieved since the last meeting.  \n2. Discussion on key achievements and challenges faced.  \n3. Plus/Delta activity to identify what worked and what didn\u2019t.  \n4. Start/Stop/Continue discussion to guide future actions.  \n5. Identification of areas for improvement in system performance.  \n6. Assignment of action items related to performance optimization.  \n7. Documentation of all optimizations performed and before/after metrics.  \n8. Planning for regular check-ins to monitor progress on action items.  \n9. Use of profiling tools like New Relic, Datadog, or AWS CloudWatch for performance monitoring",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.21621621621621623
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The conversation excerpts do not specify the exact versions of the frontend framework (React), backend runtime (Node.js), or database (PostgreSQL) that were mentioned for starting the project. Therefore, the versions are unknown based on the provided information.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.26666666666666666
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:information_extraction:0",
+          "latent_prediction": "The provided conversation excerpts do not specify the exact versions of the frontend framework, backend runtime, or database that were mentioned for starting the project. Therefore, this information is unknown based on the given evidence.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.13636363636363635
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The memory store service was mentioned to be running on port `5002` by default, as specified in the code snippet: `const PORT = process.env.MEMORY_STORE_PORT || 5002;`. If the connection error occurred, it might have been related to this port or the database connection, which is checked via the `/health` endpoint.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.23076923076923078
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:information_extraction:1",
+          "latent_prediction": "The memory store service was configured to run on port `5000`, as indicated in the `ports` section of the `memory-store` service in the provided YAML configuration. This port was used for the service's endpoint, and the connection error likely occurred when attempting to connect to the database or the service itself.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.19230769230769232
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "To manage problems when API calls fail, you can implement the following strategies based on the provided excerpts:\n\n1. **Retry Logic**: Use a retry mechanism with a specified number of attempts (e.g., 3 retries) to handle transient errors like timeouts or connection issues. Log each attempt and the associated error for debugging.\n\n2. **Error Handling**: Catch specific exceptions such as `Timeout`, `ConnectionError`, and `RequestException` to handle different types of failures gracefully. This ensures the system can respond appropriately to each error type.\n\n3. **Caching**: Implement caching for frequently requested data to reduce the number of API calls and improve",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.14414414414414414
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:instruction_following:0",
+          "latent_prediction": "To manage problems that arise when API calls fail, you can implement the following strategies based on the provided excerpts:\n\n1. **Caching**: Use an in-memory cache like Redis to store frequently translated texts, reducing the number of API calls and improving response times.\n\n2. **Retry Logic with Exponential Backoff**: Implement a retry mechanism that attempts to re-send failed requests after a delay, which helps with transient errors such as rate limits or temporary unavailability.\n\n3. **Rate Limiting**: Enforce a limit on the number of API calls (e.g., 5000/day for DeepL API) using middleware like `",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.11428571428571428
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The common methods used for verifying user identity in web applications, as shown in the excerpts, include:\n\n1. **Username and Password Verification**: The application checks if a user exists with the provided username and verifies the password using the `check_password` method.\n2. **Session Management**: After a successful login, the user is logged in using `login_user`, and a session is created. The application checks if the session belongs to the current user by comparing the session ID and user ID.\n3. **Role-Based Access Control (RBAC)**: The application uses permissions like `admin_permission` and `user_permission` to restrict access to",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0425531914893617
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:instruction_following:1",
+          "latent_prediction": "The common methods used for verifying user identity in web applications, as shown in the provided excerpts, include:\n\n1. **Username and Password Authentication**: Users provide a username and password, which are checked against stored credentials in the database. If they match, the user is authenticated.\n\n2. **Session Management**: After a successful login, a session is created, and the user is associated with a session ID. This session is used to track the user's login state across requests.\n\n3. **Token-Based Authentication**: The `login_user` and `logout_user` functions suggest the use of tokens (likely session tokens) to maintain the user's",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.08247422680412371
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The deadline for completing the language detection module has been adjusted to March 18, 2024, as mentioned in the latest message.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.2857142857142857
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:knowledge_update:0",
+          "latent_prediction": "The deadline for completing the language detection module is March 15, 2024. This is explicitly mentioned in the user's request, and the code provided includes a reference to this date as the deadline.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.13333333333333333
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The TTL value for caching recent translations in your Redis implementation is set to 15 minutes (900 seconds) in one instance and 20 minutes (1200 seconds) in another. The exact value depends on the specific implementation context.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.1111111111111111
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:knowledge_update:1",
+          "latent_prediction": "The TTL value set for caching recent translations in the Redis implementation is 1200 seconds, which is equivalent to 20 minutes. This value is defined in the `set_ttl` function with the default parameter `ttl=1200`.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.125
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "To optimize your system for reduced API latency while maintaining high cache hit rates and avoiding rate limit errors, consider the following strategies based on your setup and the provided excerpts:\n\n1. **Leverage Redis Caching**: Use Redis to cache frequently translated texts. This reduces the number of API calls and improves response times. Ensure cache expiration policies align with your data freshness requirements.\n\n2. **Implement a Translation Queue**: Use a queueing system (e.g., RabbitMQ or an in-memory queue) to manage translation requests. This ensures requests are processed within rate limit constraints and prevents overwhelming the API.\n\n3. **Exponential Backoff for Rate",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.3764705882352941
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:multi_session_reasoning:0",
+          "latent_prediction": "To optimize your system using `franc v6.1.0` in a Node.js backend with PostgreSQL, Redis caching, and a translation queue, consider the following strategies to reduce API latency, maintain high cache hit rates, and avoid rate limit errors:\n\n### 1. **Leverage Redis Caching**\n- **Cache frequent translations**: Store commonly requested translations in Redis to reduce API calls and latency.\n- **Set appropriate TTL (Time to Live)**: Use a reasonable TTL to ensure cache freshness without excessive cache misses.\n\n### 2. **Implement Rate Limiting and Exponential Backoff**\n- **Use rate limiting middleware",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.3821656050955414
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "You have described **three** different Redis caching use cases across your messages:\n\n1. **Caching language detection results** to reduce database query load by 40%.\n2. **Caching responses** to avoid redundant processing for the same messages.\n3. **Caching encrypted messages** (as part of alternative caching strategies to balance security and performance).",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.39473684210526316
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:multi_session_reasoning:1",
+          "latent_prediction": "Based on the provided excerpts, there are **four different Redis caching use cases** described across the messages:\n\n1. **Encrypted Caching**: Storing encrypted messages in the cache to ensure security.\n2. **Hybrid Caching**: Combining in-memory caching with disk-based caching for different access patterns.\n3. **TTL-Based Caching**: Using time-to-live (TTL) to automatically remove cached items after a certain period.\n4. **Cache Partitioning**: Partitioning the cache to separate different types of data.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.2857142857142857
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "To implement the translation API efficiently and ensure quick responses, you can follow these best practices based on the provided excerpts:\n\n1. **Use Asynchronous Processing**: Handle external API calls asynchronously to improve performance and responsiveness. This allows your service to handle multiple requests simultaneously without blocking the main thread.\n\n2. **Implement Caching**: Use a caching mechanism like Redis to store previously translated text. This reduces the need to call external APIs repeatedly for the same text, significantly speeding up response times.\n\n3. **Database Integration**: Store translated text in a database (e.g., SQLite) for persistent storage. This ensures that frequently translated text can be retrieved quickly",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.13114754098360656
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:preference_following:0",
+          "latent_prediction": "To implement the translation feature efficiently and ensure quick responses, follow these best practices based on the provided excerpts:\n\n1. **Use a Separate Router for Translation**: Create a dedicated router for translation endpoints to keep your code organized and scalable. For example, define a `translate.js` file with routes like `/translate/text` and `/translate/file`.\n\n2. **Implement Caching with Redis**: Use Redis to cache translated text to avoid redundant API calls and speed up responses. Check the cache first before making any external calls.\n\n3. **Leverage a Database for Persistent Storage**: Store translated text in a database (e.g., SQLite) to",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.10619469026548672
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "To maintain responsiveness as your language detection API scales to handle more simultaneous requests, consider the following approaches:\n\n1. **Asynchronous Processing**: Implement asynchronous programming patterns to handle multiple requests concurrently without blocking, which is particularly effective in Node.js 18.\n\n2. **Worker Threads**: If your language detection logic is CPU-bound, use worker threads to distribute the workload across multiple CPU cores, improving performance under heavy load.\n\n3. **Load Balancing**: Distribute incoming requests across multiple instances of your language detection API to prevent any single instance from becoming a bottleneck.\n\n4. **Optimize Language Detection Logic**: Use efficient libraries like `franc",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.05172413793103448
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:preference_following:1",
+          "latent_prediction": "To maintain responsiveness as your language detection API scales to handle more simultaneous requests, consider the following approaches based on your setup using Node.js 18, PostgreSQL 14, and a microservices architecture:\n\n### 1. **Optimize Concurrency Handling**\n- **Asynchronous Processing**: Implement asynchronous programming patterns in your Node.js services to handle multiple requests concurrently without blocking. This is especially important for the chatbot API and memory store services.\n- **Worker Threads**: If your language detection or memory retrieval operations are CPU-bound, use worker threads to distribute the workload across multiple CPU cores, improving throughput and reducing response times.\n\n### 2",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.09009009009009009
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "**Summary of the Development and Optimization Process for Language Translation and Detection Services**\n\n### **1. Project Overview and Objectives**\nThe project aimed to develop a multi-language AI chatbot with contextual memory, focusing on two core modules: **Language Detection** and **Translation**. These modules were implemented as **microservices**\u2014the **Language Detection Service** and the **Translation Service**.\n\n---\n\n### **2. Key Technical Decisions**\n- **Language Detection Service:**\n  - **Model:** An **LSTM-based neural network** was used to detect the language of input text.\n  - **Architecture:** A flowchart was designed",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.21114369501466276
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:summarization:0",
+          "latent_prediction": "**Summary of the Development and Optimization Process for Language Translation and Detection Services**\n\n### **Key Technical Decisions**\n- **Language Detection Service:** Utilized an LSTM-based neural network for language identification, with a flowchart illustrating the input text processing through embedding, LSTM, and linear layers.\n- **Translation Service:** Integrated with the DeepL API for translation, ensuring high-quality and accurate translations.\n- **Architecture:** Implemented a microservices approach, separating the Language Detection Service and Translation Service for modularity and scalability.\n\n### **Integration Challenges**\n- **Multi-turn Conversation State Management:** Addressed by using Redis cache to store recent conversation context, reducing",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.2556818181818182
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "**Summary of the Chatbot System Development, Deployment, and Optimization Process**\n\n### **Development Phase**\n1. **Project Overview**:\n   - The chatbot system was designed to support multi-language AI functionality with contextual memory.\n   - Key modules included **Language Detection** and **Translation**, implemented as **microservices**.\n\n2. **Language Detection Module**:\n   - **Objective**: Detect the language of input text.\n   - **Model**: LSTM-based neural network.\n   - **Architecture**: Input text flows through an **embedding layer**, **LSTM layer**, and **linear layer** to produce the detected language.\n   - **",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.1095890410958904
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:summarization:1",
+          "latent_prediction": "The development, deployment, and optimization of the chatbot system involved several key stages, each with specific challenges, technical solutions, and improvements.\n\n### Development Process\n- **Project Overview**: The system was designed as a multi-language AI chatbot with contextual memory, consisting of two main modules: Language Detection and Translation. These modules were implemented as microservices.\n- **Language Detection Module**: A LSTM-based neural network was used to detect the language of input text. A flowchart was created to illustrate the process, including input text, embedding layer, LSTM layer, and linear layer for language detection.\n- **Translation Module**: While not detailed in",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.17616580310880828
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The integration of the translation API is scheduled to be completed by March 15, 2024, as per the project timeline provided. The sprint review is scheduled for April 1, 2024. Therefore, there are **27 days** between the completion of the translation API integration and the sprint review.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.5483870967741935
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:temporal_reasoning:0",
+          "latent_prediction": "The integration of the translation API is scheduled to be completed by March 15, 2024, as indicated in the development phase (March 5 - March 15, 2024). The sprint review is scheduled for April 1, 2024. Therefore, there are **27 days** between the completion of the translation API integration and the sprint review.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.5074626865671642
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The planned completion date for implementing the contextual memory store is April 10, 2024, and the deadline for completing the GPT-4 fine-tuning is April 20, 2024. This gives you 10 days between the two dates.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.6415094339622641
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-1:temporal_reasoning:1",
+          "latent_prediction": "The provided excerpts do not specify the exact date when the contextual memory store was planned to be finished or the deadline for completing the GPT-4 fine-tuning. Therefore, it is not possible to calculate the number of days between these two dates based on the given information.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.3492063492063492
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The specific criteria for selecting AWS EC2 t3.medium instances for the initial deployment are not explicitly detailed in the provided excerpts. However, based on the context, the user chose t3.medium instances as part of an initial deployment strategy for a microservices architecture, likely due to their balance of cost and performance, and within a budget capped at $150/month. The user also aimed to optimize resource usage and ensure cost efficiency, possibly by aligning instance types with reserved instance (RI) offerings to maximize savings.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.2608695652173913
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-2:abstention:0",
+          "latent_prediction": "The selection of AWS EC2 t3.medium instances for the initial deployment was based on the user's budget constraint of $150/month and the need to ensure optimal performance for a microservices architecture. The t3.medium instance type was likely chosen as a balance between cost and performance, providing sufficient resources to run microservices while staying within the budget. The user also aimed to verify RI (Reserved Instance) coverage for these instances to maximize cost savings. However, the specific workload requirements or performance benchmarks that influenced the choice of t3.medium are not explicitly detailed in the provided excerpts.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.19801980198019803
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The conversation excerpts do not provide any feedback from users regarding the multi-language support added with i18next in React. The discussion focuses on the implementation details and configuration of i18next, but there is no mention of user feedback or reactions to the feature.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.37037037037037035
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-2:abstention:1",
+          "latent_prediction": "The conversation excerpts do not provide any information about user feedback regarding the multi-language support added with i18next in React. Therefore, it is unknown what the feedback was.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.2926829268292683
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "Yes, you have implemented retry logic with exponential backoff for handling HTTP 429 and 503 errors in this project. The logic is based on the `_retry_on_errors` method, which uses the `_exponential_backoff` function to calculate delays. The delay starts at 1 second and doubles with each attempt, up to a maximum of 30 seconds, with jitter added to avoid synchronized retries. This approach is recommended for handling rate limits and service unavailability in Scrapy spiders.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.3728813559322034
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-2:contradiction_resolution:0",
+          "latent_prediction": "Based on the provided excerpts, you have **not explicitly implemented retry logic with exponential backoff for handling HTTP 429 and 503 errors** in this project. The conversation excerpts mention the use of `tenacity` for implementing such logic, but no code or implementation details are provided to confirm that this logic has been applied to the project. The discussion suggests that the logic should be implemented, but it is not confirmed to be in place.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.46153846153846156
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "Yes, you have created Cypress tests for user login and personalized feed. The test suite includes:\n\n1. A test for successful user login, which verifies that the user is redirected to the dashboard after logging in with valid credentials.\n2. A test for handling invalid login credentials, which checks for an error message when invalid credentials are used.\n3. A test for accessing the personalized feed without being logged in, which verifies that the user is redirected to the login page and an error message is displayed.\n\nThese tests cover the scenarios you mentioned, and the code is structured to handle both positive and negative test cases.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.2676056338028169
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-2:contradiction_resolution:1",
+          "latent_prediction": "Yes, you have created Cypress tests for user login and personalized feed. You have written two test cases: one to verify successful login and another to check the scenario where a user tries to access the personalized feed without being logged in. The second test case checks for a redirect to the login page and verifies the presence of an error message. However, the error message in your test is incomplete, and you may want to ensure it is fully specified.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.3
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "- Refining the recommendation algorithm  \n- Implementing A/B testing  \n- Analyzing user feedback and adjusting the recommendation engine  \n- Collecting and analyzing user feedback  \n- Adjusting the recommendation engine based on feedback  \n- Setting up A/B testing framework  \n- Running tests with different recommendation models  \n- Analyzing test results  \n- Analyzing current recommendation model performance  \n- Refining the algorithm based on user feedback",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.19607843137254902
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-2:event_ordering:0",
+          "latent_prediction": "1. Refining the recommendation algorithm  \n2. Implementing A/B testing for different recommendation models  \n3. Analyzing user feedback and adjusting the recommendation engine  \n4. Collecting and analyzing user feedback  \n5. Adjusting the recommendation engine based on feedback  \n6. Testing the refined algorithm  \n7. Setting up A/B testing framework  \n8. Running tests with different recommendation models  \n9. Analyzing test results  \n10. Revising the recommendation algorithm based on A/B testing outcomes",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.2754491017964072
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "Unknown. The conversation excerpts do not provide enough information to reconstruct the timeline of when each aspect of your system architecture and related tooling was first mentioned.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.11842105263157894
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-2:event_ordering:1",
+          "latent_prediction": "Unknown. The provided conversation excerpts do not contain sufficient information to reconstruct the timeline of when each aspect of the system architecture and related tooling was first mentioned.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.10526315789473684
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The conversation excerpts do not provide specific information about the versions of the programming language, backend framework, database, or frontend library you mentioned. Therefore, it is unknown.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.05128205128205128
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-2:information_extraction:0",
+          "latent_prediction": "The conversation excerpts do not provide specific information about the versions of the programming language, backend framework, database, or frontend library being used for the project. Therefore, it is unknown.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The sequence of tasks was organized to ensure foundational work was completed before moving on to enhancements by prioritizing the **Audit and Harden Existing Codebase** as the first task. This step was essential to identify and address vulnerabilities in the current codebase, which forms the basis for all subsequent security enhancements. Following this, tasks such as **Implement Two-Factor Authentication (2FA)** and **Secure API Endpoints** were prioritized to build upon the hardened foundation. This approach ensures that the system is secure at its core before adding advanced features like anomaly detection. The task prioritization was guided by the need to align with the sprint goals, manage",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.18309859154929578
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-2:information_extraction:1",
+          "latent_prediction": "To ensure foundational work was completed before moving on to enhancements in Sprint 9, tasks were organized in a logical sequence based on dependencies and importance. The process began with **auditing and hardening the existing codebase**, which served as the foundation for all security improvements. This was followed by **securing API endpoints** and implementing **strict access control and authentication mechanisms**, as these are critical for protecting the system's core components. \n\nNext, **implementing Two-Factor Authentication (2FA)** was prioritized to enhance user account security, ensuring seamless integration with the existing authentication system. Finally, **enhancing data encryption** and other",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.20437956204379562
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "When not connected to the internet, the typical limits for storing data depend on the storage mechanism you are using. For example, with IndexedDB, you should consider the storage quota set by the browser, which is usually around 5 MB per origin. If you are using Redis, the limits depend on the available memory and the configuration of the Redis instance. Additionally, you should implement a caching strategy that manages data size and expiration to avoid exceeding available storage.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.125
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-2:instruction_following:1",
+          "latent_prediction": "When storing data offline (without an internet connection), consider the following typical limits and constraints:\n\n1. **Storage Quota**: Browsers and systems often impose a storage limit for local data storage mechanisms like IndexedDB. For example, the browser may restrict the total amount of data that can be stored, which can lead to errors like \"QuotaExceededError\" if the limit is exceeded.\n\n2. **Data Sparsity**: Offline data storage may involve sparse data (e.g., user interactions or items with limited interactions), which can affect the performance of similarity metrics like cosine similarity or Jaccard similarity. Efficient storage and retrieval strategies are",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.058823529411764705
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "To optimize cost without impacting latency for your AWS Lambda function, start with the default memory allocation (typically 1024MB) and gradually reduce it while monitoring performance. Use tools like AWS CloudWatch Metrics to measure the latency impact, specifically tracking duration and errors. The optimal memory allocation is the minimum amount required for the function to operate without errors. This process involves profiling the function, reducing dependencies, and ensuring efficient code to minimize memory usage. The exact optimal memory allocation depends on your function's specific requirements and performance characteristics.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-2:knowledge_update:0",
+          "latent_prediction": "To optimize cost without impacting latency for your AWS Lambda function, you should determine the optimal memory allocation by following these steps:\n\n1. **Start with the default memory allocation** (usually 1024MB) and gradually reduce it while monitoring the function's performance.\n2. **Profile your function** using tools like AWS X-Ray to understand memory usage patterns and identify the minimum memory required for the function to operate without errors.\n3. **Measure latency impact** by observing the execution duration and ensuring that reducing memory does not increase latency or cause errors.\n4. **Use AWS CloudWatch Metrics** to monitor key performance indicators such as duration",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The maximum size for the database connection pool was set to 75 to handle peak loads.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.13333333333333333
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-2:knowledge_update:1",
+          "latent_prediction": "The maximum size set for the database connection pool to handle peak loads is not explicitly mentioned in the provided conversation excerpts. The discussion focuses on monitoring error rates using Prometheus and Grafana, as well as optimizing connection pool performance through techniques like asynchronous processing and connection pooling. However, the specific maximum size value for the connection pool is not provided.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "Your requirements for batch processing articles, dynamic query updates, and performance optimization collectively impact the design choices for handling large-scale article relevance scoring in the following ways:\n\n1. **Batch Processing**: To efficiently handle 500 articles per hour, batch processing is essential. This minimizes memory usage and improves performance by reducing the number of database interactions. The use of batch processing with `sqlalchemy.ext.asyncio` and efficient embedding extraction with HuggingFace transformers can help manage large datasets effectively.\n\n2. **Dynamic Query Updates**: Dynamic query updates require the system to adapt to changing data or user inputs. This can be achieved by using streaming queries",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.34782608695652173
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-2:multi_session_reasoning:0",
+          "latent_prediction": "Your requirements for batch processing articles, dynamic query updates, and performance optimization collectively impact the design choices for handling large-scale article relevance scoring in the following ways:\n\n1. **Batch Processing**: To efficiently handle large volumes of data (e.g., 500 articles per hour), batch processing is essential. This minimizes memory usage and reduces the impact on the database. Using techniques like `fetchmany()` with BERT embeddings ensures that embeddings are generated and processed in manageable chunks, improving performance and scalability.\n\n2. **Dynamic Query Updates**: For dynamic query updates, the system must support real-time or near-real-time adjustments to relevance scoring.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.3582089552238806
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "To best reduce the summary generation time while maintaining or improving the quality of your Pegasus-large model, consider the following optimizations based on your code and performance details:\n\n1. **Model Quantization**: Reduce the precision of the model weights using tools like `torch.quantization` to speed up inference without significantly affecting accuracy.\n\n2. **Model Pruning**: Remove less important weights to reduce the computational load and improve inference speed.\n\n3. **Batch Processing**: Process multiple articles in a single batch to leverage parallelism and reduce overhead. This can significantly improve performance when handling multiple summaries.\n\n4. **Optimized Generation Parameters**: Adjust parameters such as `",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.4046242774566474
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-2:multi_session_reasoning:1",
+          "latent_prediction": "To reduce the summary generation time of the Pegasus-large model while maintaining or improving summary quality, you can implement the following optimizations based on your code and performance details:\n\n1. **Model Quantization**: Reduce the precision of the model weights to speed up inference with minimal impact on quality. This can be done using tools like `torch.quantization`.\n\n2. **Model Pruning**: Remove less important weights to reduce computational load and improve inference speed.\n\n3. **Batch Processing**: Process multiple articles in a single batch to leverage parallelism and reduce overhead. This can significantly improve efficiency when handling multiple summaries.\n\n4. **Optimized Generation Parameters**:",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.44571428571428573
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "To organize your scraper and API code for easier updates and expansion, follow this structured approach:\n\n1. **Directory Structure**: Use a modular layout with separate directories for `scraper` and `api`, each containing their own source files and test directories. This keeps your codebase clean and scalable.\n\n   ```\n   my_project/\n   |-- scraper/\n   |   |-- __init__.py\n   |   |-- web_scraper.py\n   |   |-- tests/\n   |       |-- __init__.py\n   |       |-- test_web_scraper.py\n   |-- api/\n   |   |-- __init__.py\n   |",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.08
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-2:preference_following:0",
+          "latent_prediction": "To organize your scraper and API code for easier updates and expansion, follow this structured approach:\n\n### Project Structure\nUse a modular directory layout to separate concerns and improve maintainability:\n\n```\nmy_project/\n|-- scraper/\n|   |-- __init__.py\n|   |-- web_scraper.py\n|   |-- tests/\n|       |-- __init__.py\n|       |-- test_web_scraper.py\n|-- api/\n|   |-- __init__.py\n|   |-- news_api.py\n|   |-- tests/\n|       |-- __init__.py\n|       |-- test_news_api.py\n|-- tests/\n|   |-- __init",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0625
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "To improve the performance of your PostgreSQL database for user-topic queries, consider the following approaches:\n\n1. **Indexing**: Create indexes on the `published_at` and `topic` columns in the `articles` table. This will significantly speed up queries that filter or sort by these columns. Example SQL:\n   ```sql\n   CREATE INDEX idx_published_at ON articles (published_at);\n   CREATE INDEX idx_topic ON articles (topic);\n   ```\n\n2. **Query Optimization**: Ensure your queries are written efficiently, using indexed columns in WHERE, JOIN, or ORDER BY clauses to leverage the indexes effectively.\n\n3. **Database Configuration**: Tune",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.09433962264150944
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-2:preference_following:1",
+          "latent_prediction": "To improve the performance of your PostgreSQL database for user-topic queries, consider the following approaches based on the provided information:\n\n1. **Create Indexes**: \n   - Create indexes on the `published_at` and `topic` columns in the `articles` table to speed up queries that filter or sort by these columns. This can be done using the following SQL commands:\n     ```sql\n     CREATE INDEX idx_published_at ON articles (published_at);\n     CREATE INDEX idx_topic ON articles (topic);\n     ```\n   - These indexes will significantly improve query performance by allowing the database to quickly locate and retrieve relevant rows.\n\n2. **Use Vector",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.07407407407407407
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The provided conversation excerpts do not contain sufficient information to generate a detailed and comprehensive summary of a full topic or scope. The excerpts appear to be isolated snippets of code, error handling, and brief notes on reminder logic, but they do not form a cohesive narrative or discussion of a broader topic. Therefore, it is not possible to provide a summary that integrates all key aspects and developments discussed across different sessions based on the given information.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.08536585365853659
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-2:summarization:0",
+          "latent_prediction": "The provided conversation excerpts outline the implementation of a Sentry integration for a FastAPI service, focusing on error tracking and exception handling. The key aspects include:\n\n1. **Sentry Initialization**: The `init` function sets up Sentry with a DSN and trace sampling rate, enabling error tracking and performance monitoring.\n\n2. **Middleware Integration**: The `sentry_middleware` captures request details (method, path, headers, query parameters) and attaches them to the Sentry scope. It also ensures that exceptions are captured and sent to Sentry, maintaining consistency across devices and entry points.\n\n3. **Exception Handling**: An exception handler is in place to",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.13953488372093023
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The process of designing and optimizing the database schema, handling user preferences, scheduling tasks, and improving topic relevance involves several key stages, as outlined in the provided excerpts:\n\n1. **Database Schema Design and Implementation (10 hours):**\n   - The database schema was designed to support the application's data storage and retrieval needs.\n   - Tables and indexes were created to ensure efficient data access and performance.\n   - The schema was chosen based on the application's requirements, with considerations for scalability and data integrity.\n\n2. **Data Storage and Retrieval (20 hours):**\n   - Functions were implemented to store and retrieve data from the database",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.28152492668621704
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-2:summarization:1",
+          "latent_prediction": "**Comprehensive Summary of the Entire Process**\n\n### 1. **Designing and Optimizing the Database Schema**\n- **Task Overview**: The database schema was designed to efficiently store and retrieve scraped data, with a focus on scalability and performance.\n- **Key Aspects**:\n  - **Schema Design**: Tables and indexes were created to ensure efficient data storage and retrieval.\n  - **Database Technology**: A decision was made on the appropriate database (e.g., PostgreSQL or MongoDB) based on the project's needs.\n  - **Optimization**: Indexes and normalization were implemented to improve query performance and reduce redundancy.\n- **Challenges",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.23100303951367782
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The conversation excerpts do not provide the specific dates when the Sprint 1 deadline was initially set or when the adjustment to mid-February was made. Therefore, it is unknown how many days are between these two events.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.2641509433962264
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-2:temporal_reasoning:0",
+          "latent_prediction": "The provided conversation excerpts do not contain the specific dates when the Sprint 1 deadline was initially set or when the adjustment to mid-February was made. Therefore, it is not possible to determine the number of days between these two events based on the available information.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.2
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The anomaly detection UI was delayed by 4 days, as mentioned in the context of sprint 8, but the exact number of days after completing 94% of the tasks is not specified in the provided excerpts. Therefore, it is unknown how many days after the 94% completion the delay occurred.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.4745762711864407
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-2:temporal_reasoning:1",
+          "latent_prediction": "The provided information does not specify how many days after completing 94% of sprint 8 tasks the anomaly detection UI was delayed. The delay mentioned is 4 days, but it is not explicitly stated whether this delay occurred after completing 94% of the tasks or in relation to that milestone. Therefore, the exact number of days after completing 94% of the tasks is unknown.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.35135135135135137
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The conversation excerpts do not provide any information about the feedback or comments received during the peer review of the initial `fetcher.py` module scheduled by March 12, 2024. Therefore, it is unknown what specific feedback or comments were received.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.33962264150943394
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:abstention:0",
+          "latent_prediction": "The provided conversation excerpts do not contain any specific information about the feedback or comments received during the peer review of the initial `fetcher.py` module scheduled by March 12, 2024. Therefore, it is unknown what feedback or comments were received.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.37037037037037035
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The conversation excerpts provided do not mention any specific security protocols beyond IP whitelisting for the live trading API. Therefore, it is unknown what additional security protocols are enforced.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.4782608695652174
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:abstention:1",
+          "latent_prediction": "The provided excerpts do not mention any specific security protocols enforced for the live trading API beyond IP whitelisting. The information available only describes the implementation of IP whitelisting and does not detail additional security measures. Therefore, it is unknown what other security protocols are in place.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.3870967741935484
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "You have written some unit tests for the functions in `fetcher.py`, achieving 88% code coverage. However, the tests are not fully comprehensive, as they currently only include a basic structure and placeholder assertions. The coverage report indicates that 12% of the code remains uncovered, but the specific lines or functions not covered are not detailed in the provided excerpts.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.26666666666666666
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:contradiction_resolution:0",
+          "latent_prediction": "Yes, you have written unit tests for the functions in `fetcher.py`. You provided an example test structure for the `fetch_stock_prices` function, which includes tests for both successful data retrieval and error handling. However, the current test structure is minimal and may not fully cover all the functionality in `fetcher.py`.\n\nYou mentioned achieving 88% code coverage, which is a good start. To reach 85% coverage in sprint 1, you should expand your test suite to cover more functions and edge cases in `fetcher.py`. This includes testing different scenarios such as invalid inputs, network errors, and various return",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.296875
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "Based on the conversation excerpts, you have attempted to set up the OAuth 2.0 sandbox environment with the Alpaca brokerage API using the client ID and secret stored in a .env file. You have provided code examples and asked for guidance on handling the authentication flow, including token refresh and error handling. However, there is no explicit confirmation that you have successfully completed the setup.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.36893203883495146
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:contradiction_resolution:1",
+          "latent_prediction": "Yes, you have set up the OAuth 2.0 sandbox environment with the Alpaca brokerage API using the client ID and secret stored in a `.env` file. The code provided in the conversation excerpts demonstrates the process of authenticating with the Alpaca API by retrieving the client ID and secret from the `.env` file and using them to request an access token. The `get_access_token` function is designed to make a POST request to the Alpaca OAuth 2.0 token endpoint (`https://paper-api.alpaca.markets/v2/oauth2/token`) to obtain an access token. However, the code",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.3103448275862069
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "1. Optimizing HTTP session reuse to reduce API response time (mentioned in Message 182).  \n2. Reducing average API response time from 400ms to 220ms (mentioned in Message 182).  \n3. Submitting live_trade.py for code review with changes (mentioned in Message 891).  \n4. Updating naming conventions, order processing logic, caching mechanism, and adding comments (mentioned in Message 891).  \n5. Requesting feedback by May 13, 2024 (mentioned in Message 891).  \n6.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.1925133689839572
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:event_ordering:0",
+          "latent_prediction": "- **Message 182**: Mentioned the reduction in average response time from 400ms to 220ms after optimizing HTTP session reuse.  \n- **Message 891**: Discussed the need to estimate time for final production monitoring and documentation by July 10, 2024.  \n- **Message 891**: Mentioned the use of performance profiling to identify areas for optimization.  \n- **Message 891**: Referenced the project management workflow labels for the deadline.  \n- **Message 891**: Noted the resubmission of code with",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.12154696132596685
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "1. The user discussed the importance of clear ownership and deadlines for action items in meetings.  \n2. The user asked about implementing a service mesh with Istio 1.17 for secure and observable microservice communication.  \n3. The assistant suggested improvements like decoupling services and using message queues for asynchronous communication.  \n4. The assistant recommended using REST APIs, gRPC, or other protocols for synchronous microservices communication.  \n5. The user mentioned trouble configuring YAML files for microservices with Istio 1.17.  \n6. The assistant emphasized the need for well-defined interfaces for service communication.  \n7.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.3183673469387755
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:event_ordering:1",
+          "latent_prediction": "1. The user initially asked about implementing a service mesh with Istio 1.17 for secure and observable microservice communication.  \n2. The assistant provided a design with action items, progress updates, and coordination points.  \n3. The user mentioned having trouble configuring YAML files for microservices.  \n4. The assistant suggested improvements like decoupling services and using message queues.  \n5. The user referenced a specific message (Message 1366) about discussions on microservices communication.  \n6. The assistant provided an example agenda template for a weekly sync meeting.  \n7. The user asked about the evolution of",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.2644628099173554
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The URL for fetching stock prices is set as `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={symbol}&interval=1min&apikey={api_key}`. This URL is constructed dynamically for each stock symbol using the Alpha Vantage API.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:information_extraction:0",
+          "latent_prediction": "The URL set as the API endpoint for fetching stock prices is:  \n`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={symbol}&interval={time_interval}&apikey={api_key}`.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "In the provided conversation excerpts, the data type for the `price` column in the `trades` table is specified as `NUMERIC(10, 2)`. This is defined in the SQL code snippet from Message 189.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.18181818181818182
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:information_extraction:1",
+          "latent_prediction": "The price column in the trades table was chosen to be of type `Float`. This is evident from the `price` column definition in the `Trade` class, where it is specified as `price = Column(Float, nullable=False)`.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.1111111111111111
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "To understand how well your API calls are performing, you should:\n\n1. **Check the API Logs for Any Errors or Exceptions**: Look for connection errors, timeouts, and invalid input parameters in the log files, usually found in the `logs` directory.\n\n2. **Monitor Trade Execution Metrics**: Pay attention to the number of trades executed and canceled, as well as the trade execution times, to assess performance and identify any unusual patterns.\n\n3. **Review Monitoring Alerts**: Check the alerting rules in Grafana to ensure they are correctly configured and verify that alerts are being triggered and notifications are being sent when expected.\n\n4. **Reproduce",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.1111111111111111
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:instruction_following:0",
+          "latent_prediction": "To understand how well your API calls are performing, you should look at the following information:\n\n1. **API Response Times**: Monitor the time it takes for your API calls to execute and return responses. This can be tracked using tools like Prometheus and Grafana.\n\n2. **Error Rates**: Check for error messages or exceptions in the API logs, which can indicate issues such as network errors, timeouts, or invalid input parameters.\n\n3. **Success Rates**: Track the percentage of successful API calls to ensure that the API is functioning as expected.\n\n4. **Request and Response Sizes**: Analyze the size of the data being sent and received to",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.09090909090909091
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "You are using React 18.2 and Chart.js 4.3.0 for your frontend setup.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:instruction_following:1",
+          "latent_prediction": "The current setup uses React 18.2 for the frontend and Chart.js 4.3.0 for data visualization. The WebSocket message schema includes event types such as `trade_update`, `alert_trigger`, and `system_status` to support real-time trade monitoring.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The success rate of the integration tests for the fetcher and database interaction is 97% as of March 17, 2024.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.3
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:knowledge_update:0",
+          "latent_prediction": "The success rate of the integration tests for the fetcher and database interaction is 97%, as stated in the user's message from March 17, 2024. The user mentioned that they are working on improving these tests and have already covered 95% of the code, with the remaining 5% being challenging to test.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.125
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The LSTM model training pipeline completes 50 epochs in one instance, with a final validation loss of 0.032. In another instance, the model completes 60 epochs, with a final validation loss of 0.028 as of March 30, 2024.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.4888888888888889
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:knowledge_update:1",
+          "latent_prediction": "The LSTM model training pipeline completes 60 epochs, and the final validation loss is 0.028.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.75
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "I have mentioned wanting to fetch prices for two different stock symbols: \"AAPL\" and \"MSFT\".",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.35714285714285715
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:multi_session_reasoning:0",
+          "latent_prediction": "The user has mentioned wanting to fetch prices for 2 different stock symbols: \"AAPL\" and \"MSFT\".",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.2857142857142857
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "To improve reliability and performance while addressing your testing coverage goals, prioritize your efforts as follows:\n\n1. **Optimize API Response Time**: \n   - Implement **retry logic with exponential backoff** to handle rate limit errors and reduce redundant API calls.\n   - Use **caching mechanisms** like Redis to store previously fetched stock prices and avoid redundant API calls.\n   - Consider **asynchronous requests** or **parallel processing** to fetch multiple stock prices concurrently, which can significantly reduce overall response time.\n\n2. **Improve Testing Coverage**:\n   - Expand your test suite to cover edge cases such as **invalid symbols**, **rate limit",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.27419354838709675
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:multi_session_reasoning:1",
+          "latent_prediction": "To improve the reliability and performance of your stock price fetcher, prioritize your efforts as follows:\n\n1. **Implement Retry Logic with Exponential Backoff**: The current code lacks handling for rate limit errors and API failures. Adding retry logic with exponential backoff (as shown in the code example) will improve reliability by handling transient errors and reducing the chance of failing due to temporary issues.\n\n2. **Optimize API Response Time**: Use parallel processing or asynchronous requests to fetch stock prices concurrently. This will reduce the total time taken to fetch multiple stock prices, especially when dealing with a large number of symbols.\n\n3. **Enhance Testing Coverage",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.24060150375939848
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "To set up caching for price data that persists through service restarts, you should use a persistent caching solution like Redis. Here's how you can configure it based on the provided information:\n\n1. **Use Redis for Caching**: Store the cached price data in Redis, which retains data even after service restarts, as long as the Redis server is running.\n\n2. **Implement a Caching Strategy**:\n   - The `get_stock_price` function first checks if the stock price is already cached in Redis.\n   - If the price is cached, it retrieves and returns the cached price.\n   - If the price is not cached,",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.16822429906542055
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:preference_following:0",
+          "latent_prediction": "To set up caching for price data in a service that needs to handle restarts without losing cached information, you can use Redis as a caching layer. Here's how you can do it:\n\n1. **Use Redis for Caching**: Store the cached stock price in Redis, which persists data even after service restarts. This ensures that cached information is retained across restarts.\n\n2. **Check for Cached Data First**: Before making an API call, check if the stock price is already cached in Redis. If it is, retrieve and return the cached price.\n\n3. **Cache on API Success**: If the API call is successful, store",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.13675213675213677
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "To structure your workflow for testing and deployment of trading strategies, follow this approach based on the provided excerpts:\n\n1. **Final Testing and Deployment**: Dedicate a focused phase for final testing and deployment, estimated to take 1 day. This ensures that all components are thoroughly tested and validated before going live.\n\n2. **Prioritize Critical Path Activities**: Identify and prioritize tasks that are essential for meeting the deadline, such as completing core functionality for trade logging and integrating monitoring and alerting systems.\n\n3. **Regular Progress Reviews**: Schedule regular reviews to assess progress and make necessary adjustments. Use tools like Jira, Trello, or Asana",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.11570247933884298
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:preference_following:1",
+          "latent_prediction": "To structure your workflow for testing and deployment of trading strategies, follow this approach based on the provided excerpts:\n\n1. **Break Down the Work**: Divide the project into manageable tasks, such as core functionality development, integration of monitoring systems, and testing phases. This ensures that each part of the project is clearly defined and manageable.\n\n2. **Prioritize Tasks**: Focus on critical path activities that are essential for meeting deadlines. Use a prioritization matrix to categorize tasks by urgency and impact, such as high urgency and high impact tasks like completing core functionality and integrating monitoring systems.\n\n3. **Use a Project Management Tool**: Utilize tools like",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.09917355371900827
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The stock trading bot project has progressed through several key stages, with a focus on data analysis, pattern identification, and the application of analytical and creative problem-solving skills. Key challenges included analyzing complex data, identifying meaningful patterns, and developing effective strategies for trading. The solutions discussed included:\n\n1. **Data Analysis**: Using Python libraries like pandas to load and inspect data, and employing descriptive statistics to understand data distributions.\n2. **Pattern Identification**: Creating visualizations such as histograms to identify trends and patterns in the data.\n3. **Feature Engineering**: Developing new features (e.g., moving averages, RSI) to enhance the model's predictive",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.1984126984126984
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:summarization:0",
+          "latent_prediction": "The stock trading bot project has progressed through several key stages, with a focus on data analysis, feature engineering, and model development. Here is a summary of the progress, challenges, and solutions discussed:\n\n### 1. **Data Analysis and Exploration**\n- **Challenge**: Understanding the distribution and patterns in the data was a key initial challenge.\n- **Solution**: The user used Python libraries like pandas to load and explore the data, including printing the first few rows and using descriptive statistics to identify patterns.\n\n### 2. **Feature Engineering**\n- **Challenge**: Extracting meaningful features from the data to improve model performance.\n- **Solution**:",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.19834710743801653
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "The development roadmap for the trade logging module has been approved for production release on July 7, 2024. The current implementation includes a single milestone, \"Trade logging module,\" with a due date set for that date. However, the roadmap lacks detailed breakdowns of tasks, estimates, priorities, and dependencies. Best practices suggest breaking down milestones into smaller tasks, estimating effort, prioritizing tasks, and managing dependencies. While the roadmap is clear and provides a due date, it could be improved by incorporating these elements for better planning and execution. The progress so far is defined by the approved release date, but the detailed implementation efforts",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.183206106870229
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:summarization:1",
+          "latent_prediction": "The development roadmap currently includes a single milestone, \"Trade logging module,\" with a due date of July 7, 2024. However, the provided information does not include details about the current progress, completed tasks, or any updates on the implementation efforts. The roadmap appears to be in its initial planning phase, and there is no evidence of completed work or progress tracking. To gain a comprehensive summary of the progress, additional details about task completion, milestones achieved, and any updates from the development team would be necessary.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.13821138211382114
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "You have 15 days between the start of your first sprint (March 1, 2024) and its deadline (March 15, 2024).",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.6086956521739131
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:temporal_reasoning:0",
+          "latent_prediction": "The sprint starts on March 1, 2024, and the deadline is March 15, 2024. This gives a total of 15 days (including both the start and end dates). Therefore, you have 15 days between the start of your first sprint and its deadline to complete all your tasks.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.5714285714285714
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        },
+        {
+          "direct_prediction": "You have 2 days between submitting your modules for peer review and the deadline to provide feedback.",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.43902439024390244
+          },
+          "exact_match_disagreement": false,
+          "example_id": "beam-1m-3:temporal_reasoning:1",
+          "latent_prediction": "The excerpts do not provide specific information about the number of days between submitting your modules for peer review and the deadline to provide feedback. Therefore, the exact number of days is unknown based on the provided information.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.3103448275862069
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "unannotated"
+        }
+      ],
+      "job": "beam_equal_updates",
+      "n_evidence_mismatch": 0,
+      "n_matched": 60,
+      "n_unpaired": 0
+    },
+    {
+      "condition": {
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "hops": 3,
+        "update_policy": "all"
+      },
+      "dataset": "hotpotqa",
+      "disagreements": [
+        {
+          "direct_prediction": "Beatrice Tinsley",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5a72814f5542994cef4bc2eb",
+          "latent_prediction": "Beatrice M. Tinsley",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.8
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "UNKNOWN",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5a7605f85542994ccc91868d",
+          "latent_prediction": "Battle of H\u00fcrtgen Forest",
+          "latent_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "UNKNOWN",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5a76334c5542994ccc918710",
+          "latent_prediction": "Panama",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [
+            "5a76334c5542994ccc918710:9"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "Jewel",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5a7789195542995d831811a2",
+          "latent_prediction": "Sheppard",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [
+            "5a7789195542995d831811a2:5"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "UNKNOWN",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5a77897f55429949eeb29edc",
+          "latent_prediction": "Zurna",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [
+            "5a77897f55429949eeb29edc:8"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "Leafcutter John",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5a77c15f5542997042120b1c",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Yanka Dyagileva",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5a77d4eb55429949eeb29f74",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Laura Warholic; or, The Sexual Intellectual",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5a79e7b45542994f819ef0ff",
+          "latent_prediction": "\"Under the Volcano\"",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [
+            "5a79e7b45542994f819ef0ff:3"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "UNKNOWN",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5a7b3b4f5542992d025e67ac",
+          "latent_prediction": "Danny Masterson",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [
+            "5a7b3b4f5542992d025e67ac:0"
+          ],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "UNKNOWN",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5a7ccc1e55429909bec7680e",
+          "latent_prediction": "50",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [
+            "5a7ccc1e55429909bec7680e:1"
+          ],
+          "selected_truncated_ids": [
+            "5a7ccc1e55429909bec7680e:7"
+          ],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "Detroit Lions and the Los Angeles Rams",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5a7fb17c5542994857a767bb",
+          "latent_prediction": "San Diego State and the Detroit Lions",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.5
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "2 million",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5a7fc41455429969796c1b51",
+          "latent_prediction": "6 million",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.5
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "13",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5a802bf05542992bc0c4a6b7",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Albania",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5a824e0b554299676cceb254",
+          "latent_prediction": "Albanian descent, born in Winnipeg, Manitoba.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.25
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [
+            "5a824e0b554299676cceb254:0"
+          ],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "O, The Oprah Magazine was founded by Oprah Winfrey and Hearst Communications. Elissa Schappell's second book of fiction, \"Blueprints for Building Better Girls,\" was published by Simon & Schuster, not by O, The",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.2857142857142857
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5a832fdd55429954d2e2ec4f",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "UNKNOWN",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5a84bbb35542991dd0999dc0",
+          "latent_prediction": "Malayalam films",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.5
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "New Hampshire",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5a87572d5542994846c1cd6b",
+          "latent_prediction": "Floyd County",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.3333333333333333
+          },
+          "missing_support_ids": [
+            "5a87572d5542994846c1cd6b:3"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "Nana Patekar",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5a877fa45542993e715abf84",
+          "latent_prediction": "Michael Praed",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Matt Groening",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5a8bd49d5542997f31a41dd7",
+          "latent_prediction": "Ian Boothby",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "2009 Big 12 Conference",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5a8e1027554299653c1aa15f",
+          "latent_prediction": "2009, Pac-12 Conference",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.5714285714285714
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Bing Crosby",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.5714285714285714
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5a8ee3a755429917b4a5be02",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "documentary filmmakers",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5ab3010455429976abd1bc15",
+          "latent_prediction": "director",
+          "latent_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "2885",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5ab4314955429942dd415ecd",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [
+            "5ab4314955429942dd415ecd:7"
+          ],
+          "selected_truncated_ids": [
+            "5ab4314955429942dd415ecd:8"
+          ],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "Perth, Western Australia",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5ab53436554299637185c504",
+          "latent_prediction": "Northampton, England",
+          "latent_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "ice hockey",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5ab67f4c55429953192ad2d9",
+          "latent_prediction": "Ice hockey",
+          "latent_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "missing_support_ids": [
+            "5ab67f4c55429953192ad2d9:2"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "The Flames",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5ab6b59f5542995eadef0065",
+          "latent_prediction": "The Gospel Starlighters",
+          "latent_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "15",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5aba14195542994dbf0198a9",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [
+            "5aba14195542994dbf0198a9:2"
+          ],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "YES",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5abb61c0554299642a094a86",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Granite Flats",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5abbf9b355429931dba145fe",
+          "latent_prediction": "Pete Riley",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "YES",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5abff0645542994516f45539",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Virginia",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5ac1a6bf5542991316484b8d",
+          "latent_prediction": "California",
+          "latent_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "UNKNOWN",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5ac2b2e2554299218029dafa",
+          "latent_prediction": "National Hockey League",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.8571428571428571
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Washington metropolitan area",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.4
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5ac413ca5542997ea680c9e9",
+          "latent_prediction": "Washington, D.C. metropolitan area",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.6666666666666666
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "UNKNOWN",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5ac45b23554299204fd21f31",
+          "latent_prediction": "5",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [
+            "5ac45b23554299204fd21f31:0",
+            "5ac45b23554299204fd21f31:1"
+          ],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "The Greatest Game Ever Played",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5add44f35542997545bbbd0c",
+          "latent_prediction": "The Haunted Mansion",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "former pornstar",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.6666666666666666
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5adea95055429939a52fe931",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Bill Woodfull",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.6666666666666666
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5adfa1f9554299025d62a308",
+          "latent_prediction": "Warwick Windridge Armstrong",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [
+            "5adfa1f9554299025d62a308:3"
+          ],
+          "selected_truncated_ids": [
+            "5adfa1f9554299025d62a308:7"
+          ],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "\"I Saw Him Standing There\"",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.8
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5adfd42555429942ec259b52",
+          "latent_prediction": "\"Will You Love Me Tomorrow\"",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Douglas County",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.6666666666666666
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5adfda5255429942ec259b5e",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "\"PM Magazine\" (or \"Evening Magazine\")",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.5714285714285714
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5ae08dad55429945ae9593b9",
+          "latent_prediction": "PM Magazine",
+          "latent_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Warrnambool, Victoria",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5ae10df355429920d52342ac",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "UNKNOWN",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5ae135fb55429920d523431f",
+          "latent_prediction": "WB Television Network",
+          "latent_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Dayton Arena",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.5
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5ae1b44c554299234fd042cd",
+          "latent_prediction": "Quicken Loans Arena",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.4
+          },
+          "missing_support_ids": [
+            "5ae1b44c554299234fd042cd:5"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "Herman's Hermits",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5ae1f70c5542997f29b3c1c5",
+          "latent_prediction": "The Beatles",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [
+            "5ae1f70c5542997f29b3c1c5:5"
+          ],
+          "selected_truncated_ids": [
+            "5ae1f70c5542997f29b3c1c5:4"
+          ],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "1926",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5ae27f22554299495565da8d",
+          "latent_prediction": "1930",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "March",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.5
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5ae2b770554299495565db0f",
+          "latent_prediction": "June",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Achimenes",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5ae3f1bb5542995ad6573cbe",
+          "latent_prediction": "Brassia",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Elijah Wood",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5ae45b6b55429970de88d943",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "95 AD",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "5ae666d35542991bbc9760cc",
+          "latent_prediction": "1862",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "1954 FIFA World Cup",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.8571428571428571
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5ae721c15542996d980e7cbc",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [
+            "5ae721c15542996d980e7cbc:4"
+          ],
+          "selected_truncated_ids": [
+            "5ae721c15542996d980e7cbc:7"
+          ],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "Arnold Peder M\u00f8ller",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.4
+          },
+          "exact_match_disagreement": false,
+          "example_id": "5ae7940c55429952e35ea984",
+          "latent_prediction": "Peter M\u00e6rsk M\u00f8ller",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.4
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        }
+      ],
+      "job": "hotpot_equal",
+      "n_evidence_mismatch": 0,
+      "n_matched": 128,
+      "n_unpaired": 0
+    },
+    {
+      "condition": {
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "hops": 3,
+        "update_policy": "all"
+      },
+      "dataset": "musique",
+      "disagreements": [
+        {
+          "direct_prediction": "Apple Records",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.5
+          },
+          "exact_match_disagreement": false,
+          "example_id": "2hop__152700_141308",
+          "latent_prediction": "Island Def Jam",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Cold War",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.5
+          },
+          "exact_match_disagreement": false,
+          "example_id": "2hop__286268_97805",
+          "latent_prediction": "Croatian War of Independence",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.3333333333333333
+          },
+          "missing_support_ids": [
+            "2hop__286268_97805:7"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "18th century",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "2hop__31091_31122",
+          "latent_prediction": "17th century",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.5
+          },
+          "missing_support_ids": [
+            "2hop__31091_31122:19"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "Ocala",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "2hop__316374_82341",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "promoting European integration",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.8
+          },
+          "exact_match_disagreement": false,
+          "example_id": "2hop__390947_232243",
+          "latent_prediction": "Promoting European integration.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.8
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "digital infrastructures and information networks",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.13333333333333333
+          },
+          "exact_match_disagreement": false,
+          "example_id": "2hop__417937_158105",
+          "latent_prediction": "temporal events and digital infrastructures",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.13333333333333333
+          },
+          "missing_support_ids": [
+            "2hop__417937_158105:14"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "Hainan",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "2hop__423045_570226",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [
+            "2hop__423045_570226:18"
+          ],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Northern Florida",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "2hop__444265_82341",
+          "latent_prediction": "Ocala, Florida",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.5
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Golestan Province",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "2hop__525581_161450",
+          "latent_prediction": "In the north-east of the country, south of the Caspian Sea, in the present-day municipality of Finn\u00f8y, in the traditional region of Setesdal, in the province of Golestan, in the administrative region of Maur",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.45714285714285713
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Austrian government",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "2hop__555792_30351",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Josh Groban",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "2hop__58111_7298",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [
+            "2hop__58111_7298:4"
+          ],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "UNKNOWN",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "2hop__693157_131890",
+          "latent_prediction": "Deptford Creek",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "divesting from downstream business of all African countries except South Africa and Egypt",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.16
+          },
+          "exact_match_disagreement": false,
+          "example_id": "2hop__695432_18803",
+          "latent_prediction": "selling its operations in Finland and doing market research concerning Swedish operations",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.3333333333333333
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [
+            "2hop__695432_18803:10"
+          ],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "Dennis Quaid",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "2hop__71871_494136",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [
+            "2hop__71871_494136:3"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "UNKNOWN",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "2hop__742831_156034",
+          "latent_prediction": "Susquehanna River",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [
+            "2hop__742831_156034:17"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "Mark Shand",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "2hop__752214_639679",
+          "latent_prediction": "Larry Smith",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [
+            "2hop__752214_639679:13"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "Jennifer Parker",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "2hop__80546_75184",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [
+            "2hop__80546_75184:16"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "Indonesia",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "3hop1__123190_519940_18967",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [
+            "3hop1__123190_519940_18967:15",
+            "3hop1__123190_519940_18967:8"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "July 22, 1864",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "3hop1__131820_59747_60748",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [
+            "3hop1__131820_59747_60748:8"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "Rhine",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "3hop1__160324_131905_41948",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [
+            "3hop1__160324_131905_41948:19",
+            "3hop1__160324_131905_41948:9"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "4 years",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "3hop1__639955_834494_34099",
+          "latent_prediction": "Four-year terms.",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.6666666666666666
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "1980s",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "3hop2__132957_295815_40768",
+          "latent_prediction": "1985, 1985, 1985",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [],
+          "selected_truncated_ids": [],
+          "support_coverage": "all_support_documents"
+        },
+        {
+          "direct_prediction": "UNKNOWN",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "3hop2__76623_90098_10557",
+          "latent_prediction": "Latin",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.6666666666666666
+          },
+          "missing_support_ids": [
+            "3hop2__76623_90098_10557:4"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "2017",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "3hop2__88342_93066_47738",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [
+            "3hop2__88342_93066_47738:6",
+            "3hop2__88342_93066_47738:8"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "Mario Andretti",
+          "direct_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "4hop1__342858_131850_159767_81096",
+          "latent_prediction": "UNKNOWN",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [
+            "4hop1__342858_131850_159767_81096:11"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "UNKNOWN",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": false,
+          "example_id": "4hop1__525129_315334_131926_89261",
+          "latent_prediction": "Matagorda Bay",
+          "latent_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "missing_support_ids": [
+            "4hop1__525129_315334_131926_89261:14",
+            "4hop1__525129_315334_131926_89261:16",
+            "4hop1__525129_315334_131926_89261:9"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        },
+        {
+          "direct_prediction": "UNKNOWN",
+          "direct_scores": {
+            "exact_match": 0.0,
+            "f1": 0.0
+          },
+          "exact_match_disagreement": true,
+          "example_id": "4hop1__726675_508773_85832_745702",
+          "latent_prediction": "Sebastian Cabot",
+          "latent_scores": {
+            "exact_match": 1.0,
+            "f1": 1.0
+          },
+          "missing_support_ids": [
+            "4hop1__726675_508773_85832_745702:10",
+            "4hop1__726675_508773_85832_745702:12"
+          ],
+          "selected_truncated_ids": [],
+          "support_coverage": "missing_support_documents"
+        }
+      ],
+      "job": "musique_equal",
+      "n_evidence_mismatch": 0,
+      "n_matched": 128,
+      "n_unpaired": 0
+    }
+  ],
+  "resource_guard": {
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/run_matrix.py",
+      "--matrix",
+      "configs/overnight.json",
+      "--output-dir",
+      "runs/overnight",
+      "--max-seconds",
+      "17400"
+    ],
+    "elapsed_seconds": 5056.363237375044,
+    "limits": {
+      "allow_battery": false,
+      "max_rss_gib": 32,
+      "max_seconds": 18000.0,
+      "min_available_gib": 12,
+      "min_disk_gib": 40,
+      "poll_seconds": 10.0
+    },
+    "peak_rss_gib": 15.5833740234375,
+    "reason": "interrupted",
+    "returncode": -2,
+    "status": "stopped"
+  },
+  "run_dir": "/Users/matt/Documents/ChatGPT/LatentBase/runs/overnight",
+  "synthetic_e2": []
+}

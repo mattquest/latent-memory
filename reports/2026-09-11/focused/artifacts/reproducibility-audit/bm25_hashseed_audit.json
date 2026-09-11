@@ -1,0 +1,190 @@
+{
+  "hash_seeds": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "17"
+  ],
+  "retrieval_source_sha256": "7d716e40bdf845c4797f7f4b9ceeaa64681bc2adb1648d28ea33b0203037228a",
+  "scope": "query-only rankings over each saved candidate evidence set; BEAM fixed-source schedules do not rerank at inference",
+  "datasets": {
+    "data/hotpotqa_dev_sample.jsonl": {
+      "examples": 128,
+      "score_changed_examples": 116,
+      "ranking_changed_examples": 0,
+      "max_score_delta": 3.552713678800501e-15
+    },
+    "data/musique_dev_sample.jsonl": {
+      "examples": 128,
+      "score_changed_examples": 88,
+      "ranking_changed_examples": 0,
+      "max_score_delta": 3.552713678800501e-15
+    },
+    "data/synthetic_multihop.jsonl": {
+      "examples": 128,
+      "score_changed_examples": 26,
+      "ranking_changed_examples": 0,
+      "max_score_delta": 2.220446049250313e-16
+    },
+    "data/synthetic_updates.jsonl": {
+      "examples": 128,
+      "score_changed_examples": 48,
+      "ranking_changed_examples": 0,
+      "max_score_delta": 2.220446049250313e-16
+    },
+    "data/synthetic_private_fact.jsonl": {
+      "examples": 128,
+      "score_changed_examples": 0,
+      "ranking_changed_examples": 0,
+      "max_score_delta": 0.0
+    },
+    "data/beam_1m_retrieved.jsonl": {
+      "examples": 60,
+      "score_changed_examples": 57,
+      "ranking_changed_examples": 1,
+      "max_score_delta": 3.552713678800501e-15
+    }
+  },
+  "beam_changed_examples": [
+    {
+      "example_id": "beam-1m-3:temporal_reasoning:0",
+      "rankings_by_hash_seed": {
+        "1": [
+          "beam-1m-3:36:tokens:0",
+          "beam-1m-3:223:tokens:672",
+          "beam-1m-3:705:tokens:224",
+          "beam-1m-3:553:tokens:0",
+          "beam-1m-3:1235:tokens:0",
+          "beam-1m-3:627:tokens:0",
+          "beam-1m-3:223:tokens:0",
+          "beam-1m-3:705:tokens:0",
+          "beam-1m-3:1543:tokens:0",
+          "beam-1m-3:1276:tokens:0",
+          "beam-1m-3:1234:tokens:0",
+          "beam-1m-3:1313:tokens:224",
+          "beam-1m-3:626:tokens:0",
+          "beam-1m-3:37:tokens:224",
+          "beam-1m-3:37:tokens:448",
+          "beam-1m-3:1307:tokens:0",
+          "beam-1m-3:1313:tokens:0",
+          "beam-1m-3:1312:tokens:0",
+          "beam-1m-3:1306:tokens:0",
+          "beam-1m-3:1307:tokens:224"
+        ],
+        "2": [
+          "beam-1m-3:36:tokens:0",
+          "beam-1m-3:223:tokens:672",
+          "beam-1m-3:705:tokens:224",
+          "beam-1m-3:553:tokens:0",
+          "beam-1m-3:1235:tokens:0",
+          "beam-1m-3:627:tokens:0",
+          "beam-1m-3:223:tokens:0",
+          "beam-1m-3:705:tokens:0",
+          "beam-1m-3:1543:tokens:0",
+          "beam-1m-3:1276:tokens:0",
+          "beam-1m-3:1234:tokens:0",
+          "beam-1m-3:1313:tokens:224",
+          "beam-1m-3:626:tokens:0",
+          "beam-1m-3:37:tokens:224",
+          "beam-1m-3:37:tokens:448",
+          "beam-1m-3:1307:tokens:0",
+          "beam-1m-3:1313:tokens:0",
+          "beam-1m-3:1312:tokens:0",
+          "beam-1m-3:1306:tokens:0",
+          "beam-1m-3:1307:tokens:224"
+        ],
+        "3": [
+          "beam-1m-3:36:tokens:0",
+          "beam-1m-3:223:tokens:672",
+          "beam-1m-3:705:tokens:224",
+          "beam-1m-3:553:tokens:0",
+          "beam-1m-3:1235:tokens:0",
+          "beam-1m-3:627:tokens:0",
+          "beam-1m-3:223:tokens:0",
+          "beam-1m-3:705:tokens:0",
+          "beam-1m-3:1543:tokens:0",
+          "beam-1m-3:1276:tokens:0",
+          "beam-1m-3:1234:tokens:0",
+          "beam-1m-3:1313:tokens:224",
+          "beam-1m-3:626:tokens:0",
+          "beam-1m-3:37:tokens:224",
+          "beam-1m-3:37:tokens:448",
+          "beam-1m-3:1307:tokens:0",
+          "beam-1m-3:1313:tokens:0",
+          "beam-1m-3:1312:tokens:0",
+          "beam-1m-3:1306:tokens:0",
+          "beam-1m-3:1307:tokens:224"
+        ],
+        "4": [
+          "beam-1m-3:36:tokens:0",
+          "beam-1m-3:223:tokens:672",
+          "beam-1m-3:705:tokens:224",
+          "beam-1m-3:553:tokens:0",
+          "beam-1m-3:1235:tokens:0",
+          "beam-1m-3:627:tokens:0",
+          "beam-1m-3:223:tokens:0",
+          "beam-1m-3:705:tokens:0",
+          "beam-1m-3:1543:tokens:0",
+          "beam-1m-3:1276:tokens:0",
+          "beam-1m-3:1234:tokens:0",
+          "beam-1m-3:1313:tokens:224",
+          "beam-1m-3:626:tokens:0",
+          "beam-1m-3:37:tokens:224",
+          "beam-1m-3:37:tokens:448",
+          "beam-1m-3:1307:tokens:0",
+          "beam-1m-3:1313:tokens:0",
+          "beam-1m-3:1312:tokens:0",
+          "beam-1m-3:1306:tokens:0",
+          "beam-1m-3:1307:tokens:224"
+        ],
+        "5": [
+          "beam-1m-3:36:tokens:0",
+          "beam-1m-3:223:tokens:672",
+          "beam-1m-3:705:tokens:224",
+          "beam-1m-3:553:tokens:0",
+          "beam-1m-3:1235:tokens:0",
+          "beam-1m-3:627:tokens:0",
+          "beam-1m-3:223:tokens:0",
+          "beam-1m-3:705:tokens:0",
+          "beam-1m-3:1543:tokens:0",
+          "beam-1m-3:1276:tokens:0",
+          "beam-1m-3:1234:tokens:0",
+          "beam-1m-3:1313:tokens:224",
+          "beam-1m-3:626:tokens:0",
+          "beam-1m-3:37:tokens:224",
+          "beam-1m-3:37:tokens:448",
+          "beam-1m-3:1307:tokens:0",
+          "beam-1m-3:1313:tokens:0",
+          "beam-1m-3:1312:tokens:0",
+          "beam-1m-3:1306:tokens:0",
+          "beam-1m-3:1307:tokens:224"
+        ],
+        "17": [
+          "beam-1m-3:36:tokens:0",
+          "beam-1m-3:223:tokens:672",
+          "beam-1m-3:705:tokens:224",
+          "beam-1m-3:553:tokens:0",
+          "beam-1m-3:627:tokens:0",
+          "beam-1m-3:1235:tokens:0",
+          "beam-1m-3:223:tokens:0",
+          "beam-1m-3:705:tokens:0",
+          "beam-1m-3:1543:tokens:0",
+          "beam-1m-3:1276:tokens:0",
+          "beam-1m-3:1234:tokens:0",
+          "beam-1m-3:1313:tokens:224",
+          "beam-1m-3:626:tokens:0",
+          "beam-1m-3:37:tokens:224",
+          "beam-1m-3:37:tokens:448",
+          "beam-1m-3:1307:tokens:0",
+          "beam-1m-3:1313:tokens:0",
+          "beam-1m-3:1312:tokens:0",
+          "beam-1m-3:1306:tokens:0",
+          "beam-1m-3:1307:tokens:224"
+        ]
+      }
+    }
+  ],
+  "sorted_patch_beam_distinct_score_ledgers": 1
+}

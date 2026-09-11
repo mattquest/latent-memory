@@ -1,0 +1,5 @@
+arm,subset,n,exact_match,f1,original_end_to_end_p50_ms,original_end_to_end_p95_ms,role
+basic_rag,all,96,0.010416666666666666,0.023734469059062714,393.53410399053246,1355.3033744974528,Original source condition; original retrieval/evidence budget and end-to-end cost
+basic_rag,trace_overflow,9,0.0,0.0,477.7990839793347,539.4170414074324,Original source condition; original retrieval/evidence budget and end-to-end cost
+iterative_text,all,96,0.03125,0.04877754281537176,2555.0342295027804,4142.4247607792495,Original source condition; original retrieval/evidence budget and end-to-end cost
+iterative_text,trace_overflow,9,0.0,0.0,3944.010542007163,5689.65578341158,Original source condition; original retrieval/evidence budget and end-to-end cost

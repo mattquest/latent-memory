@@ -1,0 +1,522 @@
+{
+  "completed_unique_runs": 288,
+  "elapsed_seconds_this_invocation": 1466.9594895839691,
+  "groups": [
+    {
+      "case": {
+        "arm": "direct_text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E1",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 0.0,
+      "dataset": "beam",
+      "exact_match": 0.0,
+      "exact_match_ci95": [
+        0.0,
+        0.06017185214208986
+      ],
+      "f1": 0.25183850076279163,
+      "f1_bootstrap_ci95": [
+        0.21381180735306796,
+        0.29211909360467475
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 660.1833333333333,
+        "host_output_tokens": 84.66666666666667,
+        "ingest_prefill_tokens": 0,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 799.25,
+        "query_prefill_tokens": 799.25
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "lexical_overlap_only_not_behavior_accuracy",
+      "n_examples": 60,
+      "n_runs": 60,
+      "warm_latency_mean_ms": 3209.276515178499,
+      "warm_latency_p50_ms": 3140.6556040165015,
+      "warm_latency_p95_ms": 4744.08859135583
+    },
+    {
+      "case": {
+        "arm": "direct_text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E6",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 0.0,
+      "dataset": "beam",
+      "exact_match": 0.0,
+      "exact_match_ci95": [
+        2.7755575615628914e-17,
+        0.24249400665524085
+      ],
+      "f1": 0.2743883857360707,
+      "f1_bootstrap_ci95": [
+        0.1962922447832427,
+        0.3440988490282129
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 632.1666666666666,
+        "host_output_tokens": 67.75,
+        "ingest_prefill_tokens": 0,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 766.9166666666666,
+        "query_prefill_tokens": 766.9166666666666
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "lexical_overlap_only_not_behavior_accuracy",
+      "n_examples": 12,
+      "n_runs": 12,
+      "warm_latency_mean_ms": 2627.5469860071703,
+      "warm_latency_p50_ms": 2684.698874509195,
+      "warm_latency_p95_ms": 4209.675814388902
+    },
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E1",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 405.72495851665735,
+      "dataset": "beam",
+      "exact_match": 0.0,
+      "exact_match_ci95": [
+        0.0,
+        0.06017185214208986
+      ],
+      "f1": 0.22626109688632307,
+      "f1_bootstrap_ci95": [
+        0.1881611330195142,
+        0.2651967745693335
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 343.15,
+        "evidence_tokens": 660.1833333333333,
+        "host_output_tokens": 91.48333333333333,
+        "ingest_prefill_tokens": 751.1833333333333,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 901.45,
+        "query_prefill_tokens": 150.26666666666668
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "lexical_overlap_only_not_behavior_accuracy",
+      "n_examples": 60,
+      "n_runs": 60,
+      "warm_latency_mean_ms": 3880.202328484544,
+      "warm_latency_p50_ms": 4224.302396003623,
+      "warm_latency_p95_ms": 5269.674370472785
+    },
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E1",
+        "hops": 3,
+        "precision": "int8",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 405.72495851665735,
+      "dataset": "beam",
+      "exact_match": 0.0,
+      "exact_match_ci95": [
+        0.0,
+        0.06017185214208986
+      ],
+      "f1": 0.23087156528021907,
+      "f1_bootstrap_ci95": [
+        0.1934167620573959,
+        0.27134441078294225
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 343.15,
+        "evidence_tokens": 660.1833333333333,
+        "host_output_tokens": 90.78333333333333,
+        "ingest_prefill_tokens": 751.1833333333333,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 901.45,
+        "query_prefill_tokens": 150.26666666666668
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "lexical_overlap_only_not_behavior_accuracy",
+      "n_examples": 60,
+      "n_runs": 60,
+      "warm_latency_mean_ms": 3877.119359799932,
+      "warm_latency_p50_ms": 4193.222750007408,
+      "warm_latency_p95_ms": 5290.5070044711465
+    },
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E6",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 369.59095802740194,
+      "dataset": "beam",
+      "exact_match": 0.0,
+      "exact_match_ci95": [
+        2.7755575615628914e-17,
+        0.24249400665524085
+      ],
+      "f1": 0.2617148790061367,
+      "f1_bootstrap_ci95": [
+        0.15785839743726526,
+        0.3861088891651929
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 321.8333333333333,
+        "evidence_tokens": 632.1666666666666,
+        "host_output_tokens": 82.5,
+        "ingest_prefill_tokens": 723.1666666666666,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 856.1666666666666,
+        "query_prefill_tokens": 133
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "lexical_overlap_only_not_behavior_accuracy",
+      "n_examples": 12,
+      "n_runs": 12,
+      "warm_latency_mean_ms": 3551.240753401847,
+      "warm_latency_p50_ms": 3477.3349374881946,
+      "warm_latency_p95_ms": 5202.965851881891
+    },
+    {
+      "case": {
+        "arm": "latent",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E6",
+        "hops": 3,
+        "precision": "int8",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 369.59095802740194,
+      "dataset": "beam",
+      "exact_match": 0.0,
+      "exact_match_ci95": [
+        2.7755575615628914e-17,
+        0.24249400665524085
+      ],
+      "f1": 0.2775448739862519,
+      "f1_bootstrap_ci95": [
+        0.1682995659462974,
+        0.3988680518967334
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 321.8333333333333,
+        "evidence_tokens": 632.1666666666666,
+        "host_output_tokens": 81,
+        "ingest_prefill_tokens": 723.1666666666666,
+        "internal_decoded_tokens": 0,
+        "max_prefix_tokens": 856.1666666666666,
+        "query_prefill_tokens": 133
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "lexical_overlap_only_not_behavior_accuracy",
+      "n_examples": 12,
+      "n_runs": 12,
+      "warm_latency_mean_ms": 3517.846086756132,
+      "warm_latency_p50_ms": 3464.7203749918845,
+      "warm_latency_p95_ms": 5229.265727466554
+    },
+    {
+      "case": {
+        "arm": "text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E1",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 0.0,
+      "dataset": "beam",
+      "exact_match": 0.0,
+      "exact_match_ci95": [
+        0.0,
+        0.06017185214208986
+      ],
+      "f1": 0.27247067760955745,
+      "f1_bootstrap_ci95": [
+        0.22748952671730763,
+        0.321682597286355
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 660.1833333333333,
+        "host_output_tokens": 74.4,
+        "ingest_prefill_tokens": 0,
+        "internal_decoded_tokens": 192.03333333333333,
+        "max_prefix_tokens": 473.93333333333334,
+        "query_prefill_tokens": 1451.5
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "lexical_overlap_only_not_behavior_accuracy",
+      "n_examples": 60,
+      "n_runs": 60,
+      "warm_latency_mean_ms": 9745.050788214818,
+      "warm_latency_p50_ms": 9772.796062519774,
+      "warm_latency_p95_ms": 18488.094074357647
+    },
+    {
+      "case": {
+        "arm": "text",
+        "bridge_ratio": 0.2,
+        "control": "correct",
+        "experiment": "E6",
+        "hops": 3,
+        "precision": "bf16",
+        "update_policy": "all"
+      },
+      "cold_ingest_p50_ms": 0.0,
+      "dataset": "beam",
+      "exact_match": 0.0,
+      "exact_match_ci95": [
+        2.7755575615628914e-17,
+        0.24249400665524085
+      ],
+      "f1": 0.3136682116865044,
+      "f1_bootstrap_ci95": [
+        0.20585879914004912,
+        0.41959855167172233
+      ],
+      "fraction_examples_truncated": 0,
+      "mean_counts": {
+        "bridge_recomputed_tokens": 0,
+        "evidence_tokens": 632.1666666666666,
+        "host_output_tokens": 37.583333333333336,
+        "ingest_prefill_tokens": 0,
+        "internal_decoded_tokens": 146.25,
+        "max_prefix_tokens": 447.1666666666667,
+        "query_prefill_tokens": 1360.4166666666667
+      },
+      "mean_evidence_hops_executed": 3,
+      "metric_role": "lexical_overlap_only_not_behavior_accuracy",
+      "n_examples": 12,
+      "n_runs": 12,
+      "warm_latency_mean_ms": 6875.433732668171,
+      "warm_latency_p50_ms": 7219.630437029991,
+      "warm_latency_p95_ms": 10666.22980206739
+    }
+  ],
+  "limitations": [
+    "One unadapted Qwen3 model; no trained role adapters, verifier, or latent retriever.",
+    "Fixed evidence schedule; nominal hops with no new evidence are skipped and disclosed.",
+    "E1/E2 compare a decoded evidence-note chain to causal KV appends, not trained role-equivalent agents.",
+    "Warm latency excludes cold document prefill and model loading; cold prefill is reported separately.",
+    "E3 is answer-level private-evidence sensitivity, not a reproduction of an external causal audit.",
+    "Small diagnostic subsets do not establish BEAM 1M/10M performance or the original thesis.",
+    "Percentile estimates from small samples and bootstrap intervals at empirical ceilings are unstable."
+  ],
+  "n_failed_runs": 0,
+  "n_successful_runs": 288,
+  "paired_comparisons": [
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_bf16_minus_direct_text_correct_bf16",
+      "dataset": "beam",
+      "exact_match_difference": 0.0,
+      "experiment": "E1",
+      "hops": 3,
+      "n_paired_examples": 60,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_bf16_minus_latent_correct_int8",
+      "dataset": "beam",
+      "exact_match_difference": 0.0,
+      "experiment": "E1",
+      "hops": 3,
+      "n_paired_examples": 60,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_bf16_minus_text_correct_bf16",
+      "dataset": "beam",
+      "exact_match_difference": 0.0,
+      "experiment": "E1",
+      "hops": 3,
+      "n_paired_examples": 60,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_int8_minus_direct_text_correct_bf16",
+      "dataset": "beam",
+      "exact_match_difference": 0.0,
+      "experiment": "E1",
+      "hops": 3,
+      "n_paired_examples": 60,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_int8_minus_latent_correct_bf16",
+      "dataset": "beam",
+      "exact_match_difference": 0.0,
+      "experiment": "E1",
+      "hops": 3,
+      "n_paired_examples": 60,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_int8_minus_text_correct_bf16",
+      "dataset": "beam",
+      "exact_match_difference": 0.0,
+      "experiment": "E1",
+      "hops": 3,
+      "n_paired_examples": 60,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_bf16_minus_direct_text_correct_bf16",
+      "dataset": "beam",
+      "exact_match_difference": 0.0,
+      "experiment": "E6",
+      "hops": 3,
+      "n_paired_examples": 12,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_bf16_minus_latent_correct_int8",
+      "dataset": "beam",
+      "exact_match_difference": 0.0,
+      "experiment": "E6",
+      "hops": 3,
+      "n_paired_examples": 12,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_bf16_minus_text_correct_bf16",
+      "dataset": "beam",
+      "exact_match_difference": 0.0,
+      "experiment": "E6",
+      "hops": 3,
+      "n_paired_examples": 12,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_int8_minus_direct_text_correct_bf16",
+      "dataset": "beam",
+      "exact_match_difference": 0.0,
+      "experiment": "E6",
+      "hops": 3,
+      "n_paired_examples": 12,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_int8_minus_latent_correct_bf16",
+      "dataset": "beam",
+      "exact_match_difference": 0.0,
+      "experiment": "E6",
+      "hops": 3,
+      "n_paired_examples": 12,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    },
+    {
+      "bridge_ratio": 0.2,
+      "comparison": "latent_correct_int8_minus_text_correct_bf16",
+      "dataset": "beam",
+      "exact_match_difference": 0.0,
+      "experiment": "E6",
+      "hops": 3,
+      "n_paired_examples": 12,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "precision": "mixed_arm_precision",
+      "update_policy": "all"
+    }
+  ],
+  "planned_runs": 288,
+  "protocol_version": "fixed-evidence-qwen3-v3-bm25-json",
+  "stop_reason": "complete"
+}

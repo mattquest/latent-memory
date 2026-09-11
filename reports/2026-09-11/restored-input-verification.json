@@ -1,0 +1,296 @@
+{
+  "operation": "CPU-only restore into isolated directory followed by identical-file reuse for all four report formats",
+  "report_calls": 4,
+  "archive_input_records": 24,
+  "distinct_restored_files": 17,
+  "records": [
+    {
+      "report": "initial",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/beam_1m_retrieved.jsonl",
+      "status": "reused",
+      "original_basename": "beam_1m_retrieved.jsonl",
+      "source_artifacts": [
+        "artifacts/data-inputs/a54778c5c530_beam_1m_retrieved.jsonl.gz"
+      ],
+      "report_version": "artifact-report-v1",
+      "bytes": 1685600,
+      "sha256": "a54778c5c530d04f154a74c2cca0a0666d6a4bf3e8b5bbe05dbef11eeac7838e"
+    },
+    {
+      "report": "initial",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/hotpotqa_dev_sample.jsonl",
+      "status": "reused",
+      "original_basename": "hotpotqa_dev_sample.jsonl",
+      "source_artifacts": [
+        "artifacts/data-inputs/c3cac853ad9a_hotpotqa_dev_sample.jsonl.gz"
+      ],
+      "report_version": "artifact-report-v1",
+      "bytes": 1708623,
+      "sha256": "c3cac853ad9a048ca52613244dc3d97c30324ddcc068c9b2465193873a59c0e2"
+    },
+    {
+      "report": "initial",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/musique_dev_sample.jsonl",
+      "status": "reused",
+      "original_basename": "musique_dev_sample.jsonl",
+      "source_artifacts": [
+        "artifacts/data-inputs/f4edc244a51c_musique_dev_sample.jsonl.gz"
+      ],
+      "report_version": "artifact-report-v1",
+      "bytes": 1594916,
+      "sha256": "f4edc244a51c7c566dbffc26d22149b177c27f345e34e195745d567a4d201432"
+    },
+    {
+      "report": "initial",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/synthetic_private_fact.jsonl",
+      "status": "reused",
+      "original_basename": "synthetic_private_fact.jsonl",
+      "source_artifacts": [
+        "artifacts/data-inputs/25166a8943fd_synthetic_private_fact.jsonl.gz"
+      ],
+      "report_version": "artifact-report-v1",
+      "bytes": 99072,
+      "sha256": "25166a8943fd7cdb20ad00d9b79bc033c54e3631af00224376b1426c4916a466"
+    },
+    {
+      "report": "initial",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/synthetic_updates.jsonl",
+      "status": "reused",
+      "original_basename": "synthetic_updates.jsonl",
+      "source_artifacts": [
+        "artifacts/data-inputs/bfa723095a92_synthetic_updates.jsonl.gz"
+      ],
+      "report_version": "artifact-report-v1",
+      "bytes": 160448,
+      "sha256": "bfa723095a92ac68084bf0caa41454f98106f25bd622560de42606ad5b6ac28a"
+    },
+    {
+      "report": "initial",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/beam_1m_1_corpus.jsonl",
+      "status": "reused",
+      "original_basename": "beam_1m_1_corpus.jsonl",
+      "source_artifacts": [
+        "artifacts/data-inputs/f28fb5928a2a_beam_1m_1_corpus.jsonl.gz"
+      ],
+      "report_version": "artifact-report-v1",
+      "bytes": 4655161,
+      "sha256": "f28fb5928a2a4e18b123f1ce7ab5b5b81c66ff220f4018c39308083255ac0253"
+    },
+    {
+      "report": "initial",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/beam_1m_2_corpus.jsonl",
+      "status": "reused",
+      "original_basename": "beam_1m_2_corpus.jsonl",
+      "source_artifacts": [
+        "artifacts/data-inputs/51a9f9b6b1c2_beam_1m_2_corpus.jsonl.gz"
+      ],
+      "report_version": "artifact-report-v1",
+      "bytes": 4638753,
+      "sha256": "51a9f9b6b1c2ce96b8aa7617fa423083ae372704aa8cdb34f2e5e545e4b6880e"
+    },
+    {
+      "report": "initial",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/beam_1m_3_corpus.jsonl",
+      "status": "reused",
+      "original_basename": "beam_1m_3_corpus.jsonl",
+      "source_artifacts": [
+        "artifacts/data-inputs/edadffd4eaf4_beam_1m_3_corpus.jsonl.gz"
+      ],
+      "report_version": "artifact-report-v1",
+      "bytes": 3975148,
+      "sha256": "edadffd4eaf41e9d35b1be872382b571bc1b4b165fd0701b2788c468f2bdc087"
+    },
+    {
+      "report": "focused",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/hotpotqa_dev_sample.jsonl",
+      "status": "reused",
+      "original_basename": "hotpotqa_dev_sample.jsonl",
+      "source_artifacts": [
+        "artifacts/data-inputs/c3cac853ad9a_hotpotqa_dev_sample.jsonl.gz"
+      ],
+      "report_version": "artifact-report-v1",
+      "bytes": 1708623,
+      "sha256": "c3cac853ad9a048ca52613244dc3d97c30324ddcc068c9b2465193873a59c0e2"
+    },
+    {
+      "report": "focused",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/focused_e2_docs10.jsonl",
+      "status": "reused",
+      "original_basename": "focused_e2_docs10.jsonl",
+      "source_artifacts": [
+        "artifacts/data-inputs/890c54a68747_focused_e2_docs10.jsonl.gz"
+      ],
+      "report_version": "artifact-report-v1",
+      "bytes": 7068,
+      "sha256": "890c54a68747af3f52d7c494a3ed88568fb3838a56284361adb122cd611596a6"
+    },
+    {
+      "report": "focused",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/focused_e2_docs20.jsonl",
+      "status": "reused",
+      "original_basename": "focused_e2_docs20.jsonl",
+      "source_artifacts": [
+        "artifacts/data-inputs/a4df390cada6_focused_e2_docs20.jsonl.gz"
+      ],
+      "report_version": "artifact-report-v1",
+      "bytes": 12174,
+      "sha256": "a4df390cada64c7e72d63cb95225332ba6d8b90e3a4cd2bcaabc4834aeb934cd"
+    },
+    {
+      "report": "focused",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/focused_e2_docs40.jsonl",
+      "status": "reused",
+      "original_basename": "focused_e2_docs40.jsonl",
+      "source_artifacts": [
+        "artifacts/data-inputs/7e4ea3b1d990_focused_e2_docs40.jsonl.gz"
+      ],
+      "report_version": "artifact-report-v1",
+      "bytes": 22374,
+      "sha256": "7e4ea3b1d9905b13563f16d7a7bfd6ce26118d66617cfcc66d351f8d7e74935d"
+    },
+    {
+      "report": "focused",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/focused_e2_docs6.jsonl",
+      "status": "reused",
+      "original_basename": "focused_e2_docs6.jsonl",
+      "source_artifacts": [
+        "artifacts/data-inputs/29268849ccdc_focused_e2_docs6.jsonl.gz"
+      ],
+      "report_version": "artifact-report-v1",
+      "bytes": 6536,
+      "sha256": "29268849ccdcc5e7874c995d352b0cb3b3506da252ffcd7bf88f8d005671ee3e"
+    },
+    {
+      "report": "focused",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/focused_e2_docs7.jsonl",
+      "status": "reused",
+      "original_basename": "focused_e2_docs7.jsonl",
+      "source_artifacts": [
+        "artifacts/data-inputs/2bc923661d93_focused_e2_docs7.jsonl.gz"
+      ],
+      "report_version": "artifact-report-v1",
+      "bytes": 5475,
+      "sha256": "2bc923661d93bf962dcd1d6c118bd2f3cad09a417397d237a308027ba3c88b03"
+    },
+    {
+      "report": "focused",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/musique_dev_sample.jsonl",
+      "status": "reused",
+      "original_basename": "musique_dev_sample.jsonl",
+      "source_artifacts": [
+        "artifacts/data-inputs/f4edc244a51c_musique_dev_sample.jsonl.gz"
+      ],
+      "report_version": "artifact-report-v1",
+      "bytes": 1594916,
+      "sha256": "f4edc244a51c7c566dbffc26d22149b177c27f345e34e195745d567a4d201432"
+    },
+    {
+      "report": "focused",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/beam_1m_1_corpus.jsonl",
+      "status": "reused",
+      "original_basename": "beam_1m_1_corpus.jsonl",
+      "source_artifacts": [
+        "artifacts/data-inputs/f28fb5928a2a_beam_1m_1_corpus.jsonl.gz"
+      ],
+      "report_version": "artifact-report-v1",
+      "bytes": 4655161,
+      "sha256": "f28fb5928a2a4e18b123f1ce7ab5b5b81c66ff220f4018c39308083255ac0253"
+    },
+    {
+      "report": "focused",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/beam_1m_2_corpus.jsonl",
+      "status": "reused",
+      "original_basename": "beam_1m_2_corpus.jsonl",
+      "source_artifacts": [
+        "artifacts/data-inputs/51a9f9b6b1c2_beam_1m_2_corpus.jsonl.gz"
+      ],
+      "report_version": "artifact-report-v1",
+      "bytes": 4638753,
+      "sha256": "51a9f9b6b1c2ce96b8aa7617fa423083ae372704aa8cdb34f2e5e545e4b6880e"
+    },
+    {
+      "report": "focused",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/beam_1m_3_corpus.jsonl",
+      "status": "reused",
+      "original_basename": "beam_1m_3_corpus.jsonl",
+      "source_artifacts": [
+        "artifacts/data-inputs/edadffd4eaf4_beam_1m_3_corpus.jsonl.gz"
+      ],
+      "report_version": "artifact-report-v1",
+      "bytes": 3975148,
+      "sha256": "edadffd4eaf41e9d35b1be872382b571bc1b4b165fd0701b2788c468f2bdc087"
+    },
+    {
+      "report": "adaptive",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/adaptive_musique_test.jsonl",
+      "status": "reused",
+      "original_basename": "adaptive_musique_test.jsonl",
+      "source_artifacts": [
+        "artifacts/inputs/dataset.jsonl.gz"
+      ],
+      "report_version": "adaptive-artifact-report-v1",
+      "bytes": 99887,
+      "sha256": "e09e7d8e3aa87cd81bb05d055013c9e9ab6e97ed7688a249ba6dd4563b53124f"
+    },
+    {
+      "report": "adaptive",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/adaptive_musique_corpus.jsonl",
+      "status": "reused",
+      "original_basename": "adaptive_musique_corpus.jsonl",
+      "source_artifacts": [
+        "artifacts/inputs/corpus.jsonl.gz"
+      ],
+      "report_version": "adaptive-artifact-report-v1",
+      "bytes": 12935527,
+      "sha256": "4e8ad63e12ab37e7fabec0158241d890a96171e006d226a7f22b6d00d594ce4a"
+    },
+    {
+      "report": "adaptive",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/adaptive_musique_corpus_provenance.jsonl",
+      "status": "reused",
+      "original_basename": "adaptive_musique_corpus_provenance.jsonl",
+      "source_artifacts": [
+        "artifacts/provenance/adaptive_musique_corpus_provenance.jsonl.gz"
+      ],
+      "report_version": "adaptive-artifact-report-v1",
+      "bytes": 5563337,
+      "sha256": "ec8ce692b2f8294d641441c993c72d22a05e3d0a9eade1f6a9562b30b5869a3b"
+    },
+    {
+      "report": "adaptive",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/adaptive_musique_dev.jsonl",
+      "status": "reused",
+      "original_basename": "adaptive_musique_dev.jsonl",
+      "source_artifacts": [
+        "artifacts/provenance/adaptive_musique_dev.jsonl.gz"
+      ],
+      "report_version": "adaptive-artifact-report-v1",
+      "bytes": 6123,
+      "sha256": "a7627e89d17ee6933b6b810406784dbc9e115264432dcf4df34b3fbce09f87a3"
+    },
+    {
+      "report": "context-pressure",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/adaptive_musique_test.jsonl",
+      "status": "reused",
+      "original_basename": "adaptive_musique_test.jsonl",
+      "source_artifacts": [
+        "artifacts/inputs/dataset.jsonl.gz"
+      ],
+      "report_version": "pressure-artifact-report-v1",
+      "bytes": 99887,
+      "sha256": "e09e7d8e3aa87cd81bb05d055013c9e9ab6e97ed7688a249ba6dd4563b53124f"
+    },
+    {
+      "report": "context-pressure",
+      "path": "/Users/matt/Documents/ChatGPT/LatentBase/runs/final-restored-data/adaptive_musique_corpus.jsonl",
+      "status": "reused",
+      "original_basename": "adaptive_musique_corpus.jsonl",
+      "source_artifacts": [
+        "artifacts/inputs/corpus.jsonl.gz"
+      ],
+      "report_version": "pressure-artifact-report-v1",
+      "bytes": 12935527,
+      "sha256": "4e8ad63e12ab37e7fabec0158241d890a96171e006d226a7f22b6d00d594ce4a"
+    }
+  ]
+}

@@ -1,0 +1,661 @@
+{
+  "artifacts": [
+    {
+      "artifact": "artifacts/runs/beam_equal_updates/results.jsonl.gz",
+      "artifact_bytes": 148546,
+      "artifact_sha256": "6177a9571c88ea266c1dc8f5b4f27e8d9b5da46b711a1c47026ad1836a4b2989",
+      "compression": "gzip",
+      "source": "runs/overnight/beam_equal_updates/results.jsonl",
+      "source_bytes": 1938497,
+      "source_sha256": "31422640d2d7698b4dbbea0fef76caef4705026dcc91f40b59997bb90510207e"
+    },
+    {
+      "artifact": "artifacts/runs/beam_equal_updates/manifest.json",
+      "artifact_bytes": 4901,
+      "artifact_sha256": "bc810b1d6d5c04919505ebfe171c94a76a22631f5eebc19adb59fc2b40e95ef8",
+      "compression": null,
+      "source": "runs/overnight/beam_equal_updates/manifest.json",
+      "source_bytes": 4901,
+      "source_sha256": "bc810b1d6d5c04919505ebfe171c94a76a22631f5eebc19adb59fc2b40e95ef8"
+    },
+    {
+      "artifact": "artifacts/runs/beam_equal_updates/summary.json",
+      "artifact_bytes": 15306,
+      "artifact_sha256": "f5b817ff6fe49f04995b0d1423db22c42bf9b4a905d18cecd3c73bddd75401b5",
+      "compression": null,
+      "source": "runs/overnight/beam_equal_updates/summary.json",
+      "source_bytes": 15306,
+      "source_sha256": "f5b817ff6fe49f04995b0d1423db22c42bf9b4a905d18cecd3c73bddd75401b5"
+    },
+    {
+      "artifact": "artifacts/runs/beam_equal_updates/checkpoint.json",
+      "artifact_bytes": 123,
+      "artifact_sha256": "fef17b2ea7054eed3db4889e34b99c67842f8f1c32de9ac1f450a837c69a30d3",
+      "compression": null,
+      "source": "runs/overnight/beam_equal_updates/checkpoint.json",
+      "source_bytes": 123,
+      "source_sha256": "fef17b2ea7054eed3db4889e34b99c67842f8f1c32de9ac1f450a837c69a30d3"
+    },
+    {
+      "artifact": "artifacts/runs/hotpot_equal/results.jsonl.gz",
+      "artifact_bytes": 107807,
+      "artifact_sha256": "0970a170c7702cd5df8d3dc2afae6521da8c6f3447b4ab59f75317411b3eaccf",
+      "compression": "gzip",
+      "source": "runs/overnight/hotpot_equal/results.jsonl",
+      "source_bytes": 1735095,
+      "source_sha256": "f10b4afb922293eb88c863b30342cc07732a60516c250128e2c2529a593b4618"
+    },
+    {
+      "artifact": "artifacts/runs/hotpot_equal/manifest.json",
+      "artifact_bytes": 4127,
+      "artifact_sha256": "dc3bb6ec9b11c781967857b0423feb07a5eab6594f6300598f873301941f5417",
+      "compression": null,
+      "source": "runs/overnight/hotpot_equal/manifest.json",
+      "source_bytes": 4127,
+      "source_sha256": "dc3bb6ec9b11c781967857b0423feb07a5eab6594f6300598f873301941f5417"
+    },
+    {
+      "artifact": "artifacts/runs/hotpot_equal/summary.json",
+      "artifact_bytes": 8152,
+      "artifact_sha256": "9ee264a0833df2b7fc07d5cb6413b0b5579f6dcef11bc7c3cd800b170f6b89f1",
+      "compression": null,
+      "source": "runs/overnight/hotpot_equal/summary.json",
+      "source_bytes": 8152,
+      "source_sha256": "9ee264a0833df2b7fc07d5cb6413b0b5579f6dcef11bc7c3cd800b170f6b89f1"
+    },
+    {
+      "artifact": "artifacts/runs/hotpot_equal/checkpoint.json",
+      "artifact_bytes": 123,
+      "artifact_sha256": "764873727980bc09e7380a8dcd3d62f89a78158eca72e8684cd82502859930cb",
+      "compression": null,
+      "source": "runs/overnight/hotpot_equal/checkpoint.json",
+      "source_bytes": 123,
+      "source_sha256": "764873727980bc09e7380a8dcd3d62f89a78158eca72e8684cd82502859930cb"
+    },
+    {
+      "artifact": "artifacts/runs/musique_equal/results.jsonl.gz",
+      "artifact_bytes": 114430,
+      "artifact_sha256": "9b82b9ad102cb8095f3ee511a280dd62076ee9ecb794cf6fc0649989f904f590",
+      "compression": "gzip",
+      "source": "runs/overnight/musique_equal/results.jsonl",
+      "source_bytes": 1658754,
+      "source_sha256": "1bc0976ab93231ae338976d83bf04a4c33a6808f9787bfca14fe3039ee122f23"
+    },
+    {
+      "artifact": "artifacts/runs/musique_equal/manifest.json",
+      "artifact_bytes": 4614,
+      "artifact_sha256": "7601e9152e6327713fc8ddbfb703e7982a476e265c13854341d120d37bc72454",
+      "compression": null,
+      "source": "runs/overnight/musique_equal/manifest.json",
+      "source_bytes": 4614,
+      "source_sha256": "7601e9152e6327713fc8ddbfb703e7982a476e265c13854341d120d37bc72454"
+    },
+    {
+      "artifact": "artifacts/runs/musique_equal/summary.json",
+      "artifact_bytes": 8168,
+      "artifact_sha256": "5b18dc14c360efdabe54f19d847d0b3828861f9f5d9dcf20ef0ee724fbc9d227",
+      "compression": null,
+      "source": "runs/overnight/musique_equal/summary.json",
+      "source_bytes": 8168,
+      "source_sha256": "5b18dc14c360efdabe54f19d847d0b3828861f9f5d9dcf20ef0ee724fbc9d227"
+    },
+    {
+      "artifact": "artifacts/runs/musique_equal/checkpoint.json",
+      "artifact_bytes": 123,
+      "artifact_sha256": "09d3fcf3a922f0a03be9f4f31e648a9645f0dbfb229a514f3c9f801d70e3491b",
+      "compression": null,
+      "source": "runs/overnight/musique_equal/checkpoint.json",
+      "source_bytes": 123,
+      "source_sha256": "09d3fcf3a922f0a03be9f4f31e648a9645f0dbfb229a514f3c9f801d70e3491b"
+    },
+    {
+      "artifact": "artifacts/runs/private_audit_precision/results.jsonl.gz",
+      "artifact_bytes": 92850,
+      "artifact_sha256": "bdb871fbc3f0d884f712172fcf172fbe2643ceb0b790b031e5f4a27208cb7ca2",
+      "compression": "gzip",
+      "source": "runs/overnight/private_audit_precision/results.jsonl",
+      "source_bytes": 2310390,
+      "source_sha256": "6dbbfae77be0b4e1cfaff40111514d84085d66484bca61b64d3950d255cd50cd"
+    },
+    {
+      "artifact": "artifacts/runs/private_audit_precision/manifest.json",
+      "artifact_bytes": 4101,
+      "artifact_sha256": "600fb159da2164e521417603344acc20641af739e3f6cc739b37774884c1167d",
+      "compression": null,
+      "source": "runs/overnight/private_audit_precision/manifest.json",
+      "source_bytes": 4101,
+      "source_sha256": "600fb159da2164e521417603344acc20641af739e3f6cc739b37774884c1167d"
+    },
+    {
+      "artifact": "artifacts/runs/private_audit_precision/summary.json",
+      "artifact_bytes": 11295,
+      "artifact_sha256": "119f6f3dd8ce8ec92f4f708f6dfbce0fef96db0f60ff2cad4fad05f0a078311c",
+      "compression": null,
+      "source": "runs/overnight/private_audit_precision/summary.json",
+      "source_bytes": 11295,
+      "source_sha256": "119f6f3dd8ce8ec92f4f708f6dfbce0fef96db0f60ff2cad4fad05f0a078311c"
+    },
+    {
+      "artifact": "artifacts/runs/private_audit_precision/checkpoint.json",
+      "artifact_bytes": 125,
+      "artifact_sha256": "68e56fc3f05717067b67667eaeeb974a37a507e555be8b64a9da015900b55a08",
+      "compression": null,
+      "source": "runs/overnight/private_audit_precision/checkpoint.json",
+      "source_bytes": 125,
+      "source_sha256": "68e56fc3f05717067b67667eaeeb974a37a507e555be8b64a9da015900b55a08"
+    },
+    {
+      "artifact": "artifacts/runs/updates/results.jsonl.gz",
+      "artifact_bytes": 110540,
+      "artifact_sha256": "e30afa257fb6c6c4ab4271099ff624fd536476b6e925264d151480fa997b3280",
+      "compression": "gzip",
+      "source": "runs/overnight/updates/results.jsonl",
+      "source_bytes": 2483291,
+      "source_sha256": "fb43a22b564721270f2fbe20f4f1812c7d8aeef1fad28f20b8768a460ba56eb6"
+    },
+    {
+      "artifact": "artifacts/runs/updates/manifest.json",
+      "artifact_bytes": 4344,
+      "artifact_sha256": "2d78405c1283932d21feae3ee532139d80e0ae7f931be96086a35559baadad56",
+      "compression": null,
+      "source": "runs/overnight/updates/manifest.json",
+      "source_bytes": 4344,
+      "source_sha256": "2d78405c1283932d21feae3ee532139d80e0ae7f931be96086a35559baadad56"
+    },
+    {
+      "artifact": "artifacts/runs/updates/summary.json",
+      "artifact_bytes": 14635,
+      "artifact_sha256": "3b5c4c148e1cbfe6bbe40755fa915e4d2543b3441ca1c3653217e24b2c342ea7",
+      "compression": null,
+      "source": "runs/overnight/updates/summary.json",
+      "source_bytes": 14635,
+      "source_sha256": "3b5c4c148e1cbfe6bbe40755fa915e4d2543b3441ca1c3653217e24b2c342ea7"
+    },
+    {
+      "artifact": "artifacts/runs/updates/checkpoint.json",
+      "artifact_bytes": 124,
+      "artifact_sha256": "9b0e7a04a6b995665e586a3b89df2eb0435a7aea48e1d2d93628f550839c2e9a",
+      "compression": null,
+      "source": "runs/overnight/updates/checkpoint.json",
+      "source_bytes": 124,
+      "source_sha256": "9b0e7a04a6b995665e586a3b89df2eb0435a7aea48e1d2d93628f550839c2e9a"
+    },
+    {
+      "artifact": "artifacts/beam-judge/judgments.jsonl.gz",
+      "artifact_bytes": 159984,
+      "artifact_sha256": "a958b1fdb4e1259a293f334d17ad5c27b810effb21950cdf01593982c73c0182",
+      "compression": "gzip",
+      "source": "runs/beam-judge/judgments.jsonl",
+      "source_bytes": 949888,
+      "source_sha256": "1c3ebb39ec53a1f0ad2b8f3f5481800daa1ad94ba2d6cd77733b23bbaa529cf8"
+    },
+    {
+      "artifact": "artifacts/beam-judge/manifest.json",
+      "artifact_bytes": 2046,
+      "artifact_sha256": "958b88fb973fdaf7500badf9d0da9e56f321be035409b076217f67d79600b560",
+      "compression": null,
+      "source": "runs/beam-judge/manifest.json",
+      "source_bytes": 2046,
+      "source_sha256": "958b88fb973fdaf7500badf9d0da9e56f321be035409b076217f67d79600b560"
+    },
+    {
+      "artifact": "artifacts/beam-judge/summary.json",
+      "artifact_bytes": 7936,
+      "artifact_sha256": "f8e4ca5740dbceb462619d162a5498496193325c2bce06968e136a4b076fab26",
+      "compression": null,
+      "source": "runs/beam-judge/summary.json",
+      "source_bytes": 7936,
+      "source_sha256": "f8e4ca5740dbceb462619d162a5498496193325c2bce06968e136a4b076fab26"
+    },
+    {
+      "artifact": "artifacts/data-inputs/a54778c5c530_beam_1m_retrieved.jsonl.gz",
+      "artifact_bytes": 393769,
+      "artifact_sha256": "4bc3a639a97b0f1a1562513951da9f26788297c75b435ca082c1ac459deabeff",
+      "compression": "gzip",
+      "data_license": "CC-BY-SA-4.0",
+      "data_license_key": "beam",
+      "original_basename": "beam_1m_retrieved.jsonl",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/beam_1m_retrieved.jsonl",
+      "source_bytes": 1685600,
+      "source_sha256": "a54778c5c530d04f154a74c2cca0a0666d6a4bf3e8b5bbe05dbef11eeac7838e",
+      "used_by_jobs": [
+        "beam_equal_updates"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/data-inputs/c3cac853ad9a_hotpotqa_dev_sample.jsonl.gz",
+      "artifact_bytes": 340269,
+      "artifact_sha256": "036b4794229787590e791680ee9f5fe75a9e4bb3c56ccdce29aa6bc16cde6343",
+      "compression": "gzip",
+      "data_license": "CC-BY-SA-4.0",
+      "data_license_key": "hotpotqa",
+      "original_basename": "hotpotqa_dev_sample.jsonl",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/hotpotqa_dev_sample.jsonl",
+      "source_bytes": 1708623,
+      "source_sha256": "c3cac853ad9a048ca52613244dc3d97c30324ddcc068c9b2465193873a59c0e2",
+      "used_by_jobs": [
+        "hotpot_equal"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/data-inputs/f4edc244a51c_musique_dev_sample.jsonl.gz",
+      "artifact_bytes": 543205,
+      "artifact_sha256": "163884bd7e41e54395ff56bdf82c89e98a9d1dc402961e6a5615ebf16558fabc",
+      "compression": "gzip",
+      "data_license": "CC-BY-4.0",
+      "data_license_key": "musique",
+      "original_basename": "musique_dev_sample.jsonl",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/musique_dev_sample.jsonl",
+      "source_bytes": 1594916,
+      "source_sha256": "f4edc244a51c7c566dbffc26d22149b177c27f345e34e195745d567a4d201432",
+      "used_by_jobs": [
+        "musique_equal"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/data-inputs/25166a8943fd_synthetic_private_fact.jsonl.gz",
+      "artifact_bytes": 4481,
+      "artifact_sha256": "cf70455270979322285ff6dd05dd1154ae2499d62268bdb76460a46f43497daa",
+      "compression": "gzip",
+      "data_license": "project-generated; see repository license or obtain author permission",
+      "data_license_key": "synthetic",
+      "original_basename": "synthetic_private_fact.jsonl",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/synthetic_private_fact.jsonl",
+      "source_bytes": 99072,
+      "source_sha256": "25166a8943fd7cdb20ad00d9b79bc033c54e3631af00224376b1426c4916a466",
+      "used_by_jobs": [
+        "private_audit_precision"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/data-inputs/bfa723095a92_synthetic_updates.jsonl.gz",
+      "artifact_bytes": 10009,
+      "artifact_sha256": "d45d1bdfc3ffc0644ec738a95d8d9828be9e0556a98ad642f621cf5f50cd348d",
+      "compression": "gzip",
+      "data_license": "project-generated; see repository license or obtain author permission",
+      "data_license_key": "synthetic",
+      "original_basename": "synthetic_updates.jsonl",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/synthetic_updates.jsonl",
+      "source_bytes": 160448,
+      "source_sha256": "bfa723095a92ac68084bf0caa41454f98106f25bd622560de42606ad5b6ac28a",
+      "used_by_jobs": [
+        "updates"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/data-inputs/f28fb5928a2a_beam_1m_1_corpus.jsonl.gz",
+      "artifact_bytes": 900259,
+      "artifact_sha256": "084dbed3e44da44d4875f517b96dee1c913552878573ef361e2f3a852ce678fb",
+      "compression": "gzip",
+      "data_license": "CC-BY-SA-4.0",
+      "data_license_key": "beam",
+      "original_basename": "beam_1m_1_corpus.jsonl",
+      "source": "data/beam_1m_1_corpus.jsonl",
+      "source_bytes": 4655161,
+      "source_sha256": "f28fb5928a2a4e18b123f1ce7ab5b5b81c66ff220f4018c39308083255ac0253",
+      "verified_against_normalized_input": true
+    },
+    {
+      "artifact": "artifacts/data-inputs/51a9f9b6b1c2_beam_1m_2_corpus.jsonl.gz",
+      "artifact_bytes": 972170,
+      "artifact_sha256": "2c5e3c55d94177f919531cf1274d609de481b75185d00a1cf73b0afe7950d98e",
+      "compression": "gzip",
+      "data_license": "CC-BY-SA-4.0",
+      "data_license_key": "beam",
+      "original_basename": "beam_1m_2_corpus.jsonl",
+      "source": "data/beam_1m_2_corpus.jsonl",
+      "source_bytes": 4638753,
+      "source_sha256": "51a9f9b6b1c2ce96b8aa7617fa423083ae372704aa8cdb34f2e5e545e4b6880e",
+      "verified_against_normalized_input": true
+    },
+    {
+      "artifact": "artifacts/data-inputs/edadffd4eaf4_beam_1m_3_corpus.jsonl.gz",
+      "artifact_bytes": 817865,
+      "artifact_sha256": "cc906ee61de65818ad41207ddbd2f59f3284088a406ecb6e98106b843d35c94b",
+      "compression": "gzip",
+      "data_license": "CC-BY-SA-4.0",
+      "data_license_key": "beam",
+      "original_basename": "beam_1m_3_corpus.jsonl",
+      "source": "data/beam_1m_3_corpus.jsonl",
+      "source_bytes": 3975148,
+      "source_sha256": "edadffd4eaf41e9d35b1be872382b571bc1b4b165fd0701b2788c468f2bdc087",
+      "verified_against_normalized_input": true
+    },
+    {
+      "artifact": "artifacts/data-inputs/data-licenses.json",
+      "artifact_bytes": 7835,
+      "artifact_sha256": "c55b7a094eba8ab94e351a78f007d4d82cab6d5340f8f70506a09cb8ef697f23",
+      "source": "generated per-input license manifest"
+    },
+    {
+      "artifact": "artifacts/data-inputs/DATA_LICENSES.md",
+      "artifact_bytes": 1373,
+      "artifact_sha256": "64f0941ffa6e3046526cd90801383b5f07efb1bb92d49ad36cd4cc117ed3e096",
+      "source": "generated provenance note"
+    },
+    {
+      "artifact": "artifacts/data-provenance/data-and-protocol.md",
+      "artifact_bytes": 15738,
+      "artifact_sha256": "f3661c51b722cab1ed2a83cca85b6ba5c2c988dbe36b268f6d8b964636097eb9",
+      "compression": null,
+      "source": "docs/data-and-protocol.md",
+      "source_bytes": 15738,
+      "source_sha256": "f3661c51b722cab1ed2a83cca85b6ba5c2c988dbe36b268f6d8b964636097eb9"
+    },
+    {
+      "artifact": "artifacts/source/3a07325b410012233f6a191daed6394ba1b94228236ee9ad02ac43b0d74b0daf/engine/backends_mlx.py",
+      "artifact_bytes": 21814,
+      "artifact_sha256": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+      "compression": null,
+      "original_source_path": "engine/backends_mlx.py",
+      "recorded_git_heads": [
+        "64b02d36b532065fcc8bfcd7071e101d2860d8a4",
+        "beb2127697cd964f23d96022f924283f2591e15f",
+        "c4b89bb328d3effff5454e4b4c7f235331780baa"
+      ],
+      "resolution": "matching_working_file",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/engine/backends_mlx.py",
+      "source_bytes": 21814,
+      "source_sha256": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+      "source_version_sha256": "3a07325b410012233f6a191daed6394ba1b94228236ee9ad02ac43b0d74b0daf",
+      "used_by_jobs": [
+        "beam_equal_updates",
+        "hotpot_equal",
+        "musique_equal",
+        "private_audit_precision",
+        "updates"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/source/3a07325b410012233f6a191daed6394ba1b94228236ee9ad02ac43b0d74b0daf/eval/real_experiments.py",
+      "artifact_bytes": 40126,
+      "artifact_sha256": "bdc7537cf94f05c25b55a32ec049f33343b7d83fe6474048380284dc6c5f453c",
+      "compression": null,
+      "original_source_path": "eval/real_experiments.py",
+      "recorded_git_heads": [
+        "64b02d36b532065fcc8bfcd7071e101d2860d8a4",
+        "beb2127697cd964f23d96022f924283f2591e15f",
+        "c4b89bb328d3effff5454e4b4c7f235331780baa"
+      ],
+      "resolution": "matching_recorded_git_blob",
+      "resolved_git_head": "64b02d36b532065fcc8bfcd7071e101d2860d8a4",
+      "source": "git:64b02d36b532065fcc8bfcd7071e101d2860d8a4:eval/real_experiments.py",
+      "source_bytes": 40126,
+      "source_sha256": "bdc7537cf94f05c25b55a32ec049f33343b7d83fe6474048380284dc6c5f453c",
+      "source_version_sha256": "3a07325b410012233f6a191daed6394ba1b94228236ee9ad02ac43b0d74b0daf",
+      "used_by_jobs": [
+        "beam_equal_updates",
+        "hotpot_equal",
+        "musique_equal",
+        "private_audit_precision",
+        "updates"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/source/3a07325b410012233f6a191daed6394ba1b94228236ee9ad02ac43b0d74b0daf/eval/retrieval.py",
+      "artifact_bytes": 2733,
+      "artifact_sha256": "7d716e40bdf845c4797f7f4b9ceeaa64681bc2adb1648d28ea33b0203037228a",
+      "compression": null,
+      "original_source_path": "eval/retrieval.py",
+      "recorded_git_heads": [
+        "64b02d36b532065fcc8bfcd7071e101d2860d8a4",
+        "beb2127697cd964f23d96022f924283f2591e15f",
+        "c4b89bb328d3effff5454e4b4c7f235331780baa"
+      ],
+      "resolution": "matching_recorded_git_blob",
+      "resolved_git_head": "64b02d36b532065fcc8bfcd7071e101d2860d8a4",
+      "source": "git:64b02d36b532065fcc8bfcd7071e101d2860d8a4:eval/retrieval.py",
+      "source_bytes": 2733,
+      "source_sha256": "7d716e40bdf845c4797f7f4b9ceeaa64681bc2adb1648d28ea33b0203037228a",
+      "source_version_sha256": "3a07325b410012233f6a191daed6394ba1b94228236ee9ad02ac43b0d74b0daf",
+      "used_by_jobs": [
+        "beam_equal_updates",
+        "hotpot_equal",
+        "musique_equal",
+        "private_audit_precision",
+        "updates"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/source/3a07325b410012233f6a191daed6394ba1b94228236ee9ad02ac43b0d74b0daf/scripts/run_experiments.py",
+      "artifact_bytes": 4094,
+      "artifact_sha256": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7",
+      "compression": null,
+      "original_source_path": "scripts/run_experiments.py",
+      "recorded_git_heads": [
+        "64b02d36b532065fcc8bfcd7071e101d2860d8a4",
+        "beb2127697cd964f23d96022f924283f2591e15f",
+        "c4b89bb328d3effff5454e4b4c7f235331780baa"
+      ],
+      "resolution": "matching_working_file",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/scripts/run_experiments.py",
+      "source_bytes": 4094,
+      "source_sha256": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7",
+      "source_version_sha256": "3a07325b410012233f6a191daed6394ba1b94228236ee9ad02ac43b0d74b0daf",
+      "used_by_jobs": [
+        "beam_equal_updates",
+        "hotpot_equal",
+        "musique_equal",
+        "private_audit_precision",
+        "updates"
+      ],
+      "verified_against_generation_manifest": true
+    },
+    {
+      "artifact": "artifacts/monitoring/guard-status.json",
+      "artifact_bytes": 528,
+      "artifact_sha256": "470b59091997dc9c9c91d6be9c283236db6846511ca00cf6b31106a6064e901f",
+      "compression": null,
+      "source": "runs/overnight/guard-status.json",
+      "source_bytes": 528,
+      "source_sha256": "470b59091997dc9c9c91d6be9c283236db6846511ca00cf6b31106a6064e901f"
+    },
+    {
+      "artifact": "artifacts/monitoring/matrix-status.json",
+      "artifact_bytes": 908,
+      "artifact_sha256": "2622aea4f00458c7dedd0ee0f7fadcd57231cb3d84a27cf83654d8bc0904099a",
+      "compression": null,
+      "source": "runs/overnight/matrix-status.json",
+      "source_bytes": 908,
+      "source_sha256": "2622aea4f00458c7dedd0ee0f7fadcd57231cb3d84a27cf83654d8bc0904099a"
+    },
+    {
+      "artifact": "artifacts/monitoring/resources.jsonl.gz",
+      "artifact_bytes": 20761,
+      "artifact_sha256": "f0abe678b7d3743ba1721388088aabdaea2f1ed1056cf85552962565e7f3339c",
+      "compression": "gzip",
+      "source": "runs/overnight/resources.jsonl",
+      "source_bytes": 194881,
+      "source_sha256": "7156cb150e24030bbc8e9081fc34a292026dccb38133082af29d25e3994654f7"
+    },
+    {
+      "artifact": "artifacts/monitoring/amendment.json",
+      "artifact_bytes": 1126,
+      "artifact_sha256": "3865c03bfa620d60e55bd5110d6bfe9f96647c9cbf70a169672bc03da9eed948",
+      "compression": null,
+      "source": "runs/overnight/amendment.json",
+      "source_bytes": 1126,
+      "source_sha256": "3865c03bfa620d60e55bd5110d6bfe9f96647c9cbf70a169672bc03da9eed948"
+    },
+    {
+      "artifact": "artifacts/data-provenance/adaptive_musique.manifest.json",
+      "artifact_bytes": 12383,
+      "artifact_sha256": "bd97eca01c21aa09476db7e8e6b115879220c99f8bbf40a5965cf4c05c192e25",
+      "compression": null,
+      "source": "data/adaptive_musique.manifest.json",
+      "source_bytes": 12383,
+      "source_sha256": "bd97eca01c21aa09476db7e8e6b115879220c99f8bbf40a5965cf4c05c192e25"
+    },
+    {
+      "artifact": "artifacts/data-provenance/beam_1m_1_retrieved.manifest.json",
+      "artifact_bytes": 272,
+      "artifact_sha256": "957894cb6570c6d502fb822425451a5be30dfc34e4ca4e197b8f6033505d55b0",
+      "compression": null,
+      "source": "data/beam_1m_1_retrieved.manifest.json",
+      "source_bytes": 272,
+      "source_sha256": "957894cb6570c6d502fb822425451a5be30dfc34e4ca4e197b8f6033505d55b0"
+    },
+    {
+      "artifact": "artifacts/data-provenance/beam_1m_2_retrieved.manifest.json",
+      "artifact_bytes": 272,
+      "artifact_sha256": "fa5c12de74c543bcf96a479fd7aded9502928f8b3eae7a03068beca4d8b8af19",
+      "compression": null,
+      "source": "data/beam_1m_2_retrieved.manifest.json",
+      "source_bytes": 272,
+      "source_sha256": "fa5c12de74c543bcf96a479fd7aded9502928f8b3eae7a03068beca4d8b8af19"
+    },
+    {
+      "artifact": "artifacts/data-provenance/beam_1m_3_retrieved.manifest.json",
+      "artifact_bytes": 272,
+      "artifact_sha256": "e57738be8c73ec9ae53de1a51b569c16a36df04b8e82c8573b8477e92171e2f8",
+      "compression": null,
+      "source": "data/beam_1m_3_retrieved.manifest.json",
+      "source_bytes": 272,
+      "source_sha256": "e57738be8c73ec9ae53de1a51b569c16a36df04b8e82c8573b8477e92171e2f8"
+    },
+    {
+      "artifact": "artifacts/data-provenance/focused_e2_groups.manifest.json",
+      "artifact_bytes": 4827,
+      "artifact_sha256": "34b6a90e85f1afaf6bd2e8a8d2b4f4ce5017c751d0cb85623d4bd85e6a84410c",
+      "compression": null,
+      "source": "data/focused_e2_groups.manifest.json",
+      "source_bytes": 4827,
+      "source_sha256": "34b6a90e85f1afaf6bd2e8a8d2b4f4ce5017c751d0cb85623d4bd85e6a84410c"
+    },
+    {
+      "artifact": "artifacts/data-provenance/manifest-beam.json",
+      "artifact_bytes": 3984,
+      "artifact_sha256": "dcf9f3348bc70c8f07b957fcdf29409199a9bcaff1dc1e621719b50e4ba398ca",
+      "compression": null,
+      "source": "data/manifest-beam.json",
+      "source_bytes": 3984,
+      "source_sha256": "dcf9f3348bc70c8f07b957fcdf29409199a9bcaff1dc1e621719b50e4ba398ca"
+    },
+    {
+      "artifact": "artifacts/data-provenance/manifest-hotpotqa.json",
+      "artifact_bytes": 1791,
+      "artifact_sha256": "7a28b30ab049b3467f17f713d247f065924fc7dbcb6372e2bba1930eef6f8e52",
+      "compression": null,
+      "source": "data/manifest-hotpotqa.json",
+      "source_bytes": 1791,
+      "source_sha256": "7a28b30ab049b3467f17f713d247f065924fc7dbcb6372e2bba1930eef6f8e52"
+    },
+    {
+      "artifact": "artifacts/data-provenance/manifest-musique.json",
+      "artifact_bytes": 811,
+      "artifact_sha256": "6d02235f709a1998a4f26d181605f73dec76c2f920d854312f488bd35fed3bd4",
+      "compression": null,
+      "source": "data/manifest-musique.json",
+      "source_bytes": 811,
+      "source_sha256": "6d02235f709a1998a4f26d181605f73dec76c2f920d854312f488bd35fed3bd4"
+    },
+    {
+      "artifact": "artifacts/data-provenance/manifest-synthetic.json",
+      "artifact_bytes": 1323,
+      "artifact_sha256": "948110256f478adb71fb96231ba847c52a43ec9a9bdef6a024d8364ebd78f0af",
+      "compression": null,
+      "source": "data/manifest-synthetic.json",
+      "source_bytes": 1323,
+      "source_sha256": "948110256f478adb71fb96231ba847c52a43ec9a9bdef6a024d8364ebd78f0af"
+    },
+    {
+      "artifact": "artifacts/data-provenance/validation.json",
+      "artifact_bytes": 2978,
+      "artifact_sha256": "526d2ac1ac47ad3b76174cb4f1465609bb33f6a9b9e415ec1787723a993e1d5b",
+      "compression": null,
+      "source": "data/validation.json",
+      "source_bytes": 2978,
+      "source_sha256": "526d2ac1ac47ad3b76174cb4f1465609bb33f6a9b9e415ec1787723a993e1d5b"
+    },
+    {
+      "artifact": "artifacts/protocol-provenance/scripts/prepare_focused_e2.py",
+      "artifact_bytes": 5210,
+      "artifact_sha256": "6f2f1527ec7fdb882e891547dff19946b173a55254e4c1ac65f0806ad2f65c6a",
+      "compression": null,
+      "source": "scripts/prepare_focused_e2.py",
+      "source_bytes": 5210,
+      "source_sha256": "6f2f1527ec7fdb882e891547dff19946b173a55254e4c1ac65f0806ad2f65c6a"
+    },
+    {
+      "artifact": "artifacts/protocol-provenance/docs/budget-amendment.md",
+      "artifact_bytes": 6262,
+      "artifact_sha256": "02773ddd5f288a118128427c50b97bf68c4ef0bfe7cdbbe374ef7331665ef2d1",
+      "compression": null,
+      "source": "docs/budget-amendment.md",
+      "source_bytes": 6262,
+      "source_sha256": "02773ddd5f288a118128427c50b97bf68c4ef0bfe7cdbbe374ef7331665ef2d1"
+    },
+    {
+      "artifact": "artifacts/reproducibility-audit/bm25_hashseed_audit.json",
+      "artifact_bytes": 6218,
+      "artifact_sha256": "08c9bec6732a4c7ecad80dfd2e1c7a1df6214ededfec6316c559af453c586bbc",
+      "compression": null,
+      "source": "runs/bm25_hashseed_audit.json",
+      "source_bytes": 6218,
+      "source_sha256": "08c9bec6732a4c7ecad80dfd2e1c7a1df6214ededfec6316c559af453c586bbc"
+    },
+    {
+      "artifact": "artifacts/reproducibility-audit/bm25_hashseed_ledgers.json.gz",
+      "artifact_bytes": 574341,
+      "artifact_sha256": "797c5675e4dd01091c8c57e3cfee4057cb62da2a9088ed666fead18106cdaec5",
+      "compression": null,
+      "source": "runs/bm25_hashseed_ledgers.json.gz",
+      "source_bytes": 574341,
+      "source_sha256": "797c5675e4dd01091c8c57e3cfee4057cb62da2a9088ed666fead18106cdaec5"
+    },
+    {
+      "artifact": "artifacts/reproducibility-audit/bm25_determinism.patch",
+      "artifact_bytes": 499,
+      "artifact_sha256": "7e36fd08f3a73d7e2768b9f1ab37174bfd772994e9197c25d7127af0c0970ec1",
+      "compression": null,
+      "source": "runs/bm25_determinism.patch",
+      "source_bytes": 499,
+      "source_sha256": "7e36fd08f3a73d7e2768b9f1ab37174bfd772994e9197c25d7127af0c0970ec1"
+    },
+    {
+      "artifact": "artifacts/reproducibility-audit/read_timing_sidecar.patch",
+      "artifact_bytes": 4472,
+      "artifact_sha256": "66c24fb6f773a89512c080ef750dbf95b921145962beae542150b9d89f5a3492",
+      "compression": null,
+      "source": "runs/read_timing_sidecar.patch",
+      "source_bytes": 4472,
+      "source_sha256": "66c24fb6f773a89512c080ef750dbf95b921145962beae542150b9d89f5a3492"
+    },
+    {
+      "artifact": "artifacts/model-provenance/model-manifest.json",
+      "artifact_bytes": 1762,
+      "artifact_sha256": "6c39ea78fa81a55dd8f2bee6b07a7564f0346afce9a5607bb45fc77d2734376a",
+      "compression": null,
+      "source": "models/model-manifest.json",
+      "source_bytes": 1762,
+      "source_sha256": "6c39ea78fa81a55dd8f2bee6b07a7564f0346afce9a5607bb45fc77d2734376a"
+    },
+    {
+      "artifact": "artifacts/config/initial-diagnostics.json",
+      "artifact_bytes": 1841,
+      "artifact_sha256": "63725efa71310ca6fc17c23c436a78cf2fe32d04348d0df3ed9e9200cc3305c9",
+      "compression": null,
+      "source": "configs/initial-diagnostics.json",
+      "source_bytes": 1841,
+      "source_sha256": "63725efa71310ca6fc17c23c436a78cf2fe32d04348d0df3ed9e9200cc3305c9"
+    },
+    {
+      "artifact": "artifacts/report-source/report_paths.py",
+      "artifact_bytes": 818,
+      "artifact_sha256": "a89f7e4f1b2ca3f35d4db0c588eb8d49943ba8a0a7e64e7ff4c8a114f3ddbcf6",
+      "compression": null,
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/scripts/report_paths.py",
+      "source_bytes": 818,
+      "source_sha256": "a89f7e4f1b2ca3f35d4db0c588eb8d49943ba8a0a7e64e7ff4c8a114f3ddbcf6"
+    }
+  ],
+  "report_version": "artifact-report-v1"
+}

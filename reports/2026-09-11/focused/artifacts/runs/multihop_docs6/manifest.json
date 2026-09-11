@@ -1,0 +1,123 @@
+{
+  "backend": {
+    "backend": "mlx-qwen3-shared-base",
+    "backend_identity": "f6211d9cd6337dc74daf05ac",
+    "bridge_method": "causal_boundary_spans",
+    "decoding": "greedy",
+    "kv_baseline_dtype": "bfloat16",
+    "max_context": 8192,
+    "memory_limit_bytes": 34359738368,
+    "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+    "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "model_type": "qwen3",
+    "prefill_batch_size": 256,
+    "quantization": "packed_affine_storage_dequantized_for_attention",
+    "role_adapters": null,
+    "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+    "thinking": false,
+    "versions": {
+      "mlx": "0.32.2",
+      "mlx-lm": "0.31.3",
+      "numpy": "2.5.3",
+      "transformers": "5.17.0"
+    },
+    "weight_dtype": "bfloat16"
+  },
+  "identity": {
+    "backend": {
+      "backend": "mlx-qwen3-shared-base",
+      "backend_identity": "f6211d9cd6337dc74daf05ac",
+      "bridge_method": "causal_boundary_spans",
+      "decoding": "greedy",
+      "kv_baseline_dtype": "bfloat16",
+      "max_context": 8192,
+      "memory_limit_bytes": 34359738368,
+      "model_path": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "model_type": "qwen3",
+      "prefill_batch_size": 256,
+      "quantization": "packed_affine_storage_dequantized_for_attention",
+      "role_adapters": null,
+      "rope_reindexing": "constant_phase_shift_of_post_rope_keys",
+      "thinking": false,
+      "versions": {
+        "mlx": "0.32.2",
+        "mlx-lm": "0.31.3",
+        "numpy": "2.5.3",
+        "transformers": "5.17.0"
+      },
+      "weight_dtype": "bfloat16"
+    },
+    "config": {
+      "bridge_ratio": 0.2,
+      "bridge_ratios": [
+        0.0,
+        0.1,
+        0.2,
+        1.0
+      ],
+      "dataset": "data/focused_e2_docs6.jsonl",
+      "equal_hops": 3,
+      "evidence_per_hop": 2,
+      "experiments": [
+        "E2"
+      ],
+      "hops": [
+        1,
+        3
+      ],
+      "latent_precisions": [
+        "bf16",
+        "int8"
+      ],
+      "limit": 4,
+      "max_answer_tokens": 16,
+      "max_context_tokens": 6144,
+      "max_document_tokens": 300,
+      "max_relay_tokens": 192,
+      "precisions": [
+        "bf16",
+        "int8",
+        "int4"
+      ],
+      "relay_precision": "int8",
+      "repeats": 1,
+      "schedule": "lexical",
+      "seed": 42
+    },
+    "dataset_sha256": "29268849ccdcc5e7874c995d352b0cb3b3506da252ffcd7bf88f8d005671ee3e",
+    "protocol_version": "fixed-evidence-qwen3-v3-bm25-json",
+    "source_code_sha256": {
+      "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+      "eval/real_experiments.py": "d6dc79f4c4a908227d1e787001a4fe77476b628d4c2548e0b89a2f126da48a8f",
+      "eval/retrieval.py": "46eb57ac29e309acdbae8c5fcc84a4677a6651b29792466b7cfcb55f897c6cec",
+      "scripts/run_experiments.py": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7"
+    }
+  },
+  "machine": {
+    "code_sha256": {
+      "engine/backends_mlx.py": "472828a6326efc7893f986f54c6df3c277ed04efcaf72c51673f695326d139e9",
+      "eval/real_experiments.py": "d6dc79f4c4a908227d1e787001a4fe77476b628d4c2548e0b89a2f126da48a8f",
+      "eval/retrieval.py": "46eb57ac29e309acdbae8c5fcc84a4677a6651b29792466b7cfcb55f897c6cec",
+      "scripts/run_experiments.py": "55b3d43c5daec6efe392864b06189c2b2a6c8b3434ba696f2148f6aad78439b7"
+    },
+    "git_dirty": [
+      "?? reports/"
+    ],
+    "git_head": "95fcc1363fba276c4a4b7c017b6e1c085b533c6d",
+    "machine": "arm64",
+    "packages": {
+      "huggingface-hub": "1.31.0",
+      "mlx": "0.32.2",
+      "mlx-lm": "0.31.3",
+      "numpy": "2.5.3",
+      "transformers": "5.17.0"
+    },
+    "pid": 40645,
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "processor": "arm",
+    "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 08:22:19) [Clang 14.0.6 ]"
+  },
+  "schedule_note": "no support labels used for ranking",
+  "started_at": "2026-09-11T08:50:29Z"
+}
