@@ -1,0 +1,19 @@
+{
+  "distinct_questions": 12,
+  "input_sha256": {
+    "profiles.json": "a24750cc5409f7179a6fc04938de9f7bca63fb1181efd88dd181f9070dabc6e3",
+    "projections.json": "ff43fda6c9b8661931a8c4cb6fde359f208293a0c861b567a8bb1558e0eaa9ad",
+    "published-source-observations.json": "d9350740a106a1ef85f9ea343ced3a424e229b31f5333b4a8582e1f78017b545",
+    "workloads.json": "830d85d3b9952587f4f23c2fe5868530ec6a9caea54edaa26da98cdc267442c5"
+  },
+  "output_sha256": {
+    "provider-latency.md": "b78d74be327ce818c0d6f3b3c595c3206a409ea7a12131123bea7172c658a5fa",
+    "provider-latency.png": "30e7b3a987872535c7c11379571d7fceabcef09da3d773a0814caac42ccef884",
+    "provider-pairs.csv": "43600af82a1b798a79ce149087f4be53dfad4b0ea691f4efeab352badb2d57d8",
+    "provider-summary.csv": "241bd2c1031c63a16edd33e3258a94d361feb853b17bba676efca77ee537cc99"
+  },
+  "paired_rows": 17,
+  "renderer_sha256": "af2f2242ead503a40ee629d47fbb38d9b63c13f5001002e51828afaf00266b23",
+  "schema_version": "provider-latency-render-v1",
+  "summary_rows": 34
+}

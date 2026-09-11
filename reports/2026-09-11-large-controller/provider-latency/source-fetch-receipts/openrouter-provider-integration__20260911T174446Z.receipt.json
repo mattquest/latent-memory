@@ -1,0 +1,19 @@
+{
+  "authenticated": false,
+  "body_bytes": 46458,
+  "body_path": "openrouter-provider-integration__20260911T174446Z.md",
+  "body_sha256": "d6dc868bb493c0eb195fec74896ba232b4911d08c85acc0078b574ac811213dd",
+  "final_url": "https://openrouter.ai/docs/guides/community/for-providers.md",
+  "http_status": 200,
+  "method": "GET",
+  "publication_note": "Only content/timing/cache response headers retained; cookies and unrelated headers omitted.",
+  "request_url": "https://openrouter.ai/docs/guides/community/for-providers.md",
+  "response_headers": {
+    "Age": "0",
+    "Cache-Control": "public, max-age=0, must-revalidate",
+    "Content-Type": "text/markdown; charset=utf-8",
+    "Date": "Fri, 11 Sep 2026 17:44:46 GMT"
+  },
+  "retrieved_utc": "2026-09-11T17:44:46.164838+00:00",
+  "started_utc": "2026-09-11T17:44:45.436688+00:00"
+}

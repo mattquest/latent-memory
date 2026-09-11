@@ -1,0 +1,138 @@
+{
+  "retrieved_on": "2026-09-11",
+  "sources": [
+    {
+      "id": "openrouter14b",
+      "url": "https://openrouter.ai/qwen/qwen3-14b-04-28/uptime",
+      "capture_method": "Numerical facts extracted from search-rendered primary page; raw client HTTP page did not expose metrics.",
+      "crawl_label": "yesterday",
+      "period": "one-week averages of the displayed P50 series; nearby availability chart ends September10; timezone unspecified",
+      "model_id": "Qwen/Qwen3-14B",
+      "provider_pairs": [
+        {
+          "provider": "Alibaba",
+          "ttft_s": 0.38,
+          "reported_tps": 57
+        },
+        {
+          "provider": "NextBit",
+          "ttft_s": 0.75,
+          "reported_tps": 50
+        },
+        {
+          "provider": "DeepInfra",
+          "ttft_s": 0.83,
+          "reported_tps": 43
+        }
+      ],
+      "latency_semantics": "Reported cached latency assumed as TTFT/per-call base; cached page prose also calls it round-trip time."
+    },
+    {
+      "id": "openrouter8b",
+      "url": "https://openrouter.ai/qwen/qwen3-8b/pricing",
+      "capture_method": "Numerical facts extracted from search-rendered primary page; single current provider attributed using endpoint metadata.",
+      "crawl_label": "yesterday",
+      "period": "one-week averages of the displayed P50 series; nearby availability chart ends September10 11AM; timezone unspecified",
+      "model_id": "Qwen/Qwen3-8B",
+      "provider_pairs": [
+        {
+          "provider": "Alibaba (inferred; cached model-level series)",
+          "ttft_s": 0.73,
+          "reported_tps": 43
+        }
+      ],
+      "latency_semantics": "Reported cached latency assumed as TTFT/per-call base; cached page prose also calls it round-trip time.",
+      "provider_attribution": "Unlabeled cached model-level performance series; Alibaba attribution inferred from current sole endpoint and separate labeled availability/error series. Historical provider attribution is not established."
+    },
+    {
+      "id": "openrouter122b",
+      "url": "https://openrouter.ai/qwen/qwen3.5-122b-a10b/benchmarks",
+      "capture_method": "Numerical facts extracted from cached search-rendered primary provider table; historical scenario, not current performance.",
+      "crawl_label": "last month",
+      "period": "Exact provider-table aggregation dates/window not exposed; stale cached page",
+      "model_id": "Qwen/Qwen3.5-122B-A10B",
+      "provider_pairs": [
+        {
+          "provider": "SiliconFlow",
+          "ttft_s": 1.49,
+          "reported_tps": 30
+        },
+        {
+          "provider": "Alibaba",
+          "ttft_s": 0.96,
+          "reported_tps": 99
+        },
+        {
+          "provider": "AtlasCloud",
+          "ttft_s": 1.13,
+          "reported_tps": 84
+        },
+        {
+          "provider": "Novita",
+          "ttft_s": 0.8,
+          "reported_tps": 84
+        }
+      ],
+      "latency_semantics": "Reported cached latency assumed as TTFT/per-call base; cached page prose also calls it round-trip time."
+    },
+    {
+      "id": "lambda122b",
+      "url": "https://lambda.ai/inference-models/qwen/qwen3.5-122b-a10b",
+      "capture_method": "Numerical facts extracted from direct primary provider benchmark page; hardware calibration, not serverless endpoint measurement.",
+      "crawl_label": "today",
+      "period": "Benchmark publication date not stated; retrieved September11,2026",
+      "model_id": "Qwen/Qwen3.5-122B-A10B",
+      "benchmark_workload": {
+        "input_tokens": 8192,
+        "output_tokens": 1024,
+        "max_concurrency": 32,
+        "requests": 512
+      },
+      "provider_pairs": [
+        {
+          "provider": "Lambda 4xB200 SGLang",
+          "ttft_s": 1.156,
+          "tpot_ms": 13,
+          "reported_tps": 76.92307692307692
+        },
+        {
+          "provider": "Lambda 8xH100 vLLM",
+          "ttft_s": 1.06,
+          "tpot_ms": 16,
+          "reported_tps": 62.5
+        },
+        {
+          "provider": "Lambda 8xH100 SGLang",
+          "ttft_s": 2.613,
+          "tpot_ms": 18,
+          "reported_tps": 55.55555555555556
+        },
+        {
+          "provider": "Lambda 8xA100 SGLang",
+          "ttft_s": 4.602,
+          "tpot_ms": 30,
+          "reported_tps": 33.333333333333336
+        },
+        {
+          "provider": "Lambda 4xB200 vLLM",
+          "ttft_s": 4.904,
+          "tpot_ms": 13,
+          "reported_tps": 76.92307692307692
+        },
+        {
+          "provider": "Lambda 8xA100 vLLM",
+          "ttft_s": 7.612,
+          "tpot_ms": 36,
+          "reported_tps": 27.77777777777778
+        }
+      ],
+      "notes": "TTFT and TPOT are means. Use inverse per-request TPOT, not aggregate cluster output tokens/s. Engine images are latest; exact revisions and measured checkpoint precision are not pinned on the page.",
+      "latency_semantics": "Published mean time to first token."
+    }
+  ],
+  "definition_caveat": "OpenRouter primary provider integration and latency cookbook disagree about whether throughput includes TTFT; both interpretations are modeled, not treated as statistical bounds.",
+  "definition_urls": [
+    "https://openrouter.ai/docs/guides/community/for-providers",
+    "https://openrouter.ai/docs/guides/best-practices/latency-and-performance"
+  ]
+}

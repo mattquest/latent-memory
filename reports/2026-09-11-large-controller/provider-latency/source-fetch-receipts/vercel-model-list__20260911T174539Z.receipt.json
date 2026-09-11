@@ -1,0 +1,19 @@
+{
+  "authenticated": false,
+  "body_bytes": 384028,
+  "body_path": "vercel-model-list__20260911T174539Z.json",
+  "body_sha256": "e9c1a27d1a7be275102d43d967040c7722bce4bb564f2dad8276879219ac6836",
+  "final_url": "https://ai-gateway.vercel.sh/v1/models",
+  "http_status": 200,
+  "method": "GET",
+  "publication_note": "Only content/timing/cache response headers retained; cookies and unrelated headers omitted.",
+  "request_url": "https://ai-gateway.vercel.sh/v1/models",
+  "response_headers": {
+    "Age": "243",
+    "Cache-Control": "public",
+    "Content-Type": "application/json",
+    "Date": "Fri, 11 Sep 2026 17:41:36 GMT"
+  },
+  "retrieved_utc": "2026-09-11T17:45:39.813971+00:00",
+  "started_utc": "2026-09-11T17:45:39.561046+00:00"
+}

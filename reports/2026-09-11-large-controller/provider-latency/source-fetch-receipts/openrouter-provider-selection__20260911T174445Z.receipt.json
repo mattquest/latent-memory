@@ -1,0 +1,19 @@
+{
+  "authenticated": false,
+  "body_bytes": 69936,
+  "body_path": "openrouter-provider-selection__20260911T174445Z.md",
+  "body_sha256": "980da460d1681ae88db47ffc69921346c1127eea4353e8303658e3acc28ddcc3",
+  "final_url": "https://openrouter.ai/docs/guides/routing/provider-selection.md",
+  "http_status": 200,
+  "method": "GET",
+  "publication_note": "Only content/timing/cache response headers retained; cookies and unrelated headers omitted.",
+  "request_url": "https://openrouter.ai/docs/guides/routing/provider-selection.md",
+  "response_headers": {
+    "Age": "13",
+    "Cache-Control": "public, max-age=0, must-revalidate",
+    "Content-Type": "text/markdown; charset=utf-8",
+    "Date": "Fri, 11 Sep 2026 17:44:45 GMT"
+  },
+  "retrieved_utc": "2026-09-11T17:44:45.752225+00:00",
+  "started_utc": "2026-09-11T17:44:45.437127+00:00"
+}

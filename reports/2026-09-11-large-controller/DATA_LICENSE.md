@@ -1,0 +1,1 @@
+MuSiQue: Trivedi et al. (2022), https://github.com/StonyBrookNLP/musique, CC BY 4.0. Modified by deduplicating public development paragraphs into a shared corpus and selecting local question splits. Selection provenance and normalized inputs are archived; model weights are not redistributed.

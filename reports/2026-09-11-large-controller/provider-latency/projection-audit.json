@@ -1,0 +1,45 @@
+{
+  "condition_profile_pairs": 408,
+  "conditions": 96,
+  "cpu_tests": {
+    "command": ".venv/bin/python -m pytest tests/test_project_controller_latency.py -q",
+    "passed": 29
+  },
+  "file_sha256": {
+    "runs/large-controller/provider-latency/profiles.json": "a24750cc5409f7179a6fc04938de9f7bca63fb1181efd88dd181f9070dabc6e3",
+    "runs/large-controller/provider-latency/projections.json": "ff43fda6c9b8661931a8c4cb6fde359f208293a0c861b567a8bb1558e0eaa9ad",
+    "runs/large-controller/provider-latency/published-source-observations.json": "d9350740a106a1ef85f9ea343ced3a424e229b31f5333b4a8582e1f78017b545",
+    "runs/large-controller/provider-latency/workloads.json": "830d85d3b9952587f4f23c2fe5868530ec6a9caea54edaa26da98cdc267442c5",
+    "scripts/project_controller_latency.py": "44bff243f07e1fe5a9d77cf9ffccc06ea691cb34e0efcfadd4c628cb618645cf",
+    "tests/test_project_controller_latency.py": "4a8162cedb0efe1f5d26719859c55a1e0d69b08e766e27ecd12a6658e1ac2ee0"
+  },
+  "labeling_corrections": [
+    "OpenRouter cached reported latency is assumed to be TTFT/base time; it is not verified TTFT.",
+    "8B cached model-level series lacks a historical provider label; Alibaba attribution is inferred from the current sole endpoint."
+  ],
+  "limitations": [
+    "These are distinct what-if scenarios, not confidence intervals, hard bounds or measured provider latency.",
+    "Published cached latency labels may themselves be ambiguous. Profiles preserve whether reported latency is only assumed to be TTFT/per-call base; this is separate from throughput ambiguity.",
+    "TTFT includes unmatched prefill/network/queue work. No extra prefill-token/rate charge is added and no prefill scaling slope is inferred.",
+    "EOS termination, forced-closure prefill latency and within-call host work are not separately modeled. The forced phase protocol assumes custom server support.",
+    "Measured outer host overhead stays local. Provider model/checkpoint/precision/template/sampling changes can alter quality and trajectories; observed local accuracy is held fixed, not transferred.",
+    "Profile routing checks the explicit model family and recorded checkpoint basename. The native 122B checkpoint is a local 5-bit conversion; family matching does not establish provider precision or execution equivalence.",
+    "Native and prior screens use different prompts/controllers and are summarized separately. Original KV-relay experiments and posthoc final ablations are unsupported/excluded."
+  ],
+  "logical_model_calls": 254,
+  "paired_contrasts": 17,
+  "provider_profiles": 14,
+  "schema_version": "controller-provider-projection-audit-v1",
+  "status": "pass",
+  "summary_groups": 34,
+  "unique_questions": 12,
+  "verified": [
+    "All saved source code, result ledgers, manifests, summary ledgers and pinned question/corpus inputs verified by extractor.",
+    "Per-call counts reconcile row totals; sampled EOS and forced input controls are separate from generated tokens.",
+    "Profile model family and actual local checkpoint basename must match the declared screen.",
+    "All source snapshots are confined and SHA256-verified; no source body is embedded.",
+    "All408 projected conditions retain exact saved predictions and scores.",
+    "All17 paired comparisons contain identical12 question IDs.",
+    "All6 Lambda profiles emit only the known-TPOT decode scenario."
+  ]
+}

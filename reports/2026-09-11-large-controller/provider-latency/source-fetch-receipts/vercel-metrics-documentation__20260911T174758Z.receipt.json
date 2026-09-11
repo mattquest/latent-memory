@@ -1,0 +1,18 @@
+{
+  "authenticated": false,
+  "body_bytes": 6711,
+  "body_path": "vercel-metrics-documentation__20260911T174758Z.html",
+  "body_sha256": "2e7727a81faa207680d1eebc711e6bc3fad8ccb6c308da370066f67a5fbda16b",
+  "http_status": 200,
+  "method": "GET",
+  "publication_note": "Only content/timing/cache response headers retained; cookies and unrelated headers omitted.",
+  "request_url": "https://vercel.com/docs/ai-gateway/models-and-providers/metrics",
+  "response_headers": {
+    "Age": "0",
+    "Cache-Control": "public, max-age=3600",
+    "Content-Type": "text/markdown; charset=utf-8",
+    "Date": "Fri, 11 Sep 2026 17:47:58 GMT"
+  },
+  "retrieved_utc": "2026-09-11T17:47:58.361921+00:00",
+  "started_utc": "2026-09-11T17:47:58.101146+00:00"
+}

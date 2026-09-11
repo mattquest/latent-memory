@@ -1,0 +1,21 @@
+{
+  "authenticated": false,
+  "body_bytes": 1265310,
+  "body_path": "vercel-qwen-3-14b-provider-page__20260911T174628Z.html",
+  "body_sha256": "a6a21d4048c9a05295665f044fa82b049651cf64032b1b82a67bce09fa6d811d",
+  "final_url": "https://vercel.com/ai-gateway/models/qwen-3-14b#providers",
+  "http_status": 200,
+  "method": "GET",
+  "publication_note": "Only content/timing/cache response headers retained; cookies and unrelated headers omitted.",
+  "request_url": "https://vercel.com/ai-gateway/models/qwen-3-14b/providers",
+  "response_headers": {
+    "Age": "96",
+    "Cache-Control": "public, max-age=0, must-revalidate",
+    "Content-Length": "1265310",
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Fri, 11 Sep 2026 17:44:52 GMT",
+    "Etag": "\"8kccb0c53tr47c\""
+  },
+  "retrieved_utc": "2026-09-11T17:46:28.888720+00:00",
+  "started_utc": "2026-09-11T17:46:28.318515+00:00"
+}

@@ -1,0 +1,1364 @@
+{
+  "artifacts": [
+    {
+      "artifact": "artifacts/matrix/configs/large-controller-screen.json.gz",
+      "artifact_bytes": 873,
+      "artifact_sha256": "67fc07e847c54e85274441c0ea6ce640292f838aeea01c44319320c91c601a89",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/configs/large-controller-screen.json",
+      "source_bytes": 2373,
+      "source_sha256": "5b582be194ec998cf6c63bc817ac4c6756d236812c80578f466f3b15ae6dd12d"
+    },
+    {
+      "artifact": "artifacts/inputs/data/controller-scaling/dev.jsonl.gz",
+      "artifact_bytes": 3207,
+      "artifact_sha256": "0bbbb9c7b6e8eb77cf4a6bb2095929b2be22ebcfd32789953fb9e18feabd495b",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/controller-scaling/dev.jsonl",
+      "source_bytes": 11987,
+      "source_sha256": "17338e99e8d958d8e7950678f834a2b815c90dc6d7a30ddeee788a29f7cc92cc"
+    },
+    {
+      "artifact": "artifacts/inputs/data/controller-scaling/corpus.jsonl.gz",
+      "artifact_bytes": 5487386,
+      "artifact_sha256": "a3617b7fa1ca5d5a50733792547a9b5d19ca318d3e032c2b44e61f74e2a4e505",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/controller-scaling/corpus.jsonl",
+      "source_bytes": 12935527,
+      "source_sha256": "4e8ad63e12ab37e7fabec0158241d890a96171e006d226a7f22b6d00d594ce4a"
+    },
+    {
+      "artifact": "artifacts/inputs/data/controller-scaling/manifest.json.gz",
+      "artifact_bytes": 4180,
+      "artifact_sha256": "6ced12809f3f39daee6105c20d49cb211f717dee82946ee1bb19c3547112a058",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/controller-scaling/manifest.json",
+      "source_bytes": 11470,
+      "source_sha256": "1846439dc9ece71b06aba5b231a3f8c468b228204ad165d9d9093fd8607dea1b"
+    },
+    {
+      "artifact": "artifacts/runs/runs/large-controller/pilot-v1/14b/manifest.json.gz",
+      "artifact_bytes": 3644,
+      "artifact_sha256": "c286281a40b73529bf661d77edb3dd30ef649cddd8c65bb10e3c859721601984",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/14b/manifest.json",
+      "source_bytes": 10344,
+      "source_sha256": "7d7e1b69e19428e84c441684e1085f4ddec2e117f4dca7fc5d4ce49f0729608b"
+    },
+    {
+      "artifact": "artifacts/runs/runs/large-controller/pilot-v1/14b/results.jsonl.gz",
+      "artifact_bytes": 153618,
+      "artifact_sha256": "c702f760e8288a95e2009c799c97e0a2ca6000909824f4091282f6ccee6d4e75",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/14b/results.jsonl",
+      "source_bytes": 1154976,
+      "source_sha256": "00af64f5b151ad6da0487a17f7398f9569dcb43ed78951f0122007522db02084"
+    },
+    {
+      "artifact": "artifacts/runs/runs/large-controller/pilot-v1/14b/summary.json.gz",
+      "artifact_bytes": 132,
+      "artifact_sha256": "be490d4c02d83070ad708d983b36fe0a7e4510e375c142600afc4311909e68d7",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/14b/summary.json",
+      "source_bytes": 152,
+      "source_sha256": "5dcd10f969812b9b21855a607aa0ed5d1e401f6123e4be2db8a13d211daf7823"
+    },
+    {
+      "artifact": "artifacts/runs/runs/large-controller/pilot-v1/14b/checkpoint-receipt.json.gz",
+      "artifact_bytes": 1139,
+      "artifact_sha256": "a9cca25f2331796fef4ff9e1801ec8c278dcf60b931b337640c9a0dfa089a47d",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/14b/checkpoint-receipt.json",
+      "source_bytes": 3044,
+      "source_sha256": "b0804cd1398f8e65f7e56ad952442ddcdd08f2d03b06c9ec1656252040f81e51"
+    },
+    {
+      "artifact": "artifacts/runs/runs/large-controller/pilot-v1/14b/resources.jsonl.gz",
+      "artifact_bytes": 1073,
+      "artifact_sha256": "a50b94e4dadb8e13ca35d89ffa947ee7a5ab4fed978b5d6c99217162bbafbd04",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/14b/resources.jsonl",
+      "source_bytes": 7352,
+      "source_sha256": "67cb1ee9f1efb3e5cce2a00479406484e6e47fab2c394efa5dd4dcfafcd38d68"
+    },
+    {
+      "artifact": "artifacts/runs/runs/large-controller/pilot-v1/14b/guard-status.json.gz",
+      "artifact_bytes": 292,
+      "artifact_sha256": "fae6b1fa6605d23d798f62796b4072d2fe507f623a55c8dbc831108d71a3bd29",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/14b/guard-status.json",
+      "source_bytes": 489,
+      "source_sha256": "b48ae485523dc0c6d1f5282cc668176fbb21932c62ef7f5e779bab58254225f5"
+    },
+    {
+      "artifact": "artifacts/runs/runs/large-controller/pilot-v1/14b/process.log.gz",
+      "artifact_bytes": 758,
+      "artifact_sha256": "a38ec22811c1351650e6fdab51862331015f915749384a0fdbf0fde1d13204bb",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/14b/process.log",
+      "source_bytes": 4666,
+      "source_sha256": "52e4193a65227545ed226d9dbbb6568d46a468c35d0d7f750f41eb8a63bc2f89"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/pilot-v1/14b/source_snapshot/configs/large-controller-screen.json.gz",
+      "artifact_bytes": 873,
+      "artifact_sha256": "67fc07e847c54e85274441c0ea6ce640292f838aeea01c44319320c91c601a89",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/14b/source_snapshot/configs/large-controller-screen.json",
+      "source_bytes": 2373,
+      "source_sha256": "5b582be194ec998cf6c63bc817ac4c6756d236812c80578f466f3b15ae6dd12d"
+    },
+    {
+      "artifact": "artifacts/provenance/engine/text_backend_mlx.py.gz",
+      "artifact_bytes": 4244,
+      "artifact_sha256": "01f7611032d0bd08b944ec640f9a5808674b7775424ef816af9dfb7fd31b62a4",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/engine/text_backend_mlx.py",
+      "source_bytes": 13791,
+      "source_sha256": "ee2e9458055a240549ef6ccf4796b79958331139a4f9d02f810c5169b104afbd"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/pilot-v1/14b/source_snapshot/engine/text_backend_mlx.py.gz",
+      "artifact_bytes": 4244,
+      "artifact_sha256": "01f7611032d0bd08b944ec640f9a5808674b7775424ef816af9dfb7fd31b62a4",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/14b/source_snapshot/engine/text_backend_mlx.py",
+      "source_bytes": 13791,
+      "source_sha256": "ee2e9458055a240549ef6ccf4796b79958331139a4f9d02f810c5169b104afbd"
+    },
+    {
+      "artifact": "artifacts/provenance/eval/adaptive_experiments.py.gz",
+      "artifact_bytes": 12798,
+      "artifact_sha256": "2cb354d3ca860e699d424694c86cc6e6565694604102010df31e7628591af7d1",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/eval/adaptive_experiments.py",
+      "source_bytes": 50139,
+      "source_sha256": "373b7e29ca17de6d95a314cf6c51e518570bcf90a2f8a838f1a7eb23e2dedb33"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/pilot-v1/14b/source_snapshot/eval/adaptive_experiments.py.gz",
+      "artifact_bytes": 12798,
+      "artifact_sha256": "2cb354d3ca860e699d424694c86cc6e6565694604102010df31e7628591af7d1",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/14b/source_snapshot/eval/adaptive_experiments.py",
+      "source_bytes": 50139,
+      "source_sha256": "373b7e29ca17de6d95a314cf6c51e518570bcf90a2f8a838f1a7eb23e2dedb33"
+    },
+    {
+      "artifact": "artifacts/provenance/eval/controller_screen.py.gz",
+      "artifact_bytes": 4022,
+      "artifact_sha256": "ff0f43d8c0acbf39c744820b6e9fbfa340ec0ef8c53ab59441ef5361cf886950",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/eval/controller_screen.py",
+      "source_bytes": 13851,
+      "source_sha256": "01d5ee91d993514d652fd3b92436eabdc7098de4a4417e1fb0e49d6f2f3170d0"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/pilot-v1/14b/source_snapshot/eval/controller_screen.py.gz",
+      "artifact_bytes": 4022,
+      "artifact_sha256": "ff0f43d8c0acbf39c744820b6e9fbfa340ec0ef8c53ab59441ef5361cf886950",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/14b/source_snapshot/eval/controller_screen.py",
+      "source_bytes": 13851,
+      "source_sha256": "01d5ee91d993514d652fd3b92436eabdc7098de4a4417e1fb0e49d6f2f3170d0"
+    },
+    {
+      "artifact": "artifacts/provenance/eval/real_experiments.py.gz",
+      "artifact_bytes": 12254,
+      "artifact_sha256": "57821c9cdc984d2062ae78ba3feeffdc7b945e266224cf7f29a2c7455519c5e8",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/eval/real_experiments.py",
+      "source_bytes": 43406,
+      "source_sha256": "d6dc79f4c4a908227d1e787001a4fe77476b628d4c2548e0b89a2f126da48a8f"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/pilot-v1/14b/source_snapshot/eval/real_experiments.py.gz",
+      "artifact_bytes": 12254,
+      "artifact_sha256": "57821c9cdc984d2062ae78ba3feeffdc7b945e266224cf7f29a2c7455519c5e8",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/14b/source_snapshot/eval/real_experiments.py",
+      "source_bytes": 43406,
+      "source_sha256": "d6dc79f4c4a908227d1e787001a4fe77476b628d4c2548e0b89a2f126da48a8f"
+    },
+    {
+      "artifact": "artifacts/provenance/eval/retrieval.py.gz",
+      "artifact_bytes": 1197,
+      "artifact_sha256": "55abd06912cad82cb070b0412a84cce464e2a15bb882aa1a8ba543f0b76b76eb",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/eval/retrieval.py",
+      "source_bytes": 2741,
+      "source_sha256": "46eb57ac29e309acdbae8c5fcc84a4677a6651b29792466b7cfcb55f897c6cec"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/pilot-v1/14b/source_snapshot/eval/retrieval.py.gz",
+      "artifact_bytes": 1197,
+      "artifact_sha256": "55abd06912cad82cb070b0412a84cce464e2a15bb882aa1a8ba543f0b76b76eb",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/14b/source_snapshot/eval/retrieval.py",
+      "source_bytes": 2741,
+      "source_sha256": "46eb57ac29e309acdbae8c5fcc84a4677a6651b29792466b7cfcb55f897c6cec"
+    },
+    {
+      "artifact": "artifacts/provenance/scripts/run_guarded.py.gz",
+      "artifact_bytes": 3542,
+      "artifact_sha256": "8999c4c64c117b03afbb9742973d5b0f892bd807a6c689da5649e61fff343ed6",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/scripts/run_guarded.py",
+      "source_bytes": 10240,
+      "source_sha256": "6afa18052129d71e5b1bf68cd8fa1d8615e06cd9e176593be07ef0e24a81c7ce"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/pilot-v1/14b/source_snapshot/scripts/run_guarded.py.gz",
+      "artifact_bytes": 3542,
+      "artifact_sha256": "8999c4c64c117b03afbb9742973d5b0f892bd807a6c689da5649e61fff343ed6",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/14b/source_snapshot/scripts/run_guarded.py",
+      "source_bytes": 10240,
+      "source_sha256": "6afa18052129d71e5b1bf68cd8fa1d8615e06cd9e176593be07ef0e24a81c7ce"
+    },
+    {
+      "artifact": "artifacts/provenance/scripts/run_large_controller.py.gz",
+      "artifact_bytes": 3841,
+      "artifact_sha256": "635e78c942d93b2ababffcb9ad9e8161c5c214a287a09e2380eedc6e2a1f8f76",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/scripts/run_large_controller.py",
+      "source_bytes": 11884,
+      "source_sha256": "b5c72c929471823611d654013a39363d7a0b426dab53b89ef38d36d05ec21adf"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/pilot-v1/14b/source_snapshot/scripts/run_large_controller.py.gz",
+      "artifact_bytes": 3841,
+      "artifact_sha256": "635e78c942d93b2ababffcb9ad9e8161c5c214a287a09e2380eedc6e2a1f8f76",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/14b/source_snapshot/scripts/run_large_controller.py",
+      "source_bytes": 11884,
+      "source_sha256": "b5c72c929471823611d654013a39363d7a0b426dab53b89ef38d36d05ec21adf"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/14b/preflight.json.gz",
+      "artifact_bytes": 3371,
+      "artifact_sha256": "a2e32808b465f428dbdf72d302ec22c5d76e00312e624454bb820b3d71bc9b79",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/14b/preflight.json",
+      "source_bytes": 30055,
+      "source_sha256": "59e892f6330cf92ff4ee00fb8ab95822cfe2be0b1f9c9e0f97d51469dec3dc1f"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/14b/manifest.json.gz",
+      "artifact_bytes": 1745,
+      "artifact_sha256": "799a7d9d87431765aff6cdb358541d454399b53ef67a82dc4db368d75c0d60c2",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/14b/manifest.json",
+      "source_bytes": 4352,
+      "source_sha256": "3511331cec33f9bd79c0c77b173362500b07b42125c1ae73d6c65109ae61761f"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/14b/checkpoint-receipt.json.gz",
+      "artifact_bytes": 1139,
+      "artifact_sha256": "a9cca25f2331796fef4ff9e1801ec8c278dcf60b931b337640c9a0dfa089a47d",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/14b/checkpoint-receipt.json",
+      "source_bytes": 3044,
+      "source_sha256": "b0804cd1398f8e65f7e56ad952442ddcdd08f2d03b06c9ec1656252040f81e51"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/14b/resources.jsonl.gz",
+      "artifact_bytes": 368,
+      "artifact_sha256": "4b919ae50af017a41a3eda90202660f77564db2e8d9b8b29178b099619bdcc64",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/14b/resources.jsonl",
+      "source_bytes": 1229,
+      "source_sha256": "a52bbeffcedb6928d6a837ff31f3eb2065c880630b7c1896241e6f7cbf83ddf6"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/14b/guard-status.json.gz",
+      "artifact_bytes": 300,
+      "artifact_sha256": "6d073afb6b99cdce5409e06044800fc459ab0490e9732034195f17cee6f9bf59",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/14b/guard-status.json",
+      "source_bytes": 508,
+      "source_sha256": "9af4fb9e6e4503c316833da9217f5072ee07f3c0363f0120afb2787fc840402b"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/14b/process.log.gz",
+      "artifact_bytes": 86,
+      "artifact_sha256": "d0125d4aa3087779c0fd47ec6b5b5be238dd8a206af9043e8e4ea28d65c68ce0",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/14b/process.log",
+      "source_bytes": 74,
+      "source_sha256": "e2c17e14eea8917012f03a05545370226e2759c27c19aa44d6b32a4bb698c702"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/14b/source_snapshot/configs/large-controller-screen.json.gz",
+      "artifact_bytes": 873,
+      "artifact_sha256": "67fc07e847c54e85274441c0ea6ce640292f838aeea01c44319320c91c601a89",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/14b/source_snapshot/configs/large-controller-screen.json",
+      "source_bytes": 2373,
+      "source_sha256": "5b582be194ec998cf6c63bc817ac4c6756d236812c80578f466f3b15ae6dd12d"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/14b/source_snapshot/engine/text_backend_mlx.py.gz",
+      "artifact_bytes": 4244,
+      "artifact_sha256": "01f7611032d0bd08b944ec640f9a5808674b7775424ef816af9dfb7fd31b62a4",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/14b/source_snapshot/engine/text_backend_mlx.py",
+      "source_bytes": 13791,
+      "source_sha256": "ee2e9458055a240549ef6ccf4796b79958331139a4f9d02f810c5169b104afbd"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/14b/source_snapshot/eval/adaptive_experiments.py.gz",
+      "artifact_bytes": 12798,
+      "artifact_sha256": "2cb354d3ca860e699d424694c86cc6e6565694604102010df31e7628591af7d1",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/14b/source_snapshot/eval/adaptive_experiments.py",
+      "source_bytes": 50139,
+      "source_sha256": "373b7e29ca17de6d95a314cf6c51e518570bcf90a2f8a838f1a7eb23e2dedb33"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/14b/source_snapshot/eval/controller_screen.py.gz",
+      "artifact_bytes": 4022,
+      "artifact_sha256": "ff0f43d8c0acbf39c744820b6e9fbfa340ec0ef8c53ab59441ef5361cf886950",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/14b/source_snapshot/eval/controller_screen.py",
+      "source_bytes": 13851,
+      "source_sha256": "01d5ee91d993514d652fd3b92436eabdc7098de4a4417e1fb0e49d6f2f3170d0"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/14b/source_snapshot/eval/real_experiments.py.gz",
+      "artifact_bytes": 12254,
+      "artifact_sha256": "57821c9cdc984d2062ae78ba3feeffdc7b945e266224cf7f29a2c7455519c5e8",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/14b/source_snapshot/eval/real_experiments.py",
+      "source_bytes": 43406,
+      "source_sha256": "d6dc79f4c4a908227d1e787001a4fe77476b628d4c2548e0b89a2f126da48a8f"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/14b/source_snapshot/eval/retrieval.py.gz",
+      "artifact_bytes": 1197,
+      "artifact_sha256": "55abd06912cad82cb070b0412a84cce464e2a15bb882aa1a8ba543f0b76b76eb",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/14b/source_snapshot/eval/retrieval.py",
+      "source_bytes": 2741,
+      "source_sha256": "46eb57ac29e309acdbae8c5fcc84a4677a6651b29792466b7cfcb55f897c6cec"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/14b/source_snapshot/scripts/run_guarded.py.gz",
+      "artifact_bytes": 3542,
+      "artifact_sha256": "8999c4c64c117b03afbb9742973d5b0f892bd807a6c689da5649e61fff343ed6",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/14b/source_snapshot/scripts/run_guarded.py",
+      "source_bytes": 10240,
+      "source_sha256": "6afa18052129d71e5b1bf68cd8fa1d8615e06cd9e176593be07ef0e24a81c7ce"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/14b/source_snapshot/scripts/run_large_controller.py.gz",
+      "artifact_bytes": 3841,
+      "artifact_sha256": "635e78c942d93b2ababffcb9ad9e8161c5c214a287a09e2380eedc6e2a1f8f76",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/14b/source_snapshot/scripts/run_large_controller.py",
+      "source_bytes": 11884,
+      "source_sha256": "b5c72c929471823611d654013a39363d7a0b426dab53b89ef38d36d05ec21adf"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3-14B/download-manifest.json.gz",
+      "artifact_bytes": 1728,
+      "artifact_sha256": "392209b0a8edb91eddee5889456b1cd063616ee57ec142f4ebee429c9f567373",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-14B/download-manifest.json",
+      "source_bytes": 5454,
+      "source_sha256": "cf65a27859719a2509f518da826fc8df1d9f6cf2c007c099a4fc30a6758b9bbf"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3-14B/LICENSE.gz",
+      "artifact_bytes": 3967,
+      "artifact_sha256": "35a10b0920ba71927ae6e3c086a607da223cdbe0ccdb90b068b19361f7f626bc",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-14B/LICENSE",
+      "source_bytes": 11343,
+      "source_sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3-14B/README.md.gz",
+      "artifact_bytes": 6271,
+      "artifact_sha256": "c352881a55ead368968218c1664d1b9b2d742ffae8ccf2605f1e9af6897047fe",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-14B/README.md",
+      "source_bytes": 16670,
+      "source_sha256": "7ef503e68996a4e32007fedc7d8e198846e9b1f36620d38a79b89934100b1250"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3-14B/config.json.gz",
+      "artifact_bytes": 384,
+      "artifact_sha256": "b4ed490a65a73280353635ffae7ae509af7b5b4714e388ab59ab855f2e064f43",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-14B/config.json",
+      "source_bytes": 728,
+      "source_sha256": "e73c3664ca09b10a673fef0c22e8a6b456201d49bd4713c9691f775720e8857a"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3-14B/generation_config.json.gz",
+      "artifact_bytes": 152,
+      "artifact_sha256": "af7582f4bf76f52e53eaa26799e86c0add3f32d53b308645fcacc6e1f5876d73",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-14B/generation_config.json",
+      "source_bytes": 239,
+      "source_sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3-14B/merges.txt.gz",
+      "artifact_bytes": 704552,
+      "artifact_sha256": "065879e8e340f1ff5ddd4986baa5b082f02f3dfe38d5f18418fbb285c92bf122",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-14B/merges.txt",
+      "source_bytes": 1671853,
+      "source_sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3-14B/model.safetensors.index.json.gz",
+      "artifact_bytes": 1493,
+      "artifact_sha256": "700fe7cd62a3151f324e43283e5a60b72c03e2ef040b644037f23c9d4ad3de42",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-14B/model.safetensors.index.json",
+      "source_bytes": 36514,
+      "source_sha256": "62d7ad35757bae5e7baa452cb1483178b7daa50e869e923226b8da10871f7ebc"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3-14B/tokenizer.json.gz",
+      "artifact_bytes": 2059770,
+      "artifact_sha256": "75b188ab9f5dfa12547ddf4e6ecb39ebda6b47e24cb37a1bb01eb61d3bd09e5e",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-14B/tokenizer.json",
+      "source_bytes": 11422654,
+      "source_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3-14B/tokenizer_config.json.gz",
+      "artifact_bytes": 1541,
+      "artifact_sha256": "1d95399ec59bc2e4ab09baf8e948c446f3b9e3ab8fa9e6f6602d5a01577adb9c",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-14B/tokenizer_config.json",
+      "source_bytes": 9732,
+      "source_sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3-14B/vocab.json.gz",
+      "artifact_bytes": 1070343,
+      "artifact_sha256": "b8e45e929a168388bb3bfe882090d38b97618e8a41748aadd0c6cc4eb03387e1",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3-14B/vocab.json",
+      "source_bytes": 2776833,
+      "source_sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    {
+      "artifact": "artifacts/runs/runs/large-controller/pilot-v1/122b/manifest.json.gz",
+      "artifact_bytes": 4836,
+      "artifact_sha256": "12e24e8bf2fc63c0b712a206cd288b848429b23479cbc3b6246efe4f6d56ca23",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/122b/manifest.json",
+      "source_bytes": 17099,
+      "source_sha256": "a36ebdcf1c410a625380d650edab66a9ca68fb02d9f5ed4796fd9f5976d43d83"
+    },
+    {
+      "artifact": "artifacts/runs/runs/large-controller/pilot-v1/122b/results.jsonl.gz",
+      "artifact_bytes": 160108,
+      "artifact_sha256": "2d36136606e83a0099435e014930cc928ece2a55a1edc6e8822a1e9d6f4075bb",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/122b/results.jsonl",
+      "source_bytes": 1216038,
+      "source_sha256": "ae39e55feb09e4b18d2f7d25877c3211c06bb2d5b3337937c4b93391eb7ba5cf"
+    },
+    {
+      "artifact": "artifacts/runs/runs/large-controller/pilot-v1/122b/summary.json.gz",
+      "artifact_bytes": 132,
+      "artifact_sha256": "fc7afc5c00a542340d331ff1b23aa00592598c0f6ecd96345cf087831a8d0afc",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/122b/summary.json",
+      "source_bytes": 153,
+      "source_sha256": "d670d31229b9258e5fb9bb365929322585160e6bed63f22646c901ad5eb2ae7a"
+    },
+    {
+      "artifact": "artifacts/runs/runs/large-controller/pilot-v1/122b/checkpoint-receipt.json.gz",
+      "artifact_bytes": 1709,
+      "artifact_sha256": "3ec7a8451c999dd25d381d1691cf35af5002e2c378c48de7423308dc4f8d9b73",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/122b/checkpoint-receipt.json",
+      "source_bytes": 4977,
+      "source_sha256": "8884bad339a8d7746c16969e4d11b07c2cb8097bb52d19a3eae842a69fc1490f"
+    },
+    {
+      "artifact": "artifacts/runs/runs/large-controller/pilot-v1/122b/resources.jsonl.gz",
+      "artifact_bytes": 1775,
+      "artifact_sha256": "1e4f1b297b222bf5df027b18b3382d1369e530466e9d8f516f8781d2bc33b490",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/122b/resources.jsonl",
+      "source_bytes": 13533,
+      "source_sha256": "f7bdf5ded983ca787d2bc85b0d441350d3fa45e6103fb21eceda55edfee71dee"
+    },
+    {
+      "artifact": "artifacts/runs/runs/large-controller/pilot-v1/122b/guard-status.json.gz",
+      "artifact_bytes": 294,
+      "artifact_sha256": "c36a71b2d35e38f5998e2e302d6f8c91965cea0edad1ff720e03cf01d45baa53",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/122b/guard-status.json",
+      "source_bytes": 491,
+      "source_sha256": "1a4629e4e9d1f08d57064aff354fd1012c8cef4c5e5c3d570af5d35ff32083d2"
+    },
+    {
+      "artifact": "artifacts/runs/runs/large-controller/pilot-v1/122b/process.log.gz",
+      "artifact_bytes": 771,
+      "artifact_sha256": "edb1b1baffe75df56d810a806e04715427d19337f53d636ab184864a9b7b52c5",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/122b/process.log",
+      "source_bytes": 4620,
+      "source_sha256": "898cbc84301aacc8e4e9a61733a821a81dca80924d36bb7436574eaeff4ff3b4"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/pilot-v1/122b/source_snapshot/configs/large-controller-screen.json.gz",
+      "artifact_bytes": 873,
+      "artifact_sha256": "67fc07e847c54e85274441c0ea6ce640292f838aeea01c44319320c91c601a89",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/122b/source_snapshot/configs/large-controller-screen.json",
+      "source_bytes": 2373,
+      "source_sha256": "5b582be194ec998cf6c63bc817ac4c6756d236812c80578f466f3b15ae6dd12d"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/pilot-v1/122b/source_snapshot/engine/text_backend_mlx.py.gz",
+      "artifact_bytes": 4244,
+      "artifact_sha256": "01f7611032d0bd08b944ec640f9a5808674b7775424ef816af9dfb7fd31b62a4",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/122b/source_snapshot/engine/text_backend_mlx.py",
+      "source_bytes": 13791,
+      "source_sha256": "ee2e9458055a240549ef6ccf4796b79958331139a4f9d02f810c5169b104afbd"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/pilot-v1/122b/source_snapshot/eval/adaptive_experiments.py.gz",
+      "artifact_bytes": 12798,
+      "artifact_sha256": "2cb354d3ca860e699d424694c86cc6e6565694604102010df31e7628591af7d1",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/122b/source_snapshot/eval/adaptive_experiments.py",
+      "source_bytes": 50139,
+      "source_sha256": "373b7e29ca17de6d95a314cf6c51e518570bcf90a2f8a838f1a7eb23e2dedb33"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/pilot-v1/122b/source_snapshot/eval/controller_screen.py.gz",
+      "artifact_bytes": 4022,
+      "artifact_sha256": "ff0f43d8c0acbf39c744820b6e9fbfa340ec0ef8c53ab59441ef5361cf886950",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/122b/source_snapshot/eval/controller_screen.py",
+      "source_bytes": 13851,
+      "source_sha256": "01d5ee91d993514d652fd3b92436eabdc7098de4a4417e1fb0e49d6f2f3170d0"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/pilot-v1/122b/source_snapshot/eval/real_experiments.py.gz",
+      "artifact_bytes": 12254,
+      "artifact_sha256": "57821c9cdc984d2062ae78ba3feeffdc7b945e266224cf7f29a2c7455519c5e8",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/122b/source_snapshot/eval/real_experiments.py",
+      "source_bytes": 43406,
+      "source_sha256": "d6dc79f4c4a908227d1e787001a4fe77476b628d4c2548e0b89a2f126da48a8f"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/pilot-v1/122b/source_snapshot/eval/retrieval.py.gz",
+      "artifact_bytes": 1197,
+      "artifact_sha256": "55abd06912cad82cb070b0412a84cce464e2a15bb882aa1a8ba543f0b76b76eb",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/122b/source_snapshot/eval/retrieval.py",
+      "source_bytes": 2741,
+      "source_sha256": "46eb57ac29e309acdbae8c5fcc84a4677a6651b29792466b7cfcb55f897c6cec"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/pilot-v1/122b/source_snapshot/scripts/run_guarded.py.gz",
+      "artifact_bytes": 3542,
+      "artifact_sha256": "8999c4c64c117b03afbb9742973d5b0f892bd807a6c689da5649e61fff343ed6",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/122b/source_snapshot/scripts/run_guarded.py",
+      "source_bytes": 10240,
+      "source_sha256": "6afa18052129d71e5b1bf68cd8fa1d8615e06cd9e176593be07ef0e24a81c7ce"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/pilot-v1/122b/source_snapshot/scripts/run_large_controller.py.gz",
+      "artifact_bytes": 3841,
+      "artifact_sha256": "635e78c942d93b2ababffcb9ad9e8161c5c214a287a09e2380eedc6e2a1f8f76",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/pilot-v1/122b/source_snapshot/scripts/run_large_controller.py",
+      "source_bytes": 11884,
+      "source_sha256": "b5c72c929471823611d654013a39363d7a0b426dab53b89ef38d36d05ec21adf"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/122b/preflight.json.gz",
+      "artifact_bytes": 3999,
+      "artifact_sha256": "d672b942d47839c04e87159a080ff2c5e783fd53e4aabfadf9d99cdffbc49c8b",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/122b/preflight.json",
+      "source_bytes": 36249,
+      "source_sha256": "890391a78ec555937bc3741a4a241961de247dc3a65575350220d5a7d994c455"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/122b/manifest.json.gz",
+      "artifact_bytes": 2314,
+      "artifact_sha256": "eabf9516cabd7d1879f11204644d38ee5c65e3cdea987532cda3009af6c3741f",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/122b/manifest.json",
+      "source_bytes": 6394,
+      "source_sha256": "09e48bb95ef29642b4e0bb6dd2dc2ed6d23e6a10470b01f9f1d1a5288138e81d"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/122b/checkpoint-receipt.json.gz",
+      "artifact_bytes": 1709,
+      "artifact_sha256": "3ec7a8451c999dd25d381d1691cf35af5002e2c378c48de7423308dc4f8d9b73",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/122b/checkpoint-receipt.json",
+      "source_bytes": 4977,
+      "source_sha256": "8884bad339a8d7746c16969e4d11b07c2cb8097bb52d19a3eae842a69fc1490f"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/122b/resources.jsonl.gz",
+      "artifact_bytes": 773,
+      "artifact_sha256": "c5b823163ef2e919602abc8700e189cf1ec2bd83c910ae6b50985154ea21c721",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/122b/resources.jsonl",
+      "source_bytes": 4506,
+      "source_sha256": "bb4306e27f16b8466188aa74fc082133cd7da6692b52c7ecd196c73bf4498745"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/122b/guard-status.json.gz",
+      "artifact_bytes": 299,
+      "artifact_sha256": "5c30a2cef9580859c44759ebcefd02fa136b4554d52f7eecad6622864c9fad88",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/122b/guard-status.json",
+      "source_bytes": 508,
+      "source_sha256": "934b950d426b1b76c10ecc5d9c787acc2609a036278d3663f0bd14eeb16a5391"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/122b/process.log.gz",
+      "artifact_bytes": 87,
+      "artifact_sha256": "4df69dd2d929f0aa15bdf81c98351326d03b02ecf924e8d0b6ef725d013eae20",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/122b/process.log",
+      "source_bytes": 75,
+      "source_sha256": "29eae9040101e948f0fb9b66bc10343e640db2ef2080f959da86047076590721"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/122b/source_snapshot/configs/large-controller-screen.json.gz",
+      "artifact_bytes": 873,
+      "artifact_sha256": "67fc07e847c54e85274441c0ea6ce640292f838aeea01c44319320c91c601a89",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/122b/source_snapshot/configs/large-controller-screen.json",
+      "source_bytes": 2373,
+      "source_sha256": "5b582be194ec998cf6c63bc817ac4c6756d236812c80578f466f3b15ae6dd12d"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/122b/source_snapshot/engine/text_backend_mlx.py.gz",
+      "artifact_bytes": 4244,
+      "artifact_sha256": "01f7611032d0bd08b944ec640f9a5808674b7775424ef816af9dfb7fd31b62a4",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/122b/source_snapshot/engine/text_backend_mlx.py",
+      "source_bytes": 13791,
+      "source_sha256": "ee2e9458055a240549ef6ccf4796b79958331139a4f9d02f810c5169b104afbd"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/122b/source_snapshot/eval/adaptive_experiments.py.gz",
+      "artifact_bytes": 12798,
+      "artifact_sha256": "2cb354d3ca860e699d424694c86cc6e6565694604102010df31e7628591af7d1",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/122b/source_snapshot/eval/adaptive_experiments.py",
+      "source_bytes": 50139,
+      "source_sha256": "373b7e29ca17de6d95a314cf6c51e518570bcf90a2f8a838f1a7eb23e2dedb33"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/122b/source_snapshot/eval/controller_screen.py.gz",
+      "artifact_bytes": 4022,
+      "artifact_sha256": "ff0f43d8c0acbf39c744820b6e9fbfa340ec0ef8c53ab59441ef5361cf886950",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/122b/source_snapshot/eval/controller_screen.py",
+      "source_bytes": 13851,
+      "source_sha256": "01d5ee91d993514d652fd3b92436eabdc7098de4a4417e1fb0e49d6f2f3170d0"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/122b/source_snapshot/eval/real_experiments.py.gz",
+      "artifact_bytes": 12254,
+      "artifact_sha256": "57821c9cdc984d2062ae78ba3feeffdc7b945e266224cf7f29a2c7455519c5e8",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/122b/source_snapshot/eval/real_experiments.py",
+      "source_bytes": 43406,
+      "source_sha256": "d6dc79f4c4a908227d1e787001a4fe77476b628d4c2548e0b89a2f126da48a8f"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/122b/source_snapshot/eval/retrieval.py.gz",
+      "artifact_bytes": 1197,
+      "artifact_sha256": "55abd06912cad82cb070b0412a84cce464e2a15bb882aa1a8ba543f0b76b76eb",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/122b/source_snapshot/eval/retrieval.py",
+      "source_bytes": 2741,
+      "source_sha256": "46eb57ac29e309acdbae8c5fcc84a4677a6651b29792466b7cfcb55f897c6cec"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/122b/source_snapshot/scripts/run_guarded.py.gz",
+      "artifact_bytes": 3542,
+      "artifact_sha256": "8999c4c64c117b03afbb9742973d5b0f892bd807a6c689da5649e61fff343ed6",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/122b/source_snapshot/scripts/run_guarded.py",
+      "source_bytes": 10240,
+      "source_sha256": "6afa18052129d71e5b1bf68cd8fa1d8615e06cd9e176593be07ef0e24a81c7ce"
+    },
+    {
+      "artifact": "artifacts/provenance/runs/large-controller/preflight-v1/122b/source_snapshot/scripts/run_large_controller.py.gz",
+      "artifact_bytes": 3841,
+      "artifact_sha256": "635e78c942d93b2ababffcb9ad9e8161c5c214a287a09e2380eedc6e2a1f8f76",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/preflight-v1/122b/source_snapshot/scripts/run_large_controller.py",
+      "source_bytes": 11884,
+      "source_sha256": "b5c72c929471823611d654013a39363d7a0b426dab53b89ef38d36d05ec21adf"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3.5-122B-A10B-5bit/download-manifest.json.gz",
+      "artifact_bytes": 2781,
+      "artifact_sha256": "51094a05b1a05a8c69a94d36353599b3302b0cfa70c30f62f78839bb9ab88e8d",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3.5-122B-A10B-5bit/download-manifest.json",
+      "source_bytes": 9401,
+      "source_sha256": "0cb9d9cfa98072b96a125f2d7b626db9944da4551e0c77d7b31db9b810193963"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3.5-122B-A10B-5bit/README.md.gz",
+      "artifact_bytes": 408,
+      "artifact_sha256": "a3085c112c8b0df00181da3d54f7869e74ee1cf3997a611e49e3ea497bc3bcee",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3.5-122B-A10B-5bit/README.md",
+      "source_bytes": 666,
+      "source_sha256": "400fe8cc787a8f448cf49601f215a434dc0282da9c26b58e8f83e4ebd2e86ec0"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3.5-122B-A10B-5bit/chat_template.jinja.gz",
+      "artifact_bytes": 1830,
+      "artifact_sha256": "2dd8fee9439700585f8e67604e0bf6bb44770a1999b1d8fc4fc3ab4ab250cbbb",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3.5-122B-A10B-5bit/chat_template.jinja",
+      "source_bytes": 7756,
+      "source_sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3.5-122B-A10B-5bit/config.json.gz",
+      "artifact_bytes": 884,
+      "artifact_sha256": "e988f260cc7fbdd04037b63136d528c10a974bf6307a5add08cbae12bd437853",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3.5-122B-A10B-5bit/config.json",
+      "source_bytes": 4063,
+      "source_sha256": "95dfb14287df1dc2440bfeedd2345881c878e58d724472a7174740007115e50e"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3.5-122B-A10B-5bit/generation_config.json.gz",
+      "artifact_bytes": 155,
+      "artifact_sha256": "ea9bfa5187bd1b56613b2be4919226b4724055445444c53158d26686f6dbe5fb",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3.5-122B-A10B-5bit/generation_config.json",
+      "source_bytes": 244,
+      "source_sha256": "303aba891d66ab63908a7b3cc9163bcb835fdf8b9f6301c73216f3f1eb3992dd"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3.5-122B-A10B-5bit/model.safetensors.index.json.gz",
+      "artifact_bytes": 8641,
+      "artifact_sha256": "ea06b67c576e7ebc6c2320bb3241970d0a827dda56badb1375ae1932b0a3ede3",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3.5-122B-A10B-5bit/model.safetensors.index.json",
+      "source_bytes": 253155,
+      "source_sha256": "d0f8c917d0a9c03d214ee5abc9cfce4f0f80b870d05b24ede79c559fbfcbcc7e"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3.5-122B-A10B-5bit/preprocessor_config.json.gz",
+      "artifact_bytes": 193,
+      "artifact_sha256": "82d2658e2a9f2d91b036ecc0bb26190665df1e29a460ddb0cce0e0e98c9c5abb",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3.5-122B-A10B-5bit/preprocessor_config.json",
+      "source_bytes": 390,
+      "source_sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3.5-122B-A10B-5bit/processor_config.json.gz",
+      "artifact_bytes": 400,
+      "artifact_sha256": "9a42a40c568f1c74884e0a236f02949f85407327f7723599b7087ac485efb69f",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3.5-122B-A10B-5bit/processor_config.json",
+      "source_bytes": 1300,
+      "source_sha256": "14932921ca485d458a04dafd8069fbb0a4505622a48208d19ed247115801385b"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3.5-122B-A10B-5bit/tokenizer.json.gz",
+      "artifact_bytes": 3761088,
+      "artifact_sha256": "b725128b906f924e473c7dcb97005f14f3f610b21cbfb15331cc759e6c39c4b6",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3.5-122B-A10B-5bit/tokenizer.json",
+      "source_bytes": 19989343,
+      "source_sha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3.5-122B-A10B-5bit/tokenizer_config.json.gz",
+      "artifact_bytes": 421,
+      "artifact_sha256": "10286e7e00f095ba8056fc67e06493a4594d90093c677ac95c32437c0a9cc92e",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3.5-122B-A10B-5bit/tokenizer_config.json",
+      "source_bytes": 1139,
+      "source_sha256": "e98f1901ac6f0adff67b1d540bfa0c36ac1a0cf59eb72ed78146ef89aafa1182"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3.5-122B-A10B-5bit/video_preprocessor_config.json.gz",
+      "artifact_bytes": 190,
+      "artifact_sha256": "b1ab2691395fd7cdeb353ce449377a2ef810f3fddbf49952b234137be1f01b96",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3.5-122B-A10B-5bit/video_preprocessor_config.json",
+      "source_bytes": 385,
+      "source_sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+    },
+    {
+      "artifact": "artifacts/provenance/models/Qwen3.5-122B-A10B-5bit/vocab.json.gz",
+      "artifact_bytes": 2024725,
+      "artifact_sha256": "e195223fb3ed04bb9d4a11caac2fff27f7676259e9842b658be137dd965872ba",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/models/Qwen3.5-122B-A10B-5bit/vocab.json",
+      "source_bytes": 6722759,
+      "source_sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+    },
+    {
+      "artifact": "artifacts/data-provenance/data/controller-scaling/test.jsonl.gz",
+      "artifact_bytes": 18531,
+      "artifact_sha256": "e239c0e659b7870a6a5ded13a07cb9f302b52ed8e82586fa3fef58c53beec4ba",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/controller-scaling/test.jsonl",
+      "source_bytes": 96198,
+      "source_sha256": "8d8f3e6188079022fbf429821174a9536eba650330e58f86754e23cdddbb5119"
+    },
+    {
+      "artifact": "artifacts/data-provenance/data/controller-scaling/corpus-provenance.jsonl.gz",
+      "artifact_bytes": 1293113,
+      "artifact_sha256": "f31950a3d7c01b9bb03e87e5ad2bf4ffa71929ec4bff83b5503606aca03bf9a2",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/controller-scaling/corpus-provenance.jsonl",
+      "source_bytes": 5563337,
+      "source_sha256": "ec8ce692b2f8294d641441c993c72d22a05e3d0a9eade1f6a9562b30b5869a3b"
+    },
+    {
+      "artifact": "artifacts/data-provenance/data/controller-scaling/excluded-identities.jsonl.gz",
+      "artifact_bytes": 60348,
+      "artifact_sha256": "d1d93a007f8542f632cf195f8f8c69448a5d4c694365f67383bcc7357a06c3a0",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/controller-scaling/excluded-identities.jsonl",
+      "source_bytes": 459214,
+      "source_sha256": "ba2449f260f9e0b441a21bbd1e7561a12082a5d9d7cb3956ab1145b13c8e158d"
+    },
+    {
+      "artifact": "artifacts/data-provenance/data/controller-scaling/excluded-source-questions.jsonl.gz",
+      "artifact_bytes": 15407,
+      "artifact_sha256": "d6d80b63a288f0907ff1b9c89c7f7887f84753c052fbace7bad22f683538fe71",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/controller-scaling/excluded-source-questions.jsonl",
+      "source_bytes": 112756,
+      "source_sha256": "b7f9b766d28d188c06ac53e2bd5bf161f40e633c5789b7b128a9b24bcf49a467"
+    },
+    {
+      "artifact": "artifacts/data-provenance/data/controller-scaling/support-sizes.scoring-only.jsonl.gz",
+      "artifact_bytes": 14647,
+      "artifact_sha256": "46019763573e3bd6d8d74fc7d386a9e47bd6e1ec2b6da6779e0c75fbbb2fc373",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/controller-scaling/support-sizes.scoring-only.jsonl",
+      "source_bytes": 72223,
+      "source_sha256": "c20a118ba2daab4cf707a342b1c5a9abba36c408dc0ca18c9efb9cda8ec947a3"
+    },
+    {
+      "artifact": "artifacts/data-provenance/data/controller-scaling/provenance/musique_ans_v1.0_dev.jsonl.gz.gz",
+      "artifact_bytes": 7395268,
+      "artifact_sha256": "11ee7cd40199726e831072cb3dfe1f387c6631c8d02cd3f4b4ca54981019a41e",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/controller-scaling/provenance/musique_ans_v1.0_dev.jsonl.gz",
+      "source_bytes": 7394089,
+      "source_sha256": "ad1140c4aa5df892011df0fa6e7cf1ae364316e6b48837e9b5296c26e6819199"
+    },
+    {
+      "artifact": "artifacts/data-provenance/data/controller-scaling/provenance/data/musique_dev_sample.jsonl.gz.gz",
+      "artifact_bytes": 542074,
+      "artifact_sha256": "6c7b6a607a147c13f2057daa0e47b09e6d9f0fb33c9e581ce370cec0a751e569",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/controller-scaling/provenance/data/musique_dev_sample.jsonl.gz",
+      "source_bytes": 541886,
+      "source_sha256": "08c6548012f77f02ecb4d12b542f0d4c68244f613bfcc3a74732ed6ead694bac"
+    },
+    {
+      "artifact": "artifacts/data-provenance/data/controller-scaling/provenance/data/adaptive_musique_dev.jsonl.gz.gz",
+      "artifact_bytes": 1784,
+      "artifact_sha256": "9fa90a898805b5a2cd8aa969b243fb410b9137114e12f0f88b35189aed9a35ad",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/controller-scaling/provenance/data/adaptive_musique_dev.jsonl.gz",
+      "source_bytes": 1761,
+      "source_sha256": "1d3ea45641daef924144d447f5a848a0cf59c50fb774fa85ef2887fc90261faf"
+    },
+    {
+      "artifact": "artifacts/data-provenance/data/controller-scaling/provenance/data/adaptive_musique_test.jsonl.gz.gz",
+      "artifact_bytes": 18547,
+      "artifact_sha256": "05a1c7efb79ff0326a5c0e1367c6f92ee6d3b576c50d8f0b529f76e382150d87",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/controller-scaling/provenance/data/adaptive_musique_test.jsonl.gz",
+      "source_bytes": 18519,
+      "source_sha256": "1ba5e68fc6c1e705b530f109f673c257c4ae1ad2d0fbaf9c1970a430d87a1714"
+    },
+    {
+      "artifact": "artifacts/data-provenance/data/controller-scaling/provenance/reports/2026-09-11/development-overlap-audit.json.gz.gz",
+      "artifact_bytes": 45645,
+      "artifact_sha256": "8eb027d99a4e6bbe1f4dd46c739bb1c0d6685148e6f9205b4bf21330e5335e3b",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/controller-scaling/provenance/reports/2026-09-11/development-overlap-audit.json.gz",
+      "source_bytes": 45713,
+      "source_sha256": "ee9fe8dcfeec319b54b23e12a327a002e651d151f870f88c9e2669c7597362ff"
+    },
+    {
+      "artifact": "artifacts/data-provenance/data/controller-scaling/provenance/source/scripts/prepare_controller_scaling_data.py.gz",
+      "artifact_bytes": 5817,
+      "artifact_sha256": "7e57561d96253dd5a7282a0cd8c50e19bd38968ba560b94bba67aeb135345ca3",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/controller-scaling/provenance/source/scripts/prepare_controller_scaling_data.py",
+      "source_bytes": 17843,
+      "source_sha256": "6d034d61fdbebcf8a6246cc73fd13d316b9656cdcd116e61507a583a133bd13e"
+    },
+    {
+      "artifact": "artifacts/data-provenance/data/controller-scaling/provenance/source/scripts/prepare_adaptive_musique.py.gz",
+      "artifact_bytes": 4397,
+      "artifact_sha256": "d4f3ff9060279bd1a8d11d2eb257fc345174ab159f1dda0d000e2cef06655dd9",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/controller-scaling/provenance/source/scripts/prepare_adaptive_musique.py",
+      "source_bytes": 13682,
+      "source_sha256": "d3dc1340f1f8942573a3d96ec63a2f22d784bf0fdd5b28601be58d2d5982522f"
+    },
+    {
+      "artifact": "artifacts/data-provenance/data/controller-scaling/provenance/source/eval/datasets.py.gz",
+      "artifact_bytes": 4017,
+      "artifact_sha256": "1adc6d973ec2cb9f157cbc60c27c371404c6a0f19206394b49a77cafb367e8a4",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/controller-scaling/provenance/source/eval/datasets.py",
+      "source_bytes": 13098,
+      "source_sha256": "c656f73131b1f819b13dbf0bcca9d83d6a21a912772b1b18c244d480f158953d"
+    },
+    {
+      "artifact": "artifacts/data-provenance/data/controller-scaling/DATA_LICENSE.md.gz",
+      "artifact_bytes": 363,
+      "artifact_sha256": "1184095b5aa6ef4e588ccc2e915dcaff247e6ec5eaf1540fda9b6ce807cd6844",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/data/controller-scaling/DATA_LICENSE.md",
+      "source_bytes": 508,
+      "source_sha256": "183d73eefb099186f2f05b7d7b8d7b166169f5adef59a36574f8d39c555daccf"
+    },
+    {
+      "artifact": "artifacts/extra-provenance/docs/large-controller-protocol.md.gz",
+      "artifact_bytes": 5684,
+      "artifact_sha256": "d815fdec8ec2b68e95f04880f55778510936597157a60eee5c541a154cc2c044",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/docs/large-controller-protocol.md",
+      "source_bytes": 12689,
+      "source_sha256": "8707c0ec0b152bda01243ddee62b1892701adaa98bbf142138021c9f0bd7c61b"
+    },
+    {
+      "artifact": "artifacts/extra-provenance/docs/controller-scaling-data.md.gz",
+      "artifact_bytes": 3504,
+      "artifact_sha256": "7534a56de21c2b1a5ea02fe2a94bdd90b141b240d2575e0a44cc60bee8ab500c",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/docs/controller-scaling-data.md",
+      "source_bytes": 7506,
+      "source_sha256": "fe7141103f8c9a7c38fa0d05146cd7d39afa81d5f8c996e62a7a6846199c3dc8"
+    },
+    {
+      "artifact": "artifacts/extra-provenance/docs/controller-scaling-qualitative-audit.md.gz",
+      "artifact_bytes": 3831,
+      "artifact_sha256": "6b01079523e1e2daea59fe8afcb23d96b69c645a342de1b30eff571eb673222f",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/docs/controller-scaling-qualitative-audit.md",
+      "source_bytes": 7925,
+      "source_sha256": "cd56268f25649bf806e1dcb3db67e4485434de023a9378d3898ae5f9fa18a3a2"
+    },
+    {
+      "artifact": "artifacts/extra-provenance/scripts/download_large_controller.py.gz",
+      "artifact_bytes": 1877,
+      "artifact_sha256": "513bc22ab65e8d5fc423660032616f5b734d530d75382e199e4586b152ceb347",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/scripts/download_large_controller.py",
+      "source_bytes": 4415,
+      "source_sha256": "14076aff71f5e8959601cb2f0d9e7fb252b9244d69905b501adf4be639e43dff"
+    },
+    {
+      "artifact": "artifacts/extra-provenance/runs/large-controller/candidates.json.gz",
+      "artifact_bytes": 583,
+      "artifact_sha256": "9e745d0960bbed9757249c0de297c07eeb4b63a318ef69f2a648be16a2f82deb",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/candidates.json",
+      "source_bytes": 1644,
+      "source_sha256": "14c8a9237d931ae36cddfe751182734061d195ed074bb2be45d89a577134f777"
+    },
+    {
+      "artifact": "artifacts/download-provenance/runs/large-controller/download-122b/guard-status.json.gz",
+      "artifact_bytes": 283,
+      "artifact_sha256": "129649bec52040523a82757c9234b7b710cdfa7b188c9e6774a719b76c58953e",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/download-122b/guard-status.json",
+      "source_bytes": 466,
+      "source_sha256": "ed41fd8b2ae0137503fc9f170e9498d7dbad5daa502fc1b5dc6f95a329f3c4c8"
+    },
+    {
+      "artifact": "artifacts/download-provenance/runs/large-controller/download-122b/process.log.gz",
+      "artifact_bytes": 1076,
+      "artifact_sha256": "ad7976e689afea4085e5160265f770651dbcc458d71de61314351677d05db8db",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/download-122b/process.log",
+      "source_bytes": 4369,
+      "source_sha256": "7e46de17337c934b543bba6e6fd6bf1b12891540b0441fbf4773f631969a013d"
+    },
+    {
+      "artifact": "artifacts/download-provenance/runs/large-controller/download-122b/resources.jsonl.gz",
+      "artifact_bytes": 7789,
+      "artifact_sha256": "2df6a608171375bca7b070ab2480eb211adb79bf484fbdeacfb493ccc52a51bd",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/download-122b/resources.jsonl",
+      "source_bytes": 67887,
+      "source_sha256": "aa12a7144166e8bfff8657f0b9c849d977072fe09b6ccbaa45ca7e167ef765b1"
+    },
+    {
+      "artifact": "artifacts/report-source/scripts/build_large_controller_report.py.gz",
+      "artifact_bytes": 13230,
+      "artifact_sha256": "b75e02f9602333d2e1b443f41dcbeb5d1577f760acb6c2f035339e86aecc8d09",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/scripts/build_large_controller_report.py",
+      "source_bytes": 47278,
+      "source_sha256": "d27039af7abd283a47e0c523b95fd0ec89e1a609522c3f9b07a4873230809b2e"
+    },
+    {
+      "artifact": "artifacts/report-source/scripts/build_adaptive_report.py.gz",
+      "artifact_bytes": 6911,
+      "artifact_sha256": "24c9f390e56c70d3afd3aab7ec4e4de8afa5654cf622039d66a7445b03f6dd79",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/scripts/build_adaptive_report.py",
+      "source_bytes": 21922,
+      "source_sha256": "ee959965de87f6be8da6c05b5c8a3401240f48eb74f5be27a27f45c88da4f46d"
+    },
+    {
+      "artifact": "artifacts/report-source/scripts/report_paths.py.gz",
+      "artifact_bytes": 401,
+      "artifact_sha256": "3d24c78368010b39e3ae325b24b41fbbb0f92455a1ba23458e6e5969175a147f",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/scripts/report_paths.py",
+      "source_bytes": 818,
+      "source_sha256": "a89f7e4f1b2ca3f35d4db0c588eb8d49943ba8a0a7e64e7ff4c8a114f3ddbcf6"
+    },
+    {
+      "artifact": "artifacts/supplement/scripts/project_controller_latency.py.gz",
+      "artifact_bytes": 9358,
+      "artifact_sha256": "2fe0ce5abb71186512acd7a544f26480b2eb6de731292ec1cad41300b2b6d171",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/scripts/project_controller_latency.py",
+      "source_bytes": 34263,
+      "source_sha256": "44bff243f07e1fe5a9d77cf9ffccc06ea691cb34e0efcfadd4c628cb618645cf"
+    },
+    {
+      "artifact": "artifacts/supplement/tests/test_project_controller_latency.py.gz",
+      "artifact_bytes": 4129,
+      "artifact_sha256": "c058d484aec2deb052eb4d45c13f62c1863590bc064cf4c2cf27ba94a4df0298",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/tests/test_project_controller_latency.py",
+      "source_bytes": 15080,
+      "source_sha256": "4a8162cedb0efe1f5d26719859c55a1e0d69b08e766e27ecd12a6658e1ac2ee0"
+    },
+    {
+      "artifact": "artifacts/supplement/runs/large-controller/export-validation-attempt1.json.gz",
+      "artifact_bytes": 3500,
+      "artifact_sha256": "056747d462f576da2e8a0ff7a0bd3024890c372bbfa708e3b726a504892d79cc",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/export-validation-attempt1.json",
+      "source_bytes": 17385,
+      "source_sha256": "5eb4f9ab5f326b8386fac215792db17cae722b29bcefbcc5213e922e4a2d46c1"
+    },
+    {
+      "artifact": "artifacts/supplement/runs/large-controller/exporter-attempt1.py.gz",
+      "artifact_bytes": 12421,
+      "artifact_sha256": "dd59ab2da4845a16bb6d279a08d6e06ae212beb84b2f84993944fd6105c7fc6e",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/exporter-attempt1.py",
+      "source_bytes": 44800,
+      "source_sha256": "38c9b5c2bc1624b16a476c2515b7e4411eea6bd15aaad6883b258c53b57123a8"
+    },
+    {
+      "artifact": "artifacts/supplement/runs/large-controller/qualitative-audit.json.gz",
+      "artifact_bytes": 26661,
+      "artifact_sha256": "2eee232cc676c69c7b2905d55e80b7e159646ed62fd80f7fa919e901f83d6a96",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/qualitative-audit.json",
+      "source_bytes": 205430,
+      "source_sha256": "716d8cd7c128df775112b743bb5b00ff8150de7c685236278352d6502dd8ffe3"
+    },
+    {
+      "artifact": "artifacts/supplement/runs/large-controller/qualitative-audit.md.gz",
+      "artifact_bytes": 4356,
+      "artifact_sha256": "a3ea1060c31d1fd4aca336971c0b989049a62d29d1424e72935efd6fd6469c4a",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/qualitative-audit.md",
+      "source_bytes": 10703,
+      "source_sha256": "6d7313f79d60164f7ed7b548363c279f86b15b4ca1a700df7ab0c0b8d3ad25a5"
+    },
+    {
+      "artifact": "artifacts/supplement/runs/large-controller/provider-latency/workloads.json.gz",
+      "artifact_bytes": 109173,
+      "artifact_sha256": "b71834a1999146b8475db00a00b1aded663e4c5c71c4fc4fb93c61320f2e9856",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/provider-latency/workloads.json",
+      "source_bytes": 858111,
+      "source_sha256": "830d85d3b9952587f4f23c2fe5868530ec6a9caea54edaa26da98cdc267442c5"
+    },
+    {
+      "artifact": "artifacts/supplement/runs/large-controller/provider-latency/projections.json.gz",
+      "artifact_bytes": 23884,
+      "artifact_sha256": "e88bfa2b8c04e71c24ec965fc18483765da2c372a45b4b969c4d08988db58c1f",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/provider-latency/projections.json",
+      "source_bytes": 465129,
+      "source_sha256": "ff43fda6c9b8661931a8c4cb6fde359f208293a0c861b567a8bb1558e0eaa9ad"
+    },
+    {
+      "artifact": "artifacts/supplement/runs/large-controller/provider-latency/profiles.json.gz",
+      "artifact_bytes": 1057,
+      "artifact_sha256": "e4afbe0719e5f8575b7fd391061160e63bf324128f41f8bd3b0dd245356ae28c",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/provider-latency/profiles.json",
+      "source_bytes": 11732,
+      "source_sha256": "a24750cc5409f7179a6fc04938de9f7bca63fb1181efd88dd181f9070dabc6e3"
+    },
+    {
+      "artifact": "artifacts/supplement/runs/large-controller/provider-latency/published-source-observations.json.gz",
+      "artifact_bytes": 1471,
+      "artifact_sha256": "9c79c6961b7aa2bda4afb8b5750d8db986d97665fda2c2d168c4b1106c748d63",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/provider-latency/published-source-observations.json",
+      "source_bytes": 5282,
+      "source_sha256": "d9350740a106a1ef85f9ea343ced3a424e229b31f5333b4a8582e1f78017b545"
+    },
+    {
+      "artifact": "artifacts/supplement/runs/large-controller/provider-latency/projection-audit.json.gz",
+      "artifact_bytes": 1675,
+      "artifact_sha256": "c923daa6e924c1ab06d58c8f26ff82786b3460637925789d59646afae033a096",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/provider-latency/projection-audit.json",
+      "source_bytes": 3381,
+      "source_sha256": "79b94996ac89da80c784e2eb5a608afc69cb30f6170920eb0e6f0f7b31ac96d3"
+    },
+    {
+      "artifact": "artifacts/supplement/runs/large-controller/provider-latency/factual-source-summary-public-v1.md.gz",
+      "artifact_bytes": 1998,
+      "artifact_sha256": "3a17f601f10dc2b3f493c9c2fd55c3cee1f81bc824234498ebef8aba3abbfe5e",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/provider-latency/factual-source-summary-public-v1.md",
+      "source_bytes": 4368,
+      "source_sha256": "770e90a8e713f1abbd35d23ff8fcaa63486499afbd751ccf04b2c01ff0d91689"
+    },
+    {
+      "artifact": "artifacts/supplement/runs/large-controller/provider-latency/provider-latency.md.gz",
+      "artifact_bytes": 5515,
+      "artifact_sha256": "631ed41a2902a0036bb48bc7bbc13ce39ebe5c04eec1aff7a2f7fb8783fadbb3",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/provider-latency/provider-latency.md",
+      "source_bytes": 17158,
+      "source_sha256": "b78d74be327ce818c0d6f3b3c595c3206a409ea7a12131123bea7172c658a5fa"
+    },
+    {
+      "artifact": "artifacts/supplement/runs/large-controller/provider-latency/provider-latency.png.gz",
+      "artifact_bytes": 264258,
+      "artifact_sha256": "71ebf4d5e322c1e18a89bd60514cd89c575bba2e748c72ad0ff572700658062f",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/provider-latency/provider-latency.png",
+      "source_bytes": 298888,
+      "source_sha256": "30e7b3a987872535c7c11379571d7fceabcef09da3d773a0814caac42ccef884"
+    },
+    {
+      "artifact": "artifacts/supplement/runs/large-controller/provider-latency/provider-pairs.csv.gz",
+      "artifact_bytes": 1601,
+      "artifact_sha256": "166c52fad949ae23943120fcacc5a641b60ae80037d3862f617799e522a61149",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/provider-latency/provider-pairs.csv",
+      "source_bytes": 13046,
+      "source_sha256": "43600af82a1b798a79ce149087f4be53dfad4b0ea691f4efeab352badb2d57d8"
+    },
+    {
+      "artifact": "artifacts/supplement/runs/large-controller/provider-latency/provider-summary.csv.gz",
+      "artifact_bytes": 3033,
+      "artifact_sha256": "7ad944220102ad5c3aaaa3f73266a56f9833d8fae576c07357ca78a533ed1289",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/provider-latency/provider-summary.csv",
+      "source_bytes": 22294,
+      "source_sha256": "241bd2c1031c63a16edd33e3258a94d361feb853b17bba676efca77ee537cc99"
+    },
+    {
+      "artifact": "artifacts/supplement/runs/large-controller/provider-latency/provider-render-receipt.json.gz",
+      "artifact_bytes": 593,
+      "artifact_sha256": "9e7608fffc5fb8de9dd99e189ec6f4d2b1d43a75ffc527b1b2fe2e44a21c286e",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/provider-latency/provider-render-receipt.json",
+      "source_bytes": 1024,
+      "source_sha256": "ef8d63805dd8a2c9315160f8c9eb87b2bae57e0624301a8ae9bc23556d2d0f69"
+    },
+    {
+      "artifact": "artifacts/supplement/runs/large-controller/provider-latency/render_provider_report.py.gz",
+      "artifact_bytes": 8155,
+      "artifact_sha256": "0cbb23c4a7bca098834f556246ca81124dc1bd71b9e25a41a80553d9cc1f244f",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/provider-latency/render_provider_report.py",
+      "source_bytes": 23360,
+      "source_sha256": "af2f2242ead503a40ee629d47fbb38d9b63c13f5001002e51828afaf00266b23"
+    },
+    {
+      "artifact": "artifacts/supplement/runs/large-controller/provider-latency/lambda-qwen35-122b-extracted-benchmark-v1.json.gz",
+      "artifact_bytes": 1099,
+      "artifact_sha256": "232aeeef57dd8aa3d13f45f1dfdafcbef2b1eb31d13e185f02b81e91d6df697a",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/provider-latency/lambda-qwen35-122b-extracted-benchmark-v1.json",
+      "source_bytes": 3067,
+      "source_sha256": "188e515109f13a78795bb88fb39884dc90e1b8c5575a23c441799e699e4164b3"
+    },
+    {
+      "artifact": "artifacts/prior-controller/runs/controller-scaling/pilot-v1/8b_short/results.jsonl.gz",
+      "artifact_bytes": 32775,
+      "artifact_sha256": "657912e17d318a136acfbbb37a089a42c76ed544879dd8ad9af3ebb73eaf6350",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/controller-scaling/pilot-v1/8b_short/results.jsonl",
+      "source_bytes": 162387,
+      "source_sha256": "7a472d642bd4eed763999ad487419c9a456c24c1df54fe1fd1a4b5ccb7a9074e"
+    },
+    {
+      "artifact": "artifacts/prior-controller/runs/controller-scaling/pilot-v1/8b_short/manifest.json.gz",
+      "artifact_bytes": 2290,
+      "artifact_sha256": "327e7a57618ba7a273d2b3c2b9908e1cfb3497acd88fcc114f31ed100c0c0e6f",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/controller-scaling/pilot-v1/8b_short/manifest.json",
+      "source_bytes": 5466,
+      "source_sha256": "b52469a9d5fa6478586a67ce0f175222eda96805c9095f97cf3e93b70b546fec"
+    },
+    {
+      "artifact": "artifacts/prior-controller/runs/controller-scaling/pilot-v1/8b_short/summary.json.gz",
+      "artifact_bytes": 2195,
+      "artifact_sha256": "50741b2c843cf2122954bb6ed3a9a78f6f0810d263aac7c1174873e513debf10",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/controller-scaling/pilot-v1/8b_short/summary.json",
+      "source_bytes": 9223,
+      "source_sha256": "d138fbddf798b2f843540c8444019b06d64e2ae66136dfbfd13534233dfa4da1"
+    },
+    {
+      "artifact": "artifacts/prior-controller/engine/backends_mlx.py.gz",
+      "artifact_bytes": 8070,
+      "artifact_sha256": "f2f982a2f8890df979bf4d5412ef92553d137b0ba437d72e002f4e714f02ac32",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/engine/backends_mlx.py",
+      "source_bytes": 29515,
+      "source_sha256": "f52a313301dc64d65a1492d86b05f683e581c4ff6c13317ecfc1db347cefda0d"
+    },
+    {
+      "artifact": "artifacts/prior-controller/eval/adaptive_experiments.py.gz",
+      "artifact_bytes": 12793,
+      "artifact_sha256": "b545505633cd98425edfa84361b42eed4ff70a81bdc74e03affb84f1ef8fc3c1",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/eval/adaptive_experiments.py",
+      "source_bytes": 50130,
+      "source_sha256": "f5cf5d4fcdfbb6eb73bf0a89b7e68af583edd43b1a64dc36355485a4f422afec"
+    },
+    {
+      "artifact": "artifacts/prior-controller/scripts/run_adaptive.py.gz",
+      "artifact_bytes": 1773,
+      "artifact_sha256": "7e9f42f56bb89803fdd1c22d0131d3bde302e4f8022ca9a7538bb12fa100c663",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/scripts/run_adaptive.py",
+      "source_bytes": 5715,
+      "source_sha256": "24397f79a89e2dfa3bd90a4f1e4de79a39546f7ed6e432c25fcf6e666b6948ed"
+    },
+    {
+      "artifact": "artifacts/prior-controller/runs/controller-scaling/pilot-v1/8b_thinking/results.jsonl.gz",
+      "artifact_bytes": 63378,
+      "artifact_sha256": "f681f9d73359a784a6458d0d099edefebf70f0d6a8a60697f1db843789521b48",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/controller-scaling/pilot-v1/8b_thinking/results.jsonl",
+      "source_bytes": 352552,
+      "source_sha256": "bdf6caf266626bb4776079414e8495dd0056c62e9f797cee17728b69ac910c48"
+    },
+    {
+      "artifact": "artifacts/prior-controller/runs/controller-scaling/pilot-v1/8b_thinking/manifest.json.gz",
+      "artifact_bytes": 2283,
+      "artifact_sha256": "b30f4dc49c1162bd565f9f0f4d9bf9b19bee27cdf3929dda11d79aa7b0ae4f37",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/controller-scaling/pilot-v1/8b_thinking/manifest.json",
+      "source_bytes": 5477,
+      "source_sha256": "697c9423dbe169c37604373e1cb1c6efbda2b1cbfb39b9f6ff840d6ca69e7beb"
+    },
+    {
+      "artifact": "artifacts/prior-controller/runs/controller-scaling/pilot-v1/8b_thinking/summary.json.gz",
+      "artifact_bytes": 2250,
+      "artifact_sha256": "f4502bc52a5d9a191f8e4e52444e0cb71a1234465cfb5c6f13ef4352f786055a",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/controller-scaling/pilot-v1/8b_thinking/summary.json",
+      "source_bytes": 9418,
+      "source_sha256": "3a2849432d2f4cf3a850618ae81676ecd8bd436ec88f27d95ae4140d4de41c0c"
+    },
+    {
+      "artifact": "artifacts/prior-controller/runs/controller-scaling/pilot-v1/14b_short/results.jsonl.gz",
+      "artifact_bytes": 39587,
+      "artifact_sha256": "99105d9320a0dcf281d8d820bd4e902e1391db1d8bec6616e4b2167176b385fb",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/controller-scaling/pilot-v1/14b_short/results.jsonl",
+      "source_bytes": 188547,
+      "source_sha256": "f9c9ce1d64f3ba8454d55bbe50bc5e0611803abad07005d62a0750104b91176f"
+    },
+    {
+      "artifact": "artifacts/prior-controller/runs/controller-scaling/pilot-v1/14b_short/manifest.json.gz",
+      "artifact_bytes": 2287,
+      "artifact_sha256": "efb0bffed7d72ba1c6479d2b3e7eaf7729f796910592659401e8cbf5e8a1803f",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/controller-scaling/pilot-v1/14b_short/manifest.json",
+      "source_bytes": 5466,
+      "source_sha256": "d6fbfd5eaa0986d768c1e89166996f0cb1e9228878bcf95de45f7713f45e9a1f"
+    },
+    {
+      "artifact": "artifacts/prior-controller/runs/controller-scaling/pilot-v1/14b_short/summary.json.gz",
+      "artifact_bytes": 2242,
+      "artifact_sha256": "6af27609da8cd55f5a4526ff8a4c792a9581a7b6e6a5a1d4bf2b45e21984450b",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/controller-scaling/pilot-v1/14b_short/summary.json",
+      "source_bytes": 9252,
+      "source_sha256": "7baef3eadc1f905d7ca6327936ff8fc16aca2a31ff094c447eb0f1f3a2192db3"
+    },
+    {
+      "artifact": "artifacts/prior-controller/runs/controller-scaling/pilot-v1/14b_thinking/results.jsonl.gz",
+      "artifact_bytes": 63517,
+      "artifact_sha256": "76b9f62ae38b750e23bc0a4bddcd72f4d7c7fd9c975227cf81c9744bc55b4cdf",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/controller-scaling/pilot-v1/14b_thinking/results.jsonl",
+      "source_bytes": 337830,
+      "source_sha256": "d19588f6aba282dea611717d7f1440ac6d4b5954fae8ffc40d165020df327bb5"
+    },
+    {
+      "artifact": "artifacts/prior-controller/runs/controller-scaling/pilot-v1/14b_thinking/manifest.json.gz",
+      "artifact_bytes": 2287,
+      "artifact_sha256": "9ee80a40d8ad87bf0f55745c75ed397ff90e2d2b8cb7e1ed3210bcdb092dd2e0",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/controller-scaling/pilot-v1/14b_thinking/manifest.json",
+      "source_bytes": 5479,
+      "source_sha256": "3f2be1f941e30310e654e14e9810a2f158842bcf35cce879561872bedc24bdc7"
+    },
+    {
+      "artifact": "artifacts/prior-controller/runs/controller-scaling/pilot-v1/14b_thinking/summary.json.gz",
+      "artifact_bytes": 2313,
+      "artifact_sha256": "d9e8229fa771b2d3539ceb2eb24f7ee7f65d7533f1b7eceab19e11ddc6a255c1",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/controller-scaling/pilot-v1/14b_thinking/summary.json",
+      "source_bytes": 9555,
+      "source_sha256": "e5873795835175fc39ef1ec7af899d08d5d45fe07b8b399380b505b07cc909ef"
+    },
+    {
+      "artifact": "artifacts/supplement/runs/large-controller/package_supplement.py.gz",
+      "artifact_bytes": 1660,
+      "artifact_sha256": "690809ddcb1dca4b12ee9ca67ff0c69c3ba494245b51e0d3dd2be2827481cb9a",
+      "compression": "gzip",
+      "source": "/Users/matt/Documents/ChatGPT/LatentBase/runs/large-controller/package_supplement.py",
+      "source_bytes": 4353,
+      "source_sha256": "6c6ae2134857bc26a385cebab34b0f6b698eb2170ef1b2b155dcf7b222f3bfce"
+    }
+  ],
+  "report_version": "large-controller-report-v1"
+}

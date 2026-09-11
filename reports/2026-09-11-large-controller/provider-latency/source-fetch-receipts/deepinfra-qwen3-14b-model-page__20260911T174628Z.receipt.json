@@ -1,0 +1,22 @@
+{
+  "authenticated": false,
+  "body_bytes": 516001,
+  "body_path": "deepinfra-qwen3-14b-model-page__20260911T174628Z.html",
+  "body_sha256": "d24925caf4ce292a453505d7270efde47ba36290c89f605bf97feedf89b439fe",
+  "final_url": "https://deepinfra.com/Qwen/Qwen3-14B",
+  "http_status": 200,
+  "method": "GET",
+  "publication_note": "Only content/timing/cache response headers retained; cookies and unrelated headers omitted.",
+  "request_url": "https://deepinfra.com/Qwen/Qwen3-14B",
+  "response_headers": {
+    "Age": "0",
+    "Cache-Control": "public, max-age=0, must-revalidate",
+    "Content-Length": "516001",
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Fri, 11 Sep 2026 17:46:28 GMT",
+    "Etag": "\"6d3c6ffc99edef02befeaf2c5a90abfc\"",
+    "Last-Modified": "Fri, 11 Sep 2026 17:46:28 GMT"
+  },
+  "retrieved_utc": "2026-09-11T17:46:28.899672+00:00",
+  "started_utc": "2026-09-11T17:46:28.318616+00:00"
+}

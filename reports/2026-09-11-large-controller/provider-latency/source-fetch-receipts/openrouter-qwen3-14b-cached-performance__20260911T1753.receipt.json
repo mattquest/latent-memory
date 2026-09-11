@@ -1,0 +1,11 @@
+{
+  "authenticated": false,
+  "body_bytes": 1135,
+  "body_path": "openrouter-qwen3-14b-cached-performance__20260911T1753.txt",
+  "body_sha256": "d341f1a278570d834ea0e5113a474a749bd484f92914402f615fbc8b33254f7c",
+  "evidence_type": "web-search-rendered official-page structured excerpt; not raw HTTP",
+  "recorded_utc": "2026-09-11T17:53:28.072608+00:00",
+  "retrieval_utc_approximate": "2026-09-11T17:53:00Z",
+  "search_crawl_label": "yesterday",
+  "source_url": "https://openrouter.ai/qwen/qwen3-14b-04-28/uptime"
+}
