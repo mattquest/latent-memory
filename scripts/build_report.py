@@ -285,6 +285,7 @@ def metric_groups(records):
         result = {"job": job, "job_status": rows[0]["report_job_status"], "dataset": dataset,
                   **case, "variant": variant(case), "stratification": stratification,
                   "stratum": stratum, "n_examples": len(primary), "n_runs": len(rows),
+                  "example_cohort_sha256": digest(json.dumps(sorted(by_example), separators=(",", ":")).encode()),
                   "metric_role": "BEAM lexical proxy, not benchmark accuracy" if is_beam(primary[0]) else "QA exact match",
                   "exact_match": mean(em), "exact_match_ci95_low": ci[0], "exact_match_ci95_high": ci[1],
                   "f1": mean(r["scores"]["f1"] for r in primary),
@@ -440,6 +441,35 @@ def csv_output(path, rows):
             writer.writerow({k: json.dumps(v) if isinstance(v, (list, dict)) else v for k, v in row.items()})
 
 
+def e2_plot_batches(metrics, stratification):
+    """Keep structural jobs distinct even when they share a dataset name."""
+    batches = defaultdict(list)
+    for row in metrics:
+        if row["experiment"] == "E2" and row["stratification"] == stratification:
+            batches[(row["job"], row["dataset"])].append(row)
+    return batches
+
+
+def e2_cohort_curves(rows):
+    """Connect only identical example cohorts and settings across hop counts."""
+    groups = defaultdict(list)
+    for row in rows:
+        key = (row["variant"], row["control"], row["bridge_ratio"], row["update_policy"],
+               row["n_examples"], row["example_cohort_sha256"])
+        groups[key].append(row)
+    variant_counts = Counter(key[0] for key in groups)
+    curves = []
+    for key, values in sorted(groups.items(), key=lambda pair: str(pair[0])):
+        line = sorted(values, key=lambda row: row["hops"])
+        if len({row["hops"] for row in line}) != len(line):
+            raise ValueError("Duplicate E2 hop coordinates within a job and example cohort")
+        label = f"{key[0]} (n={key[4]})"
+        if variant_counts[key[0]] > 1:
+            label += f" · cohort {key[5][:6]}; {key[1]}; r={key[2]:g}; {key[3]}"
+        curves.append((label, line))
+    return curves
+
+
 def plots(metrics, output, include_incomplete=False):
     import matplotlib
     matplotlib.use("Agg")
@@ -461,17 +491,38 @@ def plots(metrics, output, include_incomplete=False):
         fig.savefig(path, bbox_inches="tight")
         plt.close(fig)
         artifacts.append(str(path.relative_to(output)))
-    e2 = defaultdict(list)
+    e1 = defaultdict(list)
     for m in visible:
-        if m["experiment"] == "E2" and m["stratification"] == "all":
-            e2[(m["job"], m["dataset"])].append(m)
-    for (job, dataset), rows in sorted(e2.items()):
+        if m["experiment"] == "E1" and m["stratification"] == "all" and m["dataset"] in {"hotpotqa", "musique"}:
+            e1[(m["job"], m["dataset"])].append(m)
+    arm_order = {name: i for i, name in enumerate(COLORS)}
+    for (job, dataset), rows in sorted(e1.items()):
+        rows = sorted(rows, key=lambda r: (arm_order.get(r["variant"], 99), r["hops"]))
+        positions = list(range(len(rows)))
+        colors = [COLORS.get(r["variant"], "#87979e") for r in rows]
+        labels = [f"{r['variant']}\nn={r['n_examples']}" for r in rows]
+        fig, axes = plt.subplots(1, 2, figsize=(12, 4.1))
+        axes[0].bar(positions, [100*r["exact_match"] for r in rows], color=colors)
+        for i, row in enumerate(rows):
+            lo, hi = row["exact_match_ci95_low"], row["exact_match_ci95_high"]
+            if lo is not None:
+                axes[0].errorbar(i, 100*row["exact_match"],
+                    yerr=[[100*max(0, row["exact_match"]-lo)], [100*max(0, hi-row["exact_match"])]],
+                    color="#25313a", capsize=4, fmt="none")
+        axes[0].set(ylabel="Exact match (%)", ylim=(0, 108), title="Answer quality · 95% Wilson intervals")
+        axes[1].bar([i-.19 for i in positions], [r["warm_latency_p50_ms"]/1000 for r in rows],
+                    width=.36, color=colors, label="p50")
+        axes[1].bar([i+.19 for i in positions], [r["warm_latency_p95_ms"]/1000 for r in rows],
+                    width=.36, color=colors, alpha=.45, hatch="//", label="p95")
+        axes[1].set(ylabel="Warm generation latency (s)", title="Online model work; precompute excluded")
+        axes[1].legend(fontsize=9)
+        for ax in axes:
+            ax.set_xticks(positions, labels, fontsize=9)
+        finish(fig, f"e1_{job}", f"E1 · {dataset} · {job}", rows)
+    for (job, dataset), rows in sorted(e2_plot_batches(visible, "all").items()):
         fig, axes = plt.subplots(1, 2, figsize=(11, 3.8))
-        for label in sorted({r["variant"] for r in rows}):
-            line = sorted([r for r in rows if r["variant"] == label], key=lambda r: r["hops"])
-            color = COLORS.get(label)
-            ns = sorted({r["n_examples"] for r in line})
-            legend = f"{label} (n={','.join(map(str, ns))})"
+        for legend, line in e2_cohort_curves(rows):
+            color = COLORS.get(line[0]["variant"])
             axes[0].plot([r["hops"] for r in line], [100*r["exact_match"] for r in line], "o-", label=legend, color=color)
             axes[1].plot([r["hops"] for r in line], [r["warm_latency_p50_ms"]/1000 for r in line], "o-", label=legend, color=color)
         axes[0].set(ylabel="Exact match (%)", ylim=(-3, 103), xlabel="Scheduled evidence batches", title="Answer quality")
@@ -479,23 +530,22 @@ def plots(metrics, output, include_incomplete=False):
         for ax in axes:
             ax.set_xticks(sorted({r["hops"] for r in rows}))
         axes[0].legend(fontsize=8)
-        finish(fig, f"e2_{job}", f"E2 · {dataset} · fixed evidence schedule", rows)
-    chains = [r for r in visible if r["experiment"] == "E2" and r["stratification"] == "chain_length"]
-    if chains:
+        finish(fig, f"e2_{job}", f"E2 · {dataset} · {job} · fixed evidence schedule", rows)
+    for (job, dataset), chains in sorted(e2_plot_batches(visible, "chain_length").items()):
         lengths = sorted({r["stratum"] for r in chains})
         fig, axes = plt.subplots(len(lengths), 2, figsize=(11, max(4, 2.65*len(lengths))), squeeze=False)
         for i, length in enumerate(lengths):
             rows = [r for r in chains if r["stratum"] == length]
-            for label in sorted({r["variant"] for r in rows}):
-                line = sorted([r for r in rows if r["variant"] == label], key=lambda r: r["hops"])
-                axes[i, 0].plot([r["hops"] for r in line], [100*r["exact_match"] for r in line], "o-", color=COLORS.get(label), label=f"{label}; n={line[0]['n_examples']}")
-                axes[i, 1].plot([r["hops"] for r in line], [r["warm_latency_p50_ms"]/1000 for r in line], "o-", color=COLORS.get(label))
-            axes[i, 0].set(ylabel=f"{length} facts · EM (%)", ylim=(-3, 103), xlabel="Evidence batches")
-            axes[i, 1].set(ylabel="Warm p50 (s)", xlabel="Evidence batches")
+            for legend, line in e2_cohort_curves(rows):
+                color = COLORS.get(line[0]["variant"])
+                axes[i, 0].plot([r["hops"] for r in line], [100*r["exact_match"] for r in line], "o-", color=color, label=legend)
+                axes[i, 1].plot([r["hops"] for r in line], [r["warm_latency_p50_ms"]/1000 for r in line], "o-", color=color)
+            axes[i, 0].set(ylabel=f"{length} facts · EM (%)", ylim=(-3, 103), xlabel="Scheduled evidence batches")
+            axes[i, 1].set(ylabel="Warm p50 (s)", xlabel="Scheduled evidence batches")
             for ax in axes[i]:
                 ax.set_xticks(sorted({r["hops"] for r in rows}))
             axes[i, 0].legend(fontsize=7, loc="best")
-        finish(fig, "e2_synthetic_by_chain_length", "E2 · synthetic chain length · fixed evidence schedule", chains)
+        finish(fig, f"e2_{job}_by_chain_length", f"E2 · {dataset} · {job} · by chain length", chains)
     for experiment in ("E3", "E4", "E5"):
         batches = defaultdict(list)
         for row in visible:
@@ -592,6 +642,18 @@ def markdown_table(headers, rows):
 def tables(report, include_incomplete=False):
     lines = ["# Experiment results", "", f"Generated {report['generated_utc']}. Status: **{report['status']}**.", "",
              "These are bounded local Qwen3 experiments. They do not establish the original adaptive multi-agent or BEAM-10M thesis. Incomplete jobs remain visible in receipts and CSVs; headline tables and figures use completed jobs only unless explicitly requested.", "", "## Completion", ""]
+    amendment = report.get("amendment") or {}
+    if amendment:
+        planned = sum(j["planned_runs"] or 0 for j in report["jobs"])
+        lines += [f"Completion is scoped to the **{len(report['jobs'])} reported jobs / {planned:,} planned conditions** below. "
+                  f"The amended original matrix planned {amendment['original_planned_conditions']:,} conditions: "
+                  f"{amendment['completed_initial_conditions']:,} initial conditions were completed and "
+                  f"{amendment['canceled_original_remainder']:,} remaining original conditions were canceled. "
+                  "The original resource guard was intentionally interrupted at this controlled boundary; its stopped status does not imply failure of the completed jobs.", "",
+                  f"Amendment reason: {amendment.get('reason', 'See archived amendment receipt.')}", ""]
+        if amendment.get("preserved_unused_partial_directories"):
+            lines += ["Unused partial runs are excluded from these results and preserved separately: " +
+                      ", ".join(f"`{path}`" for path in amendment["preserved_unused_partial_directories"]) + ".", ""]
     lines += [markdown_table(["Job", "State", "Successful / planned", "Unresolved errors"],
                              [[j["job"], j["status"], f"{j['successful_unique_runs']} / {j['planned_runs'] if j['planned_runs'] is not None else '?'}", j["failed_latest_runs"]] for j in report["jobs"]]), ""]
     visible = [r for r in report["metrics"] if r["dataset"] != "beam" and r["stratification"] == "all" and
@@ -637,7 +699,7 @@ def tables(report, include_incomplete=False):
     else:
         lines += ["No fully judged, completed BEAM comparison cohorts are available in this snapshot. Partial valid, invalid, and pending counts remain in beam-judge.csv; default tables withhold partial-cohort scores.", ""]
     lines += ["## Interpretation and costs", "",
-              "- E2 changes available evidence through a fixed schedule; it does not measure learned adaptive retrieval. Inspect the direct-text curve before attributing a gain to avoiding evidence-note compression.",
+              "- E2 changes available evidence through a fixed schedule; it does not measure learned adaptive retrieval. Inspect the direct-text curve before attributing a gain to avoiding evidence-note compression. Structural jobs and chain-length strata have separate figures; connected curves contain identical example cohorts with exact n labels. No changing-cohort aggregate curve is plotted.",
               "- BF16 and int8 latent variants are separate. E5 measures a single storage quantization; multi-hop arms may quantize repeatedly. Attention runs in BF16 after dequantization.",
               "- Warm latency excludes model loading, document-cache precomputation, fixed retrieval/schedule selection, and shared final-question tokenization. The precompute measurement covers the union of documents selected across the experiment grid for an example, not a per-case cold-query latency or full BEAM ingestion.",
               "- Retrieval and schedule timing, truncation, cap-hit rates, cache bytes, and executed hops are in metrics.csv. fraction_document_truncation is the fraction of examples with at least one delivered truncated document; fraction_any_candidate_truncation also counts unused candidates. Headline hop counts are scheduled batches; empty batches do not create new evidence.",
@@ -779,7 +841,7 @@ def collect_input_artifacts(jobs, data_dir, output):
 
 def collect_receipts(run_root, data_dir, matrix_path, output):
     receipts = []
-    for name in ("guard-status.json", "matrix-status.json", "resources.jsonl"):
+    for name in ("guard-status.json", "matrix-status.json", "resources.jsonl", "amendment.json"):
         path = run_root / name
         if path.exists():
             compressed = path.suffix == ".jsonl"
@@ -791,6 +853,10 @@ def collect_receipts(run_root, data_dir, matrix_path, output):
             sources.append(data_dir/name)
     for path in sources:
         receipts.append(archive_bytes(output, Path("data-provenance") / path.name, path.read_bytes(), path))
+    for relative in ("scripts/prepare_focused_e2.py", "docs/budget-amendment.md"):
+        path = Path(relative)
+        if path.exists():
+            receipts.append(archive_bytes(output, Path("protocol-provenance") / relative, path.read_bytes(), path))
     for name in ("bm25_hashseed_audit.json", "bm25_hashseed_ledgers.json.gz", "bm25_determinism.patch", "read_timing_sidecar.patch"):
         path = Path("runs") / name
         if path.exists():
@@ -830,6 +896,7 @@ def main():
     receipts.extend(collect_receipts(args.run_root, args.data_dir, None if args.no_matrix else args.matrix, args.output_dir))
     complete = bool(jobs) and all(j["status"] == "complete" for j in jobs) and not input_issues and not source_issues
     figures = [] if args.no_plots else plots(metrics, args.output_dir, args.include_incomplete) + judge_plots(judge, args.output_dir)
+    amendment = read_json(args.run_root / "amendment.json")
     report = {"report_version": REPORT_VERSION, "generated_utc": datetime.now(timezone.utc).isoformat(),
               "status": "generation_complete" if complete else "INCOMPLETE_SNAPSHOT",
               "judge_status": judge["status"], "run_root": str(args.run_root),
@@ -839,6 +906,12 @@ def main():
               "issues": issues, "figures": figures,
               "included_incomplete_in_headlines": args.include_incomplete,
               "raw_successful_records": len(records),
+              "completion_scope": {"reported_jobs": [j["job"] for j in jobs],
+                                   "reported_planned_conditions": sum(j["planned_runs"] or 0 for j in jobs),
+                                   "reported_successful_conditions": sum(j["successful_unique_runs"] for j in jobs),
+                                   "original_planned_conditions": amendment.get("original_planned_conditions"),
+                                   "canceled_original_remainder": amendment.get("canceled_original_remainder")},
+              "amendment": amendment or None,
               "resource_guard": read_json(args.run_root / "guard-status.json")}
     csv_output(args.output_dir / "metrics.csv", metrics)
     csv_output(args.output_dir / "paired.csv", paired)

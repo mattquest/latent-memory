@@ -217,3 +217,56 @@ def test_require_complete_fails_when_executable_bytes_are_unavailable(tmp_path, 
     summary = json.loads((output / "summary.json").read_text())
     assert summary["status"] == "INCOMPLETE_SNAPSHOT"
     assert any(issue["kind"] == "executed_source_unavailable" for issue in summary["issues"])
+
+
+def test_e2_curves_separate_structural_jobs_and_identical_size_different_cohorts():
+    records = []
+    for job in ("docs6", "docs7"):
+        for hops in (1, 3):
+            row = fixture_record(example=f"{job}-question")
+            row.update(report_job=job, dataset="synthetic_multihop", example_metadata={"chain_length": 2})
+            row["case"].update(experiment="E2", hops=hops)
+            records.append(row)
+    # Equal n is insufficient: a different question at h=5 must not extend h=1/3.
+    changed = copy.deepcopy(records[0])
+    changed["example_id"] = "different-question"
+    changed["case"]["hops"] = 5
+    records.append(changed)
+    metrics = report.metric_groups(records)
+    for stratification in ("all", "chain_length"):
+        batches = report.e2_plot_batches(metrics, stratification)
+        assert set(batches) == {("docs6", "synthetic_multihop"), ("docs7", "synthetic_multihop")}
+        curves = report.e2_cohort_curves(batches[("docs6", "synthetic_multihop")])
+        assert sorted([r["hops"] for r in line] for _, line in curves) == [[1, 3], [5]]
+        assert all("n=1" in label for label, _ in curves)
+        assert all(len({r["example_cohort_sha256"] for r in line}) == 1 for _, line in curves)
+        assert len(report.e2_cohort_curves(batches[("docs7", "synthetic_multihop")])) == 1
+
+
+def test_amendment_scopes_completion_without_claiming_canceled_conditions_finished():
+    snapshot = {"generated_utc": "fixture", "status": "generation_complete", "metrics": [],
+                "paired": [], "judge": {"groups": []}, "figures": [],
+                "jobs": [{"job": f"job{i}", "status": "complete", "planned_runs": 672,
+                          "successful_unique_runs": 672, "failed_latest_runs": 0} for i in range(5)],
+                "amendment": {"original_planned_conditions": 8120, "completed_initial_conditions": 3360,
+                              "canceled_original_remainder": 4760, "reason": "Controlled amendment",
+                              "preserved_unused_partial_directories": ["runs/unused-partial"]}}
+    text = report.tables(snapshot)
+    assert "5 reported jobs / 3,360 planned conditions" in text
+    assert "8,120 conditions" in text and "4,760 remaining original conditions were canceled" in text
+    assert "intentionally interrupted" in text and "runs/unused-partial" in text
+
+
+def test_receipts_archive_amendment_and_focused_group_provenance(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    paths = [Path("run/amendment.json"), Path("data/focused_e2_groups.manifest.json"),
+             Path("scripts/prepare_focused_e2.py"), Path("docs/budget-amendment.md")]
+    for path in paths:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes((str(path) + " fixture bytes\n").encode())
+    receipts = report.collect_receipts(Path("run"), Path("data"), None, Path("release"))
+    assert len(receipts) == 4
+    for source in paths:
+        receipt = next(r for r in receipts if r["source"] == str(source))
+        assert (Path("release") / receipt["artifact"]).read_bytes() == source.read_bytes()
+        assert receipt["source_sha256"] == report.digest(source.read_bytes())
