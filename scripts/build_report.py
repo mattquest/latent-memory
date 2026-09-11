@@ -20,6 +20,10 @@ import random
 import re
 import statistics
 import subprocess
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from scripts.report_paths import validate_report_output
 
 REPORT_VERSION = "artifact-report-v1"
 CASE_KEYS = ("experiment", "arm", "hops", "control", "bridge_ratio", "precision", "update_policy")
@@ -866,6 +870,8 @@ def collect_receipts(run_root, data_dir, matrix_path, output):
         receipts.append(archive_bytes(output, Path("model-provenance/model-manifest.json"), model_manifest.read_bytes(), model_manifest))
     if matrix_path and matrix_path.exists():
         receipts.append(archive_bytes(output, Path("config") / matrix_path.name, matrix_path.read_bytes(), matrix_path))
+    helper_source = Path(__file__).with_name("report_paths.py")
+    receipts.append(archive_bytes(output, Path("report-source/report_paths.py"), helper_source.read_bytes(), helper_source))
     return receipts
 
 
@@ -881,6 +887,7 @@ def main():
     parser.add_argument("--no-plots", action="store_true")
     parser.add_argument("--require-complete", action="store_true", help="Exit 2 after writing if generation jobs are not all complete")
     args = parser.parse_args()
+    validate_report_output(args.output_dir, args.run_root, args.judge_dir, args.data_dir)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     matrix = {} if args.no_matrix else read_json(args.matrix)
     jobs, records, receipts, issues = collect_jobs(args.run_root, matrix, args.output_dir)

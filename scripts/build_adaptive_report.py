@@ -21,6 +21,7 @@ REPOSITORY = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPOSITORY))
 from eval.adaptive_experiments import aggregate, report_tables
 from eval.real_experiments import answer_scores
+from scripts.report_paths import validate_report_output
 
 
 VERSION = "adaptive-artifact-report-v1"
@@ -245,6 +246,7 @@ def figures(summary, output):
 
 
 def build(run_dir, output, root=REPOSITORY, no_plots=False):
+    validate_report_output(output, run_dir)
     output.mkdir(parents=True, exist_ok=True)
     inspection = inspect_run(run_dir, root)
     records = inspection["records"]
@@ -304,6 +306,8 @@ def build(run_dir, output, root=REPOSITORY, no_plots=False):
             receipts.append(archive(output, Path("provenance") / source.name, source.read_bytes(), source))
     own_source = Path(__file__).resolve()
     receipts.append(archive(output, Path("source") / "scripts/build_adaptive_report.py", own_source.read_bytes(), own_source))
+    helper_source = own_source.with_name("report_paths.py")
+    receipts.append(archive(output, Path("source") / "scripts/report_paths.py", helper_source.read_bytes(), helper_source))
     license_text = ("# MuSiQue attribution and modifications\n\n"
                     "Trivedi et al. (2022), MuSiQue. Dataset: https://github.com/StonyBrookNLP/musique\n\n"
                     "Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0): "

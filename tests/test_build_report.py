@@ -265,8 +265,10 @@ def test_receipts_archive_amendment_and_focused_group_provenance(tmp_path, monke
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes((str(path) + " fixture bytes\n").encode())
     receipts = report.collect_receipts(Path("run"), Path("data"), None, Path("release"))
-    assert len(receipts) == 4
+    assert len(receipts) == 5
     for source in paths:
         receipt = next(r for r in receipts if r["source"] == str(source))
         assert (Path("release") / receipt["artifact"]).read_bytes() == source.read_bytes()
         assert receipt["source_sha256"] == report.digest(source.read_bytes())
+    helper = next(r for r in receipts if r["artifact"] == "artifacts/report-source/report_paths.py")
+    assert helper["source_sha256"] == report.digest(Path(report.__file__).with_name("report_paths.py").read_bytes())

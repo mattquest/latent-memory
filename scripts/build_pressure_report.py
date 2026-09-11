@@ -19,6 +19,7 @@ sys.path.insert(0, str(ROOT))
 from eval.context_pressure import ARMS, PressureConfig, aggregate, report_tables
 from eval.real_experiments import answer_scores, clean_prediction
 from scripts.build_adaptive_report import archive, csv_rows, load_json, safe_source, sha, snapshot
+from scripts.report_paths import validate_report_output
 
 VERSION = "pressure-artifact-report-v1"
 
@@ -201,6 +202,7 @@ def inspect_run(run_dir, root=ROOT):
 
 
 def build(run_dir, output, root=ROOT):
+    validate_report_output(output, run_dir)
     output.mkdir(parents=True, exist_ok=True)
     inspected = inspect_run(run_dir, root)
     config_values = dict(inspected["manifest"].get("identity", {}).get("config", {}))
@@ -228,7 +230,7 @@ def build(run_dir, output, root=ROOT):
         path = root / relative
         if path.exists():
             receipts.append(archive(output, Path("provenance") / path.name, path.read_bytes(), path))
-    for relative in ("scripts/build_pressure_report.py", "scripts/build_adaptive_report.py"):
+    for relative in ("scripts/build_pressure_report.py", "scripts/build_adaptive_report.py", "scripts/report_paths.py"):
         path = ROOT / relative
         receipts.append(archive(output, Path("exporter-source") / relative, path.read_bytes(), path))
     license_text = ("# MuSiQue data license and replay\n\nTrivedi et al. (2022), MuSiQue: https://github.com/StonyBrookNLP/musique\n\n"
