@@ -189,7 +189,8 @@ def clean_prediction(text: str) -> str:
     return text.strip()
 
 
-def read_dataset(path: str, limit: int | None = None) -> list[dict]:
+def read_dataset(path: str, limit: int | None = None, *,
+                 include_timing_sidecars: bool = False) -> list[dict]:
     examples = []
     with open(path, encoding="utf-8") as stream:
         for line_number, line in enumerate(stream, 1):
@@ -210,7 +211,67 @@ def read_dataset(path: str, limit: int | None = None) -> list[dict]:
         raise ValueError("Duplicate example IDs")
     if not examples:
         raise ValueError("Dataset is empty")
+    if include_timing_sidecars:
+        _attach_timing_sidecars(examples, Path(path))
     return examples
+
+
+def _attach_timing_sidecars(examples: list[dict], dataset_path: Path) -> None:
+    """Hydrate cost-only measurements after semantic dataset identity checks.
+
+    Optional absent receipts do not affect answers. Present receipts must match
+    their semantic source and canonical example hashes. Never merge arbitrary
+    sidecar fields into model inputs, case definitions, or retrieval ranking.
+    """
+    directory = dataset_path.resolve().parent
+    cache = {}
+
+    def safe_file(name):
+        if (not isinstance(name, str) or not name or name in {".", ".."}
+                or "/" in name or "\\" in name or Path(name).is_absolute()):
+            raise ValueError("Timing receipt references must be safe basenames")
+        path = directory / name
+        if path.resolve().parent != directory:
+            raise ValueError("Timing receipt reference escapes dataset directory")
+        return path
+
+    def measurement(value):
+        if isinstance(value, bool) or not isinstance(value, (int, float)):
+            raise ValueError("Timing measurements must be finite nonnegative numbers")
+        if not math.isfinite(value) or value < 0:
+            raise ValueError("Timing measurements must be finite nonnegative numbers")
+        return float(value)
+
+    for example in examples:
+        metadata = example.get("metadata", {})
+        name = metadata.get("timing_sidecar")
+        if name is None:
+            continue
+        receipt_path = safe_file(name)
+        if not receipt_path.exists():
+            metadata["timing_receipt_status"] = "missing_optional_sidecar"
+            continue
+        if name not in cache:
+            raw = receipt_path.read_bytes()
+            receipt = json.loads(raw)
+            if receipt.get("schema_version") != 1:
+                raise ValueError("Unsupported timing receipt schema")
+            semantic_path = safe_file(receipt.get("semantic_dataset"))
+            semantic_digest = hashlib.sha256(semantic_path.read_bytes()).hexdigest()
+            if semantic_digest != receipt.get("semantic_dataset_sha256"):
+                raise ValueError("Timing receipt semantic dataset hash mismatch")
+            cache[name] = receipt, hashlib.sha256(raw).hexdigest()
+        receipt, receipt_digest = cache[name]
+        query = receipt.get("queries", {}).get(example["id"])
+        if not isinstance(query, dict):
+            raise ValueError("Timing receipt lacks the requested example")
+        semantic_digest = hashlib.sha256(json.dumps(
+            example, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+        if semantic_digest != query.get("semantic_example_sha256"):
+            raise ValueError("Timing receipt semantic example hash mismatch")
+        metadata["retrieval_seconds"] = measurement(query.get("retrieval_seconds"))
+        metadata["index_preparation_seconds"] = measurement(receipt.get("index_preparation_seconds"))
+        metadata["timing_provenance"] = {"sidecar": name, "sidecar_sha256": receipt_digest}
 
 
 def schedule_evidence(example: dict, hops: int, config: ExperimentConfig,
@@ -715,6 +776,8 @@ def run_suite(backend: Any, config: ExperimentConfig) -> dict:
         _atomic_json(manifest_path, {"identity": identity, "backend": _jsonable(metadata),
                      "machine": machine, "started_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                      "schedule_note": "oracle (diagnostic)" if config.schedule == "oracle" else "no support labels used for ranking"})
+    # Cost receipts are loaded only after raw dataset/config identity validation.
+    _attach_timing_sidecars(examples, Path(config.dataset))
     records = load_records(results_path)
     completed = {row["id"] for row in records if row.get("status") == "ok"}
     suite_started = time.monotonic()
