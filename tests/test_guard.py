@@ -29,6 +29,16 @@ def test_resource_guard_only_stops_at_real_limits():
         assert stop_reason({**state, **change}, args, 10) == reason
 
 
+def test_authorized_battery_operation_still_stops_at_low_battery():
+    args = Namespace(max_seconds=3600, max_rss_gib=40, min_available_gib=12,
+                     min_disk_gib=40, allow_battery=True, min_battery_percent=20)
+    state = dict(rss_gib=30, available_gib=48, disk_free_gib=600,
+                 on_ac_power=False, battery_percent=80)
+    assert stop_reason(state, args, 10) is None
+    assert stop_reason({**state, 'battery_percent':20}, args, 10) == 'low_battery'
+    assert stop_reason({**state, 'battery_percent':5, 'on_ac_power':True}, args, 10) is None
+
+
 def descendant_command(pidfile, ignore_term=False):
     child = (
         "import os,signal,sys,time; from pathlib import Path; "

@@ -1,0 +1,91 @@
+{
+  "schema_version": "controller-scaling-matrix-v1",
+  "cohort": "development",
+  "dataset": "data/controller-scaling/dev.jsonl",
+  "corpus": "data/controller-scaling/corpus.jsonl",
+  "questions_sha256": "17338e99e8d958d8e7950678f834a2b815c90dc6d7a30ddeee788a29f7cc92cc",
+  "corpus_sha256": "4e8ad63e12ab37e7fabec0158241d890a96171e006d226a7f22b6d00d594ce4a",
+  "data_manifest": "data/controller-scaling/manifest.json",
+  "shared_config": {
+    "dataset": "data/controller-scaling/dev.jsonl",
+    "corpus": "data/controller-scaling/corpus.jsonl",
+    "arms": [
+      "iterative_text"
+    ],
+    "limit": 12,
+    "seed": 20260922,
+    "rounds": [
+      5
+    ],
+    "initial_top_k": 6,
+    "documents_per_round": 3,
+    "max_documents": 18,
+    "max_document_tokens": 300,
+    "max_evidence_tokens": 6144,
+    "max_question_tokens": 256,
+    "max_model_context_tokens": 8192,
+    "max_action_tokens": 32,
+    "controller_temperature": 0.6,
+    "controller_top_p": 0.95,
+    "controller_top_k": 20,
+    "max_answer_tokens": 48,
+    "bridge_ratio": 0.2,
+    "rrf_k": 60,
+    "rerank_candidates": 20
+  },
+  "jobs": [
+    {
+      "id": "8b_short",
+      "run_dir": "runs/controller-scaling/pilot-v1/8b_short",
+      "model_path": "models/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "model_label": "8B",
+      "max_reasoning_tokens": 0,
+      "memory_limit_gib": 32,
+      "protocol": "adaptive-global-bm25-controller-v2"
+    },
+    {
+      "id": "8b_thinking",
+      "run_dir": "runs/controller-scaling/pilot-v1/8b_thinking",
+      "model_path": "models/Qwen3-8B",
+      "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "model_label": "8B",
+      "max_reasoning_tokens": 256,
+      "memory_limit_gib": 32,
+      "protocol": "adaptive-global-bm25-controller-v2"
+    },
+    {
+      "id": "14b_short",
+      "run_dir": "runs/controller-scaling/pilot-v1/14b_short",
+      "model_path": "models/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "model_label": "14B",
+      "max_reasoning_tokens": 0,
+      "memory_limit_gib": 40,
+      "protocol": "adaptive-global-bm25-controller-v2"
+    },
+    {
+      "id": "14b_thinking",
+      "run_dir": "runs/controller-scaling/pilot-v1/14b_thinking",
+      "model_path": "models/Qwen3-14B",
+      "model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "model_label": "14B",
+      "max_reasoning_tokens": 256,
+      "memory_limit_gib": 40,
+      "protocol": "adaptive-global-bm25-controller-v2"
+    }
+  ],
+  "provenance_files": [
+    "docs/controller-scaling-protocol.md",
+    "docs/controller-scaling-data.md",
+    "models/Qwen3-14B/download-manifest.json",
+    "models/model-manifest.json",
+    "runs/controller-scaling-data-validation.json",
+    "runs/controller-scaling/preflight-8b-v1/preflight.json",
+    "runs/controller-scaling/preflight-8b-v1/guard-status.json",
+    "runs/controller-scaling/preflight-14b-v1/preflight.json",
+    "runs/controller-scaling/preflight-14b-v1/guard-status.json",
+    "runs/controller-scaling/download-14b/guard-status.json",
+    "runs/controller-scaling/download-14b/guard-source.py"
+  ]
+}

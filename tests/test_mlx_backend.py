@@ -204,3 +204,138 @@ def test_hidden_state_is_last_hidden_vector(backend):
     hidden = backend.hidden_state([1, 2, 3])
     assert hidden.shape == (64,)
     assert np.isfinite(hidden).all()
+
+
+def scripted_reasoning(backend, monkeypatch, predictions):
+    """Keep the real tiny causal cache, but choose controlled greedy tokens."""
+    original = backend._forward
+    remaining, calls = iter(predictions), []
+    def forward(tokens, caches, *, logits=False):
+        calls.append((tuple(tokens), tuple(id(cache) for cache in caches)))
+        result = original(tokens, caches, logits=logits)
+        if logits:
+            chosen = next(remaining)
+            result = mx.array([10.0 if token == chosen else -10.0 for token in range(256)])
+        return result
+    monkeypatch.setattr(backend, "_forward", forward)
+    return calls
+
+
+@pytest.mark.parametrize("predictions,content,generated", [
+    ([30, 250, 99, 65, 255], [30], [30, 250]),
+    ([250, 99, 65, 255], [], [250]),
+])
+def test_bounded_thinking_natural_close_uses_same_transient_cache(
+        backend, monkeypatch, predictions, content, generated):
+    prefix = backend.prefill([1, 2, 3])
+    before = [as_numpy(array).copy() for array in prefix.arrays()]
+    calls = scripted_reasoning(backend, monkeypatch, predictions)
+    output = backend.decode_with_reasoning(prefix, [4], max_reasoning_tokens=4, max_tokens=3,
+        controls={"end": [250], "separator": [10], "forced_closure": [10, 250, 10]})
+    assert output == [65]
+    stats = backend.last_decode_stats
+    assert stats["reasoning_token_ids"] == content
+    assert stats["reasoning_output_token_ids"] == generated
+    assert stats["reasoning_generated_tokens"] == len(generated)
+    assert stats["generated_tokens"] == len(generated) + 1
+    assert stats["sampled_tokens"] == len(generated) + 2
+    assert stats["action_sampled_token_ids"] == [65, 255]
+    assert stats["reasoning_stop_reason"] == "end_think"
+    assert stats["action_stop_reason"] == "eos"
+    assert stats["forced_control_token_ids"] == [10]
+    assert [tokens for tokens, _ in calls] == [(4,), *[(token,) for token in generated], (10,), (65,)]
+    assert len({cache_ids for _, cache_ids in calls}) == 1
+    assert stats["context_reservation_tokens"] == 4 + 4 + 3 + 3
+    for array, original in zip(prefix.arrays(), before):
+        np.testing.assert_array_equal(as_numpy(array), original)
+
+
+def test_thinking_cap_forces_closure_once_and_preserves_last_reasoning_token(backend, monkeypatch):
+    prefix = backend.prefill([1, 2, 3])
+    calls = scripted_reasoning(backend, monkeypatch, [30, 31, 99, 65, 66])
+    assert backend.decode_with_reasoning(prefix, [4], max_reasoning_tokens=2, max_tokens=2,
+        controls={"end": [250], "separator": [10], "forced_closure": [10, 250, 10]}) == [65, 66]
+    stats = backend.last_decode_stats
+    assert stats["reasoning_token_ids"] == [30, 31]
+    assert stats["reasoning_cap_reached"]
+    assert stats["reasoning_stop_reason"] == "max_reasoning_tokens"
+    assert stats["action_stop_reason"] == "max_tokens"
+    assert stats["generated_tokens"] == 4
+    assert stats["forced_control_tokens"] == 3
+    assert stats["actual_context_tokens"] == stats["context_reservation_tokens"] == 11
+    assert [tokens for tokens, _ in calls] == [(4,), (30,), (31,), (10, 250, 10), (65,)]
+    assert len({cache_ids for _, cache_ids in calls}) == 1
+
+
+def test_thinking_eos_aborts_action_without_fabricated_closure(backend, monkeypatch):
+    calls = scripted_reasoning(backend, monkeypatch, [255])
+    assert backend.decode_with_reasoning(None, [4], max_reasoning_tokens=2, max_tokens=2) == []
+    stats = backend.last_decode_stats
+    assert stats["stop_reason"] == "reasoning_eos"
+    assert stats["reasoning_stop_reason"] == "eos"
+    assert stats["action_stop_reason"] == "not_started"
+    assert stats["reasoning_output_token_ids"] == stats["forced_control_token_ids"] == []
+    assert stats["generated_tokens"] == 0
+    assert stats["reasoning_sampled_token_ids"] == [255]
+    assert stats["sampled_tokens"] == 1
+    assert len(calls) == 1
+
+
+def test_thinking_reserves_full_closure_and_action_before_model_work(backend, monkeypatch):
+    prefix = backend.prefill([1, 2, 3])
+    monkeypatch.setattr(backend, "max_context", 10)
+    calls = scripted_reasoning(backend, monkeypatch, [])
+    with pytest.raises(ValueError, match="Requested 11 tokens exceeds context cap 10"):
+        backend.decode_with_reasoning(prefix, [4], max_reasoning_tokens=2, max_tokens=2,
+            controls={"end": [250], "separator": [10], "forced_closure": [10, 250, 10]})
+    assert calls == []
+    with pytest.raises(ValueError, match="Reasoning budget must be positive"):
+        backend.decode_with_reasoning(None, [4], max_reasoning_tokens=0)
+
+
+def test_memory_allowance_has_an_explicit_48_gib_upper_bound(backend):
+    with pytest.raises(ValueError, match=r"\(0, 48\]"):
+        MLXBackend(model=backend.model, tokenizer=backend.tokenizer, memory_limit_gb=49)
+    assert backend.metadata()["thinking"] == "prompt_controlled"
+    assert backend.metadata()["chat_template_default_thinking"] is False
+
+
+def test_official_sampler_has_seeded_reproducibility_and_top_k_filter(backend):
+    logits = mx.arange(256, dtype=mx.float32) * .01
+    def sequence(seed):
+        sample = backend._sampler(.6, .95, 20, seed)
+        return [sample(logits) for _ in range(24)]
+    first = sequence(12)
+    assert first == sequence(12)
+    assert first != sequence(13)
+    assert all(236 <= token < 256 for token in first)
+    with pytest.raises(ValueError, match="explicit reproducible seed"):
+        backend._sampler(.6, .95, 20, None)
+    with pytest.raises(ValueError, match="top_p"):
+        backend._sampler(.6, 0, 20, 12)
+    with pytest.raises(ValueError, match="top_k"):
+        backend._sampler(.6, .95, 257, 12)
+    with pytest.raises(ValueError, match="32-bit"):
+        backend._sampler(.6, .95, 20, -1)
+
+
+def test_thinking_keeps_one_sampler_stream_across_reasoning_and_action(backend, monkeypatch):
+    calls = []
+    tokens = iter([30, 250, 65, 255])
+    def sampler(temperature, top_p, top_k, seed):
+        calls.append((temperature, top_p, top_k, seed))
+        return lambda logits: next(tokens)
+    monkeypatch.setattr(backend, "_sampler", sampler)
+    output = backend.decode_with_reasoning(None, [4], max_reasoning_tokens=3, max_tokens=3,
+        controls={"end": [250], "separator": [10], "forced_closure": [10, 250, 10]},
+        temperature=.6, top_p=.95, top_k=20, seed=42)
+    assert output == [65]
+    assert calls == [(.6, .95, 20, 42)]
+    assert backend.last_decode_stats["sampling"] == {"temperature": .6, "top_p": .95, "top_k": 20, "seed": 42}
+
+
+def test_sampled_decode_replays_identically_with_fixed_seed(backend):
+    prefix = backend.prefill([1, 2, 3])
+    options = dict(max_tokens=8, temperature=.6, top_p=.95, top_k=20, seed=42)
+    output = backend.decode(prefix, [4], **options)
+    assert output == backend.decode(prefix, [4], **options)

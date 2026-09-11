@@ -30,6 +30,13 @@ def main():
     parser.add_argument("--max-evidence-tokens", type=int, default=6144)
     parser.add_argument("--max-model-context-tokens", type=int, default=8192)
     parser.add_argument("--max-action-tokens", type=int, default=32)
+    parser.add_argument("--max-reasoning-tokens", type=int, default=0,
+                        help="Optional transient controller thinking budget before the separate action budget")
+    parser.add_argument("--memory-limit-gib", type=float, default=32,
+                        help="MLX memory allowance, at most 48 GiB; default 32")
+    parser.add_argument("--controller-temperature", type=float, default=0.0)
+    parser.add_argument("--controller-top-p", type=float, default=1.0)
+    parser.add_argument("--controller-top-k", type=int, default=0)
     parser.add_argument("--max-answer-tokens", type=int, default=48)
     parser.add_argument("--bridge-ratio", type=float, default=.2)
     parser.add_argument("--max-runtime-seconds", type=float, default=18000)
@@ -55,13 +62,17 @@ def main():
             initial_top_k=args.initial_top_k, documents_per_round=args.documents_per_round, max_documents=args.max_documents,
             max_document_tokens=args.max_document_tokens, max_evidence_tokens=args.max_evidence_tokens,
             max_model_context_tokens=args.max_model_context_tokens,
-            max_action_tokens=args.max_action_tokens, max_answer_tokens=args.max_answer_tokens,
+            max_action_tokens=args.max_action_tokens, max_reasoning_tokens=args.max_reasoning_tokens,
+            controller_temperature=args.controller_temperature, controller_top_p=args.controller_top_p,
+            controller_top_k=args.controller_top_k,
+            max_answer_tokens=args.max_answer_tokens,
             bridge_ratio=args.bridge_ratio, max_runtime_seconds=args.max_runtime_seconds,
             max_case_seconds=args.max_case_seconds, resume=not args.no_resume)
         config.validate()
         from engine.backends_mlx import MLXBackend
         load_started = time.perf_counter()
-        backend = MLXBackend(args.model, revision=args.revision, max_context=args.max_model_context_tokens)
+        backend = MLXBackend(args.model, revision=args.revision, max_context=args.max_model_context_tokens,
+                             memory_limit_gb=args.memory_limit_gib)
         backend.synchronize()
         setup_timings_ms = {"generator_load_and_model_validation_ms": (time.perf_counter() - load_started) * 1000}
         reranker = None
