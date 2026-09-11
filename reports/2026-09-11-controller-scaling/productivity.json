@@ -1,0 +1,2890 @@
+[
+  {
+    "action_stops": {
+      "eos": 1
+    },
+    "arm": "iterative_text",
+    "example_id": "2hop__460091_405771",
+    "final_support_count": 1,
+    "initial_support_count": 1,
+    "job_id": "8b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "disabled": 1
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 711,
+        "new_document_ids": [
+          "musique-paragraph-78d5f988cebdcd3d408b75d59c4e167a2221055975a293b591c97950b8d7619a",
+          "musique-paragraph-79bef63f0e5e9bbd335125ab4b010478b81566951234a889da89f9c1f5cfe1b3",
+          "musique-paragraph-5d38e86042f1449a1d9a3e872c5de63df585eca2db3446d335e5635923fa5980",
+          "musique-paragraph-5059d90d8cf36d0335c400b78950946a03e1c93734aa980d77869446207c1664",
+          "musique-paragraph-d0f8e2627f92cc8aa8b692e9bad094599a7738c4919770b63320e4d254e0bb6b",
+          "musique-paragraph-5a7f90d681714d8b812fd584c31241051bf1129558b38e4e6bf5bb71590d79ee"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-78d5f988cebdcd3d408b75d59c4e167a2221055975a293b591c97950b8d7619a"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.5
+      }
+    ],
+    "support_count": 2,
+    "support_ids": [
+      "musique-paragraph-37703f3cae009a0b39a369d5144e19871e6d3abb8f89be1f0273397eef0c1f7e",
+      "musique-paragraph-78d5f988cebdcd3d408b75d59c4e167a2221055975a293b591c97950b8d7619a"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "2hop__57543_158262",
+    "final_support_count": 1,
+    "initial_support_count": 0,
+    "job_id": "8b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 1,
+    "productive_followup_rounds": 1,
+    "reasoning_stops": {
+      "disabled": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 970,
+        "new_document_ids": [
+          "musique-paragraph-0562c45bf306fca7c09a1280805ab319921bdcbdd975a2a106d05d6a6afc44c2",
+          "musique-paragraph-7a1edf1b97825374c55d44b8aeca238234bf313c44c4faff3ff8ff13a54b1ec4",
+          "musique-paragraph-75d567fe4a11297e76171bac23caf652ed196fd4540a86f8237512e3420fa9b6",
+          "musique-paragraph-24da80c7b960b0db434d994a34858c95f352109cfb42dccd93d23e1393f12f2f",
+          "musique-paragraph-4ba04c4f605f7bed1e617ca61d320ddf1a389b4767f78e81ca25f1f7708bb390",
+          "musique-paragraph-59bc8c725bef6af467cc8ad40bd40f7158ab7c542bcde893ca8de68055b5604a"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 1,
+        "support_annotation_coverage": 0.0
+      },
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 1337,
+        "new_document_ids": [
+          "musique-paragraph-e5d31a98b0731cf79fe958da6285e47072993ad2ede646f21bfc664b3fc2bdd5",
+          "musique-paragraph-ecb6dbd0df7ae5fc7d9fee962909d7fdecf3b3abd4a0398ac171589495fc1261",
+          "musique-paragraph-a1be63f441ab22aaee32f148ea83a8ac023f97ead068c35a47421f865d98b76b"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-e5d31a98b0731cf79fe958da6285e47072993ad2ede646f21bfc664b3fc2bdd5"
+        ],
+        "round": 2,
+        "support_annotation_coverage": 0.5
+      }
+    ],
+    "support_count": 2,
+    "support_ids": [
+      "musique-paragraph-88e1a04c3c2efdb2d5381130fe0198c0f0ba00dd8652ae43c722bf306e16e0b3",
+      "musique-paragraph-e5d31a98b0731cf79fe958da6285e47072993ad2ede646f21bfc664b3fc2bdd5"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "2hop__403580_37168",
+    "final_support_count": 2,
+    "initial_support_count": 2,
+    "job_id": "8b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "disabled": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1033,
+        "new_document_ids": [
+          "musique-paragraph-a4d135d08c9bc82f11dbdbefe3c18065427cf72dbe5f851b5a2dfd544986e3e4",
+          "musique-paragraph-5878dbf9e27c018dedd90b96a1853ebe0c7ac58db07097b611d1654c650e869e",
+          "musique-paragraph-87bac31e983b50141347a3712ed7b084d392cfe046b098ff3a365a9975507a46",
+          "musique-paragraph-d9bcdc0667152ed1e76ff6c587d2e792d1cebde3270141a518f24f8dbd956e4b",
+          "musique-paragraph-3f4ce5fc0c11fa2d01eea07f40bd907b2bfda1aa63f8b030b30ec0ed27be1f60",
+          "musique-paragraph-c4c5bcf9f48eafb1252af0147bb50d275aa2b971d57bae658c1d0801ee9631bf"
+        ],
+        "new_support_count": 2,
+        "new_support_ids": [
+          "musique-paragraph-87bac31e983b50141347a3712ed7b084d392cfe046b098ff3a365a9975507a46",
+          "musique-paragraph-a4d135d08c9bc82f11dbdbefe3c18065427cf72dbe5f851b5a2dfd544986e3e4"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 1.0
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1656,
+        "new_document_ids": [
+          "musique-paragraph-9ac9c705226cd085a09041d5114ce0cc6052aa81b1af236f5bce4d44b798b008",
+          "musique-paragraph-6aa5d9f308f51121f0fa4166c3034f05cd0c2f9198214279a94fdd2ba68fe544",
+          "musique-paragraph-e52c657774917bced7093ab516cd0db300e5ba6de5cd803f70c32817ce1c0548"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 2,
+        "support_annotation_coverage": 1.0
+      }
+    ],
+    "support_count": 2,
+    "support_ids": [
+      "musique-paragraph-87bac31e983b50141347a3712ed7b084d392cfe046b098ff3a365a9975507a46",
+      "musique-paragraph-a4d135d08c9bc82f11dbdbefe3c18065427cf72dbe5f851b5a2dfd544986e3e4"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 1
+    },
+    "arm": "iterative_text",
+    "example_id": "2hop__84172_198548",
+    "final_support_count": 1,
+    "initial_support_count": 1,
+    "job_id": "8b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "disabled": 1
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 874,
+        "new_document_ids": [
+          "musique-paragraph-232047fd16b7b86a0648604cc1e8741ecc8db81a1fba0f9e68b392208cef7f7c",
+          "musique-paragraph-44846b59a0d5e0cadb874985ad4ff51c82d721f8be2d1eac9bf9a62000fb7934",
+          "musique-paragraph-fb3e9ec1910e0946ad6ec7ac511a44144a0a3520983cd40c71abd7b865c630c3",
+          "musique-paragraph-a0880c2ac192fd98c7ed6cfb296f1e06a65143854a3d291dd1810aeb266fc84b",
+          "musique-paragraph-1622b729726ae019ece47ce04eb16ac8f65ae60399790ff58c646b808dce341a",
+          "musique-paragraph-29cf0888c33deffa5e3e5682bb2d9e47bc692df7bf8d669386f2d6c9841c1a0a"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-44846b59a0d5e0cadb874985ad4ff51c82d721f8be2d1eac9bf9a62000fb7934"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.5
+      }
+    ],
+    "support_count": 2,
+    "support_ids": [
+      "musique-paragraph-33b9effbd7f204b966ab57bc2593c95e75712f5f8bd23f58e70a3d384bca9db9",
+      "musique-paragraph-44846b59a0d5e0cadb874985ad4ff51c82d721f8be2d1eac9bf9a62000fb7934"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "3hop1__64957_87694_64412",
+    "final_support_count": 1,
+    "initial_support_count": 1,
+    "job_id": "8b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "disabled": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 697,
+        "new_document_ids": [
+          "musique-paragraph-f46710cf989e1a4adc3fb9be1319d786f0aa6d9e4b4134763984958f1955741a",
+          "musique-paragraph-18473bd69ea80427ec7aec2cc449b6ee322a3ad29bc32ac94ed38c2bce038be6",
+          "musique-paragraph-3c3b2ad2dbd7e6c4db51d1e85708dc4f3e6d9f78153d320582ecd64fa89eba1b",
+          "musique-paragraph-de6c7663ba4e3a2eeb8c15f450f14249cdde09f3b7f0ed8cf4e42584b43476ae",
+          "musique-paragraph-623a9d3f228e8690bcade0457c29f1f076fca2f4b5ba88f94c485fd2ef615473",
+          "musique-paragraph-1ea0cbdf6acfaf7f156722452198999c6eedb864a17619cd77fb1558eaea378c"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-f46710cf989e1a4adc3fb9be1319d786f0aa6d9e4b4134763984958f1955741a"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.3333333333333333
+      },
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 962,
+        "new_document_ids": [
+          "musique-paragraph-36c8abf9c795f1fa0a0a973affd58ad1953a0b42f089e0d354abf8f12c81e6d4",
+          "musique-paragraph-ed27281cb720b549d2d3e72bc14c34d35dd6e7dedff86175ede271cf7e985f23",
+          "musique-paragraph-7e92ac5ecfdff784e456bcaa5bb44a31512b24930b309aa8d8d73df6ff525566"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 2,
+        "support_annotation_coverage": 0.3333333333333333
+      }
+    ],
+    "support_count": 3,
+    "support_ids": [
+      "musique-paragraph-7f84b41792d166d84051cd10f610930c7966d0a23effcaf68a9c3e82b9a7afb7",
+      "musique-paragraph-dbe3a9f7245186633613d25a4bd04a683e25b3884e144552910d8c0bbf8e8dd6",
+      "musique-paragraph-f46710cf989e1a4adc3fb9be1319d786f0aa6d9e4b4134763984958f1955741a"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 1
+    },
+    "arm": "iterative_text",
+    "example_id": "3hop1__132968_40769_64047",
+    "final_support_count": 2,
+    "initial_support_count": 2,
+    "job_id": "8b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "disabled": 1
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 650,
+        "new_document_ids": [
+          "musique-paragraph-896c3824917762842659f16d9de2db10dcd571e1893d6a56ba5267d649424137",
+          "musique-paragraph-942b733082cd3a95407be3dd7ae5b1489cc9f99a5e41c45d715ae425b4168236",
+          "musique-paragraph-46386f5cc96692028f702e606951b3bb4019480ef14595bcfa874692d2ef4a5e",
+          "musique-paragraph-e72c6e345723df0bb95293a744e154cef7f2f0b878b68b1bfaba397e321e5e38",
+          "musique-paragraph-0a607b0c7b8cb3318ff5072e228962c4e60d52280c6506370486d4aa7009a8a3",
+          "musique-paragraph-173f2e47760c164f97ea3733a7cd4c4e8962753c8a606c73a995f7924fd04227"
+        ],
+        "new_support_count": 2,
+        "new_support_ids": [
+          "musique-paragraph-46386f5cc96692028f702e606951b3bb4019480ef14595bcfa874692d2ef4a5e",
+          "musique-paragraph-896c3824917762842659f16d9de2db10dcd571e1893d6a56ba5267d649424137"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.6666666666666666
+      }
+    ],
+    "support_count": 3,
+    "support_ids": [
+      "musique-paragraph-2b1df5663580ca73769e0aa112de9b13c4bb5f38c2d14798f8deab5365a900a5",
+      "musique-paragraph-46386f5cc96692028f702e606951b3bb4019480ef14595bcfa874692d2ef4a5e",
+      "musique-paragraph-896c3824917762842659f16d9de2db10dcd571e1893d6a56ba5267d649424137"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "3hop1__210639_147339_47686",
+    "final_support_count": 2,
+    "initial_support_count": 1,
+    "job_id": "8b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 1,
+    "productive_followup_rounds": 1,
+    "reasoning_stops": {
+      "disabled": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 727,
+        "new_document_ids": [
+          "musique-paragraph-02a0ecea403c1d08a296c49786f0b0cd598427922c3a7bdc23937eb68fbae82f",
+          "musique-paragraph-80f37eb3a87f84042c0fdf953abbc75bda5ae10c2d0c9285a3137ffdfcfc04bf",
+          "musique-paragraph-26ff523e1693f0e60aef77a1f0c09bcdff210559e187480feb223e504d947b98",
+          "musique-paragraph-a672679340c77f27d829f68832d4a970adeca5e5a6a6fdcdbd549b6cd516de86",
+          "musique-paragraph-53595f8b2cc24b9586685af303678332462b6c2841078e10b015b15bae6e0ca5",
+          "musique-paragraph-ab0d032a355aceb742f850ed592b82f61b6a0fd15931db1a213c188c25bf8b6e"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-02a0ecea403c1d08a296c49786f0b0cd598427922c3a7bdc23937eb68fbae82f"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.3333333333333333
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 969,
+        "new_document_ids": [
+          "musique-paragraph-a4f6302d5db85f1a6d3bbf391ae7fd398ba0c8826f57a806f74fd5a88a0626ed",
+          "musique-paragraph-08ec2476cf63545bc8ba86f20101bb596f9422042bb4c68ee0b8584795bb5a77",
+          "musique-paragraph-970c9df45744a8991edbc3e4e3e84dbe3a1078bb3ba8067e88795aa31fd1d17c"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-a4f6302d5db85f1a6d3bbf391ae7fd398ba0c8826f57a806f74fd5a88a0626ed"
+        ],
+        "round": 2,
+        "support_annotation_coverage": 0.6666666666666666
+      }
+    ],
+    "support_count": 3,
+    "support_ids": [
+      "musique-paragraph-02a0ecea403c1d08a296c49786f0b0cd598427922c3a7bdc23937eb68fbae82f",
+      "musique-paragraph-09d2e48c2fdc66b8cc98306a266f9276308f7bb65d18173df89aaacab2934c02",
+      "musique-paragraph-a4f6302d5db85f1a6d3bbf391ae7fd398ba0c8826f57a806f74fd5a88a0626ed"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 1
+    },
+    "arm": "iterative_text",
+    "example_id": "3hop2__30956_65244_84681",
+    "final_support_count": 1,
+    "initial_support_count": 1,
+    "job_id": "8b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "disabled": 1
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 782,
+        "new_document_ids": [
+          "musique-paragraph-dec72b2fbc5ef531cc21b56bdddd46d159c55b1d824503607667f3b8899b26ff",
+          "musique-paragraph-3e0755bfdd663e4fa3ef515a102a158ce57bf0dca67fefb7f7f8a599eea0d433",
+          "musique-paragraph-67a87124450e3dc1beb610cac64ceeb24376c9a42dc8de643a406a9c813a8532",
+          "musique-paragraph-826ef063378e2f4078f16d6d8c213e33ba879a7c305d08d567489083b2db6fcd",
+          "musique-paragraph-2f9f657dfc2c5a665ddfa83a777d53fa758f06c198ea98b5fa4db40e2429a3fd",
+          "musique-paragraph-f9134a7350bb3b7c856669fccfc34ac7a03afc4cce121415f9654e6e127c16ca"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-dec72b2fbc5ef531cc21b56bdddd46d159c55b1d824503607667f3b8899b26ff"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.3333333333333333
+      }
+    ],
+    "support_count": 3,
+    "support_ids": [
+      "musique-paragraph-1b51d951df4d1aee6a62b544a0347f0e21cd138733b096687456c6e601d757d6",
+      "musique-paragraph-72b385e682de3faf32ae286502fc2abd1e277ebecbd160f487219998a5758478",
+      "musique-paragraph-dec72b2fbc5ef531cc21b56bdddd46d159c55b1d824503607667f3b8899b26ff"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "4hop1__370129_621192_10659_42311",
+    "final_support_count": 0,
+    "initial_support_count": 0,
+    "job_id": "8b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "disabled": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 839,
+        "new_document_ids": [
+          "musique-paragraph-9ac82243daf41c1bb20f28bbefe13bc67ddadc41ddc68ed82a0b6093724b4676",
+          "musique-paragraph-df99c1099e7a47e86681d2f91db513ab43cea1d440250ae74470b446688b4617",
+          "musique-paragraph-0271a0e2e0f545665d57cf800326c9e8cae69f1cf421ba621cde6349cb0eacb0",
+          "musique-paragraph-f4238e74a3ddc442448d803f0a2701e2cea730bb0974742e5d09407fc4183bdf",
+          "musique-paragraph-054746b52390ff0f74764384456cfc809872db3a7e4a9c77248c36be42f26293",
+          "musique-paragraph-f68cec62ae9eba5a05034c780d709890bf114f641186e4aa842f9cb4314f19fb"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 1,
+        "support_annotation_coverage": 0.0
+      },
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 1151,
+        "new_document_ids": [
+          "musique-paragraph-b63b953d99da9fb2b6f165f46bfbdb2bc47d1f7b1773331d1ea96a6d99bdc22a",
+          "musique-paragraph-7543cd63b01d9e74ef8c61bbc4b8dd08fd336ba9a00fa369d972ee3edd12f362",
+          "musique-paragraph-9004245842c6b6944ac4130ceeea6ed4fe865271084379cdfa61e0f5e9775bc3"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 2,
+        "support_annotation_coverage": 0.0
+      }
+    ],
+    "support_count": 4,
+    "support_ids": [
+      "musique-paragraph-2db1dde9d7b9e93e87ee97e5ab5c81ee8c9bc2b872f6fcec2cd25ce3fc636d7e",
+      "musique-paragraph-498ed29379d6dacf96abe4b3a4acaa843476f5b6c83a3c43c522d59916739b88",
+      "musique-paragraph-e123b3988b4d9984e23b6b2316504f625ae65157045a04905737d52ddb1ce4f3",
+      "musique-paragraph-e282a9ac2edfd10e4de11ff56dab400decb09745f7e7e80afb82524e2940e078"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "4hop1__58323_375563_161848_53331",
+    "final_support_count": 1,
+    "initial_support_count": 0,
+    "job_id": "8b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 1,
+    "productive_followup_rounds": 1,
+    "reasoning_stops": {
+      "disabled": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 941,
+        "new_document_ids": [
+          "musique-paragraph-a08f566c4b3c98e7b8c1bc392a47252b45207bea7edf187c647246cc509315ee",
+          "musique-paragraph-dcc1e38cc71c2f402879957226df66f66e8e7cb2b294421e401c2b4ae68f5edf",
+          "musique-paragraph-1c8f19e0f2d1387ffb2eda411e8967de102116bdb52e1c8f017cebf7fe4a0fc8",
+          "musique-paragraph-eb67c41f6b9fdeed0ac5a74d5d60b6fed06ee229c3a1c22f7686d8da68ed9419",
+          "musique-paragraph-60404b3f5542fbb6643365db997bb0fbade554788b6a6534abe5d30ce471dc93",
+          "musique-paragraph-47cc3d14553b92de9d376b806cb60411784253af28f14a5ca6b6344f5ba219a6"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 1,
+        "support_annotation_coverage": 0.0
+      },
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 1348,
+        "new_document_ids": [
+          "musique-paragraph-c777e14e7ba680d509744bc6d97581b743cbcc3ca015ccb229eb1901df6cef3a",
+          "musique-paragraph-a7e934d3ca0aff763a17c74a9f7b291529f457beffe4c04842e6ceff02c34c1d",
+          "musique-paragraph-41886afcf8dbcf8bf3a07aceb54bedc2990142a4a8a9a27d356d59a261edaed2"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-c777e14e7ba680d509744bc6d97581b743cbcc3ca015ccb229eb1901df6cef3a"
+        ],
+        "round": 2,
+        "support_annotation_coverage": 0.25
+      }
+    ],
+    "support_count": 4,
+    "support_ids": [
+      "musique-paragraph-7a98c5d8359460ed713549b711fc3fdd2af0b12504110eb9d30f16f0fc68a089",
+      "musique-paragraph-c777e14e7ba680d509744bc6d97581b743cbcc3ca015ccb229eb1901df6cef3a",
+      "musique-paragraph-d3534acad149e64279f7c78c25b4eaafb79e949ec6e771dfe3dbb341ab97dc7c",
+      "musique-paragraph-eb1e5f2b94d1652f13647cdfc59ee041c11bb07ae431ad6484ba22611b952488"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 4
+    },
+    "arm": "iterative_text",
+    "example_id": "4hop3__312119_132409_371500_35031",
+    "final_support_count": 3,
+    "initial_support_count": 1,
+    "job_id": "8b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 2,
+    "productive_followup_rounds": 2,
+    "reasoning_stops": {
+      "disabled": 4
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 712,
+        "new_document_ids": [
+          "musique-paragraph-30efc014dfff747426e28baa541fca6d91bc075887c78acb5a20ddcd54f67558",
+          "musique-paragraph-536c08fbd05e01035fd39d83cbd375b2aa03f719301463091a4dfdec7fd65873",
+          "musique-paragraph-e0cf5172df2cc47ecaefc5c47c8bbf54a410401a0cc125d71fac5e4bfbc4934c",
+          "musique-paragraph-3b808e9d2444b506322141de54fae699daf54fdf2a40efe444ae4d4f1e2e1ca0",
+          "musique-paragraph-f02e0f42958bd6cf8b5b498716ed5cc682b9fa68f55c8af47b14400e4abb3d96",
+          "musique-paragraph-c0bbba648ea2b6de41893a959b0f78c4ec145daddcd82d079fd181a711cdaadb"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-536c08fbd05e01035fd39d83cbd375b2aa03f719301463091a4dfdec7fd65873"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.25
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1068,
+        "new_document_ids": [
+          "musique-paragraph-2bf015804b80b2a587a372caf630c880fc65d395bb42138106315c1f51e50f7f",
+          "musique-paragraph-2d1475fe58372e52e304eb7b4531c1828b894559f8cd6991e52e9eb89290af6e",
+          "musique-paragraph-2e5cb1a7d29aee5fb403dae0f8bc2a24dd68960bea751906b06a90ae73adbf6f"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-2bf015804b80b2a587a372caf630c880fc65d395bb42138106315c1f51e50f7f"
+        ],
+        "round": 2,
+        "support_annotation_coverage": 0.5
+      },
+      {
+        "cumulative_support_count": 3,
+        "evidence_tokens": 1542,
+        "new_document_ids": [
+          "musique-paragraph-846d359865d5969e63b147d241cfdbddd2e5cbf31fa8db9f2de9021d3bf54a79",
+          "musique-paragraph-2ca977565d8677a46e68ff391d2f3d9a46f2b12e18b111518972376fed0981ab",
+          "musique-paragraph-c32f8d606ea2f6b555949ada6cdf00353c89e6c1c5fe7e8c92637486c5d015da"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-846d359865d5969e63b147d241cfdbddd2e5cbf31fa8db9f2de9021d3bf54a79"
+        ],
+        "round": 3,
+        "support_annotation_coverage": 0.75
+      },
+      {
+        "cumulative_support_count": 3,
+        "evidence_tokens": 2165,
+        "new_document_ids": [
+          "musique-paragraph-9a5f08e99d0eff183f3538d896dbcde8143eac196e6ffb9c5fc7062725c9a2db",
+          "musique-paragraph-473e4cec357dfed2b765337eeb0255917b9724d200d949c14247b7229cf1fa50",
+          "musique-paragraph-f68e374e9c3ad8412a3fb04a73e672d99c1aa3e778bef116ef613648e8b4a030"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 4,
+        "support_annotation_coverage": 0.75
+      }
+    ],
+    "support_count": 4,
+    "support_ids": [
+      "musique-paragraph-2bf015804b80b2a587a372caf630c880fc65d395bb42138106315c1f51e50f7f",
+      "musique-paragraph-536c08fbd05e01035fd39d83cbd375b2aa03f719301463091a4dfdec7fd65873",
+      "musique-paragraph-7bec89a271a602679c3f70bb79458f16dbd36c053ff9954887c68276902ba4a9",
+      "musique-paragraph-846d359865d5969e63b147d241cfdbddd2e5cbf31fa8db9f2de9021d3bf54a79"
+    ]
+  },
+  {
+    "action_stops": {
+      "max_tokens": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "4hop1__391525_49925_13759_736921",
+    "final_support_count": 2,
+    "initial_support_count": 2,
+    "job_id": "8b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "disabled": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1009,
+        "new_document_ids": [
+          "musique-paragraph-d3946db324ca85d647bb405834a39e2042388d342814699a0fa513a652f65530",
+          "musique-paragraph-5650ac6ee9ad301070b880a98c4aa74b6c26b671cd2133cfcea6a37aaed0cd8f",
+          "musique-paragraph-3ad1b3ffeb92787cc6b80bf846b4f4af48c8c80fa6423bca12a15d6584071094",
+          "musique-paragraph-ce3de9044413f28718f7bdc2a19440722d31307ee898f0d870d7a6db41ed09af",
+          "musique-paragraph-bd2f5a998e87542ed051f3fdf7ba81009ccca83dfad498dfbef542a9d5f6ae63",
+          "musique-paragraph-5ca5a299424201c986a9928a10132691365a8de1fd8dbfbe1db68203a5fb2fac"
+        ],
+        "new_support_count": 2,
+        "new_support_ids": [
+          "musique-paragraph-5650ac6ee9ad301070b880a98c4aa74b6c26b671cd2133cfcea6a37aaed0cd8f",
+          "musique-paragraph-d3946db324ca85d647bb405834a39e2042388d342814699a0fa513a652f65530"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.5
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1619,
+        "new_document_ids": [
+          "musique-paragraph-9be9782d92502914e7ed6a26c5e9ecf0a9878c6541ee11f40bad454c0248aa3b",
+          "musique-paragraph-5e86824f1fff7980997e036b431f013d7bc674dc97b9a31ba093f5007af13bb3",
+          "musique-paragraph-13e140466d83a91f0b6d056dabb727d4ef94a4d0c2c33dc667f39c2287739c1a"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 2,
+        "support_annotation_coverage": 0.5
+      }
+    ],
+    "support_count": 4,
+    "support_ids": [
+      "musique-paragraph-5650ac6ee9ad301070b880a98c4aa74b6c26b671cd2133cfcea6a37aaed0cd8f",
+      "musique-paragraph-bf20ed8a341f2de59824de7182b6da4f9fd18150b0351373170e1d00e432f28d",
+      "musique-paragraph-d3946db324ca85d647bb405834a39e2042388d342814699a0fa513a652f65530",
+      "musique-paragraph-fd6e05e10fedf5d86a1d51093b7262144ed9bcf93479b3a7a6c279a698a40e9d"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 1
+    },
+    "arm": "iterative_text",
+    "example_id": "2hop__460091_405771",
+    "final_support_count": 1,
+    "initial_support_count": 1,
+    "job_id": "8b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "end_think": 1
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 711,
+        "new_document_ids": [
+          "musique-paragraph-78d5f988cebdcd3d408b75d59c4e167a2221055975a293b591c97950b8d7619a",
+          "musique-paragraph-79bef63f0e5e9bbd335125ab4b010478b81566951234a889da89f9c1f5cfe1b3",
+          "musique-paragraph-5d38e86042f1449a1d9a3e872c5de63df585eca2db3446d335e5635923fa5980",
+          "musique-paragraph-5059d90d8cf36d0335c400b78950946a03e1c93734aa980d77869446207c1664",
+          "musique-paragraph-d0f8e2627f92cc8aa8b692e9bad094599a7738c4919770b63320e4d254e0bb6b",
+          "musique-paragraph-5a7f90d681714d8b812fd584c31241051bf1129558b38e4e6bf5bb71590d79ee"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-78d5f988cebdcd3d408b75d59c4e167a2221055975a293b591c97950b8d7619a"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.5
+      }
+    ],
+    "support_count": 2,
+    "support_ids": [
+      "musique-paragraph-37703f3cae009a0b39a369d5144e19871e6d3abb8f89be1f0273397eef0c1f7e",
+      "musique-paragraph-78d5f988cebdcd3d408b75d59c4e167a2221055975a293b591c97950b8d7619a"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "2hop__57543_158262",
+    "final_support_count": 1,
+    "initial_support_count": 0,
+    "job_id": "8b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 1,
+    "productive_followup_rounds": 1,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 970,
+        "new_document_ids": [
+          "musique-paragraph-0562c45bf306fca7c09a1280805ab319921bdcbdd975a2a106d05d6a6afc44c2",
+          "musique-paragraph-7a1edf1b97825374c55d44b8aeca238234bf313c44c4faff3ff8ff13a54b1ec4",
+          "musique-paragraph-75d567fe4a11297e76171bac23caf652ed196fd4540a86f8237512e3420fa9b6",
+          "musique-paragraph-24da80c7b960b0db434d994a34858c95f352109cfb42dccd93d23e1393f12f2f",
+          "musique-paragraph-4ba04c4f605f7bed1e617ca61d320ddf1a389b4767f78e81ca25f1f7708bb390",
+          "musique-paragraph-59bc8c725bef6af467cc8ad40bd40f7158ab7c542bcde893ca8de68055b5604a"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 1,
+        "support_annotation_coverage": 0.0
+      },
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 1354,
+        "new_document_ids": [
+          "musique-paragraph-e5d31a98b0731cf79fe958da6285e47072993ad2ede646f21bfc664b3fc2bdd5",
+          "musique-paragraph-a1be63f441ab22aaee32f148ea83a8ac023f97ead068c35a47421f865d98b76b",
+          "musique-paragraph-ed5a58d1fbbcebad166d909a8caa8ae9188585eab2106462ffb4ca625cfe543a"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-e5d31a98b0731cf79fe958da6285e47072993ad2ede646f21bfc664b3fc2bdd5"
+        ],
+        "round": 2,
+        "support_annotation_coverage": 0.5
+      }
+    ],
+    "support_count": 2,
+    "support_ids": [
+      "musique-paragraph-88e1a04c3c2efdb2d5381130fe0198c0f0ba00dd8652ae43c722bf306e16e0b3",
+      "musique-paragraph-e5d31a98b0731cf79fe958da6285e47072993ad2ede646f21bfc664b3fc2bdd5"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "2hop__403580_37168",
+    "final_support_count": 2,
+    "initial_support_count": 2,
+    "job_id": "8b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1033,
+        "new_document_ids": [
+          "musique-paragraph-a4d135d08c9bc82f11dbdbefe3c18065427cf72dbe5f851b5a2dfd544986e3e4",
+          "musique-paragraph-5878dbf9e27c018dedd90b96a1853ebe0c7ac58db07097b611d1654c650e869e",
+          "musique-paragraph-87bac31e983b50141347a3712ed7b084d392cfe046b098ff3a365a9975507a46",
+          "musique-paragraph-d9bcdc0667152ed1e76ff6c587d2e792d1cebde3270141a518f24f8dbd956e4b",
+          "musique-paragraph-3f4ce5fc0c11fa2d01eea07f40bd907b2bfda1aa63f8b030b30ec0ed27be1f60",
+          "musique-paragraph-c4c5bcf9f48eafb1252af0147bb50d275aa2b971d57bae658c1d0801ee9631bf"
+        ],
+        "new_support_count": 2,
+        "new_support_ids": [
+          "musique-paragraph-87bac31e983b50141347a3712ed7b084d392cfe046b098ff3a365a9975507a46",
+          "musique-paragraph-a4d135d08c9bc82f11dbdbefe3c18065427cf72dbe5f851b5a2dfd544986e3e4"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 1.0
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1255,
+        "new_document_ids": [
+          "musique-paragraph-c0c9afe788a2b92b4e91ab2cdf869e09d83fa935016f1622b4c9faa1fe3cbc43",
+          "musique-paragraph-dbaf6a35d836fb2a92c5ab88882b61fffa585787eefbfcf820b874f323fa1fe4",
+          "musique-paragraph-66fff86e772c6666541a9999784c7b3054f265777f4da66ba30551c874fb21de"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 2,
+        "support_annotation_coverage": 1.0
+      }
+    ],
+    "support_count": 2,
+    "support_ids": [
+      "musique-paragraph-87bac31e983b50141347a3712ed7b084d392cfe046b098ff3a365a9975507a46",
+      "musique-paragraph-a4d135d08c9bc82f11dbdbefe3c18065427cf72dbe5f851b5a2dfd544986e3e4"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "2hop__84172_198548",
+    "final_support_count": 1,
+    "initial_support_count": 1,
+    "job_id": "8b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 874,
+        "new_document_ids": [
+          "musique-paragraph-232047fd16b7b86a0648604cc1e8741ecc8db81a1fba0f9e68b392208cef7f7c",
+          "musique-paragraph-44846b59a0d5e0cadb874985ad4ff51c82d721f8be2d1eac9bf9a62000fb7934",
+          "musique-paragraph-fb3e9ec1910e0946ad6ec7ac511a44144a0a3520983cd40c71abd7b865c630c3",
+          "musique-paragraph-a0880c2ac192fd98c7ed6cfb296f1e06a65143854a3d291dd1810aeb266fc84b",
+          "musique-paragraph-1622b729726ae019ece47ce04eb16ac8f65ae60399790ff58c646b808dce341a",
+          "musique-paragraph-29cf0888c33deffa5e3e5682bb2d9e47bc692df7bf8d669386f2d6c9841c1a0a"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-44846b59a0d5e0cadb874985ad4ff51c82d721f8be2d1eac9bf9a62000fb7934"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.5
+      },
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 1249,
+        "new_document_ids": [
+          "musique-paragraph-cdc2889650a3b717b7f10864dfda5cff3b9eb570947a817ea8fb60f0a1335622",
+          "musique-paragraph-ac7da3bb555b35e82410a98962686b5cd044c199dbccc07bbd71050fdc5a419d",
+          "musique-paragraph-d8d478f3a561b45bfce26c49ad57da6ed4782b4cfb5133f00620ef9af1e6dd6b"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 2,
+        "support_annotation_coverage": 0.5
+      }
+    ],
+    "support_count": 2,
+    "support_ids": [
+      "musique-paragraph-33b9effbd7f204b966ab57bc2593c95e75712f5f8bd23f58e70a3d384bca9db9",
+      "musique-paragraph-44846b59a0d5e0cadb874985ad4ff51c82d721f8be2d1eac9bf9a62000fb7934"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 4
+    },
+    "arm": "iterative_text",
+    "example_id": "3hop1__64957_87694_64412",
+    "final_support_count": 3,
+    "initial_support_count": 1,
+    "job_id": "8b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 2,
+    "productive_followup_rounds": 2,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 4
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 697,
+        "new_document_ids": [
+          "musique-paragraph-f46710cf989e1a4adc3fb9be1319d786f0aa6d9e4b4134763984958f1955741a",
+          "musique-paragraph-18473bd69ea80427ec7aec2cc449b6ee322a3ad29bc32ac94ed38c2bce038be6",
+          "musique-paragraph-3c3b2ad2dbd7e6c4db51d1e85708dc4f3e6d9f78153d320582ecd64fa89eba1b",
+          "musique-paragraph-de6c7663ba4e3a2eeb8c15f450f14249cdde09f3b7f0ed8cf4e42584b43476ae",
+          "musique-paragraph-623a9d3f228e8690bcade0457c29f1f076fca2f4b5ba88f94c485fd2ef615473",
+          "musique-paragraph-1ea0cbdf6acfaf7f156722452198999c6eedb864a17619cd77fb1558eaea378c"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-f46710cf989e1a4adc3fb9be1319d786f0aa6d9e4b4134763984958f1955741a"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.3333333333333333
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 950,
+        "new_document_ids": [
+          "musique-paragraph-7f84b41792d166d84051cd10f610930c7966d0a23effcaf68a9c3e82b9a7afb7",
+          "musique-paragraph-c0060d0110adcafc5ee8ab121fe2284646698046ce3b46f4a7164d8c321f3719",
+          "musique-paragraph-cda796e8579a1506998ee3077b815ceb0dd9c29392ba5a8c6aadb5edd60639bd"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-7f84b41792d166d84051cd10f610930c7966d0a23effcaf68a9c3e82b9a7afb7"
+        ],
+        "round": 2,
+        "support_annotation_coverage": 0.6666666666666666
+      },
+      {
+        "cumulative_support_count": 3,
+        "evidence_tokens": 1291,
+        "new_document_ids": [
+          "musique-paragraph-dbe3a9f7245186633613d25a4bd04a683e25b3884e144552910d8c0bbf8e8dd6",
+          "musique-paragraph-952221f6124464c7d4ba971663539893752d37833c64e383661867ebeabe3c17",
+          "musique-paragraph-1492c096a2210edb9f5038e2a94f18cd091a33f1a18b2d03557acb90f8673ae0"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-dbe3a9f7245186633613d25a4bd04a683e25b3884e144552910d8c0bbf8e8dd6"
+        ],
+        "round": 3,
+        "support_annotation_coverage": 1.0
+      },
+      {
+        "cumulative_support_count": 3,
+        "evidence_tokens": 1960,
+        "new_document_ids": [
+          "musique-paragraph-51bab53e16451c662196c865460cdfa95fb38011fe91a448f0ffe4030798894d",
+          "musique-paragraph-cb1ba36355a6c328dee0f67975d8b5c7e49fb6965256dd2ff26e1933fe32c898",
+          "musique-paragraph-89234c092a337cd143d2d5ec4a1407b6a01e18c81e4a5126a8834bafcda2888b"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 4,
+        "support_annotation_coverage": 1.0
+      }
+    ],
+    "support_count": 3,
+    "support_ids": [
+      "musique-paragraph-7f84b41792d166d84051cd10f610930c7966d0a23effcaf68a9c3e82b9a7afb7",
+      "musique-paragraph-dbe3a9f7245186633613d25a4bd04a683e25b3884e144552910d8c0bbf8e8dd6",
+      "musique-paragraph-f46710cf989e1a4adc3fb9be1319d786f0aa6d9e4b4134763984958f1955741a"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "3hop1__132968_40769_64047",
+    "final_support_count": 2,
+    "initial_support_count": 2,
+    "job_id": "8b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 650,
+        "new_document_ids": [
+          "musique-paragraph-896c3824917762842659f16d9de2db10dcd571e1893d6a56ba5267d649424137",
+          "musique-paragraph-942b733082cd3a95407be3dd7ae5b1489cc9f99a5e41c45d715ae425b4168236",
+          "musique-paragraph-46386f5cc96692028f702e606951b3bb4019480ef14595bcfa874692d2ef4a5e",
+          "musique-paragraph-e72c6e345723df0bb95293a744e154cef7f2f0b878b68b1bfaba397e321e5e38",
+          "musique-paragraph-0a607b0c7b8cb3318ff5072e228962c4e60d52280c6506370486d4aa7009a8a3",
+          "musique-paragraph-173f2e47760c164f97ea3733a7cd4c4e8962753c8a606c73a995f7924fd04227"
+        ],
+        "new_support_count": 2,
+        "new_support_ids": [
+          "musique-paragraph-46386f5cc96692028f702e606951b3bb4019480ef14595bcfa874692d2ef4a5e",
+          "musique-paragraph-896c3824917762842659f16d9de2db10dcd571e1893d6a56ba5267d649424137"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.6666666666666666
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1032,
+        "new_document_ids": [
+          "musique-paragraph-55a94f605601b202f0139cac58d787b8b51bc8f27de483213847f945c292e3f8",
+          "musique-paragraph-de3ad335132874109585e5accd34517f8e4f05580e2bee41f2fe18f7f3a53979",
+          "musique-paragraph-7cfccdc6f137b5395aa48900a8e2c7e21dd0d34d3611db4ca8c5d96b059e4f05"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 2,
+        "support_annotation_coverage": 0.6666666666666666
+      }
+    ],
+    "support_count": 3,
+    "support_ids": [
+      "musique-paragraph-2b1df5663580ca73769e0aa112de9b13c4bb5f38c2d14798f8deab5365a900a5",
+      "musique-paragraph-46386f5cc96692028f702e606951b3bb4019480ef14595bcfa874692d2ef4a5e",
+      "musique-paragraph-896c3824917762842659f16d9de2db10dcd571e1893d6a56ba5267d649424137"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 1,
+      "max_tokens": 1
+    },
+    "arm": "iterative_text",
+    "example_id": "3hop1__210639_147339_47686",
+    "final_support_count": 2,
+    "initial_support_count": 1,
+    "job_id": "8b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 1,
+    "productive_followup_rounds": 1,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 727,
+        "new_document_ids": [
+          "musique-paragraph-02a0ecea403c1d08a296c49786f0b0cd598427922c3a7bdc23937eb68fbae82f",
+          "musique-paragraph-80f37eb3a87f84042c0fdf953abbc75bda5ae10c2d0c9285a3137ffdfcfc04bf",
+          "musique-paragraph-26ff523e1693f0e60aef77a1f0c09bcdff210559e187480feb223e504d947b98",
+          "musique-paragraph-a672679340c77f27d829f68832d4a970adeca5e5a6a6fdcdbd549b6cd516de86",
+          "musique-paragraph-53595f8b2cc24b9586685af303678332462b6c2841078e10b015b15bae6e0ca5",
+          "musique-paragraph-ab0d032a355aceb742f850ed592b82f61b6a0fd15931db1a213c188c25bf8b6e"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-02a0ecea403c1d08a296c49786f0b0cd598427922c3a7bdc23937eb68fbae82f"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.3333333333333333
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 969,
+        "new_document_ids": [
+          "musique-paragraph-a4f6302d5db85f1a6d3bbf391ae7fd398ba0c8826f57a806f74fd5a88a0626ed",
+          "musique-paragraph-08ec2476cf63545bc8ba86f20101bb596f9422042bb4c68ee0b8584795bb5a77",
+          "musique-paragraph-970c9df45744a8991edbc3e4e3e84dbe3a1078bb3ba8067e88795aa31fd1d17c"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-a4f6302d5db85f1a6d3bbf391ae7fd398ba0c8826f57a806f74fd5a88a0626ed"
+        ],
+        "round": 2,
+        "support_annotation_coverage": 0.6666666666666666
+      }
+    ],
+    "support_count": 3,
+    "support_ids": [
+      "musique-paragraph-02a0ecea403c1d08a296c49786f0b0cd598427922c3a7bdc23937eb68fbae82f",
+      "musique-paragraph-09d2e48c2fdc66b8cc98306a266f9276308f7bb65d18173df89aaacab2934c02",
+      "musique-paragraph-a4f6302d5db85f1a6d3bbf391ae7fd398ba0c8826f57a806f74fd5a88a0626ed"
+    ]
+  },
+  {
+    "action_stops": {
+      "max_tokens": 1
+    },
+    "arm": "iterative_text",
+    "example_id": "3hop2__30956_65244_84681",
+    "final_support_count": 1,
+    "initial_support_count": 1,
+    "job_id": "8b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 1
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 782,
+        "new_document_ids": [
+          "musique-paragraph-dec72b2fbc5ef531cc21b56bdddd46d159c55b1d824503607667f3b8899b26ff",
+          "musique-paragraph-3e0755bfdd663e4fa3ef515a102a158ce57bf0dca67fefb7f7f8a599eea0d433",
+          "musique-paragraph-67a87124450e3dc1beb610cac64ceeb24376c9a42dc8de643a406a9c813a8532",
+          "musique-paragraph-826ef063378e2f4078f16d6d8c213e33ba879a7c305d08d567489083b2db6fcd",
+          "musique-paragraph-2f9f657dfc2c5a665ddfa83a777d53fa758f06c198ea98b5fa4db40e2429a3fd",
+          "musique-paragraph-f9134a7350bb3b7c856669fccfc34ac7a03afc4cce121415f9654e6e127c16ca"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-dec72b2fbc5ef531cc21b56bdddd46d159c55b1d824503607667f3b8899b26ff"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.3333333333333333
+      }
+    ],
+    "support_count": 3,
+    "support_ids": [
+      "musique-paragraph-1b51d951df4d1aee6a62b544a0347f0e21cd138733b096687456c6e601d757d6",
+      "musique-paragraph-72b385e682de3faf32ae286502fc2abd1e277ebecbd160f487219998a5758478",
+      "musique-paragraph-dec72b2fbc5ef531cc21b56bdddd46d159c55b1d824503607667f3b8899b26ff"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 3
+    },
+    "arm": "iterative_text",
+    "example_id": "4hop1__370129_621192_10659_42311",
+    "final_support_count": 0,
+    "initial_support_count": 0,
+    "job_id": "8b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 3
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 839,
+        "new_document_ids": [
+          "musique-paragraph-9ac82243daf41c1bb20f28bbefe13bc67ddadc41ddc68ed82a0b6093724b4676",
+          "musique-paragraph-df99c1099e7a47e86681d2f91db513ab43cea1d440250ae74470b446688b4617",
+          "musique-paragraph-0271a0e2e0f545665d57cf800326c9e8cae69f1cf421ba621cde6349cb0eacb0",
+          "musique-paragraph-f4238e74a3ddc442448d803f0a2701e2cea730bb0974742e5d09407fc4183bdf",
+          "musique-paragraph-054746b52390ff0f74764384456cfc809872db3a7e4a9c77248c36be42f26293",
+          "musique-paragraph-f68cec62ae9eba5a05034c780d709890bf114f641186e4aa842f9cb4314f19fb"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 1,
+        "support_annotation_coverage": 0.0
+      },
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 1230,
+        "new_document_ids": [
+          "musique-paragraph-db6d63058a3dd32324a70ac1cb5031976d249106c3868a60fe42312572f3dfc3",
+          "musique-paragraph-b72b32ac2282a07e9705b53394a88da8b3a5620ec41c9a93f21d8aed887bb9f4",
+          "musique-paragraph-116498d1ab058fe674fecf1f4c4c508e5bdc0455d96b9e4564b1a97578f2468d"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 2,
+        "support_annotation_coverage": 0.0
+      },
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 1540,
+        "new_document_ids": [
+          "musique-paragraph-b63b953d99da9fb2b6f165f46bfbdb2bc47d1f7b1773331d1ea96a6d99bdc22a",
+          "musique-paragraph-7543cd63b01d9e74ef8c61bbc4b8dd08fd336ba9a00fa369d972ee3edd12f362",
+          "musique-paragraph-21b41382fc0c62eff0fd69e6ceeb1d6fa1a6e1d75e501842560abd23be369aa3"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 3,
+        "support_annotation_coverage": 0.0
+      }
+    ],
+    "support_count": 4,
+    "support_ids": [
+      "musique-paragraph-2db1dde9d7b9e93e87ee97e5ab5c81ee8c9bc2b872f6fcec2cd25ce3fc636d7e",
+      "musique-paragraph-498ed29379d6dacf96abe4b3a4acaa843476f5b6c83a3c43c522d59916739b88",
+      "musique-paragraph-e123b3988b4d9984e23b6b2316504f625ae65157045a04905737d52ddb1ce4f3",
+      "musique-paragraph-e282a9ac2edfd10e4de11ff56dab400decb09745f7e7e80afb82524e2940e078"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 4
+    },
+    "arm": "iterative_text",
+    "example_id": "4hop1__58323_375563_161848_53331",
+    "final_support_count": 0,
+    "initial_support_count": 0,
+    "job_id": "8b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 4
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 941,
+        "new_document_ids": [
+          "musique-paragraph-a08f566c4b3c98e7b8c1bc392a47252b45207bea7edf187c647246cc509315ee",
+          "musique-paragraph-dcc1e38cc71c2f402879957226df66f66e8e7cb2b294421e401c2b4ae68f5edf",
+          "musique-paragraph-1c8f19e0f2d1387ffb2eda411e8967de102116bdb52e1c8f017cebf7fe4a0fc8",
+          "musique-paragraph-eb67c41f6b9fdeed0ac5a74d5d60b6fed06ee229c3a1c22f7686d8da68ed9419",
+          "musique-paragraph-60404b3f5542fbb6643365db997bb0fbade554788b6a6534abe5d30ce471dc93",
+          "musique-paragraph-47cc3d14553b92de9d376b806cb60411784253af28f14a5ca6b6344f5ba219a6"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 1,
+        "support_annotation_coverage": 0.0
+      },
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 1453,
+        "new_document_ids": [
+          "musique-paragraph-932afc14ddeab67321cdc9a203f2bc390a1f70627b81864562c2e993fc8f5eb4",
+          "musique-paragraph-1b2819ea8b544b9f9620d12981e206ec3c0db9c6d9d3a3ba364bf1795d8502ea",
+          "musique-paragraph-babc1d2c881050b084ec7f95a595fbb2ca46fbe70f81d3ef2ca7ff2d465d7e8b"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 2,
+        "support_annotation_coverage": 0.0
+      },
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 1885,
+        "new_document_ids": [
+          "musique-paragraph-210bc19b3f5579378232b9c3b951c1398dcdfcfeedf6f266131f48697971f5fe",
+          "musique-paragraph-00573d714b3ea1e9fa35aa4e7ac0a9199f02cb8b6fa724fbcaa11cadb03064e2",
+          "musique-paragraph-aca2c9eb43805d937a425d16e9c225f942896602c66943151366dd492fd835ad"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 3,
+        "support_annotation_coverage": 0.0
+      },
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 2158,
+        "new_document_ids": [
+          "musique-paragraph-5ad29b4d97ec4039f8fdbf4f6abae764ee46f02f242ac7e0b7d4ede00d3980e8",
+          "musique-paragraph-f339cc630992130e2c3daedace06c761668eaca2686efa7cbe9eb8b1296040fa",
+          "musique-paragraph-6020fda8b2f0ea5e9079a19641c3991f67e9af1238ddc3f23e7c398ea9b8c88e"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 4,
+        "support_annotation_coverage": 0.0
+      }
+    ],
+    "support_count": 4,
+    "support_ids": [
+      "musique-paragraph-7a98c5d8359460ed713549b711fc3fdd2af0b12504110eb9d30f16f0fc68a089",
+      "musique-paragraph-c777e14e7ba680d509744bc6d97581b743cbcc3ca015ccb229eb1901df6cef3a",
+      "musique-paragraph-d3534acad149e64279f7c78c25b4eaafb79e949ec6e771dfe3dbb341ab97dc7c",
+      "musique-paragraph-eb1e5f2b94d1652f13647cdfc59ee041c11bb07ae431ad6484ba22611b952488"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2,
+      "max_tokens": 1
+    },
+    "arm": "iterative_text",
+    "example_id": "4hop3__312119_132409_371500_35031",
+    "final_support_count": 4,
+    "initial_support_count": 1,
+    "job_id": "8b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 3,
+    "productive_followup_rounds": 2,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 3
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 712,
+        "new_document_ids": [
+          "musique-paragraph-30efc014dfff747426e28baa541fca6d91bc075887c78acb5a20ddcd54f67558",
+          "musique-paragraph-536c08fbd05e01035fd39d83cbd375b2aa03f719301463091a4dfdec7fd65873",
+          "musique-paragraph-e0cf5172df2cc47ecaefc5c47c8bbf54a410401a0cc125d71fac5e4bfbc4934c",
+          "musique-paragraph-3b808e9d2444b506322141de54fae699daf54fdf2a40efe444ae4d4f1e2e1ca0",
+          "musique-paragraph-f02e0f42958bd6cf8b5b498716ed5cc682b9fa68f55c8af47b14400e4abb3d96",
+          "musique-paragraph-c0bbba648ea2b6de41893a959b0f78c4ec145daddcd82d079fd181a711cdaadb"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-536c08fbd05e01035fd39d83cbd375b2aa03f719301463091a4dfdec7fd65873"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.25
+      },
+      {
+        "cumulative_support_count": 3,
+        "evidence_tokens": 941,
+        "new_document_ids": [
+          "musique-paragraph-846d359865d5969e63b147d241cfdbddd2e5cbf31fa8db9f2de9021d3bf54a79",
+          "musique-paragraph-2ca977565d8677a46e68ff391d2f3d9a46f2b12e18b111518972376fed0981ab",
+          "musique-paragraph-2bf015804b80b2a587a372caf630c880fc65d395bb42138106315c1f51e50f7f"
+        ],
+        "new_support_count": 2,
+        "new_support_ids": [
+          "musique-paragraph-2bf015804b80b2a587a372caf630c880fc65d395bb42138106315c1f51e50f7f",
+          "musique-paragraph-846d359865d5969e63b147d241cfdbddd2e5cbf31fa8db9f2de9021d3bf54a79"
+        ],
+        "round": 2,
+        "support_annotation_coverage": 0.75
+      },
+      {
+        "cumulative_support_count": 4,
+        "evidence_tokens": 1481,
+        "new_document_ids": [
+          "musique-paragraph-07047c9370b1c69098d7cdeaab027f4ef4eb4dfb4d4ac38d1b3434b48a1b944d",
+          "musique-paragraph-7bec89a271a602679c3f70bb79458f16dbd36c053ff9954887c68276902ba4a9",
+          "musique-paragraph-dedf4684c21104dedbc6d6437f9888c56719a20f0f2b448e67afe5f988cc5606"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-7bec89a271a602679c3f70bb79458f16dbd36c053ff9954887c68276902ba4a9"
+        ],
+        "round": 3,
+        "support_annotation_coverage": 1.0
+      }
+    ],
+    "support_count": 4,
+    "support_ids": [
+      "musique-paragraph-2bf015804b80b2a587a372caf630c880fc65d395bb42138106315c1f51e50f7f",
+      "musique-paragraph-536c08fbd05e01035fd39d83cbd375b2aa03f719301463091a4dfdec7fd65873",
+      "musique-paragraph-7bec89a271a602679c3f70bb79458f16dbd36c053ff9954887c68276902ba4a9",
+      "musique-paragraph-846d359865d5969e63b147d241cfdbddd2e5cbf31fa8db9f2de9021d3bf54a79"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "4hop1__391525_49925_13759_736921",
+    "final_support_count": 2,
+    "initial_support_count": 2,
+    "job_id": "8b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "8B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1009,
+        "new_document_ids": [
+          "musique-paragraph-d3946db324ca85d647bb405834a39e2042388d342814699a0fa513a652f65530",
+          "musique-paragraph-5650ac6ee9ad301070b880a98c4aa74b6c26b671cd2133cfcea6a37aaed0cd8f",
+          "musique-paragraph-3ad1b3ffeb92787cc6b80bf846b4f4af48c8c80fa6423bca12a15d6584071094",
+          "musique-paragraph-ce3de9044413f28718f7bdc2a19440722d31307ee898f0d870d7a6db41ed09af",
+          "musique-paragraph-bd2f5a998e87542ed051f3fdf7ba81009ccca83dfad498dfbef542a9d5f6ae63",
+          "musique-paragraph-5ca5a299424201c986a9928a10132691365a8de1fd8dbfbe1db68203a5fb2fac"
+        ],
+        "new_support_count": 2,
+        "new_support_ids": [
+          "musique-paragraph-5650ac6ee9ad301070b880a98c4aa74b6c26b671cd2133cfcea6a37aaed0cd8f",
+          "musique-paragraph-d3946db324ca85d647bb405834a39e2042388d342814699a0fa513a652f65530"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.5
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1316,
+        "new_document_ids": [
+          "musique-paragraph-8829149dcd19dace9dc16e18e2be2adfd5f28d9e5bd66da19a133eee7f8e1096",
+          "musique-paragraph-dff1e4e6cf8cef45f44ea814f2e17975bef482d10c781304a160beb5f0a86f7a",
+          "musique-paragraph-5e86824f1fff7980997e036b431f013d7bc674dc97b9a31ba093f5007af13bb3"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 2,
+        "support_annotation_coverage": 0.5
+      }
+    ],
+    "support_count": 4,
+    "support_ids": [
+      "musique-paragraph-5650ac6ee9ad301070b880a98c4aa74b6c26b671cd2133cfcea6a37aaed0cd8f",
+      "musique-paragraph-bf20ed8a341f2de59824de7182b6da4f9fd18150b0351373170e1d00e432f28d",
+      "musique-paragraph-d3946db324ca85d647bb405834a39e2042388d342814699a0fa513a652f65530",
+      "musique-paragraph-fd6e05e10fedf5d86a1d51093b7262144ed9bcf93479b3a7a6c279a698a40e9d"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 1
+    },
+    "arm": "iterative_text",
+    "example_id": "2hop__460091_405771",
+    "final_support_count": 1,
+    "initial_support_count": 1,
+    "job_id": "14b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "disabled": 1
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 711,
+        "new_document_ids": [
+          "musique-paragraph-78d5f988cebdcd3d408b75d59c4e167a2221055975a293b591c97950b8d7619a",
+          "musique-paragraph-79bef63f0e5e9bbd335125ab4b010478b81566951234a889da89f9c1f5cfe1b3",
+          "musique-paragraph-5d38e86042f1449a1d9a3e872c5de63df585eca2db3446d335e5635923fa5980",
+          "musique-paragraph-5059d90d8cf36d0335c400b78950946a03e1c93734aa980d77869446207c1664",
+          "musique-paragraph-d0f8e2627f92cc8aa8b692e9bad094599a7738c4919770b63320e4d254e0bb6b",
+          "musique-paragraph-5a7f90d681714d8b812fd584c31241051bf1129558b38e4e6bf5bb71590d79ee"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-78d5f988cebdcd3d408b75d59c4e167a2221055975a293b591c97950b8d7619a"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.5
+      }
+    ],
+    "support_count": 2,
+    "support_ids": [
+      "musique-paragraph-37703f3cae009a0b39a369d5144e19871e6d3abb8f89be1f0273397eef0c1f7e",
+      "musique-paragraph-78d5f988cebdcd3d408b75d59c4e167a2221055975a293b591c97950b8d7619a"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "2hop__57543_158262",
+    "final_support_count": 1,
+    "initial_support_count": 0,
+    "job_id": "14b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 1,
+    "productive_followup_rounds": 1,
+    "reasoning_stops": {
+      "disabled": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 970,
+        "new_document_ids": [
+          "musique-paragraph-0562c45bf306fca7c09a1280805ab319921bdcbdd975a2a106d05d6a6afc44c2",
+          "musique-paragraph-7a1edf1b97825374c55d44b8aeca238234bf313c44c4faff3ff8ff13a54b1ec4",
+          "musique-paragraph-75d567fe4a11297e76171bac23caf652ed196fd4540a86f8237512e3420fa9b6",
+          "musique-paragraph-24da80c7b960b0db434d994a34858c95f352109cfb42dccd93d23e1393f12f2f",
+          "musique-paragraph-4ba04c4f605f7bed1e617ca61d320ddf1a389b4767f78e81ca25f1f7708bb390",
+          "musique-paragraph-59bc8c725bef6af467cc8ad40bd40f7158ab7c542bcde893ca8de68055b5604a"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 1,
+        "support_annotation_coverage": 0.0
+      },
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 1337,
+        "new_document_ids": [
+          "musique-paragraph-e5d31a98b0731cf79fe958da6285e47072993ad2ede646f21bfc664b3fc2bdd5",
+          "musique-paragraph-ecb6dbd0df7ae5fc7d9fee962909d7fdecf3b3abd4a0398ac171589495fc1261",
+          "musique-paragraph-a1be63f441ab22aaee32f148ea83a8ac023f97ead068c35a47421f865d98b76b"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-e5d31a98b0731cf79fe958da6285e47072993ad2ede646f21bfc664b3fc2bdd5"
+        ],
+        "round": 2,
+        "support_annotation_coverage": 0.5
+      }
+    ],
+    "support_count": 2,
+    "support_ids": [
+      "musique-paragraph-88e1a04c3c2efdb2d5381130fe0198c0f0ba00dd8652ae43c722bf306e16e0b3",
+      "musique-paragraph-e5d31a98b0731cf79fe958da6285e47072993ad2ede646f21bfc664b3fc2bdd5"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 3
+    },
+    "arm": "iterative_text",
+    "example_id": "2hop__403580_37168",
+    "final_support_count": 2,
+    "initial_support_count": 2,
+    "job_id": "14b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "disabled": 3
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1033,
+        "new_document_ids": [
+          "musique-paragraph-a4d135d08c9bc82f11dbdbefe3c18065427cf72dbe5f851b5a2dfd544986e3e4",
+          "musique-paragraph-5878dbf9e27c018dedd90b96a1853ebe0c7ac58db07097b611d1654c650e869e",
+          "musique-paragraph-87bac31e983b50141347a3712ed7b084d392cfe046b098ff3a365a9975507a46",
+          "musique-paragraph-d9bcdc0667152ed1e76ff6c587d2e792d1cebde3270141a518f24f8dbd956e4b",
+          "musique-paragraph-3f4ce5fc0c11fa2d01eea07f40bd907b2bfda1aa63f8b030b30ec0ed27be1f60",
+          "musique-paragraph-c4c5bcf9f48eafb1252af0147bb50d275aa2b971d57bae658c1d0801ee9631bf"
+        ],
+        "new_support_count": 2,
+        "new_support_ids": [
+          "musique-paragraph-87bac31e983b50141347a3712ed7b084d392cfe046b098ff3a365a9975507a46",
+          "musique-paragraph-a4d135d08c9bc82f11dbdbefe3c18065427cf72dbe5f851b5a2dfd544986e3e4"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 1.0
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1278,
+        "new_document_ids": [
+          "musique-paragraph-e85b934a4d3a23fc0b100cb5a047d5269b31f442877111a9eafe428cc501d92a",
+          "musique-paragraph-64637cdcdf2f8839c8722049ddf80f5e8ca80ef6549a7be89cfbd1d00541b51f",
+          "musique-paragraph-7a8acd9810efac3342600fc6ab4dd7bf00bf6f7054bc06e0a2b0dc363f79ca02"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 2,
+        "support_annotation_coverage": 1.0
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1482,
+        "new_document_ids": [
+          "musique-paragraph-0a651b660b1d12fbda9b47354ff0bc0ba65ba53d4f019ccc3bb3b3327c928747",
+          "musique-paragraph-05b008a75a3b942b725cd51a8a5afe02cbb481a411185496d245548e53975825",
+          "musique-paragraph-0e212b32bb52522adf3d8eb92336478da4655acd48a4852c4a98d38b37f5f252"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 3,
+        "support_annotation_coverage": 1.0
+      }
+    ],
+    "support_count": 2,
+    "support_ids": [
+      "musique-paragraph-87bac31e983b50141347a3712ed7b084d392cfe046b098ff3a365a9975507a46",
+      "musique-paragraph-a4d135d08c9bc82f11dbdbefe3c18065427cf72dbe5f851b5a2dfd544986e3e4"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "2hop__84172_198548",
+    "final_support_count": 1,
+    "initial_support_count": 1,
+    "job_id": "14b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "disabled": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 874,
+        "new_document_ids": [
+          "musique-paragraph-232047fd16b7b86a0648604cc1e8741ecc8db81a1fba0f9e68b392208cef7f7c",
+          "musique-paragraph-44846b59a0d5e0cadb874985ad4ff51c82d721f8be2d1eac9bf9a62000fb7934",
+          "musique-paragraph-fb3e9ec1910e0946ad6ec7ac511a44144a0a3520983cd40c71abd7b865c630c3",
+          "musique-paragraph-a0880c2ac192fd98c7ed6cfb296f1e06a65143854a3d291dd1810aeb266fc84b",
+          "musique-paragraph-1622b729726ae019ece47ce04eb16ac8f65ae60399790ff58c646b808dce341a",
+          "musique-paragraph-29cf0888c33deffa5e3e5682bb2d9e47bc692df7bf8d669386f2d6c9841c1a0a"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-44846b59a0d5e0cadb874985ad4ff51c82d721f8be2d1eac9bf9a62000fb7934"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.5
+      },
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 1615,
+        "new_document_ids": [
+          "musique-paragraph-c601828c47d14864e1ad4bc817de580766994a8698ee4eca1cc32fadd23a0e3e",
+          "musique-paragraph-243a3a8582beeb18938485e9e4002c139393206e0b30ea612229cef14f069b4d",
+          "musique-paragraph-c905c066dee0200e5b415a16db3573fc61276a5f694340c92e5f5fbaba8324ad"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 2,
+        "support_annotation_coverage": 0.5
+      }
+    ],
+    "support_count": 2,
+    "support_ids": [
+      "musique-paragraph-33b9effbd7f204b966ab57bc2593c95e75712f5f8bd23f58e70a3d384bca9db9",
+      "musique-paragraph-44846b59a0d5e0cadb874985ad4ff51c82d721f8be2d1eac9bf9a62000fb7934"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "3hop1__64957_87694_64412",
+    "final_support_count": 1,
+    "initial_support_count": 1,
+    "job_id": "14b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "disabled": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 697,
+        "new_document_ids": [
+          "musique-paragraph-f46710cf989e1a4adc3fb9be1319d786f0aa6d9e4b4134763984958f1955741a",
+          "musique-paragraph-18473bd69ea80427ec7aec2cc449b6ee322a3ad29bc32ac94ed38c2bce038be6",
+          "musique-paragraph-3c3b2ad2dbd7e6c4db51d1e85708dc4f3e6d9f78153d320582ecd64fa89eba1b",
+          "musique-paragraph-de6c7663ba4e3a2eeb8c15f450f14249cdde09f3b7f0ed8cf4e42584b43476ae",
+          "musique-paragraph-623a9d3f228e8690bcade0457c29f1f076fca2f4b5ba88f94c485fd2ef615473",
+          "musique-paragraph-1ea0cbdf6acfaf7f156722452198999c6eedb864a17619cd77fb1558eaea378c"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-f46710cf989e1a4adc3fb9be1319d786f0aa6d9e4b4134763984958f1955741a"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.3333333333333333
+      },
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 1022,
+        "new_document_ids": [
+          "musique-paragraph-a17dea566c278706789fcdef9b2ebb4b317e24762482965a84f7f52e3f22c46f",
+          "musique-paragraph-1d8478616229ca5c7474e4d5d6e43f32567cf617150223aacccccc5da5ed5f8c",
+          "musique-paragraph-7543cd63b01d9e74ef8c61bbc4b8dd08fd336ba9a00fa369d972ee3edd12f362"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 2,
+        "support_annotation_coverage": 0.3333333333333333
+      }
+    ],
+    "support_count": 3,
+    "support_ids": [
+      "musique-paragraph-7f84b41792d166d84051cd10f610930c7966d0a23effcaf68a9c3e82b9a7afb7",
+      "musique-paragraph-dbe3a9f7245186633613d25a4bd04a683e25b3884e144552910d8c0bbf8e8dd6",
+      "musique-paragraph-f46710cf989e1a4adc3fb9be1319d786f0aa6d9e4b4134763984958f1955741a"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "3hop1__132968_40769_64047",
+    "final_support_count": 2,
+    "initial_support_count": 2,
+    "job_id": "14b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "disabled": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 650,
+        "new_document_ids": [
+          "musique-paragraph-896c3824917762842659f16d9de2db10dcd571e1893d6a56ba5267d649424137",
+          "musique-paragraph-942b733082cd3a95407be3dd7ae5b1489cc9f99a5e41c45d715ae425b4168236",
+          "musique-paragraph-46386f5cc96692028f702e606951b3bb4019480ef14595bcfa874692d2ef4a5e",
+          "musique-paragraph-e72c6e345723df0bb95293a744e154cef7f2f0b878b68b1bfaba397e321e5e38",
+          "musique-paragraph-0a607b0c7b8cb3318ff5072e228962c4e60d52280c6506370486d4aa7009a8a3",
+          "musique-paragraph-173f2e47760c164f97ea3733a7cd4c4e8962753c8a606c73a995f7924fd04227"
+        ],
+        "new_support_count": 2,
+        "new_support_ids": [
+          "musique-paragraph-46386f5cc96692028f702e606951b3bb4019480ef14595bcfa874692d2ef4a5e",
+          "musique-paragraph-896c3824917762842659f16d9de2db10dcd571e1893d6a56ba5267d649424137"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.6666666666666666
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1032,
+        "new_document_ids": [
+          "musique-paragraph-55a94f605601b202f0139cac58d787b8b51bc8f27de483213847f945c292e3f8",
+          "musique-paragraph-de3ad335132874109585e5accd34517f8e4f05580e2bee41f2fe18f7f3a53979",
+          "musique-paragraph-7cfccdc6f137b5395aa48900a8e2c7e21dd0d34d3611db4ca8c5d96b059e4f05"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 2,
+        "support_annotation_coverage": 0.6666666666666666
+      }
+    ],
+    "support_count": 3,
+    "support_ids": [
+      "musique-paragraph-2b1df5663580ca73769e0aa112de9b13c4bb5f38c2d14798f8deab5365a900a5",
+      "musique-paragraph-46386f5cc96692028f702e606951b3bb4019480ef14595bcfa874692d2ef4a5e",
+      "musique-paragraph-896c3824917762842659f16d9de2db10dcd571e1893d6a56ba5267d649424137"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "3hop1__210639_147339_47686",
+    "final_support_count": 2,
+    "initial_support_count": 1,
+    "job_id": "14b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 1,
+    "productive_followup_rounds": 1,
+    "reasoning_stops": {
+      "disabled": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 727,
+        "new_document_ids": [
+          "musique-paragraph-02a0ecea403c1d08a296c49786f0b0cd598427922c3a7bdc23937eb68fbae82f",
+          "musique-paragraph-80f37eb3a87f84042c0fdf953abbc75bda5ae10c2d0c9285a3137ffdfcfc04bf",
+          "musique-paragraph-26ff523e1693f0e60aef77a1f0c09bcdff210559e187480feb223e504d947b98",
+          "musique-paragraph-a672679340c77f27d829f68832d4a970adeca5e5a6a6fdcdbd549b6cd516de86",
+          "musique-paragraph-53595f8b2cc24b9586685af303678332462b6c2841078e10b015b15bae6e0ca5",
+          "musique-paragraph-ab0d032a355aceb742f850ed592b82f61b6a0fd15931db1a213c188c25bf8b6e"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-02a0ecea403c1d08a296c49786f0b0cd598427922c3a7bdc23937eb68fbae82f"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.3333333333333333
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 969,
+        "new_document_ids": [
+          "musique-paragraph-a4f6302d5db85f1a6d3bbf391ae7fd398ba0c8826f57a806f74fd5a88a0626ed",
+          "musique-paragraph-08ec2476cf63545bc8ba86f20101bb596f9422042bb4c68ee0b8584795bb5a77",
+          "musique-paragraph-970c9df45744a8991edbc3e4e3e84dbe3a1078bb3ba8067e88795aa31fd1d17c"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-a4f6302d5db85f1a6d3bbf391ae7fd398ba0c8826f57a806f74fd5a88a0626ed"
+        ],
+        "round": 2,
+        "support_annotation_coverage": 0.6666666666666666
+      }
+    ],
+    "support_count": 3,
+    "support_ids": [
+      "musique-paragraph-02a0ecea403c1d08a296c49786f0b0cd598427922c3a7bdc23937eb68fbae82f",
+      "musique-paragraph-09d2e48c2fdc66b8cc98306a266f9276308f7bb65d18173df89aaacab2934c02",
+      "musique-paragraph-a4f6302d5db85f1a6d3bbf391ae7fd398ba0c8826f57a806f74fd5a88a0626ed"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 3
+    },
+    "arm": "iterative_text",
+    "example_id": "3hop2__30956_65244_84681",
+    "final_support_count": 2,
+    "initial_support_count": 1,
+    "job_id": "14b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 1,
+    "productive_followup_rounds": 1,
+    "reasoning_stops": {
+      "disabled": 3
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 782,
+        "new_document_ids": [
+          "musique-paragraph-dec72b2fbc5ef531cc21b56bdddd46d159c55b1d824503607667f3b8899b26ff",
+          "musique-paragraph-3e0755bfdd663e4fa3ef515a102a158ce57bf0dca67fefb7f7f8a599eea0d433",
+          "musique-paragraph-67a87124450e3dc1beb610cac64ceeb24376c9a42dc8de643a406a9c813a8532",
+          "musique-paragraph-826ef063378e2f4078f16d6d8c213e33ba879a7c305d08d567489083b2db6fcd",
+          "musique-paragraph-2f9f657dfc2c5a665ddfa83a777d53fa758f06c198ea98b5fa4db40e2429a3fd",
+          "musique-paragraph-f9134a7350bb3b7c856669fccfc34ac7a03afc4cce121415f9654e6e127c16ca"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-dec72b2fbc5ef531cc21b56bdddd46d159c55b1d824503607667f3b8899b26ff"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.3333333333333333
+      },
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 1116,
+        "new_document_ids": [
+          "musique-paragraph-27625cac2ed843528ed1f0f9a70689bab014692e56606d3027521b9f1c07d216",
+          "musique-paragraph-1578f9ad9e0350611baca409558114c3aef5eb1917388835082561ca3e4d2a8a",
+          "musique-paragraph-7b039b301e0241115469bbf39911971b2fa99d8c6134b6f3b6be7a2a8d06c857"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 2,
+        "support_annotation_coverage": 0.3333333333333333
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1625,
+        "new_document_ids": [
+          "musique-paragraph-1b51d951df4d1aee6a62b544a0347f0e21cd138733b096687456c6e601d757d6",
+          "musique-paragraph-eeb394635df76fcdc9f5a5ba2ee476b00f9703735b6912ceec93675f713d62e2",
+          "musique-paragraph-dc313d9ef2c5c948ec41133b56ba20b53f663694d0740598fb4bb6a99d6d50d2"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-1b51d951df4d1aee6a62b544a0347f0e21cd138733b096687456c6e601d757d6"
+        ],
+        "round": 3,
+        "support_annotation_coverage": 0.6666666666666666
+      }
+    ],
+    "support_count": 3,
+    "support_ids": [
+      "musique-paragraph-1b51d951df4d1aee6a62b544a0347f0e21cd138733b096687456c6e601d757d6",
+      "musique-paragraph-72b385e682de3faf32ae286502fc2abd1e277ebecbd160f487219998a5758478",
+      "musique-paragraph-dec72b2fbc5ef531cc21b56bdddd46d159c55b1d824503607667f3b8899b26ff"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "4hop1__370129_621192_10659_42311",
+    "final_support_count": 1,
+    "initial_support_count": 0,
+    "job_id": "14b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 1,
+    "productive_followup_rounds": 1,
+    "reasoning_stops": {
+      "disabled": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 839,
+        "new_document_ids": [
+          "musique-paragraph-9ac82243daf41c1bb20f28bbefe13bc67ddadc41ddc68ed82a0b6093724b4676",
+          "musique-paragraph-df99c1099e7a47e86681d2f91db513ab43cea1d440250ae74470b446688b4617",
+          "musique-paragraph-0271a0e2e0f545665d57cf800326c9e8cae69f1cf421ba621cde6349cb0eacb0",
+          "musique-paragraph-f4238e74a3ddc442448d803f0a2701e2cea730bb0974742e5d09407fc4183bdf",
+          "musique-paragraph-054746b52390ff0f74764384456cfc809872db3a7e4a9c77248c36be42f26293",
+          "musique-paragraph-f68cec62ae9eba5a05034c780d709890bf114f641186e4aa842f9cb4314f19fb"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 1,
+        "support_annotation_coverage": 0.0
+      },
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 1317,
+        "new_document_ids": [
+          "musique-paragraph-e123b3988b4d9984e23b6b2316504f625ae65157045a04905737d52ddb1ce4f3",
+          "musique-paragraph-5cd9d596f462eb4a7f4c845cce05333e3e14d0fa0c50a76ae5982cdf40f29236",
+          "musique-paragraph-6f5ec902157ff700dd5619dd433ce13d0ca8782a41520b31e56c666998d8ac97"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-e123b3988b4d9984e23b6b2316504f625ae65157045a04905737d52ddb1ce4f3"
+        ],
+        "round": 2,
+        "support_annotation_coverage": 0.25
+      }
+    ],
+    "support_count": 4,
+    "support_ids": [
+      "musique-paragraph-2db1dde9d7b9e93e87ee97e5ab5c81ee8c9bc2b872f6fcec2cd25ce3fc636d7e",
+      "musique-paragraph-498ed29379d6dacf96abe4b3a4acaa843476f5b6c83a3c43c522d59916739b88",
+      "musique-paragraph-e123b3988b4d9984e23b6b2316504f625ae65157045a04905737d52ddb1ce4f3",
+      "musique-paragraph-e282a9ac2edfd10e4de11ff56dab400decb09745f7e7e80afb82524e2940e078"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 3
+    },
+    "arm": "iterative_text",
+    "example_id": "4hop1__58323_375563_161848_53331",
+    "final_support_count": 1,
+    "initial_support_count": 0,
+    "job_id": "14b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 1,
+    "productive_followup_rounds": 1,
+    "reasoning_stops": {
+      "disabled": 3
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 941,
+        "new_document_ids": [
+          "musique-paragraph-a08f566c4b3c98e7b8c1bc392a47252b45207bea7edf187c647246cc509315ee",
+          "musique-paragraph-dcc1e38cc71c2f402879957226df66f66e8e7cb2b294421e401c2b4ae68f5edf",
+          "musique-paragraph-1c8f19e0f2d1387ffb2eda411e8967de102116bdb52e1c8f017cebf7fe4a0fc8",
+          "musique-paragraph-eb67c41f6b9fdeed0ac5a74d5d60b6fed06ee229c3a1c22f7686d8da68ed9419",
+          "musique-paragraph-60404b3f5542fbb6643365db997bb0fbade554788b6a6534abe5d30ce471dc93",
+          "musique-paragraph-47cc3d14553b92de9d376b806cb60411784253af28f14a5ca6b6344f5ba219a6"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 1,
+        "support_annotation_coverage": 0.0
+      },
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 1348,
+        "new_document_ids": [
+          "musique-paragraph-a7e934d3ca0aff763a17c74a9f7b291529f457beffe4c04842e6ceff02c34c1d",
+          "musique-paragraph-c777e14e7ba680d509744bc6d97581b743cbcc3ca015ccb229eb1901df6cef3a",
+          "musique-paragraph-41886afcf8dbcf8bf3a07aceb54bedc2990142a4a8a9a27d356d59a261edaed2"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-c777e14e7ba680d509744bc6d97581b743cbcc3ca015ccb229eb1901df6cef3a"
+        ],
+        "round": 2,
+        "support_annotation_coverage": 0.25
+      },
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 1707,
+        "new_document_ids": [
+          "musique-paragraph-da99826a04180f7659bad58da037118e4edfd2b49c28652a1b9068a43e90d1f0",
+          "musique-paragraph-df7f7c0fabe3d132a625d216fd1d9bbf70eda3f5e6fda99f9d1e172e76e1dfa0",
+          "musique-paragraph-d3815d87682c92f1c22f71b6297c1cf6353f119ec8356e5de6ecfc6a2b52fde1"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 3,
+        "support_annotation_coverage": 0.25
+      }
+    ],
+    "support_count": 4,
+    "support_ids": [
+      "musique-paragraph-7a98c5d8359460ed713549b711fc3fdd2af0b12504110eb9d30f16f0fc68a089",
+      "musique-paragraph-c777e14e7ba680d509744bc6d97581b743cbcc3ca015ccb229eb1901df6cef3a",
+      "musique-paragraph-d3534acad149e64279f7c78c25b4eaafb79e949ec6e771dfe3dbb341ab97dc7c",
+      "musique-paragraph-eb1e5f2b94d1652f13647cdfc59ee041c11bb07ae431ad6484ba22611b952488"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 3
+    },
+    "arm": "iterative_text",
+    "example_id": "4hop3__312119_132409_371500_35031",
+    "final_support_count": 2,
+    "initial_support_count": 1,
+    "job_id": "14b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 1,
+    "productive_followup_rounds": 1,
+    "reasoning_stops": {
+      "disabled": 3
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 712,
+        "new_document_ids": [
+          "musique-paragraph-30efc014dfff747426e28baa541fca6d91bc075887c78acb5a20ddcd54f67558",
+          "musique-paragraph-536c08fbd05e01035fd39d83cbd375b2aa03f719301463091a4dfdec7fd65873",
+          "musique-paragraph-e0cf5172df2cc47ecaefc5c47c8bbf54a410401a0cc125d71fac5e4bfbc4934c",
+          "musique-paragraph-3b808e9d2444b506322141de54fae699daf54fdf2a40efe444ae4d4f1e2e1ca0",
+          "musique-paragraph-f02e0f42958bd6cf8b5b498716ed5cc682b9fa68f55c8af47b14400e4abb3d96",
+          "musique-paragraph-c0bbba648ea2b6de41893a959b0f78c4ec145daddcd82d079fd181a711cdaadb"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-536c08fbd05e01035fd39d83cbd375b2aa03f719301463091a4dfdec7fd65873"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.25
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1068,
+        "new_document_ids": [
+          "musique-paragraph-2bf015804b80b2a587a372caf630c880fc65d395bb42138106315c1f51e50f7f",
+          "musique-paragraph-2d1475fe58372e52e304eb7b4531c1828b894559f8cd6991e52e9eb89290af6e",
+          "musique-paragraph-2e5cb1a7d29aee5fb403dae0f8bc2a24dd68960bea751906b06a90ae73adbf6f"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-2bf015804b80b2a587a372caf630c880fc65d395bb42138106315c1f51e50f7f"
+        ],
+        "round": 2,
+        "support_annotation_coverage": 0.5
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1329,
+        "new_document_ids": [
+          "musique-paragraph-28bb98907a8d1cb350782217fc4f914bab65c87eb40657277ba4d612a0f9877a",
+          "musique-paragraph-c7e379c45ead5927a3f7d4150d8178206b2117b7ad8258a96ae22d1583e0d916",
+          "musique-paragraph-fb020d7614c3fb5ad2806ca9b24dfcdad4cebc59be4429e9e4704491a20f0009"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 3,
+        "support_annotation_coverage": 0.5
+      }
+    ],
+    "support_count": 4,
+    "support_ids": [
+      "musique-paragraph-2bf015804b80b2a587a372caf630c880fc65d395bb42138106315c1f51e50f7f",
+      "musique-paragraph-536c08fbd05e01035fd39d83cbd375b2aa03f719301463091a4dfdec7fd65873",
+      "musique-paragraph-7bec89a271a602679c3f70bb79458f16dbd36c053ff9954887c68276902ba4a9",
+      "musique-paragraph-846d359865d5969e63b147d241cfdbddd2e5cbf31fa8db9f2de9021d3bf54a79"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "4hop1__391525_49925_13759_736921",
+    "final_support_count": 2,
+    "initial_support_count": 2,
+    "job_id": "14b_short",
+    "max_reasoning_tokens": 0,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "disabled": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1009,
+        "new_document_ids": [
+          "musique-paragraph-d3946db324ca85d647bb405834a39e2042388d342814699a0fa513a652f65530",
+          "musique-paragraph-5650ac6ee9ad301070b880a98c4aa74b6c26b671cd2133cfcea6a37aaed0cd8f",
+          "musique-paragraph-3ad1b3ffeb92787cc6b80bf846b4f4af48c8c80fa6423bca12a15d6584071094",
+          "musique-paragraph-ce3de9044413f28718f7bdc2a19440722d31307ee898f0d870d7a6db41ed09af",
+          "musique-paragraph-bd2f5a998e87542ed051f3fdf7ba81009ccca83dfad498dfbef542a9d5f6ae63",
+          "musique-paragraph-5ca5a299424201c986a9928a10132691365a8de1fd8dbfbe1db68203a5fb2fac"
+        ],
+        "new_support_count": 2,
+        "new_support_ids": [
+          "musique-paragraph-5650ac6ee9ad301070b880a98c4aa74b6c26b671cd2133cfcea6a37aaed0cd8f",
+          "musique-paragraph-d3946db324ca85d647bb405834a39e2042388d342814699a0fa513a652f65530"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.5
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1557,
+        "new_document_ids": [
+          "musique-paragraph-76453f342b765a6551a52ed4a4bec42115da904b36f8ac715a218358f8bf9127",
+          "musique-paragraph-21d3f6f8f11067c8c1ebddbb5755557835dcd5440294159356239c614099cf09",
+          "musique-paragraph-d17ac8f2738a035e75f6478a575220de57662b4d2065ad528290a7527010befb"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 2,
+        "support_annotation_coverage": 0.5
+      }
+    ],
+    "support_count": 4,
+    "support_ids": [
+      "musique-paragraph-5650ac6ee9ad301070b880a98c4aa74b6c26b671cd2133cfcea6a37aaed0cd8f",
+      "musique-paragraph-bf20ed8a341f2de59824de7182b6da4f9fd18150b0351373170e1d00e432f28d",
+      "musique-paragraph-d3946db324ca85d647bb405834a39e2042388d342814699a0fa513a652f65530",
+      "musique-paragraph-fd6e05e10fedf5d86a1d51093b7262144ed9bcf93479b3a7a6c279a698a40e9d"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 1
+    },
+    "arm": "iterative_text",
+    "example_id": "2hop__460091_405771",
+    "final_support_count": 1,
+    "initial_support_count": 1,
+    "job_id": "14b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 1
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 711,
+        "new_document_ids": [
+          "musique-paragraph-78d5f988cebdcd3d408b75d59c4e167a2221055975a293b591c97950b8d7619a",
+          "musique-paragraph-79bef63f0e5e9bbd335125ab4b010478b81566951234a889da89f9c1f5cfe1b3",
+          "musique-paragraph-5d38e86042f1449a1d9a3e872c5de63df585eca2db3446d335e5635923fa5980",
+          "musique-paragraph-5059d90d8cf36d0335c400b78950946a03e1c93734aa980d77869446207c1664",
+          "musique-paragraph-d0f8e2627f92cc8aa8b692e9bad094599a7738c4919770b63320e4d254e0bb6b",
+          "musique-paragraph-5a7f90d681714d8b812fd584c31241051bf1129558b38e4e6bf5bb71590d79ee"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-78d5f988cebdcd3d408b75d59c4e167a2221055975a293b591c97950b8d7619a"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.5
+      }
+    ],
+    "support_count": 2,
+    "support_ids": [
+      "musique-paragraph-37703f3cae009a0b39a369d5144e19871e6d3abb8f89be1f0273397eef0c1f7e",
+      "musique-paragraph-78d5f988cebdcd3d408b75d59c4e167a2221055975a293b591c97950b8d7619a"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "2hop__57543_158262",
+    "final_support_count": 1,
+    "initial_support_count": 0,
+    "job_id": "14b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 1,
+    "productive_followup_rounds": 1,
+    "reasoning_stops": {
+      "end_think": 1,
+      "max_reasoning_tokens": 1
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 970,
+        "new_document_ids": [
+          "musique-paragraph-0562c45bf306fca7c09a1280805ab319921bdcbdd975a2a106d05d6a6afc44c2",
+          "musique-paragraph-7a1edf1b97825374c55d44b8aeca238234bf313c44c4faff3ff8ff13a54b1ec4",
+          "musique-paragraph-75d567fe4a11297e76171bac23caf652ed196fd4540a86f8237512e3420fa9b6",
+          "musique-paragraph-24da80c7b960b0db434d994a34858c95f352109cfb42dccd93d23e1393f12f2f",
+          "musique-paragraph-4ba04c4f605f7bed1e617ca61d320ddf1a389b4767f78e81ca25f1f7708bb390",
+          "musique-paragraph-59bc8c725bef6af467cc8ad40bd40f7158ab7c542bcde893ca8de68055b5604a"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 1,
+        "support_annotation_coverage": 0.0
+      },
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 1354,
+        "new_document_ids": [
+          "musique-paragraph-e5d31a98b0731cf79fe958da6285e47072993ad2ede646f21bfc664b3fc2bdd5",
+          "musique-paragraph-a1be63f441ab22aaee32f148ea83a8ac023f97ead068c35a47421f865d98b76b",
+          "musique-paragraph-ed5a58d1fbbcebad166d909a8caa8ae9188585eab2106462ffb4ca625cfe543a"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-e5d31a98b0731cf79fe958da6285e47072993ad2ede646f21bfc664b3fc2bdd5"
+        ],
+        "round": 2,
+        "support_annotation_coverage": 0.5
+      }
+    ],
+    "support_count": 2,
+    "support_ids": [
+      "musique-paragraph-88e1a04c3c2efdb2d5381130fe0198c0f0ba00dd8652ae43c722bf306e16e0b3",
+      "musique-paragraph-e5d31a98b0731cf79fe958da6285e47072993ad2ede646f21bfc664b3fc2bdd5"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 1
+    },
+    "arm": "iterative_text",
+    "example_id": "2hop__403580_37168",
+    "final_support_count": 2,
+    "initial_support_count": 2,
+    "job_id": "14b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 1
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1033,
+        "new_document_ids": [
+          "musique-paragraph-a4d135d08c9bc82f11dbdbefe3c18065427cf72dbe5f851b5a2dfd544986e3e4",
+          "musique-paragraph-5878dbf9e27c018dedd90b96a1853ebe0c7ac58db07097b611d1654c650e869e",
+          "musique-paragraph-87bac31e983b50141347a3712ed7b084d392cfe046b098ff3a365a9975507a46",
+          "musique-paragraph-d9bcdc0667152ed1e76ff6c587d2e792d1cebde3270141a518f24f8dbd956e4b",
+          "musique-paragraph-3f4ce5fc0c11fa2d01eea07f40bd907b2bfda1aa63f8b030b30ec0ed27be1f60",
+          "musique-paragraph-c4c5bcf9f48eafb1252af0147bb50d275aa2b971d57bae658c1d0801ee9631bf"
+        ],
+        "new_support_count": 2,
+        "new_support_ids": [
+          "musique-paragraph-87bac31e983b50141347a3712ed7b084d392cfe046b098ff3a365a9975507a46",
+          "musique-paragraph-a4d135d08c9bc82f11dbdbefe3c18065427cf72dbe5f851b5a2dfd544986e3e4"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 1.0
+      }
+    ],
+    "support_count": 2,
+    "support_ids": [
+      "musique-paragraph-87bac31e983b50141347a3712ed7b084d392cfe046b098ff3a365a9975507a46",
+      "musique-paragraph-a4d135d08c9bc82f11dbdbefe3c18065427cf72dbe5f851b5a2dfd544986e3e4"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "2hop__84172_198548",
+    "final_support_count": 2,
+    "initial_support_count": 1,
+    "job_id": "14b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 1,
+    "productive_followup_rounds": 1,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 874,
+        "new_document_ids": [
+          "musique-paragraph-232047fd16b7b86a0648604cc1e8741ecc8db81a1fba0f9e68b392208cef7f7c",
+          "musique-paragraph-44846b59a0d5e0cadb874985ad4ff51c82d721f8be2d1eac9bf9a62000fb7934",
+          "musique-paragraph-fb3e9ec1910e0946ad6ec7ac511a44144a0a3520983cd40c71abd7b865c630c3",
+          "musique-paragraph-a0880c2ac192fd98c7ed6cfb296f1e06a65143854a3d291dd1810aeb266fc84b",
+          "musique-paragraph-1622b729726ae019ece47ce04eb16ac8f65ae60399790ff58c646b808dce341a",
+          "musique-paragraph-29cf0888c33deffa5e3e5682bb2d9e47bc692df7bf8d669386f2d6c9841c1a0a"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-44846b59a0d5e0cadb874985ad4ff51c82d721f8be2d1eac9bf9a62000fb7934"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.5
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1217,
+        "new_document_ids": [
+          "musique-paragraph-9f56d810a8a6476c068b08f0dce495a52bcc8d7c33bca0a0b422736585b414be",
+          "musique-paragraph-33b9effbd7f204b966ab57bc2593c95e75712f5f8bd23f58e70a3d384bca9db9",
+          "musique-paragraph-27ba3a2d0107515b1d4f347417f23f38b5318904a8ff6a2df8dc77ce84ccaebb"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-33b9effbd7f204b966ab57bc2593c95e75712f5f8bd23f58e70a3d384bca9db9"
+        ],
+        "round": 2,
+        "support_annotation_coverage": 1.0
+      }
+    ],
+    "support_count": 2,
+    "support_ids": [
+      "musique-paragraph-33b9effbd7f204b966ab57bc2593c95e75712f5f8bd23f58e70a3d384bca9db9",
+      "musique-paragraph-44846b59a0d5e0cadb874985ad4ff51c82d721f8be2d1eac9bf9a62000fb7934"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 3
+    },
+    "arm": "iterative_text",
+    "example_id": "3hop1__64957_87694_64412",
+    "final_support_count": 3,
+    "initial_support_count": 1,
+    "job_id": "14b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 2,
+    "productive_followup_rounds": 2,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 3
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 697,
+        "new_document_ids": [
+          "musique-paragraph-f46710cf989e1a4adc3fb9be1319d786f0aa6d9e4b4134763984958f1955741a",
+          "musique-paragraph-18473bd69ea80427ec7aec2cc449b6ee322a3ad29bc32ac94ed38c2bce038be6",
+          "musique-paragraph-3c3b2ad2dbd7e6c4db51d1e85708dc4f3e6d9f78153d320582ecd64fa89eba1b",
+          "musique-paragraph-de6c7663ba4e3a2eeb8c15f450f14249cdde09f3b7f0ed8cf4e42584b43476ae",
+          "musique-paragraph-623a9d3f228e8690bcade0457c29f1f076fca2f4b5ba88f94c485fd2ef615473",
+          "musique-paragraph-1ea0cbdf6acfaf7f156722452198999c6eedb864a17619cd77fb1558eaea378c"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-f46710cf989e1a4adc3fb9be1319d786f0aa6d9e4b4134763984958f1955741a"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.3333333333333333
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1145,
+        "new_document_ids": [
+          "musique-paragraph-7f84b41792d166d84051cd10f610930c7966d0a23effcaf68a9c3e82b9a7afb7",
+          "musique-paragraph-51bab53e16451c662196c865460cdfa95fb38011fe91a448f0ffe4030798894d",
+          "musique-paragraph-cb1ba36355a6c328dee0f67975d8b5c7e49fb6965256dd2ff26e1933fe32c898"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-7f84b41792d166d84051cd10f610930c7966d0a23effcaf68a9c3e82b9a7afb7"
+        ],
+        "round": 2,
+        "support_annotation_coverage": 0.6666666666666666
+      },
+      {
+        "cumulative_support_count": 3,
+        "evidence_tokens": 1486,
+        "new_document_ids": [
+          "musique-paragraph-952221f6124464c7d4ba971663539893752d37833c64e383661867ebeabe3c17",
+          "musique-paragraph-dbe3a9f7245186633613d25a4bd04a683e25b3884e144552910d8c0bbf8e8dd6",
+          "musique-paragraph-1492c096a2210edb9f5038e2a94f18cd091a33f1a18b2d03557acb90f8673ae0"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-dbe3a9f7245186633613d25a4bd04a683e25b3884e144552910d8c0bbf8e8dd6"
+        ],
+        "round": 3,
+        "support_annotation_coverage": 1.0
+      }
+    ],
+    "support_count": 3,
+    "support_ids": [
+      "musique-paragraph-7f84b41792d166d84051cd10f610930c7966d0a23effcaf68a9c3e82b9a7afb7",
+      "musique-paragraph-dbe3a9f7245186633613d25a4bd04a683e25b3884e144552910d8c0bbf8e8dd6",
+      "musique-paragraph-f46710cf989e1a4adc3fb9be1319d786f0aa6d9e4b4134763984958f1955741a"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 3
+    },
+    "arm": "iterative_text",
+    "example_id": "3hop1__132968_40769_64047",
+    "final_support_count": 2,
+    "initial_support_count": 2,
+    "job_id": "14b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 3
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 650,
+        "new_document_ids": [
+          "musique-paragraph-896c3824917762842659f16d9de2db10dcd571e1893d6a56ba5267d649424137",
+          "musique-paragraph-942b733082cd3a95407be3dd7ae5b1489cc9f99a5e41c45d715ae425b4168236",
+          "musique-paragraph-46386f5cc96692028f702e606951b3bb4019480ef14595bcfa874692d2ef4a5e",
+          "musique-paragraph-e72c6e345723df0bb95293a744e154cef7f2f0b878b68b1bfaba397e321e5e38",
+          "musique-paragraph-0a607b0c7b8cb3318ff5072e228962c4e60d52280c6506370486d4aa7009a8a3",
+          "musique-paragraph-173f2e47760c164f97ea3733a7cd4c4e8962753c8a606c73a995f7924fd04227"
+        ],
+        "new_support_count": 2,
+        "new_support_ids": [
+          "musique-paragraph-46386f5cc96692028f702e606951b3bb4019480ef14595bcfa874692d2ef4a5e",
+          "musique-paragraph-896c3824917762842659f16d9de2db10dcd571e1893d6a56ba5267d649424137"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.6666666666666666
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1032,
+        "new_document_ids": [
+          "musique-paragraph-55a94f605601b202f0139cac58d787b8b51bc8f27de483213847f945c292e3f8",
+          "musique-paragraph-7cfccdc6f137b5395aa48900a8e2c7e21dd0d34d3611db4ca8c5d96b059e4f05",
+          "musique-paragraph-de3ad335132874109585e5accd34517f8e4f05580e2bee41f2fe18f7f3a53979"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 2,
+        "support_annotation_coverage": 0.6666666666666666
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1296,
+        "new_document_ids": [
+          "musique-paragraph-70b86012eb731b97fc3cc3fea3dfb66a5cea90830e432d08d63c3e82a08e23ab",
+          "musique-paragraph-d6a05995ec19f08cd4e5aa7940653fd256129518684e1b77bea10079b941f1dc",
+          "musique-paragraph-d0ce7a700ee578765e646d2ad097be13c719fd65c08fc4b3ab25ef82a6b7fd74"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 3,
+        "support_annotation_coverage": 0.6666666666666666
+      }
+    ],
+    "support_count": 3,
+    "support_ids": [
+      "musique-paragraph-2b1df5663580ca73769e0aa112de9b13c4bb5f38c2d14798f8deab5365a900a5",
+      "musique-paragraph-46386f5cc96692028f702e606951b3bb4019480ef14595bcfa874692d2ef4a5e",
+      "musique-paragraph-896c3824917762842659f16d9de2db10dcd571e1893d6a56ba5267d649424137"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "3hop1__210639_147339_47686",
+    "final_support_count": 2,
+    "initial_support_count": 1,
+    "job_id": "14b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 1,
+    "productive_followup_rounds": 1,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 727,
+        "new_document_ids": [
+          "musique-paragraph-02a0ecea403c1d08a296c49786f0b0cd598427922c3a7bdc23937eb68fbae82f",
+          "musique-paragraph-80f37eb3a87f84042c0fdf953abbc75bda5ae10c2d0c9285a3137ffdfcfc04bf",
+          "musique-paragraph-26ff523e1693f0e60aef77a1f0c09bcdff210559e187480feb223e504d947b98",
+          "musique-paragraph-a672679340c77f27d829f68832d4a970adeca5e5a6a6fdcdbd549b6cd516de86",
+          "musique-paragraph-53595f8b2cc24b9586685af303678332462b6c2841078e10b015b15bae6e0ca5",
+          "musique-paragraph-ab0d032a355aceb742f850ed592b82f61b6a0fd15931db1a213c188c25bf8b6e"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-02a0ecea403c1d08a296c49786f0b0cd598427922c3a7bdc23937eb68fbae82f"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.3333333333333333
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 969,
+        "new_document_ids": [
+          "musique-paragraph-a4f6302d5db85f1a6d3bbf391ae7fd398ba0c8826f57a806f74fd5a88a0626ed",
+          "musique-paragraph-08ec2476cf63545bc8ba86f20101bb596f9422042bb4c68ee0b8584795bb5a77",
+          "musique-paragraph-970c9df45744a8991edbc3e4e3e84dbe3a1078bb3ba8067e88795aa31fd1d17c"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-a4f6302d5db85f1a6d3bbf391ae7fd398ba0c8826f57a806f74fd5a88a0626ed"
+        ],
+        "round": 2,
+        "support_annotation_coverage": 0.6666666666666666
+      }
+    ],
+    "support_count": 3,
+    "support_ids": [
+      "musique-paragraph-02a0ecea403c1d08a296c49786f0b0cd598427922c3a7bdc23937eb68fbae82f",
+      "musique-paragraph-09d2e48c2fdc66b8cc98306a266f9276308f7bb65d18173df89aaacab2934c02",
+      "musique-paragraph-a4f6302d5db85f1a6d3bbf391ae7fd398ba0c8826f57a806f74fd5a88a0626ed"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "3hop2__30956_65244_84681",
+    "final_support_count": 2,
+    "initial_support_count": 1,
+    "job_id": "14b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 1,
+    "productive_followup_rounds": 1,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 782,
+        "new_document_ids": [
+          "musique-paragraph-dec72b2fbc5ef531cc21b56bdddd46d159c55b1d824503607667f3b8899b26ff",
+          "musique-paragraph-3e0755bfdd663e4fa3ef515a102a158ce57bf0dca67fefb7f7f8a599eea0d433",
+          "musique-paragraph-67a87124450e3dc1beb610cac64ceeb24376c9a42dc8de643a406a9c813a8532",
+          "musique-paragraph-826ef063378e2f4078f16d6d8c213e33ba879a7c305d08d567489083b2db6fcd",
+          "musique-paragraph-2f9f657dfc2c5a665ddfa83a777d53fa758f06c198ea98b5fa4db40e2429a3fd",
+          "musique-paragraph-f9134a7350bb3b7c856669fccfc34ac7a03afc4cce121415f9654e6e127c16ca"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-dec72b2fbc5ef531cc21b56bdddd46d159c55b1d824503607667f3b8899b26ff"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.3333333333333333
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1291,
+        "new_document_ids": [
+          "musique-paragraph-1b51d951df4d1aee6a62b544a0347f0e21cd138733b096687456c6e601d757d6",
+          "musique-paragraph-eeb394635df76fcdc9f5a5ba2ee476b00f9703735b6912ceec93675f713d62e2",
+          "musique-paragraph-dc313d9ef2c5c948ec41133b56ba20b53f663694d0740598fb4bb6a99d6d50d2"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-1b51d951df4d1aee6a62b544a0347f0e21cd138733b096687456c6e601d757d6"
+        ],
+        "round": 2,
+        "support_annotation_coverage": 0.6666666666666666
+      }
+    ],
+    "support_count": 3,
+    "support_ids": [
+      "musique-paragraph-1b51d951df4d1aee6a62b544a0347f0e21cd138733b096687456c6e601d757d6",
+      "musique-paragraph-72b385e682de3faf32ae286502fc2abd1e277ebecbd160f487219998a5758478",
+      "musique-paragraph-dec72b2fbc5ef531cc21b56bdddd46d159c55b1d824503607667f3b8899b26ff"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 2
+    },
+    "arm": "iterative_text",
+    "example_id": "4hop1__370129_621192_10659_42311",
+    "final_support_count": 0,
+    "initial_support_count": 0,
+    "job_id": "14b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 2
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 839,
+        "new_document_ids": [
+          "musique-paragraph-9ac82243daf41c1bb20f28bbefe13bc67ddadc41ddc68ed82a0b6093724b4676",
+          "musique-paragraph-df99c1099e7a47e86681d2f91db513ab43cea1d440250ae74470b446688b4617",
+          "musique-paragraph-0271a0e2e0f545665d57cf800326c9e8cae69f1cf421ba621cde6349cb0eacb0",
+          "musique-paragraph-f4238e74a3ddc442448d803f0a2701e2cea730bb0974742e5d09407fc4183bdf",
+          "musique-paragraph-054746b52390ff0f74764384456cfc809872db3a7e4a9c77248c36be42f26293",
+          "musique-paragraph-f68cec62ae9eba5a05034c780d709890bf114f641186e4aa842f9cb4314f19fb"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 1,
+        "support_annotation_coverage": 0.0
+      },
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 1151,
+        "new_document_ids": [
+          "musique-paragraph-b63b953d99da9fb2b6f165f46bfbdb2bc47d1f7b1773331d1ea96a6d99bdc22a",
+          "musique-paragraph-7543cd63b01d9e74ef8c61bbc4b8dd08fd336ba9a00fa369d972ee3edd12f362",
+          "musique-paragraph-9004245842c6b6944ac4130ceeea6ed4fe865271084379cdfa61e0f5e9775bc3"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 2,
+        "support_annotation_coverage": 0.0
+      }
+    ],
+    "support_count": 4,
+    "support_ids": [
+      "musique-paragraph-2db1dde9d7b9e93e87ee97e5ab5c81ee8c9bc2b872f6fcec2cd25ce3fc636d7e",
+      "musique-paragraph-498ed29379d6dacf96abe4b3a4acaa843476f5b6c83a3c43c522d59916739b88",
+      "musique-paragraph-e123b3988b4d9984e23b6b2316504f625ae65157045a04905737d52ddb1ce4f3",
+      "musique-paragraph-e282a9ac2edfd10e4de11ff56dab400decb09745f7e7e80afb82524e2940e078"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 4
+    },
+    "arm": "iterative_text",
+    "example_id": "4hop1__58323_375563_161848_53331",
+    "final_support_count": 2,
+    "initial_support_count": 0,
+    "job_id": "14b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 2,
+    "productive_followup_rounds": 2,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 4
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 941,
+        "new_document_ids": [
+          "musique-paragraph-a08f566c4b3c98e7b8c1bc392a47252b45207bea7edf187c647246cc509315ee",
+          "musique-paragraph-dcc1e38cc71c2f402879957226df66f66e8e7cb2b294421e401c2b4ae68f5edf",
+          "musique-paragraph-1c8f19e0f2d1387ffb2eda411e8967de102116bdb52e1c8f017cebf7fe4a0fc8",
+          "musique-paragraph-eb67c41f6b9fdeed0ac5a74d5d60b6fed06ee229c3a1c22f7686d8da68ed9419",
+          "musique-paragraph-60404b3f5542fbb6643365db997bb0fbade554788b6a6534abe5d30ce471dc93",
+          "musique-paragraph-47cc3d14553b92de9d376b806cb60411784253af28f14a5ca6b6344f5ba219a6"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 1,
+        "support_annotation_coverage": 0.0
+      },
+      {
+        "cumulative_support_count": 0,
+        "evidence_tokens": 1482,
+        "new_document_ids": [
+          "musique-paragraph-41886afcf8dbcf8bf3a07aceb54bedc2990142a4a8a9a27d356d59a261edaed2",
+          "musique-paragraph-da99826a04180f7659bad58da037118e4edfd2b49c28652a1b9068a43e90d1f0",
+          "musique-paragraph-eb0c67ff91cefa3685b8b6da458d62f2882267adbc381f83f2ce2d950798e8fb"
+        ],
+        "new_support_count": 0,
+        "new_support_ids": [],
+        "round": 2,
+        "support_annotation_coverage": 0.0
+      },
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 1941,
+        "new_document_ids": [
+          "musique-paragraph-a7e934d3ca0aff763a17c74a9f7b291529f457beffe4c04842e6ceff02c34c1d",
+          "musique-paragraph-c777e14e7ba680d509744bc6d97581b743cbcc3ca015ccb229eb1901df6cef3a",
+          "musique-paragraph-df7f7c0fabe3d132a625d216fd1d9bbf70eda3f5e6fda99f9d1e172e76e1dfa0"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-c777e14e7ba680d509744bc6d97581b743cbcc3ca015ccb229eb1901df6cef3a"
+        ],
+        "round": 3,
+        "support_annotation_coverage": 0.25
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 2111,
+        "new_document_ids": [
+          "musique-paragraph-d3534acad149e64279f7c78c25b4eaafb79e949ec6e771dfe3dbb341ab97dc7c",
+          "musique-paragraph-5a355ea46e2985667c14dcd4edd6a52ec38abe48779f3c00b0ccc232cc0212fe",
+          "musique-paragraph-41599826460ff373709f70f507823a70d1f28a70303ae6c25a12b40335dba5a7"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-d3534acad149e64279f7c78c25b4eaafb79e949ec6e771dfe3dbb341ab97dc7c"
+        ],
+        "round": 4,
+        "support_annotation_coverage": 0.5
+      }
+    ],
+    "support_count": 4,
+    "support_ids": [
+      "musique-paragraph-7a98c5d8359460ed713549b711fc3fdd2af0b12504110eb9d30f16f0fc68a089",
+      "musique-paragraph-c777e14e7ba680d509744bc6d97581b743cbcc3ca015ccb229eb1901df6cef3a",
+      "musique-paragraph-d3534acad149e64279f7c78c25b4eaafb79e949ec6e771dfe3dbb341ab97dc7c",
+      "musique-paragraph-eb1e5f2b94d1652f13647cdfc59ee041c11bb07ae431ad6484ba22611b952488"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 4
+    },
+    "arm": "iterative_text",
+    "example_id": "4hop3__312119_132409_371500_35031",
+    "final_support_count": 4,
+    "initial_support_count": 1,
+    "job_id": "14b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 3,
+    "productive_followup_rounds": 3,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 4
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 1,
+        "evidence_tokens": 712,
+        "new_document_ids": [
+          "musique-paragraph-30efc014dfff747426e28baa541fca6d91bc075887c78acb5a20ddcd54f67558",
+          "musique-paragraph-536c08fbd05e01035fd39d83cbd375b2aa03f719301463091a4dfdec7fd65873",
+          "musique-paragraph-e0cf5172df2cc47ecaefc5c47c8bbf54a410401a0cc125d71fac5e4bfbc4934c",
+          "musique-paragraph-3b808e9d2444b506322141de54fae699daf54fdf2a40efe444ae4d4f1e2e1ca0",
+          "musique-paragraph-f02e0f42958bd6cf8b5b498716ed5cc682b9fa68f55c8af47b14400e4abb3d96",
+          "musique-paragraph-c0bbba648ea2b6de41893a959b0f78c4ec145daddcd82d079fd181a711cdaadb"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-536c08fbd05e01035fd39d83cbd375b2aa03f719301463091a4dfdec7fd65873"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.25
+      },
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1186,
+        "new_document_ids": [
+          "musique-paragraph-846d359865d5969e63b147d241cfdbddd2e5cbf31fa8db9f2de9021d3bf54a79",
+          "musique-paragraph-2ca977565d8677a46e68ff391d2f3d9a46f2b12e18b111518972376fed0981ab",
+          "musique-paragraph-c32f8d606ea2f6b555949ada6cdf00353c89e6c1c5fe7e8c92637486c5d015da"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-846d359865d5969e63b147d241cfdbddd2e5cbf31fa8db9f2de9021d3bf54a79"
+        ],
+        "round": 2,
+        "support_annotation_coverage": 0.5
+      },
+      {
+        "cumulative_support_count": 3,
+        "evidence_tokens": 1391,
+        "new_document_ids": [
+          "musique-paragraph-2bf015804b80b2a587a372caf630c880fc65d395bb42138106315c1f51e50f7f",
+          "musique-paragraph-86da8733e5ec8559de2c52c861aecbca6e6814802350d86348811c9a2f62dbb5",
+          "musique-paragraph-efdcc89e91b49f1fe83b0c0d13997df4e0d3350508a6753250699d99cf069844"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-2bf015804b80b2a587a372caf630c880fc65d395bb42138106315c1f51e50f7f"
+        ],
+        "round": 3,
+        "support_annotation_coverage": 0.75
+      },
+      {
+        "cumulative_support_count": 4,
+        "evidence_tokens": 1931,
+        "new_document_ids": [
+          "musique-paragraph-07047c9370b1c69098d7cdeaab027f4ef4eb4dfb4d4ac38d1b3434b48a1b944d",
+          "musique-paragraph-dedf4684c21104dedbc6d6437f9888c56719a20f0f2b448e67afe5f988cc5606",
+          "musique-paragraph-7bec89a271a602679c3f70bb79458f16dbd36c053ff9954887c68276902ba4a9"
+        ],
+        "new_support_count": 1,
+        "new_support_ids": [
+          "musique-paragraph-7bec89a271a602679c3f70bb79458f16dbd36c053ff9954887c68276902ba4a9"
+        ],
+        "round": 4,
+        "support_annotation_coverage": 1.0
+      }
+    ],
+    "support_count": 4,
+    "support_ids": [
+      "musique-paragraph-2bf015804b80b2a587a372caf630c880fc65d395bb42138106315c1f51e50f7f",
+      "musique-paragraph-536c08fbd05e01035fd39d83cbd375b2aa03f719301463091a4dfdec7fd65873",
+      "musique-paragraph-7bec89a271a602679c3f70bb79458f16dbd36c053ff9954887c68276902ba4a9",
+      "musique-paragraph-846d359865d5969e63b147d241cfdbddd2e5cbf31fa8db9f2de9021d3bf54a79"
+    ]
+  },
+  {
+    "action_stops": {
+      "eos": 1
+    },
+    "arm": "iterative_text",
+    "example_id": "4hop1__391525_49925_13759_736921",
+    "final_support_count": 2,
+    "initial_support_count": 2,
+    "job_id": "14b_thinking",
+    "max_reasoning_tokens": 256,
+    "max_rounds": 5,
+    "model_label": "14B",
+    "new_support_after_initial": 0,
+    "productive_followup_rounds": 0,
+    "reasoning_stops": {
+      "max_reasoning_tokens": 1
+    },
+    "steps": [
+      {
+        "cumulative_support_count": 2,
+        "evidence_tokens": 1009,
+        "new_document_ids": [
+          "musique-paragraph-d3946db324ca85d647bb405834a39e2042388d342814699a0fa513a652f65530",
+          "musique-paragraph-5650ac6ee9ad301070b880a98c4aa74b6c26b671cd2133cfcea6a37aaed0cd8f",
+          "musique-paragraph-3ad1b3ffeb92787cc6b80bf846b4f4af48c8c80fa6423bca12a15d6584071094",
+          "musique-paragraph-ce3de9044413f28718f7bdc2a19440722d31307ee898f0d870d7a6db41ed09af",
+          "musique-paragraph-bd2f5a998e87542ed051f3fdf7ba81009ccca83dfad498dfbef542a9d5f6ae63",
+          "musique-paragraph-5ca5a299424201c986a9928a10132691365a8de1fd8dbfbe1db68203a5fb2fac"
+        ],
+        "new_support_count": 2,
+        "new_support_ids": [
+          "musique-paragraph-5650ac6ee9ad301070b880a98c4aa74b6c26b671cd2133cfcea6a37aaed0cd8f",
+          "musique-paragraph-d3946db324ca85d647bb405834a39e2042388d342814699a0fa513a652f65530"
+        ],
+        "round": 1,
+        "support_annotation_coverage": 0.5
+      }
+    ],
+    "support_count": 4,
+    "support_ids": [
+      "musique-paragraph-5650ac6ee9ad301070b880a98c4aa74b6c26b671cd2133cfcea6a37aaed0cd8f",
+      "musique-paragraph-bf20ed8a341f2de59824de7182b6da4f9fd18150b0351373170e1d00e432f28d",
+      "musique-paragraph-d3946db324ca85d647bb405834a39e2042388d342814699a0fa513a652f65530",
+      "musique-paragraph-fd6e05e10fedf5d86a1d51093b7262144ed9bcf93479b3a7a6c279a698a40e9d"
+    ]
+  }
+]

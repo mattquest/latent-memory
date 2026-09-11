@@ -1,0 +1,20 @@
+# All twelve development questions
+
+Original end-to-end predictions, without replacing answers with controller thoughts or diagnostic replays. Support is annotated document exposure; it does not establish understanding.
+
+| Question | Gold aliases | 8B short | 8B reasoning | 14B short | 14B reasoning |
+| --- | --- | --- | --- | --- | --- |
+| What taxa is Ommatidae part of? | Coleoptera; beetles; beetle; Beetle | order (1/2 supports; 1 rounds) | order (1/2 supports; 1 rounds) | family (1/2 supports; 1 rounds) | family (1/2 supports; 1 rounds) |
+| When did the famous leader of the Confederate Military end his fight in the Mexican-American war? | 1848 | UNKNOWN (1/2 supports; 2 rounds) | UNKNOWN (1/2 supports; 2 rounds) | 1848 (1/2 supports; 2 rounds) | 1848 (1/2 supports; 2 rounds) |
+| According to QS World University Rankings, what is the ranking of the place that employed Said Ashour? | 551-600 | Cairo University (2/2 supports; 2 rounds) | UNKNOWN (2/2 supports; 2 rounds) | Cairo University (2/2 supports; 3 rounds) | UNKNOWN (2/2 supports; 1 rounds) |
+| Who is the spouse of the person who does the voice for Smokey the Bear? | Katharine Ross | UNKNOWN (1/2 supports; 1 rounds) | UNKNOWN (1/2 supports; 2 rounds) | UNKNOWN (1/2 supports; 2 rounds) | UNKNOWN (2/2 supports; 2 rounds) |
+| When did the city that contains the basilica named after the saint who is holding a knife in the last supper become a country? | 11 February 1929 | UNKNOWN (1/3 supports; 2 rounds) | UNKNOWN (3/3 supports; 4 rounds) | UNKNOWN (1/3 supports; 2 rounds) | UNKNOWN (3/3 supports; 3 rounds) |
+| When did the luxury division of the company that made Daihatsu Charmant change the body style of the rx 350? | Sales began worldwide in April 2012 | UNKNOWN (2/3 supports; 1 rounds) | UNKNOWN (2/3 supports; 2 rounds) | UNKNOWN (2/3 supports; 2 rounds) | UNKNOWN (2/3 supports; 3 rounds) |
+| Where do Greyhound buses leave from in the city where the creator of Scene in the Northwest: Portrait of John Henry Lefroy lived when he died? | Toronto Coach Terminal | UNKNOWN (2/3 supports; 2 rounds) | UNKNOWN (2/3 supports; 2 rounds) | SEARCH: Where did Paul Kane live when he died? (2/3 supports; 2 rounds) | SEARCH: Where did Paul Kane live when he died? (2/3 supports; 2 rounds) |
+| When did the people who controlled New York before it became an English colony, come to the country where John Kerry's yacht was built? | 13 December 1642 | UNKNOWN (1/3 supports; 1 rounds) | UNKNOWN (1/3 supports; 1 rounds) | SEARCH: When did the Dutch come to New Zealand? (2/3 supports; 3 rounds) | UNKNOWN (2/3 supports; 2 rounds) |
+| What is the largest medical school in the nation where, along with the country of citizenship of the mother of Marie Antoinette, many expelled French Jews relocated? | Medical University of Warsaw | UNKNOWN (0/4 supports; 2 rounds) | UNKNOWN (0/4 supports; 3 rounds) | SEARCH: Largest medical school in the nation where expelled French Jews relocated. (1/4 supports; 2 rounds) | UNKNOWN (0/4 supports; 2 rounds) |
+| When was the death penalty abolished in the country near the country where the writer of The Book Thief is a citizen of? | 1989 | UNKNOWN (1/4 supports; 2 rounds) | UNKNOWN (0/4 supports; 4 rounds) | UNKNOWN (1/4 supports; 3 rounds) | UNKNOWN (2/4 supports; 4 rounds) |
+| Among the top five largest urban areas in the state where Getting Away with Murder's performer was formed, where does Veoh's headquarters city rank? | third-largest | UNKNOWN (3/4 supports; 4 rounds) | SEARCH: What is the state where Papa Roach was formed? (4/4 supports; 3 rounds) | UNKNOWN (2/4 supports; 3 rounds) | UNKNOWN (4/4 supports; 4 rounds) |
+| Where is the district that the person who wanted to reform and address John Kodwo Amissah's religion preached a sermon on Marian devotion before his death located? | Saxony-Anhalt | UNKNOWN (2/4 supports; 2 rounds) | UNKNOWN (2/4 supports; 2 rounds) | UNKNOWN (2/4 supports; 2 rounds) | UNKNOWN (2/4 supports; 1 rounds) |
+
+Exact question IDs, searches, actions and new supporting IDs are in [pilot-diagnostics.json](pilot-diagnostics.json).

@@ -3,12 +3,190 @@
 A research harness for testing transformer key/value (KV) cache relay in local
 retrieval, with real model inference and measured text/cache baselines.
 
-**Status, September 11, 2026:** real Qwen3-8B experiments now run on Apple
+**Status, September 11, 2026:** real Qwen3-8B and Qwen3-14B experiments run on Apple
 Silicon. The repository contains a native MLX backend, controlled comparisons,
 dataset preparation, resource guards, and an auditable reporting pipeline.
 The original role adapters, trained verifier, zero-text latent planner, compressor,
 and production MCP service remain unfinished. A separate adaptive experiment
 uses short decoded search actions and compares seven retrieval/cache methods.
+
+## Limited controller screen: September 11 follow-up
+
+**Decision: defer the large matrix.** A slightly larger model and longer
+controller reasoning found more annotated supporting documents, but did not
+produce a useful accuracy/latency tradeoff on this screen. A separate final-prompt
+diagnostic exposed instruction interference and improved 8B by one answer;
+all four configurations still ended at only 1/12 on that diagnostic. These are
+development findings, not evidence against every possible latent-memory design.
+
+The relevant hypothesis is **cheaper successive discovery and combination of
+scattered evidence in a large store**. The final supporting documents can fit in
+context while discovering them still requires costly searches. This follow-up
+therefore screens controller and answer-stage viability before another cache-relay
+comparison. It does not require oversized final evidence as a precondition.
+
+### What ran and what was held back
+
+Completed **48 end-to-end iterative-text conditions**, followed by **96 short
+final-answer diagnostic generations** on saved evidence. The twelve new MuSiQue
+questions contain four each with two, three and four structural hops. Selection
+used a fixed structural hash order, excluded every preserved prior question ID
+and normalized question match, and did not use observed accuracy. No question was
+dropped after inspection. All four configurations answered the same twelve
+questions against the same **21,100-paragraph, approximately 2.52-million-token**
+corpus. The prepared 96-question test set remains unused.
+
+The checkpoints are official BF16 Qwen3-8B and Qwen3-14B at pinned revisions.
+Short controllers allow 32 action tokens. Thinking controllers allow up to 256
+reasoning tokens followed by a separate 32-token action. Both use the same seeded
+sampler: temperature 0.6, top-p 0.95, top-k 20. Final answers are separate greedy,
+nonthinking calls capped at 48 tokens. This is a fresh sampled-controller
+comparison; the original study used greedy controllers.
+
+Every job starts with six BM25 paragraphs and can add three per search, with
+five retrieval rounds, eighteen documents, 300 tokens per document, 6,144 evidence
+tokens and an 8,192-token full input/output reservation. Model loading and the
+shared index are offline setup; reported cold query latency includes all online
+search, tokenization, controller and final-generation work. The full model/cache
+matrix, basic-RAG baseline and held-out test were deliberately deferred.
+
+### Original end-to-end results
+
+| Configuration | Correct / 12 | Token F1 | Cold median / p95 (s) | New annotated supports after initial retrieval, total | Questions with every annotated support |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 8B, short | 0 / 12 | 0.0% | 2.08 / 4.92 | 5 | 1 / 12 |
+| 8B, 256-token reasoning | 0 / 12 | 0.0% | 21.25 / 41.72 | 7 | 3 / 12 |
+| 14B, short | 1 / 12 | 9.4% | 4.96 / 7.64 | 6 | 1 / 12 |
+| 14B, 256-token reasoning | 1 / 12 | 8.3% | 38.43 / 77.48 | 11 | 4 / 12 |
+
+On matched questions, thinking/short median latency ratios were **9.45× for 8B**
+and **8.93× for 14B**, without an exact-match gain. These are medians of paired
+ratios, not ratios of the two group medians. The larger short model took 2.20×
+the paired latency of the smaller short model for one additional correct answer.
+Twelve development questions and one correct answer cannot establish superiority.
+No cache-relay accuracy, latency or cost improvement is claimed from this screen.
+
+Mean final annotation coverage rose from 50.0% to 55.6% with 8B thinking and from
+52.8% to 66.7% with 14B thinking. The common initial coverage was 36.8%.
+The report retains all questions after early stops when plotting support gains;
+it does not turn the surviving trajectories into a selected success denominator.
+
+| Configuration | Mean reasoning / action / final tokens per question | Mean retrieval rounds | Repeated-query stops | Invalid-action stops |
+| --- | ---: | ---: | ---: | ---: |
+| 8B, short | 0 / 29.3 / 1.2 | 1.83 | 10 / 12 | 0 / 12 |
+| 8B, reasoning | 594.7 / 38.2 / 2.0 | 2.33 | 7 / 12 | 2 / 12 |
+| 14B, short | 0 / 28.5 / 4.2 | 2.25 | 9 / 12 | 0 / 12 |
+| 14B, reasoning | 575.8 / 26.2 / 2.1 | 2.25 | 6 / 12 | 4 / 12 |
+
+The reasoning cap was reached in **27/28 8B decisions and 26/27 14B decisions**.
+Thus this tests aggressively bounded thinking, not either checkpoint's fully
+completed reasoning. No trajectory reached a fifth retrieval round; none hit the
+final-answer token cap. Forced phase-closure and terminal-EOS sampling are counted
+separately in the raw records. Token work and local runtime are measured cost
+proxies; this study does not estimate API dollar savings or energy consumption.
+
+### What the traces reveal
+
+The strongest useful-discovery example is the Papa Roach/Veoh/San Diego chain.
+8B thinking finds the fourth annotated support and states the correct urban-area
+rank in its controller answer. The protocol then discards that transient payload;
+a separate final call returns another search command instead of the rank.
+On a Vatican City chain, thinking finds two additional relevant supports and
+produces the year, while the final call returns UNKNOWN; the year alone is not
+the full date required by the benchmark. These observations separate retrieval
+progress from final-answer accuracy. They do not prove that preserving the
+controller state would yield a reliable or cheaper system.
+
+Annotation coverage also overstates evidence sufficiency in some cases. For
+example, the source's spouse-support paragraph lists Sam Elliott and Katharine
+Ross as co-stars without stating that they are married. Other selected chains
+omit residence-at-death or citizenship relationships from their labeled supports.
+These gaps exist in the original benchmark source and are not normalization
+losses. The questions remain in every denominator. Exact question/document IDs,
+short excerpts, ambiguities and delivered-text checks are in the
+[qualitative audit](docs/controller-scaling-qualitative-audit.md).
+
+The original finals contain five SEARCH commands across the 48 conditions.
+These remain incorrect responses; incidental F1 overlap with an answer is not
+successful answering. One such overlap explains why the 14B-short F1 slightly
+exceeds its exact-match rate. A trailing-space newline variant of the ANSWER
+command also failed the pilot parser. A narrow post-pilot parser repair is
+recorded separately; the original results are neither rescored nor replaced.
+
+### Final-answer prompt diagnostic
+
+To test instruction interference without rerunning retrieval, every saved
+condition received two final calls: the exact original prompt, then the same
+prompt with only the system's search-command sentence removed. Document token
+order, truncation, question, final suffix, checkpoint and greedy 48-token budget
+were unchanged. All **48 original output token sequences and raw responses
+reproduced exactly** before accepting their paired ablations. Controller thoughts,
+answer payloads and benchmark answers were not added to either prompt.
+
+| Saved evidence from | Original correct / 12 | Final-only system correct / 12 | Original / final-only F1 | Final-stage median, original / final-only (s) |
+| --- | ---: | ---: | ---: | ---: |
+| 8B, short | 0 | 1 | 0.0% / 12.5% | 0.487 / 0.537 |
+| 8B, reasoning | 0 | 1 | 0.0% / 8.3% | 0.596 / 0.645 |
+| 14B, short | 1 | 1 | 9.4% / 8.3% | 1.275 / 1.258 |
+| 14B, reasoning | 1 | 1 | 8.3% / 8.3% | 1.239 / 1.192 |
+
+The ablation eliminates all five stray SEARCH outputs. All four configurations
+then answer the same one question correctly: the Mexican-American War date.
+It does not recover the San Diego rank lost at final synthesis. This identifies
+some prompt interference without explaining the whole accuracy failure. The F1
+decrease for 14B short removes incidental overlap from an invalid search command.
+
+This diagnostic is posthoc and uses already-inspected development evidence.
+Its timings measure only final synthesis, in a fixed original-then-ablation order;
+they are not revised end-to-end latency measurements. There are twelve questions,
+not 48 independent questions. It does not justify promoting the best-looking
+condition to a claimed held-out result.
+
+### Conclusion, execution and reproducibility
+
+The screen was useful for locating bottlenecks. It does **not** yet justify a
+large cache-method matrix. A further small development pass should first make
+final synthesis reliable, test a less truncated controller, and verify that its
+questions have text sufficient to support the required relations. A later fair
+comparison must include standard RAG, stronger agentic text retrieval and ordinary
+causal prefix reuse, charge every model call, and keep failed questions visible.
+No additional experiment is queued by this report.
+
+All annotated support sets fit within 794 wrapped tokens on this development
+set. That is compatible with testing costly discovery over a larger corpus;
+it does not establish benefit from exceeding context or from compressing it.
+This public paragraph corpus, small sample, weak grounding annotations, short
+trajectories and untrained controller leave the original large-store hypothesis
+unresolved. No trained latent query head, compressor or ingestion-precomputed
+whole-corpus KV store was tested.
+
+The 48 guarded pipeline conditions took **15 minutes 22 seconds** including job
+startup. The 96 final-only generations took **1 minute 56 seconds** including
+verification/startup. Model inference was serial on the local Apple Silicon
+laptop; sampled process RSS stayed below 15.65 GiB for 8B and 27.91 GiB for 14B,
+within the declared 32/40 GiB ceilings. The guards retained RAM, disk, power and
+runtime checks. Separate setup included a verified 29.55 GB 14B download taking
+about five minutes and synthetic preflights for both models. A diagnostic launch
+with a wrong model label failed before loading a model; its receipt is preserved,
+and it contributed no generations. No paid API inference was used.
+
+The full suite passes **284 tests** after the post-pilot parser and report-rendering
+repairs. The original 48 generation conditions used commit
+`d1d4ffa08c65d97b2ba4587c0683566a3840e712`; the final-prompt diagnostic used the
+unchanged generation implementation plus its separately pinned diagnostic source.
+The reporting-only rendering amendment and subsequent parser repair are archived
+with before/after hashes. Future runs of repaired code are not exact replays of
+the frozen pilot.
+
+See the [protocol](docs/controller-scaling-protocol.md),
+[data selection and hashes](docs/controller-scaling-data.md),
+[diagnostic protocol](docs/controller-final-diagnostic.md), and
+[complete report package](reports/2026-09-11-controller-scaling/README.md).
+The package includes the [all-question table](reports/2026-09-11-controller-scaling/per-question.md),
+[paired metrics](reports/2026-09-11-controller-scaling/pairs.csv),
+[raw-artifact manifest](reports/2026-09-11-controller-scaling/artifact-manifest.json),
+and archived generation sources, data, guards, model receipts and original
+outputs. The earlier 5,076-condition study is retained below as a separate result.
 
 ## Findings from the September 11 experiment
 

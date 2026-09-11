@@ -1,0 +1,405 @@
+{
+  "artifacts": [
+    {
+      "artifact": "supplement/docs/controller-final-diagnostic.md.gz",
+      "artifact_bytes": 1331,
+      "artifact_sha256": "8fbbd8024b06404a5ea5d3bc347814b11d80b678e98f0e84987bea0ef5d398d3",
+      "source": "docs/controller-final-diagnostic.md",
+      "source_bytes": 2683,
+      "source_sha256": "561441aeae8c9da1ee145fcb4e2a15dff27162c1381ec61a377dce73b06b8f22"
+    },
+    {
+      "artifact": "supplement/docs/controller-scaling-qualitative-audit.md.gz",
+      "artifact_bytes": 3831,
+      "artifact_sha256": "6b01079523e1e2daea59fe8afcb23d96b69c645a342de1b30eff571eb673222f",
+      "source": "docs/controller-scaling-qualitative-audit.md",
+      "source_bytes": 7925,
+      "source_sha256": "cd56268f25649bf806e1dcb3db67e4485434de023a9378d3898ae5f9fa18a3a2"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/diagnostic-source-freeze.json.gz",
+      "artifact_bytes": 573,
+      "artifact_sha256": "40ccafd80d5167c8e7bace1b260d76e617af67777a73b7f9fe8a9d28df3b745c",
+      "source": "runs/controller-scaling/diagnostic-source-freeze.json",
+      "source_bytes": 934,
+      "source_sha256": "6379e65b6b47e811cca5a4052b647d620c646afb06ce38869b18ba0327613dfd"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/download-14b/guard-source.py.gz",
+      "artifact_bytes": 3335,
+      "artifact_sha256": "dbe34325599e9d3fcb9050b8e3a07a1f4f1b6649b6c26d9a2b8930fa5199967e",
+      "source": "runs/controller-scaling/download-14b/guard-source.py",
+      "source_bytes": 9522,
+      "source_sha256": "c78f18023db09d7ee7dc19eb4b1e6c6508752a880121adf3c931bc604a1f3e5b"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/download-14b/guard-status.json.gz",
+      "artifact_bytes": 262,
+      "artifact_sha256": "52d9e437cdf030827bb93643ad17049c3e24fc779b25ddc9d9bce41b1d117f80",
+      "source": "runs/controller-scaling/download-14b/guard-status.json",
+      "source_bytes": 412,
+      "source_sha256": "b09595238545f04e3704b30fc065f16a96661c197d1cff96de61a575a5e5382e"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/download-14b/process.log.gz",
+      "artifact_bytes": 598,
+      "artifact_sha256": "5d3f76ec6129086bc8dd1e5692e393943c3d4a07738bed5babe0587ce6a69ce0",
+      "source": "runs/controller-scaling/download-14b/process.log",
+      "source_bytes": 1780,
+      "source_sha256": "591ca5f8f30cb761d4359bdacfed95380e3d12fcc78572f066bcb53d4e977dab"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/download-14b/resources.jsonl.gz",
+      "artifact_bytes": 3053,
+      "artifact_sha256": "e029d201f62dc2ece60caa200bfd84a9a370825a9007ca4ef76a3cb5495325d3",
+      "source": "runs/controller-scaling/download-14b/resources.jsonl",
+      "source_bytes": 22749,
+      "source_sha256": "68ae93041f9352e2a4cabb143b295cf7ee4d13887d1da69fa6a8677e6d563045"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/final-diagnostic-v1/14b-guard/guard-status.json.gz",
+      "artifact_bytes": 373,
+      "artifact_sha256": "9ce3eaf3b306732f0771d30f099a7d05937ba91fb4d0563bf7c60f022a459c63",
+      "source": "runs/controller-scaling/final-diagnostic-v1/14b-guard/guard-status.json",
+      "source_bytes": 675,
+      "source_sha256": "ff06d31dcac7215c2b2ddb5b8457d91a25cc11a507a44f621084120ae40500d7"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/final-diagnostic-v1/14b-guard/process.log.gz",
+      "artifact_bytes": 431,
+      "artifact_sha256": "f346dc548413dd28c3362cac158406f5d3f43b653b3b0fac1cb74ab4a197542e",
+      "source": "runs/controller-scaling/final-diagnostic-v1/14b-guard/process.log",
+      "source_bytes": 3910,
+      "source_sha256": "a7060df6ec761698dd2bc1a948c31c776cec0d8da427f3380e50bf4bf96ff0f9"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/final-diagnostic-v1/14b-guard/resources.jsonl.gz",
+      "artifact_bytes": 938,
+      "artifact_sha256": "4225655f4d3aa719201800d40b130c0afec878a1685adf02a93ea3f591ea56c5",
+      "source": "runs/controller-scaling/final-diagnostic-v1/14b-guard/resources.jsonl",
+      "source_bytes": 6137,
+      "source_sha256": "01ec16c88bfd2d1bac369825fd449087afdd81efbab5d53f16054e4f62f24962"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/final-diagnostic-v1/14b/generations.jsonl.gz",
+      "artifact_bytes": 61067,
+      "artifact_sha256": "ac214917427e2d0b8b0535400d2eb5c3e37bf3da2ff16cb990fb0b87aaea337a",
+      "source": "runs/controller-scaling/final-diagnostic-v1/14b/generations.jsonl",
+      "source_bytes": 424878,
+      "source_sha256": "f68415f3a5c2ec47f975a88b05f9fb23eb174293dad4d7dc4fbdd3d3a8739a5c"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/final-diagnostic-v1/14b/manifest.json.gz",
+      "artifact_bytes": 3667,
+      "artifact_sha256": "be6763ec8fe9b3878fa1275a260d38ecef764aeeba90cbcbf5db2c84a7822d0d",
+      "source": "runs/controller-scaling/final-diagnostic-v1/14b/manifest.json",
+      "source_bytes": 9283,
+      "source_sha256": "e0135aa1580fd6f9770ccd1c8d3469c488e9551896a246c04a0f05f8093290bb"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/final-diagnostic-v1/14b/results.jsonl.gz",
+      "artifact_bytes": 78691,
+      "artifact_sha256": "6d015058d4fbd8555c28dd14a8a22609bec3fe80824011d6f378dae7303b98fe",
+      "source": "runs/controller-scaling/final-diagnostic-v1/14b/results.jsonl",
+      "source_bytes": 462203,
+      "source_sha256": "71c32b73be8aabba9c8d4af1ba5f047bd69986d860ed46158086d49765f4f2e6"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/final-diagnostic-v1/14b/summary.json.gz",
+      "artifact_bytes": 572,
+      "artifact_sha256": "86e4631fabea73b08ad7432fdd049dab66462db7350f26ab53df1d30403e74ac",
+      "source": "runs/controller-scaling/final-diagnostic-v1/14b/summary.json",
+      "source_bytes": 1544,
+      "source_sha256": "413b04c4ab10d4424bb36d71a305bf9f938ef2379d176f505f814ef741c86037"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/final-diagnostic-v1/8b-guard-v2/guard-status.json.gz",
+      "artifact_bytes": 374,
+      "artifact_sha256": "6a0808eae771993949da4e46763165729c3b0f1e8f8a2f5e5cbbd671eaed6990",
+      "source": "runs/controller-scaling/final-diagnostic-v1/8b-guard-v2/guard-status.json",
+      "source_bytes": 674,
+      "source_sha256": "d9f01b09c16a74ffe777750530c7d06a923c0ee89dae1c7a27c20d18a90b3731"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/final-diagnostic-v1/8b-guard-v2/process.log.gz",
+      "artifact_bytes": 428,
+      "artifact_sha256": "6e5125873b77db66e54703b2c2df20b6773fec4fe7f32561dc6c50051d9b37a0",
+      "source": "runs/controller-scaling/final-diagnostic-v1/8b-guard-v2/process.log",
+      "source_bytes": 3869,
+      "source_sha256": "abb1e8a2e761448c287050b768dec5430e2c1fa2115ee359e3086dddc3a9a4e5"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/final-diagnostic-v1/8b-guard-v2/resources.jsonl.gz",
+      "artifact_bytes": 616,
+      "artifact_sha256": "09b0b6e4bbb3158b1c963067cb7493fd68786c4db7bc743efaade784d526998d",
+      "source": "runs/controller-scaling/final-diagnostic-v1/8b-guard-v2/resources.jsonl",
+      "source_bytes": 3265,
+      "source_sha256": "287e0e4a32ebf650d29ec2cd745987cda5d0859f5591ac591eb540dafb2b3d77"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/final-diagnostic-v1/8b-guard/guard-status.json.gz",
+      "artifact_bytes": 378,
+      "artifact_sha256": "5306474b5314eed869c0be8557a73a04cc6cc3508a4dd7291eff8c4a4510eab4",
+      "source": "runs/controller-scaling/final-diagnostic-v1/8b-guard/guard-status.json",
+      "source_bytes": 678,
+      "source_sha256": "b5b8b0dd6a6223a4089ddd3e98b6c56f0724e9655d91505dfc6de6ce57b44ef3"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/final-diagnostic-v1/8b-guard/process.log.gz",
+      "artifact_bytes": 303,
+      "artifact_sha256": "d075f2c5cdf06b15b821bb4819b96a0ae89fea50c40528795d49443c5b9473bc",
+      "source": "runs/controller-scaling/final-diagnostic-v1/8b-guard/process.log",
+      "source_bytes": 766,
+      "source_sha256": "30d960106d635561c384ac938a8f5002326c49f0231ab5e81c97813b52d2da6b"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/final-diagnostic-v1/8b-guard/resources.jsonl.gz",
+      "artifact_bytes": 268,
+      "artifact_sha256": "19ecadcea5ae942012171611a63f2e2c5783d0bf263c32535ff46ea66d6d21e1",
+      "source": "runs/controller-scaling/final-diagnostic-v1/8b-guard/resources.jsonl",
+      "source_bytes": 410,
+      "source_sha256": "650360db6b029c7a9010e8a7dce0eb7cead994c7f49fe07e0e4fc8eb3c5fd78f"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/final-diagnostic-v1/8b/generations.jsonl.gz",
+      "artifact_bytes": 58021,
+      "artifact_sha256": "70e4bc4dbf7d138df5ae6ca4a8c411c69bff8346743c6e2befc3521926cb65bf",
+      "source": "runs/controller-scaling/final-diagnostic-v1/8b/generations.jsonl",
+      "source_bytes": 409320,
+      "source_sha256": "70fbfeb0359d1babe4d60e0cf2aa1c01d42301cfef7991ae8e6bb5a4d369db9f"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/final-diagnostic-v1/8b/manifest.json.gz",
+      "artifact_bytes": 3409,
+      "artifact_sha256": "6ae129f4a38f7d8a0f65f005ff582d41665a9a5c26e98e88b1f03d0a3b548ce9",
+      "source": "runs/controller-scaling/final-diagnostic-v1/8b/manifest.json",
+      "source_bytes": 8212,
+      "source_sha256": "e48f9f57fdf0f1e85fa5935f8fa8adcddcee89bd1caff583cfd6ccd3668649c5"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/final-diagnostic-v1/8b/results.jsonl.gz",
+      "artifact_bytes": 75152,
+      "artifact_sha256": "dc958b813a3b8d23d5eeeeb9b5a963e2c4c86bd22c4d94cb49fecd2a73757601",
+      "source": "runs/controller-scaling/final-diagnostic-v1/8b/results.jsonl",
+      "source_bytes": 445575,
+      "source_sha256": "642164bcbe9ac0a899fefa681c8c315ca9e6436d53421316778da8180a9cb814"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/final-diagnostic-v1/8b/summary.json.gz",
+      "artifact_bytes": 567,
+      "artifact_sha256": "66cac599ca35b9b7c568043993979e62c514dc0aed2b9dbc63105d3ef1779e5c",
+      "source": "runs/controller-scaling/final-diagnostic-v1/8b/summary.json",
+      "source_bytes": 1457,
+      "source_sha256": "d2c43283b9d58c313e85d9f0eee575c4c292b3446888674e4b398481818e2ce8"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/pilot-v1.log.gz",
+      "artifact_bytes": 1045,
+      "artifact_sha256": "4832dc420943bb8bdcd34eb22c65f89db5aea2a186f68b0b7bc802d508b887c5",
+      "source": "runs/controller-scaling/pilot-v1.log",
+      "source_bytes": 10308,
+      "source_sha256": "8d6ff8c0b77804ed8e044ff101ef944553ed91ea4e5f2f8e857be1fc563bd586"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/pilot-v1/freeze.json.gz",
+      "artifact_bytes": 615,
+      "artifact_sha256": "98a2204215da0b802ac8aa76ef7aabf348c0049bb877e43d6ac347bfb2c745d4",
+      "source": "runs/controller-scaling/pilot-v1/freeze.json",
+      "source_bytes": 1059,
+      "source_sha256": "f007d382593710b99dce257e57b3bd98cd8d1d9e3728071492009aba838a6144"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/pilot-v1/matrix-status.json.gz",
+      "artifact_bytes": 185,
+      "artifact_sha256": "fe5c3c98cf7011e7550b5564dd7357aa12cbddbaeedec2235f2a574b0980255e",
+      "source": "runs/controller-scaling/pilot-v1/matrix-status.json",
+      "source_bytes": 575,
+      "source_sha256": "63a60e09488bd2dc0eb099be0ae39ca29662ae36bbe2a3e5ed2143c4bccf9525"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/postpilot-parser/after.json.gz",
+      "artifact_bytes": 344,
+      "artifact_sha256": "27be48ea7eb17efffeb1c73e156e65373da2b6e8ee655adce555747dca87cba1",
+      "source": "runs/controller-scaling/postpilot-parser/after.json",
+      "source_bytes": 474,
+      "source_sha256": "42653c2bf4acebc34d673ff818dbeaf34f8511bdacd021a959630415bed29a5d"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/postpilot-parser/before.json.gz",
+      "artifact_bytes": 242,
+      "artifact_sha256": "7655508f601a18b27849723ec9f3c250a3144dc4512d999112fafc0ab1a8453c",
+      "source": "runs/controller-scaling/postpilot-parser/before.json",
+      "source_bytes": 338,
+      "source_sha256": "da23e9e585e7f9ac18a758d77ac2866ba5e35c3f174c809c097dff08ce71a98d"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/postpilot-parser/eval/adaptive_experiments.py.gz",
+      "artifact_bytes": 12793,
+      "artifact_sha256": "b545505633cd98425edfa84361b42eed4ff70a81bdc74e03affb84f1ef8fc3c1",
+      "source": "runs/controller-scaling/postpilot-parser/eval/adaptive_experiments.py",
+      "source_bytes": 50130,
+      "source_sha256": "f5cf5d4fcdfbb6eb73bf0a89b7e68af583edd43b1a64dc36355485a4f422afec"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/preflight-14b-v1/guard-status.json.gz",
+      "artifact_bytes": 382,
+      "artifact_sha256": "741f288d894cecc515c9444ac3d0c7f0d74cb1f77ff6021d3f36425c1c362314",
+      "source": "runs/controller-scaling/preflight-14b-v1/guard-status.json",
+      "source_bytes": 679,
+      "source_sha256": "126a548cd40492ae4b753be0c60018f9dfde5059d41bb9197da8dc8d0b357e4b"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/preflight-14b-v1/preflight.json.gz",
+      "artifact_bytes": 5367,
+      "artifact_sha256": "70e71565fbf78d77741aa7324a1ec9200f5d9ab9951761443da9d8233230e97d",
+      "source": "runs/controller-scaling/preflight-14b-v1/preflight.json",
+      "source_bytes": 69585,
+      "source_sha256": "bc06dc94c8e703483e72d95e9ec93a837a8262f81c2cde0737e3b79c62735c79"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/preflight-14b-v1/process.log.gz",
+      "artifact_bytes": 106,
+      "artifact_sha256": "6c0ed6b0d018ec456a483dc76c095b7f3b9b4867162a275583b667db3faed1ca",
+      "source": "runs/controller-scaling/preflight-14b-v1/process.log",
+      "source_bytes": 103,
+      "source_sha256": "f5ea8230dff7f311651416e1efd35871af55fbec580e555ef27251f2673bde35"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/preflight-14b-v1/resources.jsonl.gz",
+      "artifact_bytes": 714,
+      "artifact_sha256": "7a26394e31a703f6476494d792e0d4f4eb03e865752ff7bcac0c140f9bf4b39f",
+      "source": "runs/controller-scaling/preflight-14b-v1/resources.jsonl",
+      "source_bytes": 4103,
+      "source_sha256": "4503af4a2560fdbc218dae049df13122175081453416e6219d583cc416a36470"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/preflight-8b-v1/guard-status.json.gz",
+      "artifact_bytes": 380,
+      "artifact_sha256": "79c897af8aee93631b4338eaabeb1190298257ffdb19164f0aa663f7b3c9b819",
+      "source": "runs/controller-scaling/preflight-8b-v1/guard-status.json",
+      "source_bytes": 677,
+      "source_sha256": "278e090af8f6d78934b93d41cf3782a0990b70d19b125f11ff98d9f30cc6cbfe"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/preflight-8b-v1/preflight.json.gz",
+      "artifact_bytes": 4980,
+      "artifact_sha256": "f47e19cc314f61f55b8629087ead44329e81c8fdb0c07d374260483289e1955d",
+      "source": "runs/controller-scaling/preflight-8b-v1/preflight.json",
+      "source_bytes": 67352,
+      "source_sha256": "97ee2bdca3803b844c945ad127c769e4cfc17612f01c8599855d4cee80565335"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/preflight-8b-v1/process.log.gz",
+      "artifact_bytes": 106,
+      "artifact_sha256": "6cb54823df6485b6f2f341944237e185952913bfb32846684c59cc35ab19891d",
+      "source": "runs/controller-scaling/preflight-8b-v1/process.log",
+      "source_bytes": 102,
+      "source_sha256": "8e688dc5626b4694dea3717bed6dbea21e05e27ee95e086038e6108de8a503ef"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/preflight-8b-v1/resources.jsonl.gz",
+      "artifact_bytes": 484,
+      "artifact_sha256": "0d13255cea7313e7622066ead29a3edd18383740963a66a13b16ff637f8f5c5f",
+      "source": "runs/controller-scaling/preflight-8b-v1/resources.jsonl",
+      "source_bytes": 2045,
+      "source_sha256": "aefe850902d79f517bd6f10654abc93f0d905fab1161a4970bdcc0b7e2150758"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/report-rendering/chronology.json.gz",
+      "artifact_bytes": 987,
+      "artifact_sha256": "7e182ee19d2174ba9d62f8018a876974fcffcb5936894b40d4af1b986b75fec4",
+      "source": "runs/controller-scaling/report-rendering/chronology.json",
+      "source_bytes": 2280,
+      "source_sha256": "1836c177a4ff790c8bf13868bf5ff39154b33db04b1b241e47082309a3f354cf"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/report-rendering/draw-fixed-reporter.py.gz",
+      "artifact_bytes": 11813,
+      "artifact_sha256": "2206a5655a4aacabda543c64329cbbb4568cc707c5e0261713b2a10a81821458",
+      "source": "runs/controller-scaling/report-rendering/draw-fixed-reporter.py",
+      "source_bytes": 43096,
+      "source_sha256": "320f4f67092667f5d8533f424a646abd72eb0ce1d270e1b4ac398740d2a0a3be"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/report-rendering/original-reporter.py.gz",
+      "artifact_bytes": 11729,
+      "artifact_sha256": "64c208a80bb92c5f276e76a83a7bc89c060c92da460e01a7d136f7df572881d8",
+      "source": "runs/controller-scaling/report-rendering/original-reporter.py",
+      "source_bytes": 42921,
+      "source_sha256": "6728907fedba724fbf89a63d179448761787ad5476957d32f2629b3b1fe83d03"
+    },
+    {
+      "artifact": "supplement/runs/controller-scaling/tests.log.gz",
+      "artifact_bytes": 72,
+      "artifact_sha256": "b7860d35e063cfa1d778f6ae21666da8f2ce3c99e91f68cb25ccbe29ff037089",
+      "source": "runs/controller-scaling/tests.log",
+      "source_bytes": 340,
+      "source_sha256": "117c86c89c481ee7d2a898e22b3b857a10a3f4ad147431d8c799970fc5725ce0"
+    },
+    {
+      "artifact": "supplement/scripts/diagnose_controller_final.py.gz",
+      "artifact_bytes": 5073,
+      "artifact_sha256": "c874cfbfcc39602fdeed2ae683fa90615405bbc9a0577c960caec8a13923ccc9",
+      "source": "scripts/diagnose_controller_final.py",
+      "source_bytes": 15958,
+      "source_sha256": "71183a62baf1f1e3908f3019e6b1d3ee4c30b5186f5f832dbb7967c31bb4eea4"
+    },
+    {
+      "artifact": "supplement/scripts/download_controller_model.py.gz",
+      "artifact_bytes": 1730,
+      "artifact_sha256": "7c2ac842d329b546977714420ccee7334ce219495ca53910f5b40e847f31516f",
+      "source": "scripts/download_controller_model.py",
+      "source_bytes": 4269,
+      "source_sha256": "0207927b30b820edd2f2f727eb8628fa6c0e0f26c3d411b60d8c104232bdc12d"
+    },
+    {
+      "artifact": "supplement/scripts/preflight_adaptive.py.gz",
+      "artifact_bytes": 4902,
+      "artifact_sha256": "713a17b8581360d36389360c8e96f6323bbcaa67702b4b85a4bbd16d0a5200cc",
+      "source": "scripts/preflight_adaptive.py",
+      "source_bytes": 14557,
+      "source_sha256": "e97983fb567992c61f6e6468e01a70f624f4f8456cb97c688284948fd84beca6"
+    },
+    {
+      "artifact": "supplement/scripts/preflight_controller_scaling.py.gz",
+      "artifact_bytes": 2327,
+      "artifact_sha256": "5806fd0e0047a041e4e452a9344746ad4f4e6f0b483cbd07a95b640da687e37a",
+      "source": "scripts/preflight_controller_scaling.py",
+      "source_bytes": 6243,
+      "source_sha256": "18aaf0f3d79e1a07ef9ffc595f2c81b00c8642295b205bc49e078500404e4e23"
+    },
+    {
+      "artifact": "supplement/scripts/prepare_controller_scaling_data.py.gz",
+      "artifact_bytes": 5817,
+      "artifact_sha256": "7e57561d96253dd5a7282a0cd8c50e19bd38968ba560b94bba67aeb135345ca3",
+      "source": "scripts/prepare_controller_scaling_data.py",
+      "source_bytes": 17843,
+      "source_sha256": "6d034d61fdbebcf8a6246cc73fd13d316b9656cdcd116e61507a583a133bd13e"
+    },
+    {
+      "artifact": "supplement/scripts/run_controller_scaling_matrix.py.gz",
+      "artifact_bytes": 2029,
+      "artifact_sha256": "ab84bfac5883ce4ee5f5cbb5b453938616e7a92c5d98191446a4a41e3a36fe49",
+      "source": "scripts/run_controller_scaling_matrix.py",
+      "source_bytes": 5566,
+      "source_sha256": "a83a0510a53b511899be6badc48ab2c44d066e9a427254a6517adcdb94e6d0be"
+    },
+    {
+      "artifact": "supplement/scripts/run_guarded.py.gz",
+      "artifact_bytes": 3542,
+      "artifact_sha256": "8999c4c64c117b03afbb9742973d5b0f892bd807a6c689da5649e61fff343ed6",
+      "source": "scripts/run_guarded.py",
+      "source_bytes": 10240,
+      "source_sha256": "6afa18052129d71e5b1bf68cd8fa1d8615e06cd9e176593be07ef0e24a81c7ce"
+    },
+    {
+      "artifact": "supplement/tests/test_controller_final_diagnostic.py.gz",
+      "artifact_bytes": 2084,
+      "artifact_sha256": "64b7526cebcf98cf9b15fc876a3f48441ee810aa568592475a1207245b5bba53",
+      "source": "tests/test_controller_final_diagnostic.py",
+      "source_bytes": 5659,
+      "source_sha256": "6d63d595c6b13ee4edb353cfe711fc81c2f9bae5d753473330cc9d6bdfe569df"
+    }
+  ],
+  "scope": "Additional execution, final-synthesis and qualitative-audit receipts; no model weights."
+}
