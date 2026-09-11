@@ -1,4 +1,5 @@
 """CPU artifact-integrity fixtures; scripted outputs are never model results."""
+import copy
 from dataclasses import asdict
 import gzip
 import hashlib
@@ -146,7 +147,7 @@ class ScriptedBackend:
                     "thinking": False, "memory": self.memory_stats()}}
 
 
-def fixture(tmp_path):
+def fixture(tmp_path, *, qwen35=False):
     root = tmp_path / "repo"
     root.mkdir()
     questions = [{"id": f"q{index}", "question": f"{name} origin?",
@@ -180,6 +181,12 @@ def fixture(tmp_path):
         model_path.mkdir(parents=True)
         model_config = {"model_type": "qwen3", "vocab_size": 512,
                         "max_position_embeddings": 8192, "quantization": {"bits": 4}}
+        if qwen35 and label == "large":
+            model_config = {"model_type": "qwen3_5_moe", "quantization": {"bits": 4},
+                "text_config": {"vocab_size": 512, "max_position_embeddings": 8192,
+                    "rope_parameters": {"rope_type": "default", "rope_theta": 10000000.0,
+                        "partial_rotary_factor": 0.25, "mrope_section": [11, 11, 10],
+                        "mrope_interleaved": True}}}
         for name, content in (("config.json", model_config),
                               ("tokenizer.json", {"fixture": "character tokenizer"}),
                               ("tokenizer_config.json", {"chat_template": "fixture-native"}),
@@ -216,9 +223,13 @@ def fixture(tmp_path):
                 row["component_ms"] = {"retrieval_ms": 0.0, "controller_ms": 0.0,
                                        "final_ms": 0.0, "other_ms": row["cold_end_to_end_ms"]}
                 rows.append(row)
-        loaded_config = {**model_config, "eos_token_id": 511}
+        loaded_config = copy.deepcopy(model_config)
+        loaded_config["eos_token_id"] = 511
+        if qwen35 and label == "large":
+            rope = loaded_config["text_config"]["rope_parameters"]
+            rope["type"] = rope.pop("rope_type")
         metadata = {"backend": "mlx-lm-native-template-text-only", "model_path": str(model_path),
-            "model_revision": revision, "model_type": "qwen3", "model_config": loaded_config,
+            "model_revision": revision, "model_type": model_config["model_type"], "model_config": loaded_config,
             "config_sha256": digest(json.dumps(loaded_config, sort_keys=True).encode()),
             "quantization": {"bits": 4}, "parameter_bytes": 64,
             "parameter_dtypes": ["mlx.core.uint32"],
@@ -228,7 +239,8 @@ def fixture(tmp_path):
             "max_context": config.max_context_tokens, "prefill_batch_size": 256,
             "model_load_ms": 1.0, "startup_memory_check": {"memory_limit_bytes": 1024 ** 3},
             "checkpoint_files": [{"name": "model.safetensors", "bytes": (model_path / "model.safetensors").stat().st_size}],
-            "wired_limit_modified": False, "versions": {"fixture": "1"}}
+            "wired_limit_modified": False,
+            "versions": {"fixture": "1", **({"mlx-lm": "0.31.3"} if qwen35 else {})}}
         identity = {"protocol": screen.PROTOCOL, "config": asdict(config),
             "backend": metadata, "model_revision": revision, "model_path": job["model_path"],
             "source_sha256": source_hashes, "questions_sha256": digest(dataset.read_bytes()),
@@ -327,6 +339,79 @@ def alter_backend_config_and_rehash(manifest):
     backend = manifest["identity"]["backend"]
     backend["model_config"]["vocab_size"] += 1
     backend["config_sha256"] = digest(json.dumps(backend["model_config"], sort_keys=True).encode())
+
+
+def rope_config():
+    return {"model_type": "qwen3_5_moe", "eos_token_id": 17,
+            "text_config": {"rope_parameters": {"rope_type": "default",
+                "rope_theta": 10000000.0, "partial_rotary_factor": 0.25,
+                "mrope_section": [11, 11, 10], "mrope_interleaved": True}}}
+
+
+def test_expected_loaded_config_normalizes_only_known_rope_key_and_preserves_inputs():
+    model = rope_config()
+    generation = {"eos_token_id": [511, 512]}
+    original_model, original_generation = copy.deepcopy(model), copy.deepcopy(generation)
+    loaded, normalizations = report.expected_loaded_config(model, generation, {"mlx-lm": "0.31.3"})
+    expected = copy.deepcopy(model)
+    expected["eos_token_id"] = [511, 512]
+    expected["text_config"]["rope_parameters"]["type"] = "default"
+    del expected["text_config"]["rope_parameters"]["rope_type"]
+    assert loaded == expected
+    assert normalizations == [{"path": "text_config.rope_parameters", "old_key": "rope_type",
+        "new_key": "type", "value": "default", "library": "mlx-lm", "version": "0.31.3",
+        "source": "mlx_lm/models/qwen3_5.py:TextModelArgs.__post_init__"}]
+    assert model == original_model and generation == original_generation
+    loaded["text_config"]["rope_parameters"]["mrope_section"].append(99)
+    assert model == original_model
+
+
+@pytest.mark.parametrize("architecture,versions", [
+    ("qwen3", {"mlx-lm": "0.31.3"}),
+    ("qwen3_5", {"mlx-lm": "0.31.3"}),
+    ("qwen3_5_moe", {"mlx-lm": "0.31.2"}),
+    ("qwen3_5_moe", {"mlx-lm": "0.31.4"}),
+    ("qwen3_5_moe", {}),
+])
+def test_rope_normalization_requires_exact_architecture_and_library_version(architecture, versions):
+    model = rope_config()
+    model["model_type"] = architecture
+    loaded, normalizations = report.expected_loaded_config(model, {}, versions)
+    assert loaded == model and normalizations == []
+    assert loaded is not model
+
+
+def test_rope_normalization_does_not_overwrite_existing_type():
+    model = rope_config()
+    model["text_config"]["rope_parameters"]["type"] = "already-set"
+    loaded, normalizations = report.expected_loaded_config(model, {}, {"mlx-lm": "0.31.3"})
+    assert loaded == model and normalizations == []
+    assert loaded["text_config"]["rope_parameters"]["rope_type"] == "default"
+
+
+def test_qwen35_loader_normalization_allows_complete_export(tmp_path):
+    root, path, matrix = fixture(tmp_path, qwen35=True)
+    summary = build(root, path, tmp_path / "report")
+    assert summary["report_status"] == "complete", summary["verification_issues"]
+    setups = {row["job_id"]: row for row in summary["model_setup"]}
+    assert setups["small"]["backend_config_normalizations"] == []
+    assert setups["large"]["backend_config_normalizations"][0]["new_key"] == "type"
+
+
+@pytest.mark.parametrize("field,value", [
+    ("rope_theta", 123.0),
+    ("partial_rotary_factor", 0.5),
+    ("mrope_section", [10, 11, 11]),
+])
+def test_qwen35_normalization_does_not_hide_unrelated_rope_corruption(tmp_path, field, value):
+    root, path, matrix = fixture(tmp_path, qwen35=True)
+    manifest_path = root / matrix["jobs"][1]["run_dir"] / "manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    backend = manifest["identity"]["backend"]
+    backend["model_config"]["text_config"]["rope_parameters"][field] = value
+    backend["config_sha256"] = digest(json.dumps(backend["model_config"], sort_keys=True).encode())
+    write_json(manifest_path, manifest)
+    assert_withheld(build(root, path, tmp_path / "report"))
 
 
 def test_complete_replayed_screen_has_paired_metrics_and_exact_archives(tmp_path):

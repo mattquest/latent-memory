@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
+import copy
 from dataclasses import asdict
 import hashlib
 import json
@@ -65,6 +66,27 @@ def tokenizer_for(model_path):
     generation = read_json(model_path / "generation_config.json")
     eos = generation.get("eos_token_id", tokenizer.eos_token_id)
     return LocalTokenizer(tokenizer, set(eos if isinstance(eos, list) else [eos]))
+
+
+def expected_loaded_config(model_config, generation_config, versions):
+    """Replay only known metadata mutations from the recorded MLX-LM loader.
+
+    MLX-LM 0.31.3 utils.load_config overlays generation-config EOS. Its
+    qwen3_5.TextModelArgs.__post_init__ renames the shared rope_parameters key
+    from rope_type to type only when type is absent. No field is discarded
+    from comparison, and other architectures/versions get no RoPE rewrite.
+    """
+    expected, normalizations = copy.deepcopy(model_config), []
+    if generation_config.get("eos_token_id"):
+        expected["eos_token_id"] = copy.deepcopy(generation_config["eos_token_id"])
+    if expected.get("model_type") == "qwen3_5_moe" and versions.get("mlx-lm") == "0.31.3":
+        rope = expected.get("text_config", {}).get("rope_parameters")
+        if isinstance(rope, dict) and "type" not in rope and "rope_type" in rope:
+            rope["type"] = rope.pop("rope_type")
+            normalizations.append({"path": "text_config.rope_parameters", "old_key": "rope_type",
+                "new_key": "type", "value": copy.deepcopy(rope["type"]), "library": "mlx-lm", "version": "0.31.3",
+                "source": "mlx_lm/models/qwen3_5.py:TextModelArgs.__post_init__"})
+    return expected, normalizations
 
 
 class LocalTokenizer:
@@ -377,11 +399,10 @@ def inspect_matrix(matrix_path, root, tokenizer_factory):
             receipt_path, metadata = inspect_checkpoint(manifest, job, root)
             inspection["checkpoint_files"] = [receipt_path, *metadata]
             model_path = safe_source(root, job["model_path"])
-            model_config = read_json(model_path / "config.json")
-            generation_config = read_json(model_path / "generation_config.json")
-            if generation_config.get("eos_token_id"):
-                model_config["eos_token_id"] = generation_config["eos_token_id"]
+            model_config, normalizations = expected_loaded_config(read_json(model_path / "config.json"),
+                read_json(model_path / "generation_config.json"), backend["versions"])
             require(backend["model_config"] == model_config, "Backend configuration differs from verified checkpoint metadata")
+            inspection["backend_config_normalizations"] = normalizations
             require(backend["model_type"] == model_config["model_type"] and backend["quantization"] == model_config.get("quantization", model_config.get("quantization_config")), "Backend architecture or quantization differs")
             require(backend["weight_dtype_policy"] == "unchanged checkpoint precision; no cast or dequantization", "Weight precision policy changed")
             checkpoint_files = [{"name": row["path"], "bytes": row["bytes"]} for row in manifest["checkpoint_receipt"]["verified_files"] if row["path"].startswith("model") and row["path"].endswith(".safetensors")]
@@ -574,7 +595,7 @@ def build(matrix_path, output, root=REPOSITORY, no_plots=False, tokenizer_factor
         "verification_issues": issues, "metrics": metrics, "paired_comparisons": pairs, "trajectories": trajectories,
         "model_setup": [{"job_id": item["job"]["id"], "backend": item.get("manifest", {}).get("identity", {}).get("backend"),
             "setup_timings_ms": item.get("manifest", {}).get("setup_timings_ms"), "runner_summary": item.get("runner_summary"),
-            "resource_guard": item.get("guard")} for item in inspections],
+            "resource_guard": item.get("guard"), "backend_config_normalizations": item.get("backend_config_normalizations", [])} for item in inspections],
         "limitations": ["All twelve previously inspected development questions; the 96-question test split is unused.",
             "Model family, dense/MoE architecture, tokenizer, training and BF16/5-bit precision change together; this is not an isolated parameter-count effect.",
             "Both arms use cold native text caches; no latent cache, independent KV relay or persistent-cache amortization is tested.",
