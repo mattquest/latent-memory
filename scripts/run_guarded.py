@@ -23,13 +23,35 @@ import psutil
 GIB = 1024**3
 
 
-def snapshot(pid: int, directory: Path, *, check_power: bool = True) -> dict:
+def live_group_members(pgid: int) -> list[psutil.Process]:
+    """Find live members even after their session leader has exited.
+
+    Exited descendants may remain zombies until the OS reaps them; they use no
+    resources and cannot respond to signals. Never mistake those for live work.
+    """
+    members = []
+    for process in psutil.process_iter(attrs=["pid", "status"]):
+        try:
+            if (process.info["status"] != psutil.STATUS_ZOMBIE
+                    and os.getpgid(process.pid) == pgid):
+                members.append(process)
+        except (ProcessLookupError, PermissionError, psutil.NoSuchProcess, psutil.AccessDenied):
+            pass
+    return members
+
+
+def snapshot(pid: int, directory: Path, *, check_power: bool = True,
+             process_group: bool = False) -> dict:
     processes = []
     try:
         parent = psutil.Process(pid)
         processes = [parent, *parent.children(recursive=True)]
     except psutil.NoSuchProcess:
         pass
+    if process_group:
+        # Preserve the process-tree RSS check, and include reparented children
+        # still in the process group owned by this guard.
+        processes = list({p.pid: p for p in [*processes, *live_group_members(pid)]}.values())
     rss = 0
     for process in processes:
         try:
@@ -77,15 +99,33 @@ def stop_reason(state: dict, args: argparse.Namespace, elapsed: float) -> str | 
     return None
 
 
-def terminate_group(process: subprocess.Popen) -> None:
-    if process.poll() is not None:
+def terminate_group(process: subprocess.Popen, *, grace_seconds: float = 10,
+                    kill_seconds: float = 10) -> None:
+    """Stop the owned process group, including children of an exited leader."""
+    def send(sig):
+        try:
+            os.killpg(process.pid, sig)
+        except ProcessLookupError:
+            pass  # The group can exit between its last snapshot and this signal.
+
+    def wait_until_empty(timeout):
+        deadline = time.monotonic() + timeout
+        while True:
+            process.poll()  # Reap our leader so its zombie cannot linger.
+            if not live_group_members(process.pid):
+                return True
+            if time.monotonic() >= deadline:
+                return False
+            time.sleep(min(0.05, max(0, deadline - time.monotonic())))
+
+    process.poll()
+    if not live_group_members(process.pid):
         return
-    os.killpg(process.pid, signal.SIGTERM)
-    try:
-        process.wait(timeout=10)
-    except subprocess.TimeoutExpired:
-        os.killpg(process.pid, signal.SIGKILL)
-        process.wait(timeout=10)
+    send(signal.SIGTERM)
+    if not wait_until_empty(grace_seconds):
+        send(signal.SIGKILL)
+        if not wait_until_empty(kill_seconds):
+            raise RuntimeError(f"Owned process group {process.pid} survived SIGKILL")
 
 
 def main() -> int:
@@ -149,8 +189,14 @@ def run(command: list[str], args: argparse.Namespace) -> int:
             print(f"Experiment PID {process.pid}; log: {args.output / 'process.log'}", flush=True)
             if sys.platform == "darwin" and shutil.which("caffeinate"):
                 awake = subprocess.Popen(["caffeinate", "-i", "-w", str(process.pid)])
-            while process.poll() is None:
-                state = snapshot(process.pid, args.output)
+            while True:
+                if process.poll() is not None:
+                    if live_group_members(process.pid):
+                        reason = "leader_exited_with_live_descendants"
+                        print(f"Stopping experiment: {reason}", flush=True)
+                        terminate_group(process)
+                    break
+                state = snapshot(process.pid, args.output, process_group=True)
                 state["elapsed_seconds"] = time.monotonic() - start
                 peak = max(peak, state["rss_gib"])
                 resources.write(json.dumps(state) + "\n")
@@ -165,7 +211,7 @@ def run(command: list[str], args: argparse.Namespace) -> int:
         if process is not None:
             terminate_group(process)
     finally:
-        if process is not None and process.poll() is None:
+        if process is not None:
             terminate_group(process)
         if awake is not None and awake.poll() is None:
             awake.terminate()

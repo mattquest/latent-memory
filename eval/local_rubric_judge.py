@@ -106,8 +106,11 @@ def judgment_summary(rows: list[dict], seed: int = 42) -> dict:
 def judge_results(backend: Any, dataset: str, results_paths: list[str], output_dir: str,
                   *, max_tokens: int = 256, seed: int = 42, max_runtime_seconds: float = 3600,
                   limit: int | None = None) -> dict:
+    if limit is not None and limit < 1:
+        raise ValueError("Judge limit must be positive when specified")
     examples = {example["id"]: example for example in read_dataset(dataset)}
     candidates = []
+    source_identities = {}
     for path in results_paths:
         for row in load_records(Path(path)):
             if row.get("status") != "ok" or row["example_id"] not in examples:
@@ -120,21 +123,32 @@ def judge_results(backend: Any, dataset: str, results_paths: list[str], output_d
             criteria_for(example)
             # Include an answer digest so changed candidates cannot reuse a stale grade.
             answer_sha = hashlib.sha256(row["prediction"].encode()).hexdigest()
+            source_identity = json.dumps({"example_id": row["example_id"],
+                                          "case": row["case"], "answer_sha256": answer_sha},
+                                         sort_keys=True)
+            if row["id"] in source_identities and source_identities[row["id"]] != source_identity:
+                raise ValueError(f"Conflicting candidates for result {row['id']}; "
+                                 "choose one generation per result")
+            source_identities[row["id"]] = source_identity
             identity = hashlib.sha256((row["id"] + answer_sha).encode()).hexdigest()[:24]
             candidates.append((identity, path, row, answer_sha))
-    candidates = list({item[0]: item for item in candidates}.values())
+    candidates = sorted({item[0]: item for item in candidates}.values(), key=lambda item: item[0])
     random.Random(seed).shuffle(candidates)
-    if limit:
+    if limit is not None:
         candidates = candidates[:limit]
     if not candidates:
         raise ValueError("No matching BEAM rubric candidates to judge")
     directory = Path(output_dir)
     directory.mkdir(parents=True, exist_ok=True)
     manifest_path, path = directory / "manifest.json", directory / "judgments.jsonl"
+    candidate_set = sorted((item[0], source_identities[item[2]["id"]]) for item in candidates)
+    candidate_digest = hashlib.sha256(json.dumps(candidate_set, sort_keys=True).encode()).hexdigest()
     identity = {"judge_version": JUDGE_VERSION,
                 "dataset_sha256": hashlib.sha256(Path(dataset).read_bytes()).hexdigest(),
                 "judge_source_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-                "backend": _jsonable(backend.metadata()), "max_tokens": max_tokens, "seed": seed}
+                "backend": _jsonable(backend.metadata()), "max_tokens": max_tokens, "seed": seed,
+                "candidate_set_sha256": candidate_digest, "candidate_count": len(candidates),
+                "selected_limit": limit}
     if manifest_path.exists():
         previous = json.loads(manifest_path.read_text())
         if previous["identity"] != identity:
@@ -144,6 +158,9 @@ def judge_results(backend: Any, dataset: str, results_paths: list[str], output_d
                      "dataset": str(Path(dataset).resolve()),
                      "source_results": [str(Path(p).resolve()) for p in results_paths]})
     rows = load_records(path)
+    candidate_ids = {candidate[0] for candidate in candidates}
+    if any(row["id"] not in candidate_ids for row in rows):
+        raise ValueError("Saved judgments contain candidates outside this run's candidate set")
     completed = {row["id"] for row in rows}
     started = time.monotonic()
     stop_reason = "complete"
