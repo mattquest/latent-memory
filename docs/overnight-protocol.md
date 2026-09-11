@@ -56,3 +56,43 @@ overnight batch. Stop on battery power or severe reported CPU thermal
 throttling. Keep idle sleep inhibited only while the guarded child runs.
 No administrator commands, system memory tuning, external model APIs,
 personal-data ingestion, or paid compute are needed.
+
+## Development decisions before the main run
+
+The initial eight-example private-fact development pilot passed all correct
+cache and precision cases. The initial multi-document development run showed
+truncated Markdown evidence notes and poor ranking from unweighted word
+overlap. That run was stopped and retained in `runs/development`. A single
+revision replaced the notes with compact JSON, increased their ceiling from
+96 to 192 tokens, and used query-only BM25 for both arms. BM25 breaks ties in
+source order; annotation-like document IDs never determine ranking. It keeps
+zero-score documents available for larger evidence budgets. The revised
+development run is `runs/development-v2`; no synthetic test-seed outcomes
+were consulted to make those changes.
+
+The final generation protocol is `fixed-evidence-qwen3-v3-bm25-json`.
+E1/E2/E6 include both BF16 and int8 latent arms so channel and precision can
+be examined separately. E3 is restricted to the fixed-length, single-document
+private-fact generator with zero recomputation; all 128 test documents are
+35 Qwen tokens, all answers are unique, and donor pairing has no fixed points.
+Synthetic numeric answers use strict six-digit scoring, not prose punctuation
+normalization. The actual tensor RoPE check uses a normalized error threshold
+because double BF16 rounding is scale-dependent; the initial absolute-error
+threshold failed and its log is retained.
+
+The bounded main matrix in `configs/overnight.json` specifies 128 private-fact
+examples, 128 update/conflict examples, 64 synthetic multihop examples, 128
+questions each for public equal-hop QA comparisons, 64 each for public
+recompute/precision sweeps, and 32 each for public hop sweeps. BEAM equal-hop
+and update-category runs use all 60 probes from three complete histories;
+the expensive hop sweep uses 30 probes, one deterministic hash-ranked probe
+per category and conversation. The size choices were made before scoring the
+main runs, using development throughput to fit the overnight window.
+
+BEAM documents have no automatic supersession metadata. Its E6 run therefore
+tests answers in the update/conflict categories, without duplicating an
+identical current-version filter. Only synthetic E6 tests explicit metadata
+filtering. BEAM grading uses the released rubrics with a separately timed,
+condition-blind local Qwen3 judge; report it as an uncalibrated same-model
+evaluation and retain every criterion decision. Never call its scores official
+BEAM leaderboard results.

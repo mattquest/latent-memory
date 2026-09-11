@@ -9,8 +9,8 @@ Run from the repository with its local environment:
 ```sh
 .venv/bin/python scripts/prepare_data.py --datasets synthetic --count 128 --seed 20260911
 .venv/bin/python scripts/prepare_data.py --datasets musique --count 128 --seed 20260911
-# HotpotQA Parquet fallback requires a Python environment with pyarrow installed.
-python scripts/prepare_data.py --datasets hotpotqa --count 128 --seed 20260911
+# Install requirements-data.txt for the HotpotQA Parquet fallback.
+.venv/bin/python scripts/prepare_data.py --datasets hotpotqa --count 128 --seed 20260911
 .venv/bin/python scripts/prepare_data.py --datasets beam --beam-conversations 1 2 3
 ```
 

@@ -1,6 +1,7 @@
 # Core (runs everywhere, including this Linux VM)
 numpy>=1.26
 safetensors>=0.4
+psutil>=7.2
 
 # MCP server (Mac)
 mcp>=1.0
