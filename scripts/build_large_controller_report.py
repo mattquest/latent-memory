@@ -499,19 +499,27 @@ def plots(metrics, trajectories, output):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
+    from matplotlib.patches import Patch
     colors = ["#2563eb", "#b45309"]
     labels = list(dict.fromkeys(row["model_label"] for row in metrics))
-    fig, ax = plt.subplots(figsize=(8, 4.8), layout="constrained")
+    short_labels = {label: "122B" if "122B" in label else "14B" if "14B" in label else label for label in labels}
+    arm_labels = {"basic_rag": "Basic RAG", "iterative_text": "Iterative retrieval"}
+    fig, ax = plt.subplots(figsize=(9, 5.2), layout="constrained")
     for row in metrics:
         color = colors[labels.index(row["model_label"]) % len(colors)]
         ax.scatter(row["cold_p50_ms"] / 1000, row["exact_match"] * 100, color=color,
                    marker="o" if row["arm"] == "basic_rag" else "s", s=75)
-        ax.annotate(f'{row["model_label"]} · {row["arm"]}\n{row["exact_match_count"]}/{row["n"]}',
-                    (row["cold_p50_ms"] / 1000, row["exact_match"] * 100), xytext=(5, 7), textcoords="offset points", fontsize=9)
-    ax.set(xlabel="Cold end-to-end median latency (seconds)", ylabel="Exact match (%)", ylim=(-3, 110),
+        below = labels.index(row["model_label"]) == 0
+        ax.annotate(f'{short_labels[row["model_label"]]} · {arm_labels[row["arm"]]}\n{int(row["exact_match_count"])}/{row["n"]}',
+                    (row["cold_p50_ms"] / 1000, row["exact_match"] * 100), xytext=(0, -14 if below else 14),
+                    textcoords="offset points", fontsize=9, ha="center", va="top" if below else "bottom", color=color)
+    ax.set(xlabel="Cold end-to-end median latency (seconds)", ylabel="Exact match (%)", ylim=(-14, 110),
+           xlim=(0, max(row["cold_p50_ms"] / 1000 for row in metrics) * 1.3),
            title="Development screen: accuracy and local latency")
-    ax.margins(x=.3)
+    ax.legend(handles=[Patch(facecolor=colors[index % 2], label=label) for index, label in enumerate(labels)],
+              loc="upper right", frameon=False, fontsize=10, title="Checkpoints")
     ax.grid(alpha=.2)
+    fig.canvas.draw()
     fig.savefig(output / "accuracy-latency.png", dpi=180)
     plt.close(fig)
     fig, axes = plt.subplots(1, 2, figsize=(10, 4.5), layout="constrained")
@@ -520,12 +528,17 @@ def plots(metrics, trajectories, output):
         axes[0].plot([row["round"] for row in rows], [row["new_support_count"] for row in rows], "o-", label=label, color=colors[index % 2])
         axes[1].plot([row["round"] for row in rows], [row["repeated_stops"] for row in rows], "o-", label=label, color=colors[index % 2])
         for row in rows:
-            axes[0].annotate(f'n={row["n_reached"]}', (row["round"], row["new_support_count"]), xytext=(3, 7), textcoords="offset points", fontsize=8)
+            axes[0].annotate(f'n={row["n_reached"]}', (row["round"], row["new_support_count"]),
+                xytext=(5, -16 if index == 0 else 10), textcoords="offset points", fontsize=8,
+                va="top" if index == 0 else "bottom", color=colors[index % 2],
+                bbox={"facecolor": "white", "edgecolor": "none", "alpha": .9, "pad": 1})
+    observed_rounds = [row["round"] for row in trajectories if row["arm"] == "iterative_text"]
     for axis in axes:
         axis.set_xlabel("Retrieval round (round 1 is initial evidence)")
-        axis.set_ylim(bottom=-.1)
+        axis.set_xlim(min(observed_rounds) - .2, max(observed_rounds) + .45)
+        axis.set_ylim(bottom=-.5, top=max(1, axis.get_ylim()[1]) * 1.12)
         axis.grid(alpha=.2)
-        axis.legend()
+        axis.legend(fontsize=9)
         axis.xaxis.get_major_locator().set_params(integer=True)
     axes[0].set_ylabel("New annotated support document IDs (total)")
     axes[1].set_ylabel("Questions stopped by repeated search")

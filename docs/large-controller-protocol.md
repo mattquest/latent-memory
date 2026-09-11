@@ -168,3 +168,31 @@ resource samples, process exits, model loading time, installed library versions,
 checkpoint receipts and executed source. The final report must validate the
 complete 48-condition matrix against these inputs and archive raw data and
 source with both packed and unpacked hashes.
+
+## Post-run infrastructure latency scenarios
+
+The provider adjustment is a post-run analysis, not a change to this generation
+protocol. `scripts/project_controller_latency.py` extracts the actual call and
+token workload of all 48 native conditions and the preceding 48 short/thinking
+conditions. It verifies source, input and result receipts before projecting each
+condition separately. Provider profiles must name a matching model family and
+record a dated source, explicit TTFT/throughput pair and source hash; there are
+no default rates or hosted inference calls.
+
+For decode-rate scenarios, replace each model-call window with TTFT plus
+`max(generated_tokens - 1, 0) / output_tokens_per_second`. Preserve measured
+host work outside those windows. Count actual reasoning, actions and final
+outputs; keep sampled EOS and forced input controls separate. For ambiguously
+defined throughput, also report the distinct inclusive-rate proxy
+`max(TTFT, generated_tokens / reported_tokens_per_second)` per call. Neither
+scenario is a bound, confidence interval or measured hosted latency. Unmatched
+TTFT already covers prefill/queue/network work; do not add a second prefill
+charge or infer a prompt-length slope from one published observation.
+
+Keep the two screens separate and retain all predictions and scores as observed
+local outcomes. A provider may use a different checkpoint, precision, template
+or sampler, so these are conditional workload estimates, not transferred cloud
+accuracy. Forced thinking-phase closure would require custom server support.
+Original KV-relay/cache experiments and posthoc final-answer ablations are
+outside this text-call projection. Archive every profile, calculation and
+curated numerical source observation alongside the report.
