@@ -19,6 +19,7 @@ from pathlib import Path
 import random
 import re
 import statistics
+import subprocess
 
 REPORT_VERSION = "artifact-report-v1"
 CASE_KEYS = ("experiment", "arm", "hops", "control", "bridge_ratio", "precision", "update_policy")
@@ -162,6 +163,8 @@ def collect_jobs(run_root, matrix, output):
                "stop_reason": summary.get("stop_reason"),
                "dataset": config.get("dataset"), "config": config,
                "generation_identity": manifest.get("identity"),
+               "generation_machine": {key: manifest.get("machine", {}).get(key)
+                                      for key in ("git_head", "code_sha256")},
                "source_results_sha256": digest(raw) if raw else None}
         jobs.append(job)
         for row in ok:
@@ -175,6 +178,87 @@ def collect_jobs(run_root, matrix, output):
             if path.exists():
                 receipts.append(archive_bytes(output, Path("runs") / name / filename, path.read_bytes(), path))
     return jobs, records, receipts, issues
+
+
+def resolve_recorded_source(repository, relative, expected_sha256, git_heads):
+    """Return only bytes matching the executed hash, never a nearby revision."""
+    repository = repository.resolve()
+    path = Path(relative)
+    if (path.is_absolute() or not path.parts or ".." in path.parts or "\\" in relative
+            or not (repository / path).resolve().is_relative_to(repository)):
+        raise ValueError("Executable source must be a safe repository-relative path")
+    if not isinstance(expected_sha256, str) or not re.fullmatch(r"[0-9a-f]{64}", expected_sha256):
+        raise ValueError("Executable source requires a recorded SHA-256")
+    current = repository / path
+    if current.is_file():
+        raw = current.read_bytes()
+        if digest(raw) == expected_sha256:
+            return raw, {"resolution": "matching_working_file", "source": str(current)}
+    attempts = []
+    for revision in sorted(set(git_heads), key=str):
+        if not isinstance(revision, str) or not re.fullmatch(r"[0-9a-fA-F]{40,64}", revision):
+            attempts.append({"git_head": revision, "error": "invalid recorded commit hash"})
+            continue
+        result = subprocess.run(["git", "show", f"{revision}:{path.as_posix()}"],
+                                cwd=repository, capture_output=True, check=False)
+        if result.returncode:
+            attempts.append({"git_head": revision, "error": "recorded Git blob unavailable"})
+        elif digest(result.stdout) != expected_sha256:
+            attempts.append({"git_head": revision, "error": "recorded Git blob SHA-256 mismatch",
+                             "actual_sha256": digest(result.stdout)})
+        else:
+            return result.stdout, {"resolution": "matching_recorded_git_blob", "git_head": revision,
+                                   "source": f"git:{revision}:{path.as_posix()}"}
+    raise ValueError("Exact executed source bytes unavailable: " + json.dumps(attempts, sort_keys=True))
+
+
+def collect_executable_artifacts(jobs, output, repository=None):
+    """Deduplicate executed source sets across jobs and recorded Git heads."""
+    repository = Path(repository or Path(__file__).resolve().parents[1])
+    groups, receipts, issues, versions = {}, [], [], []
+    for job in jobs:
+        identity = job.get("generation_identity") or {}
+        machine = job.get("generation_machine") or {}
+        identity_hashes = identity.get("source_code_sha256") or {}
+        machine_hashes = machine.get("code_sha256") or {}
+        if not identity and not machine_hashes and job.get("status") == "not_started":
+            continue  # Unstarted jobs already fail the generation completion gate.
+        if not identity_hashes and not machine_hashes:
+            issues.append({"kind": "missing_executable_source_hashes", "job": job["job"]})
+            continue
+        if (not isinstance(identity_hashes, dict) or not isinstance(machine_hashes, dict) or
+                any(identity_hashes[key] != machine_hashes[key] for key in set(identity_hashes) & set(machine_hashes))):
+            issues.append({"kind": "conflicting_executable_source_hashes", "job": job["job"]})
+            continue
+        hashes = {**machine_hashes, **identity_hashes}
+        version = digest(json.dumps(hashes, sort_keys=True, separators=(",", ":")).encode())
+        group = groups.setdefault(version, {"source_version_sha256": version, "files": hashes, "jobs": [], "git_heads": []})
+        group["jobs"].append(job["job"])
+        if machine.get("git_head"):
+            group["git_heads"].append(machine["git_head"])
+    for version, group in sorted(groups.items()):
+        details = {"source_version_sha256": version, "used_by_jobs": sorted(group["jobs"]),
+                   "recorded_git_heads": sorted(set(group["git_heads"]), key=str), "files": [], "complete": True}
+        for relative, expected in sorted(group["files"].items()):
+            try:
+                raw, resolution = resolve_recorded_source(repository, relative, expected, group["git_heads"])
+            except (OSError, TypeError, ValueError) as error:
+                issues.append({"kind": "executed_source_unavailable", "source": relative,
+                               "expected_sha256": expected, "source_version_sha256": version,
+                               "jobs": details["used_by_jobs"], "error": str(error)})
+                details["complete"] = False
+                continue
+            receipt = archive_bytes(output, Path("source") / version / relative, raw, resolution["source"])
+            receipt.update(verified_against_generation_manifest=True, original_source_path=relative,
+                           source_version_sha256=version, used_by_jobs=details["used_by_jobs"],
+                           recorded_git_heads=details["recorded_git_heads"], resolution=resolution["resolution"])
+            if resolution.get("git_head"):
+                receipt["resolved_git_head"] = resolution["git_head"]
+            receipts.append(receipt)
+            details["files"].append({"path": relative, "sha256": expected, "artifact": receipt["artifact"],
+                                     "resolution": resolution["resolution"], "resolved_git_head": resolution.get("git_head")})
+        versions.append(details)
+    return receipts, issues, versions
 
 
 def metric_groups(records):
@@ -559,7 +643,7 @@ def tables(report, include_incomplete=False):
               "- Retrieval and schedule timing, truncation, cap-hit rates, cache bytes, and executed hops are in metrics.csv. fraction_document_truncation is the fraction of examples with at least one delivered truncated document; fraction_any_candidate_truncation also counts unused candidates. Headline hop counts are scheduled batches; empty batches do not create new evidence.",
               "- mean_support_recall measures delivered annotation-ID coverage. For synthetic updates, annotations include both old and current versions, so correct current-only filtering can lower this value without losing the required current fact.",
               "- Paired comparisons use common example IDs within a job. Constant-difference bootstrap intervals are left blank rather than implying certainty. Small-subset findings remain exploratory.", "", "## Audit artifacts", "",
-              "Raw prediction ledgers and exact normalized inputs are gzip-compressed without altering their uncompressed bytes. Normalized inputs are verified against generation-manifest hashes; the three normalized BEAM corpora and data license notes are included. Generation manifests, available summaries/checkpoints, judge ledgers, and resource/data receipts are under artifacts/. artifact-manifest.json records SHA-256 hashes. These retain failures and partial trailing records; analysis excludes malformed records and lists them in summary.json.", ""]
+              "Raw prediction ledgers and exact normalized inputs are gzip-compressed without altering their uncompressed bytes. Normalized inputs are verified against generation-manifest hashes; the three normalized BEAM corpora and data license notes are included. Exact executable sources are archived under artifacts/source/ by source-set digest, verified against the executed hashes. When current files differ, matching bytes are recovered from a recorded Git commit; unavailable or mismatching bytes fail the complete-release check. Generation manifests, available summaries/checkpoints, judge ledgers, and resource/data receipts are under artifacts/. artifact-manifest.json records SHA-256 hashes. These retain failures and partial trailing records; analysis excludes malformed records and lists them in summary.json.", ""]
     lines += [f"![{Path(path).stem}]({path})" for path in report["figures"]]
     return "\n".join(lines) + "\n"
 
@@ -740,14 +824,18 @@ def main():
     input_receipts, input_issues = collect_input_artifacts(jobs, args.data_dir, args.output_dir)
     receipts.extend(input_receipts)
     issues.extend(input_issues)
+    source_receipts, source_issues, source_versions = collect_executable_artifacts(jobs, args.output_dir)
+    receipts.extend(source_receipts)
+    issues.extend(source_issues)
     receipts.extend(collect_receipts(args.run_root, args.data_dir, None if args.no_matrix else args.matrix, args.output_dir))
-    complete = bool(jobs) and all(j["status"] == "complete" for j in jobs) and not input_issues
+    complete = bool(jobs) and all(j["status"] == "complete" for j in jobs) and not input_issues and not source_issues
     figures = [] if args.no_plots else plots(metrics, args.output_dir, args.include_incomplete) + judge_plots(judge, args.output_dir)
     report = {"report_version": REPORT_VERSION, "generated_utc": datetime.now(timezone.utc).isoformat(),
               "status": "generation_complete" if complete else "INCOMPLETE_SNAPSHOT",
               "judge_status": judge["status"], "run_root": str(args.run_root),
               "report_code_sha256": digest(Path(__file__).read_bytes()),
               "jobs": jobs, "metrics": metrics, "paired": paired, "judge": judge,
+              "source_versions": source_versions,
               "issues": issues, "figures": figures,
               "included_incomplete_in_headlines": args.include_incomplete,
               "raw_successful_records": len(records),

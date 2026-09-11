@@ -140,3 +140,80 @@ def test_exact_input_archives_check_generation_hash_and_preserve_bytes(tmp_path)
     receipts, issues = report.collect_input_artifacts([job], data, tmp_path / "mismatch-output")
     assert issues[0]["kind"] == "executed_input_hash_mismatch"
     assert not any(row.get("verified_against_generation_manifest") for row in receipts)
+
+
+def git_fixture(tmp_path):
+    import subprocess
+    repository = tmp_path / "repository"
+    repository.mkdir()
+    subprocess.run(["git", "init", "--quiet"], cwd=repository, check=True)
+    source = repository / "source.py"
+    original = b"# exact executed source\nvalue = 1\n"
+    source.write_bytes(original)
+    subprocess.run(["git", "add", "source.py"], cwd=repository, check=True)
+    subprocess.run(["git", "-c", "user.name=Artifact fixture", "-c", "user.email=fixture@example.invalid",
+                    "commit", "--quiet", "-m", "Fixture source"], cwd=repository, check=True)
+    revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=repository, text=True).strip()
+    return repository, source, original, revision
+
+
+def test_exact_historical_source_is_recovered_after_working_file_changes(tmp_path):
+    repository, source, original, revision = git_fixture(tmp_path)
+    source.write_text("# newer maintenance code\nvalue = 2\n")
+    expected = report.digest(original)
+    jobs = [{"job": name, "generation_identity": {"source_code_sha256": {"source.py": expected}},
+             "generation_machine": {"git_head": revision, "code_sha256": {"source.py": expected}}}
+            for name in ("first", "later")]
+    receipts, issues, versions = report.collect_executable_artifacts(jobs, tmp_path / "release", repository)
+    assert not issues and len(receipts) == 1 and len(versions) == 1
+    assert (tmp_path / "release" / receipts[0]["artifact"]).read_bytes() == original
+    assert receipts[0]["resolution"] == "matching_recorded_git_blob"
+    assert receipts[0]["resolved_git_head"] == revision
+    assert receipts[0]["used_by_jobs"] == ["first", "later"]
+    assert source.read_text() == "# newer maintenance code\nvalue = 2\n"
+
+
+def test_matching_current_source_and_machine_hash_fallback_need_no_git(tmp_path):
+    repository = tmp_path / "non_git_repository"
+    repository.mkdir()
+    source = repository / "source.py"
+    source.write_bytes(b"# exact current source\n")
+    jobs = [{"job": "legacy", "generation_identity": {"config": {}},
+             "generation_machine": {"git_head": None, "code_sha256": {"source.py": report.digest(source.read_bytes())}}}]
+    receipts, issues, versions = report.collect_executable_artifacts(jobs, tmp_path / "release", repository)
+    assert not issues and versions[0]["complete"]
+    assert receipts[0]["resolution"] == "matching_working_file"
+
+
+def test_git_blob_mismatch_cannot_be_exported_as_executed_source(tmp_path):
+    repository, source, original, revision = git_fixture(tmp_path)
+    expected = report.digest(b"# unavailable uncommitted execution\n")
+    job = {"job": "missing", "generation_identity": {"source_code_sha256": {"source.py": expected}},
+           "generation_machine": {"git_head": revision, "code_sha256": {"source.py": expected}}}
+    receipts, issues, versions = report.collect_executable_artifacts([job], tmp_path / "release", repository)
+    assert receipts == [] and versions[0]["complete"] is False
+    assert issues[0]["kind"] == "executed_source_unavailable"
+    assert "Git blob SHA-256 mismatch" in issues[0]["error"]
+
+
+def test_require_complete_fails_when_executable_bytes_are_unavailable(tmp_path, monkeypatch):
+    import sys
+    data = tmp_path / "data"
+    data.mkdir()
+    dataset = data / "fixture.jsonl"
+    dataset.write_text('{"id":"fixture","metadata":{}}\n')
+    run = tmp_path / "run"
+    run.mkdir()
+    (run / "results.jsonl").write_text(json.dumps(fixture_record()) + "\n")
+    (run / "summary.json").write_text('{"stop_reason":"complete","planned_runs":1}\n')
+    (run / "manifest.json").write_text(json.dumps({"identity": {
+        "config": {"dataset": str(dataset)}, "dataset_sha256": report.digest(dataset.read_bytes()),
+        "source_code_sha256": {"unavailable_fixture_source.py": "0" * 64}},
+        "machine": {"git_head": "0" * 40}}))
+    output = tmp_path / "release"
+    monkeypatch.setattr(sys, "argv", ["build_report.py", "--run-root", str(run), "--no-matrix", "--data-dir", str(data),
+        "--judge-dir", str(tmp_path / "absent-judge"), "--output-dir", str(output), "--no-plots", "--require-complete"])
+    assert report.main() == 2
+    summary = json.loads((output / "summary.json").read_text())
+    assert summary["status"] == "INCOMPLETE_SNAPSHOT"
+    assert any(issue["kind"] == "executed_source_unavailable" for issue in summary["issues"])
