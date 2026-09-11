@@ -1,0 +1,133 @@
+{
+  "attribution": "Qwen Team; Zhang et al. (2025), Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation Models",
+  "checkpoint_files_verified_against_download_receipts": true,
+  "cpu_prompt_audit": {
+    "checks": [
+      {
+        "cap": 2048,
+        "case": "short",
+        "input_tokens": 85,
+        "token_identical_to_official_transformers_recipe": true,
+        "truncated": false,
+        "untruncated_input_tokens": 85
+      },
+      {
+        "cap": 2048,
+        "case": "unicode",
+        "input_tokens": 143,
+        "token_identical_to_official_transformers_recipe": true,
+        "truncated": false,
+        "untruncated_input_tokens": 143
+      },
+      {
+        "cap": 2048,
+        "case": "truncated",
+        "input_tokens": 2048,
+        "token_identical_to_official_transformers_recipe": true,
+        "truncated": true,
+        "untruncated_input_tokens": 16079
+      },
+      {
+        "cap": 8192,
+        "case": "short",
+        "input_tokens": 85,
+        "token_identical_to_official_transformers_recipe": true,
+        "truncated": false,
+        "untruncated_input_tokens": 85
+      },
+      {
+        "cap": 8192,
+        "case": "unicode",
+        "input_tokens": 143,
+        "token_identical_to_official_transformers_recipe": true,
+        "truncated": false,
+        "untruncated_input_tokens": 143
+      },
+      {
+        "cap": 8192,
+        "case": "truncated",
+        "input_tokens": 8192,
+        "token_identical_to_official_transformers_recipe": true,
+        "truncated": true,
+        "untruncated_input_tokens": 16079
+      }
+    ],
+    "helper_sha256": "0bdba1ffa4ad4a18ed890a9dfa4a8c86f2b95dfeb90710ae1127cc899c41b8b8",
+    "mode": "CPU tokenizer/helper audit; no model loaded or GPU used",
+    "model_revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+    "no_token_id": 2152,
+    "readme_sha256": "5bba8c734f6dd3ae48317b4139317e45a7fce48fc55e15670b23a0dd15492ab6",
+    "truncation_side": "right",
+    "yes_token_id": 9693
+  },
+  "download_manifest": {
+    "files": [
+      {
+        "path": "README.md",
+        "sha256": "5bba8c734f6dd3ae48317b4139317e45a7fce48fc55e15670b23a0dd15492ab6",
+        "size_bytes": 14742
+      },
+      {
+        "path": "chat_template.jinja",
+        "sha256": "6f682162495ec5b39fd9005c01b6aa2a74669379fe967039f1e2cbbe8752369d",
+        "size_bytes": 741
+      },
+      {
+        "path": "config.json",
+        "sha256": "d479c427a9ca5295218063d4f9aca4f297ab4ac27487cca7af42c84643d51ef0",
+        "size_bytes": 727
+      },
+      {
+        "path": "generation_config.json",
+        "sha256": "81051cd3f6e77013827148d0b8a6ead93f8ac390d5ab805f849199f0af6a08db",
+        "size_bytes": 214
+      },
+      {
+        "path": "merges.txt",
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "size_bytes": 1671853
+      },
+      {
+        "path": "model.safetensors",
+        "sha256": "27cd75a405b9c1b46b59abfd88aaa209e6fed2a1972cde9b70e7659537c5e65b",
+        "size_bytes": 1191588280
+      },
+      {
+        "path": "tokenizer.json",
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "size_bytes": 11422654
+      },
+      {
+        "path": "tokenizer_config.json",
+        "sha256": "253153d0738ceb4c668d2eff957714dd2bea0b56de772a9fdccd96cbf517e6a0",
+        "size_bytes": 9706
+      },
+      {
+        "path": "vocab.json",
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "size_bytes": 2776833
+      }
+    ],
+    "repo_id": "Qwen/Qwen3-Reranker-0.6B",
+    "revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+    "total_bytes": 1207485750
+  },
+  "license": "Apache-2.0",
+  "license_source": "https://huggingface.co/Qwen/Qwen3-Reranker-0.6B/blob/e61197ed45024b0ed8a2d74b80b4d909f1255473/README.md",
+  "license_text": "https://www.apache.org/licenses/LICENSE-2.0",
+  "local_protocol": {
+    "batch_size": 1,
+    "claim": "Local auxiliary relevance model; not a reproduction of published reranking benchmark scores",
+    "execution_backend": "MLX",
+    "generator_selected_documents": 6,
+    "max_candidates": 20,
+    "max_input_tokens": 2048,
+    "official_transformers_example_max_input_tokens": 8192,
+    "query_prefix_cache": false,
+    "scoring": "sigmoid(float(yes_logit) - float(no_logit)), algebraically equivalent to official two-class softmax",
+    "weights": "official BF16"
+  },
+  "model_id": "Qwen/Qwen3-Reranker-0.6B",
+  "revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+  "source_manifest_sha256": "5a1a7dce3c4c974b175c74c47f48719c6aeba3f523f233616263fdc9b515b987"
+}

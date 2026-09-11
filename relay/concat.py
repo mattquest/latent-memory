@@ -1,4 +1,7 @@
-"""Block concatenation with position re-indexing (TurboRAG-style).
+"""NumPy mock block concatenation with position metadata re-indexing.
+
+This does not rotate already-RoPE-encoded keys and is not TurboRAG.
+Real Qwen3 relay concatenation is implemented by MLXBackend.concat().
 
 Each chunk is prefilled with independent attention and local position
 ids 0..L-1. When a receiver consumes several relays, the blocks are
@@ -11,7 +14,8 @@ This is what makes precomputed blocks reusable across queries: the
 stored layout is position-independent, and the re-indexing happens
 at concat time, cheaply, in the receiver.
 
-Quantization note: concat always works in bf16. Inputs in int8 are
+Quantization note: legacy quant='bf16' denotes unquantized NumPy arrays,
+which in the mock are actually float32. Inputs in int8 are
 dequantized first (per-tensor scales don't survive concatenation).
 The receiver re-quantizes the result according to its policy.
 

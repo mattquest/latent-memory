@@ -1,85 +1,49 @@
-"""Experiment runners E1, E2, E4, E5, E6 (scaffolded).
+"""Python entry points to real-model fixed-evidence diagnostics.
 
-These need the MLXBackend and real benchmarks; they are specified
-here so the morning work is "fill in the data source", not "design
-the experiment". Each runner's contract is documented; each raises
-NotImplementedError until the backend lands.
-
-E3 (the audit) is fully implemented in audit.py and runs here.
+Every run requires native MLX, a normalized JSONL dataset and an artifact
+output directory. These are not the unfinished adaptive trained-agent pipeline.
 """
-
 from __future__ import annotations
+from dataclasses import replace
+from pathlib import Path
+from .real_experiments import ExperimentConfig, run_suite
 
 
-def _need_mlx():
-    raise NotImplementedError(
-        "Requires MLXBackend on the M5 Max (engine/backends_mlx.py). "
-        "The runner logic below is specified; wire the backend first."
-    )
+def _run(experiment, backend, dataset, output_dir, **overrides):
+    if backend is None:
+        raise ValueError("Pass a native MLXBackend; mock scores are not supported")
+    if dataset is None or output_dir is None:
+        raise ValueError("dataset JSONL path and output_dir are required")
+    config = ExperimentConfig(dataset=str(Path(dataset)), output_dir=str(Path(output_dir)),
+                              experiments=(experiment,))
+    return run_suite(backend, replace(config, **overrides))
 
 
-def run_e1(backend=None, dataset=None, n_hops: int = 3):
-    """E1 -- text vs latent at equal hops.
-
-    Expect PARITY (the Cheng audit predicts it). Parity at lower
-    latency is a win. A latent loss > 2 points means the relay
-    mechanics are broken -- check position re-indexing and bridge
-    recompute first.
-
-    Contract: returns dict with keys
-      text_accuracy, latent_accuracy, text_p50_ms, latent_p50_ms,
-      tokens_to_host_text, tokens_to_host_latent
-    """
-    _need_mlx()
+def run_e1(backend=None, dataset=None, n_hops=3, *, output_dir=None, **options):
+    """Text notes, latent relay, and direct text at equal evidence hops."""
+    return _run("E1", backend, dataset, output_dir, equal_hops=n_hops, **options)
 
 
-def run_e2(backend=None, dataset=None, hop_budgets=(1, 3, 5, 10, 20)):
-    """E2 -- hop-budget curve. THE thesis experiment.
-
-    Accuracy vs hops for both arms. Latent must keep climbing past
-    where text becomes too slow/expensive. KILL if the latent curve
-    is flat beyond 5 hops.
-
-    Contract: returns {hops: {text_acc, latent_acc, text_ms, latent_ms}}
-    """
-    _need_mlx()
+def run_e2(backend=None, dataset=None, hop_budgets=(1, 3, 5, 10, 20), *, output_dir=None, **options):
+    """Fixed evidence-budget curve, including the direct-text baseline."""
+    return _run("E2", backend, dataset, output_dir, hops=tuple(hop_budgets), **options)
 
 
-def run_e4(backend=None, dataset=None, ratios=(0.0, 0.10, 0.20, 1.0)):
-    """E4 -- bridge recompute ratio sweep. Find the knee.
-
-    0% = pure concat (no cross-chunk attention); 100% = full recompute
-    (equivalent to normal prefill). Expect the knee near 0.15-0.20
-    per CacheBlend. If 0% ~= 100%, cross-chunk attention doesn't
-    matter for your workload -- simplify the design.
-
-    Contract: returns {ratio: accuracy}
-    """
-    _need_mlx()
+def run_e3(backend=None, dataset=None, *, output_dir=None, **options):
+    """Answer-level correct, mismatched, zero, random, and no-context controls."""
+    return _run("E3", backend, dataset, output_dir, **options)
 
 
-def run_e5(backend=None, dataset=None):
-    """E5 -- KV precision: bf16 vs int8 vs 4-bit relays.
-
-    Determines the cold-store footprint at 10M tokens and whether
-    the final synthesizer hop needs bf16. Uses relay.quant plus the
-    int4 path (to be implemented in relay/quant.py).
-
-    Contract: returns {precision: (accuracy, bytes_per_token)}
-    """
-    _need_mlx()
+def run_e4(backend=None, dataset=None, ratios=(0, 0.1, 0.2, 1), *, output_dir=None, **options):
+    """Real causal boundary recomputation; 100% is full joint prefill."""
+    return _run("E4", backend, dataset, output_dir, bridge_ratios=tuple(ratios), **options)
 
 
-def run_e6(backend=None, beam_path: str | None = None):
-    """E6 -- update handling on BEAM knowledge-update + contradiction
-    categories, in isolation.
+def run_e5(backend=None, dataset=None, *, output_dir=None, **options):
+    """bf16, packed int8 and packed int4 storage, with bf16 attention."""
+    return _run("E5", backend, dataset, output_dir, **options)
 
-    This is where a latent store is most likely to blur facts. If it
-    does, keep the update/contradiction logic in TEXT (the remember
-    path already does the check with a reader hop; E6 measures
-    whether the latent read path respects supersession).
 
-    Needs: BEAM benchmark checkout at beam_path.
-    Contract: returns {category: accuracy} for both arms.
-    """
-    _need_mlx()
+def run_e6(backend=None, beam_path=None, *, dataset=None, output_dir=None, **options):
+    """Explicit current-version metadata filtering versus all versions."""
+    return _run("E6", backend, dataset or beam_path, output_dir, **options)

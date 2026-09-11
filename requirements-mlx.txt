@@ -1,0 +1,6 @@
+-r requirements.txt
+mlx==0.32.2
+mlx-lm==0.31.3
+huggingface-hub==1.31.0
+psutil==7.2.2
+matplotlib==3.11.1

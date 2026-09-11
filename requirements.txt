@@ -1,12 +1,12 @@
-# Core (runs everywhere, including this Linux VM)
+# Core and portable mock mechanics
 numpy>=1.26
 safetensors>=0.4
+psutil>=7.2
 
-# MCP server (Mac)
+# MCP server scaffold
 mcp>=1.0
 
-# MLX backend (M5 Max only -- do not install on Linux)
-# mlx-lm>=0.20
+# Native Apple Silicon backend: install requirements-mlx.txt separately.
 
 # Dev
 pytest>=8.0

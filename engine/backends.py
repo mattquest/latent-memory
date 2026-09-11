@@ -10,7 +10,7 @@ linguistic ability. Used for:
 It must NEVER be used to draw conclusions about model quality --
 only about machinery correctness.
 
-MLXBackend: stub for the M5 Max. Fill in with mlx-lm.
+MLXBackend: native dense Qwen3 implementation in backends_mlx.py.
 """
 
 from __future__ import annotations
