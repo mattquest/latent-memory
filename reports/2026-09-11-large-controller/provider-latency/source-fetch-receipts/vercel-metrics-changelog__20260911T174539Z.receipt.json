@@ -1,0 +1,21 @@
+{
+  "authenticated": false,
+  "body_bytes": 449108,
+  "body_path": "vercel-metrics-changelog__20260911T174539Z.html",
+  "body_sha256": "48969e94ca6bad41e97cb37da7b2862f11e2dbff652e23752e5f567c0d960220",
+  "final_url": "https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway",
+  "http_status": 200,
+  "method": "GET",
+  "publication_note": "Only content/timing/cache response headers retained; cookies and unrelated headers omitted.",
+  "request_url": "https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway",
+  "response_headers": {
+    "Age": "39",
+    "Cache-Control": "public, max-age=0, must-revalidate",
+    "Content-Length": "449108",
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Fri, 11 Sep 2026 17:45:00 GMT",
+    "Etag": "\"v9c5pfojc99mh6\""
+  },
+  "retrieved_utc": "2026-09-11T17:45:39.882106+00:00",
+  "started_utc": "2026-09-11T17:45:39.561131+00:00"
+}

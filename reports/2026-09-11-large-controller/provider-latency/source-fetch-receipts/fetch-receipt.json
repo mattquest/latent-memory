@@ -1,0 +1,9 @@
+{
+  "fetched_at": "2026-09-11T17:42:33.240293+00:00",
+  "base_url": "https://openrouter.ai/api/v1/models/qwen/{slug}/endpoints",
+  "models": [
+    "qwen3-8b",
+    "qwen3-14b",
+    "qwen3.5-122b-a10b"
+  ]
+}

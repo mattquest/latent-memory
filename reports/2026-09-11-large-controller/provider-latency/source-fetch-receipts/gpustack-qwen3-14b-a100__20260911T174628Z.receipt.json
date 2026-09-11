@@ -1,0 +1,22 @@
+{
+  "authenticated": false,
+  "body_bytes": 121687,
+  "body_path": "gpustack-qwen3-14b-a100__20260911T174628Z.html",
+  "body_sha256": "6fe06d59aeae56c9b787d8ada5dfefce129cafff96eed4eacfc7704e9ee4af81",
+  "final_url": "https://docs.gpustack.ai/2.0/performance-lab/qwen3-14b/a100/",
+  "http_status": 200,
+  "method": "GET",
+  "publication_note": "Only content/timing/cache response headers retained; cookies and unrelated headers omitted.",
+  "request_url": "https://docs.gpustack.ai/2.0/performance-lab/qwen3-14b/a100/",
+  "response_headers": {
+    "Age": "0",
+    "Cache-Control": "max-age=600",
+    "Content-Length": "121687",
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Fri, 11 Sep 2026 17:46:28 GMT",
+    "ETag": "\"6a6ffa28-1db57\"",
+    "Last-Modified": "Mon, 03 Aug 2026 02:17:12 GMT"
+  },
+  "retrieved_utc": "2026-09-11T17:46:28.573072+00:00",
+  "started_utc": "2026-09-11T17:46:28.318182+00:00"
+}

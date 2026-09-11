@@ -1,0 +1,264 @@
+{
+  "profiles": [
+    {
+      "id": "openrouter14b-alibaba",
+      "model_id": "Qwen/Qwen3-14B",
+      "provider": "Alibaba",
+      "date": "2026-09-11",
+      "source_url": "https://openrouter.ai/qwen/qwen3-14b-04-28/uptime",
+      "snapshot_sha256": "d9350740a106a1ef85f9ea343ced3a424e229b31f5333b4a8582e1f78017b545",
+      "snapshot_path": "runs/large-controller/provider-latency/published-source-observations.json",
+      "ttft_s": 0.38,
+      "reported_tps": 57,
+      "metric_semantics": "ambiguous_reported_throughput",
+      "applies_to": [
+        "native/14b",
+        "prior/14b_short",
+        "prior/14b_thinking"
+      ],
+      "quality_policy": "Retain local outputs conditionally; provider accuracy/precision equivalence is not assumed or measured.",
+      "source_id": "openrouter14b",
+      "latency_semantics": "reported_latency_assumed_ttft"
+    },
+    {
+      "id": "openrouter14b-nextbit",
+      "model_id": "Qwen/Qwen3-14B",
+      "provider": "NextBit",
+      "date": "2026-09-11",
+      "source_url": "https://openrouter.ai/qwen/qwen3-14b-04-28/uptime",
+      "snapshot_sha256": "d9350740a106a1ef85f9ea343ced3a424e229b31f5333b4a8582e1f78017b545",
+      "snapshot_path": "runs/large-controller/provider-latency/published-source-observations.json",
+      "ttft_s": 0.75,
+      "reported_tps": 50,
+      "metric_semantics": "ambiguous_reported_throughput",
+      "applies_to": [
+        "native/14b",
+        "prior/14b_short",
+        "prior/14b_thinking"
+      ],
+      "quality_policy": "Retain local outputs conditionally; provider accuracy/precision equivalence is not assumed or measured.",
+      "source_id": "openrouter14b",
+      "latency_semantics": "reported_latency_assumed_ttft"
+    },
+    {
+      "id": "openrouter14b-deepinfra",
+      "model_id": "Qwen/Qwen3-14B",
+      "provider": "DeepInfra",
+      "date": "2026-09-11",
+      "source_url": "https://openrouter.ai/qwen/qwen3-14b-04-28/uptime",
+      "snapshot_sha256": "d9350740a106a1ef85f9ea343ced3a424e229b31f5333b4a8582e1f78017b545",
+      "snapshot_path": "runs/large-controller/provider-latency/published-source-observations.json",
+      "ttft_s": 0.83,
+      "reported_tps": 43,
+      "metric_semantics": "ambiguous_reported_throughput",
+      "applies_to": [
+        "native/14b",
+        "prior/14b_short",
+        "prior/14b_thinking"
+      ],
+      "quality_policy": "Retain local outputs conditionally; provider accuracy/precision equivalence is not assumed or measured.",
+      "source_id": "openrouter14b",
+      "latency_semantics": "reported_latency_assumed_ttft"
+    },
+    {
+      "id": "openrouter8b-alibaba",
+      "model_id": "Qwen/Qwen3-8B",
+      "provider": "Alibaba (inferred; cached model-level series)",
+      "date": "2026-09-11",
+      "source_url": "https://openrouter.ai/qwen/qwen3-8b/pricing",
+      "snapshot_sha256": "d9350740a106a1ef85f9ea343ced3a424e229b31f5333b4a8582e1f78017b545",
+      "snapshot_path": "runs/large-controller/provider-latency/published-source-observations.json",
+      "ttft_s": 0.73,
+      "reported_tps": 43,
+      "metric_semantics": "ambiguous_reported_throughput",
+      "applies_to": [
+        "prior/8b_short",
+        "prior/8b_thinking"
+      ],
+      "quality_policy": "Retain local outputs conditionally; provider accuracy/precision equivalence is not assumed or measured.",
+      "source_id": "openrouter8b",
+      "latency_semantics": "reported_latency_assumed_ttft",
+      "provider_attribution": "Current sole provider; historical series attribution unverified."
+    },
+    {
+      "id": "openrouter122b-siliconflow",
+      "model_id": "Qwen/Qwen3.5-122B-A10B",
+      "provider": "SiliconFlow",
+      "date": "2026-09-11",
+      "source_url": "https://openrouter.ai/qwen/qwen3.5-122b-a10b/benchmarks",
+      "snapshot_sha256": "d9350740a106a1ef85f9ea343ced3a424e229b31f5333b4a8582e1f78017b545",
+      "snapshot_path": "runs/large-controller/provider-latency/published-source-observations.json",
+      "ttft_s": 1.49,
+      "reported_tps": 30,
+      "metric_semantics": "ambiguous_reported_throughput",
+      "applies_to": [
+        "native/122b"
+      ],
+      "quality_policy": "Retain local outputs conditionally; provider accuracy/precision equivalence is not assumed or measured.",
+      "source_id": "openrouter122b",
+      "latency_semantics": "reported_latency_assumed_ttft"
+    },
+    {
+      "id": "openrouter122b-alibaba",
+      "model_id": "Qwen/Qwen3.5-122B-A10B",
+      "provider": "Alibaba",
+      "date": "2026-09-11",
+      "source_url": "https://openrouter.ai/qwen/qwen3.5-122b-a10b/benchmarks",
+      "snapshot_sha256": "d9350740a106a1ef85f9ea343ced3a424e229b31f5333b4a8582e1f78017b545",
+      "snapshot_path": "runs/large-controller/provider-latency/published-source-observations.json",
+      "ttft_s": 0.96,
+      "reported_tps": 99,
+      "metric_semantics": "ambiguous_reported_throughput",
+      "applies_to": [
+        "native/122b"
+      ],
+      "quality_policy": "Retain local outputs conditionally; provider accuracy/precision equivalence is not assumed or measured.",
+      "source_id": "openrouter122b",
+      "latency_semantics": "reported_latency_assumed_ttft"
+    },
+    {
+      "id": "openrouter122b-atlascloud",
+      "model_id": "Qwen/Qwen3.5-122B-A10B",
+      "provider": "AtlasCloud",
+      "date": "2026-09-11",
+      "source_url": "https://openrouter.ai/qwen/qwen3.5-122b-a10b/benchmarks",
+      "snapshot_sha256": "d9350740a106a1ef85f9ea343ced3a424e229b31f5333b4a8582e1f78017b545",
+      "snapshot_path": "runs/large-controller/provider-latency/published-source-observations.json",
+      "ttft_s": 1.13,
+      "reported_tps": 84,
+      "metric_semantics": "ambiguous_reported_throughput",
+      "applies_to": [
+        "native/122b"
+      ],
+      "quality_policy": "Retain local outputs conditionally; provider accuracy/precision equivalence is not assumed or measured.",
+      "source_id": "openrouter122b",
+      "latency_semantics": "reported_latency_assumed_ttft"
+    },
+    {
+      "id": "openrouter122b-novita",
+      "model_id": "Qwen/Qwen3.5-122B-A10B",
+      "provider": "Novita",
+      "date": "2026-09-11",
+      "source_url": "https://openrouter.ai/qwen/qwen3.5-122b-a10b/benchmarks",
+      "snapshot_sha256": "d9350740a106a1ef85f9ea343ced3a424e229b31f5333b4a8582e1f78017b545",
+      "snapshot_path": "runs/large-controller/provider-latency/published-source-observations.json",
+      "ttft_s": 0.8,
+      "reported_tps": 84,
+      "metric_semantics": "ambiguous_reported_throughput",
+      "applies_to": [
+        "native/122b"
+      ],
+      "quality_policy": "Retain local outputs conditionally; provider accuracy/precision equivalence is not assumed or measured.",
+      "source_id": "openrouter122b",
+      "latency_semantics": "reported_latency_assumed_ttft"
+    },
+    {
+      "id": "lambda122b-lambda-4xb200-sglang",
+      "model_id": "Qwen/Qwen3.5-122B-A10B",
+      "provider": "Lambda 4xB200 SGLang",
+      "date": "2026-09-11",
+      "source_url": "https://lambda.ai/inference-models/qwen/qwen3.5-122b-a10b",
+      "snapshot_sha256": "d9350740a106a1ef85f9ea343ced3a424e229b31f5333b4a8582e1f78017b545",
+      "snapshot_path": "runs/large-controller/provider-latency/published-source-observations.json",
+      "ttft_s": 1.156,
+      "reported_tps": 76.92307692307692,
+      "metric_semantics": "decode_tps_from_tpot",
+      "applies_to": [
+        "native/122b"
+      ],
+      "quality_policy": "Retain local outputs conditionally; provider accuracy/precision equivalence is not assumed or measured.",
+      "source_id": "lambda122b",
+      "latency_semantics": "published_mean_ttft"
+    },
+    {
+      "id": "lambda122b-lambda-8xh100-vllm",
+      "model_id": "Qwen/Qwen3.5-122B-A10B",
+      "provider": "Lambda 8xH100 vLLM",
+      "date": "2026-09-11",
+      "source_url": "https://lambda.ai/inference-models/qwen/qwen3.5-122b-a10b",
+      "snapshot_sha256": "d9350740a106a1ef85f9ea343ced3a424e229b31f5333b4a8582e1f78017b545",
+      "snapshot_path": "runs/large-controller/provider-latency/published-source-observations.json",
+      "ttft_s": 1.06,
+      "reported_tps": 62.5,
+      "metric_semantics": "decode_tps_from_tpot",
+      "applies_to": [
+        "native/122b"
+      ],
+      "quality_policy": "Retain local outputs conditionally; provider accuracy/precision equivalence is not assumed or measured.",
+      "source_id": "lambda122b",
+      "latency_semantics": "published_mean_ttft"
+    },
+    {
+      "id": "lambda122b-lambda-8xh100-sglang",
+      "model_id": "Qwen/Qwen3.5-122B-A10B",
+      "provider": "Lambda 8xH100 SGLang",
+      "date": "2026-09-11",
+      "source_url": "https://lambda.ai/inference-models/qwen/qwen3.5-122b-a10b",
+      "snapshot_sha256": "d9350740a106a1ef85f9ea343ced3a424e229b31f5333b4a8582e1f78017b545",
+      "snapshot_path": "runs/large-controller/provider-latency/published-source-observations.json",
+      "ttft_s": 2.613,
+      "reported_tps": 55.55555555555556,
+      "metric_semantics": "decode_tps_from_tpot",
+      "applies_to": [
+        "native/122b"
+      ],
+      "quality_policy": "Retain local outputs conditionally; provider accuracy/precision equivalence is not assumed or measured.",
+      "source_id": "lambda122b",
+      "latency_semantics": "published_mean_ttft"
+    },
+    {
+      "id": "lambda122b-lambda-8xa100-sglang",
+      "model_id": "Qwen/Qwen3.5-122B-A10B",
+      "provider": "Lambda 8xA100 SGLang",
+      "date": "2026-09-11",
+      "source_url": "https://lambda.ai/inference-models/qwen/qwen3.5-122b-a10b",
+      "snapshot_sha256": "d9350740a106a1ef85f9ea343ced3a424e229b31f5333b4a8582e1f78017b545",
+      "snapshot_path": "runs/large-controller/provider-latency/published-source-observations.json",
+      "ttft_s": 4.602,
+      "reported_tps": 33.333333333333336,
+      "metric_semantics": "decode_tps_from_tpot",
+      "applies_to": [
+        "native/122b"
+      ],
+      "quality_policy": "Retain local outputs conditionally; provider accuracy/precision equivalence is not assumed or measured.",
+      "source_id": "lambda122b",
+      "latency_semantics": "published_mean_ttft"
+    },
+    {
+      "id": "lambda122b-lambda-4xb200-vllm",
+      "model_id": "Qwen/Qwen3.5-122B-A10B",
+      "provider": "Lambda 4xB200 vLLM",
+      "date": "2026-09-11",
+      "source_url": "https://lambda.ai/inference-models/qwen/qwen3.5-122b-a10b",
+      "snapshot_sha256": "d9350740a106a1ef85f9ea343ced3a424e229b31f5333b4a8582e1f78017b545",
+      "snapshot_path": "runs/large-controller/provider-latency/published-source-observations.json",
+      "ttft_s": 4.904,
+      "reported_tps": 76.92307692307692,
+      "metric_semantics": "decode_tps_from_tpot",
+      "applies_to": [
+        "native/122b"
+      ],
+      "quality_policy": "Retain local outputs conditionally; provider accuracy/precision equivalence is not assumed or measured.",
+      "source_id": "lambda122b",
+      "latency_semantics": "published_mean_ttft"
+    },
+    {
+      "id": "lambda122b-lambda-8xa100-vllm",
+      "model_id": "Qwen/Qwen3.5-122B-A10B",
+      "provider": "Lambda 8xA100 vLLM",
+      "date": "2026-09-11",
+      "source_url": "https://lambda.ai/inference-models/qwen/qwen3.5-122b-a10b",
+      "snapshot_sha256": "d9350740a106a1ef85f9ea343ced3a424e229b31f5333b4a8582e1f78017b545",
+      "snapshot_path": "runs/large-controller/provider-latency/published-source-observations.json",
+      "ttft_s": 7.612,
+      "reported_tps": 27.77777777777778,
+      "metric_semantics": "decode_tps_from_tpot",
+      "applies_to": [
+        "native/122b"
+      ],
+      "quality_policy": "Retain local outputs conditionally; provider accuracy/precision equivalence is not assumed or measured.",
+      "source_id": "lambda122b",
+      "latency_semantics": "published_mean_ttft"
+    }
+  ]
+}

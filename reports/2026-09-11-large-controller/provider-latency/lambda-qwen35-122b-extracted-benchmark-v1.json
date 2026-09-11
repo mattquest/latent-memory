@@ -1,0 +1,95 @@
+{
+  "benchmark_execution_date": null,
+  "engine_versions": {
+    "SGLang": "latest, exact revision unspecified",
+    "vLLM": "latest, exact revision unspecified"
+  },
+  "http_last_modified": "Tue, 01 Sep 2026 16:09:07 GMT",
+  "input_tokens": 8192,
+  "limits": [
+    "Published hardware benchmark, not a live hosted endpoint snapshot or measured experiment latency.",
+    "Aggregate output throughput is shared across concurrent requests and must not be used as single-request decode speed.",
+    "TPOT and ITL are separate columns; vLLM 8x A100 is 36ms TPOT versus 35ms ITL.",
+    "Prompt length, output length and load differ from this experiment; TTFT cannot supply a calibrated prompt-token slope.",
+    "Publication Last-Modified is not benchmark execution time; versions and precision are not pinned.",
+    "A TTFT plus post-first-token TPOT scenario is an extrapolation; marginal means or P99 values do not form a joint latency guarantee."
+  ],
+  "max_concurrency": 32,
+  "model": "Qwen/Qwen3.5-122B-A10B",
+  "num_prompts": 512,
+  "output_tokens": 1024,
+  "precision": "not explicitly stated",
+  "reasoning_mode": "not explicitly stated",
+  "results": [
+    {
+      "aggregate_output_tokens_per_second": 2197,
+      "gpus": "4x B200",
+      "itl_mean_ms": 13,
+      "itl_p99_ms": 15,
+      "server": "SGLang",
+      "tpot_mean_ms": 13,
+      "tpot_p99_ms": 14,
+      "ttft_mean_ms": 1156,
+      "ttft_p99_ms": 3226
+    },
+    {
+      "aggregate_output_tokens_per_second": 1585,
+      "gpus": "8x H100",
+      "itl_mean_ms": 18,
+      "itl_p99_ms": 37,
+      "server": "SGLang",
+      "tpot_mean_ms": 18,
+      "tpot_p99_ms": 20,
+      "ttft_mean_ms": 2613,
+      "ttft_p99_ms": 5533
+    },
+    {
+      "aggregate_output_tokens_per_second": 930,
+      "gpus": "8x A100",
+      "itl_mean_ms": 30,
+      "itl_p99_ms": 93,
+      "server": "SGLang",
+      "tpot_mean_ms": 30,
+      "tpot_p99_ms": 34,
+      "ttft_mean_ms": 4602,
+      "ttft_p99_ms": 9964
+    },
+    {
+      "aggregate_output_tokens_per_second": 1817,
+      "gpus": "4x B200",
+      "itl_mean_ms": 13,
+      "itl_p99_ms": 102,
+      "server": "vLLM",
+      "tpot_mean_ms": 13,
+      "tpot_p99_ms": 13,
+      "ttft_mean_ms": 4904,
+      "ttft_p99_ms": 68885
+    },
+    {
+      "aggregate_output_tokens_per_second": 1843,
+      "gpus": "8x H100",
+      "itl_mean_ms": 16,
+      "itl_p99_ms": 135,
+      "server": "vLLM",
+      "tpot_mean_ms": 16,
+      "tpot_p99_ms": 17,
+      "ttft_mean_ms": 1060,
+      "ttft_p99_ms": 5328
+    },
+    {
+      "aggregate_output_tokens_per_second": 744,
+      "gpus": "8x A100",
+      "itl_mean_ms": 35,
+      "itl_p99_ms": 181,
+      "server": "vLLM",
+      "tpot_mean_ms": 36,
+      "tpot_p99_ms": 41,
+      "ttft_mean_ms": 7612,
+      "ttft_p99_ms": 105377
+    }
+  ],
+  "retrieved_utc": "2026-09-11T17:50:15.903645+00:00",
+  "source_body": "lambda-qwen35-122b-benchmark__20260911T175015Z.html",
+  "source_body_sha256": "cee4261d895c1361fb054719aa87e06072c162543583a618ac434113fcdc471b",
+  "source_url": "https://lambda.ai/inference-models/qwen/qwen3.5-122b-a10b"
+}

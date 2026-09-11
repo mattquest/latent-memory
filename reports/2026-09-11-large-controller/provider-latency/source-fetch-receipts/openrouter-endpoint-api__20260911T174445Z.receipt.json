@@ -1,0 +1,19 @@
+{
+  "authenticated": false,
+  "body_bytes": 43350,
+  "body_path": "openrouter-endpoint-api__20260911T174445Z.md",
+  "body_sha256": "5e86ee300b22b437564ff846f7a23fefeed81522825607c3972ba3b840660247",
+  "final_url": "https://openrouter.ai/docs/api/api-reference/endpoints/list-all-endpoints-for-a-model.md",
+  "http_status": 200,
+  "method": "GET",
+  "publication_note": "Only content/timing/cache response headers retained; cookies and unrelated headers omitted.",
+  "request_url": "https://openrouter.ai/docs/api/api-reference/endpoints/list-all-endpoints-for-a-model.md",
+  "response_headers": {
+    "Age": "0",
+    "Cache-Control": "public, max-age=0, must-revalidate",
+    "Content-Type": "text/markdown; charset=utf-8",
+    "Date": "Fri, 11 Sep 2026 17:44:45 GMT"
+  },
+  "retrieved_utc": "2026-09-11T17:44:45.961771+00:00",
+  "started_utc": "2026-09-11T17:44:45.437017+00:00"
+}

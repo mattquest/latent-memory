@@ -1,0 +1,19 @@
+{
+  "authenticated": false,
+  "body_bytes": 8808,
+  "body_path": "openrouter-latency-performance__20260911T174445Z.md",
+  "body_sha256": "3e55888681fdf83652c47853c706fc3dce5536344a8499e6819b3b70815db223",
+  "final_url": "https://openrouter.ai/docs/guides/best-practices/latency-and-performance.md",
+  "http_status": 200,
+  "method": "GET",
+  "publication_note": "Only content/timing/cache response headers retained; cookies and unrelated headers omitted.",
+  "request_url": "https://openrouter.ai/docs/guides/best-practices/latency-and-performance.md",
+  "response_headers": {
+    "Age": "0",
+    "Cache-Control": "public, max-age=0, must-revalidate",
+    "Content-Type": "text/markdown; charset=utf-8",
+    "Date": "Fri, 11 Sep 2026 17:44:45 GMT"
+  },
+  "retrieved_utc": "2026-09-11T17:44:45.898526+00:00",
+  "started_utc": "2026-09-11T17:44:45.436914+00:00"
+}

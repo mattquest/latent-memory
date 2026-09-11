@@ -1,0 +1,20 @@
+{
+  "authenticated": false,
+  "body_bytes": 31173,
+  "body_path": "qwen-official-speed-benchmark__20260911T174539Z.md",
+  "body_sha256": "36c5c4d7ed8ae5d5e1efc3e81c2dd966e69fc0988955f363aca6df07c0823ae6",
+  "final_url": "https://raw.githubusercontent.com/QwenLM/Qwen3/main/docs/source/getting_started/speed_benchmark.md",
+  "http_status": 200,
+  "method": "GET",
+  "publication_note": "Only content/timing/cache response headers retained; cookies and unrelated headers omitted.",
+  "request_url": "https://raw.githubusercontent.com/QwenLM/Qwen3/main/docs/source/getting_started/speed_benchmark.md",
+  "response_headers": {
+    "Cache-Control": "max-age=300",
+    "Content-Length": "31173",
+    "Content-Type": "text/plain; charset=utf-8",
+    "Date": "Fri, 11 Sep 2026 17:45:39 GMT",
+    "ETag": "\"eb5860fb9a3cb0632640ac85c2374f305d9a7ff75116fbaee45ba5c04a765836\""
+  },
+  "retrieved_utc": "2026-09-11T17:45:39.759517+00:00",
+  "started_utc": "2026-09-11T17:45:39.561236+00:00"
+}

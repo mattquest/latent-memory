@@ -1,0 +1,18 @@
+{
+  "authenticated": false,
+  "body_bytes": 1290,
+  "body_path": "qwen__qwen3-8b__endpoints__20260911T174351Z.json",
+  "body_sha256": "d202721c13d4afe2182f94870bc39fc1a77ccc5f27c7da2d7ef4ae27a3bdd267",
+  "final_url": "https://openrouter.ai/api/v1/models/qwen/qwen3-8b/endpoints",
+  "http_status": 200,
+  "method": "GET",
+  "publication_note": "Only content/timing/cache response headers retained; cookies and unrelated headers omitted.",
+  "request_url": "https://openrouter.ai/api/v1/models/qwen/qwen3-8b/endpoints",
+  "response_headers": {
+    "Cache-Control": "private, no-store",
+    "Content-Type": "application/json",
+    "Date": "Fri, 11 Sep 2026 17:43:51 GMT"
+  },
+  "retrieved_utc": "2026-09-11T17:43:51.689890+00:00",
+  "started_utc": "2026-09-11T17:43:51.567193+00:00"
+}

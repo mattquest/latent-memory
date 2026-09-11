@@ -1,0 +1,19 @@
+{
+  "authenticated": false,
+  "body_bytes": 57719,
+  "body_path": "lambda-qwen35-122b-benchmark__20260911T175015Z.html",
+  "body_sha256": "cee4261d895c1361fb054719aa87e06072c162543583a618ac434113fcdc471b",
+  "final_url": "https://lambda.ai/inference-models/qwen/qwen3.5-122b-a10b",
+  "http_status": 200,
+  "method": "GET",
+  "publication_note": "Only content/timing/cache response headers retained; cookies and unrelated headers omitted.",
+  "request_url": "https://lambda.ai/inference-models/qwen/qwen3.5-122b-a10b",
+  "response_headers": {
+    "Cache-Control": "s-maxage=36000, max-age=5",
+    "Content-Type": "text/html; charset=UTF-8",
+    "Date": "Fri, 11 Sep 2026 17:50:15 GMT",
+    "Last-Modified": "Tue, 01 Sep 2026 16:09:07 GMT"
+  },
+  "retrieved_utc": "2026-09-11T17:50:15.903645+00:00",
+  "started_utc": "2026-09-11T17:50:15.558396+00:00"
+}
