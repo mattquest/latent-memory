@@ -38,6 +38,19 @@ def sha(raw):
     return hashlib.sha256(raw).hexdigest()
 
 
+def expected_case_id(protocol, example_id, case, max_reasoning_tokens=0,
+                     controller_temperature=0.0, controller_top_p=1.0, controller_top_k=0):
+    """Mirror the manifest-pinned ID recipe, preserving historical no-thinking IDs."""
+    payload = [protocol, example_id, case]
+    if protocol == "adaptive-global-bm25-controller-v2":
+        payload.append({"max_reasoning_tokens": max_reasoning_tokens,
+                        "controller_temperature": float(controller_temperature),
+                        "controller_top_p": float(controller_top_p), "controller_top_k": int(controller_top_k)})
+    elif max_reasoning_tokens > 0:
+        payload.append({"max_reasoning_tokens": max_reasoning_tokens})
+    return sha(json.dumps(payload, sort_keys=True).encode())[:24]
+
+
 def load_json(path):
     return json.loads(path.read_text()) if path.exists() else {}
 
@@ -134,11 +147,15 @@ def inspect_run(run_dir, root=REPOSITORY):
                 rounds = (1,) if arm in {"basic_rag", "expanded_rag", "reranked_rag"} else config.get("rounds", [5])
                 for budget in rounds:
                     case = {"arm": arm, "max_rounds": budget}
-                    expected_ids.add(sha(json.dumps([identity.get("protocol"), question["id"], case], sort_keys=True).encode())[:24])
+                    expected_ids.add(expected_case_id(identity.get("protocol"), question["id"], case,
+                        config.get("max_reasoning_tokens", 0), config.get("controller_temperature", 0.0),
+                        config.get("controller_top_p", 1.0), config.get("controller_top_k", 0)))
     ok_ids = {key for key, row in latest.items() if row.get("status") == "ok"}
     for row in latest.values():
         if row.get("status") == "ok":
-            row_id = sha(json.dumps([identity.get("protocol"), row["example_id"], row["case"]], sort_keys=True).encode())[:24]
+            row_id = expected_case_id(identity.get("protocol"), row["example_id"], row["case"],
+                config.get("max_reasoning_tokens", 0), config.get("controller_temperature", 0.0),
+                config.get("controller_top_p", 1.0), config.get("controller_top_k", 0))
             if row_id != row["id"]:
                 issues.append({"kind": "result_identity_mismatch", "id": row["id"]})
             question = pinned_questions.get(row["example_id"])

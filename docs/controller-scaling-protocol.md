@@ -42,7 +42,17 @@ explicit, recorded closure before the separate action phase. Reasoning and
 action continue through the same transient causal cache. Reasoning text and
 actions are never silently inserted into the reusable evidence snapshot.
 Generated, forced, reasoning, and action tokens are separately counted.
-No cross-model KV transfer is attempted.
+No cross-model KV transfer is attempted. Generated-token counts exclude terminal
+EOS under the original convention; additional sampled-token counters and IDs
+include EOS.
+
+The synthetic preflight found that both checkpoints can append an answer after
+the explicit ANSWER command. The new controller parser accepts that finish
+signal with a colon or newline payload, records the format variant, discards
+the attached answer, and still runs the separately scored final-answer call.
+Search remains one strict SEARCH: query command. Legacy default parsing remains
+unchanged. This interface adjustment precedes all new benchmark inference; the
+original synthetic outputs and pre-adjustment source hashes are preserved.
 
 ## Retrieval conditions
 

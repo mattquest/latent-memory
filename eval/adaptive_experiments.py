@@ -246,10 +246,16 @@ def final_text(question):
             "retrieved documents. If unavailable, answer UNKNOWN.\n" + CHAT_END)
 
 
-def parse_action(raw):
+def parse_action(raw, allow_answer_payload=False):
     text = clean_prediction(raw)
     if re.fullmatch(r"ANSWER[.!]?", text, re.IGNORECASE):
         return {"kind": "answer", "query": None, "valid": True}
+    if allow_answer_payload:
+        first_line = text.splitlines()[0] if text else ""
+        if (re.fullmatch(r"ANSWER[.!]?", first_line, re.IGNORECASE)
+                or re.fullmatch(r"ANSWER\s*:.*", first_line, re.IGNORECASE)):
+            return {"kind": "answer", "query": None, "valid": True,
+                    "format_variant": "answer_with_ignored_payload"}
     match = re.fullmatch(r"SEARCH\s*:\s*([^\n]+)", text, re.IGNORECASE)
     if match and match.group(1).strip():
         query = match.group(1).strip()
@@ -469,7 +475,7 @@ def run_adaptive_case(backend, corpus, example, case, config, reranker=None):
                   (CHAT_THINK_END if config.max_reasoning_tokens else CHAT_END))
         seed = decision_seed(config.seed, example["id"], "query_expansion", 0)
         raw, ids = evidence.generate(suffix, config.max_action_tokens, controller=True, controller_seed=seed)
-        action = parse_action(raw)
+        action = parse_action(raw, allow_answer_payload=protocol_for(**controller_policy(config)) != PROTOCOL)
         queries = [question]
         if action["kind"] == "search" and canonical_query(action["query"]) != canonical_query(question):
             queries.append(action["query"])
@@ -529,7 +535,7 @@ def run_adaptive_case(backend, corpus, example, case, config, reranker=None):
         raw, ids = evidence.generate(decision_text(question, queries, case.max_rounds - round_number,
                                                    thinking=bool(config.max_reasoning_tokens)),
                                      config.max_action_tokens, controller=True, controller_seed=seed)
-        action = parse_action(raw)
+        action = parse_action(raw, allow_answer_payload=protocol_for(**controller_policy(config)) != PROTOCOL)
         trace.append({"event": "decision", "round": round_number, "raw_action": raw,
                       "action": action, "action_token_ids": ids,
                       "controller_seed": seed,

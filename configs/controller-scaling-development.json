@@ -80,6 +80,12 @@
     "docs/controller-scaling-data.md",
     "models/Qwen3-14B/download-manifest.json",
     "models/model-manifest.json",
-    "runs/controller-scaling-data-validation.json"
+    "runs/controller-scaling-data-validation.json",
+    "runs/controller-scaling/preflight-8b-v1/preflight.json",
+    "runs/controller-scaling/preflight-8b-v1/guard-status.json",
+    "runs/controller-scaling/preflight-14b-v1/preflight.json",
+    "runs/controller-scaling/preflight-14b-v1/guard-status.json",
+    "runs/controller-scaling/download-14b/guard-status.json",
+    "runs/controller-scaling/download-14b/guard-source.py"
   ]
 }
